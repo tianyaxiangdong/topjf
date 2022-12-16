@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.5.2](https://github.com/topjf/topjf/compare/v3.5.1...v3.5.2) (2022-12-16)
+
+
+### 🐛Bug Fixes
+
+* 更新主题配置，其他 ([178b8cd](https://github.com/topjf/topjf/commit/178b8cd4ba185f8f55ed1ddb3a4babeaf5f69073))
+
 ## [3.5.1](https://github.com/topsjf/topsjf/compare/v3.5.0...v3.5.1) (2022-12-12)
 
 
