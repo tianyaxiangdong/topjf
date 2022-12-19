@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.1](https://github.com/topjf/topjf/compare/v3.6.0...v3.6.1) (2022-12-19)
+
+
+### 🐛Bug Fixes
+
+* 部署到topsjf.github.io仓库 ([a782b86](https://github.com/topjf/topjf/commit/a782b86e56b0836311cc627a6969e191e504d2fa))
+
 ## [3.6.0](https://github.com/topjf/topjf/compare/v3.5.2...v3.6.0) (2022-12-17)
 
 
