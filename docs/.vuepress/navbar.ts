@@ -25,6 +25,7 @@ export const navbarConfig = navbar([
         children: [
             {text: "关于本站", icon: "people", link: "/about/about-this"},
             {text: "网站历史",icon: "time",link: "/history/history"},
+            {text: "VuePress Theme Hope 文档", icon: "creative", link: "https://vuepress-theme-hope.github.io/v2/zh/"},
         ],
     },
 ]);
