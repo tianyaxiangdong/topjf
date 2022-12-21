@@ -4,7 +4,7 @@
 
 .about_this_1 {
     font-family: "华文楷体";
-    width: 140px;
+    width: 125px;
     margin: 10px auto;
     padding: 20px;
     font-size: 24px;
@@ -23,6 +23,20 @@ html[data-theme="dark"] .about_this_1 {
 
 
 .about_this_2 {
+    font-family: "Microsoft YaHei";
+    background: -webkit-linear-gradient(left, #0f0, #00f) 0 0 no-repeat;/*设置线性渐变*/
+	-webkit-background-size: 160px/*设置背景大小*/
+	-webkit-background-clip: text;     /*背景被裁剪到文字*/
+	-webkit-text-fill-color: rgba(255, 255, 255, 0.3);        /*设置文字的填充颜色*/
+	-webkit-animation: shine 3s infinite; /*设置动画*/
     
+}
+@-webkit-keyframes .about_this_2 {   /*创建动画*/
+	0%{
+	    background-position: 0 0;
+	}
+	100%{
+	    background-position: 100% 100%;
+    }
 }
 
