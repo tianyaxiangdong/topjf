@@ -24,13 +24,13 @@ html[data-theme="dark"] .about_this_1 {
 
 .about_this_2 {
     font-family: "Microsoft YaHei";
-    background: -webkit-linear-gradient(left, #0f0, #00f) 0 0 no-repeat;/*设置线性渐变*/
-	-webkit-background-size: 160px/*设置背景大小*/
-	-webkit-background-clip: text;     /*背景被裁剪到文字*/
-	-webkit-text-fill-color: rgba(255, 255, 255, 0.3);        /*设置文字的填充颜色*/
-	-webkit-animation: shine 3s infinite; /*设置动画*/
-    
+    background: -webkit-linear-gradient(left, #0f0, #00f) 0 0 no-repeat;
+	-webkit-background-size: 160px;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: rgba(255, 255, 255, 0.3);       
+	-webkit-animation: shine 3s infinite;
 }
+
 @-webkit-keyframes .about_this_2 {   /*创建动画*/
 	0%{
 	    background-position: 0 0;
