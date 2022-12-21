@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.8](https://github.com/topjf/topjf/compare/v3.6.7...v3.6.8) (2022-12-21)
+
+
+### 🐛Bug Fixes
+
+* 字体美化7 ([c728d9d](https://github.com/topjf/topjf/commit/c728d9df332d0efcdfac8d6c6131582e26cc6ab4))
+
 ## [3.6.7](https://github.com/topjf/topjf/compare/v3.6.6...v3.6.7) (2022-12-21)
 
 
