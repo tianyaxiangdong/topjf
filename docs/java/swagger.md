@@ -2,11 +2,13 @@
 icon: edit
 title: swagger
 category: Java
-date: 2020-01-01
+date: 2020-06-07
 tag:
 - api
 - swagger
 ---
+
+spring-boot 版本 >= 2.6.x 的 swagger 配置请看这里： [🐱‍🚀](https://blog.csdn.net/qq_42476834/article/details/125534198)
 
 <!-- more -->
 
@@ -29,7 +31,7 @@ Swagger 使用的注解及其说明：
 
 ## 作用于-方法
 
-### @ApiOperation：给方法增加说明。
+### @ApiOperation：给方法增加说明
 
 > ```java
 > @ApiOperation(value = "获取用户列表", notes = "获取用户列表")
@@ -65,7 +67,7 @@ public void addUser(@RequestBody User user) {
 
 
 
-### @ApiImplicitParam：给方法参数增加说明。
+### @ApiImplicitParam：给方法参数增加说明
 
 > ```java
 > @ApiOperation(value = "获取用户详细", notes = "获取用户详细")
@@ -85,7 +87,7 @@ public void addUser(@RequestBody User user) {
 
 
 
-### @ApiImplicitParams : 用在方法上包含一组参数说明。
+### @ApiImplicitParams : 用在方法上包含一组参数说明
 
 > ```java
 >  @ApiImplicitParams({
@@ -169,7 +171,7 @@ public void addUser(@RequestBody User user) {
 > private Integer userId;
 > ```
 
-## 二、swagger2 配置
+## swagger2 配置
 
 Swagger 文档: 	http://192.168.56.1:51156/dev/swagger-ui.html
 
@@ -343,7 +345,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
 
 
 
-## 三、swagger3 配置
+## swagger3 配置
 
 Swagger 文档: 	http://192.168.56.1:51156/dev/swagger-ui.html
 
@@ -501,8 +503,7 @@ public class SwaggerConfig {
 ```
 
 
-
-## 四、使用 swagger-bootstrap-ui
+## 使用 swagger-bootstrap-ui
 
 ```xml
 <dependency>

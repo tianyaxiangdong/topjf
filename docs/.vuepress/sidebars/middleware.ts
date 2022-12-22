@@ -1,5 +1,5 @@
 /**
- * MQ 侧边栏json数据
+ * 中间件 侧边栏json数据
  */
 export const middlewareJson =
   //  {
@@ -9,7 +9,7 @@ export const middlewareJson =
    //     collapsable: true,
 //        children: [
      [       {
-                text: "MQ中间件",
+                text: "消息中间件",
                 icon: "tool",
                 prefix: "mq/",
                 collapsable: true,
@@ -23,7 +23,7 @@ export const middlewareJson =
             },
             "nginx",
             {
-                text: "redis",
+                text: "Redis",
                 icon: "redis",
                 prefix: "redis/",
                 collapsable: true,
