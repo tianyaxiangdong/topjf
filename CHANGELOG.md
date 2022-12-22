@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.19](https://github.com/topjf/topjf/compare/v3.6.18...v3.6.19) (2022-12-22)
+
+
+### 📚Docs
+
+* 更新docker文档 ([ee5dfe8](https://github.com/topjf/topjf/commit/ee5dfe89b0f8176ab6e62850f42b120a8440712c))
+
 ## [3.6.18](https://github.com/topjf/topjf/compare/v3.6.17...v3.6.18) (2022-12-22)
 
 
