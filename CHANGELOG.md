@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.17](https://github.com/topjf/topjf/compare/v3.6.16...v3.6.17) (2022-12-22)
+
+
+### 📚Docs
+
+* 添加文档 ([789d139](https://github.com/topjf/topjf/commit/789d1395e02237b8d20a8a397593a7177dc8d3c8))
+
 ## [3.6.16](https://github.com/topjf/topjf/compare/v3.6.15...v3.6.16) (2022-12-21)
 
 
