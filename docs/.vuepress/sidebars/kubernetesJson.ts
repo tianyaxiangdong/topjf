@@ -10,7 +10,7 @@ export const kubernetesJson = [
   //      children: "structure",
        // children: [
             "basis",
-            "setting-alias"
+            "setting-alias",
             "ingress",
             "helm",
             "rancher",
