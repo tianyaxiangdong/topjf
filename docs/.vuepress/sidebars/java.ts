@@ -30,6 +30,7 @@ export const javaJson =
             "java-log",
             "java-jsr303",
             "java-exception",
+            "PreventDuplicateSubmissions",
             "23-design-patterns",
             "jvm",
             "nacos-gateway-sentinel-sleuth",
