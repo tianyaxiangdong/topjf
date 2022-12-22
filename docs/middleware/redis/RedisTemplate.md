@@ -137,7 +137,7 @@ public class RedisConfig {
 
 ## RedisUtils 工具类
 
-主要代码，具体请看[🏍 🏍 🏍 🏍  gitee源码🚀🚀🚀🚀](https://gitee.com/cps007/spring-boot-model/blob/master/spring-boot-model-service/src/main/java/cn/springboot/model/service/utils/RedisUtils.java#)
+主要代码，具体请看[🏍 gitee源码🚀](https://gitee.com/cps007/spring-boot-model/blob/master/spring-boot-model-service/src/main/java/cn/springboot/model/service/utils/RedisUtils.java#)
 
 ```java
 
@@ -216,7 +216,7 @@ public class RedisUtils {
 
 ```
 
-aop使用例子 [🚀🚀实现基于 session+redis 的防重复提交🚀🚀](https://blog.csdn.net/qq_42476834/article/details/125103877)
+aop使用例子 [实现基于 session+redis 的防重复提交](https://topjf.github.io/java/PreventDuplicateSubmissions.html)
 
 ```java
 @Aspect
@@ -251,7 +251,7 @@ public class SubmitAspect {
 
 查看redis记录
 
-> "prefix:D6D13DE0091DEC607E2F9DBE364490A8:/dev:getStuById:1"
+`prefix:D6D13DE0091DEC607E2F9DBE364490A8:/dev:getStuById:1`
 
 
 
