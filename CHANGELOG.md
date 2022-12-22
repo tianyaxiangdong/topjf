@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.22](https://github.com/topjf/topjf/compare/v3.6.21...v3.6.22) (2022-12-22)
+
+
+### 📚Docs
+
+* swagger兼容springboot 2.6.x处理 ([b812189](https://github.com/topjf/topjf/commit/b812189c9182bfc9308715e1b17b2c215646f2e6))
+
 ## [3.6.21](https://github.com/topjf/topjf/compare/v3.6.20...v3.6.21) (2022-12-22)
 
 
