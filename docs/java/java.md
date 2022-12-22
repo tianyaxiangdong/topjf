@@ -23,6 +23,7 @@ timeline: false
 
 ## 其他
 
+- [基于redis防止重复提交](./PreventDuplicateSubmissions.md)
 - [23种设计模式整理](./23-design-patterns.md)
 - [异步](./asynchronous.md)
 - [分布式锁、缓存](./cloud-lock-cache.md)
