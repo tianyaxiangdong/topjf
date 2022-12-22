@@ -1,5 +1,5 @@
 /**
- * k8s 侧边栏json数据
+ * k8s 侧边栏json数据 
  */
 export const kubernetesJson = [
   //  {
