@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.20](https://github.com/topjf/topjf/compare/v3.6.19...v3.6.20) (2022-12-22)
+
+
+### 📚Docs
+
+* 更新redis中间件 ([4220d68](https://github.com/topjf/topjf/commit/4220d6826d0491f68f5a00e37402bb76c08aae51))
+
 ## [3.6.19](https://github.com/topjf/topjf/compare/v3.6.18...v3.6.19) (2022-12-22)
 
 
