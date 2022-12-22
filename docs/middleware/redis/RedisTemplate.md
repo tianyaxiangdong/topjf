@@ -18,7 +18,7 @@ tag:
 ## 依赖
 
 ```xml
-		<dependency>
+	<dependency>
            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
             <exclusions>
@@ -62,9 +62,9 @@ spring:
 
 ```
 
-[🚀🚀FastJson2JsonRedisSerializer](https://gitee.com/cps007/spring-boot-model/tree/master/spring-boot-model-base/src/main/java/cn/springboot/model/base/config/FastJson2JsonRedisSerializer.java)
+[🚀🚀FastJson2JsonRedisSerializer](https://gitee.com/cps007/spring-boot-model/blob/dev/src/main/java/cn/springboot/model/base/config/FastJson2JsonRedisSerializer.java)
 
-[🚀🚀RedisConfig](https://gitee.com/cps007/spring-boot-model/tree/master/spring-boot-model-base/src/main/java/cn/springboot/model/base/config/RedisConfig.java)
+[🚀🚀RedisConfig](https://gitee.com/cps007/spring-boot-model/blob/dev/src/main/java/cn/springboot/model/base/config/RedisConfig.java)
 
 ```java
 package cn.springboot.model.service.config;
@@ -137,7 +137,7 @@ public class RedisConfig {
 
 ## RedisUtils 工具类
 
-主要代码，具体请看[🏍 gitee源码🚀](https://gitee.com/cps007/spring-boot-model/blob/master/spring-boot-model-service/src/main/java/cn/springboot/model/service/utils/RedisUtils.java#)
+主要代码，具体请看[🏍 gitee源码🚀](https://gitee.com/cps007/spring-boot-model/blob/dev/src/main/java/cn/springboot/model/service/utils/RedisUtils.java)
 
 ```java
 
@@ -216,7 +216,7 @@ public class RedisUtils {
 
 ```
 
-aop使用例子 [实现基于 session+redis 的防重复提交](https://topjf.github.io/java/PreventDuplicateSubmissions.html)
+使用例子 [实现基于 session+redis 的防重复提交](https://topjf.github.io/java/PreventDuplicateSubmissions.html)
 
 ```java
 @Aspect
@@ -226,10 +226,6 @@ public class SubmitAspect {
     @Autowired
     private RedisUtils redisUtils;
     
-	@Pointcut("execution(public * *(..)) && @annotation(cn.springboot.model.base.annotation.Submit)")
-    public void submitPointCut() {
-    }
-
     @Around("submitPointCut()")
     public Object interceptor(ProceedingJoinPoint joinPoint) throws Throwable {
     	MethodSignature signature = (MethodSignature) joinPoint.getSignature();
