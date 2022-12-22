@@ -10,6 +10,7 @@ timeline: false
 # kubernetes
 
 - [基础](./basis.md)
+- [设置docker k8s快捷指令](./setting-alias.md)
 - [流水线部署](./deploys.md)
 - [Ingress](./ingress.md)
 - [安装常用应用服务](./install-application.md)
