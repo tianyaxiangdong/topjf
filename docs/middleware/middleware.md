@@ -10,8 +10,9 @@ timeline: false
 ## 中间件
 
 - [ES](./elastic-search.md)
-- [nginx](./nginx.md)
-- [redis](./redis/redis.md)
+- [Nginx](./nginx.md)
+- [Redis](./redis/redis.md)
+- [Redis工具类](./redis/RedisTemplate.md)
 
 ## MQ
 
