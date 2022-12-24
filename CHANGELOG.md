@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.23](https://github.com/topjf/topjf/compare/v3.6.22...v3.6.23) (2022-12-24)
+
+
+### 📚Docs
+
+* 更新Java新特性摘要，其他 ([61beca1](https://github.com/topjf/topjf/commit/61beca1f91977dcc0d1e53129ed5d14511fff53e))
+
 ## [3.6.22](https://github.com/topjf/topjf/compare/v3.6.21...v3.6.22) (2022-12-22)
 
 
