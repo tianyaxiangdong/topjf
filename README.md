@@ -95,7 +95,7 @@ npm config set registry https://registry.npm.taobao.org
 第一次安装时执行：`corepack enable`
 
 ```shell
-corepack prepare pnpm@7.18.2 --activate
+corepack prepare pnpm@7.19.0 --activate
 ```
 
 卸载：

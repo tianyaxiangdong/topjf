@@ -6,6 +6,8 @@ tag:
   - Java新特性
 ---
 
+<!-- more -->
+
 # Java8 新特性实战
 
 > 本文来自[cowbi](https://github.com/cowbi)的投稿~
