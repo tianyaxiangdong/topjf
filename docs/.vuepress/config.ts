@@ -2,6 +2,7 @@
 import theme from "./theme.ts";
 //import {cp, search} from "./plugins/index.ts";
 import searchPro from "./plugins/searchPro.ts";
+import autocatalog from "./plugins/autocatalog.ts";
 import {defineUserConfig, viteBundler} from "vuepress";
 import {copyCode} from "vuepress-theme-hope";
 
@@ -19,6 +20,7 @@ export default defineUserConfig({
     
     plugins: [
         searchPro,
+        autocatalog,
     ],
     
     bundler: viteBundler({
