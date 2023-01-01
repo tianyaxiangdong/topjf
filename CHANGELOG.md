@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.9.0](https://github.com/topjf/topjf/compare/v3.8.0...v3.9.0) (2023-01-01)
+
+
+### ✨Features
+
+* 更新 vuepress-theme-hope to beta.147，add auto catalog plugin ([be89282](https://github.com/topjf/topjf/commit/be89282f42a93a21e6aee337ded69b03a3e0dc9c))
+
 ## [3.8.0](https://github.com/topjf/topjf/compare/v3.7.0...v3.8.0) (2022-12-30)
 
 
