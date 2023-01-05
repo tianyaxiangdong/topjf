@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.10.1](https://github.com/topjf/topjf/compare/v3.10.0...v3.10.1) (2023-01-05)
+
+
+### 📚Docs
+
+* 更新导航栏 ([a54ec68](https://github.com/topjf/topjf/commit/a54ec68f6aa22a6b6055d5fb1958f39b314be095))
+
 ## [3.10.0](https://github.com/topjf/topjf/compare/v3.9.0...v3.10.0) (2023-01-05)
 
 
