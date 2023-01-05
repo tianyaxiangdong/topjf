@@ -1,6 +1,7 @@
 ---
 home: true
 title: 快速导航
+icon: arrow
 article: false
 timeline: false
 heroImage: /heihei.gif
