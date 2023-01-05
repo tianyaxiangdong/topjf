@@ -16,6 +16,6 @@ date: 2019-05-12
 网站框架支持：
 
 - [参考 Mister-Hope.github.io](https://github.com/Mister-Hope/Mister-Hope.github.io)
-- [vuepress-theme-hope官方文档](https://vuepress-theme-hope.github.io/v2/zh/)
+- [vuepress-theme-hope官方文档](https://theme-hope.vuejs.press/zh/)
 - [vuepress-theme-hope开源代码](https://github.com/vuepress-theme-hope/vuepress-theme-hope)
 - [npm版本查找](https://www.npmjs.com/package/vuepress-theme-hope)
