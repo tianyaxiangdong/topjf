@@ -3,7 +3,7 @@ import {navbar} from "vuepress-theme-hope";
 export const navbarConfig = navbar([
     "/",
     "/home",
-    {text: "面试宝典", link: "/all/all"},
+    {text: "面试宝典", icon: "overflow", link: "/all/all"},
    // {text: "升级专区", link: "/architecture/architecture"},
    // {text: "开源专区", link: "/open-source/open-source"},
    // {text: "技术书籍", link: "/books/books"},
