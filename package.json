@@ -26,7 +26,7 @@
         "@commitlint/config-conventional": "^17.4.0",
         "commitizen": "^4.2.6",
         "cz-conventional-changelog": "^3.3.0",
-        "husky": "^8.0.2",
+        "husky": "^8.0.3",
         "markdownlint-cli": "^0.32.2"
     },
     "packageManager": "pnpm@7.22.0",
