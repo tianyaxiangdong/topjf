@@ -1,8 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@commitlint/cli': ^17.3.0
-  '@commitlint/config-conventional': ^17.3.0
+  '@commitlint/cli': ^17.4.0
+  '@commitlint/config-conventional': ^17.4.0
   '@vuepress/client': 2.0.0-beta.60
   commitizen: ^4.2.5
   cz-conventional-changelog: ^3.3.0
