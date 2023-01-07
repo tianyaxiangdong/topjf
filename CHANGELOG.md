@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.11.0](https://github.com/topjf/topjf/compare/v3.10.1...v3.11.0) (2023-01-07)
+
+
+### ✨Features
+
+* package.json.ignoreMissing: add vuepress,@commitlint/cli ([a0451fa](https://github.com/topjf/topjf/commit/a0451fae3b3fde8c49feee5fe5bac9a7eb36c83a))
+* update vuepress-theme-hope to beta.152 ([c33deb9](https://github.com/topjf/topjf/commit/c33deb9e9080601affe35cb524e3b32e86026e60))
+* upgrade [@commitlint](https://github.com/commitlint)* to 17.4.0 ([5f92ab7](https://github.com/topjf/topjf/commit/5f92ab702f65978b533b2d2e9a9c6e9d4794b9ef))
+* upgrade commitizen to 4.2.6 ([febe68f](https://github.com/topjf/topjf/commit/febe68fb8d40c117cefdd7ab7affad0d2637d9b5))
+* upgrade husky to 8.0.3 ([ad423ef](https://github.com/topjf/topjf/commit/ad423efe08a1ddf541850d8f22cced898ce62d55))
+
 ## [3.10.1](https://github.com/topjf/topjf/compare/v3.10.0...v3.10.1) (2023-01-05)
 
 
