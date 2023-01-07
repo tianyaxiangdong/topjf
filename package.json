@@ -40,6 +40,8 @@
             "ignoreMissing": [
                 "@algolia/client-search",
                 "webpack",
+                "vuepress",
+                "@commitlint/cli",
                 "sass-loader"
             ]
         }
