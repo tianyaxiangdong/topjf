@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.11.1](https://github.com/topjf/topjf/compare/v3.11.0...v3.11.1) (2023-01-08)
+
+
+### 🐛Bug Fixes
+
+* 添加 WindTerm-SSH 终端工具 ([d08c160](https://github.com/topjf/topjf/commit/d08c16070d9c503e370b32942d2afaa693e347cb))
+
 ## [3.11.0](https://github.com/topjf/topjf/compare/v3.10.1...v3.11.0) (2023-01-07)
 
 
