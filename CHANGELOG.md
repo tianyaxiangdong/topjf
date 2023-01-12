@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.14.0](https://github.com/topjf/topjf/compare/v3.13.0...v3.14.0) (2023-01-12)
+
+
+### ✨Features
+
+* upgrade vuepress-theme-hope to beta.156, remove pwa.manifest ([cd56ced](https://github.com/topjf/topjf/commit/cd56ced79be3daa2e4075a98d3bcb0b47397ff8e))
+
 ## [3.13.0](https://github.com/topjf/topjf/compare/v3.12.0...v3.13.0) (2023-01-11)
 
 
