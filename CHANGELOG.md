@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.14.2](https://github.com/topjf/topjf/compare/v3.14.1...v3.14.2) (2023-01-13)
+
+
+### 📚Docs
+
+* 更新关于网站 ([b17d534](https://github.com/topjf/topjf/commit/b17d53425ff9bc4768015b67e51ff8543d115789))
+
 ## [3.14.1](https://github.com/topjf/topjf/compare/v3.14.0...v3.14.1) (2023-01-12)
 
 
