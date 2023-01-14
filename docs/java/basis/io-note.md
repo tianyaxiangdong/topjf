@@ -7,6 +7,7 @@ tag:
 - io
 ---
 
+<!-- more -->
 
 ![img](./io-note.assets/true-clip_image002.jpg)
 
