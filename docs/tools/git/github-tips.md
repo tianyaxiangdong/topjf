@@ -1,6 +1,6 @@
 ---
 icon: edit
-title:  Github 小技巧
+title:  Github小技巧
 category: 开发工具
 tag:
   - Git
@@ -142,9 +142,3 @@ Github 前段时间推出的 Codespaces 可以提供类似 VS Code 的在线 IDE
 GitHub Actions 有一个官方市场，上面有非常多别人提交的 Actions ，你可以直接拿来使用。
 
 ![](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/image-20211227100147433.png)
-
-## 后记
-
-这一篇文章，我毫无保留地把自己这些年总结的 Github 小技巧分享了出来，真心希望对大家有帮助，真心希望大家一定要利用好 Github 这个专属程序员的宝藏。
-
-另外，这篇文章中，我并没有提到 Github 搜索技巧。在我看来，Github 搜索技巧不必要记网上那些文章说的各种命令啥的，真没啥卵用。你会发现你用的最多的还是关键字搜索以及 Github 自带的筛选功能。
