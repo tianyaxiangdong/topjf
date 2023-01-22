@@ -1,3 +1,4 @@
+
 ---
 icon: edit
 title: nodejs配置
@@ -9,11 +10,12 @@ tag:
 
 <!-- more -->
 
-## linux 配置
-
 Node.js  [安装-教程](https://blog.csdn.net/qq_42476834/article/details/110789382)
 
 [官网下载](http://nodejs.cn/download/)
+
+
+## linux 配置
 
 ```bash
 tar -zxvf 下载的tar包路径 -C 存放目标路劲
@@ -43,17 +45,20 @@ npm config set registry https://registry.npm.taobao.org
 ```shell
 npm config set registry https://registry.npmjs.org
 ```
-查看配置：npm config list
+查看配置：`npm config list`
 
 `npx -p npm@6 npm i --legacy-peer-deps`
 
-### 安装 pnpm
+### 使用 corepack 安装 pnpm
 
-```
+- 安装
+
+```bash
 corepack enable
 corepack prepare pnpm@7.14.2 --activate
 ```
-卸载：`corepack disable pnpm`
+
+- 卸载：`corepack disable pnpm`
 
 ### 安装 cnpm
 
@@ -66,7 +71,7 @@ cnpm -v
 
 > "user" config from /home/jf123/.npmrc
 
-### 全局模块的位置
+### 全局模块存储设置
 
 创建文件夹：`node_global`、`node_cache`
 
@@ -98,29 +103,29 @@ npm config list
 
 ```bash
 export NODE_PATH=/rj/nodejs/
-export PATH=$PATH:${NODE_PATH}/bin #:${NODE_M_PATH}
+export PATH=$PATH:${NODE_PATH}/bin
 ```
 
-`source /etc/profile`
+- 刷新配置生效：`source /etc/profile`
 
-`node -v && npm -v`
+- 查看：`node -v && npm -v`
 
 ```
 npm i -g element-ui -S && npm install -g webpack && npm install -D webpack-cli -g
 ```
+
 > `npm install -g vue-cli` 会存放在`/rj/nodejs/node_global/{bin,lib}`目录下
 
-## window配置
 
-[下载msi v14.18.3 安装](https://cdn.npm.taobao.org/dist/node/v14.18.3/node-v14.18.3-x64.msi)
-
-[下载msi 16.13.2 安装](https://cdn.npm.taobao.org/dist/node/v16.13.2/node-v16.13.2-x64.msi)
+## window 配置
 
 ### 配置npm淘宝源
 
-`npm config set registry http://registry.npm.taobao.org`
+```bash
+npm config set registry http://registry.npm.taobao.org
+```
 
-### 全局模块的位置
+### 全局模块存储设置
 
 创建文件夹：`node_global`、`node_cache`
 
@@ -133,18 +138,45 @@ npm config set cache "D:\rj-win\nodejs\node_cache"
 
 ### 配置环境变量
 
-NODE_PATH ： `D:\rj-win\nodejs\node_global\node_modules` 
+NODE_HOME: `D:\rj-win\nodejs`
 
-path： `D:\rj-win\nodejs\` 
+系统变量.Path：`%NODE_HOME%\node_global\node_modules`
 
+### 安装 pnpm
 
-## vue 模块化开发
+- 使用npm安装
 
-项目打包 webpack：`npm install -g webpack` 、`npm install -D webpack-cli -g`
+安装：`npm install -g pnpm`
 
-程序 @vue/cli-init： `npm install -g vue-cli`
+配置pnpm环境变量: *系统属性.环境变量.系统变量.Path*：`%NODE_HOME%\node_global\pnpm`
+
+- 使用PowerShell安装
+
+```shell
+PS C:\Users\k> iwr https://get.pnpm.io/install.ps1 -useb | iex                                                          
+
+Downloading '@pnpm/win-x64' from 'npmjs.com' registry...
+
+Extracting downloaded '7.25.1' archive...
+
+Running setup...
+
+Copying pnpm CLI from C:\Users\k\AppData\Local\Temp\tmpE1F.tmp.extracted\package\pnpm.exe to C:\Users\k\AppData\Local\pnpm\pnpm.exe
+
+Next configuration changes were made:
+PNPM_HOME=C:\Users\k\AppData\Local\pnpm
+Path=%PNPM_HOME%;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;%IntelliJ IDEA%;C:\Users\k\AppData\Roaming\npm;%PyCharm%;D:\rj-win\Microsoft VS Code\bin;
+
+Setup complete. Open a new terminal to start using pnpm.
+```
+
+重启计算机后查看：`pnpm -v`
+
+```
+PS C:\Users\k> pnpm -v
+7.25.1
+```
+
+### 全局安装测试
 
 引入 elementui：`npm i -g element-ui -S`
-
-
-
