@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.15.0](https://github.com/topjf/topjf/compare/v3.14.3...v3.15.0) (2023-01-22)
+
+
+### 📚Docs
+
+* 更新nodejs配置文档 ([61f9385](https://github.com/topjf/topjf/commit/61f93859d21a2db95c8daf8202c68949c0171f8c))
+
+
+### 🐛Bug Fixes
+
+* pnpm to 7.25.1 ([9fa9659](https://github.com/topjf/topjf/commit/9fa96592e782df21744447770e5b6f0014d3969c))
+
+
+### ✨Features
+
+* upgrade vuepress-theme-hope to beta.165 ([6b02eca](https://github.com/topjf/topjf/commit/6b02eca35eb43191a9b07d64d60e07a004ec776b))
+
 ## [3.14.3](https://github.com/topjf/topjf/compare/v3.14.2...v3.14.3) (2023-01-14)
 
 
