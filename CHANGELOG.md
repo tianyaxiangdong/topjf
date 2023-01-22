@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.15.1](https://github.com/topjf/topjf/compare/v3.15.0...v3.15.1) (2023-01-22)
+
+
+### 🐛Bug Fixes
+
+* 取消首页自定义背景图像 ([5f2ef99](https://github.com/topjf/topjf/commit/5f2ef997531d47aa9402e7cdbd4235dd129399fb))
+
 ## [3.15.0](https://github.com/topjf/topjf/compare/v3.14.3...v3.15.0) (2023-01-22)
 
 
