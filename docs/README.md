@@ -5,7 +5,7 @@ icon: home
 article: false
 timeline: false
 title: 首页
-bgImage: /heihei.gif
+#bgImage: /heihei.gif
 #heroImage: /heihei.gif
 heroText: topjf
 heroFullScreen: false
