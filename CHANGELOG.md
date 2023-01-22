@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.15.2](https://github.com/topjf/topjf/compare/v3.15.1...v3.15.2) (2023-01-22)
+
+
+### 🐛Bug Fixes
+
+* 修复nodejs设置文档 ([30f6da2](https://github.com/topjf/topjf/commit/30f6da2a7fa43d89bf2d28dd33f3106915a5a7f6))
+
 ## [3.15.1](https://github.com/topjf/topjf/compare/v3.15.0...v3.15.1) (2023-01-22)
 
 
