@@ -83,7 +83,7 @@ timeline: false
 
 - 设置淘宝源
 
-配置查看：npm config list
+配置查看：`npm config list`
 
 ```shell
 npm config set registry https://registry.npm.taobao.org
@@ -95,7 +95,7 @@ npm config set registry https://registry.npm.taobao.org
 第一次安装时执行：`corepack enable`
 
 ```shell
-corepack prepare pnpm@7.22.0 --activate
+corepack prepare pnpm@7.25.1 --activate
 ```
 
 卸载：
