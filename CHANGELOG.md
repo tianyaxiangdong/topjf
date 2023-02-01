@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.17.1](https://github.com/topjf/topjf/compare/v3.17.0...v3.17.1) (2023-02-01)
+
+
+### 🐛Bug Fixes
+
+* 降级vuepress-theme-hope到170版本，修复一些已知问题 ([18393df](https://github.com/topjf/topjf/commit/18393df1fd571016adbe63ed0840f5dbe61ee2c7))
+
 ## [3.17.0](https://github.com/topjf/topjf/compare/v3.16.0...v3.17.0) (2023-02-01)
 
 
