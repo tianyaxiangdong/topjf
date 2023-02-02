@@ -1,15 +1,14 @@
 // .vuepress/config.ts
+import {defineUserConfig, viteBundler} from "vuepress";
 import theme from "./theme.ts";
-//import {cp, search} from "./plugins/index.ts";
 import searchPro from "./plugins/searchPro.ts";
 import autocatalog from "./plugins/autocatalog.ts";
-import {defineUserConfig, viteBundler} from "vuepress";
-import {copyCode} from "vuepress-theme-hope";
+import mycomponents from "./plugins/mycomponents.ts";
 
 export default defineUserConfig({
-    
+
     base: "/",
-    
+
     locales: {
         "/": {
             lang: "zh-CN",
@@ -17,12 +16,13 @@ export default defineUserConfig({
             description: "꧁「小牛专属笔记本」꧂",
         },
     },
-    
+
     plugins: [
         searchPro,
         autocatalog,
+        mycomponents,
     ],
-    
+
     bundler: viteBundler({
         viteOptions: {
             build: {
@@ -34,7 +34,7 @@ export default defineUserConfig({
         },
         vuePluginOptions: {},
     }),
-    
+
     markdown: {
         anchor: {
             level: [2, 3, 4],
@@ -46,15 +46,15 @@ export default defineUserConfig({
             level: [2, 3, 4],
         },
     },
-    
+
     head: [
         ["script", {type: 'text/javascript', src: '/script/demo.js'}],
-        ["link",{rel: "stylesheet", href: "/iconfont/iconfont.css"}],
+        ["link", {rel: "stylesheet", href: "/iconfont/iconfont.css"}],
     ],
-    
+
     theme,
-    
+
     //预读取，开启pwa后建议为false
     shouldPrefetch: false,
-    
+
 });
