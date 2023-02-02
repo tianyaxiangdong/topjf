@@ -2,7 +2,6 @@
 import {defineUserConfig, viteBundler} from "vuepress";
 import theme from "./theme.ts";
 import searchPro from "./plugins/searchPro.ts";
-import autocatalog from "./plugins/autocatalog.ts";
 import mycomponents from "./plugins/mycomponents.ts";
 
 export default defineUserConfig({
@@ -19,7 +18,6 @@ export default defineUserConfig({
 
     plugins: [
         searchPro,
-        autocatalog,
         mycomponents,
     ],
 

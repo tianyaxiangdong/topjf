@@ -1,54 +1,53 @@
 {
-    "name": "topjf",
-    "version": "3.17.1",
-    "description": "TOPJF.笔记",
-    "license": "MIT",
-    "scripts": {
-        "build:vite": "vuepress-vite build docs",
-        "dev:vite": "vuepress-vite dev docs",
-        "dev:vite-clean": "vuepress-vite dev docs --clean-cache",
-        "test": "echo ======> demo test out!",
-        "commit": "git-cz",
-        "lint-md": "markdownlint **/*.md --ignore node_modules --fix",
-        "prepare": "husky install"
-    },
-    "dependencies": {
-        "@vuepress/client": "2.0.0-beta.60",
-        "vue": "^3.2.45",
-        "vuepress": "2.0.0-beta.60",
-        "vuepress-plugin-search-pro": "2.0.0-beta.170",
-        "vuepress-plugin-components": "2.0.0-beta.170",
-        "vuepress-plugin-auto-catalog": "2.0.0-beta.170",
-        "vuepress-theme-hope": "2.0.0-beta.170",
-        "vuepress-vite": "2.0.0-beta.60"
-    },
-    "devDependencies": {
-        "@commitlint/cli": "^17.4.0",
-        "@commitlint/config-conventional": "^17.4.0",
-        "commitizen": "^4.2.6",
-        "cz-conventional-changelog": "^3.3.0",
-        "husky": "^8.0.3",
-        "markdownlint-cli": "^0.32.2"
-    },
-    "engines": {
-        "node": ">=14",
-        "npm": ">=8",
-        "pnpm": ">=7"
-    },
-    "pnpm": {
-        "peerDependencyRules": {
-            "ignoreMissing": [
-                "@algolia/client-search",
-                "webpack",
-                "vuepress",
-                "@commitlint/cli",
-                "sass-loader"
-            ]
-        }
-    },
-    "config": {
-        "commitizen": {
-            "path": "./node_modules/cz-conventional-changelog"
-        }
+  "name": "topjf",
+  "version": "3.17.1",
+  "description": "TOPJF.笔记",
+  "license": "MIT",
+  "scripts": {
+    "build:vite": "vuepress-vite build docs",
+    "dev:vite": "vuepress-vite dev docs",
+    "dev:vite-clean": "vuepress-vite dev docs --clean-cache",
+    "test": "echo ======> demo test out!",
+    "commit": "git-cz",
+    "lint-md": "markdownlint **/*.md --ignore node_modules --fix",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@vuepress/client": "2.0.0-beta.60",
+    "vue": "^3.2.45",
+    "vuepress": "2.0.0-beta.60",
+    "vuepress-plugin-search-pro": "2.0.0-beta.170",
+    "vuepress-plugin-components": "2.0.0-beta.170",
+    "vuepress-theme-hope": "2.0.0-beta.170",
+    "vuepress-vite": "2.0.0-beta.60"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.0",
+    "@commitlint/config-conventional": "^17.4.0",
+    "commitizen": "^4.2.6",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.3",
+    "markdownlint-cli": "^0.32.2"
+  },
+  "engines": {
+    "node": ">=14",
+    "npm": ">=8",
+    "pnpm": ">=7"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "webpack",
+        "vuepress",
+        "@commitlint/cli",
+        "sass-loader"
+      ]
     }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
