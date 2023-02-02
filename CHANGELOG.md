@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.17.2](https://github.com/topjf/topjf/compare/v3.17.1...v3.17.2) (2023-02-02)
+
+
+### 🐛Bug Fixes
+
+* update components plugin setting ([d65505d](https://github.com/topjf/topjf/commit/d65505dfb494c1881dcd37cced6d6ffac3fc196e))
+* 更新与删除多余配置文件 ([04adc32](https://github.com/topjf/topjf/commit/04adc321469c70b2d87cd3f659979f1904369b08))
+
 ## [3.17.1](https://github.com/topjf/topjf/compare/v3.17.0...v3.17.1) (2023-02-01)
 
 
