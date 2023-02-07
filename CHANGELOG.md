@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.18.0](https://github.com/topjf/topjf/compare/v3.17.2...v3.18.0) (2023-02-07)
+
+
+### 🐛Bug Fixes
+
+* 取消手动引入auto-catalog插件 ([646e64c](https://github.com/topjf/topjf/commit/646e64c6d907bb65a4a57f7a5c90f6c5d48a96c6))
+* 更改components插件选项设置 ([5ba4d67](https://github.com/topjf/topjf/commit/5ba4d676eac62a487ed8fc48769bf4dbd9d8b790))
+* 更新主题配置选项 ([963635a](https://github.com/topjf/topjf/commit/963635ae2cea8138db7d61d8ecf4b9f1fbe58f48))
+
+
+### ✨Features
+
+* 升级vuepress-theme-hope到172 ([487b34e](https://github.com/topjf/topjf/commit/487b34ef2276eed8b938d9aad3c118bed47c4817))
+
 ## [3.17.1](https://github.com/topjf/topjf/compare/v3.17.0...v3.17.1) (2023-02-01)
 
 
