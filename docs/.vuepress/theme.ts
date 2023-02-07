@@ -4,35 +4,35 @@ import {sidebarConfig} from "./sidebars/index.ts";
 
 export default hopeTheme({
     logo: "/logo.png",
-    
+
     hostname: "https://topjf.github.io/",
-    
+
     author: {
         name: "topjf",
         // 根据自己的域名设置
         url: "/article",
     },
-    
+
     darkmode: "toggle",/*toggle,auto*/
-    
+
     //仓库
     repo: "https://github.com/topjf/topjf",
-    
+
     //文档在仓库中的目录
     docsDir: "docs",
-    
+
     //文档存放分支
     docsBranch: "main",
-    
+
     iconAssets: "iconfont",
     iconPrefix: "iconfont icon-",
-    
+
     pure: false,
-    
+
     fullscreen: true,
-    
+
     pageInfo: ["Author", "Category", "Tag", "Date", "Original", "Word", "PageView", "ReadingTime"],
-    
+
     locales: {
         "/": {
             // 导航栏
@@ -45,7 +45,7 @@ export default hopeTheme({
                 intro: "/about/about-this",
                 sidebarDisplay: "mobile",
                 description: "",
-            
+
                 medias: {
                     Gitee: "https://gitee.com/topsjf/topsjf",
                     Github: "https://github.com/topjf/topjf",
@@ -76,7 +76,7 @@ export default hopeTheme({
             ],
                 },
             },
-    
+
             // page meta
             metaLocales: {
                 editLink: "编辑此页",
@@ -85,11 +85,11 @@ export default hopeTheme({
     },
 
     footer: "", //'<a href="https://beian.miit.gov.cn/" target="_blank">黔ICP备2022xxxxxx号-1</a>',
-          
+
     displayFooter: true,
-    
+
     plugins: {
-        
+
         //评论模块 
         comment: {
             // 评论模块设置教程：https://vuepress-theme-hope.github.io/v2/zh/guide/feature/comment.html
@@ -100,10 +100,12 @@ export default hopeTheme({
             category: "Announcements",
             categoryId: "DIC_kwDOIZQJAs4CSb_Z",
         },
-        
+
         //其他插件
-        components: ["Badge","BiliBili","CodePen","PDF","StackBlitz","VideoPlayer","YouTube"],
-        
+        components: {
+            components: ["Badge","BiliBili","CodePen","PDF","StackBlitz","VideoPlayer","YouTube"],
+        },
+
         //md增强
         mdEnhance: {
             align: true,
@@ -142,26 +144,26 @@ export default hopeTheme({
             imageSize: true,
             imageLazyload: true,
             imageTitle: true,
-            
+
         },
-        
+
         copyCode: {
             showInMobile: true,
         },
-        
+
         photoSwipe: true,
-        
+
         blog: {
             autoExcerpt: true,
         },
-        
+
         feed: {
             atom: true,
             rss: true,
             json: true,
         },
-        
-        pwa: {  
+
+        pwa: {
             update: "hint",
             cachePic: true,
             maxSize: 1024 * 8,
@@ -178,7 +180,7 @@ export default hopeTheme({
                 color: "#ffffff",
             },
         },
-    
+
     },
 });
 
