@@ -5,8 +5,8 @@ icon: arrow
 article: false
 timeline: false
 heroImage: /heihei.gif
-heroText: 快速导航
-#tagline: 快速导航
+heroText: 分类
+tagline: 快速导航
 actions:
 
 - text: 博客主页 🏠
