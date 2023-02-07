@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.18.1](https://github.com/topjf/topjf/compare/v3.18.0...v3.18.1) (2023-02-07)
+
+
+### 🐛Bug Fixes
+
+* 修复git入门与小技巧 ([a57c1e8](https://github.com/topjf/topjf/commit/a57c1e887daaccd4811c21945b8ddf30c1a107b0))
+
 ## [3.18.0](https://github.com/topjf/topjf/compare/v3.17.2...v3.18.0) (2023-02-07)
 
 
