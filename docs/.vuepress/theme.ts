@@ -47,7 +47,7 @@ export default hopeTheme({
                 description: "",
 
                 medias: {
-                    Gitee: "https://gitee.com/topsjf/topsjf",
+                    Gitee: "https://gitee.com/topjf/topjf",
                     Github: "https://github.com/topjf/topjf",
                     Zhihu: "https://www.zhihu.com/people/tops6",
                     OSChina: [
