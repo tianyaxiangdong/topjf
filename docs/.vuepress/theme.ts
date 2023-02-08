@@ -104,6 +104,11 @@ export default hopeTheme({
         //其他插件
         components: {
             components: ["Badge", "BiliBili", "CodePen", "PDF", "StackBlitz", "VideoPlayer", "YouTube"],
+            componentOptions: {
+                pdf: {
+                    pdfjs: "/assets/lib/pdfjs",
+                },
+            },
         },
 
         //md增强
