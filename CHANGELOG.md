@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.18.2](https://github.com/topjf/topjf/compare/v3.18.1...v3.18.2) (2023-02-08)
+
+
+### 🐛Bug Fixes
+
+* 取消collapsable可折叠 ([efba3a5](https://github.com/topjf/topjf/commit/efba3a552c2675a583bb94e1b61e12549b1300de))
+* 更新项目说明 ([6afc74e](https://github.com/topjf/topjf/commit/6afc74e3248d90843ee680ebc393d72b0171d977))
+
 ## [3.18.1](https://github.com/topjf/topjf/compare/v3.18.0...v3.18.1) (2023-02-07)
 
 
