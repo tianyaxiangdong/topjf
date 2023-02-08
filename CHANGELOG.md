@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.18.7](https://github.com/topjf/topjf/compare/v3.18.6...v3.18.7) (2023-02-08)
+
+
+### 🐛Bug Fixes
+
+* 修复test测试的图片引入 ([49d906e](https://github.com/topjf/topjf/commit/49d906e0c7765b07ef9e4ad560719d7c44685194))
+
 ## [3.18.6](https://github.com/topjf/topjf/compare/v3.18.5...v3.18.6) (2023-02-08)
 
 
