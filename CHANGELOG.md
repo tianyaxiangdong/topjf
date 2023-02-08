@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.18.4](https://github.com/topjf/topjf/compare/v3.18.3...v3.18.4) (2023-02-08)
+
+
+### 🐛Bug Fixes
+
+* 适配手机端pdfjs支持 ([3dc7282](https://github.com/topjf/topjf/commit/3dc7282140ecbbec07490d90ee54dfc937638d5a))
+
 ## [3.18.3](https://github.com/topjf/topjf/compare/v3.18.2...v3.18.3) (2023-02-08)
 
 
