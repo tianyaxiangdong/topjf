@@ -98,7 +98,7 @@ console.log('你好，VuePress！')
 
 ![](./test.assets/true-image-20220707221104478.png)
 
-![](./spring-cloud-alibaba-note-basis.assets/true-image-20210601002120191.png)
+![](./java/spring-cloud-alibaba-note-basis.assets/true-image-20210601002120191.png)
 
 ```yaml
 spring:

@@ -211,9 +211,8 @@ cloud:
 RenrenApplication
 @EnableDiscoveryClient
 ```
-<img src="./spring-cloud-alibaba-note-basis.assets/true-image-20210601002120191.png" />
 
-![image-20210601002120191.png](./spring-cloud-alibaba-note-basis.assets/true-image-20210601002120191.png)
+![](./spring-cloud-alibaba-note-basis.assets/true-image-20210601002120191.png)
 
 访问
 
