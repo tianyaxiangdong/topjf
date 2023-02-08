@@ -26,7 +26,6 @@ export const javaJson =
                     "web-servlet-jsp",
                 ]
             },
-            "test",
             "java-log",
             "java-jsr303",
             "java-exception",

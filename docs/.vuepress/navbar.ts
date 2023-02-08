@@ -28,4 +28,5 @@ export const navbarConfig = navbar([
             {text: "VuePress Theme Hope 文档", icon: "creative", link: "https://theme-hope.vuejs.press/zh/"},
         ],
     },
+    {text: "Markdown测试", icon: "overflow", link: "/test"},
 ]);

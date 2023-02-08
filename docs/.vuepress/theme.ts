@@ -103,7 +103,7 @@ export default hopeTheme({
 
         //其他插件
         components: {
-            components: ["Badge", "BiliBili", "CodePen", "PDF", "StackBlitz", "VideoPlayer", "YouTube"],
+            components: ["ArtPlayer", "AudioPlayer", "Badge", "BiliBili", "CodePen", "FontIcon", "PDF", "StackBlitz", "SiteInfo", "VideoPlayer", "XiGua", "YouTube"],
             componentOptions: {
                 pdf: {
                     pdfjs: "/assets/lib/pdfjs",
