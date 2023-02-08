@@ -12,7 +12,7 @@ export const databaseJson =
                 text: "MySQL",
                 icon: "mysql",
                 prefix: "mysql/",
-                collapsable: true,
+                // collapsable: true,
                 //children: [
                 //    "install",
                 //    "MySQL",

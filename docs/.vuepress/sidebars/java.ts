@@ -13,7 +13,7 @@ export const javaJson =
                 text: "基础",
                 icon: "java",
                 prefix: "basis/",
-                collapsable: true,
+                // collapsable: true,
                 children: [
                     "arraylist",
                     "basic-grammar",
@@ -54,7 +54,7 @@ export const javaJson =
                 text: "新特性",
                 prefix: "new-features/",
                 icon: "featured",
-                collapsable: true,
+                // collapsable: true,
                 children: [
                     "java8-common-new-features",
                     "java8-tutorial-translate",

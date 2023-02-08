@@ -20,7 +20,7 @@ export const toolsJson =
                 text: "数据库管理工具",
                 icon: "database",
                 prefix: "database/",
-                collapsable: true,
+                // collapsable: true,
                 children: "structure",
                 //children: ["CHINER", "datagrip", "DBeaver", "screw"],
             },
@@ -28,7 +28,7 @@ export const toolsJson =
                 text: "Git",
                 icon: "git",
                 prefix: "git/",
-                collapsable: true,
+                // collapsable: true,
                 children: "structure",
                 //children: [
                 //    "git-setting",

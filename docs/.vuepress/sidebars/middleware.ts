@@ -12,7 +12,7 @@ export const middlewareJson =
                 text: "消息中间件",
                 icon: "tool",
                 prefix: "mq/",
-                collapsable: true,
+                // collapsable: true,
                 children: "structure",
                 //children: [
                 //    "mq-rabbit",
@@ -26,7 +26,7 @@ export const middlewareJson =
                 text: "Redis",
                 icon: "redis",
                 prefix: "redis/",
-                collapsable: true,
+                // collapsable: true,
                 children: "structure",
                 //children: [
                  //   "redis",
