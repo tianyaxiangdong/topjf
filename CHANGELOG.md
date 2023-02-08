@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.18.5](https://github.com/topjf/topjf/compare/v3.18.4...v3.18.5) (2023-02-08)
+
+
+### 🐛Bug Fixes
+
+* 修复pdfjs配置 ([e7119d4](https://github.com/topjf/topjf/commit/e7119d45569c64f3464eec32570c2e316ba602c3))
+
 ## [3.18.4](https://github.com/topjf/topjf/compare/v3.18.3...v3.18.4) (2023-02-08)
 
 
