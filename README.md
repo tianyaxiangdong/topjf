@@ -2,7 +2,7 @@
 
 - [🚀🚀预览🚀🚀](https://topjf.github.io/)
 - [github](https://github.com/topjf/topjf)
-- [gitee](https://gitee.com/topsjf/topsjf)
+- [gitee](https://gitee.com/topjf/topjf)
 - vuepress-theme-hope：[文档](https://theme-hope.vuejs.press/zh/)、[github](https://github.com/vuepress-theme-hope/vuepress-theme-hope)
 - [使用Java压缩md文件中使用到的图片](https://gitee.com/cps007/imgfileserve)
 - [参考 Mister-Hope.github.io](https://github.com/Mister-Hope/Mister-Hope.github.io)
@@ -120,11 +120,11 @@ npm init vuepress-theme-hope@next docs
 
 - 技术版本列表
 
-| 技术                      | 地址                                                                                                |
-|-------------------------|---------------------------------------------------------------------------------------------------|
-| node                    | <a href="https://www.npmjs.com/package/node" target="_blank">16.x</a>                          |
-| npm                     | <a href="https://www.npmjs.com/package/npm" target="_blank">8.x</a>                            |
-| pnpm                    | <a href="https://www.npmjs.com/package/pnpm" target="_blank">7.x</a>                           |
-| vue                     | <a href="https://www.npmjs.com/package/vue" target="_blank">🚀🚀</a>                           |
-| vuepress-theme-hope     | <a href="https://www.npmjs.com/package/vuepress-theme-hope" target="_blank">🚀🚀</a>           |
-| vuepress                | <a href="https://www.npmjs.com/package/vuepress" target="_blank">🚀🚀</a>                      |
+| 技术                  | 地址                                                                                   |
+|---------------------|--------------------------------------------------------------------------------------|
+| node                | <a href="https://www.npmjs.com/package/node" target="_blank">16.x</a>                |
+| npm                 | <a href="https://www.npmjs.com/package/npm" target="_blank">8.x</a>                  |
+| pnpm                | <a href="https://www.npmjs.com/package/pnpm" target="_blank">7.x</a>                 |
+| vue                 | <a href="https://www.npmjs.com/package/vue" target="_blank">🚀🚀</a>                 |
+| vuepress-theme-hope | <a href="https://www.npmjs.com/package/vuepress-theme-hope" target="_blank">🚀🚀</a> |
+| vuepress            | <a href="https://www.npmjs.com/package/vuepress" target="_blank">🚀🚀</a>            |
