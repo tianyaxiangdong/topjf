@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.18.6](https://github.com/topjf/topjf/compare/v3.18.5...v3.18.6) (2023-02-08)
+
+
+### 🐛Bug Fixes
+
+* 更新test文件-视频引入、导航设置 ([2e03e28](https://github.com/topjf/topjf/commit/2e03e287ecf8965d8dd6c034e98458a65ddc2eac))
+
 ## [3.18.5](https://github.com/topjf/topjf/compare/v3.18.4...v3.18.5) (2023-02-08)
 
 
