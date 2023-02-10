@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.19.2](https://github.com/topjf/topjf/compare/v3.19.1...v3.19.2) (2023-02-10)
+
+
+### 🧪Tests
+
+* add 为girl演示 ([cf6c706](https://github.com/topjf/topjf/commit/cf6c706e1c794439f1e265fbb4c9d1725ad58cbb))
+
 ## [3.19.1](https://github.com/topjf/topjf/compare/v3.19.0...v3.19.1) (2023-02-10)
 
 
