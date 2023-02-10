@@ -29,4 +29,5 @@ export const navbarConfig = navbar([
         ],
     },
     {text: "Markdown测试", icon: "overflow", link: "/test"},
+    {text: "为girl演示", icon: "like", link: "/live"},
 ]);
