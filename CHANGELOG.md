@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.19.0](https://github.com/topjf/topjf/compare/v3.18.7...v3.19.0) (2023-02-10)
+
+
+### ✨Features
+
+* 升级vuepress-theme-hope到173â ([8516de0](https://github.com/topjf/topjf/commit/8516de04323f40716667c49ad210b7880dab0444))
+
+
+### 🐛Bug Fixes
+
+* 取消加密文章 ([a02a293](https://github.com/topjf/topjf/commit/a02a2932ec398d261330fc9b44fefa883a181ab8))
+
 ## [3.18.7](https://github.com/topjf/topjf/compare/v3.18.6...v3.18.7) (2023-02-08)
 
 
