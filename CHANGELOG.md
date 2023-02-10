@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.19.1](https://github.com/topjf/topjf/compare/v3.19.0...v3.19.1) (2023-02-10)
+
+
+### 🎨Styling
+
+* 启用主题颜色风格选项 ([7226e49](https://github.com/topjf/topjf/commit/7226e49a5eb9b75c3ee6835d30a5b66a18f2838b))
+
 ## [3.19.0](https://github.com/topjf/topjf/compare/v3.18.7...v3.19.0) (2023-02-10)
 
 
