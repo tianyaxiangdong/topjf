@@ -29,6 +29,12 @@ export default hopeTheme({
 
     pure: false,
 
+    themeColor: {
+        red: "#e83838",
+        green: "#28af73",
+        orange: "#fb9b5f",
+    },
+
     fullscreen: true,
 
     pageInfo: ["Author", "Category", "Tag", "Date", "Original", "Word", "PageView", "ReadingTime"],
