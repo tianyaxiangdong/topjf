@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.20.1](https://github.com/topjf/topjf/compare/v3.20.0...v3.20.1) (2023-02-13)
+
+
+### 📚Docs
+
+* 更新测试页 ([24b3d7a](https://github.com/topjf/topjf/commit/24b3d7a12e65866c6c581549601c9335fcb73b6b))
+
 ## [3.20.0](https://github.com/topjf/topjf/compare/v3.19.2...v3.20.0) (2023-02-13)
 
 
