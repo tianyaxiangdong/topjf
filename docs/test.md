@@ -34,14 +34,6 @@ tag:
 
 全 都 是 名 场 面 2
 
-<BiliBili bvid="BV1t84y1677N" />
-
-全 都 是 名 场 面 3
-
-<BiliBili bvid="BV1qv4y1R71R" />
-
-全 都 是 名 场 面 4
-
 <ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4" airplay aspect-ratio auto-size auto-orientation auto-playback fast-forward flip fullscreen-web lock loop is-live muted mini-progress-bar pip screenshot subtitle-offset />
 
 
