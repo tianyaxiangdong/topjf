@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.20.2](https://github.com/topjf/topjf/compare/v3.20.1...v3.20.2) (2023-02-13)
+
+
+### 📚Docs
+
+* 添加idea常用快捷键 ([19796a4](https://github.com/topjf/topjf/commit/19796a4122e3a445f4cd00577fc7a51cbc953c28))
+
 ## [3.20.1](https://github.com/topjf/topjf/compare/v3.20.0...v3.20.1) (2023-02-13)
 
 
