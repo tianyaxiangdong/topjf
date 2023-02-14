@@ -1,7 +1,7 @@
 ---
 icon: edit
 title: 为girl演示
-#是否显示在时间线
+article: false
 timeline: false
 ---
 
