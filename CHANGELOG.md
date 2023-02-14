@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.20.3](https://github.com/topjf/topjf/compare/v3.20.2...v3.20.3) (2023-02-14)
+
+
+### 📚Docs
+
+* 取消live文件是文章 ([43610d5](https://github.com/topjf/topjf/commit/43610d57b3b9b390423c2cff71bde3d02d87e397))
+
 ## [3.20.2](https://github.com/topjf/topjf/compare/v3.20.1...v3.20.2) (2023-02-13)
 
 
