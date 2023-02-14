@@ -1,10 +1,10 @@
-## topsjf
+## topjf
 
 - [🚀🚀预览🚀🚀](https://topjf.github.io/)
 - [github](https://github.com/topjf/topjf)
 - [gitee](https://gitee.com/topjf/topjf)
 - vuepress-theme-hope：[文档](https://theme-hope.vuejs.press/zh/)、[github](https://github.com/vuepress-theme-hope/vuepress-theme-hope)
-- [使用Java压缩md文件中使用到的图片](https://gitee.com/cps007/imgfileserve)
+- [使用Java压缩md文件中使用到的图片](https://gitee.com/cps007/markdown-img)
 - [参考 Mister-Hope.github.io](https://github.com/Mister-Hope/Mister-Hope.github.io)
 
 -------
@@ -95,7 +95,7 @@ npm config set registry https://registry.npm.taobao.org
 第一次安装时执行：`corepack enable`
 
 ```shell
-corepack prepare pnpm@7.25.1 --activate
+corepack prepare pnpm@7.27.0 --activate
 ```
 
 卸载：
