@@ -89,8 +89,13 @@ timeline: false
 npm config set registry https://registry.npm.taobao.org
 ```
 
-- 安装Pnpm：
+- 安装 pnpm@7.27.0：
 
+- - window
+
+下载地址：[github.com-pnpm-releases](https://github.com/pnpm/pnpm/releases)
+
+- - Linux
 
 第一次安装时执行：`corepack enable`
 
