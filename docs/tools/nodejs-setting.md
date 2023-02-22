@@ -11,7 +11,9 @@ tag:
 
 Node.js  [安装-教程](https://blog.csdn.net/qq_42476834/article/details/110789382)
 
-[官网下载](http://nodejs.cn/download/)
+[node 官网下载](http://nodejs.cn/download/)
+
+[pnpm 官网安装教程](https://pnpm.io/zh/installation)
 
 
 ## linux 配置
@@ -26,24 +28,20 @@ node -v && npm -v
 
 更新node： npm install -g npm 
 
-node    : 	npm
-16.15.1:8.2.0
-v16.13.2：8.1.2
-v14.18.1：6.14.15
-v14.17.1：6.14.14
-v14.17.0：6.14.13
-v14.15.5：6.14.11
-v14.15.0：6.14.8
 ```
 
 设置淘宝镜像源
+
 ```shell
 npm config set registry https://registry.npm.taobao.org
 ```
+
 需要换回时改为官方的镜像源
+
 ```shell
 npm config set registry https://registry.npmjs.org
 ```
+
 查看配置：`npm config list`
 
 `npx -p npm@6 npm i --legacy-peer-deps`
@@ -54,7 +52,7 @@ npm config set registry https://registry.npmjs.org
 
 ```bash
 corepack enable
-corepack prepare pnpm@7.14.2 --activate
+corepack prepare pnpm@7.27.1 --activate
 ```
 
 - 卸载：`corepack disable pnpm`
@@ -110,7 +108,7 @@ export PATH=$PATH:${NODE_PATH}/bin
 - 查看：`node -v && npm -v`
 
 ```
-npm i -g element-ui -S && npm install -g webpack && npm install -D webpack-cli -g
+npm install -g webpack && npm install -D webpack-cli -g
 ```
 
 > `npm install -g vue-cli` 会存放在`/rj/nodejs/node_global/{bin,lib}`目录下
@@ -139,24 +137,26 @@ npm config set cache "D:\rj-win\nodejs\node_cache"
 
 NODE_HOME: `D:\rj-win\nodejs`
 
-系统变量.Path：`%NODE_HOME%\node_global\node_modules`
+系统变量.Path：`%NODE_HOME%`
 
 ### 安装 pnpm
 
-- 使用npm安装
+#### 使用npm安装
 
 安装：`npm install -g pnpm`
 
 配置pnpm环境变量: *系统属性.环境变量.系统变量.Path*：`%NODE_HOME%\node_global\pnpm`
 
-- 使用PowerShell安装
+#### 使用PowerShell安装
+
+[https://pnpm.io/zh/installation#windows](https://pnpm.io/zh/installation#windows)
 
 ```shell
 PS C:\Users\k> iwr https://get.pnpm.io/install.ps1 -useb | iex                                                          
 
 Downloading '@pnpm/win-x64' from 'npmjs.com' registry...
 
-Extracting downloaded '7.25.1' archive...
+Extracting downloaded '7.27.1' archive...
 
 Running setup...
 
@@ -173,7 +173,7 @@ Setup complete. Open a new terminal to start using pnpm.
 
 ```
 PS C:\Users\k> pnpm -v
-7.25.1
+7.27.1
 ```
 
 ### 全局安装测试
