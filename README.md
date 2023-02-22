@@ -89,32 +89,20 @@ npm config set registry https://registry.npm.taobao.org
 
 - 安装 pnpm：
 
-[官网 pnpm.io/zh](https://pnpm.io/zh)
+[安装教程 pnpm.io/zh](https://pnpm.io/zh)
 
-- - window
-
-下载地址：[github.com-pnpm-releases](https://github.com/pnpm/pnpm/releases)
-
-- - 使用 Corepack 安装
-
-第一次安装时执行：`corepack enable`
+- - window 通过 npm 安装
 
 ```shell
-corepack prepare pnpm@7.27.0 --activate
-```
-
-卸载：
-
-```shell
-corepack disable pnpm
+npm install -g pnpm@7.27.0
 ```
 
 - 技术版本列表
 
 | 技术                  | 地址                                                                                   |
 |---------------------|--------------------------------------------------------------------------------------|
-| node                | <a href="https://www.npmjs.com/package/node" target="_blank">16.x</a>                |
-| npm                 | <a href="https://www.npmjs.com/package/npm" target="_blank">8.x</a>                  |
+| node                | <a href="https://www.npmjs.com/package/node" target="_blank">18.x</a>                |
+| npm                 | <a href="https://www.npmjs.com/package/npm" target="_blank">🚀🚀</a>                  |
 | pnpm                | <a href="https://www.npmjs.com/package/pnpm" target="_blank">7.x</a>                 |
 | vue                 | <a href="https://www.npmjs.com/package/vue" target="_blank">🚀🚀</a>                 |
 | vuepress-theme-hope | <a href="https://www.npmjs.com/package/vuepress-theme-hope" target="_blank">🚀🚀</a> |
