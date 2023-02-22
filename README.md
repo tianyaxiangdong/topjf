@@ -83,19 +83,19 @@ timeline: false
 
 - 设置淘宝源
 
-配置查看：`npm config list`
-
 ```shell
 npm config set registry https://registry.npm.taobao.org
 ```
 
-- 安装 pnpm@7.27.0：
+- 安装 pnpm：
+
+[官网 pnpm.io/zh](https://pnpm.io/zh)
 
 - - window
 
 下载地址：[github.com-pnpm-releases](https://github.com/pnpm/pnpm/releases)
 
-- - Linux
+- - 使用 Corepack 安装
 
 第一次安装时执行：`corepack enable`
 
@@ -108,20 +108,6 @@ corepack prepare pnpm@7.27.0 --activate
 ```shell
 corepack disable pnpm
 ```
-
-- 创建初始化项目： 
-
-
-```shell
-pnpm create vuepress-theme-hope@next docs
-```
-
-```shell
-npm init vuepress-theme-hope@next docs
-
-```
-
-> docs这里的 docs 是一个参数，代表 VuePress 项目的文件夹名称，在本教程中，我们将 VuePress 项目生成至项目文件夹下的 `docs`子文件夹。如果你有需求，你可以更改此参数来使用一个新文件夹，或使用 `.` 直接使用当前的文件夹。
 
 - 技术版本列表
 
