@@ -127,6 +127,18 @@ npm install -g webpack && npm install -D webpack-cli -g
 
 ## window 配置
 
+[下载地址](https://nodejs.org/download/release/)，选择 `latest-v18.x` 版本
+
+双击运行 `node-v18.14.2-x64.msi`文件进行安装。
+
+安装后，安装其他组件的默认安装存放位置：`C:\Users\{username}\AppData\Roaming\npm\node_modules` 里面。
+
+**如：**
+
+`npm i -g element-ui` 存放在 `AppData\Roaming\npm\node_modules` 目录下-> `element-ui`;
+
+`npm i -g pnpm@7.27.0` 存放在 `AppData\Roaming\npm\node_modules` 目录下-> `pnpm`
+
 ### 配置npm淘宝源
 
 ```bash
