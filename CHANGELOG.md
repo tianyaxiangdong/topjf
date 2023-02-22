@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.23.0](https://github.com/topjf/topjf/compare/v3.22.3...v3.23.0) (2023-02-22)
+
+
+### ✨Features
+
+* 升级vuepress-theme-hope到beta.180 ([0341701](https://github.com/topjf/topjf/commit/034170135714512c4877af71e23370ded453937e))
+
+
+### 🐛Bug Fixes
+
+* 更新packageManager到pnpm@7.27.0 ([f759699](https://github.com/topjf/topjf/commit/f759699b94b92e1fd6ccc49a679722fb87594d53))
+
 ## [3.22.3](https://github.com/topjf/topjf/compare/v3.22.2...v3.22.3) (2023-02-22)
 
 
