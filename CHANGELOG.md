@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.22.1](https://github.com/topjf/topjf/compare/v3.22.0...v3.22.1) (2023-02-22)
+
+
+### 📚Docs
+
+* 更新node配置教程文档 ([920c5bb](https://github.com/topjf/topjf/commit/920c5bb7bfe7ed176e57bf690724aebd8e9e9cde))
+
 ## [3.22.0](https://github.com/topjf/topjf/compare/v3.21.0...v3.22.0) (2023-02-18)
 
 
