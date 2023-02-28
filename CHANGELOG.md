@@ -9,7 +9,7 @@
 
 ## [3.23.0](https://github.com/topjf/topjf/compare/v3.22.3...v3.23.0) (2023-02-22)
 
-**出现异常**
+**运行、打包出现异常**
 
 ### ✨Features
 
