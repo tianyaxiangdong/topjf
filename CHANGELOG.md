@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.24.0](https://github.com/topjf/topjf/compare/v3.23.0...v3.24.0) (2023-02-28)
+
+
+### ✨Features
+
+* 更新vuepress-theme-hope到beta.184、vuepress到beta.61、解决更新版本打包失败 ([c1c7068](https://github.com/topjf/topjf/commit/c1c7068c94310adc7fe0505b058095d438720d67))
+
 ## [3.23.0](https://github.com/topjf/topjf/compare/v3.22.3...v3.23.0) (2023-02-22)
 
 **出现异常**
