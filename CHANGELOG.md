@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.24.1](https://github.com/topjf/topjf/compare/v3.24.0...v3.24.1) (2023-02-28)
+
+
+### 🐛Bug Fixes
+
+* 更新github-workflows的pnpm版本为18 ([9b404e6](https://github.com/topjf/topjf/commit/9b404e6bf8684759526a70601a746005e2fad864))
+
 ## [3.24.0](https://github.com/topjf/topjf/compare/v3.23.0...v3.24.0) (2023-02-28)
 
 
