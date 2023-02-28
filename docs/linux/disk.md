@@ -1,7 +1,8 @@
 ---
 icon: linux
 title: 磁盘相关知识
-category: Linux
+category: 
+- Linux
 date: 2022-11-16
 tag:
 - linux

@@ -1,7 +1,8 @@
 ---
 icon: /icons/docker/docker_16x16.png
 title:  Docker从入门到上手干事
-category: Docker
+category: 
+- Docker
 tag:
 - Docker
 ---

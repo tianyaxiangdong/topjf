@@ -1,7 +1,8 @@
 ---
 icon: linux
 title: Linux基础
-category: Linux
+category: 
+- Linux
 date: 2022-07-26
 sticky: true
 star: true

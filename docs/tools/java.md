@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: jdk安装与配置
-category: 开发工具
+category: 
+- 开发工具
 date: 2020-01-21
 tag:
 - jdk

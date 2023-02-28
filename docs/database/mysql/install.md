@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: linux安装MySQL
-category: database
+category: 
+- database
 date: 2020-05-12
 tag:
 - MySQL

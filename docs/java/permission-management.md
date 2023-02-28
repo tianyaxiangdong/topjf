@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: 权限管理
-category: Java
+category: 
+- Java
 date: 2020-01-01
 tag:
 - shiro

@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: MySQL内容整理
-category: database
+category: 
+- database
 date: 2022-05-12
 tag:
 - MySQL

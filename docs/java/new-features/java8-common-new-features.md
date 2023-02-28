@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: Java8 新特性实战
-category: Java
+category: 
+- Java
 tag:
   - Java新特性
 ---

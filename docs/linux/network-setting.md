@@ -1,7 +1,8 @@
 ---
 icon: linux
 title: centos网络网卡配置
-category: Linux
+category: 
+- Linux
 date: 2021-09-10
 tag:
 - linux

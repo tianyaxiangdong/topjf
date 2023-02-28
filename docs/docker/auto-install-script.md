@@ -1,7 +1,8 @@
 ---
 icon: /icons/docker/docker_16x16.png
 title: 一键安装docker脚本
-category: Docker
+category: 
+- Docker
 date: 2022-05-31
 tag:
 - docker

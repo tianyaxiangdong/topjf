@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: 数据库设计需要注意什么
-category: database
+category: 
+- database
 date: 2019-08-13
 tag:
 - MySQL

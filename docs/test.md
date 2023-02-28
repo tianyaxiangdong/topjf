@@ -1,16 +1,15 @@
 ---
 icon: edit
 title: 测试md
-category: Java
+category: 
+- Java
 date: 2020-01-01
 #顶置
 sticky: true
 #收藏
 star: true
 tag:
-
 - Java
-
 ---
 
 摘要生成位置，66666666

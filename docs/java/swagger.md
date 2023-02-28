@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: swagger
-category: Java
+category: 
+- Java
 date: 2020-06-07
 tag:
 - api

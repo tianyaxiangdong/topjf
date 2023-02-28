@@ -1,7 +1,8 @@
 ---
 icon: /icons/docker/docker_16x16.png
 title: docker安装mysql-redis-nginx-nacos-mq-es
-category: Docker
+category: 
+- Docker
 date: 2020-01-01
 tag:
 - Docker

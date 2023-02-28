@@ -1,12 +1,11 @@
 ---
 icon: linux
 title: Linux运维相关
-category: 面试宝典
+category: 
+- 面试宝典
 date: 2022-08-17
 tag:
-
-- linux
-
+  - linux
 ---
 
 <!-- more -->

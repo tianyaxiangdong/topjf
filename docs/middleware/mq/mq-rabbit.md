@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: RabbitMQ
-category: MQ中间件
+category: 
+- MQ中间件
 date: 2022-06-06
 tag:
 - RabbitMQ

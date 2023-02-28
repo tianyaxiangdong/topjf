@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: Git入门
-category: 开发工具
+category: 
+- 开发工具
 tag:
 - Git
 ---

@@ -1,7 +1,8 @@
 ---
 icon: nginx
 title: Nginx
-category: 中间件
+category: 
+- 中间件
 date: 2020-03-10
 tag:
 - nginx

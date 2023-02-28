@@ -1,7 +1,8 @@
 ---
 icon: vue
 title: vue
-category: web
+category: 
+- web
 date: 2020-01-01
 tag:
 - vue

@@ -19057,12 +19057,12 @@ exports.SVGGraphics = SVGGraphics;
       current.y = current.lineY = 0;
       current.xcoords = [];
       current.ycoords = [];
-      current.tspan = this.svgFactory.createElement("svg:tspan");
-      current.tspan.setAttributeNS(null, "font-family", current.fontFamily);
-      current.tspan.setAttributeNS(null, "font-size", `${pf(current.fontSize)}px`);
-      current.tspan.setAttributeNS(null, "y", pf(-current.y));
+      currentpan = this.svgFactory.createElement("svg:tspan");
+      currentpan.setAttributeNS(null, "font-family", current.fontFamily);
+      currentpan.setAttributeNS(null, "font-size", `${pf(current.fontSize)}px`);
+      currentpan.setAttributeNS(null, "y", pf(-current.y));
       current.txtElement = this.svgFactory.createElement("svg:text");
-      current.txtElement.append(current.tspan);
+      current.txtElement.append(currentpan);
     }
     beginText() {
       const current = this.current;
@@ -19071,7 +19071,7 @@ exports.SVGGraphics = SVGGraphics;
       current.textMatrix = _util.IDENTITY_MATRIX;
       current.lineMatrix = _util.IDENTITY_MATRIX;
       current.textMatrixScale = 1;
-      current.tspan = this.svgFactory.createElement("svg:tspan");
+      currentpan = this.svgFactory.createElement("svg:tspan");
       current.txtElement = this.svgFactory.createElement("svg:text");
       current.txtgrp = this.svgFactory.createElement("svg:g");
       current.xcoords = [];
@@ -19083,10 +19083,10 @@ exports.SVGGraphics = SVGGraphics;
       current.y = current.lineY += y;
       current.xcoords = [];
       current.ycoords = [];
-      current.tspan = this.svgFactory.createElement("svg:tspan");
-      current.tspan.setAttributeNS(null, "font-family", current.fontFamily);
-      current.tspan.setAttributeNS(null, "font-size", `${pf(current.fontSize)}px`);
-      current.tspan.setAttributeNS(null, "y", pf(-current.y));
+      currentpan = this.svgFactory.createElement("svg:tspan");
+      currentpan.setAttributeNS(null, "font-family", current.fontFamily);
+      currentpan.setAttributeNS(null, "font-size", `${pf(current.fontSize)}px`);
+      currentpan.setAttributeNS(null, "y", pf(-current.y));
     }
     showText(glyphs) {
       const current = this.current;
@@ -19135,7 +19135,7 @@ exports.SVGGraphics = SVGGraphics;
           if (vertical) {
             current.ycoords.push(-current.y + scaledY);
           }
-          current.tspan.textContent += character;
+          currentpan.textContent += character;
         } else {}
         let charWidth;
         if (vertical) {
@@ -19145,41 +19145,41 @@ exports.SVGGraphics = SVGGraphics;
         }
         x += charWidth;
       }
-      current.tspan.setAttributeNS(null, "x", current.xcoords.map(pf).join(" "));
+      currentpan.setAttributeNS(null, "x", current.xcoords.map(pf).join(" "));
       if (vertical) {
-        current.tspan.setAttributeNS(null, "y", current.ycoords.map(pf).join(" "));
+        currentpan.setAttributeNS(null, "y", current.ycoords.map(pf).join(" "));
       } else {
-        current.tspan.setAttributeNS(null, "y", pf(-current.y));
+        currentpan.setAttributeNS(null, "y", pf(-current.y));
       }
       if (vertical) {
         current.y -= x;
       } else {
         current.x += x * textHScale;
       }
-      current.tspan.setAttributeNS(null, "font-family", current.fontFamily);
-      current.tspan.setAttributeNS(null, "font-size", `${pf(current.fontSize)}px`);
+      currentpan.setAttributeNS(null, "font-family", current.fontFamily);
+      currentpan.setAttributeNS(null, "font-size", `${pf(current.fontSize)}px`);
       if (current.fontStyle !== SVG_DEFAULTS.fontStyle) {
-        current.tspan.setAttributeNS(null, "font-style", current.fontStyle);
+        currentpan.setAttributeNS(null, "font-style", current.fontStyle);
       }
       if (current.fontWeight !== SVG_DEFAULTS.fontWeight) {
-        current.tspan.setAttributeNS(null, "font-weight", current.fontWeight);
+        currentpan.setAttributeNS(null, "font-weight", current.fontWeight);
       }
       const fillStrokeMode = current.textRenderingMode & _util.TextRenderingMode.FILL_STROKE_MASK;
       if (fillStrokeMode === _util.TextRenderingMode.FILL || fillStrokeMode === _util.TextRenderingMode.FILL_STROKE) {
         if (current.fillColor !== SVG_DEFAULTS.fillColor) {
-          current.tspan.setAttributeNS(null, "fill", current.fillColor);
+          currentpan.setAttributeNS(null, "fill", current.fillColor);
         }
         if (current.fillAlpha < 1) {
-          current.tspan.setAttributeNS(null, "fill-opacity", current.fillAlpha);
+          currentpan.setAttributeNS(null, "fill-opacity", current.fillAlpha);
         }
       } else if (current.textRenderingMode === _util.TextRenderingMode.ADD_TO_PATH) {
-        current.tspan.setAttributeNS(null, "fill", "transparent");
+        currentpan.setAttributeNS(null, "fill", "transparent");
       } else {
-        current.tspan.setAttributeNS(null, "fill", "none");
+        currentpan.setAttributeNS(null, "fill", "none");
       }
       if (fillStrokeMode === _util.TextRenderingMode.STROKE || fillStrokeMode === _util.TextRenderingMode.FILL_STROKE) {
         const lineWidthScale = 1 / (current.textMatrixScale || 1);
-        this._setStrokeAttributes(current.tspan, lineWidthScale);
+        this._setStrokeAttributes(currentpan, lineWidthScale);
       }
       let textMatrix = current.textMatrix;
       if (current.textRise !== 0) {
@@ -19188,7 +19188,7 @@ exports.SVGGraphics = SVGGraphics;
       }
       current.txtElement.setAttributeNS(null, "transform", `${pm(textMatrix)} scale(${pf(textHScale)}, -1)`);
       current.txtElement.setAttributeNS(XML_NS, "xml:space", "preserve");
-      current.txtElement.append(current.tspan);
+      current.txtElement.append(currentpan);
       current.txtgrp.append(current.txtElement);
       this._ensureTransformGroup().append(current.txtElement);
     }
@@ -19235,8 +19235,8 @@ exports.SVGGraphics = SVGGraphics;
       current.fontFamily = fontObj.loadedName;
       current.fontWeight = bold;
       current.fontStyle = italic;
-      current.tspan = this.svgFactory.createElement("svg:tspan");
-      current.tspan.setAttributeNS(null, "y", pf(-current.y));
+      currentpan = this.svgFactory.createElement("svg:tspan");
+      currentpan.setAttributeNS(null, "y", pf(-current.y));
       current.xcoords = [];
       current.ycoords = [];
     }
@@ -19274,7 +19274,7 @@ exports.SVGGraphics = SVGGraphics;
     }
     setFillRGBColor(r, g, b) {
       this.current.fillColor = _util.Util.makeHexColor(r, g, b);
-      this.current.tspan = this.svgFactory.createElement("svg:tspan");
+      this.currentpan = this.svgFactory.createElement("svg:tspan");
       this.current.xcoords = [];
       this.current.ycoords = [];
     }

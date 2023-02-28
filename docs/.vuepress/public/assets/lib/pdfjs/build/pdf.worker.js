@@ -15290,7 +15290,7 @@ class EvaluatorPreprocessor {
         numArgs: 1,
         variableArgs: false
       };
-      t.Ts = {
+      t = {
         id: _util.OPS.setTextRise,
         numArgs: 1,
         variableArgs: false

@@ -1,7 +1,8 @@
 ---
 icon: /icons/k8s/k8s_16x16.png
 title: k8s 基础篇
-category: kubernetes
+category: 
+- kubernetes
 date: 2020-04-20
 tag:
 - Linux

@@ -1,7 +1,7 @@
 ---
 icon: edit
 title: 分布式锁、缓存
-category: 
+category:
 - Java
 - Cloud
 date: 2020-05-12

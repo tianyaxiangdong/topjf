@@ -1,7 +1,8 @@
 ---
 icon: linux
 title: ansible安装docker
-category: Linux
+category: 
+- Linux
 date: 2022-07-30
 tag:
 - ansible

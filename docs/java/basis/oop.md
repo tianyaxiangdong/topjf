@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: OOP核心
-category: Java
+category: 
+- Java
 date: 2019-08-14
 tag:
 - OOP

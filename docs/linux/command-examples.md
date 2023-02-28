@@ -1,7 +1,8 @@
 ---
 icon: linux
 title: Linux常用命令实例
-category: Linux
+category: 
+- Linux
 date: 2022-10-11
 #顶置
 sticky: true

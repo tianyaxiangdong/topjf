@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: 单点登录（SSO）
-category: Java
+category: 
+- Java
 date: 2020-02-02
 tag:
 - SSO

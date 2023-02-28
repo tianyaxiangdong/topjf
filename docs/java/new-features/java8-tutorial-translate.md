@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: Java8 指南中文翻译
-category: Java
+category: 
+- Java
 tag:
   - Java新特性
 ---

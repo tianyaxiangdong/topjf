@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: 整合mybatis-plus
-category: mybatis
+category: 
+- mybatis
 date: 2020-01-01
 tag:
 - mybatis-plus

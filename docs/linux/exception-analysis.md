@@ -1,7 +1,8 @@
 ---
 icon: linux
 title: Linux常见异常分析
-category: Linux
+category: 
+- Linux
 date: 2022-11-09
 #收藏
 star: true

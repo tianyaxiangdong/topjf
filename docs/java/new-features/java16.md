@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: Java 16 新特性概览
-category: Java
+category: 
+- Java
 tag:
   - Java新特性
 ---

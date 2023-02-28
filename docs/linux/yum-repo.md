@@ -1,7 +1,8 @@
 ---
 icon: linux
 title: YUM 源配置
-category: Linux
+category: 
+- Linux
 date: 2021-08-14
 tag:
 - linux

@@ -1,7 +1,8 @@
 ---
 icon: /icons/k8s/k8s_16x16.png
 title: 设置docker-k8s快捷指令
-category: kubernetes
+category: 
+- kubernetes
 date: 2022-05-31
 tag:
 - Linux

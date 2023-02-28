@@ -1,7 +1,8 @@
 ---
 icon: linux
 title: Shell 脚本编程
-category: Linux
+category: 
+- Linux
 date: 2022-09-12
 #收藏
 star: true

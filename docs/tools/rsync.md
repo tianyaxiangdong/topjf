@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: Linux 数据同步工具
-category: 开发工具
+category: 
+- 开发工具
 date: 2022-10-11
 tag:
 

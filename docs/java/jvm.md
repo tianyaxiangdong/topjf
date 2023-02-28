@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: jvm
-category: Java
+category: 
+- Java
 date: 2020-08-22
 tag:
 - jvm

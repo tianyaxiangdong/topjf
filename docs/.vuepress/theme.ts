@@ -1,6 +1,6 @@
 import {hopeTheme} from "vuepress-theme-hope";
-import {navbarConfig} from "./navbar.ts";
-import {sidebarConfig} from "./sidebars/index.ts";
+import {allNavbar} from "./navbar/index";
+import {allSidebar} from "./sidebar/index";
 
 export default hopeTheme({
     logo: "/logo.png",
@@ -42,13 +42,13 @@ export default hopeTheme({
     locales: {
         "/": {
             // 导航栏
-            navbar: navbarConfig,
+            navbar: allNavbar,
 
             // 侧边栏
-            sidebar: sidebarConfig,
+            sidebar: allSidebar,
 
             blog: {
-                intro: "/about/about-this",
+                intro: "/about-this",
                 sidebarDisplay: "mobile",
                 description: "",
 
@@ -85,7 +85,7 @@ export default hopeTheme({
 
             // page meta
             metaLocales: {
-                editLink: "编辑此页",
+                editLink: "在 GitHub 编辑此页",
             },
         },
     },
@@ -96,7 +96,7 @@ export default hopeTheme({
 
     plugins: {
 
-        //评论模块 
+        //评论模块
         comment: {
             // 评论模块设置教程：https://vuepress-theme-hope.github.io/v2/zh/guide/feature/comment.html
             // Giscus配置地址：https://giscus.app/zh-CN
@@ -194,5 +194,3 @@ export default hopeTheme({
 
     },
 });
-
-

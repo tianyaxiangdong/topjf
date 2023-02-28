@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: gradle管理
-category: 开发工具
+category: 
+- 开发工具
 date: 2022-07-10
 tag:
 - gradle

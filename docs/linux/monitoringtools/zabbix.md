@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: Zabbix监控平台安装篇
-category: 运维监控工具
+category: 
+- 运维监控工具
 date: 2022-10-03
 tag:
 - Zabbix

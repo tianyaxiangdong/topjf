@@ -1,7 +1,8 @@
 ---
 icon: edit
 title:  Github 自动部署WEB项目
-category: 开发工具
+category: 
+- 开发工具
 star: true
 tag:
 - Github

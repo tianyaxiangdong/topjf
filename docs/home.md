@@ -18,11 +18,11 @@ actions:
   type: primary
 
 - text: 关于本站
-  link: /about/about-this
+  link: /about-this
   type: primary
 
 - text: 网站历史
-  link: /history/history
+  link: /history
   type: primary
 
 features:

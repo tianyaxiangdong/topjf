@@ -1,7 +1,8 @@
 ---
 icon: linux
 title: centos(kernel)内核升级
-category: Linux
+category: 
+- Linux
 date: 2021-08-14
 tag:
 - linux

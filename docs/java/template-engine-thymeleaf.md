@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: 模板引擎-Thymeleaf
-category: Java
+category: 
+- Java
 date: 2020-01-01
 tag:
 - 模板引擎

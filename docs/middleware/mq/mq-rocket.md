@@ -1,7 +1,8 @@
 ---
 icon: edit
 title: RocketMQ
-category: MQ中间件
+category: 
+- MQ中间件
 date: 2022-07-06
 tag:
 - RocketMQ

@@ -1,7 +1,8 @@
 ---
 icon: linux
 title: Jenkins自动化部署
-category: Linux
+category: 
+- Linux
 date: 2022-08-09
 star: true
 tag:
