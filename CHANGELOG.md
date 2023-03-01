@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.25.0](https://github.com/topjf/topjf/compare/v3.24.2...v3.25.0) (2023-03-01)
+
+
+### ✨Features
+
+* 更新vuepress-theme-hope到beta.185 ([017bf9f](https://github.com/topjf/topjf/commit/017bf9f00f9807955ac882278f50065aaeb51ab0))
+
+
+### 🐛Bug Fixes
+
+* 更新github-workflows的pnpm版本为19 ([ef935d6](https://github.com/topjf/topjf/commit/ef935d674e2df0cb95905045b501b23ad6d3726b))
+
 ## [3.24.2](https://github.com/topjf/topjf/compare/v3.24.1...v3.24.2) (2023-03-01)
 
 
