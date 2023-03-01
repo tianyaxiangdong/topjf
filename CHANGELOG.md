@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.25.1](https://github.com/topjf/topjf/compare/v3.25.0...v3.25.1) (2023-03-01)
+
+
+### 🐛Bug Fixes
+
+* 更新生成日志依赖版本 ([137d6fa](https://github.com/topjf/topjf/commit/137d6fa36dd6e21a141ab5171d86fe936ba4cc9b))
+
 ## [3.25.0](https://github.com/topjf/topjf/compare/v3.24.2...v3.25.0) (2023-03-01)
 
 
