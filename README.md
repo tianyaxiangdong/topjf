@@ -25,7 +25,7 @@
 
 **脚本提交**：sh commit.sh
 
-**命令提交**：git add -A  && pnpm run commit || git commit -m "选项: 描述"
+**命令提交**：git add -A  && pnpm run commit || git commit -m "选项: 描述" && git push -u origin main
 
 **web端提交** 简单描述格式：选项: 简要描述
 
@@ -45,16 +45,11 @@
 
 ## 添加新文件步骤
 
-1、创建文件 `./docs/java/demo.md`
-
-2、添加侧边栏路由 `.vuepress/sidebars/{index.ts,java.ts}`
-
 ```json
 {
   text: "Java",
   icon: "java",
   prefix: "java/",
-  collapsable: true,
   children: [
     "demo",
   ]
@@ -94,16 +89,16 @@ npm config set registry https://registry.npm.taobao.org
 - - window 通过 npm 安装
 
 ```shell
-npm install -g pnpm@7.27.0
+npm install -g pnpm@7.28.0
 ```
 
 - 技术版本列表
 
 | 技术                  | 地址                                                                                   |
 |---------------------|--------------------------------------------------------------------------------------|
-| node                | <a href="https://www.npmjs.com/package/node" target="_blank">18.x</a>                |
-| npm                 | <a href="https://www.npmjs.com/package/npm" target="_blank">🚀🚀</a>                  |
+| node                | <a href="https://www.npmjs.com/package/node" target="_blank">19.x</a>                |
+| npm                 | <a href="https://www.npmjs.com/package/npm" target="_blank">9.x</a>                  |
 | pnpm                | <a href="https://www.npmjs.com/package/pnpm" target="_blank">7.x</a>                 |
-| vue                 | <a href="https://www.npmjs.com/package/vue" target="_blank">🚀🚀</a>                 |
-| vuepress-theme-hope | <a href="https://www.npmjs.com/package/vuepress-theme-hope" target="_blank">🚀🚀</a> |
-| vuepress            | <a href="https://www.npmjs.com/package/vuepress" target="_blank">🚀🚀</a>            |
+| vue                 | <a href="https://www.npmjs.com/package/vue" target="_blank">3.x</a>                 |
+| vuepress-theme-hope | <a href="https://www.npmjs.com/package/vuepress-theme-hope" target="_blank">2.0.0-bate.x</a> |
+| vuepress            | <a href="https://www.npmjs.com/package/vuepress" target="_blank">2.0.0-beta.x</a>            |
