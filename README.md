@@ -14,10 +14,8 @@
 -------
 
 版本格式: 
+
 1.0.1 `major.minor.patch.preRelease.build`
-
-
-"type": "module",
     
 
 ## 提交规范
