@@ -20,7 +20,7 @@ timeline: false
 
 ⑤、功能描述：改变文件或目录权限
 
-⑥、语法： 
+⑥、语法：
 
 - chmod 【{ugoa}{+-=}{rwx}】【文件或目录】
 - chmod 【mode=421】 【文件或目录】
@@ -35,8 +35,6 @@ mode=421， `读 r` 表示4，`写 w`表示2，`执行 x`表示1；`rwx`=7，`rw
 >
 > 对应的位置是前 中 后三个位置
 
-
-
 ```shell
 chmod -R 777 demo.txt
 chmod -R 740 demo.txt
@@ -50,6 +48,7 @@ chmod –R u+rwx demo
 ```
 
 （2）授予组对 demo 目录拥有 rwx 权限
+
 ```shell
 chmod –R g+rwx demo
 ```
@@ -67,12 +66,13 @@ chmod –R u-w demo
 ```
 
 （5） 撤销用户、组、其他人对 demo 目录拥有 x 权限
+
 ```shell
 chmod –R u-x,g-x,o-x demo
 ```
 
 （6） 授予用户、组、其他人对 demo 目录只有 rx 权限
+
 ```shell
 chmod –R u=rx,g=rx,o=rx demo
 ```
-

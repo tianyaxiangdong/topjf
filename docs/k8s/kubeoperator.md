@@ -15,11 +15,9 @@ tag:
 
 [https://kubeoperator.io/](https://kubeoperator.io/)
 
-[https://github.com/kubeoperator/kubeoperator/](https://github.com/kubeoperator/kubeoperator/)	**star:4.4K**
+[https://github.com/kubeoperator/kubeoperator/](https://github.com/kubeoperator/kubeoperator/) **star:4.4K**
 
 [https://gitee.com/k8s_s/KubeOperator](https://gitee.com/k8s_s/KubeOperator)
-
-
 
 ![](./kubeoperator.assets/true-image-20220829202242469.png)
 
@@ -99,8 +97,6 @@ else
 fi
 ```
 
-
-
 ```shell
 ======================= KubeOperator 安装完成 =======================
 
@@ -154,8 +150,6 @@ ingress-kubeoperator   nginx   ko.k8s.com                    192.168.100.131   8
 ingress-nginx          nginx   nginx.k8s.com,nginx.k8s.com   192.168.100.131   80      2d3h
 ```
 
-
-
 ## 访问
 
 [http://192.168.100.130:80](http://192.168.100.130:80)、[通过 ingress 访问 ko.k8s.com](http://ko.k8s.com/)
@@ -166,15 +160,8 @@ ingress-nginx          nginx   nginx.k8s.com,nginx.k8s.com   192.168.100.131   8
 
 -----
 
-
-
 ## 卸载
 
 ```
 koctl uninstall
 ```
-
-
-
-
-

@@ -10,7 +10,6 @@ tag:
 
 <!-- more -->
 
-
 ## CSS 模型盒
 
 ![](./webpart.assets/true-image-20220108191716270.png)
@@ -20,7 +19,6 @@ tag:
 1、margin: 包括margin-top、margin-right、margin-bottom、margin-left，**控制块级元素之间的距离**，它们是透明不可见的。
 
 2、padding: 包括padding-top、padding-right、padding-bottom、padding-left，**控制块级元素内部**，content与border之间的距离。
-
 
 Vite 2.0 —— 超快的构建工具
 Vue 3.0 —— 更强大更灵活的 Vue
@@ -54,9 +52,9 @@ TypeError: Invalid value used as weak map key
 
 查看信息输出
 
-> 由于在 md 文件中存在的标签 \<Hello />，不是 Vue 组件、或未经注册，Vue WeakMap 接收的 key 
-> 本应是组件对象，变成了 string 引发错误。 
-> 
+> 由于在 md 文件中存在的标签 \<Hello />，不是 Vue 组件、或未经注册，Vue WeakMap 接收的 key
+> 本应是组件对象，变成了 string 引发错误。
+>
 > 构建抛错程序会中止，把组件参数打印出来，最后的打印输出就是有问题的标签，将 md 中相应标签处理即可解决。
 
 ```js
@@ -68,27 +66,24 @@ TypeError: Invalid value used as weak map key
     }
 ```
 
-
 ## 一、ES6
 
 #### let & var & const
 
 ```text
 #var 
-	声明的变量往往会越域
-	可以声明多次
-	会变量提升
+ 声明的变量往往会越域
+ 可以声明多次
+ 会变量提升
 #let 
-	声明的变量有严格局部作用域
-	只能声明一次，声明之后不允许改变
+ 声明的变量有严格局部作用域
+ 只能声明一次，声明之后不允许改变
     一但声明必须初始化，否则会报错
 #const
-	const 与 let 类似
-	是一个只读变量
-	一旦声明必须初始化，否则会报错
+ const 与 let 类似
+ 是一个只读变量
+ 一旦声明必须初始化，否则会报错
 ```
-
-
 
 ```html
 <!DOCTYPE html>
@@ -139,8 +134,6 @@ TypeError: Invalid value used as weak map key
 </body>
 </html>
 ```
-
-
 
 #### 解构&字符串
 
@@ -200,8 +193,6 @@ TypeError: Invalid value used as weak map key
 
 </html>
 ```
-
-
 
 #### 函数优化
 
@@ -273,8 +264,6 @@ TypeError: Invalid value used as weak map key
 </html>
 ```
 
-
-
 #### 对象优化
 
 ```html
@@ -345,10 +334,6 @@ TypeError: Invalid value used as weak map key
 
 </html>
 ```
-
-
-
-
 
 #### map、reduce
 
@@ -562,16 +547,3 @@ TypeError: Invalid value used as weak map key
 
 </html>
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-

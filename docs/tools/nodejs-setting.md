@@ -19,14 +19,12 @@ Node.js  [安装-教程](https://blog.csdn.net/qq_42476834/article/details/11078
 | Release  | Status              | Codename     |Initial Release | Active LTS Start | Maintenance Start | End-of-life               |
 | :--:     | :---:               | :---:        | :---:          | :---:            | :---:             | :---:                     |
 | 14.x | **Maintenance**     | Fermium  | 2020-04-21     | 2020-10-27       | 2021-10-19        | 2023-04-30                |
-| [16.x][] | **Maintenance**     | Gallium  | 2021-04-20     | 2021-10-26       | 2022-10-18        | 2023-09-11                |
-| [18.x][] | **LTS**             | Hydrogen | 2022-04-19     | 2022-10-25       | 2023-10-18        | 2025-04-30                |
-| [19.x][] | **Current**         |              | 2022-10-18     | -                | 2023-04-01        | 2023-06-01                |
+| 16.x | **Maintenance**     | Gallium  | 2021-04-20     | 2021-10-26       | 2022-10-18        | 2023-09-11                |
+| 18.x | **LTS**             | Hydrogen | 2022-04-19     | 2022-10-25       | 2023-10-18        | 2025-04-30                |
+| 19.x | **Current**         |              | 2022-10-18     | -                | 2023-04-01        | 2023-06-01                |
 | 20.x     | **Pending**         |              | 2023-04-18     | 2023-10-24       | 2024-10-22        | 2026-04-30                |
 
-
 [pnpm 官网安装教程](https://pnpm.io/zh/installation)
-
 
 ## linux 配置
 
@@ -84,15 +82,15 @@ cnpm -v
 
 创建文件夹：`node_global`、`node_cache`
 
-npm config -help -s 
+npm config -help -s
 
 参数
 
-> npm config set 
+> npm config set
 >
-> npm config get 
+> npm config get
 >
-> npm config delete cache && npm config delete prefix 
+> npm config delete cache && npm config delete prefix
 >
 > npm config list
 >
@@ -124,7 +122,6 @@ npm install -g webpack && npm install -D webpack-cli -g
 ```
 
 > `npm install -g vue-cli` 会存放在`/rj/nodejs/node_global/{bin,lib}`目录下
-
 
 ## window 配置
 

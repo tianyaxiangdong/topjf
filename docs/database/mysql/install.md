@@ -11,7 +11,6 @@ tag:
 
 <!-- more -->
 
-
 # Linux下安装mysql
 
 ## rpm 方式安装 mysql
@@ -53,7 +52,7 @@ rm -rf /var/log/mysqld.log
 yum –y install wget
 ```
 
-#### 使用 wget 命令下载mysql的repo源：
+#### 使用 wget 命令下载mysql的repo源
 
 --------
 
@@ -111,7 +110,7 @@ mysql57-community/x86_64          MySQL 5.7 Community Server                 604
 [root@admin soft]# yum -y install mysql-community-server
 ```
 
-**方式三：（推荐）** 
+**方式三：（推荐）**
 
 ```shell
 rpm -ivh mysql-community-common-5.7.38-1.el7.x86_64.rpm
@@ -158,7 +157,7 @@ systemctl enable mysqld
 
 ### 4 、配置mysql
 
-#### 查看密码：
+#### 查看密码
 
 ```shell
 cat /var/log/mysqld.log | grep password
@@ -193,17 +192,15 @@ set global validate_password_length=3;
 
 （选1种即可：）
 
-**（1）** ALTER USER 'root'@'localhost' IDENTIFIED  BY 'root12'; 
+**（1）** ALTER USER 'root'@'localhost' IDENTIFIED  BY 'root12';
 
-**（2）** update user set password=password('root12') where user='root'; 
+**（2）** update user set password=password('root12') where user='root';
 
 **刷新：** flush privileges;
 
 如果出现【ERROR1054(42S22):Unknown column 'password' in 'field list'】
 
 执行：`update mysql.user set authentication_string=password('root12') where user='root';`  即可
-
-
 
 #### 查看 新密码校验插件（可选项）
 
@@ -227,8 +224,6 @@ mysql> use mysql;
 mysql> select user,host from user;
 ```
 
-
-
 #### 设置访问权限,可以通过外部连接 数据库
 
 GRANT ALL PRIVILEGES ON \*.* TO [远程访问用户名]@'IP' IDENTIFIED BY ['密码'] WITH GRANT OPTION;
@@ -239,8 +234,6 @@ GRANT ALL PRIVILEGES ON \*.* TO [远程访问用户名]@'IP' IDENTIFIED BY ['密
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'IDENTIFIED BY 'root12' WITH GRANT OPTION;
 ```
 
-
-
 #### 开启log-bin日志
 
 ```
@@ -249,8 +242,6 @@ set global log_bin_trust_function_creators=1;
 持久化对应my.cnf
 log_bin_trust_function_creators=1
 ```
-
-
 
 **刷新马上生效**
 
@@ -271,9 +262,7 @@ systemctl  restart  mysqld
 ps -e | grep mysqld
 ```
 
-
-
-### 5、开放端口：
+### 5、开放端口
 
 ~~~bash
 实际应用场景中防火墙是要打开的，只能开放端口来外部访问。
@@ -289,6 +278,7 @@ systemctl stop firewalld；开机就关闭：systemctl disable firewalld
 --permanent   #永久生效，没有此参数重启后失效
 查看开启的所有端口：netstat -ntlp 或：firewall-cmd --list-ports
 ~~~
+
 ~~~
 permanent
 重启防火墙：systemctl restart firewalld
@@ -298,7 +288,9 @@ permanent
 --permanent   #永久生效，没有此参数重启后失效
 查看开启的所有端口：netstat -ntlp 或：firewall-cmd --list-ports
 ~~~
+
 ### 6、自己配置文件 vim /etc/my.cnf
+
 ```shell
 # For advice on how to change settings please see
 # http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html
@@ -354,11 +346,9 @@ sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY
 
 systemctl restart mysqld
 
-
-
 ## tar 方式安装
 
-wget https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.38-el7-x86_64.tar.gz
+wget <https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.38-el7-x86_64.tar.gz>
 
 ### 解压
 
@@ -370,8 +360,3 @@ wget https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.38-el7-x86_64.tar.gz
 #重命名
 [root@admin soft]# mv mysql-5.7.38-el7-x86_64 mysql
 ```
-
-
-
-
-

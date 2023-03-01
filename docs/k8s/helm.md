@@ -46,7 +46,6 @@ tag:
 
 [Helm 下载提取码：1234](https://pan.baidu.com/s/1mBoQNysvt2Jps49YV4y5yg)
 
-
 ### a、从sh文件安装 helm 3
 
 **第一步：** 下载最新的 helm 安装脚本。 get_helm.sh可以修改：downloadFile()方法的 ==DOWNLOAD_URL== ：指定可以下载的helm文件地址
@@ -66,7 +65,7 @@ curl -SsL https://github.com/helm/helm-v3.9.4-linux-amd64.tar.gz -o /tmp/helm-in
 ```
 
 ```
-chmod 777 get_helm3.sh	&& chmod +x get_helm3.sh
+chmod 777 get_helm3.sh && chmod +x get_helm3.sh
 ```
 
 ```
@@ -137,8 +136,6 @@ helm search hub mysql
 5. requirements.yaml 被整合到了 Chart.yaml 中，但格式保持不变
 
 helm2/3 命令差异
-
-
 
 ##### 常用命令一览
 
@@ -233,11 +230,7 @@ helm init --service-account=tiller --tiller-image=registry.aliyuncs.com/google_c
 helm init -i registry.aliyuncs.com/google_containers/tiller:v2.16.12 --stable-repo-url http://mirror.azure.cn/kubernetes/charts/ --service-account tiller --override spec.selector.matchLabels.'name'='tiller',spec.selector.matchLabels.'app'='helm' --output yaml | sed 's@apiVersion: extensions/v1beta1@apiVersion: apps/v1@' | kubectl apply -f -
 ```
 
-
-
 ### 添加稳定的 Helm Repo <a name="Repo"></a>
-
-
 
 ```shell
 # 添加阿里云的 chart 仓库
@@ -268,6 +261,3 @@ a@node1:~$ helm search repo bitnami | grep redis
 bitnami/redis                                   15.6.4          6.2.6           Open source, advanced key-value store. It is of...
 bitnami/redis-cluster                           7.0.13          6.2.6           Open source, advanced key-value store. It is of...
 ```
-
-
-

@@ -28,8 +28,6 @@ Swagger 使用的注解及其说明：
 > public class TestController{}
 > ```
 
-
-
 ## 作用于-方法
 
 ### @ApiOperation：给方法增加说明
@@ -53,8 +51,6 @@ Swagger 使用的注解及其说明：
 >
 > ![](./swagger.assets/true-image-20220608183319165.png)
 
-
-
 ### @RequestBody 接收对象传参
 
 ```java
@@ -65,8 +61,6 @@ public void addUser(@RequestBody User user) {
     logger.info("LandLord DTO is: "+user);
 }
 ```
-
-
 
 ### @ApiImplicitParam：给方法参数增加说明
 
@@ -86,8 +80,6 @@ public void addUser(@RequestBody User user) {
 > | paramType: String    | 指定参数放在哪个地方。<br>header：请求参数放置于RequestHeader，使用 @RequestHeader 获取<br/>query：请求参数放置于请求地址，使用 @RequestParam 获取<br/>path：（用于 restful 接口）使用 @PathVariable 获取<br/>body：（不常用）<br/>form（不常用） |
 >
 
-
-
 ### @ApiImplicitParams : 用在方法上包含一组参数说明
 
 > ```java
@@ -101,8 +93,6 @@ public void addUser(@RequestBody User user) {
 >  }
 > ```
 >
-
-
 
 ### 接收 参数&对象组合
 
@@ -125,8 +115,6 @@ public void addUser(@RequestBody User user) {
             HttpServletRequest request){}
 ```
 
-
-
 ### @ApiResponses：用于表示一组响应
 
 ### @ApiResponse：用在@ApiResponses中，一般用于表达一个错误的响应信息
@@ -147,11 +135,9 @@ public void addUser(@RequestBody User user) {
 > public R delete(@PathVariable Integer id) {}
 > ```
 
-### 注意：
+### 注意
 
 在@RequestMapper中必须指定RequestMethod的类型，否则Sawgger会默认为全类型皆可访问， API列表中会生成多条项目。
-
-
 
 ## 作用于-实体类
 
@@ -163,7 +149,7 @@ public void addUser(@RequestBody User user) {
 >@ApiModel(value = "UserEntity", description = "用户实体")
 > public class UserEntity {}
 > ```
-> 
+>
 
 ### @ApiModelProperty：描述一个model的属性
 
@@ -174,13 +160,11 @@ public void addUser(@RequestBody User user) {
 
 ## swagger2 配置
 
-Swagger 文档: 	http://192.168.56.1:51156/dev/swagger-ui.html
+Swagger 文档:  <http://192.168.56.1:51156/dev/swagger-ui.html>
 
 ![](./swagger.assets/true-image-20220608200204670.png)
 
 ![](./swagger.assets/true-image-20210707130748978.png)
-
-
 
 ```xml
         <!--swagger2-->
@@ -206,8 +190,6 @@ Swagger 文档: 	http://192.168.56.1:51156/dev/swagger-ui.html
             <version>25.1-jre</version>
         </dependency>
 ```
-
-
 
 ```java
 /**
@@ -344,11 +326,9 @@ public class SwaggerConfig implements WebMvcConfigurer {
 
 ```
 
-
-
 ## swagger3 配置
 
-Swagger 文档: 	http://192.168.56.1:51156/dev/swagger-ui.html
+Swagger 文档:  <http://192.168.56.1:51156/dev/swagger-ui.html>
 
 ![](./swagger.assets/true-image-20220607141201387.png)
 
@@ -371,8 +351,6 @@ Swagger 文档: 	http://192.168.56.1:51156/dev/swagger-ui.html
             <version>1.6.2</version>
         </dependency>
 ```
-
-
 
 ```java
 /**
@@ -557,7 +535,6 @@ public class SwaggerBeanPostProcessor implements BeanPostProcessor {
 }
 ```
 
-
 ## 使用 swagger-bootstrap-ui
 
 ```xml
@@ -568,8 +545,6 @@ public class SwaggerBeanPostProcessor implements BeanPostProcessor {
 </dependency>
 ```
 
-Swagger 文档: 	http://192.168.56.1:51156/dev/doc.html
-
-
+Swagger 文档:  <http://192.168.56.1:51156/dev/doc.html>
 
 ![](./swagger.assets/true-image-20220608201316565.png)

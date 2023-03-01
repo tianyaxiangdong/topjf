@@ -24,8 +24,6 @@ title: Linux笔命令大全
 | [scp](./scp.md)           | [awk](./awk.md)               | [read](./read.md)         | [updatedb](./updatedb.md) |
 | [tail](./tail.md)         | [mkdir](./mkdir.md)           | [rmdir](./rmdir.md)       | [head](./head.md)         |
 
-
-
 ## 文档编辑
 
 |                     |                     |                     |                       |
@@ -40,8 +38,6 @@ title: Linux笔命令大全
 | [nano](./nano.md)   | [emacs](./emacs.md) | [kde](./kde.md)     | [gnome](./gnome.md)   |
 | [echo](./echo.md)   |                     |                     |                       |
 
-
-
 ## 文件传输
 
 |                         |                       |                           |                       |
@@ -50,8 +46,6 @@ title: Linux笔命令大全
 | [bye](./bye.md)         | [ftp](./ftp.md)       | [uuto](./uuto.md)         | [uupick](./uupick.md) |
 | [uucp](./uucp.md)       | [uucico](./uucico.md) | [tftp](./tftp.md)         | [ncftp](./ncftp.md)   |
 | [ftpshut](./ftpshut.md) | [ftpwho](./ftpwho.md) | [ftpcount](./ftpcount.md) |                       |
-
-
 
 ## 系统管理
 
@@ -72,8 +66,6 @@ title: Linux笔命令大全
 | [w](./w.md)               | [id](./id.md)             | [groupadd](./groupadd.md)   | [free](./free.md)       |
 | [history](./history.md)   | [cal](./cal.md)           |                             |                         |
 
-
-
 ## 系统设置
 
 |                               |                                   |                                 |                                 |
@@ -92,10 +84,6 @@ title: Linux笔命令大全
 | [apmd](./apmd.md)             | [hwclock](./hwclock.md)           | [mkkickstart](./mkkickstart.md) | [fbset](./fbset.md)             |
 | [unalias](./unalias.md)       | [SVGATextMode](./SVGATextMode.md) | [gpasswd](./gpasswd.md)         |                                 |
 
-
-
-
-
 ## 磁盘管理
 
 |                               |                           |                       |                           |
@@ -109,8 +97,6 @@ title: Linux笔命令大全
 | [quotacheck](./quotacheck.md) | [quotaoff](./quotaoff.md) | [lndir](./lndir.md)   | [repquota](./repquota.md) |
 |                               |                           |                       |                           |
 
-
-
 ## 磁盘维护
 
 |                               |                             |                               |                               |
@@ -123,8 +109,6 @@ title: Linux笔命令大全
 | [swapon](./swapon.md)         | [symlinks](./symlinks.md)   | [sync](./sync.md)             | [mbadblocks](./mbadblocks.md) |
 | [mkfs.minix](./mkfs-minix.md) | [fsck.ext2](./fsck-ext2.md) | [fdisk](./fdisk.md)           | [losetup](./losetup.md)       |
 | [mkfs](./mkfs.md)             | [sfdisk](./sfdisk.md)       | [swapoff](./swapoff.md)       |                               |
-
-
 
 ## 网络通讯
 
@@ -141,8 +125,6 @@ title: Linux笔命令大全
 | [pppsetup](./pppsetup.md)     | [tcpdump](./tcpdump.md)   | [ytalk](./ytalk.md)           | [cu](./cu.md)             |
 | [smbd](./smbd.md)             | [testparm](./testparm.md) | [smbclient](./smbclient.md)   | [shapecfg](./shapecfg.md) |
 
-
-
 ## 备份压缩
 
 |                       |                           |                           |                                   |
@@ -153,12 +135,9 @@ title: Linux笔命令大全
 | [lha](./lha.md)       | [restore](./restore.md)   | [tar](./tar.md)           | [uudecode](./uudecode.md)         |
 | [unzip](./unzip.md)   | [zip](./zip.md)           | [zipinfo](./zipinfo.md)   |                                   |
 
-
-
 ## 设备管理
 
 |                         |                           |                   |                           |
 |-------------------------|---------------------------|-------------------|---------------------------|
 | [setleds](./setleds.md) | [loadkeys](./loadkeys.md) | [rdev](./rdev.md) | [dumpkeys](./dumpkeys.md) |
-| [MAKEDEV](./makedev.md) | [poweroff](./poweroff.md) | 	                 |                           |
-
+| [MAKEDEV](./makedev.md) | [poweroff](./poweroff.md) |                   |                           |

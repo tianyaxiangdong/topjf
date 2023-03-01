@@ -12,13 +12,13 @@ tag:
 
 # RocketMQ
 
-https://rocketmq.apache.org 
+<https://rocketmq.apache.org>
 
-https://github.com/apache/rocketmq
+<https://github.com/apache/rocketmq>
 
-https://github.com/apache/rocketmq/tree/master/docs/cn
+<https://github.com/apache/rocketmq/tree/master/docs/cn>
 
-https://gitee.com/MFork/rocketmq/tree/develop/docs/cn
+<https://gitee.com/MFork/rocketmq/tree/develop/docs/cn>
 
 ## 1、概念
 
@@ -157,13 +157,11 @@ RocketMQ会为每个消费组都设置一个Topic名称为“%RETRY%+consumerGro
 
 RocketMQ将这种正常情况下无法被消费的消息称为死信消息（Dead-Letter  Message），将存储死信消息的特殊队列称为死信队列（Dead-Letter  Queue）。在RocketMQ中，可以通过使用console控制台对死信队列中的消息进行重发来使得消费者实例再次进行消费。
 
-
-
 ## 3、安装
 
 ### 下载地址
 
-https://rocketmq.apache.org/release_notes/release-notes-4.9.4/
+<https://rocketmq.apache.org/release_notes/release-notes-4.9.4/>
 
 ### 配置环境变量
 
@@ -230,8 +228,6 @@ ROCKETMQ_HOME="D:\rocketmq"、NAMESRV_ADDR="localhost:9876"
 | sendMessageThreadPoolNums         | 发消息线程池数量                                                                                |
 | pullMessageThreadPoolNums         | 拉消息线程池数量                                                                                |
 |                                   |                                                                                         |
-
-
 
 ### 启动
 
@@ -336,13 +332,11 @@ docker run -d -p 10911:10911 --name rocketmq-broker -v E:\docker\rocketmq\conf\:
 
 ### 可视化界面
 
-https://github.com/apache/rocketmq-externals
+<https://github.com/apache/rocketmq-externals>
 
-https://github.com/apache/rocketmq-externals/tree/release-rocketmq-console-1.0.0 (rocketmq-dashboard代替)
+<https://github.com/apache/rocketmq-externals/tree/release-rocketmq-console-1.0.0> (rocketmq-dashboard代替)
 
-https://github.com/apache/rocketmq-dashboard
-
-
+<https://github.com/apache/rocketmq-dashboard>
 
 打开rocketmq-externals -> rocketmq-console我们会发现他是个springboot项目，此时我们只需要做一些配置文件的修改并启动项目即可 src -> main -> resource -> application.properties 修改 rocketmq.config.namesrvAddr=ip+port
 
@@ -357,19 +351,11 @@ https://github.com/apache/rocketmq-dashboard
 </mirrors>
 ```
 
-
-
-修改完毕后启动项目，然后访问 http://127.0.0.1:8080 即可
-
-
+修改完毕后启动项目，然后访问 <http://127.0.0.1:8080> 即可
 
 打包jar
 
-
-
 运行命令：java -jar rocketmq-console-ng-2.0.0.jar --server.port=8181
-
-
 
 ### 可视化界面 docker
 
@@ -377,15 +363,11 @@ docker pull apacherocketmq/rocketmq-dashboard:latest
 
 docker run -d --name rocketmq-dashboard -e "JAVA_OPTS=-Drocketmq.namesrv.addr=192.168.0.5:9876" -p 8080:8080 -t apacherocketmq/rocketmq-dashboard:latest
 
-http://127.0.0.1:8080
+<http://127.0.0.1:8080>
 
 ![image-20220714102811856](./mq-rocket.assets/true-image-20220714102811856.png)
 
 ![image-20220714102824828](./mq-rocket.assets/true-image-20220714102824828.png)
-
-
-
-
 
 ## 4、技术架构和部署架构
 
@@ -409,7 +391,7 @@ RocketMQ架构上主要分为四部分，如上图所示:
 
 - **NameServer**是一个几乎无状态节点，可集群部署，节点之间无任何信息同步。
 
-- **Broker**部署相对复杂，Broker分为Master与Slave，一个Master可以对应多个Slave，但是一个Slave只能对应一个Master，Master与Slave 的对应关系通过指定相同的BrokerName，不同的BrokerId  来定义，BrokerId为0表示Master，非0表示Slave。Master也可以部署多个。每个Broker与NameServer集群中的所有节点建立长连接，定时注册Topic信息到所有NameServer。 
+- **Broker**部署相对复杂，Broker分为Master与Slave，一个Master可以对应多个Slave，但是一个Slave只能对应一个Master，Master与Slave 的对应关系通过指定相同的BrokerName，不同的BrokerId  来定义，BrokerId为0表示Master，非0表示Slave。Master也可以部署多个。每个Broker与NameServer集群中的所有节点建立长连接，定时注册Topic信息到所有NameServer。
 
   **注意**：当前RocketMQ版本在部署架构上支持一Master多Slave，但只有BrokerId=1的从服务器才会参与消息的读负载。
 
@@ -425,11 +407,9 @@ RocketMQ架构上主要分为四部分，如上图所示:
 - Producer发送消息，启动时先跟NameServer集群中的其中一台建立长连接，并从NameServer中获取当前发送的Topic存在哪些Broker上，轮询从队列列表中选择一个队列，然后与队列所在的Broker建立长连接从而向Broker发消息。
 - Consumer跟Producer类似，跟其中一台NameServer建立长连接，获取当前订阅Topic存在哪些Broker上，然后直接跟Broker建立连接通道，开始消费消息。
 
-
-
 ## 5、关键机制的设计原理，主要包括消息存储、通信机制、消息过滤、负载均衡、事务消息等
 
-https://github.com/apache/rocketmq/blob/master/docs/cn/design.md
+<https://github.com/apache/rocketmq/blob/master/docs/cn/design.md>
 
 ### 基本路由规则
 
@@ -439,13 +419,9 @@ Broker 在启动时向 Nameserver 注册存储在该服务器上的路由信息�
 
 消息生产者每隔 30s 会从 Nameserver 重新拉取 Topic 的路由信息并更新本地路由表；在消息发送之前，如果本地路由表中不存在对应主题的路由消息时，会主动向Nameserver 拉取该主题的消息。
 
-
-
 ### 自动创建主题机制
 
 ![image-20220716135827145](./mq-rocket.assets/true-image-20220716135827145.png)
-
-
 
 ## 6、样例
 
@@ -453,15 +429,14 @@ Broker 在启动时向 Nameserver 注册存储在该服务器上的路由信息�
 
 样例：
 
-https://gitee.com/MFork/rocketmq/blob/develop/docs/cn/RocketMQ_Example.md
+<https://gitee.com/MFork/rocketmq/blob/develop/docs/cn/RocketMQ_Example.md>
 
-https://github.com/apache/rocketmq/blob/master/docs/cn/RocketMQ_Example.md
-
+<https://github.com/apache/rocketmq/blob/master/docs/cn/RocketMQ_Example.md>
 
 在基本样例中我们提供如下的功能场景：
 
-* 使用RocketMQ发送三种类型的消息：同步消息、异步消息和单向消息。其中前两种消息是可靠的，因为会有发送是否成功的应答。
-* 使用RocketMQ来消费接收到的消息。
+- 使用RocketMQ发送三种类型的消息：同步消息、异步消息和单向消息。其中前两种消息是可靠的，因为会有发送是否成功的应答。
+- 使用RocketMQ来消费接收到的消息。
 
 #### 6.1.1 加入依赖
 
@@ -474,16 +449,19 @@ https://github.com/apache/rocketmq/blob/master/docs/cn/RocketMQ_Example.md
     <version>4.9.4</version>
 </dependency>
 ```
+
 `gradle`
 
 ```properties
 compile 'org.apache.rocketmq:rocketmq-client:4.9.4'
 ```
+
 #### 6.1.2 消息发送
 
 ##### 6.1.2.1、发送同步消息
 
 这种可靠性同步地发送方式使用的比较广泛，比如：重要的消息通知，短信通知。
+
 ```java
 private static void sendSyncProducer() throws Exception {
         DefaultMQProducer producer = new DefaultMQProducer(RocketMQConstants.PRODUCER_GROUP);
@@ -502,6 +480,7 @@ private static void sendSyncProducer() throws Exception {
         producer.shutdown();
     }
 ```
+
 ##### 6.1.2.2、发送异步消息
 
 异步消息通常用在对响应时间敏感的业务场景，即发送端不能容忍长时间地等待Broker的响应。
@@ -893,6 +872,7 @@ public class ScheduledMessageProducer {
 
 private String messageDelayLevel = "1s 5s 10s 30s 1m 2m 3m 4m 5m 6m 7m 8m 9m 10m 20m 30m 1h 2h";
 ```
+
 现在RocketMq并不支持任意时间的延时，需要设置几个固定的延时等级，从1s到2h分别对应着等级1到18
 消息消费失败会进入延时消息队列，消息发送时间与设置的延时等级和重试次数有关，详见代码`SendMessageProcessor.java`
 
@@ -1064,6 +1044,7 @@ consumer.subscribe("TOPIC", "TAGA || TAGB || TAGC");
 ```
 
 消费者将接收包含TAGA或TAGB或TAGC的消息。但是限制是一个消息只能有一个标签，这对于复杂的场景可能不起作用。在这种情况下，可以使用SQL表达式筛选消息。SQL特性可以通过发送消息时的属性来进行计算。在RocketMQ定义的语法下，可以实现一些简单的逻辑。下面是一个例子：
+
 ```
 ------------
 | message  |
@@ -1080,6 +1061,7 @@ consumer.subscribe("TOPIC", "TAGA || TAGB || TAGC");
 | c = true |
 ------------
 ```
+
 #### 6.5.1 基本语法
 
 RocketMQ只定义了一些基本语法来支持这个特性。你也可以很容易地扩展它。
@@ -1097,6 +1079,7 @@ RocketMQ只定义了一些基本语法来支持这个特性。你也可以很容
 - 布尔值，**TRUE** 或 **FALSE**
 
 只有使用push模式的消费者才能用使用SQL92标准的sql语句，接口如下：
+
 ```
 public void subscribe(finalString topic, final MessageSelector messageSelector)
 ```
@@ -1264,6 +1247,7 @@ public class TransactionMessageProducer {
 }
 
 ```
+
 ###### 6.6.1.2、实现事务的监听接口
 
 当发送半消息成功时，我们使用 `executeLocalTransaction` 方法来执行本地事务。它返回前一节中提到的三个事务状态之一。`checkLocalTransaction` 方法用于检查本地事务状态，并回应消息队列的检查请求。它也是返回前一节中提到的三个事务状态之一。
@@ -1333,6 +1317,7 @@ RocketMQ日志提供log4j、log4j2和logback日志框架作为业务应用，下
 #### 6.7.1 log4j样例
 
 按下面样例使用log4j属性配置
+
 ```properties
 log4j.appender.mq=org.apache.rocketmq.logappender.log4j.RocketmqLog4jAppender
 log4j.appender.mq.Tag=yourTag
@@ -1342,7 +1327,9 @@ log4j.appender.mq.NameServerAddress=yourRocketmqNameserverAddress
 log4j.appender.mq.layout=org.apache.log4j.PatternLayout
 log4j.appender.mq.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-4r [%t] (%F:%L) %-5p - %m%n
 ```
+
 按下面样例使用log4j xml配置来使用异步添加日志
+
 ```xml
 <appender name="mqAppender1"class="org.apache.rocketmq.logappender.log4j.RocketmqLog4jAppender">
   <param name="Tag" value="yourTag" />
@@ -1359,15 +1346,18 @@ log4j.appender.mq.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-4r [%t] (%F
   <appender-ref ref="mqAppender1"/>
 </appender>
 ```
+
 #### 6.7.2 log4j2样例
 
 用log4j2时，配置如下，如果想要非阻塞，只需要使用异步添加引用即可
+
 ```xml
 <RocketMQ name="rocketmqAppender" producerGroup="yourLogGroup" nameServerAddress="yourRocketmqNameserverAddress"
    topic="yourLogTopic" tag="yourTag">
   <PatternLayout pattern="%d [%p] hahahah %c %m%n"/>
 </RocketMQ>
 ```
+
 #### 6.7.3 logback样例
 
 ```xml
@@ -1549,9 +1539,9 @@ public class SimplePushConsumer {
 
 ## 7、整合 springboot
 
-https://github.com/apache/rocketmq-spring
+<https://github.com/apache/rocketmq-spring>
 
-https://gitee.com/MFork/rocketmq-spring
+<https://gitee.com/MFork/rocketmq-spring>
 
 ### 7.1 依赖
 
@@ -1565,7 +1555,7 @@ https://gitee.com/MFork/rocketmq-spring
 ```
 
 ```xml
-	<!-- RocketMQ -->
+ <!-- RocketMQ -->
         <!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-spring-boot-starter -->
         <dependency>
             <groupId>org.apache.rocketmq</groupId>
@@ -1595,8 +1585,6 @@ https://gitee.com/MFork/rocketmq-spring
 ```
 
 rocketmq-spring-boot-starter:2.2.2 包含的 rocketmq-client & rocketmq-client 版本为 4.9.3
-
-
 
 ### 7.2 配置
 
@@ -2066,6 +2054,6 @@ public class RocketMqDemo2 extends BaseController {
 }
 ```
 
-http://127.0.0.1:9210/jf-system-dev/mq2/sendOnewayProducer
+<http://127.0.0.1:9210/jf-system-dev/mq2/sendOnewayProducer>
 
-http://127.0.0.1:9210/jf-system-dev/mq2/sendSyncProducer
+<http://127.0.0.1:9210/jf-system-dev/mq2/sendSyncProducer>

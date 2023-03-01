@@ -12,14 +12,4 @@ tag:
 
 # Kafka
 
-https://github.com/apache/kafka
-
-
-
-
-
-
-
-
-
-
+<https://github.com/apache/kafka>

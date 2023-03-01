@@ -30,6 +30,7 @@ timeline: false
 ```shell
 [root@admin ~]# vim /etc/sudoers
 ```
+
 修改 /etc/sudoers 文件，找到下面一行(91 行)，在 root 下面添加一行，如下所示：
 
 ```shell

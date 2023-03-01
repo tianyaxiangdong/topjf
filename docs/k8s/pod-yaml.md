@@ -22,8 +22,8 @@ Pod YAML的整体结构，可以初步分为 **Resource(资源)、Object(元数�
 - **Resource**：定义资源类型与版本， 作为从Rest API中获取资源必带的属性。
 - **Object**：资源的元数据属性，明确资源的基本标识。
 - **Spec / Status**：
-- - *Spec*：定义资源的期望状态，包括用户提供的配置、系统扩展的默认值，以及周边系统初始化或者更改值（scheduler、hpa等）。
-- - *Status*：定义资源的当前状态，从而基于Spec定义的申明式配置，使pod不断朝期望状态靠近。
+  - - *Spec*：定义资源的期望状态，包括用户提供的配置、系统扩展的默认值，以及周边系统初始化或者更改值（scheduler、hpa等）。
+  - - *Status*：定义资源的当前状态，从而基于Spec定义的申明式配置，使pod不断朝期望状态靠近。
 
 ## 2、Resource（资源）- Rest API
 
@@ -45,13 +45,11 @@ namespace: default
 基于上述YAML，可以明确出 namespace 为default， name 为 test-pod 的 Pod 资源对象，也就是明确出Pod为Namespace资源，
 该Pod资源对象对应的apiVersion为v1，后续 K8s 自内联相关的 Group为/api，自然而然，我们就将该对象的数据分离出来了：
 
-
 - **group：api**
 - **apiVersion：v1**
 - **kind：Pod**
 - **name：test-pod**
 - **namespace：default**
-
 
 基于上述的数据展示，apiserver 自然而然会相应的注册出下列 rest api，
 
@@ -95,9 +93,9 @@ metadata:
 - **namespace**：常规来说，Namespace资源才会使用该资源对象
 - **name**：代表资源实例名称
 - **uid**：是资源的唯一标识，可以区别已删除与重新创建的同名资源实例
-- **resourceVersion**：是k8s的内部版本，具备时间属性，基于此就能明确该资源对是什么时候发生改变的，也是保证k8s list-watch核心机制 
-- **creationTimestamp**: 资源实例创建时间 
-- **deleteTimestamp**: 资源实例删除时间，后续会在pod的生命周期内讲到对该字段应用 
+- **resourceVersion**：是k8s的内部版本，具备时间属性，基于此就能明确该资源对是什么时候发生改变的，也是保证k8s list-watch核心机制
+- **creationTimestamp**: 资源实例创建时间
+- **deleteTimestamp**: 资源实例删除时间，后续会在pod的生命周期内讲到对该字段应用
 - **ownerReferences**: 资源从属对象，从上面yaml可知，该Pod资源从属于名为testdemo-5bb759f78，ownerReferences内部是没有namespace参数，也就是ownerReferences不允许跨namespace， 将资源由下到上能够建立起来
 - **labels**：标签， k8s内的服务发现以及相应的软关联，都是围绕label运作的，比如testdemo-5bb759f78 replicaset 的labelselector（标签筛选器） 能够筛选到当前Pod的label，保证两者关联由上到下的建立
 - **annotations**: 注释，通常来说会是作为额外字段供应给周边系统使用，比如当前k8s.aliyun.com/pod-eni=”true”是提供网络系统使用
@@ -106,7 +104,7 @@ metadata:
 
 ![](./pod-yaml.assets/true-image-20220824140027802.png)
 
-Deployment 会根据自己的 `seletor：app=taihao-app-cluster` 以及计算出 podtemplate 的 hash lable：`pod-template-hash: 
+Deployment 会根据自己的 `seletor：app=taihao-app-cluster` 以及计算出 podtemplate 的 hash lable：`pod-template-hash:
 5b8b879786`， 筛选出符合的 replicaset，replicaset 再根据自己的selector 去筛选出符合的 pods， 相应的服务发现 service，
 也是通过 selector 去筛选出符合的 Pod。
 
@@ -269,6 +267,7 @@ kubelet 在创建Pod阶段，总共大致经历以下过程
 上述阶段，会选择部分关键概念进行详细说明
 
 ### image
+
 ```yaml
 spec:
 containers:
@@ -281,15 +280,16 @@ containers:
 
 - **imagePullSecrets**:  拉取镜像的密钥，保证能够拉取 `image：testdemo:v1`，尤其在镜像库是私有库的阶段
 - **imagePullPolicy**：镜像拉取策略
-- - *Always*：总是拉取镜像
-- - *IfNotPresent*：本地若有则使用本地镜像，不进行拉取
-- - *Never*：只使用本地镜像，不拉取
+  - - *Always*：总是拉取镜像
+  - - *IfNotPresent*：本地若有则使用本地镜像，不进行拉取
+  - - *Never*：只使用本地镜像，不拉取
 
 ### containers
 
 注意这个 containers 用的是复数，可以填多个容器镜像: 比如可以放 nginx 和 业务容器。这样做的好处是可以尽量减少业务容器中与业务无关的代码或进程。
 
 container 涉及很多配置，其中有涉及到 `volume`、`env`、`dnsconfig`、`host` 等基础配置
+
 ```yaml
 spec:
   containers:
@@ -402,7 +402,7 @@ readiness、liveness虽然参数不一样，但对检验的结果行为不一致
 - **readiness** 默认状态下为false，也就是Pod为不健康，直到检查通过，才将Pod变为健康
 - **liveness** 默认状态下为true，不会在刚开始就将Pod重启，只有等检查不通过后，才会进行容器重启操作
 
-- **readinessGate** 是 Pod 健康的扩展，kubelet 会基于此，默认在 `pod.status.conditions` 上配置对应的 condition， 
+- **readinessGate** 是 Pod 健康的扩展，kubelet 会基于此，默认在 `pod.status.conditions` 上配置对应的 condition，
 比如当前例子 readinessGate 为`conditionType: TestPodReady`，则相应就会有 conditions
 
 ```yaml
@@ -413,6 +413,7 @@ status:
       status: "false"
       type: TestPodReady
 ```
+
 当该 condition.status 为 false 时，则 Pod 就会一直是不健康，哪怕 readiness 检查通过，直到第三方系统去操作更新 Pod 该 condition.status 为 true，才可以将 Pod 变为健康，这样就可以接入更多的 Pod 健康指标。
 
 Pod生命周期: Terminating
@@ -488,16 +489,16 @@ status:
 - **containerStatuses**: Pod内各容器的状态
 - **hostIP**: Pod所在节点ip地址
 - **phase**: Pod的生命周期状态
-- - *Pending*：代表Pod有一个容器或者多个容器还未运行，其中包括Pod调度到节点之前以及拉取镜像
-- - *Running*：代表Pod已绑定到节点上，至少有一个容器运行或在重启
-- - *Successed*：代表Pod所有容器已终止
-- - *Failed*：代表Pod内至少有一个容器终止失败
-- - *Unknown*：代表无法获取Pod状态
+  - - *Pending*：代表Pod有一个容器或者多个容器还未运行，其中包括Pod调度到节点之前以及拉取镜像
+  - - *Running*：代表Pod已绑定到节点上，至少有一个容器运行或在重启
+  - - *Successed*：代表Pod所有容器已终止
+  - - *Failed*：代表Pod内至少有一个容器终止失败
+  - - *Unknown*：代表无法获取Pod状态
 - **podIP/podIPs**：Pod的IP地址，假如有ipv4、ipv6，则可以在podIPs上配置
 - **qosClass**：代表kubernetes服务等级
-- - *Guaranteed*：resource.requests与resource.limits一致
-- - *Burstable*：resource.requests与resource.limits 不一致
-- - *BestEffort*：没有配置resource.requests与resource.limits
+  - - *Guaranteed*：resource.requests与resource.limits一致
+  - - *Burstable*：resource.requests与resource.limits 不一致
+  - - *BestEffort*：没有配置resource.requests与resource.limits
 - **startTime**：启动时间
 
 通过以上Pod四个部分拆解，我们基本搞清了一个Pod在k8s下“从哪里来”的这个问题。本系列的后续的文章会对“到哪里去”这个问题继续展开：

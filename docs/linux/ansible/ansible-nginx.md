@@ -12,7 +12,7 @@ tag:
 
 # ansible安装nginx
 
-##  ① 在`roles`目录下生成对应的目录结构
+## ① 在`roles`目录下生成对应的目录结构
 
 ```shell
 [root@admin ansible]# cd roles/
@@ -117,7 +117,7 @@ http {
 
 rpm包下载：
 
-> wget http://nginx.org/packages/centos/7/x86_64/RPMS/nginx-1.22.0-1.el7.ngx.x86_64.rpm
+> wget <http://nginx.org/packages/centos/7/x86_64/RPMS/nginx-1.22.0-1.el7.ngx.x86_64.rpm>
 >
 > chmod -R 777 nginx-1.22.0-1.el7.ngx.x86_64.rpm
 
@@ -174,8 +174,6 @@ rpm包下载：
 > ansible-playbook ./nginx/tasks/stop.yml
 >
 > ansible-playbook nginx.yml -t startnginx
-
-
 
 **uninstall.yml**
 
@@ -276,7 +274,7 @@ ansible_processor_vcpus: 1
 
 ![](./ansible-nginx.assets/true-image-20220729211246699.png)
 
-## ⑧ 启动过后照例查看端口号：
+## ⑧ 启动过后照例查看端口号
 
 ```shell
 [root@admin roles]# ansible web -m shell -a "ss -ntulp |grep 5120"
@@ -343,6 +341,3 @@ nginxprot: 5166
 ```
 
 ![](./ansible-nginx.assets/true-image-20220729214251417.png)
-
-
-

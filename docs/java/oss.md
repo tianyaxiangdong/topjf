@@ -11,11 +11,11 @@ tag:
 
 <!-- more -->
 
-[阿里文档](	https://help.aliyun.com/document_detail/32009.html
+[阿里文档]( <https://help.aliyun.com/document_detail/32009.html>
 
 # 1，OSS 依赖
 
-https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss
+<https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss>
 
 ```xml
 <!-- https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss -->
@@ -53,7 +53,7 @@ https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss
 
 ## 创建\获取账户
 
-https://ram.console.aliyun.com/users/new	,+ 分配权限
+<https://ram.console.aliyun.com/users/new> ,+ 分配权限
 
 ```Java
 // Endpoint以杭州为例，其它Region请按实际情况填写。
@@ -86,8 +86,6 @@ ossClient.putObject("<yourBucketName>", "<yourObjectName>", inputStream);
 |                                                              |                                                              |
 |                                                              |                                                              |
 
-
-
 # 2，oss(跨域+获取签名) 推荐<a name="cloud-oss"></a>
 
 ## -- nacos .yml 配置
@@ -110,7 +108,7 @@ spring:
 
 nacos -> oss.yml
 
-access申请：https://ram.console.aliyun.com/users
+access申请：<https://ram.console.aliyun.com/users>
 
 ```yaml
 spring:
@@ -122,7 +120,7 @@ spring:
       bucket: ik19
 ```
 
-### Consider defining a bean of type 'com.aliyun.oss.OSS' in your configuration.
+### Consider defining a bean of type 'com.aliyun.oss.OSS' in your configuration
 
 ```java
 Consider defining a bean of type 'com.aliyun.oss.OSS' in your configuration.
@@ -181,8 +179,6 @@ public class OssClientConfig {
     }
 }
 ```
-
-
 
 ## -- [获取签名](https://help.aliyun.com/document_detail/31926.html)<a name="获取签名"></a>
 
@@ -254,11 +250,9 @@ public class OssController {
 
 [web上传示例](#web上传示例)
 
+## -- 获取签名测试 
 
-
-## -- 获取签名测试	
-
-http://localhost:50000/api/thirdparty/oss/policy
+<http://localhost:50000/api/thirdparty/oss/policy>
 
 ```json
 {
@@ -341,17 +335,11 @@ for (Bucket bucket : bucketList.getBucketList()) {
 }    
 ```
 
+## -- 判断存储空间是否存在  doesBucketExist("bucketName")
 
+## -- 获取存储空间的地域 getBucketLocation("bucketName")
 
-## -- 判断存储空间是否存在  doesBucketExist("bucketName");
-
-
-
-## -- 获取存储空间的地域 getBucketLocation("bucketName");
-
-
-
-## -- 获取存储空间的信息 getBucketInfo("bucketName");
+## -- 获取存储空间的信息 getBucketInfo("bucketName")
 
 ```java
 // 获取地域。
@@ -366,19 +354,19 @@ info.getDataRedundancyType();
 
 ## -- 管理存储空间读写权限
 
-### 设置存储空间的访问权限 
+### 设置存储空间的访问权限
 
 ```java
 ossClient.setBucketAcl("yourBucketName", CannedAccessControlList.Private);
 ```
 
-### 获取存储空间读写权限 
+### 获取存储空间读写权限
 
 ```java
 ossClient.getBucketAcl("yourBucketName");
 ```
 
-## -- 删除存储空间 
+## -- 删除存储空间
 
 ```java
 ossClient.deleteBucket("yourBucketName");
@@ -446,8 +434,6 @@ ossClient.deleteBucketTagging(new GenericRequest(bucketName));
 
 ## -- [传输加速]()
 
-
-
 # [4，上传文件](https://help.aliyun.com/document_detail/84778.html)
 
 ## -- [概述](https://help.aliyun.com/document_detail/32013.html)
@@ -458,16 +444,17 @@ ossClient.deleteBucketTagging(new GenericRequest(bucketName));
     断点续传上传：支持并发、断点续传、自定义分片大小。大文件上传推荐使用断点续传。最大不能超过48.8TB。
     分片上传：当文件较大时，可以使用分片上传，最大不能超过48.8TB。
 
-
 ## -- [简单上传](https://help.aliyun.com/document_detail/84781.html)
 
 ### 流式上传
 
-使用流式上传，您可以将数据流上传到OSS文件。                     
+使用流式上传，您可以将数据流上传到OSS文件。
 **说明** `如果OSS文件存在，则上传的数据会覆盖该文件的内容；如果OSS文件不存在，则会新建该文件`
 
-#### 上传字符串 
+#### 上传字符串
+
   以下代码用于将字符串上传到目标存储空间examplebucket中exampledir目录下的exampleobject.txt文件。
+
 ```java
   // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
   String endpoint = "yourEndpoint";
@@ -495,7 +482,7 @@ ossClient.deleteBucketTagging(new GenericRequest(bucketName));
   ossClient.putObject(putObjectRequest);   
 ```
 
-#### 上传Byte数组                         
+#### 上传Byte数组
 
 ```java
   // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
@@ -513,8 +500,10 @@ ossClient.deleteBucketTagging(new GenericRequest(bucketName));
   ossClient.putObject("examplebucket", "exampledir/exampleobject.txt", new ByteArrayInputStream(content));
 ```
 
-#### 上传网络流                         
+#### 上传网络流
+
   以下代码用于将网络流上传到目标存储空间的exampleobject.txt文件。
+
 ```java
   // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
   String endpoint = "yourEndpoint";
@@ -531,7 +520,8 @@ ossClient.deleteBucketTagging(new GenericRequest(bucketName));
   ossClient.putObject("examplebucket", "exampledir/exampleobject.txt", inputStream);
 ```
 
-#### 上传文件流                         
+#### 上传文件流
+
 ```java
   // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
   String endpoint = "yourEndpoint";
@@ -552,6 +542,7 @@ ossClient.deleteBucketTagging(new GenericRequest(bucketName));
 
 使用文件上传，您可以将本地文件上传到OSS文件。
 以下代码用于将本地文件examplefile.txt上传到目标存储空间examplebucket中exampledir目录下的exampleobject.txt文件。
+
 ```java
 // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
 String endpoint = "yourEndpoint";
@@ -578,7 +569,7 @@ ossClient.putObject(putObjectRequest);
  
 ```
 
-## -- web上传 
+## -- web上传
 
 `浏览器或App端上传文件到应用服务器，应用服务器再把文件上传到OSS`
 
@@ -591,8 +582,6 @@ ossClient.putObject(putObjectRequest);
 - 上传慢：用户数据需先上传到应用服务器，之后再上传到OSS，网络传输时间比直传到OSS多一倍。如果用户数据不通过应用服务器中转，而是直传到OSS，速度将大大提升。而且OSS采用BGP带宽，能保证各地各运营商之间的传输速度。
 - 扩展性差：如果后续用户数量逐渐增加，则应用服务器会成为瓶颈。
 - 费用高：需要准备多台应用服务器。由于OSS上行流量是免费的，如果数据直传到OSS，将节省多台应用服务器的费用。
-
-
 
 ### VUE获取签名后直传<a name="web上传示例"></a>
 
@@ -738,8 +727,6 @@ export function policy() {
 [java获取签名](#获取签名)
 
 [上传回调](#上传回调)
-
-
 
 ## -- [表单上传](https://help.aliyun.com/document_detail/84788.html)
 
@@ -917,8 +904,8 @@ public class PostObjectSample {
 
 ### 注意事项
 
-- 当文件不存在时，调用AppendObject接口会创建一个追加类型文件。                     
-- 当文件已存在时，如果文件为追加类型文件，且设置的追加位置和文件当前长度相等，则直接在该文件末尾追加内容；如果文件为追加类型文件，但是设置的追加位置和文件当前长度不相等，则抛出PositionNotEqualToLength异常；如果文件为非追加类型文件时，则抛出ObjectNotAppendable异常。                     
+- 当文件不存在时，调用AppendObject接口会创建一个追加类型文件。
+- 当文件已存在时，如果文件为追加类型文件，且设置的追加位置和文件当前长度相等，则直接在该文件末尾追加内容；如果文件为追加类型文件，但是设置的追加位置和文件当前长度不相等，则抛出PositionNotEqualToLength异常；如果文件为非追加类型文件时，则抛出ObjectNotAppendable异常。
 - 追加类型文件暂不支持CopyObject操作。
 
 ```java
@@ -1016,6 +1003,7 @@ appendObjectResult = ossClient.appendObject(appendObjectRequest);
 | Callback         | 使用上传回调。关于上传回调的更多信息                         |
 
 ### 示例
+
 ```java
 /// yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
 String endpoint = "yourEndpoint";
@@ -1067,11 +1055,11 @@ ossClient.uploadFile(uploadFileRequest);
 
 分片上传（Multipart Upload）分为以下三个步骤：
 
-1. 初始化一个分片上传事件。                         
+1. 初始化一个分片上传事件。
 
     调用ossClient.initiateMultipartUpload方法返回OSS创建的全局唯一的uploadId。
 
-2. 上传分片。                         
+2. 上传分片。
 
    调用ossClient.uploadPart方法上传分片数据。
 
@@ -1081,7 +1069,7 @@ ossClient.uploadFile(uploadFileRequest);
    - OSS将收到的分片数据的MD5值放在ETag头内返回给用户。
    - OSS计算上传数据的MD5值，并与SDK计算的MD5值比较，如果不一致则返回InvalidDigest错误码。
 
-3. 完成分片上传。                         
+3. 完成分片上传。
 
    所有分片上传完成后，调用ossClient.completeMultipartUpload方法将所有分片合并成完整的文件。
 
@@ -1220,7 +1208,9 @@ ossClient.abortMultipartUpload(abortMultipartUploadRequest);
 ```
 
 ### 列举已上传的分片
-#### 简单列举已上传的分片 
+
+#### 简单列举已上传的分片
+
 ```java
 // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
 String endpoint = "yourEndpoint";
@@ -1260,7 +1250,9 @@ for (PartSummary part : partListing.getParts()) {
 }
  
 ```
+
 #### 列举所有已上传的分片  
+
 ```java
 // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
 String endpoint = "yourEndpoint";
@@ -1300,7 +1292,9 @@ listPartsRequest.setPartNumberMarker(partListing.getNextPartNumberMarker());
 } while (partListing.isTruncated());
 
 ```
+
 #### 分页列举所有已上传的分片
+
 ```java
 // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
 String endpoint = "yourEndpoint";
@@ -1354,7 +1348,8 @@ do {
 | keyMarker      | 所有文件名称的字典序大于keyMarker参数值的分片上传事件。与uploadIdMarker参数一同使用，用于指定返回结果的起始位置。 | ListMultipartUploadsRequest.setKeyMarker(String keyMarker)   |
 | uploadIdMarker | 与keyMarker参数一同使用，用于指定返回结果的起始位置。 如果未设置keyMarker参数，则此参数无效。如果设置了keyMarker参数，则查询结果中包含：                                                                                             文件名称的字典序大于keyMarker参数值的所有文件。                                 文件名称等于keyMarker参数值且uploadId比uploadIdMarker参数值大的所有分片上传事件。 | ListMultipartUploadsRequest.setUploadIdMarker(String uploadIdMarker) |
 
-#### 简单列举分片上传事件 
+#### 简单列举分片上传事件
+
 ```java
 // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
 String endpoint = "yourEndpoint";
@@ -1381,7 +1376,9 @@ for (MultipartUpload multipartUpload : multipartUploadListing.getMultipartUpload
 }
  
 ```
-#### 列举全部分片上传事件 
+
+#### 列举全部分片上传事件
+
 ```java
 // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
 String endpoint = "yourEndpoint";
@@ -1415,7 +1412,9 @@ do {
     listMultipartUploadsRequest.setUploadIdMarker(multipartUploadListing.getNextUploadIdMarker());
 } while (multipartUploadListing.isTruncated()); 
 ```
-#### 分页列举全部上传事件 
+
+#### 分页列举全部上传事件
+
 ```java
 // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
 String endpoint = "yourEndpoint";
@@ -1454,7 +1453,9 @@ do {
 ```
 
 ## -- [进度条](https://help.aliyun.com/document_detail/84796.html)
+
 ossClient.putObject、ossClient.getObject、ossClient.uploadPart、ossClient.uploadFile以及ossClient.downloadFile方法均支持进度条功能，使用方法与ossClient.putObject类似。
+
 ```java
 public class PutObjectProgressListener implements ProgressListener {
     private long bytesWritten = 0;
@@ -1614,11 +1615,10 @@ protected boolean VerifyOSSCallbackRequest(HttpServletRequest request, String os
     }
 ```
 
-
-
 # [5，下载文件](https://help.aliyun.com/document_detail/84822.html)
 
 ## -- [流式下载](https://help.aliyun.com/document_detail/84823.html)
+
 ```java
 // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
 String endpoint = "yourEndpoint";
@@ -1650,6 +1650,7 @@ reader.close();
 ```
 
 ## -- [下载到本地文件](https://help.aliyun.com/document_detail/84824.html)
+
 ```java
 // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
 String endpoint = "yourEndpoint";
@@ -1668,9 +1669,13 @@ OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySec
 // 如果未指定本地路径，则下载后的文件默认保存到示例程序所属项目对应本地路径中。
 ossClient.getObject(new GetObjectRequest(bucketName, objectName), new File("D:\\localpath\\examplefile.txt")); 
 ```
+
 ## -- [范围下载](https://help.aliyun.com/document_detail/84825.html)
+
 ### 指定正常的下载范围
+
 流式读取一次可能无法读取全部数据。如果您需要流式读取64 KB的数据，请使用如下的方式多次读取，直到读取到64 KB或者文件结束
+
 ```java
 // Endpoint以杭州为例，其它Region请按实际情况填写。
 String endpoint = "http://oss-cn-hangzhou.aliyuncs.com";
@@ -1703,8 +1708,11 @@ for (int n = 0; n != -1; ) {
 in.close();
 
 ```
+
 ### 指定异常的下载范围
+
 假设现有大小为1000 Bytes的Object，则指定的正常下载范围应为0~999。如果指定范围不在有效区间，会导致Range不生效，响应返回值为200，并传送整个Object的内容。请求不合法的示例及返回说明如下：
+
 - 若指定了Range: bytes=500~2000，此时范围末端取值不在有效区间，返回整个文件的内容，且HTTP Code为200。
 - 若指定了Range: bytes=1000~2000，此时范围首端取值不在有效区间，返回整个文件的内容，且HTTP Code为200。
 
@@ -1757,7 +1765,7 @@ try {
 | bucketName       | 是       | examplebucket                      | 存储空间（Bucket）名称。                                     | 通过构造方法设置。                  |
 | key              | 是       | exampledir/exampleobject.txt       | Object完整路径。Object完整路径中不能包含Bucket名称。         | 通过构造方法设置。                  |
 | downloadFile     | 否       | D:\\localpath\\examplefile.txt     | 本地文件的完整路径。OSS文件将下载到该本地文件。              | 通过构造方法或setDownloadFile设置。 |
-| partSize         | 否       | 1 * 1024 * 1024                    | 分片大小，取值范围为1 B~5 GB。                               | 通过setPartSize设置。               |
+| partSize         | 否       | 1 *1024* 1024                    | 分片大小，取值范围为1 B~5 GB。                               | 通过setPartSize设置。               |
 | taskNum          | 否       | 10                                 | 分片下载的并发数。默认值为1。                                | 通过setTaskNum设置。                |
 | enableCheckpoint | 否       | true                               | 是否开启断点续传功能。取值范围如下：                                                         false（默认）：关闭                              true：开启 | 通过setEnableCheckpoint设置。       |
 | checkpointFile   | 否       | D:\\localpath\\examplefile.txt.dcp | 记录本地分片下载结果的文件。开启断点续传功能时需要设置此参数。下载过程中的进度信息会保存在该文件中，如果某一分片下载失败，再次下载时会根据文件中记录的点继续下载。下载完成后，该文件会被删除。                           文件默认名称为downloadFile.dcp，且与downloadFile处于相同路径。 | 通过setCheckpointFile设置。         |
@@ -1828,10 +1836,8 @@ request.setModifiedSinceConstraint(new Date());
 
 // 下载OSS文件到本地文件。
 ossClient.getObject(request, new File("<yourLocalFile>"));
-		
+  
 ```
-
-
 
 ## -- [进度条](https://help.aliyun.com/document_detail/84829.html)
 
@@ -1900,7 +1906,6 @@ public static void main(String[] args) {
 }
 ```
 
-
 # [6，管理文件](https://help.aliyun.com/document_detail/84835.html)
 
 ## -- [判断文件是否存在](https://help.aliyun.com/document_detail/84837.html)
@@ -1924,7 +1929,6 @@ boolean found = ossClient.doesObjectExist("examplebucket", "exampleobject.txt");
 System.out.println(found);
  
 ```
-
 
 ## -- [管理文件访问权限](https://help.aliyun.com/document_detail/84838.html)
 
@@ -1970,7 +1974,7 @@ System.out.println(objectAcl.getPermission().toString());
 
 
 
-			
+   
 ```
 
 ## -- [管理文件元信息](https://help.aliyun.com/document_detail/84840.html)
@@ -2048,7 +2052,6 @@ ossClient.getObjectMetadata("<yourBucketName>", "<yourObjectName>");
 
  
 ```
-
 
 ### 修改文件元信息
 
@@ -2129,7 +2132,7 @@ System.out.println(metadata.getExpirationTime());
 
 ## -- [转换文件存储类型](https://help.aliyun.com/document_detail/116556.html)
 
-### 用于将Object的存储类型从标准或低频访问转换为归档类型： 
+### 用于将Object的存储类型从标准或低频访问转换为归档类型
 
 ```java
 // Endpoint以杭州为例，其它Region请按实际情况填写。
@@ -2163,7 +2166,7 @@ CopyObjectResult result = ossClient.copyObject(request);
 
 ```
 
-### 用于将Object的存储类型从归档转换为低频访问类型： 
+### 用于将Object的存储类型从归档转换为低频访问类型
 
 ```java
 // Endpoint以杭州为例，其它Region请按实际情况填写。
@@ -2214,69 +2217,41 @@ CopyObjectResult result = ossClient.copyObject(request);
 
 ```
 
-
-
 ## -- [列举文件](https://help.aliyun.com/document_detail/84841.html)
-
-
 
 ## -- [查询文件](https://help.aliyun.com/document_detail/123634.html)
 
-
-
 ## -- [删除文件](https://help.aliyun.com/document_detail/84842.html)
-
-
 
 ## -- [拷贝文件](https://help.aliyun.com/document_detail/84843.html)
 
-
-
 ## -- [禁止覆盖同名文件](https://help.aliyun.com/document_detail/146172.html)
-
-
 
 ## -- [解冻文件](https://help.aliyun.com/document_detail/84846.html)
 
-
-
 ## -- [管理软链接](https://help.aliyun.com/document_detail/84848.html)
-
-
-
 
 # [7，管理版本控制](https://help.aliyun.com/document_detail/119164.html)
 
 ## -- [管理版本控制](https://help.aliyun.com/document_detail/119165.html)
 
-
 ## -- [上传文件](https://help.aliyun.com/document_detail/119173.html)
-
 
 ## -- [下载文件](https://help.aliyun.com/document_detail/119175.html)
 
-
 ## -- [拷贝文件](https://help.aliyun.com/document_detail/119177.html)
-
 
 ## -- [列举文件](https://help.aliyun.com/document_detail/190262.html)
 
-
 ## -- [删除文件](https://help.aliyun.com/document_detail/119178.html)
-
 
 ## -- [解冻文件](https://help.aliyun.com/document_detail/119181.html)
 
-
 ## -- [获取文件元信息](https://help.aliyun.com/document_detail/119182.html)
-
 
 ## -- [管理文件访问权限](https://help.aliyun.com/document_detail/119183.html)
 
-
 ## -- [管理软链接](https://help.aliyun.com/document_detail/119185.html)
-
-
 
 # [8，数据加密](https://help.aliyun.com/document_detail/162791.html)
 
@@ -2284,7 +2259,7 @@ CopyObjectResult result = ossClient.copyObject(request);
 
 ### 配置Bucket加密
 
-您可以通过以下代码设置Bucket默认加密方式，设置成功之后，所有上传至该Bucket但未设置加密方式的Object都会使用Bucket默认加密方式进行加密：      
+您可以通过以下代码设置Bucket默认加密方式，设置成功之后，所有上传至该Bucket但未设置加密方式的Object都会使用Bucket默认加密方式进行加密：
 
 ```java
 // Endpoint以杭州为例，其它Region请按实际情况填写。
@@ -2308,7 +2283,7 @@ ossClient.setBucketEncryption(request);
       
 ```
 
-### 获取Bucket加密配置    
+### 获取Bucket加密配置
 
 ```java
 // Endpoint以杭州为例，其它Region请按实际情况填写。
@@ -2354,9 +2329,9 @@ ossClient.deleteBucketEncryption("<yourBucketName>");
 
 对于主密钥的使用，目前支持如下两种方式：
 
-- 使用KMS托管用户主密钥                         					                        
+- 使用KMS托管用户主密钥                                                      
   当使用KMS托管用户主密钥用于客户端数据加密时，需要将KMS用户主密钥ID（即CMK ID）传递给SDK。
-- 使用用户自主管理的主密钥（RSA）                         					                        
+- 使用用户自主管理的主密钥（RSA）                                                      
   主密钥信息由用户提供，需要用户将主密钥的公钥、私钥信息当做参数传递给SDK。
   使用以上两种加密方式能够有效地避免数据泄漏，保护客户端数据安全。即使数据泄漏，其他人也无法解密得到原始数据。
 
@@ -2376,7 +2351,7 @@ ossClient.deleteBucketEncryption("<yourBucketName>");
 
 ## -- 创建加密客户端
 
-**说明** 使用客户端加密时，需确保您使用了OSS Java SDK 3.9.1及以上版本，同时在工程里添加Bouncy Castle Crypto包，例如在pom.xml中加入如下依赖。                     
+**说明** 使用客户端加密时，需确保您使用了OSS Java SDK 3.9.1及以上版本，同时在工程里添加Bouncy Castle Crypto包，例如在pom.xml中加入如下依赖。
 
 ```xml
 <dependency>
@@ -2395,7 +2370,7 @@ ossClient.deleteBucketEncryption("<yourBucketName>");
 
 以下提供了创建RSA、KMS加密客户端的完整示例。
 
-### 创建RSA加密客户端    
+### 创建RSA加密客户端
 
 创建RSA加密客户端之前，需要创建非对称密钥KeyPair对象。OSS Java  SDK提供了从PKCS1编码或PKCS8编码的pem格式私钥字符串到RSAPrivateKey对象的转换，以及从X509编码pem格式公钥字符串到RSAPublicKey对象的转换。
 
@@ -2404,7 +2379,6 @@ ossClient.deleteBucketEncryption("<yourBucketName>");
   `RSAPrivateKey SimpleRSAEncryptionMaterials.getPrivateKeyFromPemPKCS8(String privateKeyStr);`
 
   `RSAPublicKey SimpleRSAEncryptionMaterials.getPublicKeyFromPemX509(String publicKeyStr);`
-
 
 ```java
   // Endpoint以杭州为例，其它Region请按实际情况填写。
@@ -2480,10 +2454,12 @@ ossClient.deleteBucketEncryption("<yourBucketName>");
 
 以下提供了如何使用用户自主管理的主密钥（RSA）进行普通上传和下载文件、分片上传、范围下载等场景的完整示例。
 
-**说明** 使用主密钥KMS与使用主密钥RSA的方式，区别仅在于OSSEncryptionClient的创建过程。                     
+**说明** 使用主密钥KMS与使用主密钥RSA的方式，区别仅在于OSSEncryptionClient的创建过程。
 
 ## -- 普通上传和下载文件
+
 使用**主密钥RSA**进行普通上传和下载Object示例代码如下：
+
 ```java
 // Endpoint以杭州为例，其它Region请按实际情况填写。
 String endpoint = "http://oss-cn-hangzhou.aliyuncs.com";
@@ -2805,14 +2781,12 @@ ossEncryptionClient.shutdown();
 
 # [9、授权访问](https://help.aliyun.com/document_detail/32016.html)
 
-
-
 ## 使用STS进行临时授权
 
 STS的优势如下：
 
 - 您无需透露您的长期密钥（AccessKey）给第三方应用，只需生成一个访问令牌并将令牌交给第三方应用。您可以自定义这个令牌的访问权限及有效期限。
-- 您无需关心权限撤销问题，访问令牌过期后自动失效。    
+- 您无需关心权限撤销问题，访问令牌过期后自动失效。
 
 ```java
 String endpoint = "yourEndpoint";
@@ -2845,9 +2819,9 @@ OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySec
 
 **说明**  `由于STS临时账号以及签名URL均需设置有效时长，当您使用STS临时账号生成签名URL执行相关操作（例如上传、下载文件）时，以最小的有效时长为准。例如您的STS临时账号的有效时长设置为1200秒、签名URL设置为3600秒时，当有效时长超过1200秒后，您无法使用此STS临时账号生成的签名URL上传文件。`
 
-- 生成签名URL 
+- 生成签名URL
   您可以将生成的签名URL提供给访客进行临时访问。生成签名URL时，您可以通过指定URL的过期时间来限制访客的访问时长。签名URL的默认过期时间为3600秒，最大值为32400秒。
-  在URL中加入签名信息，以便将该URL转给第三方实现授权访问。 
+  在URL中加入签名信息，以便将该URL转给第三方实现授权访问。
 - 生成以GET方法访问的签名URL
 
 ### 生成单个以GET方法访问的签名URL
@@ -2876,7 +2850,7 @@ OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySec
   
 ```
 
-### 生成多个以GET方法访问的签名URL                              
+### 生成多个以GET方法访问的签名URL
 
 ```java
     // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
@@ -2909,8 +2883,9 @@ OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySec
     }
 ```
 
-- 生成以其他HTTP方法访问的签名URL                         
+- 生成以其他HTTP方法访问的签名URL
   如果您要授权其他用户临时执行其他操作（例如上传、删除文件等），需要生成对应的签名URL，例如生成以PUT方法访问的签名URL来上传文件。您可以根据需要一次生成单个或者多个以其他HTTP方法访问的签名URL。
+
 ### 生成单个以其他HTTP方法访问的签名URL
 
 ```java
@@ -3008,11 +2983,12 @@ OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySec
 
   通过传入HttpMethod.PUT参数，访客可以使用生成的签名URL上传文件。
 
-- 生成带有指定参数的签名URL                         
+- 生成带有指定参数的签名URL
 
   您可以根据需要一次生成单个或者多个带有指定参数的签名URL。
 
-### 生成单个带有指定参数的签名URL                              
+### 生成单个带有指定参数的签名URL
+
 ```java
     // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
     String endpoint = "yourEndpoint";
@@ -3045,7 +3021,8 @@ OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySec
     System.out.println(url);
 ```
 
-### 生成多个带有指定参数的签名URL                              
+### 生成多个带有指定参数的签名URL
+
 ```java
     // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
     String endpoint = "yourEndpoint";
@@ -3081,7 +3058,7 @@ OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySec
     }
 ```
 
-## 使用签名URL上传文件                               
+## 使用签名URL上传文件
 
 ```java
     // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
@@ -3135,7 +3112,7 @@ OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySec
     PutObjectResult result = ossClient.putObject(signedUrl, fin, f.length(), customHeaders);
 ```
 
-## 使用签名URL获取文件                               
+## 使用签名URL获取文件
 
 ```java
     // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
@@ -3178,13 +3155,9 @@ OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySec
 
 # [10、数据安全性](https://help.aliyun.com/document_detail/85170.html)
 
-
-
 # [11、图片处理](https://help.aliyun.com/document_detail/47505.html)
 
 [项目](https://github.com/aliyun/aliyun-oss-java-sdk/blob/master/src/samples/ImageSample.java?spm=a2c4g.11186623.0.0.79e460b3gmbYI7&file=ImageSample.java)
-
-
 
 # 12、OSS常见错误码
 
@@ -3220,6 +3193,3 @@ OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySec
 | RequestTimeout                  | 请求超时                                    | 400        |
 | SignatureDoesNotMatch           | 签名错误                                    | 403        |
 | InvalidEncryptionAlgorithmError | 指定的熵编码加密算法错误                    | 400        |
-
-
-

@@ -12,10 +12,10 @@ tag:
 
 <!-- more -->
 
-
 # centos网络网卡配置
 
 ## 一、设置本机静态IP
+
 ### 1、查看本机ip：ifconfig
 
 ### 2、设置静态ip -> 配置文件
@@ -93,8 +93,6 @@ DNS1="192.168.100.2"
 IPV6_PRIVACY="no"
 ```
 
-
-
 ```shell
 TYPE=Ethernet
 PROXY_METHOD=none
@@ -127,8 +125,6 @@ ONBOOT=yes
 192.168.100.130 yu
 ```
 
-
-
 ### 4、重新启动网络服务
 
 ```shell
@@ -144,9 +140,8 @@ systemctl restart network.service //重启网络服务，
   system：centos6之前使用
   systemctl：centos7之后出现的，centos7也可以使用system，兼容低版本
 
-
-
 ### 5、ip配置成功
+
 ### 6、ping：ctrl+z 退出
 
 ```shell
@@ -158,15 +153,6 @@ ping 语法
 -s  # 设置发送的数据包的大小，默认发送56字节，最大只能设置为65507字节
 ```
 
-
-
 ## 二、wind映射Linux主机
 
-
-
 `C:\Windows\System32\drivers\etc`
-
-
-
-
-

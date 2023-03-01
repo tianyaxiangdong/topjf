@@ -16,7 +16,7 @@ tag:
 
 ### 安装 redis
 
-https://redis.io/download/
+<https://redis.io/download/>
 
 [docker安装教程](https://note-jf.github.io/tools/docker/docker-install-mysql-redis-nginx-nacos-mq-es.html)
 
@@ -31,13 +31,9 @@ docker run -p 6491:6379 --name redis \
 -d registry.cn-chengdu.aliyuncs.com/jinfang/redis:latest redis-server /etc/redis/redis.conf
 ```
 
-
-
 ```bash
 docker exec -it 4529e2c29cbb redis-cli
 ```
-
-
 
 ### 安装mysql
 
@@ -95,15 +91,13 @@ collation-server=utf8mb4_general_ci
 sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
 ```
 
-
-
 ## 单体安装 open-falcon
 
 [下载](https://github.com/open-falcon/falcon-plus/releases)
 
-https://github.com/open-falcon/falcon-plus/releases/download/v0.3/open-falcon-v0.3.tar.gz
+<https://github.com/open-falcon/falcon-plus/releases/download/v0.3/open-falcon-v0.3.tar.gz>
 
-https://github.com/open-falcon/falcon-plus/releases/download/v0.2.1/open-falcon-v0.2.1.tar.gz
+<https://github.com/open-falcon/falcon-plus/releases/download/v0.2.1/open-falcon-v0.2.1.tar.gz>
 
 一、创建工作目录
 
@@ -153,8 +147,6 @@ agent  aggregator  alarm  api  gateway  graph  hbs  judge  nodata  open-falcon  
 [falcon-alarm] 15586
 ```
 
-
-
 - 检查所有模块的启动状况
 
 ./open-falcon check
@@ -172,8 +164,6 @@ agent  aggregator  alarm  api  gateway  graph  hbs  judge  nodata  open-falcon  
           falcon-api       DOWN               - 
         falcon-alarm       DOWN               - 
 ```
-
-
 
 五、更多命令行工具
 
@@ -205,15 +195,4 @@ agent  aggregator  alarm  api  gateway  graph  hbs  judge  nodata  open-falcon  
 For debugging , You can check $WorkDir/$moduleName/log/logs/xxx.log
 ```
 
-
-
-
-
 ## 分布式安装 open-falcon
-
-
-
-
-
-
-

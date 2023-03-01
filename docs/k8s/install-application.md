@@ -23,25 +23,18 @@ tag:
 
 ![](./application.assets/true-image-20220501211906409.png)
 
-
-
 ## MySQL
 
 ## Redis
 
 ## ES
 
-
 ## MQ
-
 
 ## Nacos
 
-
 ## ZipKin
 
-
 ## Sentinel
-
 
 ## Java应用

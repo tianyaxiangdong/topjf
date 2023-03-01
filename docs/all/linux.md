@@ -86,7 +86,7 @@ tag:
 - 用户删除了大量的文件被删除后，在文件系统目录中已经不可见了，所以du就不会再统计它。
 - 然而如果此时还有运行的进程持有这个已经被删除的文件句柄，那么这个文件就不会真正在磁盘中被删除，分区超级块中的信息也就不会更改，
 df仍会统计这个被删除的文件。
-- 可通过 lsof命令查询处于deleted状态的文件，被删除的文件在系统中被标记为deleted。如果系统有大量deleted状态的文件， 
+- 可通过 lsof命令查询处于deleted状态的文件，被删除的文件在系统中被标记为deleted。如果系统有大量deleted状态的文件，
 会导致du和df统计结果不一致。
 
 ### 如何升级内核？
@@ -130,6 +130,7 @@ rpm -ivh kernel-lt-4.4.185-1.el7.elrepo.x86_64.rp
 ```
 
 - 查看默认启动顺序
+
 ```shell
 [root@localhost ~]# awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg
 CentOS Linux (5.2.2-1.el7.elrepo.x86_64) 7 (Core)
@@ -150,7 +151,6 @@ CentOS Linux (0-rescue-e34fb4f1527b4f2d9fc75b77c016b6e7) 7 (Core)
 
 - 然后重启验证
 
-
 ### nginx日志访问量前十的ip怎么统计？
 
 ```shell
@@ -166,7 +166,6 @@ find /var/log/ -type f -name .*.log -mtime 30|xargs rm -f
 ### ansible有哪些模块？功能是什么？
 
 [Ansible 模块实例](/linux/ansible/ansible.html)
-
 
 | 模块       | 功能                   |
 |----------|----------------------|
@@ -186,7 +185,7 @@ find /var/log/ -type f -name .*.log -mtime 30|xargs rm -f
 
 ### nginx为什么比apache快？
 
-- nginx采用epoll模型 
+- nginx采用epoll模型
 - apache采用select模型
 
 ### 四层负载和七层负载区别是什么？
@@ -214,8 +213,8 @@ find /var/log/ -type f -name .*.log -mtime 30|xargs rm -f
 - log 存放Tomcat运行产生的日志
 - temp 运行过程中产生的临时文件
 - webapps 站点目录
-- work 存放tomcat运行时的编译后的文件 
-- conf/server.xml 修改端口号 
+- work 存放tomcat运行时的编译后的文件
+- conf/server.xml 修改端口号
 - bin/catalina.sh 修改jvm内存
 
 ### nginx反向代理时，如何使后端获取真正的访问来源ip？
@@ -393,7 +392,7 @@ myisam
 **myisam**
 
 - .frm：保护表的定义
-- .myd：保存表的数据 
+- .myd：保存表的数据
 - .myi：表的索引文件
 
 **innodb**
@@ -405,7 +404,7 @@ myisam
 
 **mysql8之前**
 
-- `set password for 用户名@localhost = password('新密码'); `
+- `set password for 用户名@localhost = password('新密码');`
 - `mysqladmin -u用户名 -p旧密码 password 新密码`
 - `update user set password=password('123') where user='root' and host='localhost';`
 
@@ -459,9 +458,11 @@ show grants for user@'%';
 ### redis如何进行数据备份与恢复？
 
 备份
+
 ```shell
 redis 127.0.0.1:6379> SAVE
 ```
+
 > 创建 redis 备份文件也可以使用命令 BGSAVE，该命令在后台执行。
 
 还原
@@ -504,7 +505,7 @@ redis 127.0.0.1:6379> CONFIG GET dir
 ### dockerfile中COPY和ADD区别是什么？
 
 - COPY指令和ADD指令都可以将主机上的资源复制或加入到容器镜像中
-- 区别是ADD可以从 远程URL中的资源不会被解压缩。 
+- 区别是ADD可以从 远程URL中的资源不会被解压缩。
 - 如果是本地的压缩包ADD进去会被解压缩
 
 ### docker的cs架构组件有哪些？
@@ -524,7 +525,7 @@ redis 127.0.0.1:6379> CONFIG GET dir
 vim /lib/systemd/system/docker.service
 ```
 
-在ExecStart=后添加配置，注意，需要先空格后，再输入 
+在ExecStart=后添加配置，注意，需要先空格后，再输入
 
 ```shell
 -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock
@@ -553,8 +554,6 @@ vim /lib/systemd/system/docker.service
 ### docker和vmware虚拟化区别？
 
 ![](./linux.assets/true-image-20220817182423185.png)
-
-
 
 ## 五、kubernetes
 
@@ -668,7 +667,7 @@ Pod的重启策略有3种，默认值为Always。
 
 ### ipvs为啥比iptables效率高？
 
-- IPVS模式与iptables同样基于Netfilter，但是ipvs采用的hash表，iptables采用一条条的规则列表。 
+- IPVS模式与iptables同样基于Netfilter，但是ipvs采用的hash表，iptables采用一条条的规则列表。
 - iptables又是为了防火墙设计的，集群数量越多iptables规则就越多，而iptables规则是从上到下匹配，所以效率就越是低下。
 - 因此当service数量达到一定规模时，hash查表的速度优势就会显现出来，从而提高service的服务性能。
 
@@ -685,15 +684,13 @@ StorageClass 的另一个重要作用，是指定 PV 的 Provisioner（存储插
 ### nginx ingress的原理本质是什么？
 
 - ngress controller通过和kubernetes api交互，动态的去感知集群中ingress规则变化，
-- 然后读取它，按照自定义的规则，规则就是写明了哪个域名对应哪个service， 
+- 然后读取它，按照自定义的规则，规则就是写明了哪个域名对应哪个service，
 - 生成一段nginx配置，再写到`nginx-ingress-controller`的pod里，这个Ingress controller的pod里运行着一个Nginx服务，
 控制器会把生成的nginx配置写入`/etc/nginx.conf`文件中，然后reload 一下使配置生效。以此达到域名分配置和动态更新的问题。
 
 ### 描述不同node上的Pod之间的通信流程
 
 ![](./linux.assets/true-image-20220817182620388.png)
-
-
 
 ### k8s集群节点需要关机维护，需要怎么操作
 
@@ -773,8 +770,6 @@ StorageClass 的另一个重要作用，是指定 PV 的 Provisioner（存储插
 
 ![](./linux.assets/true-image-20220817182702866.png)
 
-
-
 ### elasticsearch分片副本是什么？你们配置的参数是多少？
 
 [参考](https://juejin.cn/post/6844903862088777736)
@@ -788,13 +783,13 @@ StorageClass 的另一个重要作用，是指定 PV 的 Provisioner（存储插
 ### 编写脚本，定时备份某个库，然后压缩，发送异机
 
 - 公共部分定义函数，如获取时间戳，配置报警接口
-- 多使用if判断是否存在异常并处理，如数据库大，检测任务是否完成。 
+- 多使用if判断是否存在异常并处理，如数据库大，检测任务是否完成。
 - 检测生成文件大小是否是空文件
 
 ### 批量获取所有主机的系统信息
 
 - 使用python的paramiko库，ssh登陆主机执行查询操作
-- 使用shell脚本批量ssh登陆主机并执行命令 
+- 使用shell脚本批量ssh登陆主机并执行命令
 - 使用ansible的setup模块获取主机信息
 - prometheus的node_exporter收集主机资源信息
 

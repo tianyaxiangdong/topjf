@@ -96,7 +96,6 @@ Git 有三种状态，你的文件可能处于其中之一：
 
 ![](./git-intro.assets/true-2019-3areas.png)
 
-
 **基本的 Git 工作流程如下：**
 
 1. 在工作目录中修改文件。
@@ -115,7 +114,7 @@ Git 有三种状态，你的文件可能处于其中之一：
 ### 记录每次更新到仓库
 
 1. **检测当前文件状态** : `git status`
-2. **提出更改（把它们添加到暂存区）** ：`git add filename ` (针对特定文件)、`git add *`(所有文件)、`git add *.txt`（支持通配符，所有 .txt 文件）
+2. **提出更改（把它们添加到暂存区）** ：`git add filename` (针对特定文件)、`git add *`(所有文件)、`git add *.txt`（支持通配符，所有 .txt 文件）
 3. **忽略文件**：`.gitignore` 文件
 4. **提交更新:** `git commit -m "代码提交信息"` （每次准备提交前，先用 `git status` 看下，是不是都已暂存起来了， 然后再运行提交命令 `git commit`）
 5. **跳过使用暂存区域更新的方式** : `git commit -a -m "代码提交信息"`。 `git commit` 加上 `-a` 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 `git add` 步骤。
@@ -123,6 +122,7 @@ Git 有三种状态，你的文件可能处于其中之一：
 7. **对文件重命名** ：`git mv README.md README`(这个命令相当于`mv README.md README`、`git rm README.md`、`git add README` 这三条命令的集合)
 
 ### 一个好的 Git 提交消息
+
 一个好的 Git 提交消息如下：
 
     标题行：用这一行来描述和解释你的这次提交
@@ -136,7 +136,7 @@ Git 有三种状态，你的文件可能处于其中之一：
 ### 推送改动到远程仓库
 
 - 如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：`git remote add origin <server>` ,比如我们要让本地的一个仓库和 Github 上创建的一个仓库关联可以这样 `git remote add origin https://github.com/Snailclimb/test.git`  或者  `git remote set-url origin https://自己的token@github.com/用户（组织）名称/仓库名称.git
-  `
+`
 - 将这些改动提交到远端仓库：`git push origin master` (可以把 *master* 换成你想要推送的任何分支)
 
   如此你就能够将你的改动推送到所添加的服务器上去了。
@@ -185,7 +185,6 @@ git fetch origin
 git reset --hard origin/master
 ```
 
-
 ### 分支
 
 分支是用来将特性开发绝缘开来的。在你创建仓库的时候，*master* 是“默认”的分支。在其他分支上进行开发，完成后再将它们合并到主分支上。
@@ -205,7 +204,6 @@ git checkout test
 ```
 
 ![](./git-intro.assets/true-2019-3切换分支.png)
-
 
 你也可以直接这样创建分支并切换过去(上面两条命令的合写)
 
@@ -239,9 +237,7 @@ git push origin
 
 ## 常用操作命令
 
-
 - 更多命令参考 `[讲解git同步远程分支到本地 git使用方法有哪些]()`
-
 
 删除github远程 branch
 
@@ -265,4 +261,3 @@ git tag
 git tag -d v1.2.1
 git push :v1.2.1
 ```
-

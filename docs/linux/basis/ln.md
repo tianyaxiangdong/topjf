@@ -57,17 +57,12 @@ lrwxrwxrwx  1 root root 10 9月   9 22:24 /tmp/issue.soft -> /etc/issue
 134299727 lrwxrwxrwx  1 root root 10 9月   9 22:24 /tmp/issue.soft -> /etc/issue
 ```
 
-
 第六：不允许将硬链接指向目录；不允许跨分区创建硬链接
 
 ![](./ln.assets/true-clip_image006.png)
 
-
-
 ![](./ln.assets/true-clip_image008.png)
-
 
 链接查看指令
 
 ![](./ln.assets/true-clip_image010.png)
-

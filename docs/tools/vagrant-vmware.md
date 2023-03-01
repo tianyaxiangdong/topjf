@@ -11,12 +11,11 @@ tag:
 
 <!-- more -->
 
-
 ## 一、安装 centos7.9 模板
 
 *安装：略略略略*
 
-## 步骤：
+## 步骤
 
 1. 查看当前系统版本
 2. 设置sudo权限
@@ -42,9 +41,9 @@ CentOS Linux release 7.9.2009 (Core)
 
 3、vim /etc/sudoers
 
-> root	ALL=(ALL)	ALL
+> root ALL=(ALL) ALL
 >
-> a	ALL=(ALL)	ALL
+> a ALL=(ALL) ALL
 
 4、撤销sudoers文件写权限，命令：
 
@@ -151,13 +150,13 @@ deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted univer
 
 #### 华为
 
-https://mirrors.huaweicloud.com/home 搜索 epel
+<https://mirrors.huaweicloud.com/home> 搜索 epel
 
 1 查看：yum list | grep epel-release
 
 === epel-release.noarch      7-11        extras
 
-2 安装：yum install -y epel-release	yum remove -y epel-release
+2 安装：yum install -y epel-release yum remove -y epel-release
 
 3 替换：
 
@@ -169,7 +168,7 @@ rm -rf /etc/yum.repos.d/epel-testing.repo（不需要这个文件！）
 >
 > sed -i "s@https\?://download.fedoraproject.org/pub@https://repo.huaweicloud.com@g" /etc/yum.repos.d/epel.repo
 
-4 执行	yum -y clean all && yum -y makecache && yum -y update && yum repolist all
+4 执行 yum -y clean all && yum -y makecache && yum -y update && yum repolist all
 
 ##### epel.repo
 
@@ -217,13 +216,9 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
 ```
 
-
-
-
-
 #### 阿里
 
-https://developer.aliyun.com/mirror/epel
+<https://developer.aliyun.com/mirror/epel>
 
 1 查看：yum list | grep epel-release
 
@@ -235,11 +230,7 @@ https://developer.aliyun.com/mirror/epel
 >
 > mv /etc/yum.repos.d/epel-testing.repo /etc/yum.repos.d/epel-testing.repo.backup
 
-3 wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
-
-
-
-
+3 wget -O /etc/yum.repos.d/epel.repo <http://mirrors.aliyun.com/repo/epel-7.repo>
 
 ## 4、升级内核、并删除当前无用的系统内核版本
 
@@ -274,9 +265,9 @@ yum --disablerepo="*" --enablerepo="elrepo-kernel" list available
 
 可安装的软件包
 
-kernel-lt.x86_64		5.4.211-1.el7.elrepo		elrepo-kernel
+kernel-lt.x86_64  5.4.211-1.el7.elrepo  elrepo-kernel
 
-kernel-ml.x86_64		5.19.4-1.el7.elrepo		elrepo-kernel
+kernel-ml.x86_64  5.19.4-1.el7.elrepo  elrepo-kernel
 
 安装内核
 
@@ -353,20 +344,18 @@ kernel-lt-tools-libs-devel-5.4.211-1.el7.elrepo.x86_64
 yum install -y gcc make ncurses-devel openssl-devel flex bison  elfutils-libelf-devel
 ```
 
-
-
 ## 5、关闭防火墙firewalld、关闭selinux、关闭swap、确保不休眠
 
 ```shell
 # 1、 关闭防火墙
 ## centos
-systemctl start firewalld		systemctl stop firewalld
-systemctl enable firewalld		systemctl disable firewalld
+systemctl start firewalld  systemctl stop firewalld
+systemctl enable firewalld  systemctl disable firewalld
 systemctl status firewalld
 ## ubuntu
 systemctl disable ufw.service && systemctl stop ufw.service
-ufw start		ufw stop 	
-ufw enable		ufw disable 	
+ufw start  ufw stop  
+ufw enable  ufw disable  
 ufw status
 
 # 2、 关闭selinux
@@ -385,8 +374,6 @@ sed -ri 's/.*swap.*/#&/' /etc/fstab
 # 4、确保不休眠
 systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
-
-
 
 ## 6、配置网卡
 
@@ -471,9 +458,9 @@ cat <<EOF | tee /etc/hosts
 EOF
 ```
 
-systemctl start network.service  		systemctl stop network.service 
+systemctl start network.service    systemctl stop network.service
 
-systemctl restart network.service  	systemctl status network.service
+systemctl restart network.service   systemctl status network.service
 
 netplan apply
 
@@ -551,11 +538,9 @@ main
 
 赋予权限：`chmod +x /root/first.sh`
 
-
-
 ## 8、禁用 grub 规则
 
-#在 grub 文件里面的 GRUB_CMDLINE_LINUX 变量添加 net.ifnames=0 biosdevname=0
+# 在 grub 文件里面的 GRUB_CMDLINE_LINUX 变量添加 net.ifnames=0 biosdevname=0
 
 **原来配置的网卡ip会生效：/etc/sysconfig/network-scripts/ifcfg-ens33**，所以我不需要这里
 
@@ -595,21 +580,19 @@ dos2unix: converting file first.sh to Unix format ...
 new UUID="eddedb45-b871-4eea-8433-4c08103423e1"
 ```
 
-
-
 ## 二、Vagrant
 
 ### 1、centos7.9 基本配置
 
 ### 2、Vagrantfile 文件
 
-#### Vagrant + VirtualBox 
+#### Vagrant + VirtualBox
 
-安装 VirtualBox ：https://download.virtualbox.org/virtualbox/6.1.34/VirtualBox-6.1.34-150636-Win.exe
+安装 VirtualBox ：<https://download.virtualbox.org/virtualbox/6.1.34/VirtualBox-6.1.34-150636-Win.exe>
 
-下载 vagrantfile：https://releases.hashicorp.com/vagrant/2.2.19/
+下载 vagrantfile：<https://releases.hashicorp.com/vagrant/2.2.19/>
 
-查找下载centos7：https://app.vagrantup.com/boxes/search?utf8=%E2%9C%93&sort=downloads&provider=&q=centos
+查找下载centos7：<https://app.vagrantup.com/boxes/search?utf8=%E2%9C%93&sort=downloads&provider=&q=centos>
 
 **Vagrant 环境变量配置**
 
@@ -642,7 +625,7 @@ VAGRANT_HOME D:\rj-win\Vagrant\.vagrant.d
 
 #### Vagrantfile 脚本<a name="Vagrantfile 脚本"></a>
 
-https://www.vagrantup.com/docs/disks
+<https://www.vagrantup.com/docs/disks>
 
 ```bash
 #docker, hyperv, virtualbox, vmware_desktop, vmware_workstation
@@ -730,13 +713,13 @@ vagrant plugin install vagrant-disksize
 
 vmware_desktop：
 
-> https://app.vagrantup.com/generic/boxes/centos7 (675 MB) 
+> <https://app.vagrantup.com/generic/boxes/centos7> (675 MB)
 >
-> https://app.vagrantup.com/dds/boxes/vagrant-base-centos7 (:995MB)
+> <https://app.vagrantup.com/dds/boxes/vagrant-base-centos7> (:995MB)
 
 vmware_workstation：
 
-> https://app.vagrantup.com/dds/boxes/vagrant-base-centos7 (:995MB)
+> <https://app.vagrantup.com/dds/boxes/vagrant-base-centos7> (:995MB)
 
 **4.本地安装box**
 
@@ -854,17 +837,17 @@ exit
 
 ```ABAP
 39个
-Vagrantfile		disk1.vmdk		metadata.json		
-vagrant-base-centos7.vmxf		vagrant-base-centos7.nvram		vagrant-base-centos7.vmsd
-vagrant-base-centos7.vmx		disk1-s001.vmdk--->disk1-s032.vmdk
+Vagrantfile  disk1.vmdk  metadata.json  
+vagrant-base-centos7.vmxf  vagrant-base-centos7.nvram  vagrant-base-centos7.vmsd
+vagrant-base-centos7.vmx  disk1-s001.vmdk--->disk1-s032.vmdk
 ```
 
 ```ABAP
 8个
-generic-centos7-vmware.nvram		generic-centos7-vmware.vmdk（后期：vmware【000001-000004】.vmdk）
-generic-centos7-vmware.vmsd			generic-centos7-vmware.vmx
+generic-centos7-vmware.nvram  generic-centos7-vmware.vmdk（后期：vmware【000001-000004】.vmdk）
+generic-centos7-vmware.vmsd   generic-centos7-vmware.vmx
 generic-centos7-vmware.vmxf
-info.json		metadata.json		Vagrantfile
+info.json  metadata.json  Vagrantfile
 ```
 
 3、install.sh
@@ -921,8 +904,6 @@ else
 fi
 exit
 ```
-
-
 
 安装完成后执行`kill.bat`结束VMware虚拟机的【vmware-vmx.exe】
 
@@ -1111,8 +1092,6 @@ end
 
 ### 3、
 
-
-
 安装kernel-devel,需要安装VBOX的增强包，就必须安装这个
 
 安装增强包：就是vm-tool（在vm安装目录里的 xx.iso）
@@ -1149,13 +1128,13 @@ poweroff
 
 ## 二、vmrun
 
-https://docs.vmware.com/cn/
+<https://docs.vmware.com/cn/>
 
 ### 格式：vmrun [身份验证标志] 命令 [参数]
 
-https://www.vmware.com/pdf/vix162_vmrun_command.pdf
+<https://www.vmware.com/pdf/vix162_vmrun_command.pdf>
 
-https://docs.vmware.com/cn/search/#/vmrun
+<https://docs.vmware.com/cn/search/#/vmrun>
 
 ```bash
 身份验证标志
@@ -1166,132 +1145,132 @@ https://docs.vmware.com/cn/search/#/vmrun
    -gu <来宾操作系统中的用户名>
    -gp <guest OS 中的密码>
 
-电源命令          			参数          			描述
+电源命令             参数             描述
 --------------           ----------           -----------
-start                    .vmx 文件的路径     		启动虚拟机或团队
+start                    .vmx 文件的路径       启动虚拟机或团队
                          [gui|nogui]
-stop                     .vmx 文件的路径     		停止虚拟机或团队
+stop                     .vmx 文件的路径       停止虚拟机或团队
                          [hard|soft]
-reset                    .vmx 文件的路径     		重置 VM 或团队
+reset                    .vmx 文件的路径       重置 VM 或团队
                          [hard|soft]
-suspend                  .vmx 文件的路径     		暂停 VM 或团队
+suspend                  .vmx 文件的路径       暂停 VM 或团队
                          [hard|soft]
-pause                    .vmx 文件的路径     		暂停虚拟机
-unpause                  .vmx 文件的路径     		取消暂停虚拟机
+pause                    .vmx 文件的路径       暂停虚拟机
+unpause                  .vmx 文件的路径       取消暂停虚拟机
 
-快照命令		        	参数         			  描述
+快照命令           参数              描述
 -----------------        ----------           -----------
-listSnapshots            .vmx 文件的路径     		列出 VM 中的所有快照
+listSnapshots            .vmx 文件的路径       列出 VM 中的所有快照
                          [showTree]
-snapshot                 .vmx 文件的路径     		创建 VM 的快照
+snapshot                 .vmx 文件的路径       创建 VM 的快照
                          Snapshot name
-deleteSnapshot           .vmx 文件的路径     		从 VM 中删除快照
+deleteSnapshot           .vmx 文件的路径       从 VM 中删除快照
                          Snapshot name
                          [andDeleteChildren]
-revertToSnapshot         .vmx 文件的路径     		将 VM 状态设置为快照
+revertToSnapshot         .vmx 文件的路径       将 VM 状态设置为快照
                          快照名称
 
-主机网络命令   				 参数        		  		 描述
+主机网络命令        参数               描述
 ---------------------    ----------           -----------
-listHostNetworks                              	列出主机中的所有网络
-listPortForwardings      主机网络名称    			列出主机网络上所有可用的端口转发
-setPortForwarding        主机网络名称    			在主机网络上添加或更新端口转发
+listHostNetworks                               列出主机中的所有网络
+listPortForwardings      主机网络名称       列出主机网络上所有可用的端口转发
+setPortForwarding        主机网络名称       在主机网络上添加或更新端口转发
                          Protocol
                          Host port
                          Guest ip
                          Guest port
                          [Description]
-deletePortForwarding     Host network name   	删除主机网络上的端口转发
+deletePortForwarding     Host network name    删除主机网络上的端口转发
                          Protocol
                          Host port
 
-嘉宾命令   				 参数        		  		 描述
+嘉宾命令        参数               描述
 -----------------        ----------           -----------
-runProgramInGuest        .vmx 文件的路径     	在来宾操作系统中运行程序
+runProgramInGuest        .vmx 文件的路径      在来宾操作系统中运行程序
                          [-noWait]
                          [-activeWindow]
                          [-interactive]
                          完整路径到程序
                          [程序参数]
-runScriptInGuest         .vmx 文件的路径     	在来宾操作系统中运行脚本
+runScriptInGuest         .vmx 文件的路径      在来宾操作系统中运行脚本
                          [-noWait]
                          [-activeWindow]
                          [-interactive]
                          解释器路径
                          脚本文本
-fileExistsInGuest        .vmx 文件的路径     	检查来宾操作系统中是否存在文件
+fileExistsInGuest        .vmx 文件的路径      检查来宾操作系统中是否存在文件
                          来宾中的文件路径
-directoryExistsInGuest   .vmx 文件的路径    		检查来宾操作系统中是否存在目录
+directoryExistsInGuest   .vmx 文件的路径      检查来宾操作系统中是否存在目录
                          来宾目录的路径
-setSharedFolderState     .vmx 文件的路径     	修改主客共享文件夹
+setSharedFolderState     .vmx 文件的路径      修改主客共享文件夹
                          共享名称
                          Host path
                          writable | readonly
-addSharedFolder          .vmx 文件的路径     	添加主客共享文件夹
+addSharedFolder          .vmx 文件的路径      添加主客共享文件夹
                          共享名称
                          新主机路径
-removeSharedFolder       .vmx 文件的路径     	删除主客共享文件夹
+removeSharedFolder       .vmx 文件的路径      删除主客共享文件夹
                          共享名称
-enableSharedFolders      .vmx 文件的路径     	在来宾系统中启用共享文件夹
+enableSharedFolders      .vmx 文件的路径      在来宾系统中启用共享文件夹
                          [runtime]
-disableSharedFolders     .vmx 文件的路径     	禁用来宾系统中的共享文件夹
+disableSharedFolders     .vmx 文件的路径      禁用来宾系统中的共享文件夹
                          [runtime]
-listProcessesInGuest     .vmx 文件的路径     	列出来宾操作系统中正在运行的进程
-killProcessInGuest       .vmx 文件的路径     	在来宾操作系统中终止进程
+listProcessesInGuest     .vmx 文件的路径      列出来宾操作系统中正在运行的进程
+killProcessInGuest       .vmx 文件的路径      在来宾操作系统中终止进程
                          进程号
-deleteFileInGuest        .vmx 文件的路径     	删除来宾操作系统中的文件
+deleteFileInGuest        .vmx 文件的路径      删除来宾操作系统中的文件
                          Path in guest
-createDirectoryInGuest   .vmx 文件的路径     	在来宾操作系统中创建目录
+createDirectoryInGuest   .vmx 文件的路径      在来宾操作系统中创建目录
                          Directory path in guest
-deleteDirectoryInGuest   .vmx 文件的路径     	删除来宾操作系统中的目录
+deleteDirectoryInGuest   .vmx 文件的路径      删除来宾操作系统中的目录
                          Directory path in guest
-CreateTempfileInGuest    .vmx 文件的路径     	在来宾操作系统中创建临时文件
-listDirectoryInGuest     .vmx 文件的路径     	在来宾操作系统中列出一个目录
+CreateTempfileInGuest    .vmx 文件的路径      在来宾操作系统中创建临时文件
+listDirectoryInGuest     .vmx 文件的路径      在来宾操作系统中列出一个目录
                          Directory path in guest
-CopyFileFromHostToGuest  .vmx 文件的路径     	将文件从主机操作系统复制到来宾操作系统
+CopyFileFromHostToGuest  .vmx 文件的路径      将文件从主机操作系统复制到来宾操作系统
                          Path on host
                          Path in guest
-CopyFileFromGuestToHost  .vmx 文件的路径     	将文件从来宾操作系统复制到主机操作系统
+CopyFileFromGuestToHost  .vmx 文件的路径      将文件从来宾操作系统复制到主机操作系统
                          Path in guest
                          Path on host
-renameFileInGuest        .vmx 文件的路径     	在来宾操作系统中重命名文件
+renameFileInGuest        .vmx 文件的路径      在来宾操作系统中重命名文件
                          Original name
                          New name
-typeKeystrokesInGuest    .vmx 文件的路径     	在来宾操作系统中键入击键
+typeKeystrokesInGuest    .vmx 文件的路径      在来宾操作系统中键入击键
                          keystroke string
-connectNamedDevice       .vmx 文件的路径     	连接来宾操作系统中的命名设备
+connectNamedDevice       .vmx 文件的路径      连接来宾操作系统中的命名设备
                          device name
-disconnectNamedDevice    .vmx 文件的路径     	断开来宾操作系统中的命名设备
+disconnectNamedDevice    .vmx 文件的路径      断开来宾操作系统中的命名设备
                          device name
-captureScreen            .vmx 文件的路径     	将虚拟机的屏幕捕获到本地文件
+captureScreen            .vmx 文件的路径      将虚拟机的屏幕捕获到本地文件
                          Path on host
-writeVariable            .vmx 文件的路径     	在VM状态下写入一个变量
+writeVariable            .vmx 文件的路径      在VM状态下写入一个变量
                          [runtimeConfig|guestEnv|guestVar]
                          variable name
                          variable value
-readVariable             .vmx 文件的路径     	读取处于VM状态的变量
+readVariable             .vmx 文件的路径      读取处于VM状态的变量
                          [runtimeConfig|guestEnv|guestVar]
                          variable name
-getGuestIPAddress        .vmx 文件的路径     	获取来宾的IP地址
+getGuestIPAddress        .vmx 文件的路径      获取来宾的IP地址
                          [-wait]
 
-常规命令选项	   				 参数        		  		 描述
+常规命令选项         参数               描述
 ----------------         ----------           -----------
-list                                          	列出所有运行的虚拟机。 
-upgradevm                .vmx 文件的路径     	将虚拟机升级到当前虚拟硬件版本
-installTools             .vmx 文件的路径     	安装 VMware Tools in Guest
-checkToolsState          .vmx 文件的路径     	检查客户机中的 VMware Tools 的状态。
-												可能的状态为 unknown、installed和running
-deleteVM                 .vmx 文件的路径     	删除虚拟机
-clone                    .vmx 文件的路径     	创建 VM 的副本
+list                                           列出所有运行的虚拟机。 
+upgradevm                .vmx 文件的路径      将虚拟机升级到当前虚拟硬件版本
+installTools             .vmx 文件的路径      安装 VMware Tools in Guest
+checkToolsState          .vmx 文件的路径      检查客户机中的 VMware Tools 的状态。
+            可能的状态为 unknown、installed和running
+deleteVM                 .vmx 文件的路径      删除虚拟机
+clone                    .vmx 文件的路径      创建 VM 的副本
                          目标 .vmx 文件的路径
                          full（完全克隆）|linked（链接克隆）
                          [-snapshot=克隆的快照名称 if linked时]
                          [-cloneName=名称]
 
-VM模板命令   				 参数        		  		 描述
+VM模板命令        参数               描述
 ---------------------    ----------           -----------
-downloadPhotonVM         新虚拟机的路径     	 下载光子虚拟机
+downloadPhotonVM         新虚拟机的路径       下载光子虚拟机
 ```
 
 ### 示例
@@ -1697,8 +1676,6 @@ case $1 in
 esac
 ```
 
-
-
 ### 脚本：[first.sh](#first.sh)
 
 ### start 后，通过 嘉宾（set_ip1.bat） 的方式来设置虚拟机（ip、hostname）<a name="使用first.sh"></a>
@@ -1709,8 +1686,6 @@ esac
 D:\rj-win\vm16\vmrun.exe -T ws -gu root -gp 123456a runProgramInGuest "F:\vm\k8s\master-cluster\master-120\master-120.vmx" /bin/bash /root/first.sh 120 master-120
 ```
 
-
-
 ## 三、
 
 ## 四、
@@ -1718,14 +1693,3 @@ D:\rj-win\vm16\vmrun.exe -T ws -gu root -gp 123456a runProgramInGuest "F:\vm\k8s
 ## 五、
 
 ## 六、
-
-
-
-
-
-
-
-
-
-
-

@@ -215,7 +215,7 @@ void lamndaFor() {
         strings.forEach((s) -> System.out.println(s));
         //or
         strings.forEach(System.out::println);
- 				//map
+     //map
         Map<Integer, String> map = new HashMap<>();
         map.forEach((k,v)->System.out.println(v));
 }
@@ -613,7 +613,7 @@ public static <T> T requireNonNull(T obj) {
 
 `ofNullable` 方法和`of`方法唯一区别就是当 value 为 null 时，`ofNullable` 返回的是`EMPTY`，of 会抛出 `NullPointerException` 异常。如果需要把 `NullPointerException` 暴漏出来就用 `of`，否则就用 `ofNullable`。
 
-### `map()`相关方法。
+### `map()`相关方法
 
 ```java
 /**
@@ -744,7 +744,7 @@ public Optional<T> filter(Predicate<? super T> predicate) {
 
 ### 小结
 
-看完 `Optional` 源码，`Optional` 的方法真的非常简单，值得注意的是如果坚决不想看见 `NPE`，就不要用 `of() `、 `get()` 、`flatMap(..)`。最后再综合用一下 `Optional` 的高频方法。
+看完 `Optional` 源码，`Optional` 的方法真的非常简单，值得注意的是如果坚决不想看见 `NPE`，就不要用 `of()`、 `get()` 、`flatMap(..)`。最后再综合用一下 `Optional` 的高频方法。
 
 ```java
 Optional.ofNullable(zoo).map(o -> o.getDog()).map(d -> d.getAge()).filter(v->v==1).orElse(3);
@@ -777,7 +777,7 @@ LocalTime.class //时间 format: HH:mm:ss
 
 ```java
 public void oldFormat(){
-		Date now = new Date();
+  Date now = new Date();
     //format yyyy-MM-dd HH:mm:ss
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     String date  = sdf.format(now);
@@ -844,7 +844,7 @@ LocalTime.parse("12:12:22");
 
 ### 日期计算
 
-下面仅以**一周后日期**为例，其他单位（年、月、日、1/2 日、时等等）大同小异。另外，这些单位都在 _java.time.temporal.ChronoUnit_ 枚举中定义。
+下面仅以**一周后日期**为例，其他单位（年、月、日、1/2 日、时等等）大同小异。另外，这些单位都在 *java.time.temporal.ChronoUnit* 枚举中定义。
 
 **Java 8 之前:**
 
@@ -890,7 +890,7 @@ public void pushWeek(){
                 + period.getYears() + "年"
                 + period.getMonths() + "月"
                 + period.getDays() + "天");
-		 //打印结果是 “date1 到 date2 相隔：0年9月27天”
+   //打印结果是 “date1 到 date2 相隔：0年9月27天”
      //这里period.getDays()得到的天是抛去年月以外的天数，并不是总天数
      //如果要获取纯粹的总天数应该用下面的方法
      long day = date2.toEpochDay() - date1.toEpochDay();
@@ -987,7 +987,7 @@ System.out.println(date);
 //Wed Jan 27 14:05:29 CST 2021
 ```
 
-在新特性中引入了  `java.time.ZonedDateTime ` 来表示带时区的时间。它可以看成是 `LocalDateTime + ZoneId`。
+在新特性中引入了  `java.time.ZonedDateTime` 来表示带时区的时间。它可以看成是 `LocalDateTime + ZoneId`。
 
 ```java
 //当前时区时间

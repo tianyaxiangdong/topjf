@@ -12,7 +12,7 @@ tag:
 
 # Nacos
 
-文档：https://nacos.io/zh-cn/docs/what-is-nacos.html
+文档：<https://nacos.io/zh-cn/docs/what-is-nacos.html>
 
 ## Nacos是什么?
 
@@ -24,7 +24,7 @@ tag:
 
 [Kubernetes Service](https://kubernetes.io/docs/concepts/services-networking/service/)、[gRPC](https://grpc.io/docs/guides/concepts.html#service-definition) & [Dubbo RPC Service](https://dubbo.incubator.apache.org/)、[Spring Cloud RESTful Service](https://spring.io/understanding/REST)
 
-#### Nacos 的关键特性包括:
+#### Nacos 的关键特性包括
 
 - **服务发现和服务健康监测**
 
@@ -57,10 +57,9 @@ tag:
   Nacos 能让您从微服务平台建设的视角管理数据中心的所有服务及元数据，包括管理服务的描述、生命周期、服务的静态依赖分析、服务的健康状态、服务的流量管理、路由及安全策略、服务的 SLA 以及最首要的 metrics 统计数据。
   ```
 
-
 #### Nacos 地图
 
-一图看懂 Nacos，下面架构部分会详细介绍。 
+一图看懂 Nacos，下面架构部分会详细介绍。
 
 ![](./nacos-note.assets/true-nacosMap.jpg)
 
@@ -85,19 +84,19 @@ tag:
 使用 Nacos 简化服务发现、配置管理、服务治理及管理的解决方案，让微服务的发现、管理、共享、组合更加容易。
 ```
 
-### 概念：
+### 概念
 
 #### 地域
 
-​		物理的数据中心，资源创建成功后不能更换。
+​  物理的数据中心，资源创建成功后不能更换。
 
 #### 可用区
 
-​		同一地域内，电力和网络互相独立的物理区域。同一可用区内，实例的网络延迟较低。
+​  同一地域内，电力和网络互相独立的物理区域。同一可用区内，实例的网络延迟较低。
 
 #### 接入点
 
-​		地域的某个服务的入口域名。
+​  地域的某个服务的入口域名。
 
 #### 命名空间
 
@@ -179,11 +178,11 @@ Nacos数据（如配置和服务）描述信息，如服务版本、权重、容
 
 #### 应用
 
-​		用于标识服务提供方的服务的属性。
+​  用于标识服务提供方的服务的属性。
 
 #### 服务分组
 
-​		不同的服务可以归类到同一分组。
+​  不同的服务可以归类到同一分组。
 
 #### 虚拟集群
 
@@ -214,8 +213,6 @@ Nacos数据（如配置和服务）描述信息，如服务版本、权重、容
 ```
 为了防止因过多实例 (Instance) 不健康导致流量全部流向健康实例 (Instance) ，继而造成流量压力把健康 健康实例 (Instance) 压垮并形成雪崩效应，应将健康保护阈值定义为一个 0 到 1 之间的浮点数。当域名健康实例 (Instance) 占总服务实例 (Instance) 的比例小于该值时，无论实例 (Instance) 是否健康，都会将这个实例 (Instance) 返回给客户端。这样做虽然损失了一部分流量，但是保证了集群的剩余健康实例 (Instance) 能正常工作。
 ```
-
-
 
 ### [架构](https://nacos.io/zh-cn/docs/architecture.html)
 
@@ -382,8 +379,6 @@ db.user.0=root
 db.password.0=root
 ```
 
-
-
 ### [Nacos Spring](https://nacos.io/zh-cn/docs/quick-start-spring.html)
 
 ### [Nacos Spring Boot](https://nacos.io/zh-cn/docs/quick-start-spring-boot.html)
@@ -446,7 +441,7 @@ public class NacosController {
 }
 ```
 
-1. 启动 `NacosConfigApplication`，调用 http://localhost:51000/qyk8/nacos/getData，返回内容是 `false`。
+1. 启动 `NacosConfigApplication`，调用 <http://localhost:51000/qyk8/nacos/getData>，返回内容是 `false`。
 2. 通过调用 [Nacos Open API](https://nacos.io/zh-cn/docs/open-api.html) 向 Nacos server 发布配置：dataId 为`xxx.yml`，内容为`useLocalCache=true`
 
 ```properties
@@ -537,8 +532,6 @@ curl -X PUT 'http://127.0.0.1:8848/nacos/v1/ns/instance?serviceName=example&ip=1
 ]
 ```
 
-
-
 ### [Nacos Spring Cloud](https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html)
 
 ### [Nacos Docker](https://nacos.io/zh-cn/docs/quick-start-docker.html)
@@ -546,4 +539,3 @@ curl -X PUT 'http://127.0.0.1:8848/nacos/v1/ns/instance?serviceName=example&ip=1
 ### [Nacos Dubbo](https://nacos.io/zh-cn/docs/use-nacos-with-dubbo.html)
 
 ### [Nacos k8s](https://nacos.io/zh-cn/docs/use-nacos-with-kubernetes.html)
-

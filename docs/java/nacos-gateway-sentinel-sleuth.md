@@ -12,11 +12,11 @@ tag:
 
 ## 1、Nacos
 
-官方地址：https://nacos.io
+官方地址：<https://nacos.io>
 
-github地址：https://github.com/alibaba/nacos
+github地址：<https://github.com/alibaba/nacos>
 
-https://nacos.io/zh-cn/docs/quick-start-spring-boot.html
+<https://nacos.io/zh-cn/docs/quick-start-spring-boot.html>
 
 ### 面试题：微服务间远程交互的过程？
 
@@ -56,7 +56,7 @@ commen：
         </dependencies>
     </dependencyManagement>
 模块：
- 	<properties>
+  <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
     </properties>
@@ -95,7 +95,7 @@ common：
  spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848
 ```
 
-A、需要下载nacos：https://github.com/alibaba/nacos/releases
+A、需要下载nacos：<https://github.com/alibaba/nacos/releases>
 
 ```bash
 mvn -Prelease-nacos clean install -U
@@ -130,16 +130,16 @@ yumall-coupon
 
 ```properties
 bootstrap.properties：：：：：：：
-	spring.application.name=yumall-coupon
-	#配置中心		
-	spring.cloud.nacos.config.server-addr=127.0.0.1:8848
+ spring.application.name=yumall-coupon
+ #配置中心  
+ spring.cloud.nacos.config.server-addr=127.0.0.1:8848
 --------------------------
 application.properties：：：：：：
-	coupon.user.name=zhangsan2
-	coupon.user.age=20
+ coupon.user.name=zhangsan2
+ coupon.user.age=20
 ```
 
-测试 http://localhost:8400/coupon/coupon/test
+测试 <http://localhost:8400/coupon/coupon/test>
 
 ```java
 @RestController
@@ -214,7 +214,7 @@ http://localhost:8400/coupon/coupon/test
  */
 ```
 
-#### 细节 
+#### 细节
 
 ##### 命名空间、配置集、配置集ID、配置分组
 
@@ -238,8 +238,6 @@ http://localhost:8400/coupon/coupon/test
 ```
 
 ###### 创建命名空间
-
-
 
 在prod空间创建 yumall-coupon.properties
 
@@ -285,8 +283,8 @@ spring.cloud.nacos.config.namespace=ce7e5c1c-645e-460f-b486-bc4659d2207b
 
 ###### 配置分组
 
- *      默认所有的配置集都属于：DEFAULT_GROUP；
- *      test，618，1212
+* 默认所有的配置集都属于：DEFAULT_GROUP；
+* test，618，1212
 
 coupon空间新建配置 yumall-coupon.properties
 
@@ -315,7 +313,7 @@ yumall-coupon.properties
 spring.cloud.nacos.config.group=dev
 ```
 
-http://localhost:8400/coupon/coupon/test
+<http://localhost:8400/coupon/coupon/test>
 
 ```json
 {"msg":"success","code":0,"name":"dev00","age":200}
@@ -378,24 +376,24 @@ spring.cloud.nacos.config.ext-config[3].refresh=true
  配置中心有的优先使用配置中心中的
 ```
 
-#### 全部测试:
+#### 全部测试
 
-http://localhost:8100/product/attr/test	http://localhost:8200/order/order/test
+<http://localhost:8100/product/attr/test> <http://localhost:8200/order/order/test>
 
-http://localhost:8300/ware/wareinfo/test	http://localhost:8400/coupon/coupon/test
+<http://localhost:8300/ware/wareinfo/test> <http://localhost:8400/coupon/coupon/test>
 
-http://localhost:8500/member/member/test
+<http://localhost:8500/member/member/test>
 
 ### B、spring boot
 
-​	项目中没有使用nacos官方提供的方式使用SpringBoot的集成方式来进行集成，而是使用了Alibaba Spring  Cloud的依赖包进行集成。 
+​ 项目中没有使用nacos官方提供的方式使用SpringBoot的集成方式来进行集成，而是使用了Alibaba Spring  Cloud的依赖包进行集成。
 
-​	原因是因为官网提供的SpringBoot集成方式中，同时使用配置中心和服务发现功能，会使得服务发现功能配置的部分属性冲突不生效。最直接的就是配置中心和服务发现功能不可以配置2个不同的namespace，会默认选择使用配置中心中配置的namespace作为服务发现的 namespace。
+​ 原因是因为官网提供的SpringBoot集成方式中，同时使用配置中心和服务发现功能，会使得服务发现功能配置的部分属性冲突不生效。最直接的就是配置中心和服务发现功能不可以配置2个不同的namespace，会默认选择使用配置中心中配置的namespace作为服务发现的 namespace。
 
-​	**由于spring cloud alibaba nacos  config的加载机制问题，配置信息如果写在了 application-{xx}.yml  的配置文件中无法被解析。所以如果需要分多环境动态加载，可以写在 bootstrap-{xxx}.yml 文件中。**
+​ **由于spring cloud alibaba nacos  config的加载机制问题，配置信息如果写在了 application-{xx}.yml  的配置文件中无法被解析。所以如果需要分多环境动态加载，可以写在 bootstrap-{xxx}.yml 文件中。**
 
 ```xml
-		<groupId>org.springframework.boot</groupId>
+  <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.12.RELEASE</version>
 
@@ -449,10 +447,10 @@ Ignore the empty nacos configuration and get it based on dataId[codetools-prod.y
 Error creating bean with name 'testController': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'user1.name' in value "${user1.name}"
 
 解决办法：application-*.yml 换成 bootstrap-*.yml
-application-dev.yml		bootstrap-dev.yml
-application-prod.yml	bootstrap-prod.yml
-application-test.yml	bootstrap-test.yml
-application.yml			bootstrap.yml
+application-dev.yml  bootstrap-dev.yml
+application-prod.yml bootstrap-prod.yml
+application-test.yml bootstrap-test.yml
+application.yml   bootstrap.yml
 ```
 
 ```java
@@ -479,10 +477,9 @@ public class TestController {
 }
 ```
 
-
 ## 2、 服务网关 Gateway
 
-### 
+###
 
 ```yml
 spring:
@@ -497,10 +494,10 @@ spring:
             - RewritePath=/api/(?<segment>.*),/$\{segment}  
             
         - id: admin_route
-          uri: lb://renren-fast 	lb：负载均衡，//到哪个服务
-          predicates:				断言
+          uri: lb://renren-fast  lb：负载均衡，//到哪个服务
+          predicates:    断言
             - Path=/api/**
-          filters:					RewritePath重写路径
+          filters:     RewritePath重写路径
             - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}    
 ```
 
@@ -559,7 +556,7 @@ spring.cloud.nacos.config.namespace=e8fdcd97-4d77-4da5-8b2b-bd70f36ffbc3
 
 断言:application.yml
 
-https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.1.5.RELEASE/single/spring-cloud-gateway.html
+<https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.1.5.RELEASE/single/spring-cloud-gateway.html>
 
 ```yml
 spring:
@@ -582,7 +579,7 @@ spring:
             - Query=url, qq
 ```
 
-测试  http://localhost:50000/hello?foo=ba ----  http://localhost:50000/hello?url=baidu
+测试  <http://localhost:50000/hello?foo=ba> ----  <http://localhost:50000/hello?url=baidu>
 
 ## 3、openfeign 远程调用服务
 
@@ -627,7 +624,7 @@ member-feign->CouponFeignService
  */
 @FeignClient("yumall-coupon")
 public interface CouponFeignService {
-	//声明接口的每一个方法都是调用哪个远程服务的那个请求
+ //声明接口的每一个方法都是调用哪个远程服务的那个请求
     @RequestMapping("/coupon/coupon/member/list")
     public R membercoupons();
 }
@@ -660,7 +657,7 @@ member-MemberController
     }
 ```
 
-http://localhost:8500/member/member/coupons
+<http://localhost:8500/member/member/coupons>
 
 ```json
 {"msg":"success","code":0,"coupons":[{"id":null,"couponType":null,"couponImg":null,"couponName":"满100减10","num":null,"amount":null,"perLimit":null,"minPoint":null,"startTime":null,"endTime":null,"useType":null,"note":null,"publishCount":null,"useCount":null,"receiveCount":null,"enableStartTime":null,"enableEndTime":null,"code":null,"memberLevel":null,"publish":null}],"member":{"id":null,"levelId":null,"username":null,"password":null,"nickname":"张三","mobile":null,"email":null,"header":null,"gender":null,"birth":null,"city":null,"job":null,"sign":null,"sourceType":null,"integration":null,"growth":null,"status":null,"createTime":null}}
@@ -670,12 +667,12 @@ http://localhost:8500/member/member/coupons
 
 ![image-20211118143201690](./nacos-gateway-sentinel-sleuth.assets/true-image-20211118143201690.png)
 
-官网：https://github.com/alibaba/spring-cloud-alibaba/wiki/Sentinel
+官网：<https://github.com/alibaba/spring-cloud-alibaba/wiki/Sentinel>
 
 ### 1、安装+配置
 
 ```xml
-	    <dependency>
+     <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
@@ -689,18 +686,18 @@ http://localhost:8500/member/member/coupons
             <artifactId>sentinel-core</artifactId>
             <version>1.8.0</version>
         </dependency>
-		<dependency>
+  <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-web-servlet</artifactId>
             <version>1.8.0</version>
         </dependency>
 ```
 
-Sentinel界面下载：https://github.com/alibaba/Sentinel/releases/tag/v1.8.0
+Sentinel界面下载：<https://github.com/alibaba/Sentinel/releases/tag/v1.8.0>
 
 运行： java -jar .\sentinel-dashboard-1.8.0.jar --server.port=8999
 
-http://127.0.0.1:8999	sentinel
+<http://127.0.0.1:8999> sentinel
 
 配置控制台信息：
 
@@ -714,7 +711,7 @@ cloud:
       port: 8719
 ```
 
-测试 http://localhost:8700/getCurrentSeckillSkus	http://seckill.yumall.com/getCurrentSeckillSkus
+测试 <http://localhost:8700/getCurrentSeckillSkus> <http://seckill.yumall.com/getCurrentSeckillSkus>
 
 ![image-20211118150210630](./nacos-gateway-sentinel-sleuth.assets/true-image-20211118150210630.png)
 
@@ -766,8 +763,6 @@ public class MySentinelConfig {
         });
 ```
 
-
-
 ### 3、熔断、降级
 
 ```java
@@ -803,8 +798,6 @@ public class SeckillFeignServiceFallBack implements SeckillFeignService {
 }
 ```
 
-
-
 ### 4、自定义受保护的资源
 
 ```
@@ -830,22 +823,16 @@ public List<SeckillSkuRedisTo> blockHandler(BlockException e) {
     }
 ```
 
-
-
 ### 4.1. Sentinel 是什么？
 
 Sentinel 以流量为切入点，从流量控制、熔断降级、系统负载保护等多个维度保护服务的稳定性。
 
-
-
 Sentinel 分为两个部分:
 
-- 核心库（Java 客户端）不依赖任何框架/库，能够运行于所有 Java 运行时环境，同时对 Dubbo / Spring Cloud 等框架也有较好的支持。
-- 控制台（Dashboard）基于 Spring Boot 开发，打包后可以直接运行，不需要额外的 Tomcat 等应用容器。
+* 核心库（Java 客户端）不依赖任何框架/库，能够运行于所有 Java 运行时环境，同时对 Dubbo / Spring Cloud 等框架也有较好的支持。
+* 控制台（Dashboard）基于 Spring Boot 开发，打包后可以直接运行，不需要额外的 Tomcat 等应用容器。
 
 Sentinel 可以简单的分为 Sentinel 核心库和 Dashboard。核心库不依赖 Dashboard，但是结合 Dashboard 可以取得最好的效果。
-
-
 
 ### 4.2. 基本概念及作用
 
@@ -857,15 +844,11 @@ Sentinel 可以简单的分为 Sentinel 核心库和 Dashboard。核心库不依
 
 **规则**：围绕资源的实时状态设定的规则，可以包括流量控制规则、熔断降级规则以及系统保护规则。所有规则可以动态实时调整。
 
-
-
 主要作用：
 
 1. 流量控制
 2. 熔断降级
 3. 系统负载保护
-
-
 
 我们说的资源，可以是任何东西，服务，服务里的方法，甚至是一段代码。使用 Sentinel 来进行资源保护，主要分为几个步骤:
 
@@ -875,17 +858,15 @@ Sentinel 可以简单的分为 Sentinel 核心库和 Dashboard。核心库不依
 
 先把可能需要保护的资源定义好，之后再配置规则。也可以理解为，只要有了资源，我们就可以在任何时候灵活地定义各种流量控制规则。在编码的时候，只需要考虑这个代码是否需要保护，如果需要保护，就将之定义为一个资源。
 
-
-
 ### 4.3. 快速开始
 
-官方文档：https://github.com/alibaba/spring-cloud-alibaba/wiki/Sentinel
+官方文档：<https://github.com/alibaba/spring-cloud-alibaba/wiki/Sentinel>
 
 #### 4.3.1. 搭建Dashboard控制台
 
 您可以从 release 页面 下载最新版本的控制台 jar 包。
 
-https://github.com/alibaba/Sentinel/releases
+<https://github.com/alibaba/Sentinel/releases>
 
 下载的jar包（课前资料已下发），copy到一个没有空格或者中文的路径下，打开dos窗口切换到jar包所在目录。
 
@@ -894,8 +875,6 @@ https://github.com/alibaba/Sentinel/releases
 在浏览器中访问sentinel控制台，默认端口号是8080。进入登录页面，管理页面用户名和密码：sentinel/sentinel
 
 此时页面为空，这是因为还没有监控任何服务。另外，sentinel是懒加载的，如果服务没有被访问，也看不到该服务信息。
-
-
 
 #### 4.3.2. 改造nacos-consumer
 
@@ -919,13 +898,9 @@ spring.cloud.sentinel.transport.dashboard=localhost:8080
 spring.cloud.sentinel.transport.port=8719
 ```
 
-
-
-重启nacos-consumer工程，在浏览器中反复访问：http://localhost:18080/hi
+重启nacos-consumer工程，在浏览器中反复访问：<http://localhost:18080/hi>
 
 再次查看sentinel控制台页面：
-
-
 
 ### 4.4. 整合Feign组件
 
@@ -955,8 +930,6 @@ feign.sentinel.enabled=true
 
 3. 代码实现
 
-  
-
 添加feign接口的熔断类ProviderFallback：
 
 ```java
@@ -976,8 +949,6 @@ public class ProviderFallback implements ProviderClient {
 
 再重启nacos-provider和nacos-consumer服务。在浏览器中地址栏访问消费方测试：
 
-
-
 ### 4.5. 流量控制
 
 #### 4.5.1. 什么是流量控制
@@ -986,15 +957,13 @@ public class ProviderFallback implements ProviderClient {
 
 流量控制有以下几个角度:
 
-- 资源的调用关系，例如资源的调用链路，资源和资源之间的关系；
-- 运行指标，例如 QPS、线程数等；
-- 控制的效果，例如直接限流（快速失败）、冷启动（Warm Up）、匀速排队（排队等待）等。
+* 资源的调用关系，例如资源的调用链路，资源和资源之间的关系；
+* 运行指标，例如 QPS、线程数等；
+* 控制的效果，例如直接限流（快速失败）、冷启动（Warm Up）、匀速排队（排队等待）等。
 
 Sentinel 的设计理念是让您自由选择控制的角度，并进行灵活组合，从而达到想要的效果。
 
 配置如下：
-
-
 
 #### 4.5.2. QPS流量控制
 
@@ -1014,23 +983,15 @@ Sentinel 的设计理念是让您自由选择控制的角度，并进行灵活�
 
 点击新增按钮之后，可以看到如下界面：
 
-在浏览器访问：http://localhost:18080/hi，并疯狂刷新，出现如下信息：
-
-
+在浏览器访问：<http://localhost:18080/hi>，并疯狂刷新，出现如下信息：
 
 ##### 4.5.2.2. Warm Up（预热）
 
 Warm Up（`RuleConstant.CONTROL_BEHAVIOR_WARM_UP`）方式，即预热/冷启动方式。当系统长期处于低水位的情况下，当流量突然增加时，直接把系统拉升到高水位可能瞬间把系统压垮。通过"冷启动"，让通过的流量缓慢增加，在一定时间内逐渐增加到阈值上限，给冷系统一个预热的时间，避免冷系统被压垮。
 
- 
-
-疯狂访问：http://localhost:18080/hi
-
-
+疯狂访问：<http://localhost:18080/hi>
 
 可以发现前几秒会发生熔断，几秒钟之后就完全没有问题了
-
-
 
 ##### 4.5.2.3. 匀速排队
 
@@ -1038,11 +999,7 @@ Warm Up（`RuleConstant.CONTROL_BEHAVIOR_WARM_UP`）方式，即预热/冷启动
 
 测试配置如下：1s处理一个请求，排队等待，等待时间20s。
 
- 
-
 在postman中，新建一个collection（这里collection名称是sentinel），并把一个请求添加到该collection
-
-
 
 请求添加成功后，点击run按钮：
 
@@ -1050,11 +1007,7 @@ Warm Up（`RuleConstant.CONTROL_BEHAVIOR_WARM_UP`）方式，即预热/冷启动
 
 点击“run sentinel”按钮
 
-
-
 查看控制台，效果如下：可以看到基本每隔1s打印一次
-
-
 
 #### 4.5.3. 关联限流
 
@@ -1068,18 +1021,14 @@ Warm Up（`RuleConstant.CONTROL_BEHAVIOR_WARM_UP`）方式，即预热/冷启动
 
 postman配置如下：每个400ms发送一次请求，一共发送50个。每秒钟超过了2次
 
-
-
 在浏览器中访问/hi2  已经被限流。
-
-
 
 #### 4.5.4. 链路限流
 
 一棵典型的调用树如下图所示：
 
 ```
-     	          machine-root
+                machine-root
                     /       \
                    /         \
              Entrance1     Entrance2
@@ -1091,8 +1040,6 @@ postman配置如下：每个400ms发送一次请求，一共发送50个。每秒
 上图中来自入口 `Entrance1` 和 `Entrance2` 的请求都调用到了资源 `NodeA`，Sentinel 允许只根据某个入口的统计信息对资源限流。
 
 配置如下：表示只针对Entrance1进来的请求做限流限制
-
-
 
 #### 4.5.5. 线程数限流
 
@@ -1108,8 +1055,6 @@ postmain配置如下：
 
 同时在浏览器访问：
 
-
-
 ### 4.6. 熔断降级
 
 Sentinel除了流量控制以外，对调用链路中不稳定的资源进行熔断降级也是保障高可用的重要措施之一。
@@ -1118,17 +1063,13 @@ Sentinel **熔断降级**会在调用链路中某个资源出现不稳定状态�
 
 Sentinel 和 Hystrix 的原则是一致的: 当调用链路中某个资源出现不稳定，例如，表现为 timeout，异常比例升高的时候，则对这个资源的调用进行限制，并让请求快速失败，避免影响到其它的资源，最终产生雪崩的效果。
 
-
-
 限流降级指标有三个，如下图：
 
 1. 平均响应时间（RT）
 
-2. 异常比例 
+2. 异常比例
 
 3. 异常数
-
-
 
 #### 4.6.1. 平均响应时间（RT）
 
@@ -1136,43 +1077,29 @@ Sentinel 和 Hystrix 的原则是一致的: 当调用链路中某个资源出现
 
 配置如下：超时时间100ms，熔断时间10s
 
-
-
 代码中依然睡了1s
 
 也就是说请求肯定都会超时。
 
-
-
 先执行postmain，配置如下：
-
-
 
 再次见到了熟悉的界面：
 
 10s之内，都是熔断界面
 
-
-
 #### 4.6.2. 异常比例
 
 **异常比例** (`DEGRADE_GRADE_EXCEPTION_RATIO`)：**当资源的每秒请求量 >= 5，且每秒异常总数占通过量的比值超过阈值**（`DegradeRule` 中的 `count`）之后，资源进入降级状态，即在接下的时间窗口（`DegradeRule`中的 `timeWindow`，以 s 为单位）之内，对这个方法的调用都会自动地返回。异常比率的阈值范围是 `[0.0, 1.0]`，代表 0% - 100%。
 
-
-
 #### 4.6.3. 异常数
 
 **异常数** (`DEGRADE_GRADE_EXCEPTION_COUNT`)：当资源近 1 分钟的异常数目超过阈值之后会进行熔断。
-
-
 
 ### 4.7. 规则持久化
 
 无论是通过硬编码的方式来更新规则，还是通过接入 Sentinel Dashboard 后，在页面上操作更新规则，都无法避免一个问题，那就是服务重启后，规则就丢失了，因为默认情况下规则是保存在内存中的。
 
 我们在 Dashboard 上为客户端配置好了规则，并推送给了客户端。这时由于一些因素客户端出现异常，服务不可用了，当客户端恢复正常再次连接上 Dashboard 后，这时所有的规则都丢失了，我们还需要重新配置一遍规则，这肯定不是我们想要的。
-
-
 
 持久化配置分以下3步：
 
@@ -1229,7 +1156,7 @@ controlBehavior：流控效果。0-快速失败，1-warm up 2-排队等待
 
 clusterMode：是否集群
 
-重启consumser，并多次访问：http://localhost:18080/hi。
+重启consumser，并多次访问：<http://localhost:18080/hi>。
 
 查看sentinel客户端：就有了限流配置了
 
@@ -1265,17 +1192,11 @@ public class SentinelGatewayConfig {
 }
 ```
 
-
-
 ## 5. Sleuth
 
-​		Spring Cloud Sleuth为springCloud实现了一个分布式链路追踪解决方案，大量借鉴了Dapper，Zipkin和HTrace等链路追踪技术。对于大多数用户而言，Sleuth应该是不可见的，并且您与外部系统的所有交互都应自动进行检测。您可以简单地在日志中捕获数据，也可以将其发送到远程收集器服务。
+​  Spring Cloud Sleuth为springCloud实现了一个分布式链路追踪解决方案，大量借鉴了Dapper，Zipkin和HTrace等链路追踪技术。对于大多数用户而言，Sleuth应该是不可见的，并且您与外部系统的所有交互都应自动进行检测。您可以简单地在日志中捕获数据，也可以将其发送到远程收集器服务。
 
-
-
-​		随着分布式系统越来越复杂，你的一个请求发过发过去，各个微服务之间的跳转，有可能某个请求某一天压力太大了，一个请求过去没响应，一个请求下去依赖了三四个服务，但是你去不知道哪一个服务出来问题，这时候我是不是需要对微服务进行追踪呀？监控一个请求的发起，从服务之间传递之间的过程，我最好记录一下，记录每一个的耗时多久，一旦出了问题，我们就可以针对性的进行优化，是要增加节点，减轻压力，还是服务继续拆分，让逻辑更加简单点呢？这时候**springcloud-sleuth集成zipkin**能帮我们解决这些服务追踪问题。
-
-
+​  随着分布式系统越来越复杂，你的一个请求发过发过去，各个微服务之间的跳转，有可能某个请求某一天压力太大了，一个请求过去没响应，一个请求下去依赖了三四个服务，但是你去不知道哪一个服务出来问题，这时候我是不是需要对微服务进行追踪呀？监控一个请求的发起，从服务之间传递之间的过程，我最好记录一下，记录每一个的耗时多久，一旦出了问题，我们就可以针对性的进行优化，是要增加节点，减轻压力，还是服务继续拆分，让逻辑更加简单点呢？这时候**springcloud-sleuth集成zipkin**能帮我们解决这些服务追踪问题。
 
 ### 5.1. zipkin分布式监控客户端
 
@@ -1285,15 +1206,11 @@ Zipkin是一种分布式跟踪系统。它有助于收集解决微服务架构�
 
 通过jar包安装：java -jar zipkin-server-*exec.jar
 
-jar包下载地址：https://search.maven.org/remote_content?g=io.zipkin&a=zipkin-server&v=LATEST&c=exec
+jar包下载地址：<https://search.maven.org/remote_content?g=io.zipkin&a=zipkin-server&v=LATEST&c=exec>
 
 课前资料有已下载的jar包
 
-在浏览器端访问：http://localhost:9411
-
-
-
-
+在浏览器端访问：<http://localhost:9411>
 
 ### 5.2. 改造consumer/provider工程
 
@@ -1323,13 +1240,11 @@ spring.zipkin.sender.type=web
 spring.sleuth.sampler.probability=1
 ```
 
-3. 重启consumer/provider服务后，访问消费者：http://localhost:18080/hi。查看zipkin客户端如下
+3. 重启consumer/provider服务后，访问消费者：<http://localhost:18080/hi。查看zipkin>客户端如下
 
 这时候我们可以在zipkin的ui控制界面看看效果，可以发现，服务之间的调用关系，服务名称已经清晰展现出来了，同时包括服务之间的调用时常等详细信息以及更细的信息都可以通过控制台看到。
 
 还可以查看调用关系图：
-
-
 
 ### 5.3. 基本概念
 
@@ -1337,18 +1252,18 @@ Span：基本工作单元。发送一个远程请求就会产生一个span，spa
 
 Trace：一系列spans组成的一个树状结构。例如：发送一个请求，需要调用多个微服务，每调用一个微服务都会产生一个span，这些span组成一个trace
 
-Annotation：用来及时记录一个事件的存在，一些核心annotations用来定义一个请求的开始和结束 
+Annotation：用来及时记录一个事件的存在，一些核心annotations用来定义一个请求的开始和结束
 
-- cs - Client Sent -客户端发起一个请求，这个annotion描述了这个span的开始
-- sr - Server Received -服务端获得请求并准备开始处理它，如果将其sr减去cs时间戳便可得到网络延迟
-- ss - Server Sent -注解表明请求处理的完成(当请求返回客户端)，如果ss减去sr时间戳便可得到服务端需要的处理请求时间
-- cr - Client Received -表明span的结束，客户端成功接收到服务端的回复，如果cr减去cs时间戳便可得到客户端从服务端获取回复的所有所需时间
+* cs - Client Sent -客户端发起一个请求，这个annotion描述了这个span的开始
+* sr - Server Received -服务端获得请求并准备开始处理它，如果将其sr减去cs时间戳便可得到网络延迟
+* ss - Server Sent -注解表明请求处理的完成(当请求返回客户端)，如果ss减去sr时间戳便可得到服务端需要的处理请求时间
+* cr - Client Received -表明span的结束，客户端成功接收到服务端的回复，如果cr减去cs时间戳便可得到客户端从服务端获取回复的所有所需时间
 
 例如一个请求如下：
 
 使用zipkin跟踪整个请求过程如下：
 
-上图表示一请求链路，一条链路通过`Trace Id`唯一标识，`Span`标识发起的请求信息，各`span`通过`parent id` 关联起来，如图 
+上图表示一请求链路，一条链路通过`Trace Id`唯一标识，`Span`标识发起的请求信息，各`span`通过`parent id` 关联起来，如图
 
 ## 6、sleuth+zipkin
 
@@ -1379,15 +1294,13 @@ logging.level.org.springframework.cloud.openfeign=debug
 logging.level.org.springframework.cloud.sleuth=debug
 ```
 
-
-
 ### 3、zipkin可视化
 
 docker pull openzipkin/zipkin:latest
 
 docker run -d --name=zipkin -p 9411:9411 openzipkin/zipkin:latest
 
-http://127.0.0.1:9411/
+<http://127.0.0.1:9411/>
 
 ```xml
 <dependency>
@@ -1406,9 +1319,7 @@ spring.zipkin.sender.type=web
 spring.sleuth.sampler.probability=1
 ```
 
-启动项目，http://127.0.0.1:9411/
-
-
+启动项目，<http://127.0.0.1:9411/>
 
 ### 4、zipkin 数据保存ES
 
@@ -1419,10 +1330,3 @@ docker run --env STORAGE_TYPE=elasticsearch --env ES_HOSTS=127.0.0.1:9200 openzi
 docker run --name=zipkin_dependencies --env STORAGE_TYPE=elasticsearch --env ES_HOSTS=127.0.0.1:9200 openzipkin/zipkin-dependencies:latest
 
 ![image-20211118192950674](./nacos-gateway-sentinel-sleuth.assets/true-image-20211118192950674.png)
-
-
-
-
-
-
-

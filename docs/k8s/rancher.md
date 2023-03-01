@@ -17,17 +17,13 @@ tag:
 
 [https://www.rancher.cn/](https://www.rancher.cn/)
 
-[https://github.com/rancher/rancher](https://github.com/rancher/rancher)	**star:19.8K**
+[https://github.com/rancher/rancher](https://github.com/rancher/rancher) **star:19.8K**
 
 [https://gitee.com/k8s_s/rancher](https://gitee.com/k8s_s/rancher)
 
 [https://hub.docker.com/r/rancher/rancher/tags](https://hub.docker.com/r/rancher/rancher/tags)
 
-
-
 ![](./rancher.assets/true-image-20220829220406490.png)
-
-
 
 ## 安装 2.6.7
 
@@ -79,23 +75,22 @@ docker logs cb08ec773b93 2>&1 | grep "Bootstrap Password: "
 
 `bd6trjjkplcx6d2lf4fxx78fpltprw5tb9n58vppjp2kkgkndk9qmt`
 
-http://192.168.100.130:8988/
+<http://192.168.100.130:8988/>
 
-http://rancher.k8s.com:8988/
-
-
+<http://rancher.k8s.com:8988/>
 
 ## 推荐安装
 
 [高可用安装（推荐）](https://docs.rancher.cn/docs/rancher2.5/installation/other-installation-methods/air-gap/install-rancher/_index#%E9%AB%98%E5%8F%AF%E7%94%A8%E5%AE%89%E8%A3%85%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89)
 
-
-
 ### 先决条件
+
 - Kubernetes 集群
 - CLI
 - Ingress Controller
+
 ### Helm Chart 安装 Rancher
+
 1、添加 Helm Chart 仓库
 
 ```bash
@@ -108,15 +103,11 @@ helm repo list
 helm repo remove rancher-xx
 ```
 
-
-
 2、为 Rancher 创建 Namespace
 
 ```bash
 kubectl create namespace cattle-system
 ```
-
-
 
 3、选择你的 SSL 选项
 
@@ -127,8 +118,6 @@ kubectl create namespace cattle-system
 | 你已有的证书            | `ingress.tls.source=secret`      | 使用你的自己的证书（Kubernetes 密文）                         | 否                 |
 
 > Rancher 中国技术支持团队建议你使用“你已有的证书” `ingress.tls.source=secret` 这种方式，从而减少对 cert-manager 的运维成本。
-
-
 
 4、安装 cert-manager
 
@@ -169,8 +158,6 @@ cert-manager-cainjector-577f6d9fd7-tr77l   1/1     Running   0          2m
 cert-manager-webhook-787858fcdb-nlzsq      1/1     Running   0          2m
 ```
 
-
-
 5、根据你选择的 SSL 选项，通过 Helm 安装 Rancher
 
 因为 `rancher` 是 `ingress.tls.source` 的默认选项，所以在运行 `helm install` 命令时我们没有指定 `ingress.tls.source`。
@@ -188,33 +175,17 @@ helm install rancher rancher-/rancher \
   --set replicas=3
 ```
 
-
-
 ```
 kubectl -n cattle-system rollout status deploy/rancher
 Waiting for deployment "rancher" rollout to finish: 0 of 3 updated replicas are available...
 deployment "rancher" successfully rolled out
 ```
 
-
-
 6、验证 Rancher Server 是否已成功部署
-
-
 
 7、保存你的选项
 
-
-
 安装完成
-
-
-
-
-
-
-
-
 
 ## 离线安装
 
@@ -243,33 +214,15 @@ helm pull rancher-latest/rancher --version=v2.6.7
 
 ### SSL 配置
 
-
-
-
-
 ### 离线环境可用的 Helm Chart 选项
-
-
-
-
 
 ### 渲染您的 Rancher Helm 模板
 
-
-
-helm repo add jetstack https://charts.jetstack.io
+helm repo add jetstack <https://charts.jetstack.io>
 
 helm repo update
 
-
-
-
-
 ### 安装 Rancher
-
-
-
-
 
 ## 使用 kubectl 安装 Rancher
 
@@ -277,16 +230,3 @@ helm repo update
 kubectl create namespace cattle-system
 kubectl -n cattle-system apply -R -f ./rancher
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-

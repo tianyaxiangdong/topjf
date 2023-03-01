@@ -16,8 +16,6 @@ tag:
 
 [本节示例文件 提取码：1234](https://pan.baidu.com/s/1fkosURl4HaYZALtSjKvcKg)
 
-
-
 ## ansible-playbook
 
 ### 简介
@@ -35,8 +33,6 @@ playbook 是 ansible 用于配置，部署，和管理被控节点的剧本。
 就像执行shell命令与写shell脚本一样，也可以理解为批处理任务，不过playbook有自己的语法格式。
 
 使用playbook你可以方便的重用这些代码，可以移植到不同的机器上面，像函数一样，最大化的利用代码。在你使用Ansible的过程中，你也会发现，你所处理的大部分操作都是编写playbook。可以把常见的应用都编写成playbook，之后管理服务器会变得十分简单。
-
-
 
 ### 语法
 
@@ -65,8 +61,8 @@ playbook 是 ansible 用于配置，部署，和管理被控节点的剧本。
 
 > ansible-playbook <filename.yml> ... [options]
 >
-> - options: 
-> - - --check，-C        #只检测可能会发生的改变，但不真正执行操作
+> - options:
+>   - - --check，-C        #只检测可能会发生的改变，但不真正执行操作
 >   - --list-hosts      #列出运行任务的主机
 >   - --list-tags       #列出tag
 >   - --list-tasks      #列出task
@@ -114,22 +110,19 @@ playbook 是 ansible 用于配置，部署，和管理被控节点的剧本。
 >
 > `handlers`：处理器，tasks 通过 notify 来指定需要执行的处理器。handlers 最佳的应用场景是用来重启服务,或者触发系统重启操作.除此以外很少用到了.
 
-
-
 ansible-playbook 运行playbook文件
 
->  ansible-playbook mysql.yml
+> ansible-playbook mysql.yml
 
 执行有三个步骤：
 
-1、收集facts 
+1、收集facts
 
-2、执行tasks 
+2、执行tasks
 
 3、报告结果
 
  ![](./ansible-playbook.assets/true-1204916-20171208112235999-1825222840.png)
-
 
 ### 核心元素
 
@@ -137,13 +130,13 @@ Playbook的核心元素：
 
 > `Hosts`：主机组；
 >
->  `Tasks`：任务列表；
+> `Tasks`：任务列表；
 >
->  `Variables`：变量，设置方式有四种；
+> `Variables`：变量，设置方式有四种；
 >
->  `Templates`：包含了模板语法的文本文件；
+> `Templates`：包含了模板语法的文本文件；
 >
->  `Handlers`：由特定条件触发的任务；
+> `Handlers`：由特定条件触发的任务；
 
 ### 基本组件
 
@@ -174,9 +167,9 @@ Playbook的核心元素：
 > `模块，模块参数`：
 >
 > > 格式：
-> >  　　　(1) action: module arguments
-> >  　　　(2) module: arguments
-> >  　　　注意：shell和command模块后面直接跟命令，而非key=value类的参数列表；
+> >　(1) action: module arguments
+> >　(2) module: arguments
+> >　注意：shell和command模块后面直接跟命令，而非key=value类的参数列表；
 
 > `handlers`：任务，在特定条件下触发；接收到其它任务的通知时被触发；
 
@@ -210,8 +203,6 @@ nginx/
 │   └── index.html
 └── logs
 ```
-
-
 
 **nginx.conf**
 
@@ -247,23 +238,23 @@ http {
                       '}';
                       
     sendfile        on;
-  	#tcp_nopush     on;
-  	keepalive_timeout  65;
+   #tcp_nopush     on;
+   keepalive_timeout  65;
   
-  	client_max_body_size 50m;
-  	client_body_buffer_size 256k;
-  	client_header_timeout 3m;
-  	client_body_timeout 3m;
-  	proxy_connect_timeout 300s;
-  	proxy_read_timeout 300s;
-  	proxy_send_timeout 300s;
-  	proxy_buffer_size 64k;
-  	proxy_buffers 4 32k;
-  	proxy_busy_buffers_size 64k;
-  	proxy_temp_file_write_size 64k;
-  	proxy_ignore_client_abort on;
-  	proxy_set_header Host $host;
-  	proxy_set_header X-Forwarder-For $remote_addr;
+   client_max_body_size 50m;
+   client_body_buffer_size 256k;
+   client_header_timeout 3m;
+   client_body_timeout 3m;
+   proxy_connect_timeout 300s;
+   proxy_read_timeout 300s;
+   proxy_send_timeout 300s;
+   proxy_buffer_size 64k;
+   proxy_buffers 4 32k;
+   proxy_busy_buffers_size 64k;
+   proxy_temp_file_write_size 64k;
+   proxy_ignore_client_abort on;
+   proxy_set_header Host $host;
+   proxy_set_header X-Forwarder-For $remote_addr;
 
     gzip  on;
     
@@ -303,13 +294,11 @@ http {
 
 #    location / {
 #        root  /etc/nginx/html/dist/;
-#        index	index.html index.htm;
+#        index index.html index.htm;
 #        try_files $uri $uri/ /index.html;
 #    }
 #}
 ```
-
-
 
 **ansible -> hosts**
 
@@ -355,7 +344,6 @@ http {
 
 ![](./ansible-playbook.assets/true-image-20220729141300986.png)
 
-
 看看两台机器的端口是否开启：
 
 ```shell
@@ -384,8 +372,7 @@ ansible web -m shell -a 'ss -nutlp |grep nginx'
 
 ![](./ansible-playbook.assets/true-image-20220729141702897.png)
 
-
-####  ④ 测试 restarted
+#### ④ 测试 restarted
 
 我们还做了一个`notify`，来测试一下：
 
@@ -393,15 +380,14 @@ ansible web -m shell -a 'ss -nutlp |grep nginx'
 
 ```shell
 vim /etc/ansible/nginx/conf.d/ry.conf
-	listen       80;
-	
+ listen       80;
+ 
 ansible-playbook i-nginx.yml -t restartnginx
 ```
 
 　　然后我们重新加载一下这个剧本：
 
 ![](./ansible-playbook.assets/true-image-20220729141854324.png)
-
 
 发现我们执行的就是 restart 段以及我们定义的`notify`部分。
 
@@ -439,8 +425,8 @@ ansible-playbook i-nginx.yml -t restartnginx
 
 ```shell
 vim /etc/ansible/nginx/conf.d/ry.conf
-	listen       81;
-	
+ listen       81;
+ 
 ansible-playbook i-nginx.yml -t reloadednginx
 ```
 
@@ -449,8 +435,6 @@ ansible-playbook i-nginx.yml -t reloadednginx
 >ansible web -m shell -a 'ss -ntlp | grep nginx'
 
 ![](./ansible-playbook.assets/true-image-20220729143155466.png)
-
-
 
  　#### ⑥ 卸载 nginx
 
@@ -530,7 +514,6 @@ vim uni-nginx.yml
       service: name={{ rpmname }}  state=reloaded
 ```
 
-
 这样一来，我们的剧本就定义完成了。
 
 #### ④ 拷贝配置文件
@@ -551,8 +534,7 @@ vim uni-nginx.yml
 
 ![](./ansible-playbook.assets/true-image-20220729145916358.png)
 
-
-####  ⑥ 修改剧本，直接定义变量
+#### ⑥ 修改剧本，直接定义变量
 
 同样的，我们可以直接在剧本中把变量定义好，这样就不需要在通过命令行传入了。以后想要安装不同的服务，直接在剧本里把变量修改一下即可。
 
@@ -584,10 +566,7 @@ vim uni-nginx.yml
       service: name={{ rpmname }}  state=reloaded
 ```
 
-
-
-
-####  ⑦ 运行定义过变量的剧本
+#### ⑦ 运行定义过变量的剧本
 
 我们刚刚已经把变量定义在剧本里面了。现在我们来运行一下试试看：
 
@@ -596,7 +575,6 @@ vim uni-nginx.yml
 ```
 
 ![](./ansible-playbook.assets/true-image-20220729150326860.png)
-
 
 发现这样也是可以的
 
@@ -628,23 +606,23 @@ variable=value
 `Jinja2`：Jinja2是python的一种模板语言，以Django的模板语言为原本。
  模板支持：
 
-> 　　字符串：使用单引号或双引号；
+>　字符串：使用单引号或双引号；
 >
-> 　　数字：整数，浮点数；
+>　数字：整数，浮点数；
 >
-> 　　列表：[item1, item2, ...]
+>　列表：[item1, item2, ...]
 >
-> 　　元组：(item1, item2, ...)
+>　元组：(item1, item2, ...)
 >
-> 　　字典：{key1:value1, key2:value2, ...}
+>　字典：{key1:value1, key2:value2, ...}
 >
-> 　　布尔型：true/false
+>　布尔型：true/false
 >
-> 　　算术运算： +, -, *, /, //, %, **
+>　算术运算： +, -, *, /, //, %, **
 >
-> 　　比较操作： ==, !=, >, >=, <, <=
+>　比较操作： ==, !=, >, >=, <, <=
 >
-> 　　逻辑运算： and, or, not
+>　逻辑运算： and, or, not
 
 通常来说，模板都是通过引用变量来运用的。
 
@@ -655,8 +633,8 @@ variable=value
 ```perl
 cd /templates
 vim ./nginx/conf/nginx.conf.j2 || vim ./nginx/conf.d/ry.conf.j2
-	worker_processes  {{ ansible_processor_vcpus }};
-	listen       {{ nginxport }};
+ worker_processes  {{ ansible_processor_vcpus }};
+ listen       {{ nginxport }};
 ```
 
 #### ② 修改剧本
@@ -693,7 +671,8 @@ vim ./nginx/conf/nginx.conf.j2 || vim ./nginx/conf.d/ry.conf.j2
       service: name={{ rpmname }}  state=reloaded
 ```
 
-####  ③ 运行剧本
+#### ③ 运行剧本
+
 上面的准备工作完成后，我们就可以去运行剧本了：
 
 ```shell
@@ -701,8 +680,6 @@ ansible-playbook i-nginx.yml
 ansible-playbook i-nginx.yml -t restartnginx
 ansible web -m shell -a 'ss -ntlp | grep nginx'
 ```
-
-
 
 ### 条件测试
 
@@ -760,8 +737,6 @@ ansible playbook 还支持字典功能。举例如下：
         - { name: 'user13', group: 'group13' }
 ```
 
-
-
 ## 角色订制 roles 以 nginx 为例
 
 #### ① 简介
@@ -782,13 +757,13 @@ roles 用于层次性、结构化地组织playbook。roles 能够根据层次型
 [root@admin roles]# tree
 .
 ├── xxx模块
-│   ├── default		# 用于设定默认变量；变量的优先级是最低的
-│   ├── files		# 存储由 copy 或 script 等模块调用的文件；
-│   ├── handlers	# 用于定义各 handler 处理器；
-│   ├── meta		# 定义当前角色的特殊设定及其依赖关系；比如 作者信息、角色主要作用等等
-│   ├── tasks		# 用于定义各 task;
-│   ├── templates	# 模板文本；
-│   └── vars		# 用于定义各 variable 变量，变量的优先级非常高
+│   ├── default  # 用于设定默认变量；变量的优先级是最低的
+│   ├── files  # 存储由 copy 或 script 等模块调用的文件；
+│   ├── handlers # 用于定义各 handler 处理器；
+│   ├── meta  # 定义当前角色的特殊设定及其依赖关系；比如 作者信息、角色主要作用等等
+│   ├── tasks  # 用于定义各 task;
+│   ├── templates # 模板文本；
+│   └── vars  # 用于定义各 variable 变量，变量的优先级非常高
 | ......
 ```
 
@@ -805,8 +780,6 @@ roles 用于层次性、结构化地组织playbook。roles 能够根据层次型
 **templates目录**： 角色相关的模板文件可以放置在此目录中，当使用角色相关的模板时，如果没有指定路径，会默认从此目录中查找对应名称的模板文件。
 
 **files目录**：角色可能会用到的一些其他文件可以放置在此目录中，比如，当你定义nginx角色时，需要配置https，那么相关的证书文件即可放置在此目录中。
-
- 
 
 #### ③ 在`roles`目录下生成对应的目录结构
 
@@ -901,13 +874,11 @@ http {
 }
 ```
 
-
-
 #### ④ 定义 tasks 任务文件
 
 rpm包下载：
 
-> wget http://nginx.org/packages/centos/7/x86_64/RPMS/nginx-1.22.0-1.el7.ngx.x86_64.rpm
+> wget <http://nginx.org/packages/centos/7/x86_64/RPMS/nginx-1.22.0-1.el7.ngx.x86_64.rpm>
 >
 > chmod -R 777 nginx-1.22.0-1.el7.ngx.x86_64.rpm
 
@@ -965,8 +936,6 @@ rpm包下载：
 >
 > ansible-playbook nginx.yml -t startnginx
 
-
-
 **uninstall.yml**
 
 ```yaml
@@ -980,8 +949,6 @@ rpm包下载：
 ```
 
 > ansible-playbook ./nginx/tasks/uninstall.yml
-
-
 
 #### ⑤ 放置我们所需要的文件到指定目录
 
@@ -1020,6 +987,7 @@ rpm包下载：
 ```
 
 #### ⑥ 定义 vars 变量文件
+
 我们在模板中定义的变量，也要去配置文件中加上：
 
 ```shell
@@ -1030,6 +998,7 @@ ansible_processor_vcpus: 1
 ```
 
 #### ⑦ 定义 handlers 文件
+
 我们在配置文件中定义了`notify`，所以我么也需要定义`handlers`，我们来修改配置文件：
 
 ```shell
@@ -1043,6 +1012,7 @@ ansible_processor_vcpus: 1
 ```
 
 #### ⑧ 定义 nginx 剧本文件
+
 接下来，我们就来定义剧本文件，由于大部分设置我们都单独配置在了roles里面，所以，接下来剧本就只需要写一点点内容即可：
 
 ```yaml
@@ -1056,6 +1026,7 @@ ansible_processor_vcpus: 1
 ```
 
 #### ⑨ 启动服务
+
 剧本定义完成以后，我们就可以来启动服务了：
 
 ```shell
@@ -1064,7 +1035,7 @@ ansible_processor_vcpus: 1
 
 ![](./ansible-playbook.assets/true-image-20220729211246699.png)
 
-#### ⑩ 启动过后照例查看端口号：
+#### ⑩ 启动过后照例查看端口号
 
 ```shell
 [root@admin roles]# ansible web -m shell -a "ss -ntulp |grep 5120"
@@ -1096,10 +1067,6 @@ ansible.cfg to get rid of this message.
   ......
 ```
 
-
-
-
-
 #### 11 测试修改后重新加载配置文件 - restartnginx
 
 ```shell
@@ -1118,8 +1085,6 @@ nginxprot: 5133
 
 ![](./ansible-playbook.assets/true-image-20220729212349643.png)
 
-
-
 #### 12 测试修改后重新加载配置文件 - reloadnginx
 
 ```shell
@@ -1137,8 +1102,3 @@ nginxprot: 5166
 ```
 
 ![](./ansible-playbook.assets/true-image-20220729214251417.png)
-
-
-
-
-

@@ -30,8 +30,6 @@ tag:
 - 安全管控是用 SecurityContext；
 - 前置校验是用 InitContainers 这几个在 spec 里面加的字段，来实现的这些配置管理。
 
-
-
 ### a、安装nfs文件系统
 
 ```shell
@@ -71,6 +69,7 @@ mount -t nfs 192.168.100.130:/nfs/data /nfs/data
 创建一个文件 vim ./nfs.yaml
 
 ::: details 点击查看代码
+
 ```yaml
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
@@ -197,6 +196,7 @@ roleRef:
   name: leader-locking-nfs-client-provisioner
   apiGroup: rbac.authorization.k8s.io
 ```
+
 :::
 
 kubectl apply -f nfs.yaml
@@ -211,8 +211,6 @@ NAME                    PROVISIONER                                   RECLAIMPOL
 nfs-storage (default)   k8s-sigs.io/nfs-subdir-external-provisioner   Delete          Immediate           false                  2m31s
 ```
 
-
-
 ### e、metrics-server
 
 vim metrics-server.yaml
@@ -220,6 +218,7 @@ vim metrics-server.yaml
 kubectl apply -f metrics-server.yaml
 
 ::: details 点击查看代码
+
 ```yaml
 apiVersion: v1
 kind: ServiceAccount
@@ -409,19 +408,14 @@ spec:
   version: v1beta1
   versionPriority: 100
 ```
+
 :::
-
-
-
-
 
 ## PV&PVC
 
 **PV**：持久卷（Persistent Volume），将应用需要持久化的数据保存到指定位置
 
 **PVC**：持久卷申明（**Persistent Volume Claim**），申明需要使用的持久卷规格
-
-
 
 ### 1、创建pv池 pv.yaml
 
@@ -539,8 +533,6 @@ spec:
             claimName: nginx-pvc
 ```
 
-
-
 ## ConfigMap
 
 抽取应用配置，并且可以自动更新
@@ -633,7 +625,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: redis-config
-data:		#data是所有真正的数据，key：默认是文件名   value：配置文件的内容
+data:  #data是所有真正的数据，key：默认是文件名   value：配置文件的内容
   redis-config: |
     maxmemory 2mb
     maxmemory-policy allkeys-lru 
@@ -656,14 +648,9 @@ kubectl exec -it redis -- redis-cli
 >
 > 修改了CM。Pod里面的配置文件会跟着变
 
-
 > 配置值未更改，因为需要重新启动 Pod 才能从关联的 ConfigMap 中获取更新的值。
 >
 > 原因：我们的Pod部署的中间件自己本身没有热更新能力
-
-
-
-
 
 ## secret
 
@@ -696,4 +683,3 @@ spec:
   imagePullSecrets:
   - name: jinfang-docker
 ```
-

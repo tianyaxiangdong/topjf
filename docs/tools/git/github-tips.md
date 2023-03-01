@@ -20,7 +20,7 @@ tag:
 
 ![Github简历](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/2020-11/image-20201108192205620.png)
 
-通过 https://www.githubtrends.io/wrapped 这个网站，你可以生成一份 Github 个人年报，这个年报会列举出你在这一年的项目贡献情况、最常使用的编程语言、详细的贡献信息。
+通过 <https://www.githubtrends.io/wrapped> 这个网站，你可以生成一份 Github 个人年报，这个年报会列举出你在这一年的项目贡献情况、最常使用的编程语言、详细的贡献信息。
 
 ![](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/dootask/image-20211226144607457.png)
 
@@ -62,13 +62,13 @@ Github 目前支持在个人主页自定义展示一些内容。展示效果如�
 
 ![](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/dootask/repobeats.png)
 
-地址：https://repobeats.axiom.co/ 。
+地址：<https://repobeats.axiom.co/> 。
 
 ## Github 表情
 
 ![Github表情](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/2020-11/image-20201107162254582.png)
 
-如果你想要在 Github 使用表情的话，可以在这里找找 ：[www.webfx.com/tools/emoji-cheat-sheet/ ](www.webfx.com/tools/emoji-cheat-sheet/)。
+如果你想要在 Github 使用表情的话，可以在这里找找 ：[www.webfx.com/tools/emoji-cheat-sheet/](www.webfx.com/tools/emoji-cheat-sheet/)。
 
 ![在线Github表情](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/2020-11/image-20201107162432941.png)
 

@@ -16,7 +16,7 @@ timeline: false
 
 ⑤、功能描述：搜索数据；管道符，“|”，表示将前一个命令的处理结果输出传递给后面的命令处理
 
-⑥、语法： 
+⑥、语法：
 
 grep [选项]... PATTERN [FILE]...
 
@@ -24,7 +24,6 @@ grep [选项]... PATTERN [FILE]...
 - -n 显示匹配行号
 - -c 知道有多少行含有匹配
 - -e 指定多个匹配模式
-
 
 ```shell
 [root@admin home]# grep three file1
@@ -55,7 +54,3 @@ three
 four
 five
 ```
-
-
-
-

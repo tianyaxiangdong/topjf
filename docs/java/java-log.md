@@ -35,8 +35,6 @@ pattern格式化输出：
     %msg：日志消息，%n是换行符
 ```
 
-
-
 # 1、logback
 
 ```xml
@@ -228,14 +226,6 @@ logs
     warn.log       
 ```
 
-
-
 # 2、log4j
-
-
-
-
-
-
 
 # 3、log4j2

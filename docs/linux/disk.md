@@ -121,6 +121,3 @@ RAID10兼备了RAID1和RAID0的有优点。首先基于RAID1模式将磁盘分�
 ![](./disk.assets/true-raid.jpg)
 
 以上内容来自: [不止思考_奎哥](https://m.imooc.com/article/264962)
-
-
-

@@ -13,7 +13,6 @@ tag:
 
 <!-- more -->
 
-
 # Jenkins自动化部署
 
 ![](./jenkins.assets/true-image-20220810165403975.png)
@@ -22,30 +21,36 @@ tag:
 
 ------
 
-
 ## 通过 war 安装 2.372（推荐使用）
 
 下载地址：[huawei源2.346](https://mirrors.huaweicloud.com/jenkins/war/2.346/jenkins.war)、[稳定版列表](https://get.jenkins.io/war-stable/)、[尝鲜版列表](https://get.jenkins.io/war/)
+
 ```shell
 wget -O ./jenkins3611.war https://get.jenkins.io/war-stable/2.361.1/jenkins.war
 ```
+
 ```shell
 wget -O ./jenkins372.war https://get.jenkins.io/war/2.372/jenkins.war
 ```
+
 安装（提取码：1234）： [java各个版本下载](https://pan.baidu.com/s/17pkHcX7YrssnEVctveHbHQ)、[maven3.8](https://pan.baidu.com/s/1ch1_sjFDvvgY52-niYEBFw)、[tomcat](https://pan.baidu.com/s/1TQgpdHz6p38k6QxPsBDhrQ)、yum install -y git
 
 ### 安装 JDK
 
 - 卸载默认jdk
+
 ```
 rpm -qa | grep java
 rpm -e --nodeps java-1.8.0-openjdk*
 rpm -e --nodeps  java-1.8.0-openjdk*
 ```
+
 - 解压安装
+
 ```
 tar -zxvf jdk-17_linux-x64_bin.tar.gz -C /usr/java/
 ```
+
 `rm -rf /usr/bin/ja* &&  ln -s /usr/java/jdk-17.0.4/bin/ja* /usr/bin/ && ls -al /usr/bin/ja*`
 
 - 设置环境变量
@@ -74,8 +79,6 @@ mv /data/apache-tomcat-9.0.65 /data/tomcat-9.0.65
                connectionTimeout="20000"
                redirectPort="8443" URIEncoding="UTF-8" />
 ```
-
-
 
 ### 安装 maven
 
@@ -135,8 +138,6 @@ cat /root/.jenkins/secrets/initialAdminPassword
 
 **后续参考下面docker的：【安装插件】**
 
-
-
 ## 通过 yum 安装
 
 稳定版
@@ -168,8 +169,6 @@ gpgcheck=1
  
 rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 ```
-
-
 
 ```bash
 yum install jenkins
@@ -208,11 +207,7 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 2a35ad12127f45fd8a61b1017b38c907
 ```
 
-http://192.168.100.130:8099
-
-
-
-
+<http://192.168.100.130:8099>
 
 -----
 
@@ -260,12 +255,11 @@ docker run -d -p 8889:8080 -p 50001:50000 \
 --name jenkins-jdk17 registry.cn-chengdu.aliyuncs.com/jinfang/jenkins:2.363-jdk17
 ```
 
-
 ```
 ansible web -m shell -a 'docker pull registry.cn-chengdu.aliyuncs.com/jinfang/jenkins:latest'
 ```
 
-访问：http://192.168.0.8:8889
+访问：<http://192.168.0.8:8889>
 
 -----
 
@@ -341,11 +335,11 @@ sed -i 's#http://www.google.com#https://www.baidu.com#g' default.json
 
 | 来源       | 地址                                            |
 |----------|-----------------------------------------------|
-| tencent  | https://mirrors.cloud.tencent.com/jenkins/    |
-| huawei   | https://mirrors.huaweicloud.com/jenkins/      |
-| tsinghua | https://mirrors.tuna.tsinghua.edu.cn/jenkins/ |
-| ustc     | https://mirrors.ustc.edu.cn/jenkins/          |
-| bit      | http://mirror.bit.edu.cn/jenkins/             |
+| tencent  | <https://mirrors.cloud.tencent.com/jenkins/>    |
+| huawei   | <https://mirrors.huaweicloud.com/jenkins/>      |
+| tsinghua | <https://mirrors.tuna.tsinghua.edu.cn/jenkins/> |
+| ustc     | <https://mirrors.ustc.edu.cn/jenkins/>          |
+| bit      | <http://mirror.bit.edu.cn/jenkins/>             |
 
 也可以在管理界面进行设置
 
@@ -355,8 +349,6 @@ sed -i 's#http://www.google.com#https://www.baidu.com#g' default.json
 
 查看配置： `[root@n1 jenkins_home]# cat updates/default.json`
 
-
-
 ### 安装插件
 
 二选一即可
@@ -365,13 +357,11 @@ sed -i 's#http://www.google.com#https://www.baidu.com#g' default.json
 
 ![](./jenkins.assets/true-image-20220815172322524.png)
 
-
-
 ### 安装自动化构建和部署所需的插件
 
 所需插件：git plugin、Maven Integration、Pipeline Maven Integration、Gitlab、SSH、Publish Over SSH、gitee、github、Deploy to container、Docker、Docker Commons、docker-build-step
 
-​		
+​  
 
 ![](./jenkins.assets/true-image-20220815175644826.png)
 
@@ -381,17 +371,13 @@ sed -i 's#http://www.google.com#https://www.baidu.com#g' default.json
 
 ### 创建用户
 
-admin	admin123456
+admin admin123456
 
 ![](./jenkins.assets/true-image-20220815152906828.png)
-
-
 
 ![](./jenkins.assets/true-image-20220815152959582.png)
 
 ![](./jenkins.assets/true-image-20220815153017867.png)
-
-
 
 -----
 
@@ -399,12 +385,12 @@ admin	admin123456
 
 ### 添加凭证
 
-
 `http://192.168.100.130:51000/gitee-project/drj`
 
 ## 基础介绍
 
 *小目录*
+
 - 什么是流水线
 - 声明式流水线
 - Jenkinsfile 的使用
@@ -474,7 +460,6 @@ node {
 }
 ```
 
-
 ### 声明式流水线
 
 声明式流水线必须包含在一个 `Pipeline` 块中，比如是一个 `Pipeline` 块的格式
@@ -492,7 +477,6 @@ pipeline {
 - 块只能由 Sections、Directives、Steps 或 assignment statements 组成
 - 属性引用语句被当做是无参数的方法调用，比如 input 会被当做 input()。
 
-
 #### Sections
 
 声明式流水线中的 Sections 不是一个关键字或指令，
@@ -502,7 +486,7 @@ pipeline {
 
 Agent 表示整个流水线或特定阶段中的步骤和命令执行的位置，该部分必须在 pipeline 块的顶层被定义，也可以在 stage 中再次定义，但是 stage 级别是可选的。
 
-**any** 
+**any**
 
 在任何可用的代理上执行流水线，配置语法
 
@@ -511,7 +495,6 @@ pipeline {
   agent any
 }
 ```
-
 
 **none**
 
@@ -527,7 +510,6 @@ pipeline {
   }
 }
 ```
-
 
 **label**
 
@@ -546,7 +528,6 @@ pipeline {
     }
 }
 ```
-
 
 **node**
 
@@ -571,7 +552,6 @@ pipeline {
 }
 ```
 
-
 **dockerfile**
 
 使用从源码中包含的 Dockerfile 所构建的容器执行流水线或 stage。此时对应的 agent 写法如下
@@ -587,7 +567,6 @@ agent {
 }
 ```
 
-
 **docker**
 
 相当于 dockerfile，可以直接使用 docker 字段指定外部镜像即可，可以省去构建的时间。比如使用 maven 镜像进行打包，同时可以指定 args
@@ -601,7 +580,6 @@ agent{
   }
 }
 ```
-
 
 **kubernetes**
 
@@ -618,22 +596,31 @@ Jenkins 也支持使用 Kubernetes 创建 Slave，也就是常说的动态 Slave
 - workspaceVolume：持久化 jenkins 的工作目录。
 
 - persistentVolumeClaimWorkspaceVolume：挂载已有 pvc。
+
 ```shell
 workspaceVolume persistentVolumeClaimWorkspaceVolume(claimName: "jenkins-agent", mountPath: "/", readOnly: "false")
 ```
+
 - nfsWorkspaceVolume：挂载 nfs 服务器目录
+
 ```shell
 workspaceVolume nfsWorkspaceVolume(serverAddress: "192.168.10.254", serverPath: "/nfs", readOnly: "false")
 ```
+
 - dynamicPVC：动态申请 pvc，任务执行结束后删除
+
 ```shell
 workspaceVolume dynamicPVC(storageClassName: "nfs-client", requestsSize: "1Gi", accessModes: "ReadWriteMany")
 ```
+
 - emptyDirWorkspaceVolume：临时目录，任务执行结束后会随着 pod 删除被删除，主要功能多个任务 container 共享 jenkins 工作目录。
+
 ```shell
 workspaceVolume emptyDirWorkspaceVolume()
 ```
+
 - hostPathWorkspaceVolume：挂载 node 节点本机目录，注意挂载本机目录注意权限问题，可以先创建设置 777 权限，否则默认 kubelet 创建的目录权限为 755 默认其他用户没有写权限，执行流水线会报错。
+
 ```shell
 workspaceVolume hostPathWorkspaceVolume(hostPath: "/opt/workspace", readOnly: false)
 ```
@@ -667,7 +654,6 @@ spec:
   }
 }
 ```
-
 
 2.agent 的配置示例
 
@@ -765,7 +751,6 @@ pipeline {
 }
 ```
 
-
 3.Post
 
 Post 一般用于流水线结束后的进一步处理，比如错误通知等。
@@ -835,7 +820,6 @@ pipeline {
 }
 ```
 
-
 4.sepes
 
 Steps 部分在给定的 stage 指令中执行的一个或多个步骤，比如在 steps 定义执行一条 shell 命令
@@ -873,7 +857,6 @@ pipeline {
 }
 ```
 
-
 #### Directives 条件判断或预处理数据
 
 Directives 可用于一些执行 stage 时的条件判断或预处理一些数据，和 Sections 一致，Directives 不是一个关键字或指令，
@@ -889,7 +872,6 @@ Environment 主要用于在流水线中配置的一些环境变量，根据配�
 对于类型为 Secret Text 的凭证，`credentials()`可以将该 Secret 中的文本内容赋值给环境变量。
 
 对于类型为标准的账号密码型的凭证，指定的环境变量为 username 和 password，并且也会定义两个额外的环境变量，分别为`MYVARNAME_USR`和`MYVARNAME_PSW`。
-
 
 - 基本变量使用
 
@@ -918,7 +900,6 @@ pipeline {
 }
 ```
 
-
 - 使用变量引用 secret 的凭证
 
 ```
@@ -937,7 +918,6 @@ pipeline {
   }
 }
 ```
-
 
 **使用变量引用类型为标准的账号密码型的凭证**
 
@@ -964,7 +944,6 @@ pipeline {
 }
 ```
 
-
 2.Options
 
 Jenkins 流水线支持很多内置指令，比如 retry 可以对失败的步骤进行重复执行 n 次，可以根据不同的指令实现不同的效果。
@@ -979,7 +958,6 @@ Jenkins 流水线支持很多内置指令，比如 retry 可以对失败的步�
 - **retry**：流水线失败后重试次数。
 - **timeout**：设置流水线的超时时间，超过流水线时间，job 会自动终止。如果不加 unit 参数默认为 1 分。
 - **timestamps**：为控制台输出时间戳。
-
 
 **定义在 pipeline 中**
 
@@ -1008,7 +986,6 @@ pipeline {
   }
 }
 ```
-
 
 **定义在 stage 中**
 
@@ -1584,19 +1561,3 @@ spec:
 ```
 
 - 介绍内容来源：u.kubeinfo.cn/ozoxB
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

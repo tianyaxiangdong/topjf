@@ -26,18 +26,18 @@ tag:
 4、e.printStackTrace(); 会打印出方法的调用痕迹，这样就便于定位和分析到底哪里出了异常
 
 ```java
-		try {
-			int[] arrays= {1,2,3,4,5}; //【0】-【4】
-			int n=5;
-			//预感数组角标可能会有问题
-			System.out.println(arrays[n]);//java.lang.ArrayIndexOutOfBoundsException: 5  数组角标超出最大值
-			//出现问题的时候后面的代码无法执行
-			System.out.println("hello");
-		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("肯定是角标异常了哟，检查一下");
-			//代码执行轨迹
-			e.printStackTrace();
-		}
+  try {
+   int[] arrays= {1,2,3,4,5}; //【0】-【4】
+   int n=5;
+   //预感数组角标可能会有问题
+   System.out.println(arrays[n]);//java.lang.ArrayIndexOutOfBoundsException: 5  数组角标超出最大值
+   //出现问题的时候后面的代码无法执行
+   System.out.println("hello");
+  } catch (ArrayIndexOutOfBoundsException e) {
+   System.out.println("肯定是角标异常了哟，检查一下");
+   //代码执行轨迹
+   e.printStackTrace();
+  }
 ```
 
 ![img](./exception.assets/true-clip_image002.jpg)
@@ -47,18 +47,18 @@ tag:
 ArrayIndexOutOfBoundsException是Exception的子类，使用Exception也可以catch住ArrayIndexOutOfBoundsException
 
 ```java
-		try {
-			int[] arrays= {1,2,3,4,5}; //【0】-【4】
-			int n=5;
-			//预感数组角标可能会有问题
-			System.out.println(arrays[n]);//java.lang.ArrayIndexOutOfBoundsException: 5  数组角标超出最大值
-			//出现问题的时候后面的代码无法执行
-			System.out.println("hello");
-		} catch (Exception e) {
-			System.out.println("肯定是角标异常了哟，检查一下");
-			//代码执行轨迹
-			e.printStackTrace();
-		}
+  try {
+   int[] arrays= {1,2,3,4,5}; //【0】-【4】
+   int n=5;
+   //预感数组角标可能会有问题
+   System.out.println(arrays[n]);//java.lang.ArrayIndexOutOfBoundsException: 5  数组角标超出最大值
+   //出现问题的时候后面的代码无法执行
+   System.out.println("hello");
+  } catch (Exception e) {
+   System.out.println("肯定是角标异常了哟，检查一下");
+   //代码执行轨迹
+   e.printStackTrace();
+  }
 
 ```
 
@@ -67,27 +67,27 @@ ArrayIndexOutOfBoundsException是Exception的子类，使用Exception也可以ca
 需求，出现了算术异常，又可能出现数组下标越界，我们希望出现哪个就打印哪个的问题，这里需要多异常捕获
 
 ```java
-		try {
-			int a=1/1;//java.lang.ArithmeticException: / by zero  零不能当除数
-			System.out.println(a);
-		
-			int[] arrays= {1,2,3,4,5}; //【0】-【4】
-			int n=5;
-			//预感数组角标可能会有问题
-			System.out.println(arrays[n]);//java.lang.ArrayIndexOutOfBoundsException: 5  数组角标超出最大值
-			//出现问题的时候后面的代码无法执行
-			System.out.println("hello");
-			//连续捕获
-		} catch(ArithmeticException e1) {
-			
-			System.out.println("除数不可以为0");
-			e1.printStackTrace();//打印一下代码运行轨迹
-			
-		}catch (ArrayIndexOutOfBoundsException e2) {//向上转型  Exception e=new java.lang.ArrayIndexOutOfBoundsException();
-			System.out.println("肯定是角标异常了哟，检查一下");
-			//代码执行轨迹
-			e2.printStackTrace();
-		}
+  try {
+   int a=1/1;//java.lang.ArithmeticException: / by zero  零不能当除数
+   System.out.println(a);
+  
+   int[] arrays= {1,2,3,4,5}; //【0】-【4】
+   int n=5;
+   //预感数组角标可能会有问题
+   System.out.println(arrays[n]);//java.lang.ArrayIndexOutOfBoundsException: 5  数组角标超出最大值
+   //出现问题的时候后面的代码无法执行
+   System.out.println("hello");
+   //连续捕获
+  } catch(ArithmeticException e1) {
+   
+   System.out.println("除数不可以为0");
+   e1.printStackTrace();//打印一下代码运行轨迹
+   
+  }catch (ArrayIndexOutOfBoundsException e2) {//向上转型  Exception e=new java.lang.ArrayIndexOutOfBoundsException();
+   System.out.println("肯定是角标异常了哟，检查一下");
+   //代码执行轨迹
+   e2.printStackTrace();
+  }
 
 ```
 
@@ -96,26 +96,26 @@ ArrayIndexOutOfBoundsException是Exception的子类，使用Exception也可以ca
 Jdk7之后出现了一种新的连续捕获方法，方便的是可以一次捕获完，不方便的是需要多次处理
 
 ```java
-		try {
-			int a=1/1;//java.lang.ArithmeticException: / by zero  零不能当除数
-			System.out.println(a);
-		
-			int[] arrays= {1,2,3,4,5}; //【0】-【4】
-			int n=5;
-			//预感数组角标可能会有问题
-			System.out.println(arrays[n]);//java.lang.ArrayIndexOutOfBoundsException: 5  数组角标超出最大值
-			//出现问题的时候后面的代码无法执行
-			System.out.println("hello");
-			//连续捕获
-		} catch(ArithmeticException | ArrayIndexOutOfBoundsException e) {//向上转型  Exception e=new java.lang.ArrayIndexOutOfBoundsException();
-			if(e instanceof ArithmeticException) {
-				System.out.println("除数不能为零");
-			}else if(e instanceof ArrayIndexOutOfBoundsException) {
-				System.out.println("肯定是角标异常了哟，检查一下");
-			}
-			//代码执行轨迹
-			e.printStackTrace();
-		}
+  try {
+   int a=1/1;//java.lang.ArithmeticException: / by zero  零不能当除数
+   System.out.println(a);
+  
+   int[] arrays= {1,2,3,4,5}; //【0】-【4】
+   int n=5;
+   //预感数组角标可能会有问题
+   System.out.println(arrays[n]);//java.lang.ArrayIndexOutOfBoundsException: 5  数组角标超出最大值
+   //出现问题的时候后面的代码无法执行
+   System.out.println("hello");
+   //连续捕获
+  } catch(ArithmeticException | ArrayIndexOutOfBoundsException e) {//向上转型  Exception e=new java.lang.ArrayIndexOutOfBoundsException();
+   if(e instanceof ArithmeticException) {
+    System.out.println("除数不能为零");
+   }else if(e instanceof ArrayIndexOutOfBoundsException) {
+    System.out.println("肯定是角标异常了哟，检查一下");
+   }
+   //代码执行轨迹
+   e.printStackTrace();
+  }
 
 ```
 
@@ -144,39 +144,39 @@ Jdk7之后出现了一种新的连续捕获方法，方便的是可以一次捕�
 ```java
 public class Demo28 {
 
-	public static void main(String[] args) {
-		method1();
-	}
-	public static void method1() {
-//		method2(4);
-		//method1针对method3有可能会出现的ArrayIndexOutOfBoundsException的问题，使用try-catch语句预防一下
-		try {
-			method3(4);
-		}catch(ArrayIndexOutOfBoundsException e) {
-			System.out.println("啊啊啊啊啊啊-角标越界");
-			e.printStackTrace();
-			method3(2);
-		}
-	}
-	//throws 抛出
-	//不想自己解决,一旦出现问题，让调用者自己来解决
-	//throws声明异常（问题），意味着：有可能会出现问题，但不一定会出现问题，一旦出现问题，抛给调用者去解决
-	public static void method3(int n)throws ArrayIndexOutOfBoundsException {
-		int[] a= {1,2,6};//0 1 [2]
-		System.out.println(a[n]);
-	}
-	
-	//当一段代码出现问题，两种思路解决，第一种就地解决
-	public static void method2(int n) {
-		try {
-			int[] a= {1,2,6};
-			System.out.println(a[n]);
-		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("角标越界");
-			method2(2);
-		}
-	}
-	
+ public static void main(String[] args) {
+  method1();
+ }
+ public static void method1() {
+//  method2(4);
+  //method1针对method3有可能会出现的ArrayIndexOutOfBoundsException的问题，使用try-catch语句预防一下
+  try {
+   method3(4);
+  }catch(ArrayIndexOutOfBoundsException e) {
+   System.out.println("啊啊啊啊啊啊-角标越界");
+   e.printStackTrace();
+   method3(2);
+  }
+ }
+ //throws 抛出
+ //不想自己解决,一旦出现问题，让调用者自己来解决
+ //throws声明异常（问题），意味着：有可能会出现问题，但不一定会出现问题，一旦出现问题，抛给调用者去解决
+ public static void method3(int n)throws ArrayIndexOutOfBoundsException {
+  int[] a= {1,2,6};//0 1 [2]
+  System.out.println(a[n]);
+ }
+ 
+ //当一段代码出现问题，两种思路解决，第一种就地解决
+ public static void method2(int n) {
+  try {
+   int[] a= {1,2,6};
+   System.out.println(a[n]);
+  } catch (ArrayIndexOutOfBoundsException e) {
+   System.out.println("角标越界");
+   method2(2);
+  }
+ }
+ 
 }
 
 ```
@@ -194,44 +194,44 @@ throws与throw这两个关键字接近，不过意义不一样，有如下区别
 ```java
 public class Demo28 {
 
-	public static void main(String[] args) {
-		try {
-			method1();
-		} catch (Exception e) {
-			method3(2);
-		}
-	}
-	public static void method1()throws ArrayIndexOutOfBoundsException {
-//		method2(4);
-		//method1针对method3有可能会出现的ArrayIndexOutOfBoundsException的问题，使用try-catch语句预防一下
-		try {
-			method3(4);
-		}catch(ArrayIndexOutOfBoundsException e) {
-			System.out.println("啊啊啊啊啊啊-角标越界");
-			e.printStackTrace();
-			//这里做一个基本处理后交给下一个处理
-			throw new ArrayIndexOutOfBoundsException("数组角标越界"); 
-		}
-	}
-	//throws 抛出
-	//不想自己解决,一旦出现问题，让调用者自己来解决
-	//throws声明异常（问题），意味着：有可能会出现问题，但不一定会出现问题，一旦出现问题，抛给调用者去解决
-	public static void method3(int n)throws ArrayIndexOutOfBoundsException {
-		int[] a= {1,2,6};//0 1 [2]
-		System.out.println(a[n]);
-	}
-	
-	//当一段代码出现问题，两种思路解决，第一种就地解决
-	public static void method2(int n) {
-		try {
-			int[] a= {1,2,6};
-			System.out.println(a[n]);
-		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("角标越界");
-			method2(2);
-		}
-	}
-	
+ public static void main(String[] args) {
+  try {
+   method1();
+  } catch (Exception e) {
+   method3(2);
+  }
+ }
+ public static void method1()throws ArrayIndexOutOfBoundsException {
+//  method2(4);
+  //method1针对method3有可能会出现的ArrayIndexOutOfBoundsException的问题，使用try-catch语句预防一下
+  try {
+   method3(4);
+  }catch(ArrayIndexOutOfBoundsException e) {
+   System.out.println("啊啊啊啊啊啊-角标越界");
+   e.printStackTrace();
+   //这里做一个基本处理后交给下一个处理
+   throw new ArrayIndexOutOfBoundsException("数组角标越界"); 
+  }
+ }
+ //throws 抛出
+ //不想自己解决,一旦出现问题，让调用者自己来解决
+ //throws声明异常（问题），意味着：有可能会出现问题，但不一定会出现问题，一旦出现问题，抛给调用者去解决
+ public static void method3(int n)throws ArrayIndexOutOfBoundsException {
+  int[] a= {1,2,6};//0 1 [2]
+  System.out.println(a[n]);
+ }
+ 
+ //当一段代码出现问题，两种思路解决，第一种就地解决
+ public static void method2(int n) {
+  try {
+   int[] a= {1,2,6};
+   System.out.println(a[n]);
+  } catch (ArrayIndexOutOfBoundsException e) {
+   System.out.println("角标越界");
+   method2(2);
+  }
+ }
+ 
 }
 
 
@@ -244,47 +244,47 @@ package com.haoyu;
 
 public class Demo29 {
 
-	public static void main(String[] args) {
-		//开心到死
-		thirdHappyEnding();
-	}
-	//3,养老院
-	public static void thirdHappyEnding() {
-		try {
-			secondRescue();
-		} catch (Exception e) {
-			System.out.println("房已开好，等你哟");
-		}
-	}
-	
-	//2,做手术
-	public static void secondRescue()throws HappyLifeException{
-		//看一下包扎之后需不需要做手术，如果接收到一个做手术的问题，就开始做手术
-		try {
-			firstRescue();
-		} catch (OperateException e) {
-			System.out.println("手术已经做完");
-			throw new HappyLifeException("可以养老了");
-		}
-	}
-	
-	//1，战场基本消毒和包扎
-	public static void firstRescue()throws OperateException {
-		//打仗过程有可能会出问题，临时抢救一下
-		try {
-			ware();
-		}catch(ChangziZhaChuanException e) {
-			System.out.println("包扎和消毒");
-			//挂号做手术--跟手术相关的问题
-			throw new OperateException("修复手术可以做了哟");
-		}
-	}
-	//打仗,打仗过程一不小心肠子被炸穿，向上抛出一个被炸穿的异常（问题）（求救信号）
-	//打仗之前就必须建立起医疗的通讯机制
-	public static void ware() throws ChangziZhaChuanException{
-		throw new ChangziZhaChuanException("炸得连渣都不剩");
-	}
-	
+ public static void main(String[] args) {
+  //开心到死
+  thirdHappyEnding();
+ }
+ //3,养老院
+ public static void thirdHappyEnding() {
+  try {
+   secondRescue();
+  } catch (Exception e) {
+   System.out.println("房已开好，等你哟");
+  }
+ }
+ 
+ //2,做手术
+ public static void secondRescue()throws HappyLifeException{
+  //看一下包扎之后需不需要做手术，如果接收到一个做手术的问题，就开始做手术
+  try {
+   firstRescue();
+  } catch (OperateException e) {
+   System.out.println("手术已经做完");
+   throw new HappyLifeException("可以养老了");
+  }
+ }
+ 
+ //1，战场基本消毒和包扎
+ public static void firstRescue()throws OperateException {
+  //打仗过程有可能会出问题，临时抢救一下
+  try {
+   ware();
+  }catch(ChangziZhaChuanException e) {
+   System.out.println("包扎和消毒");
+   //挂号做手术--跟手术相关的问题
+   throw new OperateException("修复手术可以做了哟");
+  }
+ }
+ //打仗,打仗过程一不小心肠子被炸穿，向上抛出一个被炸穿的异常（问题）（求救信号）
+ //打仗之前就必须建立起医疗的通讯机制
+ public static void ware() throws ChangziZhaChuanException{
+  throw new ChangziZhaChuanException("炸得连渣都不剩");
+ }
+ 
 }
 //需求：打仗
 //负伤
@@ -294,27 +294,27 @@ public class Demo29 {
 //我们自定义一个异常，继承了运行时出问题的异常类，描述上述问题
 //肠子被炸穿异常
 class ChangziZhaChuanException extends RuntimeException{
-	private String name;
-	public ChangziZhaChuanException(String name) {
-		super(name);
-		this.name = name;
-	}
+ private String name;
+ public ChangziZhaChuanException(String name) {
+  super(name);
+  this.name = name;
+ }
 } 
 //做手术的问题--挂号
 class OperateException extends RuntimeException{
-	private String name;
-	public OperateException(String name) {
-		super(name);
-		this.name = name;
-	}
+ private String name;
+ public OperateException(String name) {
+  super(name);
+  this.name = name;
+ }
 } 
 //送往养老院，开开心心地去死
 class HappyLifeException extends RuntimeException{
-	private String name;
-	public HappyLifeException(String name) {
-		super(name);
-		this.name = name;
-	}
+ private String name;
+ public HappyLifeException(String name) {
+  super(name);
+  this.name = name;
+ }
 }
 
 ```
@@ -330,8 +330,6 @@ class HappyLifeException extends RuntimeException{
 
 ![http://how2j.cn/img/site/step/2412.png](./exception.assets/true-clip_image004.jpg)
 
- 
-
 ### 步骤1 : 可查异常  
 
 可查异常： CheckedException
@@ -339,12 +337,12 @@ class HappyLifeException extends RuntimeException{
 
 ### 步骤2：运行时异常
 
-运行时异常RuntimeException指： **不是必须进行****try catch****的异常** 
- **常见运行时异常****:** 
- 除数不能为0异常:ArithmeticException 
- 下标越界异常:ArrayIndexOutOfBoundsException 
- 空指针异常:NullPointerException 
- 在编写代码的时候，依然可以使用try catch throws进行处理，与可查异常不同之处在于，**即便不进行****try catch****，也不会有编译错误** 
+运行时异常RuntimeException指： **不是必须进行****try catch****的异常**
+ **常见运行时异常****:**
+ 除数不能为0异常:ArithmeticException
+ 下标越界异常:ArrayIndexOutOfBoundsException
+ 空指针异常:NullPointerException
+ 在编写代码的时候，依然可以使用try catch throws进行处理，与可查异常不同之处在于，**即便不进行****try catch****，也不会有编译错误**
  Java之所以会设计运行时异常的原因之一，是因为下标越界，空指针这些运行时异常**太过于普遍**，如果都需要进行捕捉，代码的可读性就会变得很糟糕。
 
 ### 步骤3：错误
@@ -354,8 +352,6 @@ class HappyLifeException extends RuntimeException{
  如例不停的给StringBuffer追加字符，很快就把内存使用光了。抛出**OutOfMemoryError**
  与运行时异常一样，错误也是不要求强制捕捉的
 
- 
-
 ## Throwable
 
 Throwable是类，Exception和Error都继承了该类
@@ -364,8 +360,6 @@ Throwable是类，Exception和Error都继承了该类
  Exception里又分**运行时异常**和**可查异常**
 
 ![http://how2j.cn/img/site/step/742.png](./exception.assets/true-clip_image006.jpg)
-
- 
 
 ```java
 import java.io.File;
@@ -397,15 +391,10 @@ try语句在返回前，将其他所有的操作执行完，保留好要返回�
 
 **情况一**：如果finally中有return语句，则会将try中的return语句”覆盖“掉，直接执行finally中的return语句，得到返回值，这样便无法得到try之前保留好的返回值。
 
-
-
 **情况二**：如果finally中没有return语句，也没有改变要返回值，则执行完finally中的语句后，会接着执行try中的return语句，返回之前保留的值。
-
-
 
 **情况三**：如果finally中没有return语句，但是改变了要返回的值，这里有点类似与引用传递和值传递的区别，分以下两种情况：
 
 > 1）如果return的数据是基本数据类型或文本字符串，则在finally中对该基本数据的改变不起作用，try中的return语句依然会返回进入finally块之前保留的值。
 >
 > 2）如果return的数据是引用数据类型，而在finally中对该引用数据类型的属性值的改变起作用，try中的return语句返回的就是在finally中改变后的该属性的值。
-

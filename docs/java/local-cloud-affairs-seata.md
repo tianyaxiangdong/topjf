@@ -24,7 +24,7 @@ tag:
 和持久性(Durabilily),简称就是ACID;
 ●**原子性**：一系列的操作整体不可拆分，要么同时成功，要么同时失败
 ●**一致性**：数据在事务的前后，业务整体一致。
-		■转账。A:1000; B:1000;转200事务成功;A: 800B: 1200
+  ■转账。A:1000; B:1000;转200事务成功;A: 800B: 1200
 ●**隔离性**：事务之间互相隔离。
 ●**持久性**:一旦事务成功，数据一定会落盘在数据库。
 
@@ -44,21 +44,21 @@ tag:
 
 一个事务可以读取另一个事务已提交的数据  读取的数据前后多了点或者少了点
 
-
-
 ### READ UNCOMTTTED (读未提交)
-​	该隔离级别的事务会读到其它未提交事务的数据，此现象也称之为`**脏读**`。
+
+​ 该隔离级别的事务会读到其它未提交事务的数据，此现象也称之为`**脏读**`。
 
 ### READ COMMITTED (读已提交)
-​	一个事务可以读取另一个已提交的事务，多次读取会造成不一样的结果，此现象称为`**不可重复读问题**`，Oracle和SQL Server的默认隔离级别。
+
+​ 一个事务可以读取另一个已提交的事务，多次读取会造成不一样的结果，此现象称为`**不可重复读问题**`，Oracle和SQL Server的默认隔离级别。
 
 ### REPEATABLE READ (可重复读)
-​	该隔离级别是MySQL默认的隔离级别，在同一个事务里，select 的结果是事务开始时时间点的状态，因此，同样的select操作读到的结果会是一致的， 但是，会有**幻读现象**。MySQL的InnoDB引擎可以通过next-keylocks 机制(参考下文行锁的算法"一节)来避免幻读。
+
+​ 该隔离级别是MySQL默认的隔离级别，在同一个事务里，select 的结果是事务开始时时间点的状态，因此，同样的select操作读到的结果会是一致的， 但是，会有**幻读现象**。MySQL的InnoDB引擎可以通过next-keylocks 机制(参考下文行锁的算法"一节)来避免幻读。
 
 ### SERIALIZABLE (序列化)
-​	在该隔离级别下事务都是串行顺序执行的，MySQL数据库的InnoDB 引擎会给读操作隐式加一把读共享锁，从而避免了脏读、不可重读复读和幻读问题。
 
-
+​ 在该隔离级别下事务都是串行顺序执行的，MySQL数据库的InnoDB 引擎会给读操作隐式加一把读共享锁，从而避免了脏读、不可重读复读和幻读问题。
 
 |      隔离级别       | 说明                                                         |
 | :-----------------: | :----------------------------------------------------------- |
@@ -92,8 +92,6 @@ tag:
 
 回滚到保存点：rollback to tx1
 
-
-
 ## 3、7种传播行为 Propagation：常用（required、required_new）
 
 |         传播行为         | 说明                                                         |
@@ -112,11 +110,11 @@ tag:
 
 ```java
 a(required){
-	b(required);
-	c(requires_new);
-	d(required);
-	e(requires_new);
-	// a方法的业务
+ b(required);
+ c(requires_new);
+ d(required);
+ e(requires_new);
+ // a方法的业务
 }
 ```
 
@@ -127,23 +125,21 @@ a(required){
 3. e方法出现异常，会怎样？a,b,d,e回滚 c不回滚，e方法出异常会上抛影响到上级方法
 4. b方法出现异常，会怎样？a,b回滚 c,d,e未执行
 
-
-
 加点难度：
 
 ```
 a(required){
-	b(required){
-		f(requires_new);
-		g(required)
-	}
-	c(requires_new){
-		h(requires_new)
-		i(required)
-	}
-	d(required);
-	e(requires_new);
-	// a方法的业务
+ b(required){
+  f(requires_new);
+  g(required)
+ }
+ c(requires_new){
+  h(requires_new)
+  i(required)
+ }
+ d(required);
+ e(requires_new);
+ // a方法的业务
 }
 ```
 
@@ -201,8 +197,6 @@ a(required){
      */
     private void saveSpu(SpuVo spuVo) {  。。。 }
 ```
-
-
 
 为了测试事务传播行为，我们在SpuInfoService接口中把saveSkuInfoWithSaleInfo、saveBaseAttrs、saveSpuDesc、saveSpuInfo声明为service接口方法。
 
@@ -284,7 +278,7 @@ spring的事务是声明式事务，而声明式事务的本质是Spring AOP，S
 
 问题是怎么在service中获取当前类的代理对象？
 
-#### 在类中获取代理对象分三个步骤：
+#### 在类中获取代理对象分三个步骤
 
 1. 导入aop的场景依赖：`spring-boot-starter-aop`
 2. 开启AspectJ的自动代理，同时要暴露代理对象：`@EnableAspectJAutoProxy(exposeProxy=true)`
@@ -305,15 +299,13 @@ spring的事务是声明式事务，而声明式事务的本质是Spring AOP，S
 
 debug可以看到，spuInfoService是一个代理对象。
 
-
-
 ## 4、本地事务失效问题
 
 同一个对象内事务方法互调默认失效，原因绕过了代理对象，事务使用代理对象来控制的
 
 解决：使用代理对象调用事物方法
 
-​	引入starter-aop代理模式
+​ 引入starter-aop代理模式
 
 ```
 <dependency>
@@ -322,22 +314,20 @@ debug可以看到，spuInfoService是一个代理对象。
 </dependency>
 ```
 
-​	开启@EnableAspectJAutoProxy(exposeProxy = true)，不使用jdk的代理，exposeProxy对外暴露代理对象
+​ 开启@EnableAspectJAutoProxy(exposeProxy = true)，不使用jdk的代理，exposeProxy对外暴露代理对象
 
-​	![image-20211006181356435](./local-cloud-affairs-seata.assets/true-image-20211006181356435.png)
-
-
+​ ![image-20211006181356435](./local-cloud-affairs-seata.assets/true-image-20211006181356435.png)
 
 ## 5、CAP定理、RAFT
 
 ### CAP
 
 ● 一致性(Consistency) :
-	■在分布式系统中 的所有数据备份，在同一时刻是否同样的值。(等同于所有节点访问同一份最新的数据副本)
+ ■在分布式系统中 的所有数据备份，在同一时刻是否同样的值。(等同于所有节点访问同一份最新的数据副本)
 ●可用性(Avilbility)
-	■在集群中一部分节点故障后，集群整体是否还能响应客户端的读写请求。(对数据更新具备高可用性)
+ ■在集群中一部分节点故障后，集群整体是否还能响应客户端的读写请求。(对数据更新具备高可用性)
 ●分区容错性(Partition tolerance)
-	■大多 数分布式系统都分布在多个子网络。每个子网络就叫做一一个区(partition) 。分区容错的意思是，区间通信可能失败。比如，一台服务器放在中国，另一台服务器放在美国，这就是两个区，它们之间可能无法通信。
+ ■大多 数分布式系统都分布在多个子网络。每个子网络就叫做一一个区(partition) 。分区容错的意思是，区间通信可能失败。比如，一台服务器放在中国，另一台服务器放在美国，这就是两个区，它们之间可能无法通信。
 
 CAP原则指的是，这三个要素最多只能同时实现两点，不可能三者兼顾。
 
@@ -345,7 +335,7 @@ CAP原则指的是，这三个要素最多只能同时实现两点，不可能�
 
 ### RAFT
 
-演示：http://thesecretlivesofdata.com/raft/
+演示：<http://thesecretlivesofdata.com/raft/>
 
 ### BASE：基本使用、软状态、最终一致性
 
@@ -361,15 +351,13 @@ CAP原则指的是，这三个要素最多只能同时实现两点，不可能�
 
 ### 可靠消息+最终一致性（异步确保型）
 
-
-
 ## 7、seata 控制分布式事物 AT模式介（2PC）绍与安装
 
 ### 7.1 介绍
 
-文档：http://seata.io/zh-cn/docs/user/quickstart.html
+文档：<http://seata.io/zh-cn/docs/user/quickstart.html>
 
-服务器下载：https://github.com/seata/seata/releases（https://github.com/seata/seata/releases/download/v1.3.0/seata-server-1.3.0.tar.gz）
+服务器下载：<https://github.com/seata/seata/releases（https://github.com/seata/seata/releases/download/v1.3.0/seata-server-1.3.0.tar.gz>）
 
 ![img](./local-cloud-affairs-seata.assets/true-solution.png)
 
@@ -383,7 +371,7 @@ springboot-2.1.13 <-> spring cloud alibaba-2.1.4 <-> seata-server-1.3.0.tar.gz
 
 docker
 
-#### 指定自定义配置文件启动 
+#### 指定自定义配置文件启动
 
 ```bash
 docker run -d --name seata \
@@ -399,8 +387,6 @@ docker run -d --name seata \
 docker exec -it seata sh
 docker update seata --restart=always
 ```
-
-
 
 ```xml
 <dependency>
@@ -421,8 +407,6 @@ config {
   # 如果使用file，会在file.conf文件里做配置，nacos则会在nacos里做配置
   type = "file"
 ```
-
-
 
 #### file.conf 配置中心，事务日志存储到哪里
 
@@ -464,8 +448,6 @@ public class MySeataConfig {
 
 ### 7.6 各个服务导入 registry.conf、file.conf 到 resources
 
-
-
 ### 7.7 在高并发情况下，seata（AT模式）GlobalTransactional就不适用了，为了保证高并发，不推荐使用seata，因为是加锁，并行化，提升不了效率,可以发消息给库存服务
 
 ![image-20211010191739943](./local-cloud-affairs-seata.assets/true-image-20211010191739943.png)
@@ -480,18 +462,18 @@ public class MySeataConfig {
 
 – **消息发送出去**，由于网络问题没有抵达服务器
 
-​	`做好容错方法(try-catch)，发送消息可能会网络失败，失败后要有重试机制，可记录到数据库，采用定期扫描重发的方式`
+​ `做好容错方法(try-catch)，发送消息可能会网络失败，失败后要有重试机制，可记录到数据库，采用定期扫描重发的方式`
 
-​	` 做好日志记录，每个消息状态是否都被服务器收到都应该记录`
+​ `做好日志记录，每个消息状态是否都被服务器收到都应该记录`
 
-​	` 做好定期重发，如果消息没有发送成功，定期去数据库扫描未成功的消息进行重发`
+​ `做好定期重发，如果消息没有发送成功，定期去数据库扫描未成功的消息进行重发`
 
 – **消息抵达Broker**，Broker要将消息写入磁盘（(持久化)才算成功。此时Broker尚未持久化完成，宕机。
 
-​	`publisher也必须加入确认回调机制，确认成功的消息，修改数据库消息状态。`
+​ `publisher也必须加入确认回调机制，确认成功的消息，修改数据库消息状态。`
 
 – **自动ACK的状态下**。消费者收到消息，但没来得及消息然后宕机
-	`定开启手动ACK，消费成功才移除，失败或者没来得及处理就noAck并重新入队`
+ `定开启手动ACK，消费成功才移除，失败或者没来得及处理就noAck并重新入队`
 
 ### b）、消息重复
 
@@ -501,13 +483,11 @@ public class MySeataConfig {
 
 – **成功消费**，ack时宕机，消息由unack变为ready，Broker又重新发送
 
-​	`消费者的业务消费接口应该设计为幂等性的。比如扣库存有工作单的状态标志`
+​ `消费者的业务消费接口应该设计为幂等性的。比如扣库存有工作单的状态标志`
 
-​	`使用防重表(redis/mysql)，发送消息每一个都有业务的唯一标识，处理过就不用处理`
+​ `使用防重表(redis/mysql)，发送消息每一个都有业务的唯一标识，处理过就不用处理`
 
-​	`rabbitMQ的每一个消息都有redelivered字段，可以获取是否是被重新投递过来的，而不是第一次投递过来的`
-
-
+​ `rabbitMQ的每一个消息都有redelivered字段，可以获取是否是被重新投递过来的，而不是第一次投递过来的`
 
 ### c）、消息积压
 

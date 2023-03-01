@@ -46,12 +46,12 @@ WORKDIR $ROOT_DIR
 
 #配置中文字符 默认：LANG="en_US.UTF-8"
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-	&& yum -y install kde-l10n-Chinese \
-	&& yum -y reinstall glibc-common \
-	&& localedef -c -f UTF-8 -i zh_CN zh_CN.UTF-8 \
-	&& echo 'LANG="zh_CN.UTF-8"' > /etc/locale.conf \
-	&& source /etc/locale.conf \
-	&& yum clean all
+ && yum -y install kde-l10n-Chinese \
+ && yum -y reinstall glibc-common \
+ && localedef -c -f UTF-8 -i zh_CN zh_CN.UTF-8 \
+ && echo 'LANG="zh_CN.UTF-8"' > /etc/locale.conf \
+ && source /etc/locale.conf \
+ && yum clean all
 ENV LANG=zh_CN.UTF-8 \
     LC_ALL=zh_CN.UTF-8
 
@@ -89,5 +89,3 @@ docker build -f DockerFileCentos7 -t model-web:1.2.0 .
 docker run -p 51155:51155 -p 51156:51156 -p 51157:51157 --name web --restart=always -d model-web:1.2.0
 docker run -p 51155:51155 -p 51156:51156 -p 51157:51157 --name web -v E:\code\idea\spring-boot-model\config:/data/web/config -d  model-web:1.2.0
 ```
-
-

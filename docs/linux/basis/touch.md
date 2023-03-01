@@ -24,8 +24,6 @@ timeline: false
 a.log  b.log  d
 ```
 
-
-
 如果要创建一个带空格文件名的文件
 
 ```shell
@@ -33,8 +31,6 @@ a.log  b.log  d
 [root@admin home]# ls -all
 -rw-r--r--   1 root root   0 9月   9 22:05 a b c
 ```
-
-
 
 **案例：**
 

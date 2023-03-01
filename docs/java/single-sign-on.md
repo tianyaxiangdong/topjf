@@ -32,15 +32,15 @@ domain：作用域名
 
 domain有两点要注意：
 
-​	1. **domain参数可以设置父域名以及自身，但不能设置其它域名，包括子域名，否则cookie不起作用。**
+​ 1. **domain参数可以设置父域名以及自身，但不能设置其它域名，包括子域名，否则cookie不起作用。**
 
-​	2. **cookie的作用域是domain本身以及domain下的所有子域名。**
+​ 2. **cookie的作用域是domain本身以及domain下的所有子域名。**
 
 Cookie的路径（Path）：
 
-​	response.addCookie默认放在当前路径下，访问当前路径下的所有请求都会带
+​ response.addCookie默认放在当前路径下，访问当前路径下的所有请求都会带
 
-​	设置/标识项目根路径，访问项目任何位置都会携带
+​ 设置/标识项目根路径，访问项目任何位置都会携带
 
 ## 2.2. 演示案例
 
@@ -57,7 +57,7 @@ Cookie的路径（Path）：
 
 ### 2.2.1. 测试一：不能访问兄弟域名cookie
 
-访问：http://client.atguigu.com:8080/hello
+访问：<http://client.atguigu.com:8080/hello>
 
 由于没有登录会重定向到登录页面：
 
@@ -77,7 +77,7 @@ sso.atguigu.com下已经有token信息。那么为什么又回到了登录页面
 
 并清理掉浏览器中的cookie：
 
-访问：http://client.atguigu.com:8080/hello
+访问：<http://client.atguigu.com:8080/hello>
 
 依然重定向到登录页面：
 
@@ -91,13 +91,13 @@ sso.atguigu.com下已经有token信息。那么为什么又回到了登录页面
 
 重启sso-service服务，并清理掉cookie信息。
 
-在浏览器中访问：http://client.atguigu.com:8080/hello
+在浏览器中访问：<http://client.atguigu.com:8080/hello>
 
 依然重定向到登录页面，输入任意内容，点击登录：
 
 可以登录成功，但是cookie的作用路径是/hello。
 
-此时访问：http://client.atguigu.com:8080/hello1
+此时访问：<http://client.atguigu.com:8080/hello1>
 
 又会跳转到登录页面。原因：cookie只能在/hello路径及其子路径下可以正常访问。
 
@@ -152,9 +152,9 @@ token是识别客户端身份的唯一标示，如果加密不够严密，被人
 
 # 3. jwt实现无状态登录
 
-JWT，全称是Json Web Token， 是JSON风格轻量级的授权和身份认证规范，可实现无状态、分布式的Web应用授权；官网：https://jwt.io
+JWT，全称是Json Web Token， 是JSON风格轻量级的授权和身份认证规范，可实现无状态、分布式的Web应用授权；官网：<https://jwt.io>
 
-GitHub上jwt的java客户端：https://github.com/jwtk/jjwt
+GitHub上jwt的java客户端：<https://github.com/jwtk/jjwt>
 
 ## 3.1. 数据格式
 
@@ -196,14 +196,14 @@ JWT包含三部分数据：
 - 对称加密，如AES
   - 基本原理：将明文分成N个组，然后使用密钥对各个组进行加密，形成各自的密文，最后把所有的分组密文进行合并，形成最终的密文。
   - 优势：算法公开、计算量小、加密速度快、加密效率高
-  - 缺陷：双方都使用同样密钥，安全性得不到保证 
+  - 缺陷：双方都使用同样密钥，安全性得不到保证
 - 非对称加密，如RSA
   - 基本原理：同时生成两把密钥：私钥和公钥，私钥隐秘保存，公钥可以下发给信任客户端
     - 私钥加密，持有公钥才可以解密
     - 公钥加密，持有私钥才可解密
   - 优点：安全，难以破解
   - 缺点：算法比较耗时
-- 不可逆加密，如MD5，SHA 
+- 不可逆加密，如MD5，SHA
   - 基本原理：加密过程中不需要使用[密钥](https://baike.baidu.com/item/%E5%AF%86%E9%92%A5)，输入明文后由系统直接经过加密算法处理成密文，这种加密后的数据是无法被解密的，无法根据密文推算出明文。
 
 RSA算法历史：
@@ -287,8 +287,6 @@ feign:
 
 注意：不要忘记重启网关，重新加载nginx配置。
 
-
-
 ## 4.2. JWT工具类
 
 gmall-common工程中已经封装了jwt相关的工具类：
@@ -319,15 +317,13 @@ gmall-common工程中已经封装了jwt相关的工具类：
 </dependency>
 ```
 
-
-
 ## 4.3. 测试工具类
 
 ```java
 public class JwtTest {
 
     // 别忘了创建D:\\project\rsa目录
-	private static final String pubKeyPath = "D:\\project\\rsa\\rsa.pub";
+ private static final String pubKeyPath = "D:\\project\\rsa\\rsa.pub";
     private static final String priKeyPath = "D:\\project\\rsa\\rsa.pri";
 
     private PublicKey publicKey;
@@ -367,27 +363,17 @@ public class JwtTest {
 }
 ```
 
-
-
 测试生成公钥和私钥，我们运行testRsa方法：**注意需要把@Before方法注释掉**
 
 运行之后，查看目标目录：
 
-
-
-
-
 测试testGenerateToken生成token：注意把@BeforeEach的注释去掉的
-
-
 
 测试解析token：
 
 正常情况：
 
 任意改动一下：
-
-
 
 ## 4.4. 配置公钥和私钥
 
@@ -405,8 +391,6 @@ auth:
 ```
 
 然后编写属性类读取jwt配置，并从秘钥配置文件中读取出响应的公钥及私钥，加载这些数据：
-
-
 
 内容如下：
 
@@ -448,8 +432,6 @@ public class JwtProperties {
 }
 ```
 
-
-
 # 5. 完成登录功能
 
 ## 5.1. 跳转到登录页
@@ -457,8 +439,6 @@ public class JwtProperties {
 参照京东，当点击登录跳转到登录页面时，如下：s
 
 会记录跳转到登录页面前的页面地址，登录成功后要回到原来的页面。
-
-
 
 把课前资料动态页面中的common目录及login.html拷贝到templates目录下
 
@@ -480,11 +460,9 @@ public class AuthController {
 
 在login.html页面会记录returnUrl地址，将来登录成功后重定向到该地址：
 
-在浏览器输入：http://sso.gmall.com/toLogin.html?returnUrl=http://www.gmall.com
+在浏览器输入：<http://sso.gmall.com/toLogin.html?returnUrl=http://www.gmall.com>
 
 效果如下：
-
-
 
 ## 5.2. 完成登录功能
 
@@ -594,8 +572,6 @@ public class AuthService {
 }
 ```
 
-
-
 ### 5.2.3. GmallUmsClient
 
 接下来我们肯定要对用户密码进行校验，所以我们需要通过FeignClient去访问 ums-service微服务：
@@ -626,7 +602,7 @@ public interface GmallUmsClient extends GmallUmsApi {
 
 再查看Headers中的Set-Cookie信息中的Domain发现是ip地址，不是地址栏的域名。
 
-由于浏览器地址栏地址：http://www.gmall.com，而设置cookie的domain域是ip地址，相当于兄弟域名。
+由于浏览器地址栏地址：<http://www.gmall.com，而设置cookie的domain域是ip>地址，相当于兄弟域名。
 
 兄弟之间不能操作cookie。导致cookie没有写入成功！
 
@@ -654,8 +630,6 @@ F7进入setCookie方法：
 
 160行获取的serverName是ip地址。也就是说这时候只能获取ip地址了，获取不到域名信息。
 
-
-
 ### 5.3.2. domain地址变化原因
 
 那么问题来了：为什么我们这里的请求serverName变成了pi地址了呢？
@@ -666,8 +640,6 @@ F7进入setCookie方法：
 - 而后请求到达我们的gateway网关，gateway网关就会根据路径匹配，我们的请求是/api/auth，根据规则被转发到了auth服务地址 ，即我们的授权中心。
 
 每次转发都会丢失域名信息。
-
-
 
 ### 5.3.3. nginx转发时要携带域名
 
@@ -702,8 +674,6 @@ String serverName = request.getHeader("X-Forwarded-Host");
 ### 5.3.5. 再次登录测试
 
 完美！！！！！
-
-
 
 ## 5.4. 公共页头显示用户名
 
@@ -752,8 +722,6 @@ js实现：
 </script>
 ```
 
-
-
 # 6. 网关过滤器验证登录状态
 
 gateway网关过滤器包含两种：**全局过滤器**和**局部过滤器**。
@@ -786,8 +754,6 @@ public class TestGatewayFilter implements GlobalFilter, Ordered {
 }
 ```
 
-
-
 ## 6.2. 自定义局部过滤器
 
 自定义局部过滤器稍微麻烦一点：
@@ -819,15 +785,11 @@ public class AuthGatewayFilterFactory extends AbstractGatewayFilterFactory<Objec
 }
 ```
 
-
-
 ### 6.2.2. 在配置文件中使用
 
 现在拿gmall-auth工程尝试使用吧
 
 过滤器名称就是`Auth`，即自定义过滤器工厂`类名称` 去掉 `GatewayFilterFactory`
-
-
 
 ### 6.2.3. 读取过滤器配置内容
 
@@ -836,8 +798,6 @@ public class AuthGatewayFilterFactory extends AbstractGatewayFilterFactory<Objec
 如果像下面一样指定`拦截路径`，并在过滤器中获取`拦截路径`，再去判断当前路径是否需要拦截
 
 假设如下：
-
-
 
 改造AuthGatewayFilterFactory过滤器工厂类如下：
 
@@ -900,11 +860,7 @@ public class AuthGatewayFilterFactory extends AbstractGatewayFilterFactory<AuthG
 }
 ```
 
-
-
 测试效果如下：已经可以拿到配置内容
-
-
 
 ## 6.3. 通过自定义局部过滤器完成登录验证
 
@@ -919,8 +875,6 @@ public class AuthGatewayFilterFactory extends AbstractGatewayFilterFactory<AuthG
 5. 判断是否被盗用。通过登录信息中的ip和当前请求的ip比较
 6. 传递登录信息给后续服务。后续各服务就不用再去解析了
 7. 放行
-
-
 
 ### 6.3.1. 引入jwt相关配置
 
@@ -974,8 +928,6 @@ public class JwtProperties {
 
 }
 ```
-
-
 
 ### 6.3.2. 编写代码实现登录拦截
 
@@ -1124,21 +1076,17 @@ public class AuthGatewayFilterFactory extends AbstractGatewayFilterFactory<AuthG
 }
 ```
 
-
-
 ### 6.3.3. 配置过滤器并测试
 
 在网关配置文件中的配置如下：
 
-在浏览器上访问：http://sso.gmall.com/xxx
+在浏览器上访问：<http://sso.gmall.com/xxx>
 
 重定向到了登录页面
 
 输入用户名及密码登录后
 
 出现404，说明登录情况下网关放行了，由于没有该路径对应的接口，所有出现了404
-
-
 
 ## 6.4. 常见异常解决
 

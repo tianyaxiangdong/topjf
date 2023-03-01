@@ -19,8 +19,6 @@ tag:
 192.168.0.[8:10]
 ```
 
-
-
 ### ① 在`roles`目录下生成对应的目录结构
 
 ```shell
@@ -161,8 +159,6 @@ vim /etc/ansible/roles/docker/tasks/main.yml
 ```
 
 > ansible-playbook ./docker/tasks/uninstall.yml
-
-
 
 ### ③ 编写安装 shell 脚本
 
@@ -463,8 +459,6 @@ case $1 in
 esac
 ```
 
-
-
 ### ③ 定义 vars 变量文件
 
 ```shell
@@ -514,6 +508,3 @@ PLAY RECAP *********************************************************************
 节点监控进度
 
 tail -f /root/install-docker.log
-
-
-

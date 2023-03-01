@@ -1,6 +1,6 @@
 ---
 icon: edit
-title: idea
+title: IDEA管理
 category: 
 - 开发工具
 date: 2020-05-12
@@ -10,10 +10,53 @@ tag:
 
 <!-- more -->
 
-## 常用的插件：
+## 常用的插件
 
 Alibaba Java、CamelCase、Chinese、codeGlance3、codota、GenerateAllSetter、gitee、Grep Console、mybatis-log、RestfulToolkit、Translation、vuejs、GsonFormatPlus、json parser
 
+## JetBrains 全系列产品无限试用
+
+1、本激活方法适用于2021.2.2-、2020、2019、2018全系列版本；
+
+2、本教程适用于 JetBrains 全系列产品，包括 Pycharm、IDEA、WebStorm、Phpstorm、Datagrip、RubyMine、CLion、AppCode 等。
+
+### 方式1：无限重置30天试用期教程（最高支持版本2021.2.2）
+
+[参考地址](https://www.exception.site/essay/idea-reset-eval)
+
+[PyCharm 下载地址](https://www.jetbrains.com/zh-cn/pycharm/download/other.html)
+
+[IDEA 下载地址](https://www.jetbrains.com/zh-cn/idea/download/other.html)
+
+安装后，点击开始试用
+
+![](./idea.assets/true-image-20230301211748832.png)
+
+![](./idea.assets/true-image-20230301211951293.png)
+
+![](./idea.assets/true-image-20230301212014921.png)
+
+![](./idea.assets/true-image-20230301212154794.png)
+
+选择`ide-eval-resetter-2.3.5.zip`文件后，弹出下面框
+
+![](./idea.assets/true-image-20230301212245629.png)
+
+然后重启程序
+
+![](./idea.assets/true-image-20230301212757684.png)
+
+或者使用拖拽方式（将 `ide-eval-resetter-2.3.5.zip` 拖拽到pycharm主页里）
+
+![](./idea.assets/true-image-2023030166.png)
+
+### 方式2：激活到2099年教程
+
+[方式2：激活到2099年教程](https://www.exception.site/essay/how-to-free-use-intellij-idea-2019-3)
+
+### 关闭自动更新
+
+![](./idea.assets/true-image-2023030177.png)
 
 ## 常用快捷键
 
@@ -88,18 +131,8 @@ Ctrl+Shift+U： 大小写的快速切换
   * /
 ```
 
-
 ## 同一个启动类：多环境+多port 运行
 
 ![image-20220119195308426](./idea.assets/true-image-20220119195308426.png)
 
 ![image-20220119195510261](./idea.assets/true-image-20220119195510261.png)
-
-
-
-
-
-
-
-
-

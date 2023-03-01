@@ -12,10 +12,7 @@ tag:
 
 # gitlab仓库管理
 
-
 [CentOS服务器上搭建Gitlab安装步骤](http://www.21yunwei.com/archives/4351)
-
-
 
 ## 一、安装配置依赖项
 
@@ -29,11 +26,9 @@ sudo chkconfig postfix on
 sudo lokkit -s http -s ssh
 ```
 
-
-
 ## 二、添加[GitLab](http://www.21yunwei.com/archives/category/ywtech/codemanage/gitlab)仓库,并安装到服务器上
 
-wget https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el6/gitlab-ce-10.1.4-ce.0.el6.x86_64.rpm
+wget <https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el6/gitlab-ce-10.1.4-ce.0.el6.x86_64.rpm>
 
 rpm -ivh gitlab-ce-XXX.rpm
 
@@ -52,5 +47,3 @@ gitlab本身采用80端口，如安装前服务器有启用80，安装完访问�
 ![](./gitlab.assets/true-clip_image002.png)
 
 gitlab-ctl start|stop|status|restart
-
- 

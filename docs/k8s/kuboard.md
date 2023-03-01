@@ -15,13 +15,6 @@ tag:
 
 [https://kuboard.cn/](https://kuboard.cn/)
 
-[https://github.com/eip-work/kuboard-press](https://github.com/eip-work/kuboard-press) 	**star:15.9K**
+[https://github.com/eip-work/kuboard-press](https://github.com/eip-work/kuboard-press)  **star:15.9K**
 
 [https://gitee.com/k8s_s/kuboard-press](https://gitee.com/k8s_s/kuboard-press)
-
-
-
-
-
-
-

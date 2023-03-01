@@ -16,7 +16,7 @@ tag:
 
 ![image-20210604132012980](./spring-cloud-alibaba-note-high-level.assets/true-image-20210604132012980.png)
 
-# 七、商品上架 
+# 七、商品上架
 
 **商品上架 ：把数据保存到es** ：spu
 
@@ -27,11 +27,11 @@ tag:
 ```java
 spuInfoService.up(spuId);
 skuInfoService.getSkusBySpuId(spuId);
-	-> List<SkuInfoEntity> skuInfoEntityList = this.list(new QueryWrapper<SkuInfoEntity>().eq("spu_id", spuId));
+ -> List<SkuInfoEntity> skuInfoEntityList = this.list(new QueryWrapper<SkuInfoEntity>().eq("spu_id", spuId));
 //组装需要的数据
 skus.stream().map(sku -> {
     SkuEsModel esModel = new SkuEsModel();
-	BeanUtils.copyProperties(sku, esModel);
+ BeanUtils.copyProperties(sku, esModel);
     //TODO 1、发送远程调用，库存系统查询是否有库存
     //TODO 2、热度评分。e,
     setHotScore(0L);
@@ -45,7 +45,7 @@ skus.stream().map(sku -> {
 } 
 ///////////////////
 List<Long> searchAttrIds = attrService.selectSearchAttrIds(attrIds);
-	--> baseMapper.selectSearchAttrIds(attrIds); 
+ --> baseMapper.selectSearchAttrIds(attrIds); 
         --> List<Long> selectSearchAttrIds(@Param("attrIds") List<Long> attrIds); 
              --> SELECT attr_id FROM pms_attr WHERE attr_id IN <foreach collection="attrIds" item="id" separator="," open="(" close=")"> #{id} </foreach> AND search_type = 1
 //////////////////                  
@@ -78,7 +78,7 @@ List<SkuHasStockVo> collect = skuIds.stream().map(skuId -> {
             return vo;
         }).collect(Collectors.toList());    
     --> getSkuStock:
-    	SELECT SUM(stock-stock_ locked) FROM wms_ _ware_ sku WHERE sku_id=#{skuId}
+     SELECT SUM(stock-stock_ locked) FROM wms_ _ware_ sku WHERE sku_id=#{skuId}
 ```
 
 创建 WareFeignService
@@ -97,8 +97,8 @@ try {
     log.error("库存服务查询异常:原因{}", e);
 }
 
-		Map<Long, Boolean> finalStockMap = stockMap;
-			if (finalStockMap == null) {
+  Map<Long, Boolean> finalStockMap = stockMap;
+   if (finalStockMap == null) {
                 esModel.setHasStock(true);
             } else {
                 esModel.setHasStock(finalStockMap.get(sku.getSkuId()));
@@ -152,7 +152,7 @@ UPDATE pms_spu_info SET publish_status=#{code}, update_time=NOW() WHERE id=#{spu
 
 失败：重复操作？
 
-## -- 优化库存：
+## -- 优化库存
 
 ```java
 R::::
@@ -181,8 +181,6 @@ public R setData(Object data) {
             stockMap = skusHasStock.getData(listTypeReference).stream().collect(Collectors.toMap(SkuHasStockVo::getSkuld, item -> item.getHasStock()));
         
 ```
-
-
 
 # 八、首页&nginx
 
@@ -291,10 +289,10 @@ public class Catalog2Vo {
 @RequestMapping("index/catalog.json")
 getCataLogJson：：categoryService.getCataLogJson();
 1、查出所有1级分类：：2、封装数据：：
-	2.1 每一个的一级分类，查到这个一级分类的二级分类
-	2.2 封装上面的结果
-	2.2.1 查到这个二级分类的三级分类
-return 2、；	
+ 2.1 每一个的一级分类，查到这个一级分类的二级分类
+ 2.2 封装上面的结果
+ 2.2.1 查到这个二级分类的三级分类
+return 2、； 
 ```
 
 ![image-20210912155154018](./spring-cloud-alibaba-note-high-level.assets/true-image-20210912155154018.png)
@@ -310,13 +308,13 @@ server {
     listen       80;
     server_name yumall.com;
     charset utf-8;
- 	root html;
-  	index index.html index.htm;
+  root html;
+   index index.html index.htm;
     access_log  logs/yumall.com.log  main;
 
-   	location / {
-		proxy_pass http://192.168.101.6:8100;
-  	}
+    location / {
+  proxy_pass http://192.168.101.6:8100;
+   }
 }
 ```
 
@@ -337,7 +335,7 @@ yumall.conf
 
 ```xml
 location / {
-	proxy_pass http://yumall;
+ proxy_pass http://yumall;
     proxy_set_header Host $host;
 }
 ```
@@ -359,13 +357,9 @@ location / {
             - Host=**.yumall.com,yumall.com
 ```
 
-http://yumall.com/api/product/category/list/tree
-
+<http://yumall.com/api/product/category/list/tree>
 
 ![image-20210912164205853](./spring-cloud-alibaba-note-high-level.assets/true-image-20210912164205853.png)
-
-
-
 
 # 十一、检索服务
 
@@ -507,86 +501,86 @@ if(!StringUtils.isEmpty(paramVo.getKeyword())){
 
 ```java
 if(null != paramVo.getCatalog3Id()){
-			boolQueryBuilder.filter(QueryBuilders.termQuery("catalogId", paramVo.getCatalog3Id()));
-		}
+   boolQueryBuilder.filter(QueryBuilders.termQuery("catalogId", paramVo.getCatalog3Id()));
+  }
 ```
 
 #### - - filter：品牌id
 
 ```java
 if(null != paramVo.getBrandId() && 0 < paramVo.getBrandId().size()){
-			boolQueryBuilder.filter(QueryBuilders.termQuery("brandId", paramVo.getBrandId()));
-		}
+   boolQueryBuilder.filter(QueryBuilders.termQuery("brandId", paramVo.getBrandId()));
+  }
 ```
 
 #### - - filter：*属性*
 
 ```java
 if(null != paramVo.getAttrs() && 0 < paramVo.getAttrs().size()){
-			//1.2、bool - filter -按照所有指定的属性进行查询
-			for(String attrStr : paramVo.getAttrs()){
-				//attrs=1_ .5寸 :8寸&attrs=2_ 166:8G
-				BoolQueryBuilder nestedboolQuery = QueryBuilders.boolQuery();
-				//attr = 1_ .5寸:8寸
-				String[] s = attrStr.split("_");
-				//检索的属性id
-				String attrId = s[0];
-				//这个属性的检索用的值
-				String[] attrValues = s[1].split(":");
-				nestedboolQuery.must(QueryBuilders.termQuery("attrs . attrId", attrId));
-				nestedboolQuery.must(QueryBuilders.termsQuery("attrs . attrValue", attrValues));
-				//每一个必须都得生成1个nested查询
-				boolQueryBuilder.filter(QueryBuilders.nestedQuery("attrs", nestedboolQuery, ScoreMode.None));
-			}
-		}
+   //1.2、bool - filter -按照所有指定的属性进行查询
+   for(String attrStr : paramVo.getAttrs()){
+    //attrs=1_ .5寸 :8寸&attrs=2_ 166:8G
+    BoolQueryBuilder nestedboolQuery = QueryBuilders.boolQuery();
+    //attr = 1_ .5寸:8寸
+    String[] s = attrStr.split("_");
+    //检索的属性id
+    String attrId = s[0];
+    //这个属性的检索用的值
+    String[] attrValues = s[1].split(":");
+    nestedboolQuery.must(QueryBuilders.termQuery("attrs . attrId", attrId));
+    nestedboolQuery.must(QueryBuilders.termsQuery("attrs . attrValue", attrValues));
+    //每一个必须都得生成1个nested查询
+    boolQueryBuilder.filter(QueryBuilders.nestedQuery("attrs", nestedboolQuery, ScoreMode.None));
+   }
+  }
 ```
 
 #### - - filter：库存
 
 ```java
 if(null != paramVo.getHasStock()){
-			boolQueryBuilder.filter(QueryBuilders.termQuery("hasStock", paramVo.getHasStock() == 1));
-		}
+   boolQueryBuilder.filter(QueryBuilders.termQuery("hasStock", paramVo.getHasStock() == 1));
+  }
 ```
 
 #### - - filter：价格
 
 ```java
 if(!StringUtils.isEmpty(paramVo.getSkuPrice())){
-			RangeQueryBuilder rangeQuery = QueryBuilders.rangeQuery("skuPrice");
-			String[] strings = paramVo.getSkuPrice().split("_");
-			if(strings.length == 2){
-				rangeQuery.gte(strings[0]).lte(strings[1]);
-			}else if(strings.length == 1){
-				if(paramVo.getSkuPrice().startsWith("_")){
-					rangeQuery.lte(strings[0]);
-				}
-				if(paramVo.getSkuPrice().endsWith("_")){
-					rangeQuery.gte(strings[0]);
-				}
-			}
-			boolQueryBuilder.filter(rangeQuery);
-		}
+   RangeQueryBuilder rangeQuery = QueryBuilders.rangeQuery("skuPrice");
+   String[] strings = paramVo.getSkuPrice().split("_");
+   if(strings.length == 2){
+    rangeQuery.gte(strings[0]).lte(strings[1]);
+   }else if(strings.length == 1){
+    if(paramVo.getSkuPrice().startsWith("_")){
+     rangeQuery.lte(strings[0]);
+    }
+    if(paramVo.getSkuPrice().endsWith("_")){
+     rangeQuery.gte(strings[0]);
+    }
+   }
+   boolQueryBuilder.filter(rangeQuery);
+  }
 ```
 
 #### - - from 分页
 
 ```java
 // 分页，from（开始位置），size（每次几条）
-		sourceBuilder.from((paramVo.getPageNum()-1)*EsConstant.PRODUCT_PAGESIZE);
-		sourceBuilder.size(EsConstant.PRODUCT_PAGESIZE);
+  sourceBuilder.from((paramVo.getPageNum()-1)*EsConstant.PRODUCT_PAGESIZE);
+  sourceBuilder.size(EsConstant.PRODUCT_PAGESIZE);
 ```
 
 #### - - highlighter 高亮
 
 ```java
 if(!StringUtils.isEmpty(paramVo.getKeyword())){
-			HighlightBuilder builder = new HighlightBuilder();
-			builder.field("skuTit1e");
-			builder.preTags("<b sty1e='color:red'>");
-			builder.postTags("</b>");
-			sourceBuilder.highlighter(builder);
-		}
+   HighlightBuilder builder = new HighlightBuilder();
+   builder.field("skuTit1e");
+   builder.preTags("<b sty1e='color:red'>");
+   builder.postTags("</b>");
+   sourceBuilder.highlighter(builder);
+  }
 ```
 
 #### - - 聚合分析
@@ -614,7 +608,7 @@ sourceBuilder.aggregation(attr_agg);
 
 ### --- 数据响应封装
 
-#### - - 封装SearchResultVo主要参数：
+#### - - 封装SearchResultVo主要参数
 
 List\<SkuEsModel> products; List\<BrandVo> brands; List\<CatalogVo> catalogs; List\<AttrVo> attrs;
 
@@ -652,10 +646,10 @@ for(SearchHit hit : hits.getHits()){
     SkuEsModel esModel = JSON.parseObject(sourceAsString, SkuEsModel.class);
     //是检索时，获取高亮信息
     if(!StringUtils.isEmpty(paramVo.getKeyword())){
-					String string = hit.getHighlightFields().get("skuTitle")
-							.getFragments()[0].string();
-					esModel.setSkuTitle(string);
-				}
+     String string = hit.getHighlightFields().get("skuTitle")
+       .getFragments()[0].string();
+     esModel.setSkuTitle(string);
+    }
     esModels.add(esModel);
 }    
 result.setProducts(esModels);    
@@ -669,15 +663,15 @@ ParsedNested attrAgg = response.getAggregations().get("attr_agg");
 ParsedLongTerms attrIdAgg = attrAgg.getAggregations().get("attr_id_agg");
 for(Terms.Bucket bucket : attrIdAgg.getBuckets()){
     SearchResultVo.AttrVo attrVo = new SearchResultVo.AttrVo();
-			//1、得到属性的id
-			long attrId = bucket.getKeyAsNumber().longValue();
-			//2、得到属性的名字
-			String attrName = JSON.toJSONString(((ParsedStringTerms) bucket.getAggregations().get("attr_name_agg")).getBuckets());
-			//3、得到属性的所有值.
-			List<String> attrValues = ((ParsedStringTerms) bucket.getAggregations().get("attr_value_agg"))
-					.getBuckets().stream().map(item -> {
-						return ((Terms.Bucket) item).getKeyAsString();
-					}).collect(Collectors.toList());
+   //1、得到属性的id
+   long attrId = bucket.getKeyAsNumber().longValue();
+   //2、得到属性的名字
+   String attrName = JSON.toJSONString(((ParsedStringTerms) bucket.getAggregations().get("attr_name_agg")).getBuckets());
+   //3、得到属性的所有值.
+   List<String> attrValues = ((ParsedStringTerms) bucket.getAggregations().get("attr_value_agg"))
+     .getBuckets().stream().map(item -> {
+      return ((Terms.Bucket) item).getKeyAsString();
+     }).collect(Collectors.toList());
     attrVo.set....
     attrVos.add(attrVo);
 }
@@ -691,16 +685,16 @@ List<SearchResultVo.BrandVo> brandVos = new ArrayList<>();
 ParsedLongTerms brandAgg = response.getAggregations().get("brand_agg");
 
 for(Terms.Bucket bucket : brandAgg.getBuckets()){
-			SearchResultVo.BrandVo brandVo = new SearchResultVo.BrandVo();
-			//1、得到品牌的id
-			long brandId = bucket.getKeyAsNumber().longValue();
-			//2、得到品牌的名
-			String brandName = ((ParsedStringTerms) bucket.getAggregations().get("brand_name_agg")).getBuckets().get(0).getKeyAsString();
-			//3、得到品牌的图片
-			String brandImg = ((ParsedStringTerms) bucket.getAggregations().get("brand_img_agg")).getBuckets().get(0).getKeyAsString();
-			brandVo.set...
-			brandVos.add(brandVo);
-		}
+   SearchResultVo.BrandVo brandVo = new SearchResultVo.BrandVo();
+   //1、得到品牌的id
+   long brandId = bucket.getKeyAsNumber().longValue();
+   //2、得到品牌的名
+   String brandName = ((ParsedStringTerms) bucket.getAggregations().get("brand_name_agg")).getBuckets().get(0).getKeyAsString();
+   //3、得到品牌的图片
+   String brandImg = ((ParsedStringTerms) bucket.getAggregations().get("brand_img_agg")).getBuckets().get(0).getKeyAsString();
+   brandVo.set...
+   brandVos.add(brandVo);
+  }
 result.setBrands(brandVos);
 
 ```
@@ -709,81 +703,79 @@ result.setBrands(brandVos);
 
 ```java
 List<SearchResultVo.CatalogVo> catalogVos = new ArrayList<>();
-		ParsedLongTerms cataLogAgg = response.getAggregations().get("catalog_agg");
-		List<? extends Terms.Bucket> buckets = cataLogAgg.getBuckets();
-		for(Terms.Bucket bucket : buckets){
-			SearchResultVo.CatalogVo catalogVo = new SearchResultVo.CatalogVo();
-			//得到分类id
-			catalogVo.setCatalogId(Long.parseLong(bucket.getKeyAsString()));
-			//得到分类名
-			String catalogNameAgg = ((ParsedStringTerms) bucket.getAggregations().get("catalog_name_agg")).getBuckets().get(0).getKeyAsString();
-			catalogVo.setCatalogName(catalogNameAgg);
-			catalogVos.add(catalogVo);
-		}
-		result.setCatalogs(catalogVos);
+  ParsedLongTerms cataLogAgg = response.getAggregations().get("catalog_agg");
+  List<? extends Terms.Bucket> buckets = cataLogAgg.getBuckets();
+  for(Terms.Bucket bucket : buckets){
+   SearchResultVo.CatalogVo catalogVo = new SearchResultVo.CatalogVo();
+   //得到分类id
+   catalogVo.setCatalogId(Long.parseLong(bucket.getKeyAsString()));
+   //得到分类名
+   String catalogNameAgg = ((ParsedStringTerms) bucket.getAggregations().get("catalog_name_agg")).getBuckets().get(0).getKeyAsString();
+   catalogVo.setCatalogName(catalogNameAgg);
+   catalogVos.add(catalogVo);
+  }
+  result.setCatalogs(catalogVos);
 ```
 
 #### - - 5、分页信息 pageNum total totalPages pageNavs
 
 ```java
 //5、分页信息-页码
-		result.setPageNum(paramVo.getPageNum());
-		//5、分页信息-总记录树
-		long total = hits.getTotalHits().value;
-		result.setTotal(total);
-		//5、分页信息总页码-计算11/2 = 5.. 1
-		//5、2分页信息-总页码-计算
-		int totalPages = (int) total%EsConstant.PRODUCT_PAGESIZE == 0 ? (int) total/EsConstant.PRODUCT_PAGESIZE
-				: ((int) total/EsConstant.PRODUCT_PAGESIZE+1);
-		result.setTotalPages(totalPages);
+  result.setPageNum(paramVo.getPageNum());
+  //5、分页信息-总记录树
+  long total = hits.getTotalHits().value;
+  result.setTotal(total);
+  //5、分页信息总页码-计算11/2 = 5.. 1
+  //5、2分页信息-总页码-计算
+  int totalPages = (int) total%EsConstant.PRODUCT_PAGESIZE == 0 ? (int) total/EsConstant.PRODUCT_PAGESIZE
+    : ((int) total/EsConstant.PRODUCT_PAGESIZE+1);
+  result.setTotalPages(totalPages);
 
-		List<Integer> pageNavs = new ArrayList<>();
-		for(int i = 1; i <= totalPages; i++){
-			pageNavs.add(i);
-		}
-		result.setPageNavs(pageNavs);
+  List<Integer> pageNavs = new ArrayList<>();
+  for(int i = 1; i <= totalPages; i++){
+   pageNavs.add(i);
+  }
+  result.setPageNavs(pageNavs);
 ```
 
 #### - - 6、构建面包屑导航
 
 ```java
 //6、构建面包屑导航
-		if(param.getAttrs() != null && param.getAttrs().size() > 0){
-			List<SearchResult.NavVo> collect = param.getAttrs().stream().map(attr -> {
-				//1、分析每一个attrs传过来的参数值
-				SearchResult.NavVo navVo = new SearchResult.NavVo();
-				String[] s = attr.split("_");
-				navVo.setNavValue(s[1]);
-				R r = productFeignService.attrInfo(Long.parseLong(s[0]));
-				if(r.getCode() == 0){
-					AttrResponseVo data = r.getData("attr", new TypeReference<AttrResponseVo>(){
-					});
-					navVo.setNavName(data.getAttrName());
-				}else{
-					navVo.setNavName(s[0]);
-				}
+  if(param.getAttrs() != null && param.getAttrs().size() > 0){
+   List<SearchResult.NavVo> collect = param.getAttrs().stream().map(attr -> {
+    //1、分析每一个attrs传过来的参数值
+    SearchResult.NavVo navVo = new SearchResult.NavVo();
+    String[] s = attr.split("_");
+    navVo.setNavValue(s[1]);
+    R r = productFeignService.attrInfo(Long.parseLong(s[0]));
+    if(r.getCode() == 0){
+     AttrResponseVo data = r.getData("attr", new TypeReference<AttrResponseVo>(){
+     });
+     navVo.setNavName(data.getAttrName());
+    }else{
+     navVo.setNavName(s[0]);
+    }
 
-				//2、取消了这个面包屑以后，我们要跳转到哪个地方，将请求的地址url里面的当前置空
-				//拿到所有的查询条件，去掉当前
-				String encode = null;
-				try{
-					encode = URLEncoder.encode(attr, "UTF-8");
-					//浏览器对空格的编码和Java不一样，差异化处理
-					encode.replace("+", "%20");
-				}catch(UnsupportedEncodingException e){
-					e.printStackTrace();
-				}
-				String replace = param.get_queryString().replace("&attrs="+attr, "");
-				navVo.setLink("http://search.yumall.com/list.html?"+replace);
+    //2、取消了这个面包屑以后，我们要跳转到哪个地方，将请求的地址url里面的当前置空
+    //拿到所有的查询条件，去掉当前
+    String encode = null;
+    try{
+     encode = URLEncoder.encode(attr, "UTF-8");
+     //浏览器对空格的编码和Java不一样，差异化处理
+     encode.replace("+", "%20");
+    }catch(UnsupportedEncodingException e){
+     e.printStackTrace();
+    }
+    String replace = param.get_queryString().replace("&attrs="+attr, "");
+    navVo.setLink("http://search.yumall.com/list.html?"+replace);
 
-				return navVo;
-			}).collect(Collectors.toList());
+    return navVo;
+   }).collect(Collectors.toList());
 
-			result.setNavs(collect);
-		}
+   result.setNavs(collect);
+  }
 ```
-
-
 
 ## - - 页面处理
 
@@ -822,7 +814,7 @@ function replaceParamVal(url, paramName, replaceVal,forceAdd) {
 };
 ```
 
-### --- 综合排序、销量、价格、评分、上架时间、分页、排序内容、仅显示有货...
+### --- 综合排序、销量、价格、评分、上架时间、分页、排序内容、仅显示有货
 
 ### --- 面包屑导航
 
@@ -834,7 +826,7 @@ function replaceParamVal(url, paramName, replaceVal,forceAdd) {
 </div>
 ```
 
-# 十三、商品详情 
+# 十三、商品详情
 
 ## 0、线程池配置
 
@@ -882,8 +874,6 @@ yumall.thread.maxSize=200
 yumall.thread.keepAliveTime=10
 ```
 
-
-
 ThreadPoolExecutor executor;
 
 ## 1、sku基本信息的获取  pms_sku_info
@@ -916,11 +906,11 @@ CompletableFuture<Void> saleAttrFuture = infoFuture.thenAcceptAsync((res) -> {
 }, executor);
 
 getSaleAttrBySpuId::
-	SkuSaleAttrValueDao baseMapper = this.getBaseMapper();
-	return baseMapper.getSaleAttrBySpuId(spuId);
+ SkuSaleAttrValueDao baseMapper = this.getBaseMapper();
+ return baseMapper.getSaleAttrBySpuId(spuId);
 ```
 
-## 4、获取spu的介绍 
+## 4、获取spu的介绍
 
 ```java
 CompletableFuture<Void> descFuture = infoFuture.thenAcceptAsync((res) -> {
@@ -938,7 +928,7 @@ CompletableFuture<Void> baseAttrFuture = infoFuture.thenAcceptAsync((res) -> {
 }, executor);
 
 getAttrGroupWithAttrsBySpuId::
-	//1、查出当前spu对应的所有属性的分组信息以及当前分组下的所有属性对应的值
+ //1、查出当前spu对应的所有属性的分组信息以及当前分组下的所有属性对应的值
         AttrGroupDao baseMapper = this.getBaseMapper();
         return baseMapper.getAttrGroupWithAttrsBySpuId(spuId,catalogId);
 ```
@@ -968,9 +958,7 @@ CompletableFuture.allOf(saleAttrFuture, descFuture, baseAttrFuture, imageFuture)
 
 return skuItemVo;
 
-
-
-# 十四、认证服务 
+# 十四、认证服务
 
 ## 1、初始化
 
@@ -980,7 +968,7 @@ nacos：other.yml，redis.yml
 
 nginx：login，reg，auth.yumall.com;
 
-## 2、网关:
+## 2、网关
 
 ```xml
 - id: yumall_auth_route
@@ -1052,7 +1040,7 @@ var num = 60;
     }
 ```
 
-### 4.2 后端：
+### 4.2 后端
 
 #### 4.2.1 a、接口防刷，b、验证码的再次效验，c、存入redis，防止同一个手机号在60秒内再次发送验证码
 
@@ -1080,7 +1068,7 @@ public R sendCode(@RequestParam("phone") String phone){
    //存入redis，防止同一个手机号在60秒内再次发送验证码，10分钟
    stringRedisTemplate.opsForValue().set(AuthServerConstant.SMS_CODE_CACHE_PREFIX+phone,
          redisStorage, 10, TimeUnit.MINUTES);
-	//进入第三方服务+使用阿里发送验证码
+ //进入第三方服务+使用阿里发送验证码
    thirdPartFeignService.sendCode(phone, codeNum);
 
    return R.ok();
@@ -1110,7 +1098,7 @@ public R sendCode(@RequestParam("phone") String phone, @RequestParam("code") Str
 
 阿里云
 
-https://market.console.aliyun.com/imageconsole/index.htm?#/bizlist?_k=fxmn6k
+<https://market.console.aliyun.com/imageconsole/index.htm?#/bizlist?_k=fxmn6k>
 
 ```
 <dependency>
@@ -1145,33 +1133,33 @@ spring:
 @Component
 public class SmsComponent{
 
-	private String host;
-	private String path;
-	private String appcode;
-	private String skin;
-	private String sign;
+ private String host;
+ private String path;
+ private String appcode;
+ private String skin;
+ private String sign;
 
-	/**
-	 * @param phone
-	 * @param code
-	 */
-	public void sendCode(String phone, String code){
-		String method = "POST";
-		Map<String, String> headers = new HashMap<String, String>();
-		headers.put("Authorization", "APPCODE "+appcode);
-		headers.put("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-		Map<String, String> query = new HashMap<String, String>();
-		Map<String, String> bodys = new HashMap<String, String>();
-		bodys.put("content", "code:"+code+",expire_at:5");
-		bodys.put("phone_number", phone);
-		bodys.put("template_id", "TPL_0001");
-		try{
-			HttpResponse response = HttpUtils.doPost(host, path, method, headers, query, bodys);
-			System.err.println(response.toString());
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-	}
+ /**
+  * @param phone
+  * @param code
+  */
+ public void sendCode(String phone, String code){
+  String method = "POST";
+  Map<String, String> headers = new HashMap<String, String>();
+  headers.put("Authorization", "APPCODE "+appcode);
+  headers.put("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+  Map<String, String> query = new HashMap<String, String>();
+  Map<String, String> bodys = new HashMap<String, String>();
+  bodys.put("content", "code:"+code+",expire_at:5");
+  bodys.put("phone_number", phone);
+  bodys.put("template_id", "TPL_0001");
+  try{
+   HttpResponse response = HttpUtils.doPost(host, path, method, headers, query, bodys);
+   System.err.println(response.toString());
+  }catch(Exception e){
+   e.printStackTrace();
+  }
+ }
 ```
 
 ## 5、用户注册
@@ -1324,8 +1312,6 @@ public void checkUserNameUnique(String userName) throws UsernameException{
    }
 ```
 
-
-
 ## 6、登录
 
 /package com.kong.yumall.authserver.feign;
@@ -1402,8 +1388,6 @@ public MemberEntity login(MemberUserLoginVo vo){
    return null;
 }
 ```
-
-
 
 ### 6.2、远程-社交用户的登录（微信）
 
@@ -1601,13 +1585,11 @@ public R weixinLogin(@RequestParam("accessTokenInfo") String accessTokenInfo){
 }
 ```
 
-
-
 ### 6.3、远程-社交用户的登录（微博）
 
 #### 准备
 
-https://open.weibo.com/connect
+<https://open.weibo.com/connect>
 
 #### 流程：跳转微博登录->成功获取code->拿code换取Access token(code只能用一次) ->使用获得的Access Token调用API
 
@@ -1616,8 +1598,6 @@ web
 ```text
 <a href="https://api.weibo.com/oauth2/authorize?client_id=2077705774&response_type=code&redirect_uri=http://auth.yumall.com/oauth2.0/weibo/success">
 ```
-
-
 
 #### controller
 
@@ -1763,11 +1743,7 @@ public R oauthLogin(@RequestBody SocialUser socialUser) throws Exception{
 }
 ```
 
-
-
 ## 7、分布式 session
-
-
 
 ## 8、单点登录：多系统
 
@@ -1782,20 +1758,16 @@ public R oauthLogin(@RequestBody SocialUser socialUser) throws Exception{
 
 http://ssoserver:45001/employees 
 
-	- > 未登录,跳转到登录服务："redirect:http://ssoserver.com:45000/login.html?redirect_url=http://client1.com:45001/employees";
-	
-	- > 登录成功后跳转到：http://client1.com:45001/employees?token=c2360a53-8a42-4896-b642-659a817c7903
-	http://ssoserver.com:45000/login.html?redirect_url=http://client2.com:45002/boos
-	
-	- > 查看登录信息：http://ssoserver.com:45000/userinfo?token=c2360a53-8a42-4896-b642-659a817c7903
+ - > 未登录,跳转到登录服务："redirect:http://ssoserver.com:45000/login.html?redirect_url=http://client1.com:45001/employees";
+ 
+ - > 登录成功后跳转到：http://client1.com:45001/employees?token=c2360a53-8a42-4896-b642-659a817c7903
+ http://ssoserver.com:45000/login.html?redirect_url=http://client2.com:45002/boos
+ 
+ - > 查看登录信息：http://ssoserver.com:45000/userinfo?token=c2360a53-8a42-4896-b642-659a817c7903
 
 登录client1，访问client2（不用登录了），
 
 ```
-
-
-
-
 
 # 十五、购物车 cart
 
@@ -1896,23 +1868,21 @@ public class CartInterceptor implements HandlerInterceptor{
    public void afterCompletion().....
 ```
 
-
-
 ### 3.1、首页
 
 ```java
-	/**
-	 * 去购物车页面的请求
-	 * 浏览器有一个cookie:user-key 标识用户的身份，一个月过期
-	 * 如果第一次使用jd的购物车功能，都会给一个临时的用户身份:
-	 * 浏览器以后保存，每次访问都会带上这个cookie；
-	 * <p>
-	 * 登录：session有
-	 * 没登录：按照cookie里面带来user-key来做
-	 * 第一次，如果没有临时用户，自动创建一个临时用户
-	 *
-	 * @return
-	 */
+ /**
+  * 去购物车页面的请求
+  * 浏览器有一个cookie:user-key 标识用户的身份，一个月过期
+  * 如果第一次使用jd的购物车功能，都会给一个临时的用户身份:
+  * 浏览器以后保存，每次访问都会带上这个cookie；
+  * <p>
+  * 登录：session有
+  * 没登录：按照cookie里面带来user-key来做
+  * 第一次，如果没有临时用户，自动创建一个临时用户
+  *
+  * @return
+  */
 @GetMapping(value = "/cart.html")
 public String cartListPage(Model model) throws ExecutionException, InterruptedException {
     CartVo cartVo = cartService.getCart();//获取用户登录或者未登录购物车里所有的数据
@@ -1979,8 +1949,6 @@ public void clearCartInfo(String cartKey){
    redisTemplate.delete(cartKey);
 }
 ```
-
-
 
 ## 4、添加商品到购物车
 
@@ -2060,7 +2028,7 @@ public CartItemVo addToCart(Long skuId, Integer num) throws ExecutionException, 
 }
 ```
 
-### 4.2、远程查询当前要添加商品的信息getInfo(skuId);，远程查询skuAttrValues组合信息getSkuSaleAttrValues(skuId);
+### 4.2、远程查询当前要添加商品的信息getInfo(skuId);，远程查询skuAttrValues组合信息getSkuSaleAttrValues(skuId)
 
 ```java
 ProductFeignService：
@@ -2084,8 +2052,6 @@ getSkuSaleAttrValuesAsStringList:::::
         SkuSaleAttrValueDao baseMapper = this.baseMapper;
         return baseMapper.getSkuSaleAttrValuesAsStringList(skuId);
 ```
-
-
 
 ## 5、跳转到添加购物车成功页面
 
@@ -2133,8 +2099,6 @@ public void checkItem(Long skuId, Integer check){
 }
 ```
 
-
-
 ## 7、修改购物项数量
 
 ```java
@@ -2158,8 +2122,6 @@ public void changeItemCount(Long skuId, Integer num){
 }
 ```
 
-
-
 ## 8、删除商品信息
 
 ```java
@@ -2171,12 +2133,10 @@ public String deleteItem(@RequestParam("skuId") Integer skuId){
 }
 
 public void deleteIdCartInfo(Integer skuId){
-		BoundHashOperations<String, Object, Object> cartOps = getCartOps();
-		cartOps.delete(skuId.toString());
-	}
+  BoundHashOperations<String, Object, Object> cartOps = getCartOps();
+  cartOps.delete(skuId.toString());
+ }
 ```
-
-
 
 ## 9、获取当前用户的购物车商品项
 
@@ -2187,8 +2147,6 @@ public List<CartItemVo> getCurrentCartItems(){
    return cartService.getUserCartItems();
 }
 ```
-
-
 
 ```java
 public List<CartItemVo> getUserCartItems(){
@@ -2221,7 +2179,7 @@ public List<CartItemVo> getUserCartItems(){
 }
 ```
 
-# 十七、订单服务 
+# 十七、订单服务
 
 ## 1、配置web、nginx、springSession、配置线程池
 
@@ -2231,7 +2189,7 @@ public List<CartItemVo> getUserCartItems(){
 
 <img src="./spring-cloud-alibaba-note-high-level.assets/true-订单中心.png" alt="订单中心" style="zoom:80%;" />
 
-### 订单流程：
+### 订单流程
 
 ![image-20211004160657576](./spring-cloud-alibaba-note-high-level.assets/true-image-20211004160657576.png)
 
@@ -2333,11 +2291,7 @@ public class FeignConfig{
    } }
 ```
 
-
-
 ![image-20211004181324416](./spring-cloud-alibaba-note-high-level.assets/true-image-20211004181324416.png)
-
-
 
 ```java
 RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
@@ -2426,50 +2380,50 @@ public class OrderConfirmVo{
 
 ```java
 //构建OrderConfirmVo
-		OrderConfirmVo confirmVo = new OrderConfirmVo();
-		//获取当前用户登录的信息
-		MemberResponseVo memberResponseVo = LoginUserInterceptor.loginUser.get();
-		//TODO :获取当前线程请求头信息(解决Feign异步调用丢失请求头问题)
-		RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
-		//开启第一个异步任务：远程查询所有的收获地址列表
-		CompletableFuture<Void> addressFuture = CompletableFuture.runAsync(() -> {
-			//每一个线程都来共享之前的请求数据
-			RequestContextHolder.setRequestAttributes(requestAttributes);
-			//1、远程查询所有的收获地址列表
-			List<MemberAddressVo> address = memberFeignService.getAddress(memberResponseVo.getId());
-			confirmVo.setMemberAddressVos(address);
-		}, threadPoolExecutor);
-		//开启第二个异步任务：远程查询购物车所有选中的购物项：查询商品库存信息
-		CompletableFuture<Void> cartInfoFuture = CompletableFuture.runAsync(() -> {
-			//每一个线程都来共享之前的请求数据
-			RequestContextHolder.setRequestAttributes(requestAttributes);
-			//2、远程查询购物车所有选中的购物项
-			List<OrderItemVo> currentCartItems = cartFeignService.getCurrentCartItems();
-			confirmVo.setItems(currentCartItems);
-			//feign在远程调用之前要构造请求，调用很多的拦截器
-		}, threadPoolExecutor).thenRunAsync(() -> {
-			List<OrderItemVo> items = confirmVo.getItems();
-			//获取全部商品的id
-			List<Long> skuIds = items.stream().map((itemVo -> itemVo.getSkuId())).collect(Collectors.toList());
-			//远程查询商品库存信息
-			R skuHasStock = wmsFeignService.getSkuHasStock(skuIds);
-			List<SkuStockVo> skuStockVos = skuHasStock.getData("data", new TypeReference<List<SkuStockVo>>(){});
-			if(skuStockVos != null && skuStockVos.size() > 0){
-				//将skuStockVos集合转换为map
-				confirmVo.setStocks(((Map<Long, Boolean>) skuStockVos.stream().collect(Collectors.toMap(SkuStockVo::getSkuId, SkuStockVo::getHasStock))));
-			}
-		}, threadPoolExecutor);
-		//3、查询用户积分
-		Integer integration = memberResponseVo.getIntegration();
-		confirmVo.setIntegration(integration);
-		//4、价格数据自动计算
-		//TODO 5、防重令牌(防止表单重复提交)
-		//为用户设置一个token，三十分钟过期时间（存在redis）
-		String token = UUID.randomUUID().toString().replace("-", "");
-		redisTemplate.opsForValue().set(USER_ORDER_TOKEN_PREFIX+memberResponseVo.getId(), token, 30, TimeUnit.MINUTES);
-		confirmVo.setOrderToken(token);
-		CompletableFuture.allOf(addressFuture, cartInfoFuture).get();
-		return confirmVo;
+  OrderConfirmVo confirmVo = new OrderConfirmVo();
+  //获取当前用户登录的信息
+  MemberResponseVo memberResponseVo = LoginUserInterceptor.loginUser.get();
+  //TODO :获取当前线程请求头信息(解决Feign异步调用丢失请求头问题)
+  RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
+  //开启第一个异步任务：远程查询所有的收获地址列表
+  CompletableFuture<Void> addressFuture = CompletableFuture.runAsync(() -> {
+   //每一个线程都来共享之前的请求数据
+   RequestContextHolder.setRequestAttributes(requestAttributes);
+   //1、远程查询所有的收获地址列表
+   List<MemberAddressVo> address = memberFeignService.getAddress(memberResponseVo.getId());
+   confirmVo.setMemberAddressVos(address);
+  }, threadPoolExecutor);
+  //开启第二个异步任务：远程查询购物车所有选中的购物项：查询商品库存信息
+  CompletableFuture<Void> cartInfoFuture = CompletableFuture.runAsync(() -> {
+   //每一个线程都来共享之前的请求数据
+   RequestContextHolder.setRequestAttributes(requestAttributes);
+   //2、远程查询购物车所有选中的购物项
+   List<OrderItemVo> currentCartItems = cartFeignService.getCurrentCartItems();
+   confirmVo.setItems(currentCartItems);
+   //feign在远程调用之前要构造请求，调用很多的拦截器
+  }, threadPoolExecutor).thenRunAsync(() -> {
+   List<OrderItemVo> items = confirmVo.getItems();
+   //获取全部商品的id
+   List<Long> skuIds = items.stream().map((itemVo -> itemVo.getSkuId())).collect(Collectors.toList());
+   //远程查询商品库存信息
+   R skuHasStock = wmsFeignService.getSkuHasStock(skuIds);
+   List<SkuStockVo> skuStockVos = skuHasStock.getData("data", new TypeReference<List<SkuStockVo>>(){});
+   if(skuStockVos != null && skuStockVos.size() > 0){
+    //将skuStockVos集合转换为map
+    confirmVo.setStocks(((Map<Long, Boolean>) skuStockVos.stream().collect(Collectors.toMap(SkuStockVo::getSkuId, SkuStockVo::getHasStock))));
+   }
+  }, threadPoolExecutor);
+  //3、查询用户积分
+  Integer integration = memberResponseVo.getIntegration();
+  confirmVo.setIntegration(integration);
+  //4、价格数据自动计算
+  //TODO 5、防重令牌(防止表单重复提交)
+  //为用户设置一个token，三十分钟过期时间（存在redis）
+  String token = UUID.randomUUID().toString().replace("-", "");
+  redisTemplate.opsForValue().set(USER_ORDER_TOKEN_PREFIX+memberResponseVo.getId(), token, 30, TimeUnit.MINUTES);
+  confirmVo.setOrderToken(token);
+  CompletableFuture.allOf(addressFuture, cartInfoFuture).get();
+  return confirmVo;
 ```
 
 ### 4.2、memberFeignService 远程查询所有的收获地址列表
@@ -2523,11 +2477,9 @@ String token = UUID.randomUUID().toString().replace("-", "");
 
 ### 4.7、结算确认页渲染
 
-
-
 ## 5、确认页模拟运费信息
 
-http://yumall.com/api/ware/wareinfo/fare?addrId=120120
+<http://yumall.com/api/ware/wareinfo/fare?addrId=120120>
 
 ```java
  public FareVo getFare(Long addrId){
@@ -2549,8 +2501,6 @@ http://yumall.com/api/ware/wareinfo/fare?addrId=120120
 }
 ```
 
-
-
 ## 6、幂等性
 
 ![image-20211004192550633](./spring-cloud-alibaba-note-high-level.assets/true-image-20211004192550633.png)
@@ -2571,8 +2521,6 @@ http://yumall.com/api/ware/wareinfo/fare?addrId=120120
 其他业务情况
 
 ### 6.3、解决方案
-
-
 
 ## 7、订单提交 submitOrder
 
@@ -2654,7 +2602,7 @@ public SubmitOrderResponseVo submitOrder(OrderSubmitVo orderSubmitVo){
 
 ![image-20211004212605590](./spring-cloud-alibaba-note-high-level.assets/true-image-20211004212605590.png)
 
-### 7.2、库存锁 
+### 7.2、库存锁
 
 `wmsFeignService.orderLockStock()`
 
@@ -2685,11 +2633,9 @@ rabbitTemplate.convertAndSend("stock-event-exchange", "stock.locked", lockedTo);
 
 [前去MQ延迟队列](#MQ延迟队列)
 
-###  - - 订单释放&库存解锁
+### - - 订单释放&库存解锁
 
 ![](./spring-cloud-alibaba-note-high-level.assets/true-image-20211116210606144.png)
-
-
 
 ```java
 package com.kong.yumall.order.config;MyOrderMQConfig
@@ -2764,8 +2710,6 @@ public class StockReleaseListener {
             channel.basicReject(message.getMessageProperties().getDeliveryTag(),true);
         }}}
 ```
-
-
 
 ```java
 @RabbitListener(queues = "stock.release.stock.queue")
@@ -2848,8 +2792,6 @@ public void unLockStock(Long skuId, Long wareId, Integer num, Long taskDetailId)
 }
 ```
 
-
-
 ### 7.5、自动解锁订单
 
 ```java
@@ -2879,8 +2821,6 @@ public void unLockStock(Long skuId, Long wareId, Integer num, Long taskDetailId)
         }
     }
 ```
-
-
 
 ### 7.6、定时关闭订单
 
@@ -2928,19 +2868,17 @@ public void closeOrder(OrderEntity orderEntity) {
         }
 ```
 
+# 十九、订单支付
 
-
-# 十九、订单支付 
-
-# 
+#
 
 ## 1、支付宝沙箱
 
-https://open.alipay.com/platform/home.htm
+<https://open.alipay.com/platform/home.htm>
 
-沙箱环境使用说明：https://opendocs.alipay.com/support/01razc
+沙箱环境使用说明：<https://opendocs.alipay.com/support/01razc>
 
-支付宝demo：https://opendocs.alipay.com/open/270/106291/
+支付宝demo：<https://opendocs.alipay.com/open/270/106291/>
 
 ## 2、加密-对称加密
 
@@ -2950,19 +2888,17 @@ https://open.alipay.com/platform/home.htm
 
 ![](./spring-cloud-alibaba-note-high-level.assets/true-image-20211116215727891.png)
 
-
-
 ## 4、签名
 
 ![](./spring-cloud-alibaba-note-high-level.assets/true-image-20211116220459730.png)
 
 ## 5、内网穿透
 
-1、natapp: https://natapp.cn/
+1、natapp: <https://natapp.cn/>
 
 2、续断:www.zhexi.tech
 
-3、花生壳:https://www.oray.com/
+3、花生壳:<https://www.oray.com/>
 
 ## 6、整合支付宝-订单支付
 
@@ -3116,8 +3052,6 @@ public PayVo getOrderPay(String orderSn) {
 }
 ```
 
-
-
 ## 7、订单支付成功监听器（通知）
 
 ```java
@@ -3182,23 +3116,17 @@ location /static/ {
     }
 ```
 
-
-
 ## 8、微信支付
 
-## 
+##
 
-
-
-# 二十、秒杀服务 
-
-
+# 二十、秒杀服务
 
 ![image-20211118125418053](./spring-cloud-alibaba-note-high-level.assets/true-image-20211118125418053.png)
 
 ## 1、定时任务 cron
 
-http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html
+<http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html>
 
 语法: 秒 分 时 日 月 周 年(Spring不支持)
 
@@ -3249,8 +3177,6 @@ public class HelloScheduled {
      } 
 }
 ```
-
-
 
 ## 2、上架秒杀商品
 
@@ -3539,8 +3465,6 @@ public SeckillSkuRedisTo getSkuSeckilInfo(Long skuId) {
 }
 ```
 
-
-
 ## 5、当前商品进行秒杀（秒杀开始）
 
 ![image-20211118141952959](./spring-cloud-alibaba-note-high-level.assets/true-image-20211118141952959.png)
@@ -3677,7 +3601,6 @@ public void createSeckillOrder(SeckillOrderTo orderTo) {
     orderItemService.save(orderItem);
 }
 ```
-
 
 ## 7、秒杀（高并发）关注问题
 

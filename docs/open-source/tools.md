@@ -26,7 +26,6 @@ category:
 - **[PrettyZoo](https://github.com/vran-dev/PrettyZoo)** ： 一个基于 Apache Curator 和 JavaFX 实现的 ZooKeeper 图形化管理客户端，颜值非常高，支持 Mac / Windows / Linux 。你可以使用 PrettyZoo 来实现对 ZooKeeper 的可视化增删改查。
 - **[zktools](https://zktools.readthedocs.io/en/latest/#installing)** ： 一个低延迟的 ZooKeeper 图形化管理客户端，颜值非常高，支持 Mac / Windows / Linux 。你可以使用 zktools 来实现对 ZooKeeper 的可视化增删改查。
 
-
 ## Markdown
 
 - **[MarkText](https://github.com/marktext/marktext)** ：一个简单而优雅的开源 Markdown 编辑器，专注于速度和可用性。Linux、macOS 和 Windows 均适用。

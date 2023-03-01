@@ -37,7 +37,6 @@ tag:
 | 16           | 7.0                                |
 | 17           | 7.3                                |
 
-
 ## 下载与配置
 
 <a target="_blank" href="https://gradle.org">首页</a>、<a target="_blank" href="https://gradle.org/releases/">下载页</a>
@@ -75,25 +74,24 @@ allprojects {
 
     buildscript { 
         repositories { 
-			maven { url 'https://maven.aliyun.com/repository/public' }
-			maven { url 'https://maven.aliyun.com/repository/jcenter' }
-			maven { url 'https://maven.aliyun.com/repository/spring' }
-			maven { url 'https://maven.aliyun.com/repository/spring-plugin' }       
-			maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }      
-			maven { url 'https://maven.aliyun.com/repository/google' }
-			maven { url 'https://maven.aliyun.com/repository/grails-core' }       
-			maven { url 'https://maven.aliyun.com/repository/apache-snapshots' }
-			maven { url 'http://nexus.bsdn.org/content/groups/public/' }
+   maven { url 'https://maven.aliyun.com/repository/public' }
+   maven { url 'https://maven.aliyun.com/repository/jcenter' }
+   maven { url 'https://maven.aliyun.com/repository/spring' }
+   maven { url 'https://maven.aliyun.com/repository/spring-plugin' }       
+   maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }      
+   maven { url 'https://maven.aliyun.com/repository/google' }
+   maven { url 'https://maven.aliyun.com/repository/grails-core' }       
+   maven { url 'https://maven.aliyun.com/repository/apache-snapshots' }
+   maven { url 'http://nexus.bsdn.org/content/groups/public/' }
             maven { url 'https://plugins.gradle.org/m2/' }
         }
     }
 }
 ```
+
 重启系统并校验 CMD：gradle -v
 
 ![image-20220710154305711](./gradle.assets/true-image-20220710154305711.png)
-
-
 
 ## 与maven比较
 
@@ -129,7 +127,7 @@ Gradle是：
 
 ![image-20220710143759660](./gradle.assets/true-image-20220710143759660.png)
 
-### 报错：
+### 报错
 
 ```bash
 Unsupported Java. 
@@ -154,21 +152,13 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.1-bin.zip
 distributionUrl=https\://services.gradle.org/distributions/gradle-7.4.2-bin.zip
 ```
 
-
-
 ## 创建项目 Gradle+Groovy
 
 ### 为什么使用 Groovy?
 
 答案在于 Gradle 内部的运行环境。 虽然 Gradle 核心目的是作为通用构建工具，但它还是主要面向 Java 项目。 这些项目的团队成员显然熟悉 Java。我们认为一个构建工具应该尽可能地对所有团队成员透明。
 
-
-
-
-
 ## 创建项目 Gradle+Kotlin
-
-
 
 ## 核心文件
 
@@ -223,8 +213,6 @@ include 'gradle-demo-mybatis-plus'
 include 'gradle-demo-jdbc'
 ```
 
-
-
 ### gradle -> wrapper -> gradle-wrapper.properties
 
 gradle服务核心配置
@@ -256,13 +244,11 @@ tomcatVersion=10.0.22
 kotlin.stdlib.default.dependency=false
 ```
 
-
-
 ## 语法
 
 ### build.gradle 配置信息格式
 
-Groovy 
+Groovy
 
 ```properties
 implementation 'org.codehaus.groovy:groovy-all:2.4.15'
@@ -273,7 +259,6 @@ Kotlin
 ```properties
 implementation("org.codehaus.groovy:groovy-all:2.4.15")
 ```
-
 
 ### 依赖管理
 
@@ -291,12 +276,6 @@ gradle依赖的粒度控制相较于Maven也更加精细，maven只有compile、
 
 通过简短精悍的依赖配置和多种多样的作用与选择，Gradle可以为我们提供比Maven更加优秀的依赖管理功能。
 
-
-
-
-
-
-
 ## 发布到 Maven 仓库
 
 ```
@@ -309,10 +288,3 @@ uploadArchives {
     }
 }
 ```
-
-
-
-
-
-
-

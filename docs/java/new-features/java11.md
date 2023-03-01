@@ -18,7 +18,7 @@ tag:
 - [JEP 321：HTTP Client 标准化](https://openjdk.java.net/jeps/321)
 - [JEP 333：ZGC(可伸缩低延迟垃圾收集器)](https://openjdk.java.net/jeps/333)
 - [JEP 323：Lambda 参数的局部变量语法](https://openjdk.java.net/jeps/323)
-- [JEP 330：启动单文件源代码程序](https://openjdk.java.net/jeps/330) 
+- [JEP 330：启动单文件源代码程序](https://openjdk.java.net/jeps/330)
 
 ## HTTP Client 标准化
 
@@ -127,5 +127,5 @@ Consumer<String> consumer = (String i) -> System.out.println(i);
 
 ## 参考
 
-- JDK 11 Release Notes：https://www.oracle.com/java/technologies/javase/11-relnote-issues.html
+- JDK 11 Release Notes：<https://www.oracle.com/java/technologies/javase/11-relnote-issues.html>
 - Java 11 – Features and Comparison： <https://www.geeksforgeeks.org/java-11-features-and-comparison/>

@@ -28,9 +28,7 @@ tag:
 >
 > *交换分区*：swap——理解为虚拟内存，真实内存不够的时候临时会使用swap分区，一般是内存的两倍
 >
-> *根分区*：/ 
-
-
+> *根分区*：/
 
 ## Linux学习路线
 
@@ -38,23 +36,15 @@ tag:
 
 ![](./basis.assets/true-image-20220910220451615.png)
 
-
-
 ![](./basis.assets/true-image-20220910215605979.png)
-
-
 
 ## Linux 内核
 
 **系统结构**
 
-
 ![](./basis.assets/true-image-20220913134907915.png)
 
-
-
 ## linux 目录介绍
-
 
 | 目录名称   | 描述                             |
 |--------|--------------------------------|
@@ -78,10 +68,7 @@ tag:
 | /usr   | 用户二进制目录，大量用户级的GNU工具和数据文件都存储在这里 |
 | /var   | 可变目录，用以存放经常变化的文件，比如日志文件        |
 
-
 ![](./basis.assets/true-clip_image013.jpg)
-
- 
 
 ![](./basis.assets/true-clip_image015.png)
 
@@ -96,47 +83,27 @@ tag:
 
 - **可变动的：** 经常改变的数据，例如登录文件、一般用户可自行收受的新闻组等
 
-   
-
 Filesystem Hierarchy Standard (FHS)标准：已安装软件通常放置于哪个目录
 
 - / (root, 根目录)：与开机系统有关；
 - /usr (unix software resource)：与软件安装/执行有关；
 - /var (variable)：与系统运作过程有关。
 
- 
-
 ![](./basis.assets/true-clip_image017.png)
-
- 
 
 ![](./basis.assets/true-clip_image019.png)
 
- 
-
 ![](./basis.assets/true-clip_image021.png)
-
- 
 
 ![](./basis.assets/true-clip_image023.png)
 
- 
-
 ![](./basis.assets/true-clip_image025.png)
-
- 
 
 ![](./basis.assets/true-clip_image027.png)
 
- 
-
 ![](./basis.assets/true-clip_image029.png)
 
- 
-
 ![](./basis.assets/true-clip_image031.png)
-
- 
 
 ![](./basis.assets/true-clip_image033.png)
 
@@ -166,8 +133,6 @@ Filesystem Hierarchy Standard (FHS)标准：已安装软件通常放置于哪个
 | XFS      | 高性能64位日志文件系统                |
 
 Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每个文件系统交互的接口。这为Linux内核同任何类型文件系统通信提供了一个标准接口。当每个文件系统都被挂载和使时，VFS将信息都缓存在内存中。
-
-
 
 ## Linux发行版
 
@@ -203,11 +168,7 @@ Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每�
 | Slax        | 基于Slackware Linux的一款LiveCD Linux  |
 | Puppy Linux | 为老旧PC设计的一款全功能Linux                |
 
-
-
 ## 目录文件管理
-
-
 
 @include(./cd.md{5-})
 
@@ -257,7 +218,6 @@ Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每�
 
 @include(./sort.md{5-})
 
-
 ## 符号含义
 
 | 符号        | 含义                               |
@@ -282,8 +242,6 @@ Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每�
 | `..`        | 上级目录的硬链接                   |
 |             |                                    |
 
-
-
 ## 编辑器
 
 @include(./vim.md{5-})
@@ -295,7 +253,6 @@ Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每�
 @include(./kde.md{5-})
 
 @include(./gnome.md{5-})
-
 
 ## 用户及权限管理
 
@@ -309,21 +266,13 @@ Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每�
 
 @include(./chgrp.md{5-})
 
-
-
-
 -------
 
 ## 文件传输
 
-
-
 ------
 
-
 ## sed
-
-
 
 ```shell
 # 设置IP
@@ -334,34 +283,26 @@ Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每�
   cat /etc/hosts\n$(sed -n '3,100p' /etc/hosts)
 ```
 
-
-
 ## gawk
 
-
-
 ## 正则表达式
-
-
-
-
 
 ## 系统管理
 
 ```
-adduser 	chfn 	useradd 	date
-exit 	finger 	fwhios 	sleep
-suspend 	groupdel 	 	halt
-kill 	last 	lastb 	login
-logname 	logout 	ps 	nice
-procinfo 	top 	pstree 	reboot
-rlogin 	rsh 	sliplogin 	screen
-shutdown 	rwho 	sudo 	gitps
-swatch 	tload 	logrotate 	uname
-chsh 	userconf 	userdel 	usermod
-vlock 	who 	whoami 	whois
-newgrp 	renice 	su 	skill
-w 	id 	groupadd 	free 
+adduser  chfn  useradd  date
+exit  finger  fwhios  sleep
+suspend  groupdel    halt
+kill  last  lastb  login
+logname  logout  ps  nice
+procinfo  top  pstree  reboot
+rlogin  rsh  sliplogin  screen
+shutdown  rwho  sudo  gitps
+swatch  tload  logrotate  uname
+chsh  userconf  userdel  usermod
+vlock  who  whoami  whois
+newgrp  renice  su  skill
+w  id  groupadd  free 
 ```
 
 @include(./ps.md{5-})
@@ -369,9 +310,6 @@ w 	id 	groupadd 	free
 @include(./top.md{5-})
 
 @include(./kill.md{5-})
-
-
-
 
 ### 防火墙
 
@@ -383,16 +321,14 @@ w 	id 	groupadd 	free
 
 **开放端口**：firewall-cmd --zone=public --add-port=3306/tcp --permanent
 
-
 > --zone #作用域
-> 
+>
 > --add-port=3306/tcp #添加端口，格式为：端口/通讯协议
-> 
+>
 > --permanent #永久生效，没有此参数重启后失效
-> 
+>
 
 **查看开启端口**：netstat -ntlp 或：firewall-cmd --list-ports
-
 
 ### deepin 防火墙
 
@@ -402,7 +338,6 @@ w 	id 	groupadd 	free
 
 **清理更新缓存**：sudo apt-get autoclean
 
-
 sudo apt-get install ufw || sudo apt install gufw
 
 sudo ufw status：active启动，inactive未启动
@@ -410,7 +345,6 @@ sudo ufw status：active启动，inactive未启动
 sudo ufw enable
 
 sudo ufw disable
-
 
 ### 端口
 
@@ -422,238 +356,121 @@ netstat -ntlp 或：firewall-cmd --list-ports
 
 sudo echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
 
-
-
 ## 系统设置
 
+reset
 
+clear
 
-reset 
-
-
-
-clear 
-
-
-
-alias 
-
-
+alias
 
 dircolors
 
+aumix
 
+bind
 
-aumix 
-
-
-
-bind 
-
-
-
-chroot 
-
-
+chroot
 
 clock
 
+crontab
 
+declare
 
-crontab 
-
-
-
-declare 
-
-
-
-depmod 
-
-
+depmod
 
 dmesg
 
+enable
 
+eval
 
-enable 
-
-
-
-eval 
-
-
-
-export 
-
-
+export
 
 pwunconv
 
+grpconv
 
+rpm
 
-grpconv 
-
-
-
-rpm 
-
-
-
-insmod 
-
-
+insmod
 
 kbdconfig
 
+lilo
 
+liloconfig
 
-lilo 
-
-
-
-liloconfig 
-
-
-
-lsmod 
-
-
+lsmod
 
 minfo
 
+set
 
+modprobe
 
-set 
-
-
-
-modprobe 
-
-
-
-ntsysv 
-
-
+ntsysv
 
 mouseconfig
 
+passwd
 
+pwconv
 
-passwd 
-
-
-
-pwconv 
-
-
-
-rdate 
-
-
+rdate
 
 resize
 
+rmmod
 
+grpunconv
 
-rmmod 
-
-
-
-grpunconv 
-
-
-
-modinfo 
-
-
+modinfo
 
 time
 
+setup
 
+sndconfig
 
-setup 
-
-
-
-sndconfig 
-
-
-
-setenv 
-
-
+setenv
 
 setconsole
 
+timeconfig
 
+ulimit
 
-timeconfig 
-
-
-
-ulimit 
-
-
-
-unset 
-
-
+unset
 
 chkconfig
 
+apmd
 
+hwclock
 
-apmd 
-
-
-
-hwclock 
-
-
-
-mkkickstart 
-
-
+mkkickstart
 
 fbset
 
+unalias
 
+SVGATextMode
 
-unalias 
-
-
-
-SVGATextMode 
-
-
-
-gpasswd 
-
-
-
-
+gpasswd
 
 ## 安装软件程序
 
 包管理基础
 
-
-
 使用Debian包
-
-
 
 使用Red Hat包
 
-
-
 从源码安装
 
-
-
 ## 备份压缩
-
 
 | 命令      | 文件格式 | 描述                               |
 |---------|------|----------------------------------|
@@ -668,50 +485,47 @@ gpasswd
 
 @include(./tar.md{5-})
 
-
-
 ## 磁盘管理
 
-dirs 
+dirs
 
-edquota 
+edquota
 
-eject 
+eject
 
-mcd 
+mcd
 
 mdeltree
 
-mdu 
+mdu
 
-mlabel 
+mlabel
 
 mmd
 
-mrd 
+mrd
 
-mzip 
+mzip
 
 quota
 
 rmt
 
-stat 
+stat
 
-tree 
+tree
 
-umount 
+umount
 
-quotacheck 
+quotacheck
 
-quotaoff 
+quotaoff
 
-lndir 
+lndir
 
 repquota
 
 quotaon
-
 
 - **df**（英文全称：disk free）：列出文件系统的整体磁盘使用量
 - **du**（英文全称：disk used）：检查磁盘空间使用量
@@ -731,228 +545,185 @@ quotaon
 
 ## 磁盘维护
 
-badblocks 
+badblocks
 
-cfdisk 
+cfdisk
 
-dd 
+dd
 
 e2fsck
 
-ext2ed 
+ext2ed
 
-fsck 
+fsck
 
-fsck.minix 
+fsck.minix
 
 fsconf
 
-fdformat 
+fdformat
 
-hdparm 
+hdparm
 
-mformat 
+mformat
 
 mkbootdisk
 
-mkdosfs 
+mkdosfs
 
-mke2fs 
+mke2fs
 
-mkfs.ext2 
+mkfs.ext2
 
 mkfs.msdos
 
-mkinitrd 
+mkinitrd
 
-mkisofs 
+mkisofs
 
-mkswap 
+mkswap
 
 mpartition
 
-swapon 
+swapon
 
-symlinks 
+symlinks
 
-sync 
+sync
 
 mbadblocks
 
-mkfs.minix 
+mkfs.minix
 
-fsck.ext2 
+fsck.ext2
 
-fdisk 	
+fdisk  
 
-losetup	
+losetup 
 
-mkfs 	
+mkfs  
 
-sfdisk 	
+sfdisk  
 
-swapoff 
-
+swapoff
 
 ## 网络通讯
 
 apachectl
 
-arpwatch 
+arpwatch
 
-dip 
+dip
 
-getty 
+getty
 
-mingetty 
+mingetty
 
-uux 
+uux
 
-telnet 
+telnet
 
-uulog 
+uulog
 
-uustat 
+uustat
 
-ppp-off 
+ppp-off
 
-netconfig 
+netconfig
 
 nc
 
-httpd 
+httpd
 
-ifconfig 
+ifconfig
 
-minicom 
+minicom
 
 mesg
 
-dnsconf 
+dnsconf
 
-wall 
+wall
 
-netstat 
+netstat
 
 ping
 
-pppstats 
+pppstats
 
-samba 
+samba
 
-setserial 
+setserial
 
 talk
 
-traceroute 
+traceroute
 
-tty 
+tty
 
-newaliases 
+newaliases
 
 uuname
 
-netconf 
+netconf
 
-write 
+write
 
-statserial 
+statserial
 
 efax
 
-pppsetup 
+pppsetup
 
 tcpdump
 
-ytalk 
+ytalk
 
-cu 
+cu
 
-smbd 
+smbd
 
-testparm 
+testparm
 
-smbclient 
-
-
+smbclient
 
 shapecfg
-
-
-
-
 
 ## 设备管理
 
 setleds
 
-
-
 loadkey
-
-
 
 rdev
 
-
-
 dumpkeys
-
-
 
 MAKEDEV
 
-
-
-poweroff 
-
-
+poweroff
 
 ## 电子邮件与新闻组
-
-
-
-
 
 ## 其他命令
 
 bc
 
-
-
 tail
-
-
 
 head
 
-
-
 xargs
-
-
 
 ip
 
-
-
 nohub
-
-
 
 killall
 
-
-
 kill
 
-
-
 pkill
-
-
-
-
 
 ## 启动 java 服务
 
@@ -960,19 +731,6 @@ nohub java -jar xxx.jar
 
 sh start.sh start
 
-
-
 ## 实用的工具
 
 [https://www.zhihu.com/question/59227720/answer/163594782](https://www.zhihu.com/question/59227720/answer/163594782)
-
-
-
-
-
-
-
-
-
-
-

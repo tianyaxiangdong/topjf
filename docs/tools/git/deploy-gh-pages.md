@@ -26,15 +26,12 @@ tag:
 
 ![](./deploy-gh-pages.assets/true-image-20220821183700208.png)
 
-
 **在项目仓库里配置：**
 快捷地址，在仓库地址后面加上： `/settings/secrets/actions`
 
 nane为 ACCESS_TOKEN，值为刚才的 token
 
 ![](./deploy-gh-pages.assets/true-image-20220821183425533.png)
-
-
 
 ## 创建 vuepress-theme-hope 项目
 
@@ -68,24 +65,19 @@ added 595 packages in 22s
 
 ## 编辑 `.github/workflows/deploy-docs.yml`
 
-
-
 - [https://github.com/peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages)
 
 - [https://github.com/JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action)
-
-
 
 `main`分支为触发`CI/CD`，完整项目分支代码
 
 `gh-pages（可自定义）`分支为`GITHUB`自动打包后需要存放的分支
 
-
 -------------
 
 - `JamesIves/github-pages-deploy-action` 作者的
 
-- - 示例1：npm模式（[docs-v1.yml](https://github.com/topsjf/topsjf/blob/main/.github/workflows/docs-v1.yml.old)）
+  - - 示例1：npm模式（[docs-v1.yml](https://github.com/topsjf/topsjf/blob/main/.github/workflows/docs-v1.yml.old)）
 
 ```yaml
 name: 部署文档（v1）
@@ -128,7 +120,7 @@ jobs:
 
 ```
 
-- - 示例2：pnpm模式（[docs.yml](https://github.com/topsjf/topsjf/blob/main/.github/workflows/docs.yml)）
+  - - 示例2：pnpm模式（[docs.yml](https://github.com/topsjf/topsjf/blob/main/.github/workflows/docs.yml)）
 
 ```yaml
 name: 部署文档
@@ -190,7 +182,9 @@ jobs:
 
 
 ```
+
 安装 pnpm 步骤可以替换为：
+
 ```yaml
       - name: 安装 pnpm
         run: corepack enable && corepack prepare pnpm@7.15.0 --activate
@@ -258,14 +252,11 @@ jobs:
 
 `npm-shrinkwrap.json` 级别大于 `package-lock.json` 大于 `yarn.lock`
 
-
 ## 配置Pages
 
 /settings/pages
 
 ![](./deploy-gh-pages.assets/true-image-20220821184250742.png)
-
-
 
 ## 提交项目后，查看触发效果
 
@@ -275,13 +266,10 @@ jobs:
 
 ![](./deploy-gh-pages.assets/true-image-20220821184447307.png)
 
-
-
 ## 根据page配置，自动部署代码
 
 ![](./deploy-gh-pages.assets/true-image-20220821184611359.png)
 
 ## 访问
 
-https://自己的仓库.github.io/
-
+<https://自己的仓库.github.io/>

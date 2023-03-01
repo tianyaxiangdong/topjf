@@ -13,13 +13,13 @@ tag:
 
 # 一、K8S 基础搭建
 
-中文社区: https://www.kubernetes.org.cn/
+中文社区: <https://www.kubernetes.org.cn/>
 
-官方文档: https://kubernetes.io/zh/docs/home/
+官方文档: <https://kubernetes.io/zh/docs/home/>
 
-社区文档: http://docs.kubernetes.org.cn/
+社区文档: <http://docs.kubernetes.org.cn/>
 
-https://feisky.gitbooks.io/kubernetes/content/
+<https://feisky.gitbooks.io/kubernetes/content/>
 
 [历史版本 Release History](https://kubernetes.io/releases/)
 
@@ -133,7 +133,7 @@ alias la='ls -all'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+ . /etc/bashrc
 fi
 
 
@@ -176,7 +176,7 @@ alias kgsvc-ing='kubectl get svc -n ingress-nginx -o wide' #获取ingress服务
 ###########k8s-pod信息
 alias kgpod='kubectl get pod --show-labels' #查看k8s的pod信息
 alias kgpod-show='kubectl get pod --show-labels'
-alias kgpodw='watch kubectl get pod -n kube-system -o wide'	#监控k8s-pod的kube-system进度
+alias kgpodw='watch kubectl get pod -n kube-system -o wide' #监控k8s-pod的kube-system进度
 ###########k8s-pods信息
 alias kgpodsallns='kubectl get pods --all-namespaces -o wide' #获取pods所有名称空间
 alias kgpodsn='kubectl get pods -o wide -n $1' #查看输入的【kgpodsallns】名称空间信息
@@ -246,14 +246,11 @@ alias dklogs='docker logs'
 
 ![](./basis.assets/true-image-20211212160128007.png)
 
-
 安装 net-tools 工具
 
 ```shell
 yum install -y net-tools
 ```
-
-
 
 本机添加hosts：C:\Windows\System32\drivers\etc
 
@@ -280,11 +277,11 @@ yum install -y net-tools
 192.168.100.132 node2
 ```
 
->   systemctl restart network.service //重启网络服务，
+> systemctl restart network.service //重启网络服务，
 >
 > ping -c 3 master-120 && ping -c 3 node-121 && ping -c 3 node-122 && ping -c 3 node-123
 
-用户：a，密码：123456a， 设置主机名称： hostnamectl set-hostname 
+用户：a，密码：123456a， 设置主机名称： hostnamectl set-hostname
 
 #### 开启 ssh 远程登录<a name="ssh"></a>
 
@@ -293,7 +290,7 @@ yum install -y net-tools
 ```shell
 sed -i 's/#PermitRootLogin yes/PermitRootLogin yes/g' /etc/ssh/sshd_config
 登录master、node1、node2、node3
-ssh-keygen -t rsa	（ssh-keygen这里一路回车就行）
+ssh-keygen -t rsa （ssh-keygen这里一路回车就行）
     
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.100.130 && \
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.100.131 && \
@@ -327,11 +324,11 @@ done
 EOF
 ```
 
->   chmod 755 /etc/sysconfig/modules/ipvs.modules
+> chmod 755 /etc/sysconfig/modules/ipvs.modules
 >
->   sh /etc/sysconfig/modules/ipvs.modules
+> sh /etc/sysconfig/modules/ipvs.modules
 >
->   lsmod | grep ip_vs
+> lsmod | grep ip_vs
 
 #### 将桥接的IPv4流量传递到iptables的链
 
@@ -385,8 +382,6 @@ timedatectl status
   ntpdate time.windows.com
 ```
 
-
-
 ### A、在所有节点上安装 Docker和 kubeadm、kubelet、kubectl
 
 #### 准备
@@ -395,7 +390,7 @@ timedatectl status
 
 #### 1、安装docker
 
-https://docs.docker.com/engine/install/centos/
+<https://docs.docker.com/engine/install/centos/>
 
 卸载的旧版本
 
@@ -524,7 +519,7 @@ EOF
 
 ```shell
 yum clean all && yum makecache && yum -y update && yum repolist all
-yum list kubelet	yum list kube*
+yum list kubelet yum list kube*
 ```
 
 `failure: repodata/repomd.xml from kubernetes: [Errno 256] No more mirrors to try.`
@@ -550,33 +545,29 @@ yum install --nogpgcheck kubelet-1.23.8-0 kubeadm-1.23.8-0 kubectl-1.23.8-0
 
 #### 5、node 节点安装
 
->   yum install kubeadm-1.23.8-0 kubelet-1.23.8-0 kubectl-1.23.8-0
-
-
+> yum install kubeadm-1.23.8-0 kubelet-1.23.8-0 kubectl-1.23.8-0
 
 #### 6、创建k8s软连接
 
 执行：`ln -s /usr/bin/kube*  /usr/local/bin/`
 
-
-
 #### 启动 k8s
 
->   systemctl enable kubelet	  systemctl disable kubelet
+> systemctl enable kubelet   systemctl disable kubelet
 >
->   systemctl start kubelet		  systemctl stop kubelet
+> systemctl start kubelet    systemctl stop kubelet
 >
->   systemctl status kubelet
+> systemctl status kubelet
 >
 > 发现：`kubelet.service - kubelet: The Kubernetes Node Agent`，属于正常，k8s还没有配置
 
-[版本 History](https://kubernetes.io/releases/)	https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG
+[版本 History](https://kubernetes.io/releases/) <https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG>
 
-### B、Master 部署 Kubernetes 
+### B、Master 部署 Kubernetes
 
 编辑 master_images.sh：设置需要的镜像，仓库地址,[官网docker镜像搜索](https://hub.docker.com/)
 
-> https://hub.docker.com/u/aiotceo	、https://hub.docker.com/u/mirrorgooglecontainers
+> <https://hub.docker.com/u/aiotceo> 、<https://hub.docker.com/u/mirrorgooglecontainers>
 >
 > swr.myhuaweicloud.com/iivey
 >
@@ -667,7 +658,7 @@ kubeadm join 192.168.100.130:6443 --token wmgb01.rwvu0csqrn5ayt1k \
 
 #### 重启后出现：`The connection to the server localhost:8080 was refused - did you specify the right host or port?`
 
-> 解决：https://blog.csdn.net/qq_42476834/article/details/124730955
+> 解决：<https://blog.csdn.net/qq_42476834/article/details/124730955>
 >
 > [ssh免密登录访问](#ssh)
 
@@ -689,7 +680,7 @@ kubeadm join 192.168.100.130:6443 --token wmgb01.rwvu0csqrn5ayt1k \
 
 ### C、将从节点（node）加入 Kubernetes （Master）集群中
 
-su root	在每个根节点上运行以下操作：
+su root 在每个根节点上运行以下操作：
 
 [查看 kubeadm init](#kubeadm init)
 
@@ -767,7 +758,7 @@ metadata:
 
 ![](./basis.assets/true-image-20220827152630437.png)
 
-参考：https://kubernetes.io/zh/docs/concepts/cluster-administration/addons/
+参考：<https://kubernetes.io/zh/docs/concepts/cluster-administration/addons/>
 
 Flannel 的缺点之一是缺乏高级功能，例如配置网络策略和防火墙的能力。因此 Flannel 是 Kubernetes 集群网络的一个很好的入门级选择，但是，如果你正在寻找高级网络功能，你可能需要考虑其他 CNI 选项，例如 Calico。
 
@@ -775,11 +766,11 @@ Flannel 的缺点之一是缺乏高级功能，例如配置网络策略和防火
 
 root用户：使用[Flannel](https://github.com/flannel-io/flannel#deploying-flannel-manually) 配置，执行：
 
->https://gitee.com/k8s_s/flannel/blob/master/Documentation/kube-flannel.yml
+><https://gitee.com/k8s_s/flannel/blob/master/Documentation/kube-flannel.yml>
 >
->https://gitee.com/k8s_s/flannel/blob/v0.17.0/Documentation/kube-flannel.yml
+><https://gitee.com/k8s_s/flannel/blob/v0.17.0/Documentation/kube-flannel.yml>
 >
->https://gitee.com/k8s_s/flannel/blob/v0.19.1/Documentation/kube-flannel.yml
+><https://gitee.com/k8s_s/flannel/blob/v0.19.1/Documentation/kube-flannel.yml>
 >
 >kubectl apply -f kube-flannel-0.19.1.yml
 >
@@ -812,8 +803,6 @@ image修改：
 registry.cn-chengdu.aliyuncs.com/k8sjf/flannelcni-flannel-cni-plugin:v1.1.0
 registry.cn-chengdu.aliyuncs.com/k8sjf/flannel:v0.19.0
 ```
-
-
 
 #### [kubectl 命令基础](https://blog.csdn.net/qq_42476834/article/details/121781274)
 
@@ -892,21 +881,17 @@ kube-flannel-ds-n8fr9   1/1     Running   0          4m15s   192.168.100.130   m
 kube-flannel-ds-tfj78   1/1     Running   0          4m15s   192.168.100.131   node1    <none>           <none>
 ```
 
-
-
 **kube-flannel-ds-xxxx 必须运行OK**
 
+### E、可视化查看 Kubernetes资源
 
-
-###  E、可视化查看 Kubernetes资源
-
-文档：https://kuboard.cn/install/install-k8s-dashboard.html
+文档：<https://kuboard.cn/install/install-k8s-dashboard.html>
 
 #### 1、dashboard（不推荐）
 
->https://github.com/kubernetes/dashboard/releases/tag/v2.4.0
+><https://github.com/kubernetes/dashboard/releases/tag/v2.4.0>
 >
->kubectl apply -f https://gitee.com/k8s_s/dashboard1/blob/v2.4.0/aio/deploy/recommended.yaml -o yaml > dashboard.yaml
+>kubectl apply -f <https://gitee.com/k8s_s/dashboard1/blob/v2.4.0/aio/deploy/recommended.yaml> -o yaml > dashboard.yaml
 
 #### 2、KubeSphere（推荐）
 
@@ -916,12 +901,11 @@ kube-flannel-ds-tfj78   1/1     Running   0          4m15s   192.168.100.131   n
 
 #### 3、Kuboard
 
-https://kuboard.cn/overview/
+<https://kuboard.cn/overview/>
 
 [Github kuboard](https://github.com/eip-work/kuboard-press) stars 14.5+K
 
 #### 4、KubeOperator
-
 
 ---------------------
 
@@ -982,8 +966,6 @@ nginx-689b55fcd     3         3         3       19h
 tomcat-549f8d66bc   3         3         3       19h
 ```
 
-
-
 ### A、基本命令
 
 #### 1、创建apps：create deployment
@@ -996,14 +978,14 @@ master安装tomcat
 
 ```shell
 a1@node01:~/k8s$ kubectl get all
-NAME                           READY   STATUS              RESTARTS  		 AGE
-pod/tomcat6-56fcc999cb-47vfm   0/1     ContainerCreating      0      		 23s
-NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   		 AGE
-service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP  		 115m
-NAME                      READY   UP-TO-DATE   AVAILABLE   					AGE
-deployment.apps/tomcat6   0/1     	 1             0           				23s
-NAME                                 DESIRED   CURRENT   READY  			AGE
-replicaset.apps/tomcat6-56fcc999cb   1         1         0      			23s
+NAME                           READY   STATUS              RESTARTS     AGE
+pod/tomcat6-56fcc999cb-47vfm   0/1     ContainerCreating      0         23s
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)      AGE
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP     115m
+NAME                      READY   UP-TO-DATE   AVAILABLE        AGE
+deployment.apps/tomcat6   0/1       1             0               23s
+NAME                                 DESIRED   CURRENT   READY     AGE
+replicaset.apps/tomcat6-56fcc999cb   1         1         0         23s
 ```
 
 #### 3、查看详细 kg all -o wide
@@ -1038,8 +1020,6 @@ tomcat6在节点node2---docker下载镜像ok
 
 #### 5、暴露 port ：expose
 
-
-
 > expose (-f FILENAME | TYPE NAME) [--port=port] [--protocol=TCP|UDP] [--target-port=number-or-name] [--name=name] [--external-ip=external-ip-of-service] [--type=type]
 
 ```shell
@@ -1051,13 +1031,13 @@ kubectl expose deploy tomcat6 --port=80 --target-port=8080 --type=NodePort
 
 ![](./basis.assets/true-image-20211208175833308.png)
 
-http://192.168.100.131:31002/ 
+<http://192.168.100.131:31002/>
 
 #### 6、修改 port：edit
 
-> kubectl edit svc tomcat6	###修改app应用服务的port
+> kubectl edit svc tomcat6 ###修改app应用服务的port
 >
-> kubectl edit deploy tomcat6	### 修改app应用
+> kubectl edit deploy tomcat6 ### 修改app应用
 
 #### 7、扩容或缩容：scale
 
@@ -1082,7 +1062,7 @@ kubectl scale --current-replicas=2 --replicas=3 deployment/tomcat6
 
 > kubectl  get all
 >
-> kubectl delete deployment.apps/tomcat6 
+> kubectl delete deployment.apps/tomcat6
 >
 > kubectl delete service/tomcat6
 
@@ -1102,7 +1082,7 @@ kubectl scale --current-replicas=2 --replicas=3 deployment/tomcat6
 
 ### B、yaml & 基本使用
 
-https://kubernetes.io/zh/docs/reference/kubectl/overview/
+<https://kubernetes.io/zh/docs/reference/kubectl/overview/>
 
 后期使用：[# apps+expose-port](#apps+expose-port)，而不是使用 [# 初级使用yaml创建apps](#初级使用yaml创建apps)
 
@@ -1128,7 +1108,7 @@ spec:
     name: nginx
 ```
 
-#### Deployment 模版 
+#### Deployment 模版
 
 ```yaml
 apiVersion: apps/v1
@@ -1172,7 +1152,7 @@ spec:
     metadata:
       labels:
         app: nginx
- 	#Pod模板规约：spec-指示 Pods 运行一个 nginx 容器
+  #Pod模板规约：spec-指示 Pods 运行一个 nginx 容器
     spec:
       containers:
       - name: nginx
@@ -1182,9 +1162,7 @@ spec:
         - containerPort: 80
 ```
 
-
-
-#### Service 模版 
+#### Service 模版
 
 ```yaml
 apiVersion: v1
@@ -1204,8 +1182,6 @@ spec:
     app: tomcat601
   type: NodePort
 ```
-
-
 
 #### 1、初级使用yaml创建apps<a name="初级使用yaml创建apps"></a>（后期不使用这种方式）
 
@@ -1309,7 +1285,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-  	#实例名称
+   #实例名称
     app: tomcat601
   #容器名称  
   name:  tomcat6-xxx-wzfj2
@@ -1397,7 +1373,7 @@ status:
 
 查看 Deployment 上线状态`kubectl rollout status deployment/nginx-deployment`
 
-校验：http://192.168.100.130:80/
+校验：<http://192.168.100.130:80/>
 
 ![](./basis.assets/true-image-20211208215629869.png)
 
@@ -1412,6 +1388,7 @@ status:
 xxx.yaml<a name="xxx.yaml"></a>
 
 ::: details 点击查看代码
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -1452,10 +1429,10 @@ spec:
     app: tomcat
   type: NodePort
 ```
+
 :::
 
 ![](./basis.assets/true-image-20211208220838638.png)
-
 
 ### C、Deployment & service 概念
 
@@ -1475,8 +1452,6 @@ spec:
 
 此方式只能在集群内访问
 
-
-
 #### label & selector
 
 ![](./basis.assets/true-image-20211208205421842.png)
@@ -1489,9 +1464,8 @@ spec:
 
 ![](./basis.assets/true-image-20211208205714089.png)
 
-#### 说明：
+#### 说明
 
 > 一个集群后多台mster、node，一个节点node，里面有多个Pod，一个Pod里可能有多个服务，各个Pod通过service暴露port给其他Pod、node之间是互通，通过controller来管理使用Pod资源。
 
 node -> pod ->  service -> controller
-

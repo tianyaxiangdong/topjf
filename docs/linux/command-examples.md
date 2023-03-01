@@ -14,47 +14,46 @@ tag:
 
 <!-- more -->
 
-
 # 常用Linux命令实例
 
-## 1、查看有多少个IP访问：
+## 1、查看有多少个IP访问
 
 ```shell
 awk '{print $1}' log_file|sort|uniq|wc -l
 ```
 
-## 2、查看某一个页面被访问的次数：
+## 2、查看某一个页面被访问的次数
 
 ```shell
 grep "/index.php" log_file | wc -l
 ```
 
-## 3、查看每一个IP访问了多少个页面：
+## 3、查看每一个IP访问了多少个页面
 
 ```shell
 awk '{++S[$1]} END {for (a in S) print a,S[a]}' log_file > log.txt
 sort -n -t ' ' -k 2 log.txt 配合sort进一步排序
 ```
 
-## 4、将每个IP访问的页面数进行从小到大排序：
+## 4、将每个IP访问的页面数进行从小到大排序
 
 ```shell
 awk '{++S[$1]} END {for (a in S) print S[a],a}' log_file | sort -n
 ```
 
-## 5、查看某一个IP访问了哪些页面：
+## 5、查看某一个IP访问了哪些页面
 
 ```shell
 grep ^111.111.111.111 log_file| awk '{print $1,$7}'
 ```
 
-## 6、去掉搜索引擎统计的页面：
+## 6、去掉搜索引擎统计的页面
 
 ```shell
 awk '{print $12,$1}' log_file | grep ^\"Mozilla | awk '{print $2}' |sort | uniq | wc -l
 ```
 
-## 7、查看2015年8月16日14时这一个小时内有多少IP访问:
+## 7、查看2015年8月16日14时这一个小时内有多少IP访问
 
 ```shell
 awk '{print $4,$1}' log_file | grep 16/Aug/2015:14 | awk '{print $2}'| sort | uniq | wc -l
@@ -349,6 +348,3 @@ netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
 - `FIN_WAIT1 51` # 表示server端主动要求关闭tcp连接；
 - `FIN_WAIT2 504` # 表示客户端中断连接；
 - `TIME_WAIT 1057` # 表示处理完毕，等待超时结束的请求数；
-
-
-

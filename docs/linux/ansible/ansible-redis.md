@@ -10,10 +10,4 @@ tag:
 
 <!-- more -->
 
-
 # ansible安装Redis
-
-
-
-
-

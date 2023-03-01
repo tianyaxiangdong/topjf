@@ -11,15 +11,16 @@ tag:
 <!-- more -->
 
 ## 安装与配置
+
 Windows、Linux 配置 Maven3.6、gradle 阿里下载源
 
 - [Maven3.X 下载地址](https://maven.apache.org/download.cgi)
 - [maven nginx导航资源](https://mirrors.bfsu.edu.cn/apache/maven/)
 
 pom依赖查询地址：
+
 - [maven 官网 仓库](https://mvnrepository.com/)
 - [maven 阿里云 仓库](https://developer.aliyun.com/mvn/search)
-
 
 ## win10
 
@@ -37,7 +38,6 @@ pom依赖查询地址：
  <localRepository>D:\GZRJ\apache-maven-3.6.3\repositorys</localRepository>
 ```
 
-
 ### 配置阿里仓库下载源
 
 [maven | gradle  阿里云官网配置指南](https://developer.aliyun.com/mvn/guide)
@@ -53,18 +53,18 @@ pom依赖查询地址：
 		<url>http://maven.aliyun.com/nexus/content/groups/public</url>
 	</mirror>-->
  <!-- 设置下载源：aliyun 新版本-->
-	<mirror>
-		  <id>aliyunmaven</id>
-		  <mirrorOf>*</mirrorOf>
-		  <name>阿里云公共仓库</name>
-		  <url>https://maven.aliyun.com/repository/public</url>
-	</mirror>
-	<!-- 设置下载源：华为 -->
-	<mirror>
-	    <id>huaweicloud</id>
-	    <mirrorOf>*</mirrorOf>
-	    <url>https://repo.huaweicloud.com/repository/maven/</url>
-	</mirror> 
+ <mirror>
+    <id>aliyunmaven</id>
+    <mirrorOf>*</mirrorOf>
+    <name>阿里云公共仓库</name>
+    <url>https://maven.aliyun.com/repository/public</url>
+ </mirror>
+ <!-- 设置下载源：华为 -->
+ <mirror>
+     <id>huaweicloud</id>
+     <mirrorOf>*</mirrorOf>
+     <url>https://repo.huaweicloud.com/repository/maven/</url>
+ </mirror> 
   </mirrors>
 <!-- ##################jdk###############-->
 <!-- <profiles>
@@ -109,8 +109,6 @@ Default locale: zh_CN, platform encoding: UTF-8
 OS name: "linux", version: "5.4.50-amd64-desktop", arch: "amd64", family: "unix"
 ```
 
-
-
 ## 常用命令
 
 清空文件：mvn clean
@@ -121,16 +119,12 @@ OS name: "linux", version: "5.4.50-amd64-desktop", arch: "amd64", family: "unix"
 
 打包并部署到本地maven目录里：mvn install
 
-
-
 `.jar.original` 结尾文件
 
 > .jar.original 是普通 jar 包，不包含依赖
-> 
+>
 > .jar 是可执行 jar 包，包含了 pom 中的所有依赖，可以直接用 `java -jar` 命令执行
-> 
+>
 > 如果是部署，就用 .jar
-> 
+>
 > 如果是给别的项目用，就要给 `.jar.original` 这个包
-
-

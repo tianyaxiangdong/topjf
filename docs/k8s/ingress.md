@@ -37,8 +37,6 @@ ingress 底层是nginx
 
 ![](./ingress.assets/true-1620.png)
 
-
-
 ----
 
 ## 执行流程
@@ -52,7 +50,6 @@ ingress 底层是nginx
 ## Ingress 是什么？
 
 [Ingress文档](https://kubernetes.io/zh/docs/concepts/services-networking/ingress/)
-
 
 ![](./ingress.assets/true-image-20211208223555795.png)
 
@@ -84,7 +81,6 @@ spec:
             port:
               number: 80
 ```
-
 
 ![](./ingress.assets/true-image-20211208223713227.png)
 
@@ -119,7 +115,6 @@ spec:
 ```shell
 kubectl describe ingress simple-fanout-example
 ```
-
 
 ![](./ingress.assets/true-image-20211208223732243.png)
 
@@ -190,7 +185,6 @@ spec:
               number: 80
 ```
 
-
 ## 版本关系
 
 [kubernetes.github.io/ingress-nginx](https://kubernetes.github.io/ingress-nginx/)
@@ -217,11 +211,11 @@ spec:
 
 **Ingress-nginx 版本选择**
 
->https://gitee.com/k8s_s/ingress-nginx/blob/controller-v1.1.3/deploy/static/provider/baremetal/1.22/deploy.yaml
+><https://gitee.com/k8s_s/ingress-nginx/blob/controller-v1.1.3/deploy/static/provider/baremetal/1.22/deploy.yaml>
 >
->https://gitee.com/k8s_s/ingress-nginx/blob/controller-v1.2.0/deploy/static/provider/baremetal/1.22/deploy.yaml
+><https://gitee.com/k8s_s/ingress-nginx/blob/controller-v1.2.0/deploy/static/provider/baremetal/1.22/deploy.yaml>
 >
->https://gitee.com/k8s_s/ingress-nginx/blob/controller-v1.3.0/deploy/static/provider/baremetal/1.22/deploy.yaml
+><https://gitee.com/k8s_s/ingress-nginx/blob/controller-v1.3.0/deploy/static/provider/baremetal/1.22/deploy.yaml>
 
 **V1.2.0-yaml 文件需要的版本镜像2个**
 
@@ -232,7 +226,7 @@ docker push registry.cn-chengdu.aliyuncs.com/jinfang/nginx-ingress-controller:1.
 --------------------------------------------------------------------------
 ### V1.3.0
 docker pull wangshun1024/kube-webhook-certgen:v1.1.1
-docker pull liangjw/kube-webhook-certgen:v1.1.1		（使用）
+docker pull liangjw/kube-webhook-certgen:v1.1.1  （使用）
 docker pull dyrnq/kube-webhook-certgen:v1.3.0
 -------------
 docker pull bitnami/nginx-ingress-controller:1.3.0
@@ -249,10 +243,6 @@ docker rmi bitnami/nginx-ingress-controller:1.3.0
 
 [nginx-ingress-controller](https://hub.docker.com/r/bitnami/nginx-ingress-controller/tags)、[kube-webhook-certgen:1.5.2](https://hub.docker.com/search?q=kube-webhook-certgen)
 
-
-
-
-
 ## Ingress注意事项
 
 ```
@@ -260,7 +250,7 @@ apiVersion: networking.k8s.io/v1
 import "k8s.io/api/networking/v1"
 ```
 
-## 文档教程：
+## 文档教程
 
 [kubesphere.io/zh/learn/level_2/lesson_9/content](https://kubesphere.io/zh/learn/level_2/lesson_9/content/)
 
@@ -365,8 +355,6 @@ spec:
 
 ```
 
-
-
 ## 3、创建 ingress 规则
 
 [v1-22.docs.kubernetes.io/zh/docs/concepts/services-networking/ingress/](https://v1-22.docs.kubernetes.io/zh/docs/concepts/services-networking/ingress/)
@@ -455,17 +443,17 @@ spec:
               number: 8002
 ```
 
-http://test.nginx.com:
+<http://test.nginx.com>:
 
 ## 报错`validate.nginx.ingress.kubernetes.io`
 
-error when creating "ingress-nginx.yaml": Internal error occurred: failed calling 
-webhook "validate.nginx.ingress.kubernetes.io": Post "https://ingress-nginx-controller
--admission.ingress-nginx.svc:443/networking/v1/ingresses?timeout=10s": x509: 
+error when creating "ingress-nginx.yaml": Internal error occurred: failed calling
+webhook "validate.nginx.ingress.kubernetes.io": Post "<https://ingress-nginx-controller>
+-admission.ingress-nginx.svc:443/networking/v1/ingresses?timeout=10s": x509:
 certificate signed by unknown authority
 
 ```
-kg validatingwebhookconfigurations     --》		ingress-nginx-admission
+kg validatingwebhookconfigurations     --》  ingress-nginx-admission
 
 删除：kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
 ```
@@ -475,7 +463,7 @@ kg validatingwebhookconfigurations     --》		ingress-nginx-admission
 补充：另外需要在 ingress-controller-1.2.0.yaml 部署配置中
 
 - 将 `rbac.authorization.k8s.io/v1beta1` 改为 `rbac.authorization.k8s.io/v1`
-- 将 `image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.29.0` 
+- 将 `image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.29.0`
 改为 `image: docker.io/bitnami/nginx-ingress-controller:latest`
 
 4、更新 Ingress
@@ -485,7 +473,7 @@ kubectl describe ingress $Name
 kubectl edit ingress $Name
 ```
 
-## n、查看状态：
+## n、查看状态
 
 更多命令：[k8s-alias](#k8s-alias)
 
@@ -526,8 +514,6 @@ NAME                                         TYPE        CLUSTER-IP      EXTERNA
 service/ingress-nginx-controller             NodePort    10.96.187.118   <none>        80:31487/TCP,443:31201/TCP   20m   app.kubernetes.io/component=controller,app.kubernetes.io/instance=ingress-nginx,app.kubernetes.io/name=ingress-nginx
 service/ingress-nginx-controller-admission   ClusterIP   10.96.203.101   <none>        443/TCP                      20m   app.kubernetes.io/component=controller,app.kubernetes.io/instance=ingress-nginx,app.kubernetes.io/name=ingress-nginx
 ```
-
-
 
 ### （用）kg ingress -owide、kg pod --show-labels
 
@@ -607,14 +593,11 @@ Rules:
 
 ### k logs  ingress-nginx
 
-
-
 ## 5、访问
 
-http://tomcat.k8s.com:31839
+<http://tomcat.k8s.com:31839>
 
-http://nginx.k8s.com:31839
-
+<http://nginx.k8s.com:31839>
 
 ## 处理tomcat 404
 
@@ -634,8 +617,8 @@ tomcat-b8cdc6f6b-r2w26   1/1     Running   0          8m    10.244.1.13   node2 
 [a@master ~]$ kubectl exec xx -it -- /bin/bash
 
 root@tomcat-xx-8sdxp:/usr/local/tomcat# ls
-    BUILDING.txt	 LICENSE  README.md	 RUNNING.txt  conf  logs	    temp     webapps.dist
-    CONTRIBUTING.md  NOTICE   RELEASE-NOTES  bin	      lib   native-jni-lib  webapps  work
+    BUILDING.txt  LICENSE  README.md  RUNNING.txt  conf  logs     temp     webapps.dist
+    CONTRIBUTING.md  NOTICE   RELEASE-NOTES  bin       lib   native-jni-lib  webapps  work
 root@tomcat-xx-8sdxp:/usr/local/tomcat# cp -R webapps.dist/. webapps/
 ```
 

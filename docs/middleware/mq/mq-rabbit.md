@@ -12,7 +12,7 @@ tag:
 
 # RabbitMQ
 
-https://www.rabbitmq.com/
+<https://www.rabbitmq.com/>
 
 ## 1、简介、安装配置
 
@@ -22,7 +22,7 @@ https://www.rabbitmq.com/
 
 **消息代理(message broker)和目的地(destination)**：当消息发送者发送消息以后，将由消息代理接管，消息代理保证消息传递到指定目的地。
 
-3.消息队列主要有两种形式的目的地: 
+3.消息队列主要有两种形式的目的地:
 
 **队列(queue)** : 点对点消息通信(point-to-point)
 
@@ -73,7 +73,7 @@ Publisher、message、虚拟机VHost、broker、Exchange、binding、Queue、Con
 
 ### 1.3、docker 安装
 
-https://www.rabbitmq.com/networking.html
+<https://www.rabbitmq.com/networking.html>
 
 ```bash
 dkpull rabbitmq:management(默认最新)
@@ -92,7 +92,7 @@ docker run -d --name rabbitmq3.8.23 -p 5671:5671 -p 5672:5672 -p 4369:4369 -p 25
 1883, 8883 (MQTT协议端口)
 ```
 
-http://localhost:15672/#/ 密码：默认（user：guest；pass：guest）
+<http://localhost:15672/#/> 密码：默认（user：guest；pass：guest）
 
 ![image-20210929164609552](./mq-rabbit.assets/true-image-20210929164609552.png)
 
@@ -113,8 +113,6 @@ http://localhost:15672/#/ 密码：默认（user：guest；pass：guest）
 #### fanout 订阅：广播模式
 
 ![image-20210929165442845](./mq-rabbit.assets/true-image-20210929165442845.png)
-
-
 
 #### topic 订阅：订阅模式
 
@@ -140,13 +138,13 @@ http://localhost:15672/#/ 密码：默认（user：guest；pass：guest）
 
 ![image-20210929171451906](./mq-rabbit.assets/true-image-20210929171451906.png)
 
-#### 创建 交换机：
+#### 创建 交换机
 
 exchange.direct、exchange.fanout、exchange.topic
 
 ![image-20210929171917453](./mq-rabbit.assets/true-image-20210929171917453.png)
 
-#### 创建 消息队列：
+#### 创建 消息队列
 
 队列: kong、kong.emps、kong.news、kong004.news
 
@@ -182,8 +180,6 @@ exchange.fanout: -> kong、kong.emps、kong.news、kong004.news
 
 ![image-20210929175407953](./mq-rabbit.assets/true-image-20210929175407953.png)
 
-
-
 #### topic 绑定 binding
 
 exchange.topic: -> kong、kong.emps、kong.news、kong004.news
@@ -196,13 +192,9 @@ exchange.topic: -> kong、kong.emps、kong.news、kong004.news
 
 ![image-20210929181347034](./mq-rabbit.assets/true-image-20210929181347034.png)
 
-
-
 ##### 读消息
 
 ![image-20210929181503450](./mq-rabbit.assets/true-image-20210929181503450.png)
-
-
 
 ## 2、整合java
 
@@ -363,7 +355,6 @@ public class MyRabbitMQConfig {
 
 ### 2.2 amqpAdmin 管理组件
 
-
 private AmqpAdmin amqpAdmin;
 
 #### 创建交换机、创建队列、绑定binding
@@ -377,10 +368,10 @@ Queue queue = new Queue("hello-java-queue", true, false, false);
 amqpAdmin.declareQueue(queue);
 //绑定binding：
 Binding binding = new Binding("hello-java-queue",
-				Binding.DestinationType.QUEUE,
-				"hello-java-exchange",
-				"hello.java",
-				null);
+    Binding.DestinationType.QUEUE,
+    "hello-java-exchange",
+    "hello.java",
+    null);
 amqpAdmin.declareBinding(binding);
 ```
 
@@ -408,7 +399,7 @@ public void sendMessageTest(){
 }
 ```
 
-#### 监听队列：
+#### 监听队列
 
 **注意**：*同一个消息，只能有一个客户端收到；只有一个消息完全处理完，方法运行结束，我们就可以接收到下一个消息*
 
@@ -425,11 +416,11 @@ public void sendMessageTest(){
      * -@RabbitHandler: 标在方法上(重载区分不同的消息)<p>
      * --- 使用`RabbitHandler`时，把`RabbitListener`添加在类上监听
      */
-	@RabbitListener(queues = {"hello-java-queue"})
-	public void revieveMessage(Message message, OrderReturnReasonEntity content, Channel channel) throws InterruptedException{
-		System.out.println("原生消息信息--"+message+"\r\n===内容："+content);
-		System.out.println("----OrderReturnReasonEntity 消息处理完成----");
-	}
+ @RabbitListener(queues = {"hello-java-queue"})
+ public void revieveMessage(Message message, OrderReturnReasonEntity content, Channel channel) throws InterruptedException{
+  System.out.println("原生消息信息--"+message+"\r\n===内容："+content);
+  System.out.println("----OrderReturnReasonEntity 消息处理完成----");
+ }
 ```
 
 #### @RabbitHandler 仅作用在方法（重载区分不同的消息）与`RabbitListener-写于类上` 一同使用
@@ -452,29 +443,27 @@ public class DemoListener {
 }    
 ```
 
-
-
-http://localhost:8200/order/order/sendMQ
+<http://localhost:8200/order/order/sendMQ>
 
 ```java
 @RequestMapping("sendMQ")
-	public String sendMessage(@RequestParam(value = "num", defaultValue = "10") Integer num){
-		for(int i = 0; i < num; i++){
-			if(i%2 == 0){
-				OrderReturnReasonEntity reasonEntity = new OrderReturnReasonEntity();
-				reasonEntity.setName("--OrderReturnReasonEntity--"+i);
-				rabbitTemplate.convertAndSend("hello-java-exchange", "hello-java-queue.java",
-						reasonEntity, new CorrelationData(UUID.randomUUID().toString()));
-			}else{
-				OrderEntity orderEntity = new OrderEntity();
-				orderEntity.setOrderSn(UUID.randomUUID().toString());
-				orderEntity.setReceiverName("--OrderEntity--"+i);
-				rabbitTemplate.convertAndSend("hello-java-exchange", "hello-java-queue.java",
-						orderEntity, new CorrelationData(UUID.randomUUID().toString()));
-			}
-		}
-		return "消息发送完成";
-	}
+ public String sendMessage(@RequestParam(value = "num", defaultValue = "10") Integer num){
+  for(int i = 0; i < num; i++){
+   if(i%2 == 0){
+    OrderReturnReasonEntity reasonEntity = new OrderReturnReasonEntity();
+    reasonEntity.setName("--OrderReturnReasonEntity--"+i);
+    rabbitTemplate.convertAndSend("hello-java-exchange", "hello-java-queue.java",
+      reasonEntity, new CorrelationData(UUID.randomUUID().toString()));
+   }else{
+    OrderEntity orderEntity = new OrderEntity();
+    orderEntity.setOrderSn(UUID.randomUUID().toString());
+    orderEntity.setReceiverName("--OrderEntity--"+i);
+    rabbitTemplate.convertAndSend("hello-java-exchange", "hello-java-queue.java",
+      orderEntity, new CorrelationData(UUID.randomUUID().toString()));
+   }
+  }
+  return "消息发送完成";
+ }
 
 @RabbitHandler
 public void revieveMessage02(OrderReturnReasonEntity content){
@@ -489,19 +478,15 @@ public void revieveMessage03(OrderEntity content){
 }
 ```
 
-
-
 ## 3、投递消息-安全到达
 
 <img src="./mq-rabbit.assets/true-image-20211003221447339.png" alt="image-20211003221447339" style="zoom: 80%;" />
 
-https://www.rabbitmq.com/reliability.html
+<https://www.rabbitmq.com/reliability.html>
 
 ![image-20211003222246765](./mq-rabbit.assets/true-image-20211003222246765.png)
 
 ![image-20211003234548905](./mq-rabbit.assets/true-image-20211003234548905.png)
-
-
 
 [请看2.1 配置]()
 
@@ -553,11 +538,11 @@ public void revieveMessage02(Message message, OrderReturnReasonEntity content, C
 ### 4.1、使用场景
 
 场景:
-	比如未付款订单，超过一定时间后，系统自动取消订单并释放占有物品。
+ 比如未付款订单，超过一定时间后，系统自动取消订单并释放占有物品。
 
 常用解决方案:
-	spring的schedule *定时任务* 轮询数据库
-		缺点：消耗系统内存、增加了数据库的压力、存在较大的时间误差
+ spring的schedule *定时任务* 轮询数据库
+  缺点：消耗系统内存、增加了数据库的压力、存在较大的时间误差
 解决：rabbitmq的消息 TTL 和死信 Exchange 结合
 
 ![image-20211011180618706](./mq-rabbit.assets/true-image-20211011180618706.png)
@@ -581,10 +566,10 @@ public void revieveMessage02(Message message, OrderReturnReasonEntity content, C
 #### - - 设置 队列 过期时间
 
 设计建议规范：（基于事件模型的交换机设计）
-	1、交换机命名：业务+ exchange; 交换机为Topic
-	2、路由键：事件+需要感知的业务(可以不写)
-	3、队列命名：事件+想要监听服务名+ queue
-	4、绑定关系：事件+感知的业务(#)
+ 1、交换机命名：业务+ exchange; 交换机为Topic
+ 2、路由键：事件+需要感知的业务(可以不写)
+ 3、队列命名：事件+想要监听服务名+ queue
+ 4、绑定关系：事件+感知的业务(#)
 
 ![image-20211011185404410](./mq-rabbit.assets/true-image-20211011185404410.png)
 
@@ -616,11 +601,7 @@ public Queue orderDelayQueue(){
 }
 ```
 
-
-
 #### - - 设置 消息 过期时间
-
-
 
 ![image-20211011185527444](./mq-rabbit.assets/true-image-20211011185527444.png)
 
@@ -843,8 +824,6 @@ public class OrderListener {
 }
 ```
 
-
-
 ### 监听释放库存队列，自动释放库存
 
 ```java
@@ -899,7 +878,7 @@ public class StockListener {
 
 --------------
 
-模拟创建订单：http://127.0.0.1:9210/jf-system-dev/mq/sendOrderMessage
+模拟创建订单：<http://127.0.0.1:9210/jf-system-dev/mq/sendOrderMessage>
 
 查看订单消息投递到订单延迟队列情况
 
@@ -912,8 +891,3 @@ public class StockListener {
 ![image-20220716144848045](./mq-rabbit.assets/true-image-20220716144848045.png)
 
 ![image-20220716144856335](./mq-rabbit.assets/true-image-20220716144856335.png)
-
-
-
-
-

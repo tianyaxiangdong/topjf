@@ -13,13 +13,11 @@
 
 -------
 
-版本格式: 
+版本格式:
 
 1.0.1 `major.minor.patch.preRelease.build`
-    
 
 ## 提交规范
-
 
 **脚本提交**：sh commit.sh
 
@@ -28,7 +26,8 @@
 **web端提交** 简单描述格式：选项: 简要描述
 
 *可选项如下*：
-- break change feature 发布会增加主版本号（如1.1.1 –> 2.0.0）**这个选择位于 feat 选项的：? Are there any breaking changes? **
+
+- break change feature 发布会增加主版本号（如1.1.1 –> 2.0.0）**这个选择位于 feat 选项的：? Are there any breaking changes?**
 - feat: 新的功能，发布版本会增加次版本号（如1.0.0 –> 1.1.0）
 - fix: 修复bug，发布版本会增加修订版本号（如 1.0.0 –> 1.0.1）
 - docs: 只修改文档
@@ -58,7 +57,6 @@
 
 > children: "structure",
 
-
 ## md文件设置frontmatter
 
 ```text
@@ -84,7 +82,7 @@ npm config set registry https://registry.npm.taobao.org
 
 [安装教程 pnpm.io/zh](https://pnpm.io/zh)
 
-- - window 通过 npm 安装
+  - - window 通过 npm 安装
 
 ```shell
 npm install -g pnpm@7.28.0

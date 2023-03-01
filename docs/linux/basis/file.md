@@ -20,7 +20,6 @@ timeline: false
 
 file 【文件】
 
-
 ```shell
 [root@admin home]# file user1
 user1: directory

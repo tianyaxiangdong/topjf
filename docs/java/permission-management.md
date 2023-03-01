@@ -15,7 +15,7 @@ tag:
 ## 一 pom依赖
 
 ```xml
-		<dependency>
+  <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring</artifactId>
             <version>1.9.0</version>
@@ -96,6 +96,7 @@ public class ShiroConfig {
     }
 }
 ```
+
 ## 三 自定义Realm
 
 ```java
@@ -144,6 +145,7 @@ public class Auth2Realm extends AuthorizingRealm {
 }
 
 ```
+
 ## 四 自定义过滤器Auth2Filter
 
 ```java
@@ -236,6 +238,7 @@ public class Auth2Filter extends AuthenticatingFilter {
 }
 
 ```
+
 ## 五 Auth2Token
 
 ```java
@@ -268,6 +271,7 @@ public class Auth2Token implements AuthenticationToken {
 }
 
 ```
+
 ## 六 登录接口
 
 ```java
@@ -312,17 +316,7 @@ private static Validator validator = Validation.buildDefaultValidatorFactory().g
 
 # [Spring Security](https://spring.io/projects/spring-security)
 
-
-
-
-
 # [sa-token](https://sa-token.dev33.cn/)
-
-
-
-
-
-
 
 # 前端
 
@@ -338,15 +332,10 @@ console.log("-------addRoutes-----",routes)
 
 ![image-20210828222133378](./permission-management.assets/true-image-20210828222133378.png)
 
-
-
 自己![image-20210828215739123](./permission-management.assets/true-image-20210828215739123.png)
 
 人人
 
 ![image-20210906144138202](./permission-management.assets/true-image-20210906144138202.png)
 
-
-
 ![image-20210906144324229](./permission-management.assets/true-image-20210906144324229.png)
-

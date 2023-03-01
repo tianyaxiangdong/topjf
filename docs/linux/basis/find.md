@@ -8,7 +8,7 @@ timeline: false
 
 ①、命令名称： find
 
-②、英文原意： 
+②、英文原意：
 
 ③、命令所在路径： /usr/bin/find
 
@@ -16,7 +16,7 @@ timeline: false
 
 ⑤、功能描述： find 指令将从指定目录向下递归地遍历其各个子目录，将满足条件的文件显示在终端。
 
-⑥、语法： 
+⑥、语法：
 
 find 【搜索范围】 【选项】
 
@@ -35,7 +35,6 @@ find 【搜索范围】 【选项】
 - k：KB
 - M：MB
 - G：GB
-
 
 （1）按文件名：根据名称查找/目录下的所有 txt 文件。
 
@@ -104,7 +103,6 @@ find . -type f -mtime 5
 find . -type f -ctime +5 -ctime -10
 ```
 
-
 （9）按权限查找文件
 
 `-perm` 选项可以帮助我们按指定权限查找文件
@@ -112,7 +110,6 @@ find . -type f -ctime +5 -ctime -10
 ```shell
 find . -type f -perm 777
 ```
-
 
 （10）按所有权查找文件
 
@@ -123,7 +120,6 @@ find . -type f -perm 777
 ```shell
 find -type f -user yu
 ```
-
 
 （11）在找到文件后执行命令
 
@@ -159,6 +155,3 @@ find . -type f -atime +5 -exec ls \;
 众所周知，转义字符用于去除单个字符的特殊含义。
 在 Linux 中，反斜杠 \ 用作转义字符。
 所以我们将它用于分号字符。
-
-
-

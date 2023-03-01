@@ -142,7 +142,7 @@ log_format  mylog '{"date_time": "$year-$month-$day $hour:$minutes:$seconds",'
 | $status                            | 200                                                                                                                            | 状态                                                                                                                             |
 | $body_bytes_sent                   | 19                                                                                                                             | 发送的正文字节                                                                                                                        |
 | $http_referer                      | "-"                                                                                                                            | 记录从哪个页面链接访问过来的。<br/>场景：防盗链（某网站通过url引用了你的页面，当用户在浏览器上点击url时，<br/>http请求的头部中会通过referer头部，将该网站当前页面的url带上，<br/>告诉服务器本次请求是由这个页面发起的。） |
-| $http_user_agent                   | "ApiPOST Runtime +https://www.apipost.cn"<br/>"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0" | 记录调用端、访问端浏览器相关信息                                                                                                               |
+| $http_user_agent                   | "ApiPOST Runtime +<https://www.apipost.cn>"<br/>"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0" | 记录调用端、访问端浏览器相关信息                                                                                                               |
 
 ### https配置
 
@@ -172,7 +172,7 @@ server {
   }
   location ^~/wwwvue/ {
       alias   /data/xxxweb/wwwvue/;
-      index	index.html index.htm;
+      index index.html index.htm;
       # vue解决刷新404问题
       try_files $uri $uri/ /$1/index.html last;
   }
@@ -231,6 +231,7 @@ upstream www_server_pool {
 ```
 
 #### 常规配置
+
 ```yaml
 upstream www_server_pools {
     server  172.16.1.16:80 ;
@@ -291,7 +292,7 @@ server {
   }
   location ^~/demovue/ {
       alias   /data/web/demovue/;
-      index	index.html index.htm;
+      index index.html index.htm;
       try_files $uri $uri/ /$1/index.html last;
   }
   location @rewrites {
@@ -300,7 +301,7 @@ server {
   ##########################或者如下################################
   location / {
       root   /usr/share/nginx/html/demovue/;
-      index	index.html index.htm;
+      index index.html index.htm;
       # 解决vue去掉#部署刷新报错
       try_files $uri $uri/ /index.html;
   }
@@ -372,13 +373,13 @@ events {
 }
 
 http {
-	server_tokens off;
+ server_tokens off;
     include       /etc/nginx/mime.types;
     default_type  application/octet-stream;
-	
+ 
     ## $time_iso8601、$time_local
-	log_format  main  '$remote_addr - $remote_user [$time_iso8601] "$request" '
-					  '$status $body_bytes_sent "$http_referer" '
+ log_format  main  '$remote_addr - $remote_user [$time_iso8601] "$request" '
+       '$status $body_bytes_sent "$http_referer" '
                       '"$http_user_agent" "$http_x_forwarded_for"';
 
     log_format  mylog '{"date_time": "$year-$month-$day $hour:$minutes:$seconds",'
@@ -395,25 +396,25 @@ http {
                       '"x_forwarded_for": "$http_x_forwarded_for"'
                       '}';
 
-	
+ 
     sendfile        on;
-	#tcp_nopush     on;
-	keepalive_timeout  65;
+ #tcp_nopush     on;
+ keepalive_timeout  65;
 
-	client_max_body_size 50m;
-	client_body_buffer_size 256k;
-	client_header_timeout 3m;
-	client_body_timeout 3m;
-	proxy_connect_timeout 300s;
-	proxy_read_timeout 300s;
-	proxy_send_timeout 300s;
-	proxy_buffer_size 64k;
-	proxy_buffers 4 32k;
-	proxy_busy_buffers_size 64k;
-	proxy_temp_file_write_size 64k;
-	proxy_ignore_client_abort on;
-	proxy_set_header Host $host;
-	proxy_set_header X-Forwarder-For $remote_addr;
+ client_max_body_size 50m;
+ client_body_buffer_size 256k;
+ client_header_timeout 3m;
+ client_body_timeout 3m;
+ proxy_connect_timeout 300s;
+ proxy_read_timeout 300s;
+ proxy_send_timeout 300s;
+ proxy_buffer_size 64k;
+ proxy_buffers 4 32k;
+ proxy_busy_buffers_size 64k;
+ proxy_temp_file_write_size 64k;
+ proxy_ignore_client_abort on;
+ proxy_set_header Host $host;
+ proxy_set_header X-Forwarder-For $remote_addr;
 
     gzip  on;
     include /etc/nginx/conf.d/*.conf;
@@ -441,11 +442,11 @@ server {
     server_name  www.javacode.cn;
     charset utf-8;
     include /etc/nginx/conf.d/time.txt;
-    access_log  /var/log/nginx/javacode.log  mylog;	# buffer=32k;
+    access_log  /var/log/nginx/javacode.log  mylog; # buffer=32k;
 
     location / {
         root   /usr/share/nginx/html/dist/;
-        index	index.html index.htm;
+        index index.html index.htm;
         # 解决vue去掉#部署刷新报错
         try_files $uri $uri/ /index.html;
     }
@@ -476,19 +477,18 @@ nginx\conf.d\time.txt
 
 ```yaml
 if ($time_iso8601 ~ "^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})") {
-	set $year $1;
-	set $month $2;
-	set $day $3;
-	set $hour $4;
-	set $minutes $5;
-	set $seconds $6;
+ set $year $1;
+ set $month $2;
+ set $day $3;
+ set $hour $4;
+ set $minutes $5;
+ set $seconds $6;
 }
 ```
 
 nginx\html
 
 - 50x.html
-
 
 ```html
 <!DOCTYPE html>

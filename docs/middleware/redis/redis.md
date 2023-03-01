@@ -11,7 +11,6 @@ tag:
 
 <!-- more -->
 
-
 # Redis
 
 参考文献：
@@ -24,7 +23,7 @@ tag:
 
 [https://redis.io/download/](https://redis.io/download/)
 
-wget http://download.redis.io/releases/redis-6.2.4.tar.gz
+wget <http://download.redis.io/releases/redis-6.2.4.tar.gz>
 
 ```ABAP
 5.0.0-14
@@ -32,8 +31,6 @@ wget http://download.redis.io/releases/redis-6.2.4.tar.gz
 6.2.0-7
 7.0.0-4
 ```
-
-
 
 ## 第二步：解压压缩包
 
@@ -44,15 +41,11 @@ chmod +x redis-6.2.4.tar.gz
 tar -zxvf redis-6.2.4.tar.gz -C /usr/local/
 ```
 
-
-
 ## 第三步：yum安装gcc依赖
 
 ```shell
 yum -y install gcc
 ```
-
-
 
 ## 第四步：跳转到redis解压目录下
 
@@ -83,8 +76,6 @@ drwxrwxr-x  11 root root   182 6月   1 2021 tests
 drwxrwxr-x   9 root root  4096 6月   1 2021 utils
 ```
 
-
-
 ## 第五步：编译安装
 
 ```shell
@@ -107,8 +98,6 @@ Hint: It's a good idea to run 'make test' ;)
 make[1]: 离开目录“/usr/local/redis-6.2.4/src”
 ```
 
-
-
 ## 第六步、安装并指定安装目录
 
 ```shell
@@ -126,8 +115,6 @@ Hint: It's a good idea to run 'make test' ;)
     INSTALL redis-cli
 make[1]: 离开目录“/usr/local/redis-6.2.4/src”
 ```
-
-
 
 ## 第七步、启动服务
 
@@ -158,8 +145,6 @@ vim /usr/local/redis-6.2.4/bin/redis.conf
 ./redis-server /usr/local/redis-6.2.4/bin/redis.conf
 ```
 
-
-
 ## 第八步、关闭redis进程
 
 查看redis进程
@@ -168,15 +153,11 @@ ps -ef | grep redis
 
 使用 kill 掉进程
 
-
-
 ## 第九步、创建创建软链接
 
 ~~~bash
 ln -s /usr/local/redis-6.2.4/bin/redis-cli /usr/bin/redis
 ~~~
-
-
 
 ## 第十步、设置开机启动
 
@@ -216,7 +197,5 @@ WantedBy=multi-user.target
 `systemctl enable redis.service`   #设置开机自启动
 
 `systemctl disable redis.service`   #停止开机自启动
-
-
 
 重启服务测试

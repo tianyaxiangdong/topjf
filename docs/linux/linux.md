@@ -15,7 +15,6 @@ timeline: false
 
 - [SRE（运维工程师）成长路线的总结和思考](https://zhuanlan.zhihu.com/p/536895461?utm_id=0)
 
-
 <!-- more -->
 
 ## Linux
@@ -31,7 +30,6 @@ timeline: false
 - [Jenkins自动化部署](./jenkins.md)
 - [命令大全](./basis/command.md)
 
-
 ## 运维监控工具
 
 - [Zabbix 监控平台](./monitoringtools/zabbix.md)
@@ -41,9 +39,6 @@ timeline: false
 Zabbix、Nagios、Open-Falcon这3大开源运维监控工具的比较:
 
 ![](./linux.assets/true-image-20221005131625384.png)
-
-
-
 
 ## ansible
 

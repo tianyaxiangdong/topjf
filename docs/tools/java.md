@@ -19,14 +19,14 @@ tag:
 ### 1、下载JDK
 
 官网下载地址：
+
 - [jdk各个版本下载](https://www.oracle.com/java/technologies/downloads/)
 - [jdk各个版本档案](https://www.oracle.com/java/technologies/downloads/archive/)
-- [jdk各版本下载-百度网盘](https://pan.baidu.com/s/17pkHcX7YrssnEVctveHbHQ)	提取码：1234
+- [jdk各版本下载-百度网盘](https://pan.baidu.com/s/17pkHcX7YrssnEVctveHbHQ) 提取码：1234
 
 ### 2、下载 SSH Secure File Transfer Client 连接工具 或 MobaXterm
 
 A:网上随便兽兽道首；
-
 
 ## 二、解压安装
 
@@ -67,20 +67,23 @@ rpm 　　　　管理套件
 //检查
 java -version
 ```
+
 ### 3.Ubuntu卸载jdk
+
 ```shell
 //查看java安装路径：
-	root@hdas:/home/kong$ which java
+ root@hdas:/home/kong$ which java
 //其他jvm地址：
-	/usr/lib/jvm
+ /usr/lib/jvm
 -----------------------------------
 //删除指令：
-	sudo apt-get remove openjdk*     在输入openj后可以按Tab键查看提示
+ sudo apt-get remove openjdk*     在输入openj后可以按Tab键查看提示
 ```
+
 ```shell
 root@de:/home/af$ sudo apt-get remove openj
-	openjdk-11-jre           openjdk-8-jre-headless
-	openjdk-11-jre-headless  openjfx                  
+ openjdk-11-jre           openjdk-8-jre-headless
+ openjdk-11-jre-headless  openjfx                  
 root@de:/home/af$ sudo apt-get remove openjdk*
 *****
 解压缩后将会空出 583 MB 的空间。
@@ -104,19 +107,25 @@ drwxr-xr-x. 7   10  143 4096 12月 16 2018 jdk
 ```
 
 ## 三、配置环境变量
+
 ==jdk11后没有jre==
+
 ### 打开文件
+
 > vim /etc/profile
 > 按i 开始编辑
 > //保存退出：
 > 先按 ==esc== > 再按 ==shift+:==  然后输入==wq== > 回车键
 
 jdk>=11
+
 ```shell
 export JAVA_HOME=/usr/local/java/jdk-17.0.3
 export PATH=$PATH:$JAVA_HOME/bin
 ```
+
 jdk<11
+
 ```shell
 export JAVA_HOME=/usr/local/java/jdk1.8
 export M2_HOME=/usr/local/java/maven-3.8.3
@@ -126,6 +135,7 @@ export PATH=$PATH:${JAVA_HOME}/bin:${JAVA_HOME}/jre/bin:${M2_HOME}/bin
 ```
 
 ### 刷新配置
+
 > source /etc/profile
 
 ### 查看java
@@ -154,9 +164,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
 ```
 
 ### 编写java代码文件
+
 > vim HelloWorld.java
 
 内容如下
+
 ```java
 public class HelloWorld {
         public static void main(String[] agrs){
@@ -179,6 +191,7 @@ public class HelloWorld {
 //运行结果
 Hello World
 ```
-## docker-centos7 安装jdk、构建jar包镜像
-[🚀地址🚀](https://blog.csdn.net/qq_42476834/article/details/125121395)
 
+## docker-centos7 安装jdk、构建jar包镜像
+
+[🚀地址🚀](https://blog.csdn.net/qq_42476834/article/details/125121395)

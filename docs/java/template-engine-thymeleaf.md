@@ -14,15 +14,11 @@ tag:
 
 ## 1.1. 模板技术
 
-
-
 把页面中的静态数据替换成从后台数据库中的数据。这种操作用jsp就可以实现。但是Spring boot 的架构不推荐使用Jsp，而且支持也不好，所以如果你是用springboot的话，一般使用Freemarker或者Thymeleaf。
-
-
 
 ## 1.2. 简介
 
-官方网站：https://www.thymeleaf.org/index.html
+官方网站：<https://www.thymeleaf.org/index.html>
 
 **Thymeleaf**是用来开发Web和独立环境项目的**现代服务器端Java模板引擎**。
 
@@ -31,8 +27,6 @@ Thymeleaf的主要目标是为您的开发工作流程带来优雅的*自然模�
 借助Spring Framework的模块，可以根据自己的喜好进行自由选择，可插拔功能组件，Thymeleaf是现代HTML5 JVM Web开发的理想选择 - 尽管它可以做的更多。
 
 Springboot官方支持的服务端渲染模板中，并不包含jsp。而是Thymeleaf和Freemarker等，而Thymeleaf与SpringMVC的视图技术，及SpringBoot的自动化配置集成非常完美，几乎没有任何成本，你只用关注Thymeleaf的语法即可。
-
-
 
 ## 1.3. 优势
 
@@ -427,8 +421,6 @@ Thymeleaf中使用`th:if` 或者 `th:unless` ，两者的意思恰好相反。
 
 `th:src`和`th:href`用法一致。
 
-
-
 ## 3.7. 表单操作
 
 ```html
@@ -440,11 +432,9 @@ Thymeleaf中使用`th:if` 或者 `th:unless` ，两者的意思恰好相反。
 </form>
 ```
 
-th:action	表单提交路径
+th:action 表单提交路径
 
-th:value	给表单元素绑定value值
-
-
+th:value 给表单元素绑定value值
 
 ## 3.8. 方法及内置对象
 
@@ -525,8 +515,6 @@ public String test(Model model){
 
  效果：
 
-
-
 ## 3.9. th:inline js内联
 
 模板引擎不仅可以渲染html，也可以对JS中的进行预处理。而且为了在纯静态环境下可以运行，其Thymeleaf代码可以被注释起来：
@@ -546,7 +534,6 @@ public String test(Model model){
 
   因为Thymeleaf被注释起来，因此即便是静态环境下， js代码也不会报错，而是采用表达式后面跟着的默认值。
 
-
 看看页面的源码：
 
 ```html
@@ -561,8 +548,6 @@ public String test(Model model){
 ```
 
 我们的User对象被直接处理为json格式了，非常方便。
-
-
 
 ## 3.10. 页面引用
 

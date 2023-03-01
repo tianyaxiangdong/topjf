@@ -25,9 +25,9 @@ tag:
 
 ```java
 public class Outer {
-	class Inner {
-		static int age;
-	}
+ class Inner {
+  static int age;
+ }
 }
 ```
 
@@ -44,13 +44,13 @@ public class Outer {
 从 Java SE 16 开始，你可以对 instanceof 中的变量值进行修改。
 
 ```java
-	public void learn(Object obj) {
-		if (obj instanceof String s) {
+ public void learn(Object obj) {
+  if (obj instanceof String s) {
             System.out.println(s);
-			s = "JavaGuide";
-			System.out.println(s);
-		}
-	}
+   s = "JavaGuide";
+   System.out.println(s);
+  }
+ }
 ```
 
 ### 预览新特性

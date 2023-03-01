@@ -20,8 +20,6 @@ timeline: false
 
 tar function [options] object1 object2 ...
 
-
-
 ![](./tar.assets/true-image-20220913173324705.png)
 
 ![](./tar.assets/true-image-20220913173343290.png)
@@ -48,7 +46,3 @@ tar -tf test.tar
 ```shell
 tar -xvf test.tar
 ```
-
-
-
-

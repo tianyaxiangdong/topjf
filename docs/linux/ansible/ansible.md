@@ -10,14 +10,11 @@ tag:
 
 <!-- more -->
 
-
 # ansible AD-Hoc命令执行工具
 
 [ansible 中文指南](http://ansible.com.cn/docs/intro.html)
 
 [本节示例文件 提取码：1234](https://pan.baidu.com/s/1fkosURl4HaYZALtSjKvcKg)
-
-
 
 ## 一、ansible AD-Hoc
 
@@ -31,43 +28,41 @@ ansible <host-pattern> [-f forks] [-m module_name] [-a args]
 
 > `-a MODULE_ARGS`　　　#模块的参数，如果执行默认COMMAND的模块，即是命令参数，如： “date”，“pwd”等等
 >
-> `-k`，`--ask-pass`		#ask for SSH password。登录密码，提示输入SSH密码而不是假设基于密钥的验证
+> `-k`，`--ask-pass`  #ask for SSH password。登录密码，提示输入SSH密码而不是假设基于密钥的验证
 >
-> `--ask-su-pass`			#ask for su password。su切换密码
+> `--ask-su-pass`   #ask for su password。su切换密码
 >
-> `-K`，`--ask-sudo-pass`			#ask for sudo password。提示密码使用sudo，sudo表示提权操作
+> `-K`，`--ask-sudo-pass`   #ask for sudo password。提示密码使用sudo，sudo表示提权操作
 >
-> `--ask-vault-pass`		#ask for vault password。假设我们设定了加密的密码，则用该选项进行访问
+> `--ask-vault-pass`  #ask for vault password。假设我们设定了加密的密码，则用该选项进行访问
 >
-> `-B SECONDS`		#后台运行超时时间
+> `-B SECONDS`  #后台运行超时时间
 >
-> `-C`				#模拟运行环境并进行预运行，可以进行查错测试
+> `-C`    #模拟运行环境并进行预运行，可以进行查错测试
 >
-> `-c CONNECTION`			#连接类型使用
+> `-c CONNECTION`   #连接类型使用
 >
-> `-f FORKS`			#并行任务数，默认为5
+> `-f FORKS`   #并行任务数，默认为5
 >
-> `-i INVENTORY`		#指定主机清单的路径，默认为`/etc/ansible/hosts``
+> `-i INVENTORY`  #指定主机清单的路径，默认为`/etc/ansible/hosts``
 >
-> ``--list-hosts`		#查看有哪些主机组
+> ``--list-hosts`  #查看有哪些主机组
 >
-> `-m MODULE_NAME`		#执行模块的名字，默认使用 command 模块，所以如果是只执行单一命令可以不用 -m参数
+> `-m MODULE_NAME`  #执行模块的名字，默认使用 command 模块，所以如果是只执行单一命令可以不用 -m参数
 >
-> `-o`		#压缩输出，尝试将所有结果在一行输出，一般针对收集工具使用
+> `-o`  #压缩输出，尝试将所有结果在一行输出，一般针对收集工具使用
 >
-> `-S`		#用 su 命令
+> `-S`  #用 su 命令
 >
-> `-R SU_USER`		#指定 su 的用户，默认为 root 用户
+> `-R SU_USER`  #指定 su 的用户，默认为 root 用户
 >
-> `-s`		#用 sudo 命令
+> `-s`  #用 sudo 命令
 >
-> `-U SUDO_USER`		#指定 sudo 到哪个用户，默认为 root 用户
+> `-U SUDO_USER`  #指定 sudo 到哪个用户，默认为 root 用户
 >
-> `-T TIMEOUT`		#指定 ssh 默认超时时间，默认为10s，也可在配置文件中修改
+> `-T TIMEOUT`  #指定 ssh 默认超时时间，默认为10s，也可在配置文件中修改
 >
-> `-u REMOTE_USER`		#远程用户，默认为 root 用户
-
-
+> `-u REMOTE_USER`  #远程用户，默认为 root 用户
 
 ### 自己配置
 
@@ -85,20 +80,20 @@ ansible <host-pattern> [-f forks] [-m module_name] [-a args]
 
 ### SSH免密登录
 
-参考：https://blog.csdn.net/qq_42476834/article/details/124766896
+参考：<https://blog.csdn.net/qq_42476834/article/details/124766896>
 
 ```shell
 #1.生成私钥(主-被控制端最好都要生成)
 [root@admin ~]# ssh-keygen -t rsa
 #2.向主机分发私钥
-[root@admin ~]# ssh-copy-id root@192.168.0.8	ssh-copy-id a@192.168.0.8
-[root@admin ~]# ssh-copy-id root@192.168.0.9	ssh-copy-id a@192.168.0.9
-[root@admin ~]# ssh-copy-id root@192.168.0.10	ssh-copy-id a@192.168.0.10
+[root@admin ~]# ssh-copy-id root@192.168.0.8 ssh-copy-id a@192.168.0.8
+[root@admin ~]# ssh-copy-id root@192.168.0.9 ssh-copy-id a@192.168.0.9
+[root@admin ~]# ssh-copy-id root@192.168.0.10 ssh-copy-id a@192.168.0.10
 
 校验：
-ssh root@192.168.0.8 		ssh a@192.168.0.8
-ssh root@192.168.0.9 		ssh a@192.168.0.9
-ssh root@192.168.0.10 		ssh a@192.168.0.10
+ssh root@192.168.0.8   ssh a@192.168.0.8
+ssh root@192.168.0.9   ssh a@192.168.0.9
+ssh root@192.168.0.10   ssh a@192.168.0.10
 ```
 
 查看192.168.0.8用户ssh目录 authorized_keys
@@ -111,8 +106,6 @@ ssh root@192.168.0.10 		ssh a@192.168.0.10
 [web]
 192.168.0.8 ansible_port=22
 ```
-
-
 
 ### 主机连通性测试
 
@@ -141,8 +134,6 @@ ssh root@192.168.0.10 		ssh a@192.168.0.10
 }
 
 ```
-
-
 
 ### command 模块（直接在远程主机上执行命令，并将结果返回本主机）
 
@@ -182,13 +173,13 @@ LISTEN     0      128       [::]:111                   [::]:*
 
 > chdir　　　　　　    # 在执行命令之前，先切换到该目录
 >
-> executable 				# 切换shell来执行命令，需要使用命令的绝对路径
+> executable     # 切换shell来执行命令，需要使用命令的绝对路径
 >
-> free_form 			　	# 要执行的Linux指令，一般使用Ansible的-a参数代替。
+> free_form    　 # 要执行的Linux指令，一般使用Ansible的-a参数代替。
 >
-> creates 					　# 一个文件名，当这个文件存在，则该命令不执行,可以用来做判断
+> creates      　# 一个文件名，当这个文件存在，则该命令不执行,可以用来做判断
 >
-> removes 					# 一个文件名，这个文件不存在，则该命令不执行
+> removes      # 一个文件名，这个文件不存在，则该命令不执行
 
 #### chdir 在执行命令之前，先切换到该目录
 
@@ -243,8 +234,6 @@ test.png
 skipped, since /root/test1.png does not exist
 ```
 
-
-
 ### Shell 模块
 
 shell模块可以在远程主机上调用shell解释器运行命令，支持shell的各种功能，例如管道等。
@@ -256,8 +245,6 @@ root:x:0:0:root:/root:/bin/bash
 operator:x:11:0:operator:/root:/sbin/nologin
 ......
 ```
-
-
 
 ### copy 模块
 
@@ -351,8 +338,6 @@ ansible web -m copy -a 'src=/root/ds.txt dest=/root/ds.txt mode=777'
 I am admin666 to copy test
 ```
 
-
-
 #### 覆盖备份（backup）
 
 ```shell
@@ -393,10 +378,6 @@ test.png
 I am admin666 to backup test
 ```
 
-
-
-
-
 ### file 模块（文件管理）
 
 主要用于设置文件的属性，比如创建文件、创建链接文件、删除文件等。
@@ -417,13 +398,13 @@ I am admin666 to backup test
 >
 > > `directory`：如果目录不存在，就创建目录
 > >
-> > `file`：即使文件不存在，也不会被创建 
+> > `file`：即使文件不存在，也不会被创建
 > >
 > > `link`：创建软链接
 > >
-> > `hard`：创建硬链接 
+> > `hard`：创建硬链接
 > >
-> > `touch`：如果文件不存在，则会创建一个新的文件，如果文件或目录已存在，则更新其最后修改时间 
+> > `touch`：如果文件不存在，则会创建一个新的文件，如果文件或目录已存在，则更新其最后修改时间
 > >
 > > `absent`：删除目录、文件或者取消链接文件
 
@@ -459,15 +440,13 @@ drwxr-xr-x. 2 root root    6 7月  28 14:28 app
 -rw-r--r--. 1 root root    0 7月  28 13:44 test.png
 ```
 
-
-
 #### 创建链接文件
 
 为test.jpg创建链接
 
 link：创建软链接
 
-hard：创建硬链接 
+hard：创建硬链接
 
 force：需要在两种情况下强制创建软链接，一种是源文件不存在，但之后会建立的情况下；另一种是目标软链接已存在，需要先取消之前的软链，然后创建新的软链，有两个选项：yes|no
 
@@ -516,10 +495,6 @@ lrwxrwxrwx. 1 root root   14 7月  28 14:39 test2.png -> /root/test.png
 -rw-r--r--. 2 root root    0 7月  28 13:44 test.png
 ```
 
-
-
-
-
 #### 删除文件
 
 ```shell
@@ -538,8 +513,6 @@ lrwxrwxrwx. 1 root root   14 7月  28 14:39 test2.png -> /root/test.png
 192.168.0.8 | FAILED | rc=2 >>
 ls: 无法访问/root/test3.png: 没有那个文件或目录non-zero return code
 ```
-
-
 
 ### fetch 模块（复制远程文件到本地主机）
 
@@ -566,18 +539,16 @@ ls: 无法访问/root/test3.png: 没有那个文件或目录non-zero return code
 
 我们可以在本机上查看一下文件是否复制成功。要注意，文件保存的路径是我们设置的接收目录下的`被管制主机ip`目录下
 
-
-
 ### cron 模块（计划任务）
 
 用于管理`cron`计划任务的。
  　其使用的语法跟我们的`crontab`文件中的语法一致，同时，可以指定以下选项：
 
-> `day=` #日应该运行的工作( 1-31, *, */2, )
+> `day=` #日应该运行的工作( 1-31, *,*/2, )
 >
-> `hour=` # 小时 ( 0-23, *, */2, )
+> `hour=` # 小时 ( 0-23, *,*/2, )
 >
-> `minute=` #分钟( 0-59, *, */2, )
+> `minute=` #分钟( 0-59, *,*/2, )
 >
 > `month=` # 月( 1-12, *, /2, )
 >
@@ -625,8 +596,6 @@ ls: 无法访问/root/test3.png: 没有那个文件或目录non-zero return code
 -rwxr-xr-x. 1 root root 110160 6月  23 2020 /sbin/ntpdate
 ```
 
-
-
 #### ② 删除计划任务
 
 查看计划任务列表
@@ -665,8 +634,6 @@ ls: 无法访问/root/test3.png: 没有那个文件或目录non-zero return code
 
 ```
 
-
-
 ### yum 模块（用于软件的安装）
 
 顾名思义，该模块主要用于软件的安装。
@@ -685,8 +652,6 @@ ls: 无法访问/root/test3.png: 没有那个文件或目录non-zero return code
 > `disablerepo`　　#临时禁止使用yum库。 只用于安装或更新时。
 >
 > `enablerepo`　　#临时使用的yum库。只用于安装或更新时。
-
-
 
 ```shell
 
@@ -708,8 +673,6 @@ ls: 无法访问/root/test3.png: 没有那个文件或目录non-zero return code
     ]
 }
 ```
-
-
 
 ### service 模块（服务程序的管理）
 
@@ -760,7 +723,7 @@ LISTEN     0      128          *:80                       *:*
     "changed": true, 
     "name": "nginx", 
     "state": "stopped", 
-	……
+ ……
 }
 ```
 
@@ -771,8 +734,6 @@ LISTEN     0      128          *:80                       *:*
 192.168.0.8 | FAILED | rc=1 >>
 non-zero return code
 ```
-
-
 
 ### user 模块（管理用户账号）
 
@@ -809,8 +770,6 @@ non-zero return code
 > `system`　　# 当创建一个用户，设置这个用户是系统用户。这个设置不能更改现有用户
 >
 > `uid`　　# 指定用户的uid
-
-
 
 #### ① 添加一个用户并指定其 uid
 
@@ -882,8 +841,7 @@ non-zero return code
 >
 > `system=`　　#设置值为`yes`，表示创建为系统组
 
-
- #### ① 创建组
+#### ① 创建组
 
 ```dart
 [root@admin ~]# ansible web -m group -a 'name=a2 gid=12222'
@@ -910,7 +868,8 @@ a2:x:12222:
 ```
 
 可以看出，我们的组已经创建成功了。
- #### ② 删除组
+
+#### ② 删除组
 
 ```shell
 [root@admin ~]# ansible web -m group -a 'name=a2 state=absent'
@@ -951,7 +910,7 @@ non-zero return code
 
 date >> /root/disk_total.log
 df -lh >> /root/disk_total.log
-	
+ 
 [root@admin ~]# chmod +x /root/df.sh 
 ```
 
@@ -990,8 +949,6 @@ tmpfs
 ```
 
 可以看出已经执行成功了。
-
-
 
 ### setup 模块（收集被管理主机的信息）
 
@@ -1089,4 +1046,3 @@ Swap:          8063           0        8063
 [root@admin facts]# cat 192.168.0.8
 {"ansible_facts": {"ansible_memfree_mb": 7064, "ansible_memory_mb": {"nocache": {"free": 7454, "used": 348}, "real": {"free": 7064, "total": 7802, "used": 738}, "swap": {"cached": 0, "free": 8063, "total": 8063, "used": 0}}, "ansible_memtotal_mb": 7802, "discovered_interpreter_python": "/usr/bin/python"}, "changed": false}
 ```
-

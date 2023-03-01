@@ -27,5 +27,3 @@ chown -R root:kong demo.txt
 chown -R :root demo.txt
 chgrp –R root demo.txt
 ```
-
-

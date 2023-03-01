@@ -17,21 +17,15 @@ tag:
 - [MySQL安装参考](https://note-jf.github.io/database/mysql/install.html)
 - [Nginx参考](https://note-jf.github.io/tools/docker/docker-install-mysql-redis-nginx-nacos-mq-es.html)、[Nginx配置](https://note-jf.github.io/middleware/nginx.html)
 
-
-
 ## tar 安装
 
 [官网](https://www.zabbix.com/cn)
 
-https://cdn.zabbix.com/zabbix/sources/stable/
+<https://cdn.zabbix.com/zabbix/sources/stable/>
 
-https://www.zabbix.com/download_sources
-
-
+<https://www.zabbix.com/download_sources>
 
 ### 安装
-
-
 
 1、解压安装包
 
@@ -63,13 +57,9 @@ chmod -R 775 /usr/lib/zabbix
 chown -R zabbix:zabbix /usr/lib/zabbix
 ```
 
-
-
 3、创建数据库
 
 **参考下面的--配置 zabbix 数据库**
-
-
 
 4、编译安装
 
@@ -109,13 +99,9 @@ make
 make install
 ```
 
-
-
 ### 配置 zabbix 数据库
 
 数据库选择mysql5.7.38版本 [MySQL安装参考](https://note-jf.github.io/database/mysql/install.html) ；如果选用5.7.25，zabbix 6.2在启动的时候会提示数据库版本过低；
-
-
 
 ```shell
 mysql -uroot -p
@@ -141,7 +127,7 @@ flush privileges;
 quit;
 ```
 
--  导入初始架构和数据，导入顺序不能乱，否则会报错
+- 导入初始架构和数据，导入顺序不能乱，否则会报错
 
 ```shell
 mysql -uroot -p
@@ -166,8 +152,6 @@ flush privileges;
 quit;
 ```
 
-
-
 ### 配置 zabbix_server
 
 ```shell
@@ -187,7 +171,7 @@ LogSlowQueries=3000
 StatsAllowedIP=127.0.0.1
 ```
 
-7、创建SERVICE文件内容 
+7、创建SERVICE文件内容
 
 vim /usr/lib/systemd/system/zabbix-server.service
 
@@ -205,8 +189,6 @@ User=zabbix
 WantedBy=multi-user.target
 ```
 
-
-
 - 启动服务
 
 ```
@@ -215,39 +197,9 @@ systemctl restart zabbix-server
 systemctl status zabbix-server
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
 ### 部署zabbix UI
 
-
-
-
-
-
-
 ### 部署zabbix_agentd服务
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## docker 安装
 
@@ -260,8 +212,6 @@ systemctl status zabbix-server
 - Zabbix proxy
   - Zabbix proxy， 支持 MySQL 数据库 - [zabbix/zabbix-proxy-mysql](https://hub.docker.com/r/zabbix/zabbix-proxy-mysql/)
 - Zabbix Java 网关 - [zabbix/zabbix-java-gateway](https://hub.docker.com/r/zabbix/zabbix-java-gateway/)
-
-
 
 **示例 1**
 
@@ -341,8 +291,6 @@ docker run --name zabbix-web-nginx-mysql -t \
 ```
 
 Zabbix web 界面实例将 80/TCP 端口（HTTP）暴露给主机。
-
-
 
 docker-compose_v3_centos_mysql_latest.yaml
 
@@ -797,4 +745,3 @@ secrets:
 #  server-key.pem:
 #    file: ./env_vars/.DB_KEY_FILE
 ```
-

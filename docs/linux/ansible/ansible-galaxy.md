@@ -16,8 +16,6 @@ tag:
 
 [本节示例文件 提取码：1234](https://pan.baidu.com/s/1fkosURl4HaYZALtSjKvcKg)
 
-
-
 ## 语法
 
 [ansible-galaxy](https://galaxy.ansible.com/) ：是一个免费的用于查找，下载，评论各种社区开发的 Ansible 角色
@@ -54,10 +52,3 @@ optional arguments:
   - role setup 设置
   - role info 信息
   - role install 安装
-
-
-
-
-
-
-

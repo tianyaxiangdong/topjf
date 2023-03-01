@@ -10,7 +10,6 @@ tag:
 
 <!-- more -->
 
-
 ![img](./data-structure.assets/true-clip_image002.jpg)
 
 ## 数组基础
@@ -61,31 +60,31 @@ Capacity：容量
 
 ```java
 class MyArray{
-	//私有化数据
-	private int[] data;
-	//定义长度
-	private int size;
-	//构造函数，传入数组的容量capacity构造array
-	public MyArray(int capacity){
-		data=new int[capacity];
-		size=0;
-	}
-	//无参构造函数，默认数组的容量capacity=10
-	public MyArray(){
-		this(10);
-	}
-	//获取数组中的元素个数
-	public int getSize(){
-		return size;
-	}
-	//获取数组容量
-	public int getCapacity(){
-		return data.length;
-	}
-	//返回数组是为空  不是 为空   非空    为空  true
-	public boolean isEmpty(){
-		return size==0;
-	}
+ //私有化数据
+ private int[] data;
+ //定义长度
+ private int size;
+ //构造函数，传入数组的容量capacity构造array
+ public MyArray(int capacity){
+  data=new int[capacity];
+  size=0;
+ }
+ //无参构造函数，默认数组的容量capacity=10
+ public MyArray(){
+  this(10);
+ }
+ //获取数组中的元素个数
+ public int getSize(){
+  return size;
+ }
+ //获取数组容量
+ public int getCapacity(){
+  return data.length;
+ }
+ //返回数组是为空  不是 为空   非空    为空  true
+ public boolean isEmpty(){
+  return size==0;
+ }
 }
 
 ```
@@ -98,21 +97,17 @@ class MyArray{
 
 ![img](./data-structure.assets/true-clip_image017.jpg)
 
- 
-
 ```java
-	//向所有元素后添加一个新元素
-	public void addLast(int e){
-		if(size==data.length)
-			throw new IllegalArgumentException("addlast faild,array is full");
-//		data[size++]=e;不便于阅读
-		data[size]=e;
-		size++;
-	}
+ //向所有元素后添加一个新元素
+ public void addLast(int e){
+  if(size==data.length)
+   throw new IllegalArgumentException("addlast faild,array is full");
+//  data[size++]=e;不便于阅读
+  data[size]=e;
+  size++;
+ }
 
 ```
-
- 
 
 #### V1.2版本：向指定的位置插入指定的元素，提供一个addFirst
 
@@ -122,23 +117,21 @@ class MyArray{
 
 ![img](./data-structure.assets/true-clip_image023.jpg)
 
- 
-
 ![img](./data-structure.assets/true-clip_image025.jpg)
 
 代码写完后需要修改刚才的增加函数
 
 ```java
-	//向所有元素后添加一个新元素
-	public void addLast(int e){
-//		if(size==data.length)
-//			throw new IllegalArgumentException("addlast faild,array is full");
-////		data[size++]=e;不便于阅读
-//		data[size]=e;
-//		size++;
+ //向所有元素后添加一个新元素
+ public void addLast(int e){
+//  if(size==data.length)
+//   throw new IllegalArgumentException("addlast faild,array is full");
+////  data[size++]=e;不便于阅读
+//  data[size]=e;
+//  size++;
         add(size, e);
 
-	}
+ }
    
 
     // 在所有元素前添加一个新元素
@@ -253,8 +246,6 @@ class MyArray{
 理由：
 
 ![img](./data-structure.assets/true-clip_image027.jpg)
-
- 
 
 代码改造：Array
 
@@ -480,21 +471,21 @@ public class Main {
 
 ```java
 // 在index索引的位置插入一个新元素e
- 	public void add(int index, E e){
+  public void add(int index, E e){
 
- 	    if(index < 0 || index > size)
- 	        throw new IllegalArgumentException("Add failed. Require index >= 0 and index <= size.");
+      if(index < 0 || index > size)
+          throw new IllegalArgumentException("Add failed. Require index >= 0 and index <= size.");
 
- 	    if(size == data.length)
- 	        resize(2 * data.length);
+      if(size == data.length)
+          resize(2 * data.length);
 
- 	    for(int i = size - 1; i >= index ; i --)
- 	        data[i + 1] = data[i];
+      for(int i = size - 1; i >= index ; i --)
+          data[i + 1] = data[i];
 
- 	    data[index] = e;
+      data[index] = e;
 
- 	    size ++;
- 	}
+      size ++;
+  }
 
     // 将数组空间的容量变成newCapacity大小
     private void resize(int newCapacity){
@@ -554,133 +545,133 @@ import java.util.Arrays;
 //my 我的   array  数组  list 列表
 //我的数组增强功能后的列表类--线性数组集合类
 class MyArrayList{
-	//声明要准备好空间，等待后面存入元素
-	private int[] data;
-	//定义元素个数
-	private int size;
-	//定义一个初始化数组容量大小
-	private int capacity=16;
-	//new的时候保证初始化空间与个数
-	public MyArrayList(int capacity) {
-		//更改初始化的长度
-		//健壮性判断
-		if(capacity<=0) {
-			data=new int[this.capacity];
-		}else {
-			data=new int[capacity];
-		}
-		//由于现在没有存储元素，因此元素个数=0
-		this.size=0;
-	}
-	//无参构造函数，默认数组的容量capacity=10
-	public MyArrayList(){
-		//调用其他的带参数的对应构造函数
-		this(10);
-	}
-	public int getSize() {
-		return size;
-	}
-	//获取数组容量--数组定义后开辟的空间个数
-	public int getCapacity(){
-		//数组在初始化后就开辟的空间个数，只不过里面目前有没有元素。不清楚
-		return data.length;
-	}
-	//返回数组"是为空"  false isEmpty-不为空   true isEmpty-为空
-	public boolean isEmpty(){
-		return size==0;
-	}
-	//在数组末尾增加元素
-	//last 最后  e-element:元素
-	//MyArrayList [data=[1, 2, 3, 0, 0, 0, 0, 0, 0, 0]]
-//	public void addLast(int e) {
-//		//判断一下当前的空间是否已经容量满员。如果已经满员了，就不应该执行增加操作了
-//		if(size==data.length) {
-//			//一旦出现问题，throw 抛出去一个问题 xxxException  exception：异常，问题
-//			//后面的java代码不会再继续执行
-//			throw new RuntimeException("容量已满");
-//		}
-//		//size当前位置增加一个元素（赋值一个元素）
-//		data[size]=e;
-//		//size往后走一位
-//		size++;
-//	}
-	
-	public void addLast(int e) {
-		insert(size,e);
-	}
-	public void addFirst(int e) {
-		insert(0,e);
-	}
-	//插入元素  index=插入的位置--数组元素角标
-	//index-0  +++   e-element：元素
-	public void insert(int index,int e) {
-		//判断一下当前的空间是否已经容量满员。如果已经满员了，就不应该执行增加操作了
-		if(size==data.length) {
-			//一旦出现问题，throw 抛出去一个问题 xxxException  exception：异常，问题
-			//后面的java代码不会再继续执行
-//			throw new RuntimeException("容量已满");
-			resize(2*data.length);
-		}
-		//插歪了，让代码停止执行
-		if(index < 0 || index > size) {
-			throw new IllegalArgumentException("Add failed. Require index >= 0 and index <= size.");
-		}
-		//MyArrayList [data=[1, 2, 3, 0, 0, 0, 0, 0, 0, 0]]
-		//size=3
-		//i=size-1=2  data[2]=3  
-		//i-- i>=index  index=0  
-		//2 1 0:存在元素要依次往后走一位  e=data[index=0]
-		for(int i=size-1;i>=index;i--) {
-			data[i+1]=data[i];
-		}
-		//剩下的[index]=e
-		data[index]=e;
-		//由于是增加了一个元素
-		size++;
-		
-		if(size==data.length) {
-			resize(2*data.length);
-		}
-	}
-	
-	//获取元素  index-0~size-1
-	public int get(int index) {
-		//查歪了
-		if(index < 0 || index > size-1) {
-			throw new IllegalArgumentException("Add failed. Require index >= 0 and index <= size.");
-		}
-		return data[index];
-	}
-	
-	//修改制定位置的元素
-	public void set(int index,int e) {
-		//查歪了
-		if(index < 0 || index > size-1) {
-			throw new IllegalArgumentException("Add failed. Require index >= 0 and index <= size.");
-		}
-		data[index]=e;
-	}
-	
-	//查看数组是否包含元素
-	public boolean contains(int e) {
-		//从0角标开始往后遍历，直到size-1结束
-		for(int i=0;i<size;i++) {
-			if(data[i]==e) {
-				return true;
-			}
-		}
-		return false;
-	}
-	//获取索引角标
-	//如果不在范围内，返回-1
-	public int getIndex(int e) {
-		for(int i=0;i<size;i++) {
-			if(data[i]==e) {
-				return i;
-			}
-		}
-		return -1;
-	}
+ //声明要准备好空间，等待后面存入元素
+ private int[] data;
+ //定义元素个数
+ private int size;
+ //定义一个初始化数组容量大小
+ private int capacity=16;
+ //new的时候保证初始化空间与个数
+ public MyArrayList(int capacity) {
+  //更改初始化的长度
+  //健壮性判断
+  if(capacity<=0) {
+   data=new int[this.capacity];
+  }else {
+   data=new int[capacity];
+  }
+  //由于现在没有存储元素，因此元素个数=0
+  this.size=0;
+ }
+ //无参构造函数，默认数组的容量capacity=10
+ public MyArrayList(){
+  //调用其他的带参数的对应构造函数
+  this(10);
+ }
+ public int getSize() {
+  return size;
+ }
+ //获取数组容量--数组定义后开辟的空间个数
+ public int getCapacity(){
+  //数组在初始化后就开辟的空间个数，只不过里面目前有没有元素。不清楚
+  return data.length;
+ }
+ //返回数组"是为空"  false isEmpty-不为空   true isEmpty-为空
+ public boolean isEmpty(){
+  return size==0;
+ }
+ //在数组末尾增加元素
+ //last 最后  e-element:元素
+ //MyArrayList [data=[1, 2, 3, 0, 0, 0, 0, 0, 0, 0]]
+// public void addLast(int e) {
+//  //判断一下当前的空间是否已经容量满员。如果已经满员了，就不应该执行增加操作了
+//  if(size==data.length) {
+//   //一旦出现问题，throw 抛出去一个问题 xxxException  exception：异常，问题
+//   //后面的java代码不会再继续执行
+//   throw new RuntimeException("容量已满");
+//  }
+//  //size当前位置增加一个元素（赋值一个元素）
+//  data[size]=e;
+//  //size往后走一位
+//  size++;
+// }
+ 
+ public void addLast(int e) {
+  insert(size,e);
+ }
+ public void addFirst(int e) {
+  insert(0,e);
+ }
+ //插入元素  index=插入的位置--数组元素角标
+ //index-0  +++   e-element：元素
+ public void insert(int index,int e) {
+  //判断一下当前的空间是否已经容量满员。如果已经满员了，就不应该执行增加操作了
+  if(size==data.length) {
+   //一旦出现问题，throw 抛出去一个问题 xxxException  exception：异常，问题
+   //后面的java代码不会再继续执行
+//   throw new RuntimeException("容量已满");
+   resize(2*data.length);
+  }
+  //插歪了，让代码停止执行
+  if(index < 0 || index > size) {
+   throw new IllegalArgumentException("Add failed. Require index >= 0 and index <= size.");
+  }
+  //MyArrayList [data=[1, 2, 3, 0, 0, 0, 0, 0, 0, 0]]
+  //size=3
+  //i=size-1=2  data[2]=3  
+  //i-- i>=index  index=0  
+  //2 1 0:存在元素要依次往后走一位  e=data[index=0]
+  for(int i=size-1;i>=index;i--) {
+   data[i+1]=data[i];
+  }
+  //剩下的[index]=e
+  data[index]=e;
+  //由于是增加了一个元素
+  size++;
+  
+  if(size==data.length) {
+   resize(2*data.length);
+  }
+ }
+ 
+ //获取元素  index-0~size-1
+ public int get(int index) {
+  //查歪了
+  if(index < 0 || index > size-1) {
+   throw new IllegalArgumentException("Add failed. Require index >= 0 and index <= size.");
+  }
+  return data[index];
+ }
+ 
+ //修改制定位置的元素
+ public void set(int index,int e) {
+  //查歪了
+  if(index < 0 || index > size-1) {
+   throw new IllegalArgumentException("Add failed. Require index >= 0 and index <= size.");
+  }
+  data[index]=e;
+ }
+ 
+ //查看数组是否包含元素
+ public boolean contains(int e) {
+  //从0角标开始往后遍历，直到size-1结束
+  for(int i=0;i<size;i++) {
+   if(data[i]==e) {
+    return true;
+   }
+  }
+  return false;
+ }
+ //获取索引角标
+ //如果不在范围内，返回-1
+ public int getIndex(int e) {
+  for(int i=0;i<size;i++) {
+   if(data[i]==e) {
+    return i;
+   }
+  }
+  return -1;
+ }
     // 从数组中删除index位置的元素, 返回删除的元素
     public int remove(int index){
         if(index < 0 || index >= size)
@@ -694,35 +685,35 @@ class MyArrayList{
 //        1 2 3 4 0 0 0 0 size:4 length:8
 //        1 2 3 0         size:3 length:4
         if(size==data.length/2-1) {
-        	delResize();
+         delResize();
         }
         
         return ret;
     }
-	
-	//扩容操作 re再一次 size大小 resize再一次确定大小
-	//2*data.length
-	public 	void resize(int newCapacity) {
-		int[] newData=new int[newCapacity];
-		//把原来少元素的数组赋值给长的数组
-		for(int i=0;i<data.length;i++) {
-			newData[i]=data[i];
-		}
-		data=newData;//数组名字指向的是整个数组的内存起始地址
-	}
-	//缩容操作
-	public void delResize() {
-		int[] newData=new int[data.length/2];
-		for(int i=0;i<newData.length;i++) {
-			newData[i]=data[i];
-		}
-		data=newData;
-	}
-	
-	@Override
-	public String toString() {
-		return "MyArrayList [data=" + Arrays.toString(data) + "]";
-	}
+ 
+ //扩容操作 re再一次 size大小 resize再一次确定大小
+ //2*data.length
+ public  void resize(int newCapacity) {
+  int[] newData=new int[newCapacity];
+  //把原来少元素的数组赋值给长的数组
+  for(int i=0;i<data.length;i++) {
+   newData[i]=data[i];
+  }
+  data=newData;//数组名字指向的是整个数组的内存起始地址
+ }
+ //缩容操作
+ public void delResize() {
+  int[] newData=new int[data.length/2];
+  for(int i=0;i<newData.length;i++) {
+   newData[i]=data[i];
+  }
+  data=newData;
+ }
+ 
+ @Override
+ public String toString() {
+  return "MyArrayList [data=" + Arrays.toString(data) + "]";
+ }
 
 }
 
@@ -880,8 +871,6 @@ public class Array<E> {
 }
 
 ```
-
-
 
 ### 数组时间复杂度算法简单分析
 
@@ -1160,7 +1149,7 @@ Stack是一种线性结构
 
 ![img](./data-structure.assets/true-clip_image092.jpg)
 
-### 小结：
+### 小结
 
 1，   栈是一种后进先出的数据结构
 
@@ -1213,8 +1202,6 @@ Stack是一种线性结构
 ![img](./data-structure.assets/true-clip_image112.jpg)
 
 最后C函数在执行完成之后，就会回到B2继续执行，然后执行完成，B2出栈，剩下一个A2，继续执行A函数的内容最后A2出栈函数全部执行完毕
-
- 
 
 ### 栈的基本实现
 
@@ -1487,8 +1474,6 @@ public class Main {
 
 ```
 
- 
-
 ### 栈的时间复杂度分析
 
 ### Stack案例实操（编译器对括号的匹配报错机制）
@@ -1554,7 +1539,7 @@ class Solution {
 
 ## 队列
 
-### 定义:
+### 定义
 
 队列是一种线性结构
 
@@ -2019,8 +2004,6 @@ public class Main {
 
 ```
 
-
-
 ## 链表
 
 前瞻课程：
@@ -2079,8 +2062,6 @@ public class LinkedList<E> {
 
 ![img](./data-structure.assets/true-clip_image170.jpg)
 
- 
-
 将head指向node
 
 ![img](./data-structure.assets/true-clip_image172.jpg)
@@ -2096,8 +2077,6 @@ Head节点处有一个prev节点指标
 ![img](./data-structure.assets/true-clip_image176.jpg)
 
 把这个prev插入的需要插入的节点:前一个节点
-
- 
 
 ![img](./data-structure.assets/true-clip_image178.jpg)
 
@@ -2437,8 +2416,6 @@ public class Main {
 
 ```
 
- 
-
 ### 从链表中删除元素
 
 ![img](./data-structure.assets/true-clip_image187.jpg)
@@ -2501,8 +2478,6 @@ public class Main {
 ![img](./data-structure.assets/true-clip_image193.jpg)总结
 
 ![img](./data-structure.assets/true-clip_image195.jpg)
-
- 
 
 ### 使用链表实现栈
 
@@ -2588,7 +2563,7 @@ public class LinkedListQueue<E> implements Queue<E> {
         Node retNode = head;
         head = head.next;
         retNode.next = null;
-				//判断一下整个队列为空的情况
+    //判断一下整个队列为空的情况
         if(head == null)
             tail = null;
         size --;
@@ -2633,8 +2608,6 @@ public class LinkedListQueue<E> implements Queue<E> {
 
 ```
 
- 
-
 ```java
 package com.mylinkedlist;
 
@@ -2658,11 +2631,11 @@ public class LinkedList2<E> {
         }
 
 
-		@Override
-		public String toString() {
-//			return e.toString();
-			return "Node [e=" + e + ", next=" + next + "]";
-		}
+  @Override
+  public String toString() {
+//   return e.toString();
+   return "Node [e=" + e + ", next=" + next + "]";
+  }
 
       
     }
@@ -2702,20 +2675,18 @@ public class LinkedList2<E> {
 
     // 在链表头添加新的元素e
     public void addHead(E e){
-    	insert(0, e);
+     insert(0, e);
     }
 
     // 在链表末尾添加新的元素e
     public void addLast(E e){
-    	insert(size, e);
+     insert(size, e);
     }
 
-	@Override
-	public String toString() {
-		return "LinkedList2 [dummyHead=" + dummyHead + ", size=" + size + "]";
-	}
+ @Override
+ public String toString() {
+  return "LinkedList2 [dummyHead=" + dummyHead + ", size=" + size + "]";
+ }
 
 }
 ```
-
- 

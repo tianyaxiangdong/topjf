@@ -12,18 +12,12 @@ tag:
 
 # ansible安装mysql
 
-
-
-
-
 ### 设置主机清单 `vim /etc/ansible/hosts`
 
 ```
 [mysql]
 192.168.0.[8:10]
 ```
-
-
 
 ### ① 在`roles`目录下生成对应的目录结构
 
@@ -57,7 +51,7 @@ mysql/
 
 ### ② 定义 tasks 任务文件
 
-wget http://repo.mysql.com/mysql57-community-release-el7-10.noarch.rpm
+wget <http://repo.mysql.com/mysql57-community-release-el7-10.noarch.rpm>
 
 vim /etc/ansible/roles/mysql/tasks/main.yml
 
@@ -90,8 +84,6 @@ vim /etc/ansible/roles/mysql/tasks/main.yml
   shell: rm -rf /opt/mysql-17_linux-x64_bin.rpm
 ```
 
-
-
 ### ③ 编写安装 shell 脚本
 
 vim files/uni_mysql.sh
@@ -103,8 +95,6 @@ vim files/uni_mysql.sh
 # 卸载
 rpm -e --nodeps 
 ```
-
-
 
 ### ③ 定义 mysql 剧本文件
 
@@ -133,10 +123,3 @@ ansible-playbook mysql.yml
 [root@admin roles]# ansible mysql -m shell -a 'java -version'
 
 ```
-
-
-
-
-
-
-

@@ -14,7 +14,7 @@ tag:
 
 ## 1,环境准备--技术选型
 
-开发环境: 
+开发环境:
 
 Linux UOS --> idea2019.3 --> maven3.6.3 ---> jdk1.8---> redis5.0---> nginx--->docker--->k8s
 
@@ -31,15 +31,13 @@ SpringBoot2.0、SpringCloud、 Mybatis- Plus、Vue组件化、阿里云对象存
 
 ## 2,模块划分
 
-
-
 ## 3,程序安装
 
 # 二、创建项目
 
 ## 1、码云创建仓库
 
-https://gitee.com/iskong/yumall.git
+<https://gitee.com/iskong/yumall.git>
 
 ```xml
 <module>yumall-coupon</module>
@@ -70,13 +68,13 @@ https://gitee.com/iskong/yumall.git
 
 ## 3、人人开源脚手架（码云）
 
-### 3-1、下载：
+### 3-1、下载
 
 renren-fast  | renren-fast-vue |  renren-generator
 
-https://gitee.com/renrenio
+<https://gitee.com/renrenio>
 
-运行renren-fast 
+运行renren-fast
 
 配置sql——》yumall_admin
 
@@ -97,9 +95,9 @@ npm ERR! A complete log of this run can be found in:
 npm ERR!     /home/kong8/.npm/_logs/2020-12-12T11_52_46_106Z-debug.log
 ```
 
-自己下载：https://chromedriver.storage.googleapis.com/2.27/chromedriver_linux64.zip 解压到项目的 》
+自己下载：<https://chromedriver.storage.googleapis.com/2.27/chromedriver_linux64.zip> 解压到项目的 》
 
-​	》》renren-fast-vue/node_modules/chromedriver
+​ 》》renren-fast-vue/node_modules/chromedriver
 
 ```bash
 kong8@kong:/data/code/cloud/yumall2/renren-fast-vue$ npm install
@@ -110,7 +108,7 @@ up to date in 16.663s
 
 开始运行：npm run dev
 
-https://www.python.org/download/releases/2.7/
+<https://www.python.org/download/releases/2.7/>
 
 ```
 npm run dev-------------
@@ -120,15 +118,11 @@ Module build failed: Error: ENOENT: no such file or directory, scandir '/data/co
 
 #### 解决 node-sass/vendor
 
-
-
 sudo npm rebuild node-sass
 
 npm install -g npm@7.12.1
 
 vsc：ctrl+~  终端输入 npm install
-
-
 
 # 三、逆向工程 mybatisplus、dao、controller、service、pojo
 
@@ -138,7 +132,7 @@ vsc：ctrl+~  终端输入 npm install
 
 ```java
 Controller.java.vm:
-	 /**
+  /**
      * 保存
      */
     @RequestMapping("/save")
@@ -159,8 +153,6 @@ SpringCloud- Gateway: API 网关(webflux 编程模式)
 SpringCloud- Sleuth: 调用链监控
 SpringCloud-Alibaba- Seata: 原Fescar,即分布式事务解决方案
 ```
-
-
 
 ### 人人vue+fast,路由配置
 
@@ -334,14 +326,14 @@ public void removeMenuByIds(List<Long> asList) {
     baseMapper.deleteBatchIds(asList);
 }
 
-	/**
-	 * 是否显示[0-不显示，1显示]
-	 */
-	@TableLogic(value = "1", delval = "0")
-	private Integer showStatus;
+ /**
+  * 是否显示[0-不显示，1显示]
+  */
+ @TableLogic(value = "1", delval = "0")
+ private Integer showStatus;
 ```
 
-http://localhost:50000/api/product/category/delete
+<http://localhost:50000/api/product/category/delete>
 
 body -> raw [1433]
 
@@ -388,8 +380,6 @@ void updateCategory(@Param("catId") Long catId, @Param("name") String name);
 
 ![image-20210603175928677](./spring-cloud-alibaba-note-basis.assets/true-image-20210603175928677.png)
 
-
-
 ---------
 
 ## 2 品牌管理
@@ -401,8 +391,6 @@ brand/update/status
 ### 2.2 文件上传OSS
 
 ![image-20210601202019399](./spring-cloud-alibaba-note-basis.assets/true-image-20210601202019399.png)
-
-
 
 ### 2.3 更新【数据一致性】
 
@@ -435,10 +423,6 @@ public void updateBrand(Long brandId, String name) {
     this.update(relationEntity, new UpdateWrapper<CategoryBrandRelationEntity>().eq("brand_id", brandId));
 }
 ```
-
-
-
-
 
 ## 3 一次性倒入目录菜单SQL——menu
 
@@ -481,8 +465,6 @@ if (!StringUtils.isEmpty(key)) {
 #### 4.1.3 新增属性分组
 
 /product/attrgroup/save
-
-
 
 -----
 
@@ -549,8 +531,6 @@ public void updateAttr(AttrVo attr) {
 }
 ```
 
-
-
 #### 4.2.3 保存属性
 
 /product/attr/save
@@ -611,8 +591,6 @@ public void updateAttr(AttrVo attr) {
 
 /product/attrgroup/{catelogId}/withattr
 
-
-
 --------------------
 
 ## 5 商品维护
@@ -632,7 +610,7 @@ SpuInfoServiceImpl.java
 //4、保存spu的规格参数;pms_product_attr_value
 //5、保存spu的积分信息；yumall_sms->sms_spu_bounds,远程服务调用
 //5、保存当前spu对应的所有sku信息；
-		5.1）、sku的基本信息；pms_sku_info
+  5.1）、sku的基本信息；pms_sku_info
         5.2）、sku的图片信息；pms_sku_image
         5.3）、sku的销售属性信息：pms_sku_sale_attr_value
         5.4）、sku的优惠、满减等信息；gulimall_sms->sms_sku_ladder\sms_sku_full_reduction\sms_member_price
@@ -659,6 +637,3 @@ SpuInfoServiceImpl.java
 # 十、分布式基础篇总结
 
 ![image-20210604124223980](./spring-cloud-alibaba-note-basis.assets/true-image-20210604124223980.png)
-
-
-

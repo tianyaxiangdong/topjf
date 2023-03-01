@@ -15,7 +15,7 @@ tag:
 ## 1、commen引入依赖
 
 ```xml
-		<dependency>
+  <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.2.0</version>
@@ -64,7 +64,7 @@ tag:
           logic-not-delete-value: 0
         banner: false
  ##### application-dev.yml
- 	spring:
+  spring:
       datasource:
         type: com.alibaba.druid.pool.DruidDataSource
         druid:
@@ -117,9 +117,8 @@ public class DemoTest {
 
 ## 4、启动controller测试：coupon
 
-http://localhost:8400/coupon/coupon/info/1
+<http://localhost:8400/coupon/coupon/info/1>
 
 ```
 {"msg":"success","code":0,"coupon":{"id":1,"couponType":null,"couponImg":"images-images-images-imagesimages","couponName":null,"num":null,"amount":null,"perLimit":null,"minPoint":null,"startTime":null,"endTime":null,"useType":null,"note":null,"publishCount":null,"useCount":null,"receiveCount":null,"enableStartTime":null,"enableEndTime":null,"code":null,"memberLevel":null,"publish":null}}
 ```
-

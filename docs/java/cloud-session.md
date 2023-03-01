@@ -11,14 +11,13 @@ tag:
 
 <!-- more -->
 
-
 ## 分布式 session
 
 ### 7.1 分析
 
 ![](./cloud-session.assets/true-image-20210926162217627.png)
 
-### 7.2 解决session已知弊端：
+### 7.2 解决session已知弊端
 
 ![](./cloud-session.assets/true-image-20210926163452492.png)
 
@@ -81,4 +80,3 @@ session.setAttribute(LOGIN_USER, data);
     <a th:if="${session.loginUser == null}" href="http://auth.yumall.com/login.html">你好，请登录</a>
 </li>
 ```
-

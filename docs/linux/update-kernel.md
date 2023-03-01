@@ -12,10 +12,7 @@ tag:
 
 <!-- more -->
 
-
 # centos(kernel)内核升级
-
-
 
 ## 升级内核、并删除当前无用的系统内核版本
 
@@ -50,9 +47,9 @@ yum --disablerepo="*" --enablerepo="elrepo-kernel" list available
 
 **可安装的软件包**
 
-kernel-lt.x86_64		5.4.211-1.el7.elrepo		elrepo-kernel
+kernel-lt.x86_64  5.4.211-1.el7.elrepo  elrepo-kernel
 
-kernel-ml.x86_64		5.19.4-1.el7.elrepo		elrepo-kernel
+kernel-ml.x86_64  5.19.4-1.el7.elrepo  elrepo-kernel
 
 **安装内核**
 
@@ -128,6 +125,3 @@ kernel-lt-tools-libs-devel-5.4.211-1.el7.elrepo.x86_64
 
 yum install -y gcc make ncurses-devel openssl-devel flex bison  elfutils-libelf-devel
 ```
-
-
-

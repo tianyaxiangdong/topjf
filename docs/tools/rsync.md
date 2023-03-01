@@ -1,6 +1,6 @@
 ---
 icon: edit
-title: Linux 数据同步工具
+title: Linux数据同步工具
 category: 
 - 开发工具
 date: 2022-10-11
@@ -157,7 +157,7 @@ Samba 服务器提供的共享名。而服务器真正同步的数据是通过 p
 - ignore nonreadable —指定 rysnc服务器完全忽略那些用户没有访问权限的文件。这对于在需要备份的目录中有些不应该被备份者获得的文件时是有意义的。false
 - timeout = —该选项可以覆盖客户指定的 IP 超时时间。从而确保 rsync 服务器不会永远等待一个崩溃的客户端。对于匿名 rsync
   服务器来说，理想的数字是 600（单位为秒）。0 (未限制)
-- dont compress  —用来指定那些在传输之前不进行压缩处理的文件。该选项可以定义一些不允许客户对该模块使用的命令选项列表。必须使用选项全名，而不能是简称。 
+- dont compress  —用来指定那些在传输之前不进行压缩处理的文件。该选项可以定义一些不允许客户对该模块使用的命令选项列表。必须使用选项全名，而不能是简称。
   当发生拒绝某个选项的情况时，服务器将报告错误信息然后退出。例如，要防止使用压缩，应该是：”dont
   compress = *”。* .gz *.tgz* .zip *.z* .rpm *.deb* .iso *.bz2* .tbz
 
@@ -339,7 +339,7 @@ crontab -l
 
 ### 2、安装inotify-tools
 
-> 下载地址：http://github.com/downloads/rvoicilas/inotify-tools/inotify-tools-3.14.tar.gz
+> 下载地址：<http://github.com/downloads/rvoicilas/inotify-tools/inotify-tools-3.14.tar.gz>
 
 ```
 yum install –y gcc --安装依赖
@@ -422,4 +422,3 @@ echo '/data/test/test.sh &' >> /etc/rc.local --设置开机自启
 rsync -a —delete /data/test/dest/ 192.168.22.11:/data/test/src ；
 
 这样可以实现双向同步
-

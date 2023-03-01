@@ -19,7 +19,7 @@ tag:
 
 [ks-installer 教程](https://github.com/kubesphere/ks-installer/blob/master/README_zh.md)
 
-[https://github.com/kubesphere/kubesphere](https://github.com/kubesphere/kubesphere)	**star:10.8K**
+[https://github.com/kubesphere/kubesphere](https://github.com/kubesphere/kubesphere) **star:10.8K**
 
 [gitee.com/k8s_s/kubesphere](https://gitee.com/k8s_s/kubesphere)
 
@@ -42,15 +42,13 @@ tag:
 
 - 2、PV&PVC
 
-- 3、ConfigMap [ConfigMap ](https://kubernetes.io/zh-cn/docs/concepts/configuration/configmap/)
+- 3、ConfigMap [ConfigMap](https://kubernetes.io/zh-cn/docs/concepts/configuration/configmap/)
 
-- 4、secret  [secret  ](https://kubernetes.io/zh-cn/docs/concepts/configuration/secret/)
+- 4、secret  [secret](https://kubernetes.io/zh-cn/docs/concepts/configuration/secret/)
 
 [具体设置请看](./nfs-pv-pvc-config-secret.html)
 
-
-
-## 需要的镜像：
+## 需要的镜像
 
 > kubesphere/pause:3.4.1
 >
@@ -94,19 +92,15 @@ dkpush registry.cn-chengdu.aliyuncs.com/jinfang/openldap:1.3.0
 
 dkpush registry.cn-chengdu.aliyuncs.com/jinfang/node-exporter:v0.18.1
 
-
-
 ## 1、环境安装
 
-`A B C `选其一即可
+`A B C`选其一即可
 
 ### A、参考helm笔记
 
-
-
 ### B、安装存储类 OpenEBS （仅适用于开发测试环境）<a name="OpenEBS"></a>
 
-https://v2-1.docs.kubesphere.io/docs/zh-CN/appendix/install-openebs/
+<https://v2-1.docs.kubesphere.io/docs/zh-CN/appendix/install-openebs/>
 
 默认情况下，KubeKey 将安装 [OpenEBS](https://openebs.io/) 来为开发和测试环境配置 LocalPV
 
@@ -127,15 +121,15 @@ https://github.com/openebs/charts/blob/openebs-3.0.6/charts/openebs/Chart.yaml
 |   ipset   | 可选，但推荐安装             | 可选，但推荐安装             |
 |  ipvsadm  | 可选，但推荐安装             | 可选，但推荐安装             |
 
->   yum install -y socat conntrack ebtables ipset ipvsadm
+> yum install -y socat conntrack ebtables ipset ipvsadm
 
 默认情况下，KubeKey 将安装 [OpenEBS](#OpenEBS) 来为开发和测试环境配置 LocalPV
 
-https://kubesphere.io/zh/
+<https://kubesphere.io/zh/>
 
-下载：https://github.com/kubesphere/kubekey/releases、https://gitee.com/k8s_s/kubekey/tags
+下载：<https://github.com/kubesphere/kubekey/releases、https://gitee.com/k8s_s/kubekey/tags>
 
-https://github.com/kubesphere/kubekey/releases/download/v2.2.2/kubekey-v2.2.2-linux-amd64.tar.gz
+<https://github.com/kubesphere/kubekey/releases/download/v2.2.2/kubekey-v2.2.2-linux-amd64.tar.gz>
 
 或使用以下命令：
 
@@ -162,13 +156,11 @@ rm -rf ./kubekey-v2.2.2 && \
 ls /usr/local/bin/ && kk version
 ```
 
-
-
 ## 2、使用 KubeKey 手动安装（推荐1）<a name="使用 KubeKey 安装"></a>
 
 **查看支持的k8s版本**：`kk version --show-supported-k8s`
 
-2.0.0：https://gitee.com/k8s_s/kubekey/blob/v2.0.0/docs/kubernetes-versions.md
+2.0.0：<https://gitee.com/k8s_s/kubekey/blob/v2.0.0/docs/kubernetes-versions.md>
 
 ```
 v1.19.0 v1.19.8 v1.19.9
@@ -178,29 +170,27 @@ v1.22.1
 v1.23.0
 ```
 
-2.1.0：https://gitee.com/k8s_s/kubekey/blob/v2.1.0/docs/kubernetes-versions.md
+2.1.0：<https://gitee.com/k8s_s/kubekey/blob/v2.1.0/docs/kubernetes-versions.md>
 
 ```
-v1.19.0 v1.19.8	v1.19.9
-v1.20.4	v1.20.6	v1.20.10
-v1.21.4	v1.21.5
-v1.22.1	v1.22.9
-v1.23.0	v1.23.6
+v1.19.0 v1.19.8 v1.19.9
+v1.20.4 v1.20.6 v1.20.10
+v1.21.4 v1.21.5
+v1.22.1 v1.22.9
+v1.23.0 v1.23.6
 v1.24.0
 ```
 
-2.2.2：https://gitee.com/k8s_s/kubekey/blob/v2.2.2/docs/kubernetes-versions.md
+2.2.2：<https://gitee.com/k8s_s/kubekey/blob/v2.2.2/docs/kubernetes-versions.md>
 
 ```
-v1.19.0 v1.19.8	v1.19.9
-v1.20.4	v1.20.6	v1.20.10
+v1.19.0 v1.19.8 v1.19.9
+v1.20.4 v1.20.6 v1.20.10
 v1.21.0->13
 v1.22.0->10
 v1.23.0->8
 v1.24.0 v1.24.1
 ```
-
-
 
 内置下载版本：【kubeadm v1.22.9、kubelet v1.22.9、kubectl v1.22.9、helm v3.9.4、kubecni v0.9.1、crictl v1.22.0、etcd v3.4.13、docker 20.10.8】
 
@@ -210,9 +200,7 @@ v1.24.0 v1.24.1
 
 kk create config 会自动创建 `config-sample.yaml`
 
-或者复制这个文件并根据情况修改：https://gitee.com/k8s_s/kubekey/blob/v2.2.2/docs/config-example.md
-
-
+或者复制这个文件并根据情况修改：<https://gitee.com/k8s_s/kubekey/blob/v2.2.2/docs/config-example.md>
 
 **主要修改内容：**
 
@@ -268,21 +256,15 @@ network.plugin: flannel
 
 **开始安装：使用配置文件创建集群**
 
-https://kubesphere.com.cn/docs/multicluster-management/enable-multicluster/direct-connection/
-
-
+<https://kubesphere.com.cn/docs/multicluster-management/enable-multicluster/direct-connection/>
 
 每个主机都创建软连接`/usr/bin/kubelet` 到 `/usr/local/bin/`
 
 ln -s /usr/bin/kube* /usr/local/bin/
 
-
-
 **解决没有这个文件：/etc/kubernetes/kubeadm-config.yaml**
 
 master主机执行：kubectl -n kube-system get cm kubeadm-config -o yaml >> /etc/kubernetes/kubeadm-config.yaml
-
-
 
 ```bash
 export KKZONE=cn
@@ -315,9 +297,9 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 #####################################################
 ```
 
-登录：http://nginx.k8s.com:30880/	
+登录：<http://nginx.k8s.com:30880/> 
 
-http://ks.k8s.com:30880/
+<http://ks.k8s.com:30880/>
 
 ## 3、 以 ks-installer-3.2.1 安装 kubesphere3.2.1（推荐2）
 
@@ -369,19 +351,16 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 #####################################################
 ```
 
-
-
 kubectl get svc/ks-console -n kubesphere-system
 
 解决etcd监控证书找不到问题:
 
 > kubectl -n kubesphere-monitoring-system create secret generic kube-etcd-client-certs  --from-file=etcd-client-ca.crt=/etc/kubernetes/pki/etcd/ca.crt  --from-file=etcd-client.crt=/etc/kubernetes/pki/apiserver-etcd-client.crt  --from-file=etcd-client.key=/etc/kubernetes/pki/apiserver-etcd-client.key
 
-
-
 ### ks-installer.yaml
 
 ::: details 点击查看代码
+
 ```yaml
 ---
 apiVersion: apiextensions.k8s.io/v1
@@ -692,11 +671,13 @@ spec:
         name: host-time
 
 ```
+
 :::
 
 ### ks-cluster.yaml
 
 ::: details 点击查看代码
+
 ```yaml
 ---
 apiVersion: installer.kubesphere.io/v1alpha1
@@ -877,16 +858,16 @@ spec:
         tolerations: []
 
 ```
-:::
 
+:::
 
 ## 4、离线安装+kk
 
-https://kubesphere.com.cn/docs/installing-on-linux/introduction/air-gapped-installation/
+<https://kubesphere.com.cn/docs/installing-on-linux/introduction/air-gapped-installation/>
 
-https://kubesphere.com.cn/docs/v3.3/installing-on-linux/introduction/air-gapped-installation/
+<https://kubesphere.com.cn/docs/v3.3/installing-on-linux/introduction/air-gapped-installation/>
 
-https://zhuanlan.zhihu.com/p/432040404
+<https://zhuanlan.zhihu.com/p/432040404>
 
 （推荐）在已创建的集群中执行 KubeKey 命令生成该文件。
 
@@ -895,6 +876,7 @@ https://zhuanlan.zhihu.com/p/432040404
 > vim manifest.yaml
 
 ::: details 点击查看代码
+
 ```yaml
 ---
 apiVersion: kubekey.kubesphere.io/v1alpha2
@@ -1068,24 +1050,18 @@ spec:
   registry:
     auths: {}
 ```
+
 :::
 
 export KKZONE=cn
 
 ./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
 
-
-
-
-
-
 ## 5、访问、卸载 kubesphere
 
-访问：http://192.168.101.120:30880 admin
+访问：<http://192.168.101.120:30880> admin
 
-
-
-https://kubesphere.com.cn/docs/installing-on-linux/uninstall-kubesphere-and-kubernetes/
+<https://kubesphere.com.cn/docs/installing-on-linux/uninstall-kubesphere-and-kubernetes/>
 
 - 如果是按照快速入门 ([All-in-One](https://kubesphere.com.cn/docs/quick-start/all-in-one-on-linux/)) 安装的 KubeSphere：
 
@@ -1102,10 +1078,6 @@ https://kubesphere.com.cn/docs/installing-on-linux/uninstall-kubesphere-and-kube
 ![](./kube-sphere.assets/true-image-20220515182956539.png)
 
 ![](./kube-sphere.assets/true-image-20220515183019002.png)
-
-
-
-
 
 ## 6、进阶
 
@@ -1127,7 +1099,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
 ![](./kube-sphere.assets/true-users.png)
 
-https://kubesphere.com.cn/docs/quick-start/create-workspace-and-project/
+<https://kubesphere.com.cn/docs/quick-start/create-workspace-and-project/>
 
 | 内置角色             | 描述                                                         |
 | -------------------- | ------------------------------------------------------------ |
@@ -1140,7 +1112,7 @@ https://kubesphere.com.cn/docs/quick-start/create-workspace-and-project/
 
 使用 admin 创建一个用户 `user-manager`，并赋予users-manager角色，
 
-#### 2、登录 `user-manager` 创建新用户。
+#### 2、登录 `user-manager` 创建新用户
 
 | 帐户            | 角色               | 描述                                                         |
 | --------------- | ------------------ | ------------------------------------------------------------ |
@@ -1189,7 +1161,7 @@ https://kubesphere.com.cn/docs/quick-start/create-workspace-and-project/
 
 ### B、使用 project-regular 帐户登录 workspaces 创建密钥、创建容器、外网访问
 
-https://kubesphere.com.cn/docs/quick-start/wordpress-deployment/
+<https://kubesphere.com.cn/docs/quick-start/wordpress-deployment/>
 
 ![](./kube-sphere.assets/true-WordPress.png)
 
@@ -1225,7 +1197,7 @@ https://kubesphere.com.cn/docs/quick-start/wordpress-deployment/
 
 3、在**存储卷设置**中，需要选择一个可用的**存储类型**，并设置**访问模式**和**存储卷容量**。您可以直接使用默认值，点击**下一步**继续。
 
-##### 访问模式:
+##### 访问模式
 
 RWO (ReadWriteOnce)：单个节点读写
 
@@ -1238,8 +1210,6 @@ RWX (ReadWriteMany)：多节点读写
 4、在**高级设置**中，您无需添加额外的配置，点击**创建**完成即可。
 
 ![](./kube-sphere.assets/true-image-20220516142337866.png)
-
-
 
 #### 步骤3：创建docker私有仓库
 
@@ -1255,8 +1225,6 @@ RWX (ReadWriteMany)：多节点读写
 - **邮箱**（可选）：您的邮箱地址。
 
 ![](./kube-sphere.assets/true-image-20220516153908487.png)
-
-
 
 #### 步骤4：创建应用程序
 
@@ -1343,8 +1311,6 @@ RWX (ReadWriteMany)：多节点读写
 
 ![](./kube-sphere.assets/true-image-20220516151031852.png)
 
-
-
 #### 步骤 5：通过 NodePort 访问 WordPress
 
 1、若要在集群外访问服务，请首先导航到**服务**。点击 `wordpress` 右侧的三个点后，选择**编辑外部访问**。
@@ -1361,13 +1327,10 @@ RWX (ReadWriteMany)：多节点读写
 
 4、通过 `{Node IP}:{NodePort}` 访问此应用程序，可以看到下图：
 
-http://192.168.101.120:32109
+<http://192.168.101.120:32109>
 
-http://ks.k8s.com:32109/
+<http://ks.k8s.com:32109/>
 
 ### C、DevOps
 
-
-
 ### D、流水线
-

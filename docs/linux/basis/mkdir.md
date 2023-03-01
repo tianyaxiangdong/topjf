@@ -38,8 +38,6 @@ data
 a  b  data
 ```
 
-
-
 **注意：**
 
 1、创建的目录已经存在, 那么 Linux 会提示我们 Linux 无法创建它。
@@ -50,11 +48,9 @@ a  b  data
 
 4、创建目录的首要条件是， 在想要创建目录的目标路径下你必须具有访问权限
 
-
-
 - 案例：
 
-  > 进入`/`根目录，创建` c，e，d` 目录在 `home` 目录中，其中`e`中有文件夹 `software`，`d`中有文件夹 `program`，program中有文件夹名为 `demo.log` 的目录
+  > 进入`/`根目录，创建`c，e，d` 目录在 `home` 目录中，其中`e`中有文件夹 `software`，`d`中有文件夹 `program`，program中有文件夹名为 `demo.log` 的目录
 
 ```shell
 [root@admin root]# cd /

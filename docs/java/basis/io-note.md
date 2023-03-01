@@ -39,8 +39,6 @@ java输入/输出流体系中常用的流的分类表
 | 推回输入流 | PushbackInputStream      |                           | PushbackReader      |                     |
 |   特殊流   | DataInputStream          | DataOutputStream          |                     |                     |
 
- 
-
 # Io流
 
 ## 什么是流
@@ -52,8 +50,6 @@ java输入/输出流体系中常用的流的分类表
  输入流： InputStream
  输出流：OutputStream
 
- 
-
 ![http://how2j.cn/img/site/step/759.png](./io-note.assets/true-clip_image008.jpg)
 
 ## 文件输入流
@@ -61,8 +57,6 @@ java输入/输出流体系中常用的流的分类表
 如下代码，就建立了一个文件输入流，这个流可以用来把数据从硬盘的文件，读取到JVM(内存)
 
  目前代码只是建立了流，还没有开始读取
-
- 
 
 ## 文件输出流
 
@@ -78,8 +72,6 @@ java输入/输出流体系中常用的流的分类表
 
  示例中列出了可见的ASCII码以及对应的十进制和十六进制数字，不可见的暂未列出
 
-
-
 ## 以字节流的形式读取文件
 
 InputStream是字节输入流，同时也是抽象类，只提供方法声明，不提供方法的具体实现。
@@ -90,13 +82,13 @@ InputStream是字节输入流，同时也是抽象类，只提供方法声明，
 OutputStream是字节输出流，同时也是抽象类，只提供方法声明，不提供方法的具体实现。
  FileOutputStream 是OutputStream子类，以FileOutputStream 为例向文件写出数据
 
- 注: 如果文件d:/lol2.txt不存在，写出操作会自动创建该文件。 
+ 注: 如果文件d:/lol2.txt不存在，写出操作会自动创建该文件。
  但是如果是文件 d:/xyz/lol2.txt，而目录xyz又不存在，会抛出异常
 
 # 字符流
 
-Reader字符输入流 
- Writer字符输出流 
+Reader字符输入流
+ Writer字符输出流
  专门用于字符的形式读取和写入数据
 
 ## 字符流读取文件
@@ -143,35 +135,29 @@ private static void demo2() {
 
 # 转换流
 
- 
-
 # 缓冲流
 
-以介质是硬盘为例，**字节流和字符流的弊端**： 
- 在每一次读写的时候，都会访问硬盘。 如果读写的频率比较高的时候，其性能表现不佳。 
+以介质是硬盘为例，**字节流和字符流的弊端**：
+ 在每一次读写的时候，都会访问硬盘。 如果读写的频率比较高的时候，其性能表现不佳。
 
- 为了解决以上弊端，采用缓存流。 
- 缓存流在读取的时候，**会一次性读较多的数据到缓存中**，以后每一次的读取，都是在缓存中访问，直到缓存中的数据读取完毕，再到硬盘中读取。 
+ 为了解决以上弊端，采用缓存流。
+ 缓存流在读取的时候，**会一次性读较多的数据到缓存中**，以后每一次的读取，都是在缓存中访问，直到缓存中的数据读取完毕，再到硬盘中读取。
 
- 就好比吃饭，**不用缓存就是每吃一口都到锅里去铲**。**用缓存就是先把饭盛到碗里**，碗里的吃完了，再到锅里去铲 
+ 就好比吃饭，**不用缓存就是每吃一口都到锅里去铲**。**用缓存就是先把饭盛到碗里**，碗里的吃完了，再到锅里去铲
 
  缓存流在写入数据的时候，会先把数据写入到缓存区，直到缓存区**达到一定的量**，才把这些数据，**一起写入到硬盘中去**。按照这种操作模式，就不会像字节流，字符流那样**每写一个字节都访问硬盘**，从而减少了IO操作
-
- 
 
 ## 使用缓存流读取数据
 
 ### 使用缓存流写数据
 
-
-
 # public class PrintWriter
 
 ·     extends [Writer](mk:@MSITStore:C:\Users\Administrator\Desktop\Java Platform SE 8.chm::/java/io/Writer.html)
 
-Prints formatted representations of objects to a text-output stream. This class implements all of the print methods found in [PrintStream](mk:@MSITStore:C:\Users\Administrator\Desktop\Java Platform SE 8.chm::/java/io/PrintStream.html). It does not contain methods for writing raw bytes, for which a program should use unencoded byte streams. 
+Prints formatted representations of objects to a text-output stream. This class implements all of the print methods found in [PrintStream](mk:@MSITStore:C:\Users\Administrator\Desktop\Java Platform SE 8.chm::/java/io/PrintStream.html). It does not contain methods for writing raw bytes, for which a program should use unencoded byte streams.
 
-Unlike the [PrintStream](mk:@MSITStore:C:\Users\Administrator\Desktop\Java Platform SE 8.chm::/java/io/PrintStream.html) class, if automatic flushing is enabled it will be done only when one of the println, printf, or format methods is invoked, rather than whenever a newline character happens to be output. These methods use the platform's own notion of line separator rather than the newline character. 
+Unlike the [PrintStream](mk:@MSITStore:C:\Users\Administrator\Desktop\Java Platform SE 8.chm::/java/io/PrintStream.html) class, if automatic flushing is enabled it will be done only when one of the println, printf, or format methods is invoked, rather than whenever a newline character happens to be output. These methods use the platform's own notion of line separator rather than the newline character.
 
 Methods in this class never throw I/O exceptions, although some of its constructors may. The client may inquire as to whether any errors have occurred by invoking [checkError()](mk:@MSITStore:C:\Users\Administrator\Desktop\Java Platform SE 8.chm::/java/io/PrintWriter.html#checkError--).
 
@@ -238,11 +224,7 @@ private static void demo3() {
     }
 ```
 
-
-
 # 编码问题
-
- 
 
 步骤 1 : 编码概念  
 
@@ -262,17 +244,13 @@ private static void demo3() {
 
 步骤 9 : 用FileReader 字符流正确读取中文
 
- 
-
 ![img](./io-note.assets/true-clip_image012.jpg)
 
 总结：保证文件的编码（存储的时候存储的文件编码格式）与编码化的文字，与取出来的编码，与展现的编码，要保证一致
 
- 
-
 最简单总结：凡是出现charset的地方，全部utf-8
 
-## 步骤 1 : 编码概念 
+## 步骤 1 : 编码概念
 
 计算机存放数据只能存放数字，所有的字符都会被转换为不同的数字。
  就像一个棋盘一样，不同的字，处于不同的位置，而不同的位置，有不同的数字编号。
@@ -283,9 +261,7 @@ private static void demo3() {
  如图所示，英文字符 **A** 能够放在所有的棋盘里，而且位置都差不多
  中文字符, 中文字符 **中** 能够放在后两种棋盘里，并且位置不一样，而且在小的那个棋盘里，就放不下中文
 
-![http://how2j.cn/img/site/step/2481.png](./io-note.assets/true-clip_image014.jpg) 
-
- 
+![http://how2j.cn/img/site/step/2481.png](./io-note.assets/true-clip_image014.jpg)
 
 ## 步骤 2 : 常见编码  
 
@@ -301,7 +277,7 @@ private static void demo3() {
 
 ## 步骤 3 : UNICODE和UTF  
 
-不同的编码方式对应不同的**棋盘**，而UNICODE因为要存放所有的数据，那么它的棋盘是最大的。 
+不同的编码方式对应不同的**棋盘**，而UNICODE因为要存放所有的数据，那么它的棋盘是最大的。
  不仅如此，棋盘里每个数字都是很长的(4个字节)，因为不仅要表示字母，还要表示汉字等。
 
  如果完全按照UNICODE的方式来存储数据，就会有很大的浪费。
@@ -318,14 +294,10 @@ Unicode（统一码、万国码、单一码）是计算机科学领域里的一�
 
 ![http://how2j.cn/img/site/step/2482.png](./io-note.assets/true-clip_image016.jpg)
 
- 
-
 ## 步骤 4 : Java采用的是Unicode  
 
 写在.java源代码中的汉字，在执行之后，都会变成JVM中的字符。
  而这些中文字符采用的编码方式，都是使用UNICODE. "中"字对应的UNICODE是**4E2D**,所以在内存中，实际保存的数据就是十六进制的0x4E2D, 也就是十进制的20013
-
-
 
 ## 步骤 5 : 一个汉字使用不同编码方式的表现  
 
@@ -367,7 +339,7 @@ private static void showCode(String str, String encode) {
  用**记事本**打开任意文本文件，并且**另存为**，就能够在编码这里看到一个下拉。
  **ANSI** 这个不是ASCII的意思，而是采用本地编码的意思。如果你是中文的操作系统，就会使GBK，如果是英文的就会是ISO-8859-1
  **Unicode UNICODE原生的编码方式
- **Unicode big endian** 另一个 UNICODE编码方式
+ **Unicode big endian**另一个 UNICODE编码方式
  **UTF-8** 最常见的UTF-8编码方式，数字和字母用一个字节， 汉字用3个字节
 
 ![http://how2j.cn/img/site/step/2484.png](./io-note.assets/true-clip_image018.jpg)
@@ -412,22 +384,13 @@ public static void main(String[] args) {
 } 
 ```
 
- 
-
 ## 步骤 9 : 用FileReader 字符流正确读取中文
-
- 
 
 FileReader得到的是字符，所以一定是已经把字节**根据某种编码识别成了字符**了
  而FileReader使用的编码方式是Charset.defaultCharset()的返回值，如果是中文的操作系统，就是GBK
  FileReader是不能手动设置编码方式的，为了使用其他的编码方式，只能使用InputStreamReader来代替，像这样：
 
- 
-
-new InputStreamReader(new FileInputStream(f),Charset.forName("UTF-8")); 
-
- 
-
+new InputStreamReader(new FileInputStream(f),Charset.forName("UTF-8"));
 
  在本例中，用记事本另存为UTF-8格式，然后用UTF-8就能识别对应的中文了。
 
@@ -463,7 +426,7 @@ private static void demo5() {
 
 # 数据流
 
-DataInputStream 数据输入流 
+DataInputStream 数据输入流
 DataOutputStream 数据输出流
 
 ## 直接进行字符串的读写
@@ -502,13 +465,13 @@ private static void write() {
 
 # 对象流
 
-对象流指的是可以直接**把一个对象以流的形式**传输给其他的介质，比如硬盘 
+对象流指的是可以直接**把一个对象以流的形式**传输给其他的介质，比如硬盘
 
  一个对象以流的形式进行传输，叫做序列化。 该对象所对应的类，必须是实现Serializable接口
 
 ## 序列化一个对象
 
-创建一个Hero对象，设置其名称为garen。 
+创建一个Hero对象，设置其名称为garen。
  把该对象序列化到一个文件garen.lol。
  然后再通过序列化把该文件转换为一个Hero对象
 
@@ -548,7 +511,3 @@ class Hero implements Serializable{
     public int hp;
 }
 ```
-
- 
-
- 

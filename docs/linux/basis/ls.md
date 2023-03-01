@@ -22,7 +22,7 @@ timeline: false
 >
 > **-a** 显示所有文件，包括隐藏文件
 >
->  **-l** 详细信息显示—— ls-l 可以简写成 ll
+> **-l** 详细信息显示—— ls-l 可以简写成 ll
 >
 > **-d** 仅显示目录名，而不显示目录下的内容列表
 >
@@ -31,11 +31,11 @@ timeline: false
 > **-i** 查看任意一个文件的i节点（类似于身份证唯一信息）
 >
 > **-t** 用文件和目录的更改时间排序；可以用第一个显示的文件判断最近修改的文件
-> 
+>
 > **-F** 轻松区分文件和目录: /代表目录 @代表链接文件
-> 
+>
 > **-R** 递归选项；它列出了当前目录下包含的子目录中的文件。如果目录很多，这个输出就会很长。
-> 
+>
 
 **注意：** `.` 开头的文件除非是目录，否则就是隐藏文件
 
@@ -68,7 +68,7 @@ mysql5.7.39-el7-x86_64.tar.gz*  redis-6.2.4.tar.gz*
 
 - ls -l dd?ff.log     代表匹配一个单词
 - ls -l dd*ff.log     代表匹配任意一个或多个单单词
-- ls -l dd[ai]ff.log  [ai]匹配到a或i的文件 
+- ls -l dd[ai]ff.log  [ai]匹配到a或i的文件
 - ls -l dd[1-9]ff.log 范围匹；[1-9]或[a-g]匹配到(1到9,a到g)的文件
 - ls -l dd[!a]ff.log  排除匹配到a的文件
 - ls -l dd*       匹配到以dd开头
@@ -134,7 +134,6 @@ dd23opff.log  dd3ff.log  ddbff.log  dddff.log  ddfff.log  ddgff.log   demo.txt  
 -rw-r--r-- 1 root root 0 9月  13 15:10 ddopff.log
 ```
 
-
 **分析：**
 
 - ①、第一列表示文件类型：`-` 表示是文件，`d` 表示目录， `l` 表示软连接文件，`b` 表示为装置文件里面的可供储存的接口设备(可随机存取装置)，`c` 表示为装置文件里面的串行端口设备，例如键盘、鼠标(一次性读取装置)
@@ -153,7 +152,6 @@ dd23opff.log  dd3ff.log  ddbff.log  dddff.log  ddfff.log  ddgff.log   demo.txt  
 | w    | 写权限  | 可以修改文件内容    | 可以在目录中创建、删除文件 |
 | x    | 执行权限 | 可以执行文件      | 可以进入目录        |
 | -    | 无权限  | 不可以对文件的所有操作 | 不可以进入目录       |
-
 
 - ②、第2列表示：引用计数，表示文件被引用过多少次
 
@@ -181,4 +179,3 @@ drwxr-xr-x    3 root root   26 8月  10 17:48 data
 [root@admin /]# ll /bin
 lrwxrwxrwx. 1 root root 7 5月  10 14:03 /bin -> usr/bin
 ```
-

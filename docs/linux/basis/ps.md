@@ -52,8 +52,6 @@ ps 【选项】
 - -L  显示进程中的线程
 - -V  显示 ps 命令的版本号
 
-
-
 ```shell
 [root@admin home]# ps
    PID TTY          TIME CMD
@@ -136,7 +134,6 @@ F S   UID    PID   PPID  C PRI  NI ADDR SZ   WCHAN  TTY          TIME CMD
 - L   列出所有格式指定符
 - V   显示 ps 命令的版本号
 
-
 ```shell
 [root@admin home]# ps l
 F   UID    PID   PPID PRI  NI    VSZ   RSS WCHAN  STAT TTY        TIME COMMAND
@@ -149,14 +146,11 @@ F   UID    PID   PPID PRI  NI    VSZ   RSS WCHAN  STAT TTY        TIME COMMAND
 ```
 
 - VSZ：进程在内存中的大小，以千字节（KB）为单位。
-- RSS：进程在未换出时占用的物理内存。 
+- RSS：进程在未换出时占用的物理内存。
 - STAT：代表当前进程状态的双字符状态码
-- - < ：该进程运行在高优先级上。
-- - N ：该进程运行在低优先级上。
-- - L ：该进程有页面锁定在内存中。
-- - s ：该进程是控制进程。
-- - l ：该进程是多线程的。
-- - + ：该进程运行在前台
-
-
-
+  - - < ：该进程运行在高优先级上。
+  - - N ：该进程运行在低优先级上。
+  - - L ：该进程有页面锁定在内存中。
+  - - s ：该进程是控制进程。
+  - - l ：该进程是多线程的。
+    - - + ：该进程运行在前台

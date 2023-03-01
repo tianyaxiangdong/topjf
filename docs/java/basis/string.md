@@ -10,13 +10,12 @@ tag:
 
 <!-- more -->
 
-
 ## 装箱拆箱
 
 ### 封装类
 
-所有的**基本类型**，都有对应的**类类型** 
-比如int对应的类是Integer 
+所有的**基本类型**，都有对应的**类类型**
+比如int对应的类是Integer
 这种类就叫做封装类
 
 ```java
@@ -36,8 +35,8 @@ public class TestNumber {
 
 ### Number类
 
-数字封装类有 
- Byte,Short,Integer,Long,Float,Double 
+数字封装类有
+ Byte,Short,Integer,Long,Float,Double
  这些类都是抽象类Number的子类
 
 ![image-20220530173355071](./string.assets/true-image-20220530173355071.png)
@@ -97,8 +96,6 @@ public class TestNumber {
 }
 
 ```
-
-
 
 ### 自动装箱
 
@@ -169,7 +166,7 @@ public class TestNumber {
 
 ```
 
-### 练习-装箱拆箱 
+### 练习-装箱拆箱
 
 1. 对byte,short,float,double进行自动拆箱和自动装箱
 
@@ -184,7 +181,7 @@ public class TestNumber {
 
 ### 数字转字符串
 
-方法1： 使用String类的静态方法valueOf 
+方法1： 使用String类的静态方法valueOf
 方法2： 先把基本类型装箱为对象，然后调用对象的toString
 
 ```java
@@ -229,7 +226,7 @@ public class TestNumber {
 
 ```
 
-### 练习-字符串转换 
+### 练习-字符串转换
 
 参考上述步骤
 把浮点数 3.14 转换为 字符串 "3.14"
@@ -275,7 +272,7 @@ public class TestNumber {
 
 ```
 
-### 练习-数学方法 
+### 练习-数学方法
 
 这个图是自然对数的计算方式。
 借助Math的方法，把自然对数计算出来，看看经过自己计算的自然对数和Math.E的区别有多大
@@ -414,7 +411,7 @@ public class TestNumber {
 
 ```
 
-### 5：Scanner 
+### 5：Scanner
 
 借助 Scanner 读取字符串数据，然后用格式化输出任意一段文字，类似以下
 
@@ -461,8 +458,6 @@ char对应的封装类是Character 装箱拆箱概念，参考 拆箱装箱
  }
  
  ```
-
-
 
 ### Character常见方法
 
@@ -533,7 +528,7 @@ public class TestChar {
 
 参考的转换方式:
 
-> String str = "abc123";  char[] cs = str.toCharArray();      
+> String str = "abc123";  char[] cs = str.toCharArray();
 
 转换为字符数组后，筛选出控制台读取到的字符串中的大写字母和数字，并打印出来
 
@@ -543,12 +538,12 @@ public class TestChar {
 
 ### 创建字符串  
 
-字符串即字符的组合，在Java中，字符串是一个类，所以我们见到的字符串都是对象 
- 常见创建字符串手段： 
+字符串即字符的组合，在Java中，字符串是一个类，所以我们见到的字符串都是对象
+ 常见创建字符串手段：
 
-1. 每当有一个**字面值**出现的时候，虚拟机就会创建一个字符串 
+1. 每当有一个**字面值**出现的时候，虚拟机就会创建一个字符串
 
-2. 调用String的构造方法创建一个字符串对象 
+2. 调用String的构造方法创建一个字符串对象
 
 3. 通过+加号进行字符串拼接也会创建新的字符串对象
 
@@ -597,7 +592,7 @@ public class TestString {
 
 ```
 
-### immutable   
+### immutable
 
 immutable 是指不可改变的
  比如创建了一个字符串对象
@@ -625,7 +620,7 @@ public  class TestString {
 
 ### 字符串格式化  
 
-如果不使用字符串格式化，就需要进行字符串连接，如果变量比较多，拼接就会显得繁琐 
+如果不使用字符串格式化，就需要进行字符串连接，如果变量比较多，拼接就会显得繁琐
 使用**字符串格式化**，就可以简洁明了
 
 ```java
@@ -682,7 +677,7 @@ public class TestString {
 
 ```
 
-### 练习：
+### 练习
 
 创建一个长度是5的随机字符串，随机字符有可能是数字，大写字母或者小写字母
 
@@ -695,7 +690,7 @@ public class TestString {
 
 通过这个手段就能够知道字符 a-z A-Z 0-9 所对应的数字的区间了
 
-### 练习：
+### 练习
 
 创建一个长度是8的字符串数组
  使用8个长度是5的随机字符串初始化这个数组
@@ -827,7 +822,7 @@ public class TestString {
 
 ### 大小写
 
-toLowerCase 全部变成小写 
+toLowerCase 全部变成小写
 toUpperCase 全部变成大写
 
 ```java
@@ -848,8 +843,6 @@ public class TestString {
 }
 
 ```
-
-
 
 ### 定位
 
@@ -882,7 +875,7 @@ public class TestString {
 
 ### 替换
 
-replaceAll 替换所有的 
+replaceAll 替换所有的
 replaceFirst 只替换第一个
 
 ```java
@@ -913,7 +906,7 @@ public class TestString {
 
 ### 是否是同一个对象
 
-str1和str2的内容一定是一样的！ 
+str1和str2的内容一定是一样的！
 但是，并不是同一个字符串对象
 
 ```java
@@ -936,14 +929,14 @@ public class TestString {
 
 ```
 
-### 是否是同一个对象-特例 
+### 是否是同一个对象-特例
 
 > str1 = "the light";
 >
 > str3 = "the light";
->  一般说来，编译器每碰到一个字符串的字面值，就会创建一个新的对象
->  所以在第6行会创建了一个新的字符串"the light"
->  但是在第7行，编译器发现已经存在现成的"the light"，那么就直接拿来使用，而没有进行重复创建
+> 一般说来，编译器每碰到一个字符串的字面值，就会创建一个新的对象
+> 所以在第6行会创建了一个新的字符串"the light"
+> 但是在第7行，编译器发现已经存在现成的"the light"，那么就直接拿来使用，而没有进行重复创建
 
 ```java
 package character;
@@ -962,7 +955,7 @@ public class TestString {
 
 ### 内容是否相同
 
-使用equals进行字符串内容的比较，必须大小写一致 
+使用equals进行字符串内容的比较，必须大小写一致
 equalsIgnoreCase，忽略大小写判断内容是否一致
 
 ```java
@@ -991,8 +984,6 @@ public class TestString {
 }
 
 ```
-
-
 
 ### 是否以子字符串开始或者结束
 
@@ -1031,15 +1022,13 @@ public class TestString {
  ```java
  ```
 
-
-
 ## Stringbuffer
 
 ### 追加，删除，插入，反转
 
-append追加 
-delete 删除 
-insert 插入 
+append追加
+delete 删除
+insert 插入
 reverse 反转
 
 ```java
@@ -1109,9 +1098,7 @@ capacity: 分配的总空间 19
  
  ```
 
-
-
-### 练习：
+### 练习
 
 String与StringBuffer的性能区别?
 
@@ -1147,7 +1134,3 @@ public class MyStringBuffer implements IStringBuffer{
 }
 
 ```
-
- 
-
- 

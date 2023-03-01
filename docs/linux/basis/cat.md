@@ -55,7 +55,6 @@ sdfsdfsdf
 
 ```
 
-
 ```shell
 # 替换全部内容
 cat -s <<EOF > /home/test/k8s.conf
@@ -67,4 +66,3 @@ cat -s <<EOF >> /home/test/k8s.conf
 vm.swappiness=0
 EOF
 ```
-

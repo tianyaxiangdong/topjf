@@ -88,7 +88,7 @@ public R save(@Validated({AddGroup.class}) @RequestBody BrandEntity brand){
 
 ### 1.4 测试
 
-​	http://localhost:50000/api/product/brand/save
+​ <http://localhost:50000/api/product/brand/save>
 
 ```json
 {
@@ -179,4 +179,3 @@ public @interface ListValue {
 ```
 
 ![](./java-jsr303.assets/true-image-20210602143120066.png)
-

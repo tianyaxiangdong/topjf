@@ -121,4 +121,3 @@ named:x:25:25:Named:/var/named:/sbin/nologin
 0       ddg2ff.log
 
 ```
-

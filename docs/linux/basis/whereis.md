@@ -16,7 +16,7 @@ timeline: false
 
 ⑤、功能描述：
 
-⑥、语法： 
+⑥、语法：
 
 whereis [选项] 文件
 

@@ -10,7 +10,6 @@ tag:
 
 <!-- more -->
 
-
 # 一、Vue2
 
 ## Vue创建模板
@@ -65,6 +64,7 @@ tag:
 ```
 
 ## http请求
+
 ### 工具
 
 ```ts
@@ -162,7 +162,6 @@ export function clearLoginInfo() {
   // router.options.isAddDynamicMenuRoutes = false
 }
 ```
-
 
 ### get
 
@@ -328,8 +327,6 @@ export function myMsgAuto(message, type, duration = 1.5) {
 ![](./web-vue.assets/true-image-20210512174537729.png)
 
 ![](./web-vue.assets/true-image-20210512174602224.png)
-
-
 
 2. 双向绑定 v-model
 
@@ -674,11 +671,7 @@ v-no：用来绑定事件
 
 <img src="./web-vue.assets/true-image-20210512183142153.png" alt="image-20210512183142153" style="zoom: 67%;" />
 
-
-
 # 二、Vue3
-
-
 
 ![](./web-vue.assets/true-01.png)
 
@@ -701,7 +694,7 @@ v-no：用来绑定事件
 | destroyed     | onUnmounted               |
 | errorCaptured | onErrorCaptured           |
 
-##   setup的参数
+## setup的参数
 
 setup (props, {attrs, emit, slots})
 
@@ -741,8 +734,6 @@ export default ({
       },
 }           
 ```
-
-
 
 ## 生命周期
 
@@ -801,8 +792,6 @@ export default {
 <style scoped>
 </style>
 ```
-
-
 
 ## main.ts
 
@@ -899,8 +888,6 @@ export default (app) => {
 }
 ```
 
-
-
 ## IconPark.ts
 
 ```
@@ -914,11 +901,11 @@ export function IconPark(app) {
 
 ## 多环境dev、prod、test
 
-在项目根路径下创建：.env.dev	.env.prod	.env.test
+在项目根路径下创建：.env.dev .env.prod .env.test
 
 ```javascript
-VITE_NODE_ENV='dev'	、'prod'、'test'
-VITE_BASE_URL='http://localhost/codetools-dev/'	、codetools、codetools-test、
+VITE_NODE_ENV='dev' 、'prod'、'test'
+VITE_BASE_URL='http://localhost/codetools-dev/' 、codetools、codetools-test、
 VITE_OPEN_PROXY=true 、false
 ```
 
@@ -1117,11 +1104,11 @@ export default {
 
 # 三、vue+vite+typescript
 
-vitejs：https://vitejs.dev/config/
+vitejs：<https://vitejs.dev/config/>
 
-TS ：https://www.tslang.cn/docs/home.html
+TS ：<https://www.tslang.cn/docs/home.html>
 
-Vue3+TS 快速上手：https://24kcs.github.io/vue3_study/
+Vue3+TS 快速上手：<https://24kcs.github.io/vue3_study/>
 
 ## 1、创建TS项目步骤
 
@@ -1228,10 +1215,6 @@ const upTheme = () => {
 ![image-20220330185438315](./web-vue.assets/true-image-20220330185438315.png)
 
 ![image-20220330185452637](./web-vue.assets/true-image-20220330185452637.png)
-
-
-
-
 
 ## 3、vite.config.ts +自动导入组件，在vue页面里不用import （src/Components、vite、vue、vuex）依赖：【unplugin-auto-import/vite、unplugin-vue-components/vite、unplugin-vue-components/resolvers】
 
@@ -1448,21 +1431,19 @@ target  ts编译成js的标准
 ... 有很多配置项具体可以查看其它资料
 ```
 
-
-
 ## vue3+ts模板 <a name="vue+ts模板" />
 
 ```vue
 <el-button class="ml-3" type="success" @click="backTop">上传</el-button>
 
 <script lang="ts" setup>
-	import {onMounted, onUnmounted, ref} from "vue";
+ import {onMounted, onUnmounted, ref} from "vue";
 
     const btnFlag = ref(false);
     const scrollTop = ref(0);
     
     function backTop() {
-    	btnFlag.value = true
+     btnFlag.value = true
         scrollTop.value = 1112
     }
  
@@ -1558,8 +1539,6 @@ onMounted(() => {
 </script>
 ```
 
-
-
 ## 全局函数
 
 *代码*
@@ -1575,8 +1554,6 @@ greet("hello, world");
 ```
 declare function greet(greeting: string): void;
 ```
-
-
 
 ## ts 回调函数\组合式 API 语法
 
@@ -1620,31 +1597,19 @@ const increment = () => {
 </script>
 ```
 
-
-
-
-
 ## 问题
 
 ![image-20220124164859102](./web-vue.assets/true-image-20220124164859102.png)
-
-
 
 # 四、其他
 
 ## eslint 配置
 
-https://eslint.vuejs.org/user-guide/#usage
-
-
-
-
-
-
+<https://eslint.vuejs.org/user-guide/#usage>
 
 ## 按需导入css样式
 
-https://github.com/vbenjs/vite-plugin-style-import/blob/HEAD/README.zh_CN.md
+<https://github.com/vbenjs/vite-plugin-style-import/blob/HEAD/README.zh_CN.md>
 
 ```bash
  "vite-plugin-style-import": "^1.4.1",
@@ -1676,19 +1641,15 @@ export default {
 
 ```
 
-
-
 # 五、vue3+vite+AntDesignVue 专用pc、web端
 
 Ant Design Vue专用pc、web端
-
-
 
 # 六、vue3 + vite + vant + typescript 专用app移动端
 
 Vant专用app移动端
 
-https://youzan.github.io/vant/v4/#/zh-CN
+<https://youzan.github.io/vant/v4/#/zh-CN>
 
 ## 快速上手
 
@@ -1766,51 +1727,29 @@ app.use(Button);
 
 ![image-20220330011947826](./web-vue.assets/true-image-20220330011947826.png)
 
-
-
-
-
-
-
 # 七、vue+vuetify 快速开发
 
 设备匹配：pc、web端、app
 
-
-
 # 九、Tailwind CSS 样式
 
-https://www.tailwindcss.cn/
+<https://www.tailwindcss.cn/>
 
 npm install tailwindcss
-
-
-
-
 
 # 十、vue项目打包
 
 ## git
 
-https://cli.vuejs.org/zh/guide/deployment.html#github-pages
+<https://cli.vuejs.org/zh/guide/deployment.html#github-pages>
 
-https://cn.vitejs.dev/guide/static-deploy.html
-
-
-
-
+<https://cn.vitejs.dev/guide/static-deploy.html>
 
 ## Webpack
 
-
-
 ## Rollup
 
-
-
 ## vue3+vite+nginx
-
-
 
 ```javascript
 // 打包相关规则
@@ -1837,6 +1776,3 @@ build: {
     },
 },
 ```
-
-
-

@@ -12,15 +12,15 @@ tag:
 
 ## 一、基础语法
 
-https://zh-hans.reactjs.org/
+<https://zh-hans.reactjs.org/>
 
 ### 1、react 常用UI组件库
 
-Material-UI：https://material-ui.com/（面向web端）
+Material-UI：<https://material-ui.com/（面向web>端）
 
-蚂蚁设计Ant Design：https://ant.design/（面向web端）
+蚂蚁设计Ant Design：<https://ant.design/（面向web>端）
 
-SemanticUI：https://semantic-ui.com/
+SemanticUI：<https://semantic-ui.com/>
 
 React Desktop：（面向MacOS Sierra和Windows10桌面风格的ReactUI组件库）
 
@@ -28,7 +28,7 @@ React Desktop：（面向MacOS Sierra和Windows10桌面风格的ReactUI组件库
 import.meta.env
 ```
 
-### 2、通过 Props 传递数据 
+### 2、通过 Props 传递数据
 
 ```tsx
 class Board extends React.Component {
@@ -59,10 +59,6 @@ class Square extends React.Component {
 }
 ```
 
-
-
-
-
 ### 3、使用 setae 保存数据
 
 ```tsx
@@ -85,8 +81,6 @@ class Square extends React.Component {
   }
 }
 ```
-
-
 
 ### 4、类组件
 
@@ -113,8 +107,6 @@ export default class Footer extends Component {
 }
 ```
 
-
-
 ### 5、函数组件
 
 **函数组件必须首字母大写**
@@ -133,8 +125,6 @@ export default function Hello() {
 }
 ```
 
-
-
 ### 6、生命周期
 
 生命周期和生命周期函数的关系：
@@ -143,11 +133,11 @@ export default function Hello() {
 >
 >
 
-- 
+-
 
-- 
+-
 
-- 
+-
 
 ### 7、数据替换
 
@@ -166,8 +156,6 @@ var newPlayer = Object.assign({}, player, {score: 2});
 // 使用对象展开语法，就可以写成：
 // var newPlayer = {...player, score: 2};
 ```
-
-
 
 ### 8、tsx 结构
 
@@ -302,10 +290,6 @@ export default class footer extends Component {
 └── yarn.lock                     ## Yarn文件
 ```
 
-
-
-
-
 ### 10、嵌入组件
 
 ```tsx
@@ -332,19 +316,13 @@ export default function Index() {
 }
 ```
 
-
-
-
-
 ### 11、12、13、14、15、16、17、
 
 ## 二、创建项目 react+vite+ts+Ant Design4
 
-Ant Design4：https://ant.design/
+Ant Design4：<https://ant.design/>
 
-https://gitee.com/MFork/vite-material-ui
-
-
+<https://gitee.com/MFork/vite-material-ui>
 
 ### 1、使用命令创建项目
 
@@ -356,7 +334,7 @@ vite
 >
 >npm init @vitejs/app
 >
->npm install 
+>npm install
 
 ant-design-pro
 
@@ -403,13 +381,11 @@ npm create @umijs/umi-app
 
 ```
 
+#### 模板
 
+<https://gitee.com/MFork/ant-design-pro>
 
-#### 模板：
-
-https://gitee.com/MFork/ant-design-pro
-
-https://v4-pro.ant.design/docs/layout-cn
+<https://v4-pro.ant.design/docs/layout-cn>
 
 ```
 ├── config                   ## umi 配置，包含路由，构建等配置
@@ -433,24 +409,16 @@ https://v4-pro.ant.design/docs/layout-cn
 └── package.json
 ```
 
-
-
-
-
 #### Error: spawn E:\code\javacode\myre\node_modules\esbuild-loader\node_modules\esbuild\esbuild.exe ENOENT
 
 >解决：cd E:\code\javacode\myre\node_modules\esbuild-loader\node_modules\esbuild
 >
->运行：node .\install.js		npm install -g 
+>运行：node .\install.js  npm install -g
 
 ```json
 "npm-i": "npm install",
 "npm-i-esbuild-exe": "node ./node_modules/esbuild-loader/node_modules/esbuild/install.js",
 ```
-
-
-
-
 
 ### 2、内置组件
 
@@ -488,53 +456,33 @@ export default index
 
 #### React.FC（）
 
-
-
 ### 3、路由
 
 ![](./web-react.assets/true-aa.png)
 
-
-
-
-
-
-
 ### 4、
-
-
-
-
 
 ### 5、6、7、8、
 
-
-
 ## 三、react + vite + ts + Material-UI
 
-https://mui.com/zh/
+<https://mui.com/zh/>
 
 模板市场
 
-https://mui.com/store/?utm_source=docs&utm_medium=referral&utm_campaign=in-house-themes
+<https://mui.com/store/?utm_source=docs&utm_medium=referral&utm_campaign=in-house-themes>
 
-01：https://mui.com/store/previews/berry-react-material-admin-free/
+01：<https://mui.com/store/previews/berry-react-material-admin-free/>
 
-https://berrydashboard.io/free/#
+<https://berrydashboard.io/free/>#
 
-https://gitee.com/kong19/react-admin-template
+<https://gitee.com/kong19/react-admin-template>
 
 ![](./web-react.assets/true-image-20220414220511243.png)
 
 02：
 
-
-
-
-
 ### 1、
-
-
 
 ### 2、
 
@@ -544,11 +492,4 @@ https://gitee.com/kong19/react-admin-template
 
 ### 5、6、7、8、
 
-
-
 ## 四、五、六、七、八、九
-
-
-
-
-

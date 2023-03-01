@@ -25,7 +25,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+ . /etc/bashrc
 fi
 
 
@@ -72,7 +72,7 @@ alias kgsvc-k8s='kubectl get svc -n kube-system -o wide' #获取k8s服务
 alias kgsvc-ing='kubectl get svc -n ingress-nginx -o wide' #获取ingress服务
 ###########k8s-pod信息
 alias kgpod='kubectl get pod --show-labels' #查看k8s的pod信息
-alias kgpodw='watch kubectl get pod -n kube-system -o wide'	#监控k8s-pod的kube-system进度
+alias kgpodw='watch kubectl get pod -n kube-system -o wide' #监控k8s-pod的kube-system进度
 ###########k8s-pods信息
 alias kgpodsallns='kubectl get pods --all-namespaces -o wide' #获取pods所有名称空间
 alias kgpodsn='kubectl get pods -o wide -n $1' #查看输入的【可以kgpodsans查看】名称空间信息
@@ -158,7 +158,7 @@ alias dklogs='sudo docker logs'      #容器名称/容器id
 kong@k:~$ dkse redis
 NAME                             DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
 redis                            Redis is an open source key-value store that…   9497                [OK]                
-bitnami/redis                    Bitnami Redis Docker Image                      181    			[OK]
+bitnami/redis                    Bitnami Redis Docker Image                      181       [OK]
 
 kong@k:~$ dkpull redis
 Using default tag: latest
@@ -187,7 +187,9 @@ PS C:\Users\k\Desktop> echo $PROFILE
 C:\Users\k\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
 PS C:\Users\k\Desktop>
 ```
+
 编辑：C:\Users\k\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+
 ```shell
 function dkse{docker search}
 function dklogin{docker login}
@@ -214,5 +216,3 @@ function dklogs{docker logs}
 ```
 
 以管理员身份打开Powershell 执行命令: ==Set-ExecutionPolicy RemoteSigned== ，然后重新启动计算机
-
-

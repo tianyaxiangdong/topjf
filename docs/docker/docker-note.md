@@ -10,7 +10,6 @@ tag:
 
 <!-- more -->
 
-
 # Centos7 Docker使用
 
 ## 前导
@@ -30,14 +29,12 @@ Docker 包括三个基本概念:
 | :--------------------- | :----------------------------------------------------------- |
 | Docker 镜像(Images)    | Docker 镜像是用于创建 Docker 容器的模板，比如 Ubuntu 系统。  |
 | Docker 容器(Container) | 容器是独立运行的一个或一组应用，是镜像运行时的实体。         |
-| Docker 客户端(Client)  | Docker 客户端通过命令行或者其他工具使用 Docker SDK (https://docs.docker.com/develop/sdk/) 与 Docker 的守护进程通信。 |
+| Docker 客户端(Client)  | Docker 客户端通过命令行或者其他工具使用 Docker SDK (<https://docs.docker.com/develop/sdk/>) 与 Docker 的守护进程通信。 |
 | Docker 主机(Host)      | 一个物理或者虚拟的机器用于执行 Docker 守护进程和容器。       |
 | Docker Registry        | Docker 仓库用来保存镜像，可以理解为代码控制中的代码仓库。一个 Registry 中可以包含多个仓库（Repository）；每个仓库可以包含多个标签（Tag）；每个标签对应一个镜像。通常，一个仓库会包含同一个软件不同版本的镜像，而标签就常用于对应该软件的各个版本。我们可以通过 **<仓库名>:<标签>** 的格式来指定具体是这个软件哪个版本的镜像。如果不给出标签，将以 **latest** 作为默认标签。 |
 | Docker Machine         | Docker Machine是一个简化Docker安装的命令行工具，通过一个简单的命令行即可在相应的平台上安装Docker，比如VirtualBox、 Digital Ocean、Microsoft Azure。 |
 
 ------------
-
-
 
 ## 一、下载与安装
 
@@ -49,7 +46,7 @@ Docker 包括三个基本概念:
 sudo apt-get -y install ./docker-desktop-4.8.1-amd64.deb
 ```
 
-### A、前提条件 
+### A、前提条件
 
 #### 1、卸载旧版本
 
@@ -106,9 +103,7 @@ apt-cache madison docker-ce
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
 
-
-
-#### 2、添加Docker官方的GPG密钥： 
+#### 2、添加Docker官方的GPG密钥
 
 ```bash
 -----------------debian
@@ -180,7 +175,7 @@ sudo systemctl status docker
 
 ![image-20211025122421088](./docker-note.assets/true-image-20211025122421088.png)
 
-#### 非root用户:
+#### 非root用户
 
 ```bash
 sudo usermod -aG docker jf123 #非root用户
@@ -188,7 +183,7 @@ sudo usermod -aG docker jf123 #非root用户
 
 请记住注销并重新登录才能生效！
 
-### C、卸载Docker 
+### C、卸载Docker
 
 卸载Docker Engine，CLI和Containerd软件包：
 
@@ -251,8 +246,6 @@ cat -s <<EOF > /etc/docker/daemon.json
 EOF
 ```
 
-
-
 ```json
 "https://04eo9xup.mirror.aliyuncs.com",
 "https://hub-mirror.c.163.com",
@@ -261,7 +254,7 @@ EOF
 "https://docker.mirrors.ustc.edu.cn"
 ```
 
-#启动服务：
+# 启动服务：
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 
@@ -330,16 +323,16 @@ alias dklogs='docker logs'      #容器名称/容器id
 sudo docker search centos
 ```
 
-#### 2、docker镜像下载 
+#### 2、docker镜像下载
 
-可以在这里查看镜像： https://hub.docker.com/_/centos?tab=tags&page=1
+可以在这里查看镜像： <https://hub.docker.com/_/centos?tab=tags&page=1>
 
 ```bash
 # docker pull 镜像名
 sudo docker pull centos:centos7
 ```
 
-####  3、docker镜像列表
+#### 3、docker镜像列表
 
 ```bash
 sudo docker images
@@ -369,13 +362,13 @@ sudo docker rmi 34336sdf12
 sudo docker rmi 34336sdf12 5525636f12
 ```
 
- #### 5、删除所有镜像
+#### 5、删除所有镜像
 
 ```bash
 sudo docker rmi  $(docker images -q)
 ```
 
-###  --- 容器 ---
+### --- 容器 ---
 
 #### 指令
 
@@ -406,14 +399,14 @@ anaconda-post.log  dev  home  lib64  mnt  proc  run   srv  tmp  var
 bin                etc  lib   media  opt  root  sbin  sys  usr
 ```
 
- #### 2、容器列表
+#### 2、容器列表
 
 ```bash
 sudo docker ps
 sudo docker ps -a
 ```
 
- #### 3、启动容器
+#### 3、启动容器
 
 ```bash
 # docker start 容器名称/容器Id
@@ -421,7 +414,7 @@ sudo docker ps -a
 sudo docker start webcentos
 ```
 
- #### 4、停止容器
+#### 4、停止容器
 
 ```bash
 # docker  stop 容器名称/容器Id
@@ -430,7 +423,7 @@ sudo docker stop webcentos
 sudo docker kill 容器ID or 容器名
 ```
 
-####  5、删除容器
+#### 5、删除容器
 
 ```bash
 # docker rm 容器id
@@ -442,20 +435,20 @@ sudo docker rm -f 235483s15c
 sudo docker rm -f 235483s15c 235483s169
 ```
 
-####  6、删除所有容器
+#### 6、删除所有容器
 
 ```bash
 sudo docker rm $(docker ps -a -q)
 ```
 
- #### 7、容器日志
+#### 7、容器日志
 
 ```bash
 # docker logs 容器名称/容器id
 sudo docker logs webcentos
 ```
 
- #### 8、登陆、进入\退出容器
+#### 8、登陆、进入\退出容器
 
 ```bash
 # docker attach 容器名称/容器id
@@ -511,9 +504,9 @@ centos              centos7             b5b4d78bc90c        2 weeks ago         
 
 #### 11、推送镜像到hub服务器
 
-https://hub.docker.com/ 注册得到docker id和密码,用docker login登陆hub服务器,docker push推送
+<https://hub.docker.com/> 注册得到docker id和密码,用docker login登陆hub服务器,docker push推送
 
-查看:	登陆 https://hub.docker.com/  点击 Repositories 菜单
+查看: 登陆 <https://hub.docker.com/>  点击 Repositories 菜单
 
 #### 12、推送镜像到阿里云<推荐><a name="推送到阿里镜像仓库"></a>
 
@@ -534,7 +527,7 @@ https://hub.docker.com/ 注册得到docker id和密码,用docker login登陆hub�
 ##### c. 登录阿里云Docker Registry
 
 ```bash
-$ docker login --username=程序app registry.cn-chengdu.aliyuncs.com
+docker login --username=程序app registry.cn-chengdu.aliyuncs.com
 ```
 
 用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。
@@ -542,15 +535,15 @@ $ docker login --username=程序app registry.cn-chengdu.aliyuncs.com
 ##### d. 从Registry中拉取镜像
 
 ```bash
-$ docker pull registry.cn-chengdu.aliyuncs.com/0-test/nacos:[镜像版本号]
+docker pull registry.cn-chengdu.aliyuncs.com/0-test/nacos:[镜像版本号]
 ```
 
 ##### e. 将镜像推送到Registry
 
 ```bash
-$ docker login --username=小牛程序app registry.cn-chengdu.aliyuncs.com
-$ docker tag [镜像ID] registry.cn-chengdu.aliyuncs.com/0-test/nacos:[镜像版本号]
-$ docker push registry.cn-chengdu.aliyuncs.com/0-test/nacos:[镜像版本号]
+docker login --username=小牛程序app registry.cn-chengdu.aliyuncs.com
+docker tag [镜像ID] registry.cn-chengdu.aliyuncs.com/0-test/nacos:[镜像版本号]
+docker push registry.cn-chengdu.aliyuncs.com/0-test/nacos:[镜像版本号]
 ```
 
 ##### g. 示例
@@ -572,16 +565,14 @@ yu/nacos             1.0       89f1d606e613    2 seconds ago  965MB
 -----------------------------------------------------------------------------
 kong@k:~$ docker tag 89f1d606e613 registry.cn-chengdu.aliyuncs.com/0-test/nacos:1.0
 kong@k:~$ dki
-REPOSITORY     									TAG     IMAGE ID    
-yu/nacos       									1.0     89f1d606e613
+REPOSITORY              TAG     IMAGE ID    
+yu/nacos                1.0     89f1d606e613
 registry.cn-chengdu.aliyuncs.com/0-test/nacos   1.0     89f1d606e613
 -----------------------------------------------------------------------------
 kong@k:~$ docker push registry.cn-chengdu.aliyuncs.com/0-test/nacos:1.0
 ```
 
 ![image-20210716152647038](./docker-note.assets/true-image-20210716152647038.png)
-
-
 
 #### 13、查看容器元信息
 
@@ -611,10 +602,6 @@ Options:
       --pids-limit int             调整容器pids限制（设置-1表示无限制）
       --restart string             当容器退出时要应用的重新启动策略
 ```
-
-
-
-
 
 ## 四、容器目录挂载
 
@@ -647,10 +634,11 @@ docker run -it -v  /宿主机目录:/容器目录:ro 镜像名
 
 ## 五、DockerFile 构建镜像
 
-### 常用指令:
+### 常用指令
 
 - **FROM**  #定制的镜像都是基于 FROM 的镜像[`nginx，centos...`]
 - **RUN** ["可执行文件", "参数1", "参数2"] #构建镜像时需要运行的[Linux、自定义]命令（可以写多条，建议使用 **&&** 连接符）；是在 docker build 时运行。
+
 ```shell
 RUN ["./test.jar", "dev", "offline"] 等价于RUN ./test.jar dev offline
    
@@ -660,7 +648,9 @@ RUN tar -zxvf redis.tar.gz
    
 简化，使用&&连接：RUN yum -y install wget \ && RUN tar -zxvf redis.tar.gz
 ```
+
 - **CMD** #指定容器启动时要运行的命令，假如有多个CMD，最后一个生效；用于运行程序，在 docker run 时运行。CMD <shell 命令> ；
+
 ```shell
 CMD ["\<可执行文件或命令\>","\<param1>","\<param2>",...] 
 
@@ -671,32 +661,39 @@ CMD ["\<可执行文件或命令>","\<param1>","\<param2>",...]
 CMD ["\<param1>","\<param2>",...]  # 该写法是为 ENTRYPOINT 指令指定的程序提供默认参数
 
 ```
+
 - **MAINTAINER** xxx #声明镜像维护者信息
 - **LABEL** name="xxx" \ build-date="20201212" #镜像描述元信息（可以写多条）
 - **WORKDIR** /root/xx #设置终端默认登录进来的工作目录
 - **EXPOSE** 8088 #当前容器对外暴露出的端口
 - **ADD** 文件 容器内部目录  #将宿主机的文件复制到容器内，如果是一个压缩文件，将会在复制后**自动解压**
 - **COPY** ["源文件" "容器内部路径"] #和ADD相似，但是如果有压缩文件是**不能解压**
+
 ```shell
 COPY home.txt /mydir/ #路径不存在的话，会自动创建。
 ```
+
 - **VOLUME** #创建一个可以从本地主机或其他容器挂载的挂载点，一般用来存放数据库和需要保持的数据等
 - **ENV** \<key>=< value>：为容器设置 Linux 环境变量 ，定义了环境变量，那么在后续的指令中，就可以使用这个环境变量。
+
 ```shell
 ENV JAVA_HOME /home/jdk1.8.0_151
 ENV CLASSPATH \$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 ```
+
 - **ARG** \<key>=< value>： 设置环境变量，环境变量只作用于Dockerfile内。
 - **ENTRYPOINT** #指定容器启动时要运行的命令
+
 ```shell
 ENTRYPOINT ["\<executeable>","\<param1>","\<param2>",...]
 ENTRYPOINT nginx -g "daemon off;"
 ```
+
 - **USER** 用于指定执行后续命令的用户和用户组 USER 用户名:用户组
-   - USER kong:k
+  - USER kong:k
 - **ONBUILD**  #当构建一个被继承的Dockerfile时运行的命令，父镜像在被子镜像继承后父镜像的onbuild被触发。可以把ONBUID理解为一个触发器。
 
-### DockerFile 示例:
+### DockerFile 示例
 
 #### 基于nginxDockerFile<a name="nginxDockerFile"></a>
 
@@ -726,9 +723,9 @@ CMD /bin/bash
 
 #### 基于TomcatDockerFile<a name="基于TomcatDockerFile"></a>
 
-#tomcat:9.0.62-jre8-temurin-focal、tomcat:8.5.78-jre8-temurin-focal
-#tomcat:9.0.62-jre11-temurin-focal、tomcat:8.5.78-jre11-temurin-focal
-#tomcat:9.0.62-jre17-temurin-focal、tomcat:8.5.78-jre17-temurin-focal
+# tomcat:9.0.62-jre8-temurin-focal、tomcat:8.5.78-jre8-temurin-focal
+# tomcat:9.0.62-jre11-temurin-focal、tomcat:8.5.78-jre11-temurin-focal
+# tomcat:9.0.62-jre17-temurin-focal、tomcat:8.5.78-jre17-temurin-focal
 
 ```bash
 #使用的基础镜像
@@ -797,12 +794,12 @@ WORKDIR $ROOT_DIR
 # RUN echo 'LANG="zh_CN.UTF-8"' > /etc/locale.conf && source /etc/locale.conf
 # RUN echo "export LC_ALL=zh_CN.UTF-8" >> /etc/profile && source /etc/profile
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-	&& yum -y install kde-l10n-Chinese \
-	&& yum -y reinstall glibc-common \
-	&& localedef -c -f UTF-8 -i zh_CN zh_CN.UTF-8 \
-	&& echo 'LANG="zh_CN.UTF-8"' > /etc/locale.conf \
-	&& source /etc/locale.conf \
-	&& yum clean all
+ && yum -y install kde-l10n-Chinese \
+ && yum -y reinstall glibc-common \
+ && localedef -c -f UTF-8 -i zh_CN zh_CN.UTF-8 \
+ && echo 'LANG="zh_CN.UTF-8"' > /etc/locale.conf \
+ && source /etc/locale.conf \
+ && yum clean all
 ENV LANG=zh_CN.UTF-8 \
     LC_ALL=zh_CN.UTF-8
 
@@ -967,8 +964,8 @@ cker-compose version 1.24.1, build 4667896b
 ### 使用
 
 ```
-$ mkdir composetest
-$ cd composetest
+mkdir composetest
+cd composetest
 ```
 
 composetest/app.py
@@ -996,7 +993,7 @@ def hello():
   return 'Hello World! I have been seen {} times.\n'.format(count)
 ```
 
-composetest/requirements.txt 
+composetest/requirements.txt
 
 ```
 flask
@@ -1037,10 +1034,6 @@ services:
 docker-compose up -d
 ```
 
-
-
-
-
 ## N、docker 私有仓库
 
 Docker私有仓库主要是企业内部用来存放镜像的仓库，相对官方仓库以及阿里云仓库，具有更高的保密安全级别；
@@ -1049,7 +1042,7 @@ Docker私有仓库主要是企业内部用来存放镜像的仓库，相对官�
 
 #### 第一步：拉取私有仓库镜像 （私有仓库程序本身就是一个镜像）
 
-docker pull registry 
+docker pull registry
 
 #### 第二步：启动私有仓库容器
 
@@ -1059,11 +1052,11 @@ docker run -d -v /opt/registry:/var/lib/registry --name=myRegistry -p 5000:5000 
 
 #### 第三步：测试
 
-http://localhost:5000/v2/_catalog
+<http://localhost:5000/v2/_catalog>
 
-![](./docker-note.assets/test.png)
+![](./docker-note.assets/true-test.png)
 
-看到这个 说明启动OK。因为仓库里还没有镜像，所以就是空的； 
+看到这个 说明启动OK。因为仓库里还没有镜像，所以就是空的；
 
 #### 第四步：etc/docker 修改daemon.json，让docker信任私有仓库地址
 
@@ -1074,7 +1067,7 @@ http://localhost:5000/v2/_catalog
 }
 ```
 
-#### 第五步：修改配置后重启docker；
+#### 第五步：修改配置后重启docker
 
  systemctl restart docker
 
@@ -1096,34 +1089,34 @@ docker push localhost:5000/nginx:1.0
 
 dkrmi localhost:5000/nginx:1.0
 
-#### 第四步：从私有仓库拉取localhost:5000/nginx镜像，并运行；
+#### 第四步：从私有仓库拉取localhost:5000/nginx镜像，并运行
 
 docker pull localhost:5000/nginx:1.0
 
 docker run -it -p 80:80 localhost:5000/nginx:1.0
 
-#### 第五步：浏览器运行 http://localhost:8080测试
+#### 第五步：浏览器运行 <http://localhost:8080>测试
 
 ![image-20210716175240487](./docker-note.assets/true-image-20210716175240487.png)
 
 ### C 搭建管理界面 harbor-2.2.x
 
-[下载地址](https://github.com/goharbor/harbor/releases ) 			
+[下载地址](https://github.com/goharbor/harbor/releases )    
 
-#### 设置本地域名/etc/hosts:
+#### 设置本地域名/etc/hosts
 
 192.168.101.6   dk.harbor.com
 192.168.101.6   dkharbor.qyk8.top
 
-#### 生成证书颁发机构证书 
+#### 生成证书颁发机构证书
 
-##### ---生成 CA 证书私钥。 
+##### ---生成 CA 证书私钥
 
 ```sh
 openssl genrsa -out ca.key 4096
 ```
 
-##### ---生成 CA 证书。 
+##### ---生成 CA 证书
 
 ```sh
 openssl req -x509 -new -nodes -sha512 -days 3650 \
@@ -1132,15 +1125,15 @@ openssl req -x509 -new -nodes -sha512 -days 3650 \
  -out ca.crt
 ```
 
-#### 生成服务器证书 
+#### 生成服务器证书
 
-##### ---生成私钥。 
+##### ---生成私钥
 
 ```sh
 openssl genrsa -out dkharbor.qyk8.top.key 4096
 ```
 
-##### ---生成证书签名请求 (CSR)。  
+##### ---生成证书签名请求 (CSR)  
 
 ```sh
 openssl req -sha512 -new \
@@ -1149,7 +1142,7 @@ openssl req -sha512 -new \
     -out dkharbor.qyk8.top.csr
 ```
 
-##### ---生成 x509 v3 扩展文件。 
+##### ---生成 x509 v3 扩展文件
 
 ```sh
 cat > v3.ext <<-EOF
@@ -1166,7 +1159,7 @@ DNS.3=k
 EOF
 ```
 
-##### ---使用 `v3.ext`文件为您的 Harbor 主机生成证书。 
+##### ---使用 `v3.ext`文件为您的 Harbor 主机生成证书
 
 ```sh
 openssl x509 -req -sha512 -days 3650 \
@@ -1176,22 +1169,22 @@ openssl x509 -req -sha512 -days 3650 \
     -out dkharbor.qyk8.top.crt
 ```
 
-#### 向 Harbor 和 Docker 提供证书 
+#### 向 Harbor 和 Docker 提供证书
 
 ```sh
 cp dkharbor.qyk8.top.crt ./data/cert/
 cp dkharbor.qyk8.top.key ./data/cert/
 ```
 
-2,兑换 `yourdomain.com.crt`至 `yourdomain.com.cert`，供 Docker 使用。 
+2,兑换 `yourdomain.com.crt`至 `yourdomain.com.cert`，供 Docker 使用。
 
-Docker 守护进程解释 `.crt`文件作为 CA 证书和 `.cert`文件作为客户端证书。 
+Docker 守护进程解释 `.crt`文件作为 CA 证书和 `.cert`文件作为客户端证书。
 
 ```sh
 openssl x509 -inform PEM -in dkharbor.qyk8.top.crt -out dkharbor.qyk8.top.cert
 ```
 
-3,将服务器证书、密钥和 CA 文件复制到 Harbor 主机上的 Docker 证书文件夹中。  您必须先创建适当的文件夹。 
+3,将服务器证书、密钥和 CA 文件复制到 Harbor 主机上的 Docker 证书文件夹中。  您必须先创建适当的文件夹。
 
 ```sh
 sudo cp dkharbor.qyk8.top.cert /etc/docker/certs.d/dkharbor.qyk8.top/
@@ -1199,9 +1192,9 @@ sudo cp dkharbor.qyk8.top.key /etc/docker/certs.d/dkharbor.qyk8.top/
 sudo cp ca.crt /etc/docker/certs.d/dkharbor.qyk8.top/
 ```
 
-如果您映射默认 `nginx`端口 443 到不同的端口，创建文件夹 `/etc/docker/certs.d/yourdomain.com:port`， 或者 `/etc/docker/certs.d/harbor_IP:port`. 
+如果您映射默认 `nginx`端口 443 到不同的端口，创建文件夹 `/etc/docker/certs.d/yourdomain.com:port`， 或者 `/etc/docker/certs.d/harbor_IP:port`.
 
-4,重启 Docker 引擎。 
+4,重启 Docker 引擎。
 
 ```sh
 systemctl restart docker
@@ -1218,18 +1211,18 @@ sudo docker-compose up -d
 
 #### HTTPS访问
 
-某些浏览器可能会显示一条警告，指出证书颁发机检查 `/etc/docker/daemon.json`文件以确保 `-insecure-registry`未为 设置选项 [https://yourdomain.com ](https://yourdomain.com)。 
+某些浏览器可能会显示一条警告，指出证书颁发机检查 `/etc/docker/daemon.json`文件以确保 `-insecure-registry`未为 设置选项 [https://yourdomain.com](https://yourdomain.com)。
 
-从 Docker 客户端登录 Harbor。 
+从 Docker 客户端登录 Harbor。
 
 ```sh
 docker login yourdomain.com
 docker login yourdomain.com:port
 ```
 
-帐号密码为 admin/Harbor12345 (https://dkharbor.qyk8.top/)
+帐号密码为 admin/Harbor12345 (<https://dkharbor.qyk8.top/>)
 
-#### 上传实例:
+#### 上传实例
 
 ##### -- 新建项目
 
@@ -1244,12 +1237,3 @@ dkpush dkharbor.qyk8.top/test/nginx:1.0.1
 ![image-20210716221950684](./docker-note.assets/true-image-20210716221950684.png)
 
 ![image-20210716222615232](./docker-note.assets/true-image-20210716222615232.png)
-
-
-
-
-
-
-
-
-

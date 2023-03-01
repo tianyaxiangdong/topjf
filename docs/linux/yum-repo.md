@@ -15,7 +15,7 @@ tag:
 
 [https://blog.csdn.net/qq_42476834/article/details/121433712](https://blog.csdn.net/qq_42476834/article/details/121433712)
 
-**查看系统的版本：**`cat /etc/redhat-release` 
+**查看系统的版本：**`cat /etc/redhat-release`
 
 ## 一、用Centos镜像搭建本地yum源
 
@@ -51,7 +51,7 @@ gpgcheck=0        #校验
 >
 >yum makecache        //把yum源缓存到本地，加快软件的搜索好安装速度
 >
->yum -y update	//更新yum库存
+>yum -y update //更新yum库存
 >
 >yum repolist        //列出个包
 
@@ -69,31 +69,29 @@ gpgcheck=0        #校验
 
 [centos-yum-阿里官网配置](https://developer.aliyun.com/mirror/centos?spm=a2c6h.13651102.0.0.613b1b11Q4GiOU)
 
-
-
 **CentOS 6：**
 
-> wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-6.repo
+> wget -O /etc/yum.repos.d/CentOS-Base.repo <https://mirrors.aliyun.com/repo/Centos-6.repo>
 >
 > 或者
 >
-> curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-6.repo
+> curl -o /etc/yum.repos.d/CentOS-Base.repo <https://mirrors.aliyun.com/repo/Centos-6.repo>
 
 **CentOS 7：**
 
-> wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
+> wget -O /etc/yum.repos.d/CentOS-Base.repo <https://mirrors.aliyun.com/repo/Centos-7.repo>
 >
 > 或者
 >
-> curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
+> curl -o /etc/yum.repos.d/CentOS-Base.repo <https://mirrors.aliyun.com/repo/Centos-7.repo>
 
 **CentOS 8：**
 
-> wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-8.repo
+> wget -O /etc/yum.repos.d/CentOS-Base.repo <https://mirrors.aliyun.com/repo/Centos-8.repo>
 >
 > 或者
 >
-> curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-8.repo
+> curl -o /etc/yum.repos.d/CentOS-Base.repo <https://mirrors.aliyun.com/repo/Centos-8.repo>
 
 ### 4.清除缓存
 
@@ -101,7 +99,7 @@ gpgcheck=0        #校验
 >
 >yum makecache        //把yum源缓存到本地，加快软件的搜索好安装速度
 >
->yum -y update	//更新yum库存
+>yum -y update //更新yum库存
 >
 >yum repolist        //列出个包
 
@@ -119,28 +117,27 @@ gpgcheck=0        #校验
 
 **CentOS 5：**
 
->wget http://mirrors.163.com/.help/CentOS5-Base-163.repo
+>wget <http://mirrors.163.com/.help/CentOS5-Base-163.repo>
 
 **CentOS 6：**
 
->wget http://mirrors.163.com/.help/CentOS6-Base-163.repo
+>wget <http://mirrors.163.com/.help/CentOS6-Base-163.repo>
 
 **CentOS 7：**
 
->wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
+>wget <http://mirrors.163.com/.help/CentOS7-Base-163.repo>
 
 **CentOS 8：**
 
-> wget http://mirrors.163.com/.help/CentOS8-Base-163.repo
+> wget <http://mirrors.163.com/.help/CentOS8-Base-163.repo>
 
 *运行*
 
-> wget -O /etc/yum.repos.d/CentOS8-Base-163.repo http://mirrors.163.com/.help/CentOS8-Base-163.repo
+> wget -O /etc/yum.repos.d/CentOS8-Base-163.repo <http://mirrors.163.com/.help/CentOS8-Base-163.repo>
 
 ```shell
 Saving to: ‘/etc/yum.repos.d/CentOS8-Base-163.repo’100%[=>] 1,572       --.-K/s   in 0s      2017-06-20 06:29:47 (293 MB/s) - ‘/etc/yum.repos.d/CentOS8-Base-163.repo’ saved [1572/1572]
 ```
-
 
 ### 4.清除缓存
 
@@ -148,7 +145,7 @@ Saving to: ‘/etc/yum.repos.d/CentOS8-Base-163.repo’100%[=>] 1,572       --.-
 >
 >yum makecache        //把yum源缓存到本地，加快软件的搜索好安装速度
 >
->yum -y update	//更新yum库存
+>yum -y update //更新yum库存
 >
 >yum repolist        //列出个包
 

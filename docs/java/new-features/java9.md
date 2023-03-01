@@ -11,7 +11,7 @@ tag:
 
 **Java 9** 发布于 2017 年 9 月 21 日 。作为 Java 8 之后 3 年半才发布的新版本，Java 9 带来了很多重大的变化其中最重要的改动是 Java 平台模块系统的引入，其他还有诸如集合、`Stream` 流......。
 
-你可以在 [Archived OpenJDK General-Availability Releases](http://jdk.java.net/archive/) 上下载自己需要的 JDK 版本！官方的新特性说明文档地址： https://openjdk.java.net/projects/jdk/ 。
+你可以在 [Archived OpenJDK General-Availability Releases](http://jdk.java.net/archive/) 上下载自己需要的 JDK 版本！官方的新特性说明文档地址： <https://openjdk.java.net/projects/jdk/> 。
 
 **概览（精选了一部分）** ：
 
@@ -76,14 +76,13 @@ module my.module {
 
 - [《Project Jigsaw: Module System Quick-Start Guide》](https://openjdk.java.net/projects/jigsaw/quick-start)
 - [《Java 9 Modules: part 1》](https://stacktraceguru.com/java9/module-introduction)
-- [[Java 9 揭秘（2. 模块化系统）](https://www.cnblogs.com/IcanFixIt/p/6947763.html)](http://www.cnblogs.com/IcanFixIt/p/6947763.html)
+- [[Java 9 揭秘（2. 模块化系统）](https://www.cnblogs.com/IcanFixIt/p/6947763.html)](<http://www.cnblogs.com/IcanFixIt/p/6947763.html>)
 
 ## G1 成为默认垃圾回收器
 
 在 Java 8 的时候，默认垃圾回收器是 Parallel Scavenge（新生代）+Parallel Old（老年代）。到了 Java 9, CMS 垃圾回收器被废弃了，**G1（Garbage-First Garbage Collector）**  成为了默认垃圾回收器。
 
 G1 还是在 Java 7 中被引入的，经过两个版本优异的表现成为成为默认垃圾回收器。
-
 
 ## 快速创建不可变集合
 
@@ -235,7 +234,7 @@ System.out.println(currentProcess.info());
 
 `Flow` 中包含了 `Flow.Publisher`、`Flow.Subscriber`、`Flow.Subscription` 和 `Flow.Processor` 等 4 个核心接口。Java 9 还提供了`SubmissionPublisher` 作为`Flow.Publisher` 的一个实现。
 
-关于 Java 9 响应式流更详细的解读，推荐你看 [Java 9 揭秘（17. Reactive Streams ）- 林本托 ](https://www.cnblogs.com/IcanFixIt/p/7245377.html) 这篇文章。
+关于 Java 9 响应式流更详细的解读，推荐你看 [Java 9 揭秘（17. Reactive Streams ）- 林本托](https://www.cnblogs.com/IcanFixIt/p/7245377.html) 这篇文章。
 
 ## 变量句柄
 
@@ -257,8 +256,8 @@ System.out.println(currentProcess.info());
 
 ## 参考
 
-- Java version history：https://en.wikipedia.org/wiki/Java_version_history
-- Release Notes for JDK 9 and JDK 9 Update Releases : https://www.oracle.com/java/technologies/javase/9-all-relnotes.html
+- Java version history：<https://en.wikipedia.org/wiki/Java_version_history>
+- Release Notes for JDK 9 and JDK 9 Update Releases : <https://www.oracle.com/java/technologies/javase/9-all-relnotes.html>
 - 《深入剖析 Java 新特性》-极客时间 - JShell：怎么快速验证简单的小问题？
-- New Features in Java 9:https://www.baeldung.com/new-java-9
-- Java – Try with Resources：https://www.baeldung.com/java-try-with-resources
+- New Features in Java 9:<https://www.baeldung.com/new-java-9>
+- Java – Try with Resources：<https://www.baeldung.com/java-try-with-resources>

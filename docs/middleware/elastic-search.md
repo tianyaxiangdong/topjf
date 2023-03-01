@@ -20,19 +20,17 @@ tag:
 
 ### 1.1 ES介绍
 
-应用程序搜索	网站搜索	企业搜索	日志处理和分析
+应用程序搜索 网站搜索 企业搜索 日志处理和分析
 
-基础设施指标和容器监测	应用程序性能监测
+基础设施指标和容器监测 应用程序性能监测
 
-地理空间数据分析和可视化	安全分析	业务分析
+地理空间数据分析和可视化 安全分析 业务分析
 
-官方文档 : https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
+官方文档 : <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>
 
-官方中文 : https://www.elastic.co/guide/cn/elasticsearch/guide/current/foreword_id.html
+官方中文 : <https://www.elastic.co/guide/cn/elasticsearch/guide/current/foreword_id.html>
 
-社区中文: https://es.xiaoleilu.com/index.html、http://doc.codingdict.com/elasticsearch/0/
-
-
+社区中文: <https://es.xiaoleilu.com/index.html、http://doc.codingdict.com/elasticsearch/0/>
 
 ### 1.2 基本概念
 
@@ -47,7 +45,7 @@ Elasticsearch也是基于Lucene的全文检索库，本质也是存储数据，�
 
      文档（Document）----------------------Row 行
 
-	    字段（Field）-------------------------Columns 列 
+     字段（Field）-------------------------Columns 列 
 ```
 
 index:索引
@@ -69,7 +67,7 @@ document
 [downloads](https://www.elastic.co/cn/downloads/elasticsearch#ga-release)
 
 > docker pull elasticsearch:7.14.0      存储和检索数据
-> 
+>
 > docker pull kibana:7.14.0        可视化数据
 
 [教程](https://blog.csdn.net/qq_42476834/article/details/112675953)
@@ -83,8 +81,6 @@ document
 ### 查看 kibana
 
 ![](./elastic-search.assets/true-image-20210908134637817.png)
-
-
 
 ## 3 索引操作（indices）
 
@@ -115,11 +111,9 @@ es 中会默认存在一个名为.kibana和.kibana_task_manager的索引
 |   store.size   | 整体占空间大小                                   |
 | pri.store.size | 主节点占                                      |
 
-
-
 ### 3.2 创建索引
 
-保存:	PUT /index/type/标识id	
+保存: PUT /index/type/标识id 
 
 如: PUT /customer/demo/1
 
@@ -129,14 +123,13 @@ es 中会默认存在一个名为.kibana和.kibana_task_manager的索引
 
 *PUT* 可以新增&修改。PUT必须指定id,由于PUT需要指定id，我们一般都用来做修改操作，不指定id会报错 。
 
-
 #### 响应结果 <a name='响应结果' />
 
 ```text
 {
     "_index": "customer", #索引
     "_type": "demo", #类型
-    "_id": "1",	#id
+    "_id": "1", #id
     "_version": 5, #版本
     "result": "updated", #状态
     "_shards": {
@@ -167,7 +160,7 @@ es 中会默认存在一个名为.kibana和.kibana_task_manager的索引
 
 [响应结果](#响应结果)
 
-get http://192.168.101.5:9200/customer/demo/1
+get <http://192.168.101.5:9200/customer/demo/1>
 
 ```json
 {
@@ -214,7 +207,7 @@ get http://192.168.101.5:9200/customer/demo/1
 
 ### 3.5 删除文档&索引
 
-删除ID: http://192.168.101.5:9200/customer/demo/id/
+删除ID: <http://192.168.101.5:9200/customer/demo/id/>
 
 ```json
 {
@@ -233,7 +226,7 @@ get http://192.168.101.5:9200/customer/demo/1
 }
 ```
 
-删除索引: http://192.168.101.5:9200/customer/
+删除索引: <http://192.168.101.5:9200/customer/>
 
 ```json
 {
@@ -241,7 +234,7 @@ get http://192.168.101.5:9200/customer/demo/1
 }
 ```
 
-查看索引: http://192.168.101.5:9200/_cat/indices
+查看索引: <http://192.168.101.5:9200/_cat/indices>
 
 ### 3.6 post bulk批量导入 API
 
@@ -254,7 +247,7 @@ get http://192.168.101.5:9200/customer/demo/1
 {"name": "小花"}
 ```
 
-post http://192.168.101.5:9200/customer/demo/_bulk
+post <http://192.168.101.5:9200/customer/demo/_bulk>
 
 ```json
 {
@@ -299,7 +292,7 @@ post http://192.168.101.5:9200/customer/demo/_bulk
 }
 ```
 
-http://192.168.101.5:9200/customer/demo/1
+<http://192.168.101.5:9200/customer/demo/1>
 
 #### 可视化操作
 
@@ -335,8 +328,6 @@ POST /_bulk
 
 ![](./elastic-search.assets/true-image-20210908155510529.png)
 
-
-
 ## 4 映射配置（_mapping）
 
 索引有了，接下来肯定是添加数据。但是，在添加数据之前必须定义映射。
@@ -346,8 +337,6 @@ POST /_bulk
 映射是定义文档的过程，文档包含哪些字段，这些字段是否保存，是否索引，是否分词等
 
 只有配置清楚，Elasticsearch才会帮我们进行索引库的创建（不一定）
-
-
 
 ### 4.1 PUT 创建映射字段
 
@@ -482,7 +471,7 @@ PUT /my_index/_mapping
 ```text
 {
   "properties": {
-    "employee-id":{	#字段
+    "employee-id":{ #字段
       "type":"keyword",  #类型
       "index":false   #可检索
     }
@@ -494,7 +483,7 @@ PUT /my_index/_mapping
 
 ### 4.4 映射 PUT 数据迁移
 
-_type="account" 变为> _type: "_doc",，取消了type，6.0之后取消了type
+_type="account" 变为>_type: "_doc",，取消了type，6.0之后取消了type
 
 GET /bank/_mapping
 
@@ -558,9 +547,7 @@ POST _reindex
 }
 ```
 
-> GET /newbank/_search	#_type="account" 变为> _type: "_doc",，取消了type，6.0之后取消了type
-
-
+> GET /newbank/_search #_type="account" 变为> _type: "_doc",，取消了type，6.0之后取消了type
 
 ## 5 新增文档（document）
 
@@ -583,8 +570,6 @@ POST /索引库名/类型/id值
 
 - `_source`：源文档信息，所有的数据都在里面。
 - `_id`：这条文档的唯一标示，与文档自己的id字段没有关联
-
-
 
 ### 5.2 智能判断
 
@@ -719,8 +704,6 @@ stock，saleable，attr都被成功映射了。
 
 如果是字符串类型的数据，会添加两种类型：text + keyword。如上例中的category 和 brand
 
-
-
 ## 6 删除数据
 
 删除使用DELETE请求，同样，需要根据id进行删除：
@@ -756,7 +739,7 @@ DELETE /atguigu/goods/3
 }
 ```
 
-## 7 分词 
+## 7 分词
 
 ### 7.1 默认分词器，对中文不友好
 
@@ -770,7 +753,7 @@ POST _analyze
 
 结果:
 
-	{
+ {
       "tokens" : [
         {
           "token" : "bucket",
@@ -858,7 +841,7 @@ POST _analyze
 
 **nginx 配置**
 
-http://localhost:50005/es/fenci.txt
+<http://localhost:50005/es/fenci.txt>
 
 ik/config/IKAnalyzer.cfg.xml:
 
@@ -900,8 +883,6 @@ GET bank/_search
 }
 ```
 
-
-
 查询所有：
 
 ```text
@@ -915,8 +896,6 @@ GET /{index}/{type}/{id}
 ```
 
 除了上述简单查询之外。elasticsearch作为搜索引擎，最复杂最强大的功能就是搜索查询功能。包括：匹配查询、词条查询、模糊查询、组合查询、范围查询、高亮、排序、分页等等查询功能。
-
-
 
 基本查询语法如下：
 
@@ -938,8 +917,6 @@ GET /索引库名/_search
   - 例如：`match_all`， `match`，`term` ， `range` 等等
 - 查询条件：查询条件会根据类型的不同，写法也有差异，后面详细讲解
 
-
-
 查询结果：
 
 - took：查询花费时间，单位是毫秒
@@ -954,8 +931,6 @@ GET /索引库名/_search
     - _id：文档id
     - _score：文档得分
     - _source：文档的源数据
-
-
 
 ### 8.2 数据准备
 
@@ -995,7 +970,7 @@ GET /atguigu/_search
 ```text
 {
   "query":{ #查询规则
-    "match_all": {}	#查询所有
+    "match_all": {} #查询所有
   },
   "from": 0, #开始位置
   "size": 4, #选取条数
@@ -1099,8 +1074,6 @@ GET bank/_search
 
 只会包含 address=mill lane 记录
 
-
-
 #### 8.3.4 子属性匹配（字段.xx） <a name="子属性匹配" />
 
 GET /atguigu/_search
@@ -1128,10 +1101,9 @@ GET /atguigu/_search
             "query": "小米",
             "fields": ["title", "attr.brand.keyword"]
         }
-	}
+ }
 }
 ```
-
 
 GET /atguigu/_search
 
@@ -1147,8 +1119,6 @@ GET /atguigu/_search
 ```
 
 fields值匹配到query
-
-
 
 ### 8.4 词条查询，精确值匹配（term）
 
@@ -1217,8 +1187,6 @@ GET bank/_search
 }
 ```
 
-
-
 ### 8.5 范围查询（range）
 
 `range` 查询找出那些落在指定区间内的数字或者时间
@@ -1233,7 +1201,7 @@ GET /atguigu/_search
                 "gte":  1000,
                 "lt":   3000
             }
-    	}
+     }
     }
 }
 ```
@@ -1247,8 +1215,6 @@ GET /atguigu/_search
 | lt  |  小于  |
 | lte | 小于等于 |
 
-
-
 ### 8.6 布尔组合（bool)
 
 布尔查询又叫 **组合查询、复合查询**
@@ -1261,24 +1227,24 @@ GET /atguigu/_search
 {
     "query":{
         "bool":{
-        	"must": [
-        	  {
-        	    "range": {
-        	      "price": {
-        	        "gte": 1000,
-        	        "lte": 3000
-        	      }
-        	    }
-        	  },
-        	  {
-        	    "range": {
-        	      "price": {
-        	        "gte": 2000,
-        	        "lte": 4000
-        	      }
-        	    }
-        	  }
-        	]
+         "must": [
+           {
+             "range": {
+               "price": {
+                 "gte": 1000,
+                 "lte": 3000
+               }
+             }
+           },
+           {
+             "range": {
+               "price": {
+                 "gte": 2000,
+                 "lte": 4000
+               }
+             }
+           }
+         ]
         }
     }
 }
@@ -1334,7 +1300,7 @@ GET bank/_search
           }
         }
       ],
-	  "should": [ #应该，能匹配到最好，没匹配到也不伤大雅，满足的话max_score会更高
+   "should": [ #应该，能匹配到最好，没匹配到也不伤大雅，满足的话max_score会更高
         {
           "match": {
             "lastname": "Wallace"
@@ -1349,8 +1315,6 @@ GET bank/_search
 > 查询gender=F & address=Mill & age!=38 ，lastname能匹配到最好，没匹配到也不伤大雅
 
 注意：一个组合查询里面只能出现一种组合，不能混用
-
-
 
 ### 8.7 过滤（filter）
 
@@ -1488,8 +1452,6 @@ GET /atguigu/_search
 }
 ```
 
-
-
 ### 8.9 分页（from/size）
 
 GET /atguigu/_search
@@ -1538,8 +1500,6 @@ pre_tags：前置标签
 post_tags：后置标签
 
 查询结果如下：
-
-
 
 ### 8.11 结果过滤（_source）
 
@@ -1590,8 +1550,6 @@ GET /atguigu/_search
   }
 }
 ```
-
-
 
 ## 9 聚合（aggregations）
 
@@ -1697,7 +1655,6 @@ GET bank/_search
 }
 ```
 
-
 聚合可以让我们极其方便的实现对数据的统计、分析。例如：
 
 - 什么品牌的手机最受欢迎？
@@ -1705,8 +1662,6 @@ GET bank/_search
 - 这些手机每月的销售情况如何？
 
 实现这些统计功能的比数据库的sql要方便的多，而且查询速度非常快，可以实现实时搜索效果。
-
-
 
 ### 9.1 基本概念
 
@@ -1724,10 +1679,7 @@ Elasticsearch中提供的划分桶的方式有很多：
 - Terms Aggregation：根据词条内容分组，词条内容完全匹配的为一组
 - Range Aggregation：数值和日期的范围分组，指定开始和结束，然后按段分组
 
-
-
 bucket aggregations 只负责对数据进行分组，并不进行计算，因此往往bucket中往往会嵌套另一种聚合：metrics aggregations即度量
-
 
 **度量（metrics）**
 
@@ -1743,7 +1695,6 @@ bucket aggregations 只负责对数据进行分组，并不进行计算，因此
 - Sum Aggregation：求和
 - Top hits Aggregation：求前几
 - Value Count Aggregation：求总数
-
 
 ### 9.2 聚合为桶
 
@@ -1821,8 +1772,6 @@ GET /atguigu/_search
   - key：这个桶对应的品牌字段的值
   - doc_count：这个桶中的文档数量
 
-
-
 ### 9.3 桶内度量
 
 前面的例子告诉我们每个桶里面的文档数量，这很有用。 但通常，我们的应用需要提供更复杂的文档度量。 例如，每种品牌手机的平均价格是多少？
@@ -1857,8 +1806,6 @@ GET /atguigu/_search
 - avg_price：聚合的名称
 - avg：度量的类型，这里是求平均值
 - field：度量运算的字段
-
-
 
 结果：
 
@@ -1919,8 +1866,6 @@ GET /atguigu/_search
 
 可以看到每个桶中都有自己的`avg_price`字段，这是度量聚合的结果
 
-
-
 ### 9.4 桶内嵌套桶
 
 刚刚的案例中，我们在桶内嵌套度量运算。事实上桶不仅可以嵌套运算， 还可以再嵌套其它桶。也就是说在每个分组中，再分更多组。
@@ -1953,8 +1898,6 @@ GET /atguigu/_search
     }
 }
 ```
-
-
 
 部分结果：
 
@@ -2072,8 +2015,6 @@ GET /atguigu/_search
   - 华为产品的平均售价是 3999.0美元。
   - 其中3种手机产品，1种笔记本产品
 
-
-
 ## 10 SpringData-Elasticsearch
 
 ### 10.1 介绍
@@ -2088,13 +2029,9 @@ GET /atguigu/_search
 
 由于原生的Elasticsearch客户端API非常麻烦。所以这里直接学习Spring提供的套件：Spring Data Elasticsearch。
 
-
-
 **spring-data-Elasticsearch 使用之前,必须先确定版本,elasticsearch 对版本的要求比较高。**
 
-
-
-java-API选择：https://www.elastic.co/guide/en/elasticsearch/client/index.html
+java-API选择：<https://www.elastic.co/guide/en/elasticsearch/client/index.html>
 
 选择：Java REST Client [7.14\]](https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/index.html) => JavaHighLevelRESTClient [文档](https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/java-rest-high.html)
 
@@ -2105,7 +2042,7 @@ java-API选择：https://www.elastic.co/guide/en/elasticsearch/client/index.html
 ```text
 <properties>
     <elasticsearch.version>7.14.0</elasticsearch.version>
-</properties> 	
+</properties>  
 
 <dependency>
      <groupId>org.elasticsearch.client</groupId>
@@ -2150,7 +2087,7 @@ spring:
         server-addr: 127.0.0.1:8848
 ```
 
-### 10.3 ban测试 
+### 10.3 ban测试
 
 创建配置类
 
@@ -2202,11 +2139,9 @@ public class DemoTest {
 }    
 ```
 
-
-
 ### 10.5 测试检索
 
-#### 结构：
+#### 结构
 
 ```text
 //1、创建检索请求 SearchRequest > sourceBuilder[添加聚合？] > searchRequest.source(sourceBuilder);
@@ -2214,7 +2149,7 @@ public class DemoTest {
 //3、分析结果 searchResponse:getHits获取数据,getAggregations获取聚合
 ```
 
-#### 实例：
+#### 实例
 
 ```java
 public class Demo {
@@ -2285,7 +2220,6 @@ public class Demo {
 
 ![](./elastic-search.assets/true-image-20210909151150060.png)
 
-
 ### 10.6 创建module
 
 在application.properties中添加配置
@@ -2296,8 +2230,6 @@ spring.elasticsearch.rest.uris=http://172.16.116.100:9200
 spring.elasticsearch.rest.uris[0]=http://172.16.116.100:9200
 spring.elasticsearch.rest.uris[1]=http://172.16.116.100:9200
 ```
-
-
 
 ### 10.7 实体类
 
@@ -2332,8 +2264,6 @@ Spring Data通过注解来声明字段的映射属性，有下面的三个注解
   - store：是否存储，布尔类型，默认是false
   - analyzer：分词器名称：ik_max_word
 
-
-
 ### 10.8 创建索引及映射
 
 ```java
@@ -2358,15 +2288,11 @@ class EsDemoApplicationTests {
 }
 ```
 
-
-
 ### 10.9 Repository文档操作
 
 Spring Data 的强大之处，就在于你不用写任何DAO处理，自动根据方法名或类的信息进行CRUD操作。只要你定义一个接口，然后继承Repository提供的一些子接口，就能具备各种基本的CRUD功能。
 
 其中ElasticsearchRepository接口功能最强大。该接口的方法包括：
-
-
 
 #### 10.9.1 新增
 
@@ -2384,8 +2310,6 @@ public class Demo {
 
 修改和新增是同一个接口，区分的依据就是id，这一点跟我们在页面发起PUT请求是类似的。
 
-
-
 #### 10.9.2 删除
 
 ```java
@@ -2397,12 +2321,9 @@ public class Demo {
 }
 ```
 
-
 ### 10.10 查询
 
 #### 10.10.1 基本查询
-
-
 
 查询一个：
 
@@ -2414,8 +2335,6 @@ public class Demo {
   }
 }
 ```
-
-
 
 #### 10.10.2 条件查询
 
@@ -2465,8 +2384,6 @@ public class Demo {
 }
 ```
 
-
-
 在UserRepository中定义一个方法：
 
 第一种写法：
@@ -2495,8 +2412,6 @@ public class Demo {
 }
 ```
 
-
-
 第二种写法：
 
 ```java
@@ -2523,8 +2438,6 @@ public class Demo {
   }
 }
 ```
-
-
 
 #### 10.10.3 自定义查询
 
@@ -2561,6 +2474,3 @@ NativeSearchQueryBuilder：Spring提供的一个查询条件构建器，帮助�
 - totalElements：总条数
 - totalPages：总页数
 - Iterator：迭代器，本身实现了Iterator接口，因此可直接迭代得到当前页的数据
-
-
-

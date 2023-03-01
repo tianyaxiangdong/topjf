@@ -17,8 +17,6 @@ tag:
 1. 双写模式：写数据库，写缓存
 2. 失效模式：缓存失效（删除缓存），写数据库
 
-
-
 > 读取缓存步骤数据一致性一般没有什么问题，但是一旦涉及到数据更新：数据库和缓存更新，就容易出现**缓存(Redis)和数据库（MySQL）间的数据一致性问题**。
 >
 > 不管先保存到MySQL，还是先保存到Redis都面临着一个保存成功而另外一个保存失败的情况。
@@ -31,16 +29,15 @@ tag:
 >
 > 因为写和读是并发的，没法保证顺序,就会出现缓存和数据库的数据不一致的问题。
 
-## 解决：
+## 解决
 
 ### 1 基于mysql的binlog日志（canal）
 
 ### 2 消息队列MQ
 
-
 # 1、本地缓存&分布式缓存
 
-## 1.1 使用场景：
+## 1.1 使用场景
 
 ```bash
 即时性（物流状态信息，更新慢）；
@@ -50,17 +47,17 @@ tag:
 #举例: 电商类应用，商品分类，商品列表等适合缓存并加一个失效时间(根据数据更新频率来定)，后台如果发布一一个商品，买家需要5分钟才能看到新的商品般还是可以接受的。
 ```
 
-## 1.2 使用流程：
+## 1.2 使用流程
 
 ![](./cloud-lock-cache.assets/true-image-20210913133901438.png)
 
-## 1.3 简单实例格式：
+## 1.3 简单实例格式
 
 ```java
 data = cache.load(id);//从缓存加载数据
 lf(data == nul){
-	data = db.load(id);//从数据库加载数据
-	cache.put(id,data);//保存到cache中，添加过期时间
+ data = db.load(id);//从数据库加载数据
+ cache.put(id,data);//保存到cache中，添加过期时间
 }
 retum data;
 ```
@@ -71,7 +68,7 @@ Map<String,Object>：在多分布式部署实例时会存在：各自使用自�
 
 ![](./cloud-lock-cache.assets/true-image-20210913134831345.png)
 
-​	解决办法：分布式缓存
+​ 解决办法：分布式缓存
 
 ## 1.5 分布式缓存
 
@@ -95,9 +92,7 @@ Map<String,Object>：在多分布式部署实例时会存在：各自使用自�
 
 > （存在的数据，某一个数据热点失效）1000万条并发，，会全部跑到db查询，db可能直接宕机。
 
-### 1.5.4 缓存穿透、击穿、雪崩的区别：
-
-
+### 1.5.4 缓存穿透、击穿、雪崩的区别
 
 #### 1.穿透是缓存不命中，DB也没有不命中
 
@@ -125,7 +120,7 @@ Map<String,Object>：在多分布式部署实例时会存在：各自使用自�
 
 ![](./cloud-lock-cache.assets/true-image-20210913140426623.png)
 
-博客地址：https://blog.csdn.net/qq_42476834/article/details/125108089
+博客地址：<https://blog.csdn.net/qq_42476834/article/details/125108089>
 
 ## 2.1 业务测试
 
@@ -146,7 +141,7 @@ public Map<String, List<Catalog2Vo>> getCataLogJson() {
 }
 ```
 
-测试：http://yumall.com/
+测试：<http://yumall.com/>
 
 无缓存--时间：40
 
@@ -165,7 +160,7 @@ OutOfDirectMemoryError
 //redisTemplate:
 //lettuce、jedis操作redis的底层客户端。Spring再次封装redis Template;
 
-		<dependency>
+  <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
             <exclusions>
@@ -250,13 +245,11 @@ synchronized---查询了数据库
 
 ![](./cloud-lock-cache.assets/true-image-20210914111013514.png)
 
-
-
 ![](./cloud-lock-cache.assets/true-image-20210914121035642.png)
 
 ### 2.5.1 redis锁
 
-文档：http://redis.cn/commands.html
+文档：<http://redis.cn/commands.html>
 
 SET命令 [key value]
 
@@ -275,7 +268,7 @@ set lock haha XX
 
 ### 2.5.2 简单的业务+分析
 
-#### A、测试问题1：setnx占好了位，业务代码异常或者程序在页面过程中宕机。没有执行删除锁逻辑，这就造成了死锁。
+#### A、测试问题1：setnx占好了位，业务代码异常或者程序在页面过程中宕机。没有执行删除锁逻辑，这就造成了死锁
 
 ![](./cloud-lock-cache.assets/true-image-20210916165158731.png)
 
@@ -285,7 +278,7 @@ set lock haha XX
 
 ------------
 
-#### B、测试问题2：setnx设置好， 正要去设置过期时间，宕机。又死锁了。
+#### B、测试问题2：setnx设置好， 正要去设置过期时间，宕机。又死锁了
 
 ![](./cloud-lock-cache.assets/true-image-20210916170348140.png)
 
@@ -295,13 +288,13 @@ set lock haha XX
 
 -----------
 
-#### C、测试问题3（加锁原子型）：删除锁直接删除？？? 如果由于业务时间很长（*超时*），锁自己过期了，我们直接删除，有可能把别人正在持有的锁删除了。
+#### C、测试问题3（加锁原子型）：删除锁直接删除？？? 如果由于业务时间很长（*超时*），锁自己过期了，我们直接删除，有可能把别人正在持有的锁删除了
 
 ![](./cloud-lock-cache.assets/true-image-20210916180627709.png)
 
 ![](./cloud-lock-cache.assets/true-image-20210916171603888.png)
 
-##### - - 解决: 占锁的时候，值指定为uuid,每个人匹配是自己的锁才删除。
+##### - - 解决: 占锁的时候，值指定为uuid,每个人匹配是自己的锁才删除
 
 --------------
 
@@ -360,16 +353,16 @@ public Map<String, List<Catalog2Vo>> getCataLogJsonFromRedisLock() {
 
 ## **发现加锁与解锁重复，把他提出来到工具类，但分布式框架有成型产品《RedisSon 整合》**
 
-# 3、分布式锁 RedisSon 
+# 3、分布式锁 RedisSon
 
-https://redis.io/topics/distlock
+<https://redis.io/topics/distlock>
 
 ## 3.1. RedisSon 整合
 
 ### - - 依赖
 
 ```xml
-		<dependency>
+  <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
             <version>3.12.0</version>
@@ -378,7 +371,7 @@ https://redis.io/topics/distlock
 
 ### - - 配置
 
-文档：https://github.com/redisson/redisson/wiki
+文档：<https://github.com/redisson/redisson/wiki>
 
 ```java
 /**
@@ -435,7 +428,7 @@ public void getInstance() {
         }
 ```
 
-### lock特点：
+### lock特点
 
 加锁、阻塞式等待。
 锁的自动续期，如果业务超长，运行期间自动给锁续上新的30s。不用担心业务时间长，锁自动过期被删掉。
@@ -618,10 +611,10 @@ public String go() throws InterruptedException {
 
 ### - - 使用失效模式
 
-我们系统的一致性解决方案: 
+我们系统的一致性解决方案:
 1、 缓存的所有数据都有过期时间，数据过期下一次查询触发主动更新
 2、读写数据的时候，加上分布式的读写锁。
-				经常写，经常读
+    经常写，经常读
 
 使用SpringCache
 
@@ -666,13 +659,13 @@ public Map<String, List<Catalog2Vo>> getCataLogJsonFromRedissonLock() {
 ```bash
 8、整合SpringCache简化缓存开发
     1)、引入依赖
-    	spring-boot-starter-cache、spring-boot-starter-data-redis
+     spring-boot-starter-cache、spring-boot-starter-data-redis
     2)、写配置
         (1)、自动配置了哪些
             CacheAuroConfiguration会导入RedisCacheConfiguration;
             自动配好了缓存管理器RedisCacheManager
         (2)、配置使用redis作为缓存
-        	spring.cache.type=redis #spring.cache.cache-names=qq
+         spring.cache.type=redis #spring.cache.cache-names=qq
     3)、测试使用缓存
         @Cacheable: Triggers cache population.触发缓存填充
         @CacheEvict: Triggers cache eviction.触发缓存驱逐,失效模式使用
@@ -680,8 +673,8 @@ public Map<String, List<Catalog2Vo>> getCataLogJsonFromRedissonLock() {
         @Caching: Regroups multiple cache operations to be applied on a method.重新组合要应用于方法的多个缓存操作。
         @CacheConfig: Shares some common cache-related settings at class-level.在类级别共享一些常见的缓存相关设置。
         
-		(1)、开启缓存：启动类 @EnableCaching、方法 @Cacheable({"category"})
-			Cacheable代表当前方法的结果需要缓存，如果缓存中有，方法不用调用。如果缓存中没有，会调用方法
+  (1)、开启缓存：启动类 @EnableCaching、方法 @Cacheable({"category"})
+   Cacheable代表当前方法的结果需要缓存，如果缓存中有，方法不用调用。如果缓存中没有，会调用方法
 ```
 
 ## 4.2. @Cacheable细节设置
@@ -776,7 +769,7 @@ public class MyCacheConfig {
 ```
 Spring-Cache的不足;
     1)、读模式:
-    	缓存穿透:查询一个null数据。解决:缓存空数据，redis.cache-null-values=true
+     缓存穿透:查询一个null数据。解决:缓存空数据，redis.cache-null-values=true
         缓存击穿:大量并发进来同时查询-个正好过期的数据。解决:加锁; 默认是无锁的，sync=true（加锁，解决缓存击穿）
         缓存雪崩:大量的key同时过期。解决:加随机时间。加上过期时间。spring.cache.redis.time-to-live=3600000
     2)、写模式: (缓存与数据库-致)
@@ -785,12 +778,7 @@ Spring-Cache的不足;
         3)、读多写多，直接去数据库查询就行
 ```
 
-## 4.7. 总结 
+## 4.7. 总结
 
 **常规数据**：(读多写少，即时性，-致性要求不高的数据) ;完全可以使用Spring-Cache，写模式(只要缓存的数据有过期时间就足够了
 **特殊数据**：特殊设计
-
-
-
-
-

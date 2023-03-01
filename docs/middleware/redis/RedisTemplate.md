@@ -11,7 +11,6 @@ tag:
 
 <!-- more -->
 
-
 # Redis配置RedisTemplate以及编写工具类
 
 [🏍 🏍 gitee源码](https://gitee.com/cps007/spring-boot-model)
@@ -19,7 +18,7 @@ tag:
 ## 依赖
 
 ```xml
-	<dependency>
+ <dependency>
            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
             <exclusions>
@@ -42,11 +41,11 @@ tag:
 ```yaml
 spring:
   main:
-  	# 允许 bean 定义覆盖
-  	allow-bean-definition-overriding: true
-  	# 允许依赖循环引用
-  	allow-circular-references: true
-  	
+   # 允许 bean 定义覆盖
+   allow-bean-definition-overriding: true
+   # 允许依赖循环引用
+   allow-circular-references: true
+   
   redis:
     open: false  # 是否开启redis缓存  true开启   false关闭
     database: 0
@@ -229,11 +228,11 @@ public class SubmitAspect {
     
     @Around("submitPointCut()")
     public Object interceptor(ProceedingJoinPoint joinPoint) throws Throwable {
-    	MethodSignature signature = (MethodSignature) joinPoint.getSignature();
+     MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
         Submit submit = method.getAnnotation(Submit.class);
         
-		//读取缓存
+  //读取缓存
             if (redisUtils.string.get(key) != null) {
                 Long expire = redisUtils.common.getExpire(key);
                 String message = GlobalExceptionEnum.REPEAT_SUBMIT.getMessage();
@@ -242,15 +241,10 @@ public class SubmitAspect {
             // 如果是第一次请求,就将key存入缓存中
             redisUtils.string.set(key, key, submit.lockTime());
         return joinPoint.proceed();    
-	}
+ }
 }
 ```
 
 查看redis记录
 
 `prefix:D6D13DE0091DEC607E2F9DBE364490A8:/dev:getStuById:1`
-
-
-
-
-

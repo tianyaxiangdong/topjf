@@ -12,4 +12,3 @@ timeline: false
 <!-- more -->
 
 @include(../CHANGELOG.md{3-})
-

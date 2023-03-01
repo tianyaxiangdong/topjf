@@ -24,7 +24,6 @@ tag:
 
 ## 基础概 h2
 
-
 引入B站视频
 
 全 都 是 名 场 面 1
@@ -34,9 +33,6 @@ tag:
 全 都 是 名 场 面 2
 
 <ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4" airplay aspect-ratio auto-size auto-orientation auto-playback fast-forward flip fullscreen-web lock loop is-live muted mini-progress-bar pip screenshot subtitle-offset />
-
-
-
 
 ### Java 语言有哪些特点? h3
 
@@ -62,9 +58,7 @@ console.log('你好，VuePress！')
 
 ------
 
-
 @include(./test-i.md{6-})
-
 
 > 哪些特哪 *些特* 哪些特哪 **些特** 哪些特
 >
@@ -79,7 +73,7 @@ console.log('你好，VuePress！')
 - aaa
 - 手动阀手动阀
 -
-    - 了了离开了
+  - 了了离开了
 
 | 参数   | 说明                                               |
 |------|--------------------------------------------------|

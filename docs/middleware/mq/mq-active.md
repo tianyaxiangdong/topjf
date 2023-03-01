@@ -12,6 +12,3 @@ tag:
 <!-- more -->
 
 # ActiveMQ
-
-
-

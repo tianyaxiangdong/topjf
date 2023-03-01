@@ -34,6 +34,7 @@ git config --global user.email "topjfk@163.com"
 查看config配置消息：`git config --list`
 
 如果有多个name值时执行：
+
 ```
 git config --global --replace-all user.name "jinfang"
 git config --global --replace-all user.email "topjfk@163.com"
@@ -47,6 +48,7 @@ ssh-keygen -t rsa -b 4096 -C "topjfk@163.com"
 ```
 
 **添加私钥(可选)**
+
 ```
 ssh-add ~/.ssh/id_rsa   
 eval `ssh-agent -s`
@@ -70,7 +72,6 @@ cat ~/.ssh/id_rsa
 - [gitee ssh配置页](https://gitee.com/profile/sshkeys)
 - [github ssh配置页](https://github.com/settings/keys)
 
-
 **校验公钥应用是否生效**
 
 ```bash
@@ -88,7 +89,6 @@ Hi jin! You've successfully authenticated, but GITEE.COM does not provide shell 
 PS C:\Users\k> ssh -T git@github.com
 Hi top! You've successfully authenticated, but GitHub does not provide shell access.'
 ```
-
 
 ## 强制推送
 
@@ -163,5 +163,3 @@ git remote add origin git@github.com:topsjf/topsjf.git
 git branch -M main
 git push -u origin main
 ```
-
-

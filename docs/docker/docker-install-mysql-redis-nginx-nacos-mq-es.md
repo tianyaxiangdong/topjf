@@ -23,8 +23,6 @@ docker桌面镜像加速
   ]
 ```
 
-
-
 >--name="容器新名字"：为容器指定一个名称；
 >-i：以交互模式运行容器，通常与-t或者-d同时使用；
 >-t：为容器重新分配一个伪输入终端，通常与-i同时使用；
@@ -34,7 +32,7 @@ docker桌面镜像加速
 
 ## mysql:5.7.x
 
-https://hub.docker.com/search?q=mysql&type=image
+<https://hub.docker.com/search?q=mysql&type=image>
 
 > docker pull registry.cn-chengdu.aliyuncs.com/jinfang/mysql:5.7.38
 
@@ -63,7 +61,7 @@ docker run -p 3306:3306 --name mysql \
 --explicit_defaults_for_timestamp=true
 ################################## window端 ###############################
  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
- OPTIONS:	-a -e -c -d -p -P -m
+ OPTIONS: -a -e -c -d -p -P -m
  
 #################################################################
 
@@ -105,13 +103,13 @@ explicit_defaults_for_timestamp=true
 
 ## redis:buster
 
-使用教程：https://hub.docker.com/_/redis?tab=description
+使用教程：<https://hub.docker.com/_/redis?tab=description>
 
-> docker pull redis:buster	docker pull redis:latest
+> docker pull redis:buster docker pull redis:latest
 >
 > docker pull registry.cn-chengdu.aliyuncs.com/jinfang/redis:latest
 >
-> docker tag  redis:latest registry.cn-chengdu.aliyuncs.com/jinfang/redis:latest 
+> docker tag  redis:latest registry.cn-chengdu.aliyuncs.com/jinfang/redis:latest
 >
 > docker push registry.cn-chengdu.aliyuncs.com/jinfang/redis:latest
 
@@ -200,9 +198,7 @@ root@kong:/mydoc# docker exec -it 53466246e9a2 redis-cli
 docker run -p 8001:8001 --name redisinsight --restart=always -v E:\docker\redisinsight:/db -d registry.cn-chengdu.aliyuncs.com/jinfang/redisinsight:latest
 ```
 
-http://127.0.0.1:8001/
-
-
+<http://127.0.0.1:8001/>
 
 ## nginx:perl
 
@@ -256,13 +252,13 @@ events {
     worker_connections  1024;
 }
 http {
-	server_tokens off;
+ server_tokens off;
     include       /etc/nginx/mime.types;
     default_type  application/octet-stream;
-	
+ 
     ## $time_iso8601、$time_local
-	log_format  main  '$remote_addr - $remote_user [$time_iso8601] "$request" '
-					  '$status $body_bytes_sent "$http_referer" '
+ log_format  main  '$remote_addr - $remote_user [$time_iso8601] "$request" '
+       '$status $body_bytes_sent "$http_referer" '
                       '"$http_user_agent" "$http_x_forwarded_for"';
 
     log_format  mylog '{"date_time": "$year-$month-$day $hour:$minutes:$seconds",'
@@ -279,23 +275,23 @@ http {
                       '"x_forwarded_for": "$http_x_forwarded_for"'
                       '}';
     sendfile        on;
-	#tcp_nopush     on;
-	keepalive_timeout  65;
+ #tcp_nopush     on;
+ keepalive_timeout  65;
 
-	client_max_body_size 50m;
-	client_body_buffer_size 256k;
-	client_header_timeout 3m;
-	client_body_timeout 3m;
-	proxy_connect_timeout 300s;
-	proxy_read_timeout 300s;
-	proxy_send_timeout 300s;
-	proxy_buffer_size 64k;
-	proxy_buffers 4 32k;
-	proxy_busy_buffers_size 64k;
-	proxy_temp_file_write_size 64k;
-	proxy_ignore_client_abort on;
-	proxy_set_header Host $host;
-	proxy_set_header X-Forwarder-For $remote_addr;
+ client_max_body_size 50m;
+ client_body_buffer_size 256k;
+ client_header_timeout 3m;
+ client_body_timeout 3m;
+ proxy_connect_timeout 300s;
+ proxy_read_timeout 300s;
+ proxy_send_timeout 300s;
+ proxy_buffer_size 64k;
+ proxy_buffers 4 32k;
+ proxy_busy_buffers_size 64k;
+ proxy_temp_file_write_size 64k;
+ proxy_ignore_client_abort on;
+ proxy_set_header Host $host;
+ proxy_set_header X-Forwarder-For $remote_addr;
 
     gzip  on;
     include /etc/nginx/conf.d/*.conf;
@@ -320,7 +316,7 @@ server {
     server_name  www.util.cn;
     charset utf-8;
     include /etc/nginx/conf.d/time.txt;
-    access_log  /var/log/nginx/util.log  mylog;	# buffer=32k;
+    access_log  /var/log/nginx/util.log  mylog; # buffer=32k;
     
     location /util/ {
         proxy_pass http://util_server/util/;
@@ -331,8 +327,8 @@ server {
     location /util-test/ {
         proxy_pass http://util_test_server/-util-test/;
     }
-	
-	#error_page  404              /404.html;
+ 
+ #error_page  404              /404.html;
 
     error_page   500 502 503 504  /50x.html;
     location = /50x.html {
@@ -345,12 +341,12 @@ time.txt
 
 ```
 if ($time_iso8601 ~ "^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})") {
-	set $year $1;
-	set $month $2;
-	set $day $3;
-	set $hour $4;
-	set $minutes $5;
-	set $seconds $6;
+ set $year $1;
+ set $month $2;
+ set $day $3;
+ set $hour $4;
+ set $minutes $5;
+ set $seconds $6;
 }
 ```
 
@@ -361,8 +357,6 @@ add_header Access-Control-Allow-Origin *;
 add_header Access-Control-Allow-Headers X-Requested-With;
 add_header Access-Control-Allow-Methods GET,POST,OPTIONS;
 ```
-
-
 
 ## nacos
 
@@ -413,13 +407,13 @@ docker run --env MODE=standalone --name nacos \
 
 > docker exec -it nacos /bin/bash
 >
->  docker exec -it web /bin/bash
+> docker exec -it web /bin/bash
 
-登陆：http://localhost:8848/nacos 账号、密码：nacos
+登陆：<http://localhost:8848/nacos> 账号、密码：nacos
 
 ## rabbitmq:3.8.x-management
 
-https://www.rabbitmq.com/networking.html
+<https://www.rabbitmq.com/networking.html>
 
 下载镜像
 
@@ -455,13 +449,13 @@ docker run -d --name rabbitmq3.9.20 --restart=always -p 5671:5671 -p 5672:5672 -
 1883, 8883 (MQTT协议端口)
 ```
 
-http://localhost:15672/#/	账号：guest
+<http://localhost:15672/#/> 账号：guest
 
 ## elasticsearch+kibana
 
 安装
 
-https://www.elastic.co/cn/downloads/elasticsearch#ga-release
+<https://www.elastic.co/cn/downloads/elasticsearch#ga-release>
 
 ```shell
 docker pull elasticsearch:7.17.4
@@ -484,7 +478,6 @@ docker rmi kibana:7.17.4
 docker pull registry.cn-chengdu.aliyuncs.com/jinfang/elasticsearch:7.17.4 存储和检索数据
 docker pull registry.cn-chengdu.aliyuncs.com/jinfang/kibana:7.17.4 可视化数据
 ```
-
 
 配置
 
@@ -519,9 +512,9 @@ elasticsearch.yml
 http.host: 0.0.0.0
 ```
 
-http://localhost:9200
+<http://localhost:9200>
 
-http://localhost:9200/_cat/nodes
+<http://localhost:9200/_cat/nodes>
 
 ### kibana
 
@@ -529,7 +522,7 @@ http://localhost:9200/_cat/nodes
 docker run --name kibana --restart=always -e "ELASTICSEARCH_HOSTS=http://192.168.0.5:9200" -p 5601:5601 -d registry.cn-chengdu.aliyuncs.com/jinfang/kibana:7.17.4
 ```
 
-http://localhost:5601
+<http://localhost:5601>
 
 kibana.yml
 
@@ -544,11 +537,10 @@ services:
 
 ### ik 分词器
 
-下载：https://github.com/medcl/elasticsearch-analysis-ik/releases
+下载：<https://github.com/medcl/elasticsearch-analysis-ik/releases>
 
-https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.17.4/elasticsearch-analysis-ik-7.17.4.zip
+<https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.17.4/elasticsearch-analysis-ik-7.17.4.zip>
 
 解压到es：plugins
 
 重启 es
-

@@ -11,16 +11,16 @@ tag:
 
 <!-- more -->
 
-## -- 指标：
+## -- 指标
 
 ![](./jmeter.assets/true-image-20210912164842416.png)
 ![](./jmeter.assets/true-image-20210912165122290.png)
 
 ## -- Jmeter
 
-下载：https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.4.3.tgz
+下载：<https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.4.3.tgz>
 
-https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.4.3.zip
+<https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.4.3.zip>
 
 ![](./jmeter.assets/true-image-20210912170227440.png)
 
@@ -60,8 +60,6 @@ jvm
 
 ![](./jmeter.assets/true-image-20210912180334354.png)
 
-
-
 ---------
 
 ## -- 性能监控
@@ -72,7 +70,7 @@ jconsole& jvisualvm
 
 ![](./jmeter.assets/true-image-20210912190440872.png)
 
-安装插件报错地址：https://visualvm.github.io/pluginscenters.html
+安装插件报错地址：<https://visualvm.github.io/pluginscenters.html>
 
 运行压力测试+visualvm，检测jvm使用情况
 
@@ -101,7 +99,7 @@ jconsole& jvisualvm
 
 业务：db(MySQL+创建索引)、模板的渲染速度、静态资源
 
-### --- 首页渲染(开缓存+去log+sql)：
+### --- 首页渲染(开缓存+去log+sql)
 
 getLevel1Categorys-》db无索引，开缓存，去log：
 
@@ -134,7 +132,7 @@ getLevel1Categorys-》db有索引，开缓存，去log：
 
 ```xml
 location / {
-	proxy_pass http://yumall;
+ proxy_pass http://yumall;
     #proxy_set_header Host $host;
 }
 
@@ -144,7 +142,7 @@ location /static/ {
 }
 ```
 
-http://yumall.com/static/index/img/img_01.png
+<http://yumall.com/static/index/img/img_01.png>
 
 压力测试
 
@@ -192,4 +190,3 @@ return parent_cid;
         return selectCategory.stream().filter(item -> item.getParentCid() == catId).collect(Collectors.toList());
     }
 ```
-

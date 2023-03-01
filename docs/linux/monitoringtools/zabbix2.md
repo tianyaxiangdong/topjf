@@ -12,7 +12,6 @@ tag:
 
 # Zabbix概述篇
 
-
 ## zabbix 是什么？
 
 - zabbix 是一个基于 Web 界面的提供分布式系统监视以及网络监视功能的企业级的开源解决方案。
@@ -20,7 +19,6 @@ tag:
 - zabbix 由 2 部分构成，zabbix server 与可选组件 zabbix agent。通过 C/S 模式采集数据，通过 B/S 模式在 Web 端展示和配置。
 - zabbix server 可以通过 SNMP，zabbix agent，ping，端口监视等方法提供对远程服务器/网络状态的监视，数据收集等功能， 它可以运行在 Linux 等平台上。
 - zabbix agent 需要安装在被监视的目标服务器上，它主要完成对硬件信息或与操作系统有关的内存，CPU 等信息的收集。
-
 
 ## zabbix 的主要特点
 
@@ -34,7 +32,6 @@ tag:
 - 通过 WEB 界面设置或查看监视结果
 - email 等通知功能
 
-
 ## zabbix 的主要功能
 
 - CPU 负荷
@@ -44,13 +41,11 @@ tag:
 - 端口监视
 - 日志监视
 
-
 ## zabbix 监控原理
 
 zabbix agent 安装在被监控的主机上，zabbix agent 负责定期收集客户端本地各项数据，并发送至 zabbix server 端，zabbix server 收到数据后，
 将数据存储到数据库中，用户基于 Zabbix WEB 可以看到数据在前端展现图像。当 zabbix 监控某个具体的项目， 该项目会设置一个触发器阈值，当被监控的
 指标超过该触发器设定的阈值，会进行一些必要的动作，动作包括：发送信息（邮件、微信、短信）、发送命令（shell 命令、reboot、restart、install 等）。
-
 
 ## zabbix 常见的五个系统
 
@@ -61,12 +56,10 @@ zabbix agent 安装在被监控的主机上，zabbix agent 负责定期收集客
 - zabbix get：zabbix 数据接收工具，单独使用的命令，通常在 server 或者 proxy 端执行获取远程客户端信息的命令;
 - zabbix sender：zabbix 数据发送工具，用户发送数据给 server 或 proxy 端，通常用户耗时比较长的检查。
 
-
 ## zabbix 端口号
 
 zabbix 服务端 zabbix_server 默认使用 10051 端口。
 客户端 zabbix_agent2 默认使用 10050 端口。
-
 
 ## 安装 zabbix
 
@@ -216,7 +209,6 @@ cp -f /usr/share/fonts/wqy-microhei/wqy-microhei.ttc /usr/share/fonts/dejavu/Dej
 
 ![](./zabbix2.assets/30.webp)
 
-
 > 部署 zabbix 客户端（端口号 10050）
 
 zabbix 5.0 版本采用 golang 语言开发的新版本客户端 agent2 。
@@ -273,7 +265,6 @@ zabbix_get -s '192.168.50.110' -p 10050 -k 'system.hostname'
 zbx-agent01
 ```
 
-
 ![](./zabbix2.assets/31.webp)
 
 ![](./zabbix2.assets/32.webp)
@@ -302,12 +293,4 @@ zbx-agent01
 
 ![](./zabbix2.assets/44.webp)
 
-
-
-
-
-
 [原作者链接](https://juejin.cn/post/7169047487007686669)（版权归原作者所有，侵删）
-
-
-
