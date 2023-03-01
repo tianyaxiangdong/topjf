@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.24.2](https://github.com/topjf/topjf/compare/v3.24.1...v3.24.2) (2023-03-01)
+
+
+### 🐛Bug Fixes
+
+* 更新pnpm到7.28.0 ([502aee1](https://github.com/topjf/topjf/commit/502aee18b01c5697ff6b58b511b37f547ee90fae))
+* 更新项目说明 ([c4f095f](https://github.com/topjf/topjf/commit/c4f095f9d3c87261071de99898e712aad2b257c0))
+
 ## [3.24.1](https://github.com/topjf/topjf/compare/v3.24.0...v3.24.1) (2023-02-28)
 
 
