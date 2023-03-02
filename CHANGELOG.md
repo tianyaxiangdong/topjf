@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.26.0](https://github.com/topjf/topjf/compare/v3.25.2...v3.26.0) (2023-03-02)
+
+
+### ✨Features
+
+* 更新vuepress-theme-hope到beta.186 ([b84e17a](https://github.com/topjf/topjf/commit/b84e17a6aa89cf93c538e3c359d5f32c7b9905c1))
+
 ## [3.25.2](https://github.com/topjf/topjf/compare/v3.25.1...v3.25.2) (2023-03-01)
 
 
