@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.27.1](https://github.com/topjf/topjf/compare/v3.27.0...v3.27.1) (2023-03-05)
+
+
+### 📚Docs
+
+* 更新java ([8db16be](https://github.com/topjf/topjf/commit/8db16bed350407e91e5ab825851719183e867a02))
+
 ## [3.27.0](https://github.com/topjf/topjf/compare/v3.26.6...v3.27.0) (2023-03-05)
 
 
