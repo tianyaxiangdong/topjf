@@ -16,6 +16,7 @@ timeline: false
 - [maven安装与配置](./maven.md)
 - [gradle](./gradle.md)
 - [nodejs配置](./nodejs-setting.md)
+- [markdownlint配置](./markdownlint.md)
 - [虚拟机批量处理vagrant_vmware](./vagrant-vmware.md)
 
 ## 数据库工具

@@ -14,6 +14,7 @@ export const toolsJson =
         "idea",
         "eclipse",
         "nodejs-setting",
+        "markdownlint",
         "rsync",
         "vagrant-vmware",
         {
