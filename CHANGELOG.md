@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.26.6](https://github.com/topjf/topjf/compare/v3.26.5...v3.26.6) (2023-03-05)
+
+
+### 📚Docs
+
+* 添加 友情链接 ([1e87903](https://github.com/topjf/topjf/commit/1e87903aa0534b9b350aa84a3019f6cc34e59ac2))
+
 ## [3.26.5](https://github.com/topjf/topjf/compare/v3.26.4...v3.26.5) (2023-03-05)
 
 
