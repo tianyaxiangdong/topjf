@@ -77,7 +77,7 @@ added 595 packages in 22s
 
 - `JamesIves/github-pages-deploy-action` 作者的
 
-  - - 示例1：npm模式（[docs-v1.yml](https://github.com/topsjf/topsjf/blob/main/.github/workflows/docs-v1.yml.old)）
+    - - 示例1：npm模式（[docs-v1.yml](https://github.com/topsjf/topsjf/blob/main/.github/workflows/docs-v1.yml.old)）
 
 ```yaml
 name: 部署文档（v1）
@@ -120,7 +120,7 @@ jobs:
 
 ```
 
-  - - 示例2：pnpm模式（[docs.yml](https://github.com/topsjf/topsjf/blob/main/.github/workflows/docs.yml)）
+- - 示例2：pnpm模式（[docs.yml](https://github.com/topsjf/topsjf/blob/main/.github/workflows/docs.yml)）
 
 ```yaml
 name: 部署文档

@@ -1181,7 +1181,7 @@ public class FillterMessageConsumer {
 
 #### 6.6.1 发送事务消息样例
 
-###### 6.6.1.1、创建事务性生产者
+##### 6.6.1.1、创建事务性生产者
 
 使用 `TransactionMQProducer`类创建生产者，并指定唯一的 `ProducerGroup`，就可以设置自定义线程池来处理这些检查请求。执行本地事务后、需要根据执行结果对消息队列进行回复。回传的事务状态在请参考前一节。
 
@@ -1248,7 +1248,7 @@ public class TransactionMessageProducer {
 
 ```
 
-###### 6.6.1.2、实现事务的监听接口
+##### 6.6.1.2、实现事务的监听接口
 
 当发送半消息成功时，我们使用 `executeLocalTransaction` 方法来执行本地事务。它返回前一节中提到的三个事务状态之一。`checkLocalTransaction` 方法用于检查本地事务状态，并回应消息队列的检查请求。它也是返回前一节中提到的三个事务状态之一。
 

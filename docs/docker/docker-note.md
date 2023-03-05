@@ -254,7 +254,8 @@ EOF
 "https://docker.mirrors.ustc.edu.cn"
 ```
 
-# 启动服务：
+# 启动服务
+
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 
@@ -724,7 +725,9 @@ CMD /bin/bash
 #### 基于TomcatDockerFile<a name="基于TomcatDockerFile"></a>
 
 # tomcat:9.0.62-jre8-temurin-focal、tomcat:8.5.78-jre8-temurin-focal
+
 # tomcat:9.0.62-jre11-temurin-focal、tomcat:8.5.78-jre11-temurin-focal
+
 # tomcat:9.0.62-jre17-temurin-focal、tomcat:8.5.78-jre17-temurin-focal
 
 ```bash
@@ -1101,7 +1104,7 @@ docker run -it -p 80:80 localhost:5000/nginx:1.0
 
 ### C 搭建管理界面 harbor-2.2.x
 
-[下载地址](https://github.com/goharbor/harbor/releases )    
+[下载地址](https://github.com/goharbor/harbor/releases )
 
 #### 设置本地域名/etc/hosts
 

@@ -10,6 +10,7 @@
     "test": "echo demo test out!",
     "commit": "git-cz",
     "lint-md": "markdownlint **/*.md --ignore node_modules --fix",
+    "linux-lint-md": "markdownlint '**/*.md' --ignore node_modules --fix",
     "prepare": "husky install",
     "update-package": "pnpm dlx vp-update"
   },
@@ -27,7 +28,7 @@
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.3",
-    "markdownlint-cli": "^0.32.2"
+    "markdownlint-cli": "^0.33.0"
   },
   "packageManager": "pnpm@7.28.0",
   "engines": {

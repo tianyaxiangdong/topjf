@@ -540,7 +540,7 @@ main
 
 ## 8、禁用 grub 规则
 
-# 在 grub 文件里面的 GRUB_CMDLINE_LINUX 变量添加 net.ifnames=0 biosdevname=0
+### 在 grub 文件里面的 GRUB_CMDLINE_LINUX 变量添加 net.ifnames=0 biosdevname=0
 
 **原来配置的网卡ip会生效：/etc/sysconfig/network-scripts/ifcfg-ens33**，所以我不需要这里
 
@@ -692,7 +692,7 @@ end
 > cd F:\vm\masterVagrantfile、cd F:\vm\nodeVagrantfile
 >
 > > vagrant up
-
+>
 > 默认用户：vagrant 密码：vagrant
 >
 > root用户：root：密码：vagrant

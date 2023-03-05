@@ -599,7 +599,7 @@ fsck.ext2
 
 fdisk  
 
-losetup 
+losetup
 
 mkfs  
 

@@ -250,7 +250,7 @@ public class OssController {
 
 [web上传示例](#web上传示例)
 
-## -- 获取签名测试 
+## -- 获取签名测试
 
 <http://localhost:50000/api/thirdparty/oss/policy>
 
@@ -2329,9 +2329,9 @@ ossClient.deleteBucketEncryption("<yourBucketName>");
 
 对于主密钥的使用，目前支持如下两种方式：
 
-- 使用KMS托管用户主密钥                                                      
+- 使用KMS托管用户主密钥
   当使用KMS托管用户主密钥用于客户端数据加密时，需要将KMS用户主密钥ID（即CMK ID）传递给SDK。
-- 使用用户自主管理的主密钥（RSA）                                                      
+- 使用用户自主管理的主密钥（RSA）
   主密钥信息由用户提供，需要用户将主密钥的公钥、私钥信息当做参数传递给SDK。
   使用以上两种加密方式能够有效地避免数据泄漏，保护客户端数据安全。即使数据泄漏，其他人也无法解密得到原始数据。
 

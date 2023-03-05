@@ -297,7 +297,7 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 #####################################################
 ```
 
-登录：<http://nginx.k8s.com:30880/> 
+登录：<http://nginx.k8s.com:30880/>
 
 <http://ks.k8s.com:30880/>
 

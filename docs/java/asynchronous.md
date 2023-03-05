@@ -221,9 +221,9 @@ CompletableFuture<Void> thenRunAsync(Runnable action,Executor executor
 
 ##### **appl**runAfterEither**：两个任务有一个执行完成，不需要获取future的结果，处理任务，没有返回值
 
-* applyToEitherAsync: 感知结果，自己有返回值
-* acceptEitherAsync: 感知结果，自己没有返回值
-* runAfterEitherAsync: 不感知结果，自己没有返回值
+- applyToEitherAsync: 感知结果，自己有返回值
+- acceptEitherAsync: 感知结果，自己没有返回值
+- runAfterEitherAsync: 不感知结果，自己没有返回值
 
 ```java
 ------------------------------------------------------

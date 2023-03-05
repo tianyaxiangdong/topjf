@@ -68,7 +68,7 @@ TypeError: Invalid value used as weak map key
 
 ## 一、ES6
 
-#### let & var & const
+### let & var & const
 
 ```text
 #var 

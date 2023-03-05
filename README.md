@@ -7,11 +7,11 @@
 - [使用Java压缩md文件中使用到的图片](https://gitee.com/cps007/markdown-img)
 - [参考 Mister-Hope.github.io](https://github.com/Mister-Hope/Mister-Hope.github.io)
 
--------
+---
 
 [![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/topjf/topjf)
 
--------
+---
 
 版本格式:
 
@@ -82,7 +82,7 @@ npm config set registry https://registry.npm.taobao.org
 
 [安装教程 pnpm.io/zh](https://pnpm.io/zh)
 
-  - - window 通过 npm 安装
+window 通过 npm 安装
 
 ```shell
 npm install -g pnpm@7.28.0

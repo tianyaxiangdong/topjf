@@ -283,8 +283,8 @@ spring.cloud.nacos.config.namespace=ce7e5c1c-645e-460f-b486-bc4659d2207b
 
 ###### 配置分组
 
-* 默认所有的配置集都属于：DEFAULT_GROUP；
-* test，618，1212
+- 默认所有的配置集都属于：DEFAULT_GROUP；
+- test，618，1212
 
 coupon空间新建配置 yumall-coupon.properties
 
@@ -583,11 +583,11 @@ spring:
 
 ## 3、openfeign 远程调用服务
 
-* 1、想要远程调用别的服务
-  * 1）、引入open-feign
-  * 2）、编写一个接口，告诉SpringCloud这个接口需要调用远程服务
-    * 1、声明接口的每一个方法都是调用哪个远程服务的那个请求
-  * 3）、开启远程调用功能
+- 1、想要远程调用别的服务
+  - 1）、引入open-feign
+  - 2）、编写一个接口，告诉SpringCloud这个接口需要调用远程服务
+    - 1、声明接口的每一个方法都是调用哪个远程服务的那个请求
+  - 3）、开启远程调用功能
 
 member调用coupon
 
@@ -829,8 +829,8 @@ Sentinel 以流量为切入点，从流量控制、熔断降级、系统负载�
 
 Sentinel 分为两个部分:
 
-* 核心库（Java 客户端）不依赖任何框架/库，能够运行于所有 Java 运行时环境，同时对 Dubbo / Spring Cloud 等框架也有较好的支持。
-* 控制台（Dashboard）基于 Spring Boot 开发，打包后可以直接运行，不需要额外的 Tomcat 等应用容器。
+- 核心库（Java 客户端）不依赖任何框架/库，能够运行于所有 Java 运行时环境，同时对 Dubbo / Spring Cloud 等框架也有较好的支持。
+- 控制台（Dashboard）基于 Spring Boot 开发，打包后可以直接运行，不需要额外的 Tomcat 等应用容器。
 
 Sentinel 可以简单的分为 Sentinel 核心库和 Dashboard。核心库不依赖 Dashboard，但是结合 Dashboard 可以取得最好的效果。
 
@@ -957,9 +957,9 @@ public class ProviderFallback implements ProviderClient {
 
 流量控制有以下几个角度:
 
-* 资源的调用关系，例如资源的调用链路，资源和资源之间的关系；
-* 运行指标，例如 QPS、线程数等；
-* 控制的效果，例如直接限流（快速失败）、冷启动（Warm Up）、匀速排队（排队等待）等。
+- 资源的调用关系，例如资源的调用链路，资源和资源之间的关系；
+- 运行指标，例如 QPS、线程数等；
+- 控制的效果，例如直接限流（快速失败）、冷启动（Warm Up）、匀速排队（排队等待）等。
 
 Sentinel 的设计理念是让您自由选择控制的角度，并进行灵活组合，从而达到想要的效果。
 
@@ -1254,10 +1254,10 @@ Trace：一系列spans组成的一个树状结构。例如：发送一个请求�
 
 Annotation：用来及时记录一个事件的存在，一些核心annotations用来定义一个请求的开始和结束
 
-* cs - Client Sent -客户端发起一个请求，这个annotion描述了这个span的开始
-* sr - Server Received -服务端获得请求并准备开始处理它，如果将其sr减去cs时间戳便可得到网络延迟
-* ss - Server Sent -注解表明请求处理的完成(当请求返回客户端)，如果ss减去sr时间戳便可得到服务端需要的处理请求时间
-* cr - Client Received -表明span的结束，客户端成功接收到服务端的回复，如果cr减去cs时间戳便可得到客户端从服务端获取回复的所有所需时间
+- cs - Client Sent -客户端发起一个请求，这个annotion描述了这个span的开始
+- sr - Server Received -服务端获得请求并准备开始处理它，如果将其sr减去cs时间戳便可得到网络延迟
+- ss - Server Sent -注解表明请求处理的完成(当请求返回客户端)，如果ss减去sr时间戳便可得到服务端需要的处理请求时间
+- cr - Client Received -表明span的结束，客户端成功接收到服务端的回复，如果cr减去cs时间戳便可得到客户端从服务端获取回复的所有所需时间
 
 例如一个请求如下：
 

@@ -22,8 +22,8 @@ Pod YAML的整体结构，可以初步分为 **Resource(资源)、Object(元数�
 - **Resource**：定义资源类型与版本， 作为从Rest API中获取资源必带的属性。
 - **Object**：资源的元数据属性，明确资源的基本标识。
 - **Spec / Status**：
-  - - *Spec*：定义资源的期望状态，包括用户提供的配置、系统扩展的默认值，以及周边系统初始化或者更改值（scheduler、hpa等）。
-  - - *Status*：定义资源的当前状态，从而基于Spec定义的申明式配置，使pod不断朝期望状态靠近。
+    - - *Spec*：定义资源的期望状态，包括用户提供的配置、系统扩展的默认值，以及周边系统初始化或者更改值（scheduler、hpa等）。
+    - - *Status*：定义资源的当前状态，从而基于Spec定义的申明式配置，使pod不断朝期望状态靠近。
 
 ## 2、Resource（资源）- Rest API
 
@@ -280,9 +280,9 @@ containers:
 
 - **imagePullSecrets**:  拉取镜像的密钥，保证能够拉取 `image：testdemo:v1`，尤其在镜像库是私有库的阶段
 - **imagePullPolicy**：镜像拉取策略
-  - - *Always*：总是拉取镜像
-  - - *IfNotPresent*：本地若有则使用本地镜像，不进行拉取
-  - - *Never*：只使用本地镜像，不拉取
+    - - *Always*：总是拉取镜像
+    - - *IfNotPresent*：本地若有则使用本地镜像，不进行拉取
+    - - *Never*：只使用本地镜像，不拉取
 
 ### containers
 
@@ -489,16 +489,16 @@ status:
 - **containerStatuses**: Pod内各容器的状态
 - **hostIP**: Pod所在节点ip地址
 - **phase**: Pod的生命周期状态
-  - - *Pending*：代表Pod有一个容器或者多个容器还未运行，其中包括Pod调度到节点之前以及拉取镜像
-  - - *Running*：代表Pod已绑定到节点上，至少有一个容器运行或在重启
-  - - *Successed*：代表Pod所有容器已终止
-  - - *Failed*：代表Pod内至少有一个容器终止失败
-  - - *Unknown*：代表无法获取Pod状态
+    - - *Pending*：代表Pod有一个容器或者多个容器还未运行，其中包括Pod调度到节点之前以及拉取镜像
+    - - *Running*：代表Pod已绑定到节点上，至少有一个容器运行或在重启
+    - - *Successed*：代表Pod所有容器已终止
+    - - *Failed*：代表Pod内至少有一个容器终止失败
+    - - *Unknown*：代表无法获取Pod状态
 - **podIP/podIPs**：Pod的IP地址，假如有ipv4、ipv6，则可以在podIPs上配置
 - **qosClass**：代表kubernetes服务等级
-  - - *Guaranteed*：resource.requests与resource.limits一致
-  - - *Burstable*：resource.requests与resource.limits 不一致
-  - - *BestEffort*：没有配置resource.requests与resource.limits
+    - - *Guaranteed*：resource.requests与resource.limits一致
+    - - *Burstable*：resource.requests与resource.limits 不一致
+    - - *BestEffort*：没有配置resource.requests与resource.limits
 - **startTime**：启动时间
 
 通过以上Pod四个部分拆解，我们基本搞清了一个Pod在k8s下“从哪里来”的这个问题。本系列的后续的文章会对“到哪里去”这个问题继续展开：

@@ -10,9 +10,9 @@ tag:
 
 <!-- more -->
 
-# 一、Vue2
+## 一、Vue2
 
-## Vue创建模板
+### Vue创建模板
 
 ```html
 <template>
@@ -63,9 +63,9 @@ tag:
 </style>
 ```
 
-## http请求
+### http请求
 
-### 工具
+#### 工具
 
 ```ts
 import Vue from 'vue'
@@ -163,7 +163,7 @@ export function clearLoginInfo() {
 }
 ```
 
-### get
+#### get
 
 ```javascript
         this.$http({
@@ -177,7 +177,7 @@ export function clearLoginInfo() {
         });
 ```
 
-### post
+#### post
 
 ```javascript
             this.$http({
@@ -201,7 +201,7 @@ export function clearLoginInfo() {
                 });
 ```
 
-## 自定义 message.js
+### 自定义 message.js
 
 ```javascript
 import Vue from "vue";
@@ -252,7 +252,7 @@ export function myMsgAuto(message, type, duration = 1.5) {
 }
 ```
 
-## 基本语法
+### 基本语法
 
 ```html
 <body>
@@ -289,7 +289,7 @@ export function myMsgAuto(message, type, duration = 1.5) {
 </body>
 ```
 
-## 指令：单项绑定v-bind & 双向绑定v-model
+### 指令：单项绑定v-bind & 双向绑定v-model
 
 1. 单向绑定：v-bind（简写：‘‘:style’’）、更改页面元素但data不会变
 
@@ -356,11 +356,11 @@ export function myMsgAuto(message, type, duration = 1.5) {
 
 ![](./web-vue.assets/true-image-20210512174921957.png)
 
-## 指令：v-no、v-for、v-if、v-show
+### 指令：v-no、v-for、v-if、v-show
 
-### v-no：用来绑定事件
+#### v-no：用来绑定事件
 
-~~~html
+```html
 v-no：用来绑定事件
 <!-- 完整语法 -->
 <a v-on:click="doSomething"> ... </a>
@@ -404,11 +404,11 @@ v-no：用来绑定事件
         }
     })
 </script>
-~~~
+```
 
 ![](./web-vue.assets/true-image-20210512175906550.png)
 
-### v-for
+#### v-for
 
 ```html
 <div id="app">
@@ -449,7 +449,7 @@ v-no：用来绑定事件
 
 ![](./web-vue.assets/true-image-20210512180050258.png)
 
-### v-if、v-show
+#### v-if、v-show
 
 ```html
 <body>
@@ -478,11 +478,11 @@ v-no：用来绑定事件
 
 ![](./web-vue.assets/true-image-20210512180358008.png)
 
-## 计算属性
+### 计算属性
 
-### 监听器watch
+#### 监听器watch
 
-~~~html
+```html
 <div id="app">
     <!-- 某些结果是基于之前数据实时计算出来的，我们可以利用计算属性。来完成 -->
     <ul>
@@ -521,11 +521,11 @@ v-no：用来绑定事件
         },
     })
 </script>
-~~~
+```
 
 ![](./web-vue.assets/true-image-20210512180908376.png)
 
-### 过滤器filter
+#### 过滤器filter
 
 ```html
 <!-- 过滤器常用来处理文本格式化的操作。过滤器可以用在两个地方：双花括号插值和 v-bind 表达式 -->
@@ -554,9 +554,9 @@ v-no：用来绑定事件
 
 ![](./web-vue.assets/true-image-20210512181738935.png)
 
-## 组件化
+### 组件化
 
-~~~html
+```html
 <div id="app">
     <button v-on:click="count++">我被点击了 {{count}} 次</button>
     <counter></counter>
@@ -598,15 +598,15 @@ v-no：用来绑定事件
         }
     })
 </script>
-~~~
+```
 
 ![](./web-vue.assets/true-image-20210512182142594.png)
 
-## 生命周期
+### 生命周期
 
 <img src="./web-vue.assets/lifecycle-16413781838673.svg" alt="实例的生命周期"  />
 
-~~~html
+```html
 <div id="app">
     <span id="num">{{num}}</span>
     <button @click="num++">赞！</button>
@@ -661,21 +661,21 @@ v-no：用来绑定事件
         }
     });
 </script>
-~~~
+```
 
 ![](./web-vue.assets/true-image-20210512182402196.png)
 
-<img src="./web-vue.assets/true-image-20210512182509172.png" alt="image-20210512182509172"  />
+![](./web-vue.assets/true-image-20210512182509172.png)
 
-## 脚手架
+### 脚手架
 
-<img src="./web-vue.assets/true-image-20210512183142153.png" alt="image-20210512183142153" style="zoom: 67%;" />
+![](./web-vue.assets/true-image-20210512183142153.png)
 
-# 二、Vue3
+## 二、Vue3
 
 ![](./web-vue.assets/true-01.png)
 
-## 变化
+### 变化
 
 ```
 <script lang="ts" setup> const srcList = [] </script>
@@ -694,7 +694,7 @@ v-no：用来绑定事件
 | destroyed     | onUnmounted               |
 | errorCaptured | onErrorCaptured           |
 
-## setup的参数
+### setup的参数
 
 setup (props, {attrs, emit, slots})
 
@@ -735,13 +735,11 @@ export default ({
 }           
 ```
 
-## 生命周期
+### 生命周期
 
 [vue3与vue2的区别](https://www.cnblogs.com/baifangzi/p/14156726.html)
 
-## 创建模板
-
-[vue+ts模板](#vue+ts模板)
+### 创建模板
 
 ```html
 <template>
@@ -793,7 +791,7 @@ export default {
 </style>
 ```
 
-## main.ts
+### main.ts
 
 ```ts
 import {createApp} from 'vue'
@@ -809,7 +807,7 @@ IconPark(app)
 app.mount('#app')
 ```
 
-## element.ts
+### element.ts
 
 ```tsx
 import ElementPlus, {
@@ -888,7 +886,7 @@ export default (app) => {
 }
 ```
 
-## IconPark.ts
+### IconPark.ts
 
 ```
 import {install} from '@icon-park/vue-next/es/all';
@@ -899,7 +897,7 @@ export function IconPark(app) {
 }
 ```
 
-## 多环境dev、prod、test
+### 多环境dev、prod、test
 
 在项目根路径下创建：.env.dev .env.prod .env.test
 
@@ -923,7 +921,7 @@ package.json
 
 ```
 
-## axios 请求
+### axios 请求
 
 ```
 "axios": "^0.25.0",
@@ -1005,7 +1003,7 @@ function getLogs() {
 }
 ```
 
-## proxy 请求代理
+### proxy 请求代理
 
 ```javascript
 server: {
@@ -1029,7 +1027,7 @@ server: {
         },
 ```
 
-## 计算属性与监视 watch
+### 计算属性与监视 watch
 
 ```ts
 <script lang="ts" setup>
@@ -1071,7 +1069,7 @@ server: {
 </script>
 ```
 
-## ref获取元素
+### ref获取元素
 
 ```vue
 <template>
@@ -1102,7 +1100,7 @@ export default {
 </script>
 ```
 
-# 三、vue+vite+typescript
+## 三、vue+vite+typescript
 
 vitejs：<https://vitejs.dev/config/>
 
@@ -1110,7 +1108,7 @@ TS ：<https://www.tslang.cn/docs/home.html>
 
 Vue3+TS 快速上手：<https://24kcs.github.io/vue3_study/>
 
-## 1、创建TS项目步骤
+### 1、创建TS项目步骤
 
 ```javascript
 1)npm init @vitejs/app
@@ -1121,9 +1119,9 @@ Vue3+TS 快速上手：<https://24kcs.github.io/vue3_study/>
 6)npm install
 ```
 
-## 2、自动导入：自定义工具、api 接口，实现 vue 组件不需要 import 指令
+### 2、自动导入：自定义工具、api 接口，实现 vue 组件不需要 import 指令
 
-### 2.1、配置 vite.config.ts
+#### 2.1、配置 vite.config.ts
 
 ```javascript
 import {defineConfig, loadEnv} from 'vite'
@@ -1174,7 +1172,7 @@ export default defineConfig(({mode}) => {
 });
 ```
 
-### 2.2、自定义api：src/util/xxx.ts
+#### 2.2、自定义api：src/util/xxx.ts
 
 ```javascript
 export function msgAuto(options: msgAutoOptions) {...}
@@ -1183,7 +1181,7 @@ export function msgBoxAlert(options: msgBoxAlertOptions) {...}
 export function msgBox(options: msgBoxOptions){...}
 ```
 
-### 2.3、查看编译结果 src/auto-imports.d.ts
+#### 2.3、查看编译结果 src/auto-imports.d.ts
 
 ```javascript
 // Generated by 'unplugin-auto-import'
@@ -1199,7 +1197,7 @@ declare global {
 export {}
 ```
 
-### 2.4、vue 组件应用
+#### 2.4、vue 组件应用
 
 ```
 <script lang="ts" setup>
@@ -1216,7 +1214,7 @@ const upTheme = () => {
 
 ![image-20220330185452637](./web-vue.assets/true-image-20220330185452637.png)
 
-## 3、vite.config.ts +自动导入组件，在vue页面里不用import （src/Components、vite、vue、vuex）依赖：【unplugin-auto-import/vite、unplugin-vue-components/vite、unplugin-vue-components/resolvers】
+### 3、vite.config.ts +自动导入组件，在vue页面里不用import （src/Components、vite、vue、vuex）依赖：【unplugin-auto-import/vite、unplugin-vue-components/vite、unplugin-vue-components/resolvers】
 
 ```ts
 import {defineConfig, loadEnv} from 'vite'
@@ -1332,7 +1330,7 @@ let this_theme = store.state.theme
 </script>
 ```
 
-## package.json
+### package.json
 
 ```javascripton
 {
@@ -1369,7 +1367,7 @@ let this_theme = store.state.theme
 }
 ```
 
-## tsconfig.json
+### tsconfig.json
 
 ```javascripton
 {
@@ -1431,7 +1429,7 @@ target  ts编译成js的标准
 ... 有很多配置项具体可以查看其它资料
 ```
 
-## vue3+ts模板 <a name="vue+ts模板" />
+### vue3+ts模板 <a name="vue+ts模板" />
 
 ```vue
 <el-button class="ml-3" type="success" @click="backTop">上传</el-button>
@@ -1539,7 +1537,7 @@ onMounted(() => {
 </script>
 ```
 
-## 全局函数
+### 全局函数
 
 *代码*
 
@@ -1555,7 +1553,7 @@ greet("hello, world");
 declare function greet(greeting: string): void;
 ```
 
-## ts 回调函数\组合式 API 语法
+### ts 回调函数\组合式 API 语法
 
 ```ts
 /* OK */
@@ -1597,17 +1595,17 @@ const increment = () => {
 </script>
 ```
 
-## 问题
+### 问题
 
 ![image-20220124164859102](./web-vue.assets/true-image-20220124164859102.png)
 
-# 四、其他
+## 四、其他
 
-## eslint 配置
+### eslint 配置
 
 <https://eslint.vuejs.org/user-guide/#usage>
 
-## 按需导入css样式
+### 按需导入css样式
 
 <https://github.com/vbenjs/vite-plugin-style-import/blob/HEAD/README.zh_CN.md>
 
@@ -1641,17 +1639,17 @@ export default {
 
 ```
 
-# 五、vue3+vite+AntDesignVue 专用pc、web端
+## 五、vue3+vite+AntDesignVue 专用pc、web端
 
 Ant Design Vue专用pc、web端
 
-# 六、vue3 + vite + vant + typescript 专用app移动端
+## 六、vue3 + vite + vant + typescript 专用app移动端
 
 Vant专用app移动端
 
 <https://youzan.github.io/vant/v4/#/zh-CN>
 
-## 快速上手
+### 快速上手
 
 ```
 "vant": "^3.4.7",
@@ -1702,13 +1700,13 @@ app.use(Button);
 
 ```
 
-## 桌面端适配
+### 桌面端适配
 
 ```bash
 @vant/touch-emulator
 ```
 
-### 底部安全区适配
+#### 底部安全区适配
 
 ```
 <!-- 在 head 标签中添加 meta 标签，并设置 viewport-fit=cover 值 -->
@@ -1727,29 +1725,29 @@ app.use(Button);
 
 ![image-20220330011947826](./web-vue.assets/true-image-20220330011947826.png)
 
-# 七、vue+vuetify 快速开发
+## 七、vue+vuetify 快速开发
 
 设备匹配：pc、web端、app
 
-# 九、Tailwind CSS 样式
+## 九、Tailwind CSS 样式
 
 <https://www.tailwindcss.cn/>
 
 npm install tailwindcss
 
-# 十、vue项目打包
+## 十、vue项目打包
 
-## git
+### git
 
 <https://cli.vuejs.org/zh/guide/deployment.html#github-pages>
 
 <https://cn.vitejs.dev/guide/static-deploy.html>
 
-## Webpack
+### Webpack
 
-## Rollup
+### Rollup
 
-## vue3+vite+nginx
+### vue3+vite+nginx
 
 ```javascript
 // 打包相关规则

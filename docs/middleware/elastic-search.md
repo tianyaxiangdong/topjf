@@ -113,7 +113,7 @@ es 中会默认存在一个名为.kibana和.kibana_task_manager的索引
 
 ### 3.2 创建索引
 
-保存: PUT /index/type/标识id 
+保存: PUT /index/type/标识id
 
 如: PUT /customer/demo/1
 
