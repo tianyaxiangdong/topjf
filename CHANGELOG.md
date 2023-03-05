@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.26.4](https://github.com/topjf/topjf/compare/v3.26.3...v3.26.4) (2023-03-05)
+
+
+### 🐛Bug Fixes
+
+* 更新issue配置 ([555b224](https://github.com/topjf/topjf/commit/555b2245732754b5c152b22b375f72522d1534a5))
+
 ## [3.26.3](https://github.com/topjf/topjf/compare/v3.26.2...v3.26.3) (2023-03-05)
 
 
