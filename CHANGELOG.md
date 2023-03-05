@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.27.4](https://github.com/topjf/topjf/compare/v3.27.3...v3.27.4) (2023-03-05)
+
+
+### 📚Docs
+
+* 更新 linux ([eb4af08](https://github.com/topjf/topjf/commit/eb4af089221255d4ba5f7002f93ac9e35f276a73))
+
 ## [3.27.3](https://github.com/topjf/topjf/compare/v3.27.2...v3.27.3) (2023-03-05)
 
 
