@@ -22,7 +22,7 @@ export const allNavbar = navbar([
         children: [
             {text: "关于本站", icon: "people", link: "/about-this"},
             {text: "网站历史", icon: "time", link: "/history"},
-            {text: "VuePress Theme Hope 文档", icon: "creative", link: "https://theme-hope.vuejs.press/"},
+            {text: "VuePress Theme Hope 文档", icon: "creative", link: "https://theme-hope.vuejs.press/zh/"},
         ],
     },
     {text: "Markdown测试", icon: "overflow", link: "/test"},
