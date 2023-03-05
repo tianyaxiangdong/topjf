@@ -26,7 +26,7 @@ Node.js  [安装-教程](https://blog.csdn.net/qq_42476834/article/details/11078
 
 [pnpm 官网安装教程](https://pnpm.io/zh/installation)
 
-## linux 配置
+## Linux 配置
 
 ```bash
 tar -zxvf 下载的tar包路径 -C 存放目标路劲

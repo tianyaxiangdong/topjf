@@ -5,7 +5,7 @@ category:
 - Linux
 date: 2021-08-14
 tag:
-- linux
+- Linux
 - kernel
 ---
 

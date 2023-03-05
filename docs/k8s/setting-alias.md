@@ -14,7 +14,7 @@ tag:
 
 # 在Linux、window设置docker、k8s快捷指令
 
-## linux 端
+## Linux 端
 
 `vim ~/.bashrc`
 

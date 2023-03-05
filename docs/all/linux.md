@@ -5,7 +5,7 @@ category:
 - 面试宝典
 date: 2022-08-17
 tag:
-  - linux
+  - Linux
 ---
 
 <!-- more -->
@@ -14,7 +14,7 @@ tag:
 
 [参考地址](https://zhuanlan.zhihu.com/p/533165245?utm_id=0)
 
-## 一、linux
+## 一、Linux
 
 ### linux系统启动流程
 
@@ -165,7 +165,7 @@ find /var/log/ -type f -name .*.log -mtime 30|xargs rm -f
 
 ### ansible有哪些模块？功能是什么？
 
-[Ansible 模块实例](/linux/ansible/ansible.html)
+[Ansible 模块实例](../linux/ansible/ansible.md)
 
 | 模块       | 功能                   |
 |----------|----------------------|
