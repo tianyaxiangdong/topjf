@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.27.5](https://github.com/topjf/topjf/compare/v3.27.4...v3.27.5) (2023-03-05)
+
+
+### 🐛Bug Fixes
+
+* 更新markdownlint-cli到0.33.0及配置 ([d151dd3](https://github.com/topjf/topjf/commit/d151dd37be02566281927256684f996f7ce0ac5f))
+
 ## [3.27.4](https://github.com/topjf/topjf/compare/v3.27.3...v3.27.4) (2023-03-05)
 
 ### 📚Docs
