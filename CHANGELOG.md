@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.26.5](https://github.com/topjf/topjf/compare/v3.26.4...v3.26.5) (2023-03-05)
+
+
+### 📚Docs
+
+* 添加split命令；更新Linux笔命令大全、cat命令 ([5b3f84e](https://github.com/topjf/topjf/commit/5b3f84e8194ebf97433f15589b532a589d0916ca))
+
 ## [3.26.4](https://github.com/topjf/topjf/compare/v3.26.3...v3.26.4) (2023-03-05)
 
 
