@@ -3,7 +3,7 @@ description: 创建报告以帮助我们改进
 title: "[Bug]"
 labels:
   - bug
-assignees: Mister-Hope
+assignees: topsjf
 body:
   - type: checkboxes
     id: checklist
