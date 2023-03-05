@@ -3118,8 +3118,6 @@ location /static/ {
 
 ## 8、微信支付
 
-##
-
 # 二十、秒杀服务
 
 ![image-20211118125418053](./spring-cloud-alibaba-note-high-level.assets/true-image-20211118125418053.png)

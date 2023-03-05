@@ -483,9 +483,9 @@ Environment="HTTPS_PROXY=http://127.0.0.1:10809"
 Environment="NO_PROXY=localhost,127.0.0.0/8,192.168.0.0/16,10.0.0.0/8"
 ```
 
---------
+---
 
-------------
+---
 
 #### 2、添加 阿里kubernetes 仓库源（推荐）
 
@@ -907,9 +907,9 @@ kube-flannel-ds-tfj78   1/1     Running   0          4m15s   192.168.100.131   n
 
 #### 4、KubeOperator
 
----------------------
+---
 
-------------------
+---
 
 ## 4）、k8s 入门
 
@@ -1076,9 +1076,9 @@ kubectl scale --current-replicas=2 --replicas=3 deployment/tomcat6
 
 ##### kubectl delete -f xxx.yaml
 
---------------------
+---
 
----------------------
+---
 
 ### B、yaml & 基本使用
 

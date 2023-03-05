@@ -54,7 +54,7 @@ yum –y install wget
 
 #### 使用 wget 命令下载mysql的repo源
 
---------
+---
 
 [https://downloads.mysql.com/archives/community/](https://downloads.mysql.com/archives/community/)：下载【common、libs、client、server】这几个文件
 
@@ -66,7 +66,7 @@ wget https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-community-server-5.7.38-1.
 
 ```
 
------------
+---
 
 ```bash
 wget http://repo.mysql.com/mysql57-community-release-el7-11.noarch.rpm
@@ -134,7 +134,7 @@ mysql-community-libs-5.7.38-1.el7.x86_64
 mysql-community-client-5.7.38-1.el7.x86_64
 ```
 
----------
+---
 
 ### 3、 启动 mysql 服务
 

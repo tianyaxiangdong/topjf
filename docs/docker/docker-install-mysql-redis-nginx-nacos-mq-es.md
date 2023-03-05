@@ -419,15 +419,15 @@ docker run --env MODE=standalone --name nacos \
 
 ```bash
 docker pull registry.cn-chengdu.aliyuncs.com/jinfang/rabbitmq:3.9.20-management
------------
+---
 docker pull rabbitmq:3.8.34-management
 docker tag rabbitmq:3.8.34-management registry.cn-chengdu.aliyuncs.com/jinfang/rabbitmq:3.8.34-management
 docker push registry.cn-chengdu.aliyuncs.com/jinfang/rabbitmq:3.8.34-management
------------
+---
 docker pull rabbitmq:3.9.20-management
 docker tag rabbitmq:3.9.20-management registry.cn-chengdu.aliyuncs.com/jinfang/rabbitmq:3.9.20-management
 docker push registry.cn-chengdu.aliyuncs.com/jinfang/rabbitmq:3.9.20-management
------------
+---
 docker pull rabbitmq:3.10.5-management
 docker tag rabbitmq:3.10.5-management registry.cn-chengdu.aliyuncs.com/jinfang/rabbitmq:3.10.5-management
 docker push registry.cn-chengdu.aliyuncs.com/jinfang/rabbitmq:3.10.5-management

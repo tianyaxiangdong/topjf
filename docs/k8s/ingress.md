@@ -37,7 +37,7 @@ ingress 底层是nginx
 
 ![](./ingress.assets/true-1620.png)
 
-----
+---
 
 ## 执行流程
 
@@ -626,4 +626,4 @@ root@tomcat-xx-8sdxp:/usr/local/tomcat# cp -R webapps.dist/. webapps/
 
 ![](./ingress.assets/true-image-20220506042632204.png)
 
-------
+---

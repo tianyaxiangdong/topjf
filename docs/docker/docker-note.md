@@ -34,7 +34,7 @@ Docker 包括三个基本概念:
 | Docker Registry        | Docker 仓库用来保存镜像，可以理解为代码控制中的代码仓库。一个 Registry 中可以包含多个仓库（Repository）；每个仓库可以包含多个标签（Tag）；每个标签对应一个镜像。通常，一个仓库会包含同一个软件不同版本的镜像，而标签就常用于对应该软件的各个版本。我们可以通过 **<仓库名>:<标签>** 的格式来指定具体是这个软件哪个版本的镜像。如果不给出标签，将以 **latest** 作为默认标签。 |
 | Docker Machine         | Docker Machine是一个简化Docker安装的命令行工具，通过一个简单的命令行即可在相应的平台上安装Docker，比如VirtualBox、 Digital Ocean、Microsoft Azure。 |
 
-------------
+---
 
 ## 一、下载与安装
 
@@ -650,7 +650,7 @@ RUN tar -zxvf redis.tar.gz
 简化，使用&&连接：RUN yum -y install wget \ && RUN tar -zxvf redis.tar.gz
 ```
 
-- **CMD** #指定容器启动时要运行的命令，假如有多个CMD，最后一个生效；用于运行程序，在 docker run 时运行。CMD <shell 命令> ；
+- **CMD** #指定容器启动时要运行的命令，假如有多个CMD，最后一个生效；用于运行程序，在 docker run 时运行。CMD \<shell 命令> ；
 
 ```shell
 CMD ["\<可执行文件或命令\>","\<param1>","\<param2>",...] 
@@ -724,11 +724,11 @@ CMD /bin/bash
 
 #### 基于TomcatDockerFile<a name="基于TomcatDockerFile"></a>
 
-# tomcat:9.0.62-jre8-temurin-focal、tomcat:8.5.78-jre8-temurin-focal
+**tomcat:9.0.62-jre8-temurin-focal、tomcat:8.5.78-jre8-temurin-focal**
 
-# tomcat:9.0.62-jre11-temurin-focal、tomcat:8.5.78-jre11-temurin-focal
+**tomcat:9.0.62-jre11-temurin-focal、tomcat:8.5.78-jre11-temurin-focal**
 
-# tomcat:9.0.62-jre17-temurin-focal、tomcat:8.5.78-jre17-temurin-focal
+**tomcat:9.0.62-jre17-temurin-focal、tomcat:8.5.78-jre17-temurin-focal**
 
 ```bash
 #使用的基础镜像

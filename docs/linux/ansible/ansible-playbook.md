@@ -157,20 +157,20 @@ Playbook的核心元素：
 > > ​    module: arguments
 > >
 > > ​    notify: HANDLER_NAME
->
+> >
 > >handlers:
 > >
 > >​    – name: HANDLER_NAME
 > >
 > >​    module: arguments
-
+>
 > `模块，模块参数`：
 >
 > > 格式：
 > >　(1) action: module arguments
 > >　(2) module: arguments
 > >　注意：shell和command模块后面直接跟命令，而非key=value类的参数列表；
-
+>
 > `handlers`：任务，在特定条件下触发；接收到其它任务的通知时被触发；
 
 (1) 某任务的状态在运行后为changed时，可通过“notify”通知给相应的handlers；
@@ -739,7 +739,7 @@ ansible playbook 还支持字典功能。举例如下：
 
 ## 角色订制 roles 以 nginx 为例
 
-#### ① 简介
+### ① 简介
 
 对于以上所有的方式有个弊端就是无法实现复用假设在同时部署Web、db、ha 时或不同服务器组合不同的应用就需要写多个yml文件。很难实现灵活的调用。
 
@@ -749,7 +749,7 @@ roles 用于层次性、结构化地组织playbook。roles 能够根据层次型
 
 角色一般用于基于主机构建服务的场景中，但也可以是用于构建守护进程等场景中。
 
-#### ② 目录说明
+### ② 目录说明
 
 **xxx模块下面的每个目录至少应该有一个名为main.yml的文件，其它的文件需要由main.yml进行“包含”调用；**
 
@@ -781,7 +781,7 @@ roles 用于层次性、结构化地组织playbook。roles 能够根据层次型
 
 **files目录**：角色可能会用到的一些其他文件可以放置在此目录中，比如，当你定义nginx角色时，需要配置https，那么相关的证书文件即可放置在此目录中。
 
-#### ③ 在`roles`目录下生成对应的目录结构
+### ③ 在`roles`目录下生成对应的目录结构
 
 ```shell
 [root@admin ansible]# cd roles/
@@ -814,7 +814,7 @@ roles 用于层次性、结构化地组织playbook。roles 能够根据层次型
 
 **可以使用 ansible-galaxy role init xxx 来实现目录的自动创建，结构跟上面一样**
 
-#### 准备 nginx.conf.j2 配置文件
+### 准备 nginx.conf.j2 配置文件
 
 ```yaml
 
@@ -874,7 +874,7 @@ http {
 }
 ```
 
-#### ④ 定义 tasks 任务文件
+### ④ 定义 tasks 任务文件
 
 rpm包下载：
 
@@ -950,7 +950,7 @@ rpm包下载：
 
 > ansible-playbook ./nginx/tasks/uninstall.yml
 
-#### ⑤ 放置我们所需要的文件到指定目录
+### ⑤ 放置我们所需要的文件到指定目录
 
 因为我们定义的角色已经有了新的组成方式，所以我们需要把文件都放到指定的位置，这样，才能让配置文件找到这些并进行加载。
 
@@ -986,7 +986,7 @@ rpm包下载：
     └── main.yml
 ```
 
-#### ⑥ 定义 vars 变量文件
+### ⑥ 定义 vars 变量文件
 
 我们在模板中定义的变量，也要去配置文件中加上：
 
@@ -997,7 +997,7 @@ nginxprot: 5120
 ansible_processor_vcpus: 1
 ```
 
-#### ⑦ 定义 handlers 文件
+### ⑦ 定义 handlers 文件
 
 我们在配置文件中定义了`notify`，所以我么也需要定义`handlers`，我们来修改配置文件：
 
@@ -1011,7 +1011,7 @@ ansible_processor_vcpus: 1
 
 ```
 
-#### ⑧ 定义 nginx 剧本文件
+### ⑧ 定义 nginx 剧本文件
 
 接下来，我们就来定义剧本文件，由于大部分设置我们都单独配置在了roles里面，所以，接下来剧本就只需要写一点点内容即可：
 
@@ -1025,7 +1025,7 @@ ansible_processor_vcpus: 1
 
 ```
 
-#### ⑨ 启动服务
+### ⑨ 启动服务
 
 剧本定义完成以后，我们就可以来启动服务了：
 
@@ -1035,7 +1035,7 @@ ansible_processor_vcpus: 1
 
 ![](./ansible-playbook.assets/true-image-20220729211246699.png)
 
-#### ⑩ 启动过后照例查看端口号
+### ⑩ 启动过后照例查看端口号
 
 ```shell
 [root@admin roles]# ansible web -m shell -a "ss -ntulp |grep 5120"
@@ -1067,7 +1067,7 @@ ansible.cfg to get rid of this message.
   ......
 ```
 
-#### 11 测试修改后重新加载配置文件 - restartnginx
+### 11 测试修改后重新加载配置文件 - restartnginx
 
 ```shell
 [root@admin nginx]# vim ./vars/main.yml
@@ -1085,7 +1085,7 @@ nginxprot: 5133
 
 ![](./ansible-playbook.assets/true-image-20220729212349643.png)
 
-#### 12 测试修改后重新加载配置文件 - reloadnginx
+### 12 测试修改后重新加载配置文件 - reloadnginx
 
 ```shell
 [root@admin nginx]# vim ./vars/main.yml

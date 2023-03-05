@@ -2242,7 +2242,7 @@ private static void test2() {
 
 ![image-20220419183148990](./23-design-patterns.assets/true-image-20220419183148990.png)
 
-----
+---
 
 ##### Subject 接口
 
@@ -2338,7 +2338,7 @@ public class BeforeAdvice implements IAdvice{
 }
 ```
 
-##### 测试
+##### 测试1
 
 ```java
 private static void test1() {
@@ -2379,7 +2379,7 @@ public class GamePlayerDynamicProxy extends DynamicProxy {
 }
 ```
 
-##### 测试
+##### 测试2
 
 ```java
 private static void test0() {
@@ -2398,7 +2398,7 @@ doSomething --> 8888888888
 >
 > 切面（Aspect）、切入点（JoinPoint）、通知（Advice）、织入（Weave）
 
------
+---
 
 ### 定义
 
@@ -3266,7 +3266,7 @@ public class FlyweightFactory {
 
 Flyweight fly1 = factory.getFlyweight( "Fred" ); Flyweight fly2 = factory.getFlyweight( "Wilma" );
 
---------------------------
+---
 
 从调用上看,好象是个纯粹的 Factory 使用,但奥妙就在于 Factory 的内部设计上.
 
@@ -3390,7 +3390,7 @@ public class ArtistFactory {
 
 <img src="./23-design-patterns.assets/true-image-20220420181518502.png" alt="image-20220420181518502" style="zoom: 67%;" />
 
------
+---
 
 #### 命令接收器（项目接头负责人）Invoker
 
@@ -3774,7 +3774,7 @@ RequirementGroup.plan --> [功能]变更计划...
 
 反悔问题
 
-------
+---
 
 ## 14.观察者模式（Observer Pattern）
 
@@ -4415,7 +4415,7 @@ Strategy 和 Factory 有一定的类似,Strategy 相对简单容易理解,并且
 
 ![image-20220420215442687](./23-design-patterns.assets/true-image-20220420215442687.png)
 
------
+---
 
 ```java
 public abstract class Handler {
@@ -5029,7 +5029,7 @@ init AbstractMediator（）
 
 ![image-20220419220345054](./23-design-patterns.assets/true-image-20220419220345054.png)
 
-----
+---
 
 #### 抽象中介者 AbstractMediator
 
@@ -5329,7 +5329,7 @@ IBM电脑的销售情况为 --> [70]良
 清仓处理后：165
 ```
 
-------
+---
 
 ### 定义
 

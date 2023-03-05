@@ -1559,7 +1559,7 @@ drop  table if exists t_student;   create  table t_student(      student_id   in
 
 采用alter table来增加/删除/修改表结构，不影响表中的数据
 
-#### 14.2.1、添加字段
+### 14.2.1、添加字段
 
 如：需求发生改变，需要向t_student中加入联系电话字段，字段名称为：contatct_tel 类型为varchar(40)
 
@@ -1569,7 +1569,7 @@ alter table t_student  add contact_tel varchar(40);
 
 ![](./MySQL.assets/true-clip_image227.jpg)
 
-#### 14.2.2、修改字段
+### 14.2.2、修改字段
 
 如：student_name无法满足需求，长度需要更改为100
 
@@ -1583,7 +1583,7 @@ alter table t_student  modify student_name varchar(100) ;
 
 ![](./MySQL.assets/true-clip_image231.jpg)
 
-#### 14.2.3、删除字段
+### 14.2.3、删除字段
 
 如：删除联系电话字段
 
@@ -1595,7 +1595,7 @@ alter table t_student  drop contact_tel;
 
 ## 14.3、添加、修改和删除
 
-#### 14.3.1、insert
+### 14.3.1、insert
 
 添加、修改和删出都属于DML，主要包含的语句：insert、update、delete
 
@@ -1675,7 +1675,7 @@ insert into emp_bak  select * from emp where e_sal=3000;
 
 ![](./MySQL.assets/true-clip_image255.jpg)
 
-#### 14.3.2、update
+### 14.3.2、update
 
 可以修改数据，可以根据条件修改数据
 
@@ -1689,7 +1689,7 @@ l 将e_job为manager的员工的工资上涨10%
 update emp set  e_sal=e_sal+e_sal*0.1 where e_job='MANAGER';  
 ```
 
-#### 14.3.3、delete
+### 14.3.3、delete
 
 可以删除数据，可以根据条件删除数据
 
@@ -1970,7 +1970,7 @@ SHOW TABLE STATUS LIKE 'emp' \G
 
 ## 15.2、常用的存储引擎
 
-#### 15.2.1、MyISAM存储引擎
+### 15.2.1、MyISAM存储引擎
 
 • MyISAM存储引擎是MySQL最常用的引擎。
 • 它管理的表具有以下特征：
@@ -1981,7 +1981,7 @@ SHOW TABLE STATUS LIKE 'emp' \G
  – 灵活的AUTO_INCREMENT字段处理
  – 可被转换为压缩、只读表来节省空间
 
-#### 15.2.2、InnoDB存储引擎
+### 15.2.2、InnoDB存储引擎
 
 • InnoDB存储引擎是MySQL的缺省引擎。
 
@@ -1996,7 +1996,7 @@ SHOW TABLE STATUS LIKE 'emp' \G
 – 多版本（MVCC）和行级锁定
 – 支持外键及引用的完整性，包括级联删除和更新
 
-#### 15.2.3、MEMORY存储引擎
+### 15.2.3、MEMORY存储引擎
 
 • 使用MEMORY存储引擎的表，其数据存储在内存中，且行的长度固定，这两个特点使得MEMORY存储引擎非常快。
 • MEMORY存储引擎管理的表具有下列特征：
@@ -2122,7 +2122,7 @@ SET SESSION AUTOCOMMIT = ON；
 
 ## 16.4、事务的隔离级别
 
-#### 16.4.1、隔离级别
+### 16.4.1、隔离级别
 
 • 事务的隔离级别决定了事务之间可见的级别。
 • 当多个客户端并发地访问同一个表时，可能出现下面的一致性问题：
@@ -2132,7 +2132,7 @@ SET SESSION AUTOCOMMIT = ON；
 | 不可重复读（Non-repeatable Read） | 在同一个事务中，同一个读操作对同一个数据的前后两次读取产生了不同的结果，这就是不可重复读。 |
 | 幻像读（Phantom Read）            | 幻像读是指在同一个事务中以前没有的行，由于其他事务的提交而出现的新行。 |
 
-#### 16.4.2、四个隔离级别
+### 16.4.2、四个隔离级别
 
 • InnoDB 实现了四个隔离级别，用以控制事务所做的修改，并将修改通告至其它并发的事务：
 | 隔离级别                          | 说明                                                         |
@@ -2146,13 +2146,13 @@ SET SESSION AUTOCOMMIT = ON；
 A在事物中执行DML语句时,未提交
 B不以执行DML,DQL语句
 
-#### 16.4.3、隔离级别与一致性问题的关系
+### 16.4.3、隔离级别与一致性问题的关系
 
 ![](./MySQL.assets/true-clip_image296.jpg)
 
-#### 16.4.4、设置服务器缺省隔离级别
+### 16.4.4、设置服务器缺省隔离级别
 
-##### 通过修改配置文件设置
+#### 通过修改配置文件设置
 
 • 可以在my.ini文件中使用transaction-isolation选项来设置服务器的缺省事务隔离级别。
 • 该选项值可以是：
@@ -2168,7 +2168,7 @@ B不以执行DML,DQL语句
 >
 > transaction-isolation = READ-COMMITTED
 
-##### 通过命令动态设置隔离级别
+#### 通过命令动态设置隔离级别
 
 • 隔离级别也可以在运行的服务器中动态设置，应使用SET TRANSACTION ISOLATION LEVEL语句。
 • 其语法模式为：
@@ -2183,7 +2183,7 @@ B不以执行DML,DQL语句
 
 • 例如： SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
 
-#### 16.4.5、隔离级别的作用范围
+### 16.4.5、隔离级别的作用范围
 
 • 事务隔离级别的作用范围分为两种：
 
@@ -2205,7 +2205,7 @@ SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED；
 SET GLOBAL TRANSACTION ISOLATION LEVEL READ COMMITTED；
 ```
 
-#### 16.4.6、查看隔离级别
+### 16.4.6、查看隔离级别
 
 • 服务器变量tx_isolation（包括会话级和全局级两个变量）中保存着当前的会话隔离级别。
 
@@ -2225,9 +2225,9 @@ SELECT @@session.tx_isolation;
 SELECT @@global.tx_isolation;
 ```
 
-#### 16.4.7、并发事务与隔离级别示例
+### 16.4.7、并发事务与隔离级别示例
 
-##### read une_committed(未提交读) --脏读(Drity Read)
+#### read une_committed(未提交读) --脏读(Drity Read)
 
 | 会话一                                                       | 会话二                |
 | ------------------------------------------------------------ | --------------------- |
@@ -2242,7 +2242,7 @@ SELECT @@global.tx_isolation;
 | s1>rollback;                                                 |                       |
 |                                                              | s2>select * from tx;  |
 
-##### read e_committed(已提交读)
+#### read e_committed(已提交读)
 
 | 会话一                                                      | 会话二                |
 | ----------------------------------------------------------- | --------------------- |
@@ -2255,7 +2255,7 @@ SELECT @@global.tx_isolation;
 | s1>e_commit;                                                  |                       |
 |                                                             | s2>select * from tx;  |
 
-##### repeatable read(可重复读)
+#### repeatable read(可重复读)
 
 | 会话一                                                       | 会话二                |
 | ------------------------------------------------------------ | --------------------- |
@@ -2828,7 +2828,7 @@ SC（SNO，CNO，SCGRADE）代表（学号，课号，成绩）
 
 请用标准SQL语言写出答案，方言也行（请说明是使用什么方言）。
 
------------------------------------------------------------------------------
+---
 
 ```sql
 CREATE TABLE SC ( SNO VARCHAR(200), CNO VARCHAR(200), SCGRADE VARCHAR(200) );

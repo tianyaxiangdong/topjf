@@ -265,11 +265,11 @@ anaconda-ks.cfg  df.log.tar user1.tar
 
 使用命令的扩展语法自己设置这个名字。
 
------
+---
 
 **说明：** 协程能够让你尽情发挥想象力，发送或接收来自子shell中进程的信息。只有在拥有多个协程的时候才需要对协程进行命名，因为你得和它们进行通信。否则的话，让 coproc 命令将其设置成默认的名字 COPROC 就行了。
 
--------
+---
 
 ```shell
 [root@admin home]# coproc My_Job { sleep 10; }
@@ -342,11 +342,11 @@ root      49731   1490  0 12:04 pts/0    00:00:00 ps -f
 
 当进程必须执行衍生操作时，它需要花费时间和精力来设置新子进程的环境。所以说，外部命令多少还是有代价的。
 
-------
+---
 
 **说明** 就算衍生出子进程或是创建了子shell，你仍然可以通过发送信号与其沟通，这一点无论是在命令行还是在脚本编写中都是极其有用的。发送信号（signaling）使得进程间可以通过信号进行通信。
 
------
+---
 
 #### 2、内部命令
 
@@ -427,11 +427,11 @@ HOME=/root
 HOSTNAME=admin
 ```
 
-----------
+---
 
 **说明** 命令 `env` 、 `printenv` 和 `set` 之间的差异很细微。 **set** 命令会显示出全局变量、局部变量以及用户定义变量。它还会按照字母顺序对结果进行排序。 **env** 和 **printenv** 命令同 set 命令的区别在于前两个命令不会对变量排序，也不会输出局部变量和用户定义变量。在这种情况下， env 和 printenv 的输出是重复的。不过 env 命令有一个 printenv 没有的功能，这使得它要更有用一些。
 
--------
+---
 
 #### 3、设置用户定义变量
 
@@ -458,11 +458,11 @@ Hello World
 
 没有单引号的话，bash shell会以为下一个词是另一个要执行的命令。注意，你定义的局部环境变量用的是小写字母，而到目前为止你所看到的系统环境变量都是大写字母。
 
-------
+---
 
 **注意：** 所有的环境变量名均使用大写字母，这是bash shell的标准惯例。如果是你自己创建的局部变量或是shell脚本，请使用小写字母。变量名区分大小写。在涉及用户定义的局部变量时坚持使用小写字母，这能够避免重新定义系统环境变量可能带来的灾难。
 
------
+---
 
 设置了局部环境变量后，就能在shell进程的任何地方使用它了。但是，如果生成了另外一个shell，它在子shell中就不可用。
 
@@ -548,12 +548,12 @@ exit
 I am Global now
 ```
 
-------
+---
 
 **窍门**   如果要用到变量，使用 \$ ；如果要操作变量，不使用 \$ 。这条规则的一
 个例外就是使用 printenv 显示某个变量的值。
 
-------
+---
 
 #### 6、默认的 shell 环境变量
 
@@ -673,11 +673,11 @@ UID    当前用户的真实用户ID（数字形式）
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/home/user1
 ```
 
-------
+---
 
 **窍门** 如果希望子shell也能找到你的程序的位置，一定要记得把修改后的 PATH 环境变量导出。
 
------
+---
 
 #### 8、定位系统环境变量
 
@@ -731,11 +731,11 @@ f
 
 最后一种shell是非交互式shell。系统执行shell脚本时用的就是这种shell。不同的地方在于它没有命令行提示符。但是当你在系统上运行脚本时，也许希望能够运行一些特定启动的命令。
 
------
+---
 
 窍门 脚本能以不同的方式执行。只有其中的某一些方式能够启动子shell
 
------
+---
 
 为了处理这种情况，bash shell提供了 BASH_ENV 环境变量。当shell启动一个非交互式shell进程时，它会检查这个环境变量来查看要执行的启动文件。如果有指定的文件，shell会执行该文件里的命令，这通常包括shell脚本变量设置。
 
@@ -1229,7 +1229,7 @@ if [ -f $jump_directory2 ]; then
 fi
 ```
 
------
+---
 
 - 复合条件测试
 
@@ -1248,7 +1248,7 @@ else
 fi
 ```
 
-------
+---
 
 - 使用双方括号和双括号
 
@@ -1278,11 +1278,11 @@ val--  后减
 
 [[ expression ]]
 
-----
+---
 
 **说明** 双方括号在bash shell中工作良好。不过要小心，不是所有的shell都支持双方括号
 
-----
+---
 
 ```shell
 val12=10
@@ -1300,7 +1300,7 @@ else
 fi
 ```
 
------
+---
 
 - case 命令
 
@@ -1638,7 +1638,7 @@ Values in bin:x:1:1:bin:/bin:/sbin/nologin -
   echo "Iteration number: $var1"
   done
   echo "The for loop is completed"
-  ------------
+  ---
   [root@admin shell]# sh demo3.sh
   Iteration number: 1
   Iteration number: 2
@@ -1682,7 +1682,7 @@ Values in bin:x:1:1:bin:/bin:/sbin/nologin -
           echo " Inner loop: $b"
       done
   done
-  ----------
+  ---
   Outer loop: 1
    Inner loop: 1
    Inner loop: 2
@@ -1698,7 +1698,7 @@ Values in bin:x:1:1:bin:/bin:/sbin/nologin -
    Inner loop: 2
    Inner loop: 3
    Inner loop: 4
-  ----------
+  ---
 ```
 
 - 跳出外部循环 break n
@@ -1717,13 +1717,13 @@ Values in bin:x:1:1:bin:/bin:/sbin/nologin -
       echo " Inner loop: $b"
       done
   done
-  ---------
+  ---
   Outer loop: 1
    Inner loop: 1
    Inner loop: 2
    Inner loop: 3
    Inner loop: 4
-  ---------
+  ---
   
 ```
 
@@ -1740,7 +1740,7 @@ do
     fi
 echo "Iteration number: $var1"
 done
------------
+---
 Iteration number: 1
 Iteration number: 2
 Iteration number: 3
@@ -1751,7 +1751,7 @@ Iteration number: 11
 Iteration number: 12
 Iteration number: 13
 Iteration number: 14
------------
+---
 ```
 
 当 if-then 语句的条件被满足时（值大于5且小于10），shell会执行 continue 命令，跳过此次循环中剩余的命令，但整个循环还会继续。当 if-then 的条件不再被满足时，一切又回到正轨。
@@ -1770,7 +1770,7 @@ do
     echo " Inside iteration number: $var1"
     var1=$[ $var1 + 1 ]
 done
------------
+---
 while iteration: 0
  Inside iteration number: 0
 while iteration: 1
@@ -1811,7 +1811,7 @@ do
         echo " The result of $a * $b = $var3"
     done
 done
-----------
+---
 Iteration 1:
  The result of 1 * 1 = 1
  The result of 1 * 2 = 2
@@ -1825,7 +1825,7 @@ Iteration 4:
 Iteration 5:
  The result of 5 * 1 = 5
  The result of 5 * 2 = 10
------------
+---
 ```
 
 此处用 continue 命令来停止处理循环内的命令，但会继续处理外部循环。注意，值为 3 的那次迭代并没有处理任何内部循环语句，因为尽管 continue 命令停止了处理过程，但外部循环依然会继续。
@@ -1846,7 +1846,7 @@ for (( a = 1; a < 10; a++ ))
 do
     echo "The number is $a"
 done >> output.txt
----------
+---
 /home/shell/demo6.sh is a file
 /home/shell/demo7.sh is a file
 /home/shell/demo.sh is a file
@@ -1860,7 +1860,7 @@ The number is 6
 The number is 7
 The number is 8
 The number is 9
------------
+---
 ```
 
 将循环的结果管接给另一个命令。
@@ -1876,7 +1876,7 @@ Connecticut is the next place to go
 Illinois is the next place to go
 North Dakota is the next place to go
 Tennessee is the next place to go
-----------
+---
 ```
 
 #### 综合实例
@@ -1979,12 +1979,12 @@ echo 程序名称： $0
 echo 参数1 $1
 echo 参数2 $2
 
--------
+---
 [root@admin shell]# sh demo4.sh 123 3
 程序名称： demo4.sh
 参数1 123
 参数2 3
--------
+---
 ```
 
 如果脚本需要的命令行参数不止9个，你仍然可以处理，但是需要稍微修改一下变量名。在第9个变量之后，你必须在变量数字周围加上花括号，比如 ${10}
@@ -1997,13 +1997,13 @@ echo 参11 $11
 echo 参11 ${11}
 echo 参12 ${12}
 
--------
+---
 [root@admin shell]# sh demo4.sh 1 2 3 4 5 6 7 8 9 10 "sdfw6513wer" 12 13
 程序名称： demo4.sh
 参11 11
 参11 sdfw6513wer
 参12 12
--------
+---
 ```
 
 但是这种写法是不可取的
@@ -2106,11 +2106,11 @@ Here's the new first parameter: 3
 
 这个脚本通过测试第一个参数值的长度执行了一个 while 循环。当第一个参数的长度为零时，循环结束。测试完第一个参数后， shift 命令会将所有参数的位置移动一个位置。
 
-------
+---
 
 **窍门** 使用 shift 命令的时候要小心。如果某个参数被移出，它的值就被丢弃了，无法再恢复。
 
--------
+---
 
 #### 处理选项
 
@@ -3838,7 +3838,7 @@ exit
 
 ### 创建函数
 
-##### 基本的脚本函数
+#### 基本的脚本函数
 
 **创建函数**
 
@@ -3974,11 +3974,11 @@ The new value is 400
 6666
 ```
 
------
+---
 
 **说明** 通过这种技术，你还可以返回浮点值和字符串值。这使它成为一种获取函数返回值的强大方法。
 
--------
+---
 
 ##### 在函数中使用变量
 
@@ -4454,11 +4454,11 @@ ls –al /usr/bin | shtool prop –p "waiting..."
 
 POSIX BRE引擎通常出现在依赖正则表达式进行文本过滤的编程语言中。它为常见模式提供了高级模式符号和特殊符号，比如匹配数字、单词以及按字母排序的字符。gawk程序用ERE引擎来处理它的正则表达式模式。
 
-----
+---
 
 **警告** 记住，sed编辑器和gawk程序的正则表达式引擎之间是有区别的。gawk程序可以使用大多数扩展正则表达式模式符号，并且能提供一些额外过滤功能，而这些功能都是sed编辑器所不具备的。但正因为如此，gawk程序在处理数据流时通常才比较慢。
 
-----
+---
 
 #### 基础正则表达式 BRE
 
@@ -4487,7 +4487,7 @@ This is a test
 This is a test
 ```
 
-----------
+---
 
 ```shell
 [root@admin shell]# echo "The books are expensive" | sed -n '/book/p'
@@ -4863,11 +4863,11 @@ ERE中的花括号允许你为可重复的正则表达式指定一个上限。�
 
 这个特性可以精确调整字符或字符集在模式中具体出现的次数。
 
-----
+---
 
 **警告** 默认情况下，gawk程序不会识别正则表达式间隔。必须指定gawk程序的 `--re- interval` 命令行选项才能识别正则表达式间隔
 
-----
+---
 
 ```shell
 echo "bt" | gawk --re-interval '/be{1}t/{print $0}'
@@ -6010,11 +6010,11 @@ This is the first data line.
 This is the header line.
 ```
 
------
+---
 
 **说明** 可能你想说，有个Linux命令已经有反转文本文件的功能了。 tac 命令会倒序显示一个文本文件。你也许已经注意到了，这个命令的名字很巧妙，它执行的正好是与 cat 命令相反的功能。
 
-----
+---
 
 #### 改变流
 
@@ -6186,11 +6186,11 @@ The "cat" sleeps in his "hat".
 
 sed编辑器用圆括号来定义替换模式中的子模式。你可以在替代模式中使用特殊字符来引用每个子模式。替代字符由反斜线和数字组成。数字表明子模式的位置。sed编辑器会给第一个子模式分配字符 \1 ，给第二个子模式分配字符 \2 ，依此类推。
 
------
+---
 
 **警告** 当在替换命令中使用圆括号时，必须用转义字符将它们标示为分组字符而不是普通的圆括号。这跟转义其他特殊字符正好相反。
 
------
+---
 
 来看一个在sed编辑器脚本中使用这个特性的例子。
 
@@ -6594,11 +6594,11 @@ information to use in our sed script.
 
 虽然sed编辑器是非常方便自动修改文本文件的工具，但其也有自身的限制。通常你需要一个用来处理文件中的数据的更高级工具，它能提供一个类编程环境来修改和重新组织文件中的数据。这正是gawk能够做到的。
 
-------
+---
 
 **说明**  在所有的发行版中都没有默认安装gawk程序。如果你所用的Linux发行版中没有包含gawk.
 
------
+---
 
 gawk程序是Unix中的原始awk程序的GNU版本。gawk程序让流编辑迈上了一个新的台阶，它提供了一种编程语言而不只是编辑器命令。在gawk编程语言中，你可以做下面的事情：
 
@@ -6916,11 +6916,11 @@ gawk 'BEGIN{FIELDWIDTHS="3 5 2 5"}{print $1,$2,$3,$4}' data1b
 058 10.12 98 100.1
 ```
 
------
+---
 
 **警告** 一定要记住，一旦设定了 FIELDWIDTHS 变量的值，就不能再改变了。这种方法并不适用于变长的字段。
 
------
+---
 
 变量 RS 和 ORS 定义了gawk程序如何处理数据流中的字段。默认情况下，gawk将 RS 和 ORS 设为换行符。默认的 RS 值表明，输入数据流中的每行新文本就是一条新纪录。
 
@@ -6984,7 +6984,7 @@ ARGC 变量表明命令行上有两个参数。这包括 gawk 命令和 data1 �
 
 ARGV 数组从索引 0 开始，代表的是命令。第一个数组值是 gawk 命令后的第一个命令行参数。
 
--------
+---
 
 ENVIRON 获取 shell 环境变量
 
@@ -6998,7 +6998,7 @@ gawk '
 /usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin
 ```
 
-----
+---
 
 跟踪数据字段和记录时，变量 `FNR` 、 `NF` 和 `NR` 用起来就非常方便。有时你并不知道记录中到底有多少个数据字段。
 
@@ -7033,11 +7033,11 @@ data31 FNR=3 NR=6
 There were 6 records processed
 ```
 
-----
+---
 
 **说明** 在使用gawk时你可能会注意到，gawk脚本通常会比shell脚本中的其他部分还要大一些。为了简单起见，在本章的例子中，我们利用shell的多行特性直接在命令行上运行了gawk脚本。在shell脚本中使用gawk时，应该将不同的 gawk 命令放到不同的行，这样会比较容易阅读和理解，不要在shell脚本中将所有的命令都塞到同一行。还有，如果你发现在不同的shell脚本中用到了同样的gawk脚本，记着将这段gawk脚本放到一个单独的文件中，并用 `-f` 参数来在shell脚本中引用它.
 
------
+---
 
 ##### 自定义变量
 

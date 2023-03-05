@@ -479,8 +479,6 @@ public class TestController {
 
 ## 2、 服务网关 Gateway
 
-###
-
 ```yml
 spring:
   cloud:

@@ -25,13 +25,13 @@ tag:
 
 第一步：准备一台主机
 
-------
+---
 
 准备一台不小于 8 G内存且可以访问互联网的 64位 Linux 主机。
 
 第二步：执行一键安装命令
 
-------
+---
 
 以 root 用户执行如下命令一键安装 KubeOperator
 
@@ -158,7 +158,7 @@ ingress-nginx          nginx   nginx.k8s.com,nginx.k8s.com   192.168.100.131   8
 
 ![](./kubeoperator.assets/true-image-20220829211901869.png)
 
------
+---
 
 ## 卸载
 

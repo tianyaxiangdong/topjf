@@ -42,13 +42,13 @@ jvm
 
 ![](./jmeter.assets/true-image-20210912180525701.png)
 
-------------
+---
 
 堆空间
 
 ![](./jmeter.assets/true-image-20210912184827240.png)
 
--------
+---
 
 堆：
 
@@ -60,7 +60,7 @@ jvm
 
 ![](./jmeter.assets/true-image-20210912180334354.png)
 
----------
+---
 
 ## -- 性能监控
 

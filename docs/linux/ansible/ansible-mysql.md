@@ -12,7 +12,7 @@ tag:
 
 # ansible安装mysql
 
-### 设置主机清单 `vim /etc/ansible/hosts`
+## 设置主机清单 `vim /etc/ansible/hosts`
 
 ```
 [mysql]

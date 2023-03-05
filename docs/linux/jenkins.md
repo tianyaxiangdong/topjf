@@ -19,7 +19,7 @@ tag:
 
 > 开发push代码到git，触发jenkins自动pull代码，通过maven编译、打包，然后通过执行shell脚本使docker构建镜像并push到私服（或者阿里云）仓库，此操作完成后jenkins服务器上再执行SSH命令登录到部署服务器，docker从仓库（私服）拉取镜像，启动容器。整个操作流程完成。
 
-------
+---
 
 ## 通过 war 安装 2.372（推荐使用）
 
@@ -209,7 +209,7 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 
 <http://192.168.100.130:8099>
 
------
+---
 
 ## 通过 docker 安装 2.363
 
@@ -261,15 +261,15 @@ ansible web -m shell -a 'docker pull registry.cn-chengdu.aliyuncs.com/jinfang/je
 
 访问：<http://192.168.0.8:8889>
 
------
+---
 
 ![](./jenkins.assets/true-image-20220810180106690.png)
 
------
+---
 
 ![](./jenkins.assets/true-image-20220810174515569.png)
 
-----
+---
 
 ### 查看管理员密码
 
@@ -379,7 +379,7 @@ admin admin123456
 
 ![](./jenkins.assets/true-image-20220815153017867.png)
 
------
+---
 
 ## 自动部署项目（springBoot+maven+gitee）
 

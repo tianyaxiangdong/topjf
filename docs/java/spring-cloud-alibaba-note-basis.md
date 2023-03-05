@@ -154,7 +154,7 @@ SpringCloud- Sleuth: 调用链监控
 SpringCloud-Alibaba- Seata: 原Fescar,即分布式事务解决方案
 ```
 
-### 人人vue+fast,路由配置
+## 人人vue+fast,路由配置
 
 所有前段URL均发送到网关
 
@@ -211,7 +211,7 @@ RenrenApplication
 
 ![image-20210601003634910](./spring-cloud-alibaba-note-basis.assets/true-image-20210601003634910.png)
 
-#### 跨域流程
+### 跨域流程
 
 ![image-20210601003946323](./spring-cloud-alibaba-note-basis.assets/true-image-20210601003946323.png)
 
@@ -255,7 +255,7 @@ getMenus() {
 }
 ```
 
-#### 网关设置
+### 网关设置
 
 ```
 - id: product_route
@@ -380,7 +380,7 @@ void updateCategory(@Param("catId") Long catId, @Param("name") String name);
 
 ![image-20210603175928677](./spring-cloud-alibaba-note-basis.assets/true-image-20210603175928677.png)
 
----------
+---
 
 ## 2 品牌管理
 
@@ -434,7 +434,7 @@ INSERT  INTO `sys_menu`(`menu_id`,`parent_id`,`name`,`url`,`perms`,`type`,`icon`
 
 回到vue前端
 
-----------------
+---
 
 ## 4 平台属性
 
@@ -466,7 +466,7 @@ if (!StringUtils.isEmpty(key)) {
 
 /product/attrgroup/save
 
------
+---
 
 ### 4.2 规格参数 attr/base
 
@@ -547,7 +547,7 @@ public void updateAttr(AttrVo attr) {
 
 /product/attr/sale/list/{catelogId}
 
-------
+---
 
 ### 4.3  销售属性 attr
 
@@ -555,7 +555,7 @@ public void updateAttr(AttrVo attr) {
 
 删除
 
----------
+---
 
 ### 4.4  关联【分组与属性】
 
@@ -591,7 +591,7 @@ public void updateAttr(AttrVo attr) {
 
 /product/attrgroup/{catelogId}/withattr
 
---------------------
+---
 
 ## 5 商品维护
 
