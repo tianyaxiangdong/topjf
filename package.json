@@ -9,8 +9,8 @@
     "dev:vite-clean": "vuepress-vite dev docs --clean-cache",
     "test": "echo demo test out!",
     "commit": "git-cz",
-    "lint-md": "markdownlint **/*.md --ignore node_modules --fix",
-    "linux-lint-md": "markdownlint '**/*.md' --ignore node_modules --fix",
+    "lint-md": "markdownlint **/*.md --ignore node_modules",
+    "linux-lint-md": "markdownlint '**/*.md' --ignore node_modules",
     "prepare": "husky install",
     "update-package": "pnpm dlx vp-update"
   },

@@ -120,24 +120,24 @@ make[1]: 离开目录“/usr/local/redis-6.2.4/src”
 
 ### 7.1前台启动
 
-~~~bash
+```bash
 cd /usr/local/redis-6.2.4/bin/
 ./redis-server
-~~~
+```
 
 ### 7.2后台启动
 
 从 redis 的源码目录中复制 redis.conf 到 redis 的安装目录
 
-~~~bash
+```bash
 cp /usr/local/redis-6.2.4/redis.conf /usr/local/redis-6.2.4/bin/
-~~~
+```
 
 修改 redis.conf 文件，把 daemonize no 改为 daemonize yes
 
-~~~bash
+```bash
 vim /usr/local/redis-6.2.4/bin/redis.conf
-~~~
+```
 
 指定后台启动文件
 
@@ -155,9 +155,9 @@ ps -ef | grep redis
 
 ## 第九步、创建创建软链接
 
-~~~bash
+```bash
 ln -s /usr/local/redis-6.2.4/bin/redis-cli /usr/bin/redis
-~~~
+```
 
 ## 第十步、设置开机启动
 
@@ -165,7 +165,7 @@ ln -s /usr/local/redis-6.2.4/bin/redis-cli /usr/bin/redis
 
 `vim /etc/systemd/system/redis.service`
 
-~~~shell
+```shell
 [Unit]
 Description=redis-server
 After=network.target
@@ -175,14 +175,14 @@ ExecStart=/usr/local/redis-6.2.4/bin/redis-server /usr/local/redis-6.2.4/bin/red
 PrivateTmp=true
 [Install]
 WantedBy=multi-user.target
-~~~
+```
 
-~~~bash
+```bash
 设置开机启动
 [root@localhost bin]# systemctl daemon-reload
 [root@localhost bin]# systemctl start redis.service
 [root@localhost bin]# systemctl enable redis.service
-~~~
+```
 
 ## 第十一步、服务操作命令
 

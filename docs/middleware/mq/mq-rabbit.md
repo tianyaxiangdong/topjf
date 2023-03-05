@@ -124,7 +124,7 @@ docker run -d --name rabbitmq3.8.23 -p 5671:5671 -p 5672:5672 -p 4369:4369 -p 25
 
 ![image-20210929170325141](./mq-rabbit.assets/true-image-20210929170325141.png)
 
------------
+---
 
 #### 创建队列
 
@@ -164,7 +164,7 @@ exchange.direct: -> kong、kong.emps、kong.news、kong004.news
 
 ![image-20210929172902177](./mq-rabbit.assets/true-image-20210929172902177.png)
 
--------
+---
 
 Ack Mode（确认模式：）: Nack message requeue true（Nack 消息重新排队，true查看后不会清除消息队列，false反之）Automatic ack（自动确认）、Reject requeue true|false（拒绝重新排队，true查看后不会清除消息队列，false反之）、
 
@@ -876,7 +876,7 @@ public class StockListener {
 
 ![image-20220716145127272](./mq-rabbit.assets/true-image-20220716145127272.png)
 
---------------
+---
 
 模拟创建订单：<http://127.0.0.1:9210/jf-system-dev/mq/sendOrderMessage>
 

@@ -62,7 +62,7 @@ playbook 是 ansible 用于配置，部署，和管理被控节点的剧本。
 > ansible-playbook <filename.yml> ... [options]
 >
 > - options:
->     - - --check，-C        #只检测可能会发生的改变，但不真正执行操作
+>   - - --check，-C        #只检测可能会发生的改变，但不真正执行操作
 >   - --list-hosts      #列出运行任务的主机
 >   - --list-tags       #列出tag
 >   - --list-tasks      #列出task

@@ -264,7 +264,7 @@ ps -e | grep mysqld
 
 ### 5、开放端口
 
-~~~bash
+```bash
 实际应用场景中防火墙是要打开的，只能开放端口来外部访问。
 1、linux防火墙问题：
 systemctl stop firewalld；开机就关闭：systemctl disable firewalld
@@ -277,9 +277,9 @@ systemctl stop firewalld；开机就关闭：systemctl disable firewalld
 --add-port=3306/tcp  #添加端口，格式为：端口/通讯协议 
 --permanent   #永久生效，没有此参数重启后失效
 查看开启的所有端口：netstat -ntlp 或：firewall-cmd --list-ports
-~~~
+```
 
-~~~
+```
 permanent
 重启防火墙：systemctl restart firewalld
 命令含义：
@@ -287,7 +287,7 @@ permanent
 --add-port=3306/tcp  #添加端口，格式为：端口/通讯协议 
 --permanent   #永久生效，没有此参数重启后失效
 查看开启的所有端口：netstat -ntlp 或：firewall-cmd --list-ports
-~~~
+```
 
 ### 6、自己配置文件 vim /etc/my.cnf
 

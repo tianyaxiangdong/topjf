@@ -166,7 +166,7 @@ rm -rf /etc/yum.repos.d/epel-testing.repo（不需要这个文件！）
 >
 > sed -i "s/metalink/#metalink/g" /etc/yum.repos.d/epel.repo
 >
-> sed -i "s@https\?://download.fedoraproject.org/pub@https://repo.huaweicloud.com@g" /etc/yum.repos.d/epel.repo
+> sed -i "s@https\?://download.fedoraproject.org/pub@<https://repo.huaweicloud.com@g>" /etc/yum.repos.d/epel.repo
 
 4 执行 yum -y clean all && yum -y makecache && yum -y update && yum repolist all
 

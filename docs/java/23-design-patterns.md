@@ -89,9 +89,7 @@ tag:
 
 ![](./23-design-patterns.assets/true-image-20220311160610999.png)
 
-# 一、创建型模式
-
-#
+# 一、创建型模
 
 ## 1.单例模式 （Singleton Pattern）
 

@@ -73,11 +73,11 @@ added 595 packages in 22s
 
 `gh-pages（可自定义）`分支为`GITHUB`自动打包后需要存放的分支
 
--------------
+---
 
 - `JamesIves/github-pages-deploy-action` 作者的
 
-    - - 示例1：npm模式（[docs-v1.yml](https://github.com/topsjf/topsjf/blob/main/.github/workflows/docs-v1.yml.old)）
+- - 示例1：npm模式（[docs-v1.yml](https://github.com/topsjf/topsjf/blob/main/.github/workflows/docs-v1.yml.old)）
 
 ```yaml
 name: 部署文档（v1）
@@ -190,7 +190,7 @@ jobs:
         run: corepack enable && corepack prepare pnpm@7.15.0 --activate
 ```
 
--------------
+---
 
 - `peaceiris/actions-gh-pages` 作者的
 
@@ -238,7 +238,7 @@ jobs:
           publish_dir: ./dist
 ```
 
-------------
+---
 
 ## 保留需要的文件，没有就创建
 

@@ -6,10 +6,13 @@
   "MD004": {
     "style": "dash"
   },
+  "MD007": false,
   "MD013": false,
   "MD024": {
     "allow_different_nesting": true
   },
+  "MD025": false,
+  "MD029": false,
   "MD033": {
     "allowed_elements": [
       "br",
@@ -51,7 +54,10 @@
   "MD035": {
     "style": "---"
   },
+  "MD036": false,
   "MD040": false,
+  "MD041": false,
+  "MD042": false,
   "MD045": false,
   "MD046": false,
   "MD049": false

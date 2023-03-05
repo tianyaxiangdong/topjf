@@ -149,7 +149,7 @@ Saving to: ‘/etc/yum.repos.d/CentOS8-Base-163.repo’100%[=>] 1,572       --.-
 >
 >yum repolist        //列出个包
 
------------------
+---
 ==下面可忽略==：
 
 ## 四、修改yum源的优先级

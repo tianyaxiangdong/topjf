@@ -94,5 +94,3 @@ tag:
 - **MD051** link-fragments - L链路片段应有效
 - **MD052** reference-links-images - 引用链接和图像应使用定义的标签
 - **MD053** link-image-reference-definitions - 需要链接和图像引用定义
-
-

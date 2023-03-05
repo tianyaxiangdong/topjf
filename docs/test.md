@@ -54,7 +54,7 @@ console.log('你好，VuePress！')
 
 <PDF url="https://topjfk.oss-cn-chengdu.aliyuncs.com/docker/01.为什么要学习.pdf" />
 
-------
+---
 
 @include(./test-i.md{6-})
 
