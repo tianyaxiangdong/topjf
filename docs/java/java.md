@@ -44,4 +44,3 @@ timeline: false
 - [spring-cloud-alibaba 高级篇](./spring-cloud-alibaba-note-high-level.md)
 - [定时任务](./timed-task.md)
 - [swagger](./swagger.md)
-- [测试](./test.md)
