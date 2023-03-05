@@ -6,7 +6,7 @@ category:
 date: 2022-08-09
 star: true
 tag:
-- linux
+- Linux
 - Jebkins
 ---
 

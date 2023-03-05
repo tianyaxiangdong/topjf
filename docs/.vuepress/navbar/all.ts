@@ -22,15 +22,16 @@ export const allNavbar = navbar([
         children: [
             {text: "关于本站", icon: "people", link: "/about-this"},
             {text: "网站历史", icon: "time", link: "/history"},
-            {text: "VuePress Theme Hope 文档", icon: "creative", link: "https://theme-hope.vuejs.press/zh/"},
         ],
     },
     {
         text: "友情链接",
-        icon: "people",
+        icon: "api",
         children: [
-            {text: "how2j Java学习入门网站", icon: "creative", link: "https://how2j.cn/"},
-            {text: "escapelife 运维开发工程师博客", icon: "creative", link: "https://www.escapelife.site/"},
+            {text: "VuePress Theme Hope 文档", icon: "api", link: "https://theme-hope.vuejs.press/zh/"},
+            {text: "VuePress Theme Hope 浏览图标", icon: "api", link: "https://theme-hope.vuejs.press/zh/guide/interface/icon.html#浏览图标"},
+            {text: "how2j Java学习入门网站", icon: "api", link: "https://how2j.cn/"},
+            {text: "escapelife 运维开发工程师博客", icon: "api", link: "https://www.escapelife.site/"},
         ],
     },
     {text: "Markdown测试", icon: "overflow", link: "/test"},

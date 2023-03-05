@@ -24,8 +24,10 @@ export default hopeTheme({
     //文档存放分支
     docsBranch: "main",
 
+    // 关键词: "iconfont", "iconify", "fontawesome", "fontawesome-with-brands"
+    // 参考：https://theme-hope.vuejs.press/zh/guide/interface/icon.html#设置图标资源
     iconAssets: "iconfont",
-    iconPrefix: "iconfont icon-",
+    // iconPrefix: "iconfont icon-",
 
     pure: false,
 

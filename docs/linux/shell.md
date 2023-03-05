@@ -4,10 +4,9 @@ title: Shell 脚本编程
 category: 
 - Linux
 date: 2022-09-12
-#收藏
 star: true
 tag:
-- linux
+- Linux
 - Shell
 ---
 

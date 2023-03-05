@@ -7,7 +7,7 @@ date: 2022-07-26
 sticky: true
 star: true
 tag:
-- linux
+- Linux
 ---
 
 <!-- more -->
@@ -170,53 +170,53 @@ Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每�
 
 ## 目录文件管理
 
-@include(./cd.md{5-})
+@include(./commands/cd.md{6-})
 
-@include(./ls.md{5-})
+@include(./commands/ls.md{6-})
 
-@include(./ln.md{5-})
+@include(./commands/ln.md{6-})
 
-@include(./mkdir.md{5-})
+@include(./commands/mkdir.md{6-})
 
-@include(./pwd.md{5-})
+@include(./commands/pwd.md{6-})
 
-@include(./cp.md{5-})
+@include(./commands/cp.md{6-})
 
-@include(./mv.md{5-})
+@include(./commands/mv.md{6-})
 
-@include(./rmdir.md{5-})
+@include(./commands/rmdir.md{6-})
 
-@include(./rm.md{5-})
+@include(./commands/rm.md{6-})
 
-@include(./touch.md{5-})
+@include(./commands/touch.md{6-})
 
-@include(./echo.md{5-})
+@include(./commands/echo.md{6-})
 
-@include(./tee.md{5-})
+@include(./commands/tee.md{6-})
 
-@include(./cat.md{5-})
+@include(./commands/cat.md{6-})
 
-@include(./more.md{5-})
+@include(./commands/more.md{6-})
 
-@include(./less.md{5-})
+@include(./commands/less.md{6-})
 
-@include(./find.md{5-})
+@include(./commands/find.md{6-})
 
-@include(./head.md{5-})
+@include(./commands/head.md{6-})
 
-@include(./tail.md{5-})
+@include(./commands/tail.md{6-})
 
-@include(./file.md{5-})
+@include(./commands/file.md{6-})
 
-@include(./which.md{5-})
+@include(./commands/which.md{6-})
 
-@include(./whereis.md{5-})
+@include(./commands/whereis.md{6-})
 
-@include(./read.md{5-})
+@include(./commands/read.md{6-})
 
-@include(./awk.md{5-})
+@include(./commands/awk.md{6-})
 
-@include(./sort.md{5-})
+@include(./commands/sort.md{6-})
 
 ## 符号含义
 
@@ -244,27 +244,27 @@ Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每�
 
 ## 编辑器
 
-@include(./vim.md{5-})
+@include(./commands/vim.md{6-})
 
-@include(./nano.md{5-})
+@include(./commands/nano.md{6-})
 
-@include(./emacs.md{5-})
+@include(./commands/emacs.md{6-})
 
-@include(./kde.md{5-})
+@include(./commands/kde.md{6-})
 
-@include(./gnome.md{5-})
+@include(./commands/gnome.md{6-})
 
 ## 用户及权限管理
 
-@include(./chown.md{5-})
+@include(./commands/chown.md{6-})
 
-@include(./chmod.md{5-})
+@include(./commands/chmod.md{6-})
 
-@include(./usermod.md{5-})
+@include(./commands/usermod.md{6-})
 
-@include(./umask.md{5-})
+@include(./commands/umask.md{6-})
 
-@include(./chgrp.md{5-})
+@include(./commands/chgrp.md{6-})
 
 -------
 
@@ -305,11 +305,11 @@ newgrp  renice  su  skill
 w  id  groupadd  free 
 ```
 
-@include(./ps.md{5-})
+@include(./commands/ps.md{6-})
 
-@include(./top.md{5-})
+@include(./commands/top.md{6-})
 
-@include(./kill.md{5-})
+@include(./commands/kill.md{6-})
 
 ### 防火墙
 
@@ -483,7 +483,7 @@ gpasswd
 | gzexe   |      |                                  |
 | tar     | .tar |                                  |
 
-@include(./tar.md{5-})
+@include(./commands/tar.md{6-})
 
 ## 磁盘管理
 
@@ -531,17 +531,17 @@ quotaon
 - **du**（英文全称：disk used）：检查磁盘空间使用量
 - **fdisk**：用于磁盘分区
 
-@include(./df.md{5-})
+@include(./commands/df.md{6-})
 
-@include(./du.md{5-})
+@include(./commands/du.md{6-})
 
-@include(./fdisk.md{5-})
+@include(./commands/fdisk.md{6-})
 
-@include(./mkfs.md{5-})
+@include(./commands/mkfs.md{6-})
 
-@include(./fsck.md{5-})
+@include(./commands/fsck.md{6-})
 
-@include(./mount.md{5-})
+@include(./commands/mount.md{6-})
 
 ## 磁盘维护
 

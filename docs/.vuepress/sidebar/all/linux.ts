@@ -1,8 +1,8 @@
-import {linuxBasis} from "./linux-basis";
-
 /**
  * Linux 侧边栏json数据
  */
+import {linuxBasis} from "./linux-basis";
+
 export const linuxJson =
     [// {
         //   text: "Linux",
@@ -11,11 +11,19 @@ export const linuxJson =
         //   collapsable: true,
         //   children: [
         {
-            text: "基础命令",
+            text: "基本命令",
+            icon: "shell",
+            prefix: "basis/commands/",
+            collapsable: true,
+            children: "structure",
+        },
+        {
+            text: "基础",
             icon: "object",
             prefix: "basis/",
+            // collapsable: true,
             children: linuxBasis,
-            //children: "structure",
+            // children: "structure",
         },
         "command-examples",
         "exception-analysis",
