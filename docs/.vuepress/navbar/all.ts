@@ -25,6 +25,14 @@ export const allNavbar = navbar([
             {text: "VuePress Theme Hope 文档", icon: "creative", link: "https://theme-hope.vuejs.press/zh/"},
         ],
     },
+    {
+        text: "友情链接",
+        icon: "people",
+        children: [
+            {text: "how2j Java学习入门网站", icon: "creative", link: "https://how2j.cn/"},
+            {text: "escapelife 运维开发工程师博客", icon: "creative", link: "https://www.escapelife.site/"},
+        ],
+    },
     {text: "Markdown测试", icon: "overflow", link: "/test"},
     {text: "演示", icon: "like", link: "/live"},
 ]);
