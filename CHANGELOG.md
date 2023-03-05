@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.28.1](https://github.com/topjf/topjf/compare/v3.28.0...v3.28.1) (2023-03-05)
+
+
+### 📚Docs
+
+* 更新文档 ([5834fb9](https://github.com/topjf/topjf/commit/5834fb9a7fb42429698d1e970530ecb1883895ae))
+
 ## [3.28.0](https://github.com/topjf/topjf/compare/v3.27.7...v3.28.0) (2023-03-05)
 
 
