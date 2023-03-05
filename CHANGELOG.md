@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.26.2](https://github.com/topjf/topjf/compare/v3.26.1...v3.26.2) (2023-03-05)
+
+
+### 🐛Bug Fixes
+
+* 添加issue配置 ([a57832d](https://github.com/topjf/topjf/commit/a57832d02da5cc1e33119474237bd5dea156f7b3))
+
 ## [3.26.1](https://github.com/topjf/topjf/compare/v3.26.0...v3.26.1) (2023-03-05)
 
 
