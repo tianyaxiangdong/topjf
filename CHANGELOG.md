@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.26.1](https://github.com/topjf/topjf/compare/v3.26.0...v3.26.1) (2023-03-05)
+
+
+### 🐛Bug Fixes
+
+* 更新导航栏 ([2d9562e](https://github.com/topjf/topjf/commit/2d9562e0233cf6a6a22df0605cfa8071eeb4d26e))
+
 ## [3.26.0](https://github.com/topjf/topjf/compare/v3.25.2...v3.26.0) (2023-03-02)
 
 
