@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.28.3](https://github.com/topjf/topjf/compare/v3.28.2...v3.28.3) (2023-03-07)
+
+
+### 🐛Bug Fixes
+
+* 更新 评论模块'categoryId' ([848020c](https://github.com/topjf/topjf/commit/848020c6c24fc3a7e7f347cb249a56d4c07a1c96))
+
 ## [3.28.2](https://github.com/topjf/topjf/compare/v3.28.1...v3.28.2) (2023-03-07)
 
 
