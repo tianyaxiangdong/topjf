@@ -106,7 +106,7 @@ export default hopeTheme({
             repo: "topjf/topjf-discussions",
             repoId: "R_kgDOJGU09g",
             category: "Announcements",
-            categoryId: "DIC_kwDOJGU09s4CUs1",
+            categoryId: "DIC_kwDOJGU09s4CUs1-",
         },
 
         //其他插件
