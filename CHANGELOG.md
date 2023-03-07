@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.28.2](https://github.com/topjf/topjf/compare/v3.28.1...v3.28.2) (2023-03-07)
+
+
+### 🐛Bug Fixes
+
+* 更新评论模块存储仓库 ([9f7915d](https://github.com/topjf/topjf/commit/9f7915d9942141149e4ede6bb6caef41ad035da6))
+
 ## [3.28.1](https://github.com/topjf/topjf/compare/v3.28.0...v3.28.1) (2023-03-05)
 
 
