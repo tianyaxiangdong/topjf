@@ -4,7 +4,7 @@ title: 快速导航
 icon: arrow
 article: false
 timeline: false
-heroImage: /heihei.gif
+heroImage: /topjf.png
 heroText: 快速导航
 #tagline: 快速导航
 actions:

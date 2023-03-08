@@ -5,6 +5,7 @@ icon: home
 article: false
 timeline: false
 title: 首页
+bgImage: /bg.png
 heroText: topjf
 heroFullScreen: false
 tagline: 🍎13刘海变窄说明了什么？说明它脱发了！也变强了！！

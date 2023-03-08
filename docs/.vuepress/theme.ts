@@ -3,7 +3,7 @@ import {allNavbar} from "./navbar/index";
 import {allSidebar} from "./sidebar/index";
 
 export default hopeTheme({
-    logo: "/logo.png",
+    logo: "/topjf.png",
 
     hostname: "https://topjf.github.io/",
 
@@ -184,14 +184,6 @@ export default hopeTheme({
             //是否缓存除主页和 404 错误页之外的 HTML 文件
             cacheHTML: false,
             appendBase: true,
-            apple: {
-                icon: "/assets/icon/apple-icon-152.png",
-                statusBarColor: "black",
-            },
-            msTile: {
-                image: "/assets/icon/ms-icon-144.png",
-                color: "#ffffff",
-            },
         },
 
     },
