@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.29.1](https://github.com/topjf/topjf/compare/v3.29.0...v3.29.1) (2023-03-08)
+
+
+### 🐛Bug Fixes
+
+* 更新 设置 ([06ecfa0](https://github.com/topjf/topjf/commit/06ecfa076321df76f01c9f7c24b58a832f5f71ed))
+
 ## [3.29.0](https://github.com/topjf/topjf/compare/v3.28.3...v3.29.0) (2023-03-08)
 
 
