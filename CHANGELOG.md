@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.29.2](https://github.com/topjf/topjf/compare/v3.29.1...v3.29.2) (2023-03-09)
+
+
+### 🐛Bug Fixes
+
+* 删除 heihei.gif ([f881490](https://github.com/topjf/topjf/commit/f881490de5188fa5167b0511c1f42c7c30feaddb))
+
 ## [3.29.1](https://github.com/topjf/topjf/compare/v3.29.0...v3.29.1) (2023-03-08)
 
 
