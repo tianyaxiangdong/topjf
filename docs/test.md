@@ -28,9 +28,6 @@ tag:
 
 <BiliBili bvid="BV1FR4y117iD" />
 
-全 都 是 名 场 面 2
-
-<ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.mp4" airplay aspect-ratio auto-size auto-orientation auto-playback fast-forward flip fullscreen-web lock loop is-live muted mini-progress-bar pip screenshot subtitle-offset />
 
 ### Java 语言有哪些特点? h3
 

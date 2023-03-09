@@ -35,7 +35,7 @@ export default defineUserConfig({
     },
 
     head: [
-        ["script", {type: 'text/javascript', src: '/script/demo.js'}],
+        ["script", {type: 'text/javascript', src: '/script/index.js'}],
         ["link", {rel: "stylesheet", href: "/iconfont/iconfont.css"}],
     ],
 
