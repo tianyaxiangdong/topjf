@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.29.3](https://github.com/topjf/topjf/compare/v3.29.2...v3.29.3) (2023-03-09)
+
+
+### 🐛Bug Fixes
+
+* 更新配置 ([9c8ba5a](https://github.com/topjf/topjf/commit/9c8ba5ab237b77371468dced7827c1afc6b6fd8e))
+
 ## [3.29.2](https://github.com/topjf/topjf/compare/v3.29.1...v3.29.2) (2023-03-09)
 
 
