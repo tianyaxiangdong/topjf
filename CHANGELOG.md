@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.29.6](https://github.com/topjf/topjf/compare/v3.29.5...v3.29.6) (2023-03-10)
+
+
+### 🐛Bug Fixes
+
+* 更新 h 标签 ([98964ae](https://github.com/topjf/topjf/commit/98964ae2d206b77be4caa8a4b8751492bfeb42a7))
+
 ## [3.29.5](https://github.com/topjf/topjf/compare/v3.29.4...v3.29.5) (2023-03-10)
 
 
