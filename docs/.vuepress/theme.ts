@@ -92,7 +92,7 @@ export default hopeTheme({
         },
     },
 
-    footer: '<a href="https://beian.miit.gov.cn/" target="_blank">黔ICP备2022xxxxxx号-1</a>',
+    footer: "", //'<a href="https://beian.miit.gov.cn/" target="_blank">黔ICP备2022xxxxxx号-1</a>',
 
     displayFooter: true,
 

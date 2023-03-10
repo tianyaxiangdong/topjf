@@ -18,9 +18,15 @@ tag:
 [[toc]]
 :::
 
-# 测试md
+# 测试md h1
 
 ## 基础概 h2
+
+### Java 语言有哪些特点? h3
+
+#### 有哪些特 h4
+
+##### 有哪些特 h5
 
 引入B站视频
 
@@ -29,13 +35,9 @@ tag:
 <BiliBili bvid="BV1FR4y117iD" />
 
 
-### Java 语言有哪些特点? h3
-
-#### 有哪些特 h4
-
-##### 有哪些特 h5
-
-# 有 h1
+---
+---
+---
 
 ::: details 点击查看代码
 
@@ -63,7 +65,7 @@ console.log('你好，VuePress！')
 
 1. 简单易学；
 2. 面向对象（*封装*，*继承*，**多态**）；
-3. 平台无关性（ ==Java== 虚拟机实现平台无关性）；
+3. 平台无关。
 
 - aaa
 - 手动阀手动阀
@@ -96,13 +98,6 @@ spring:
 ```
 
 ```java
-
-@FeignClient("yumall-search")
-public interface SearchFeignService {
-    @PostMapping("/search/save/product")
-    R productStatusUp(@RequestBody List<SkuEsModel> skuEsModels);
-}
-
 /**
  * @author jf
  * @version 1.0
@@ -115,21 +110,7 @@ public class FeignConfig {
     @Bean("requestInterceptor")
     public RequestInterceptor requestInterceptor() {
         return new RequestInterceptor() {
-            @Override
-            public void apply(RequestTemplate template) {
-                //1、使用RequestContextHolder拿到刚进来的请求数据
-                ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-                if (requestAttributes != null) {
-                    //老请求
-                    HttpServletRequest request = requestAttributes.getRequest();
-                    if (request != null) {
-                        //2、同步请求头的数据（主要是cookie）
-                        //把老请求的cookie值放到新请求上来，进行一个同步
-                        String cookie = request.getHeader("Cookie");
-                        template.header("Cookie", cookie);
-                    }
-                }
-            }
+          ...
         };
     }
 }
