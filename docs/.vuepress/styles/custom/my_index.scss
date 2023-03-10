@@ -1,9 +1,38 @@
+/**
+ * 首页样式
+ */
+
 //首页标题
 .blog-hero > h1 {
   color: #d112ec;
 }
 
 //首页描述字体
-p[class*="description"] {
-  color: red;
+p[class*="description"] .desc-bg > span {
+  font-family: "华文楷体", cursive;
+  color: #f11111;
+}
+
+.blogger-info .blogger > .blogger-avatar {
+  width: auto;
+  height: auto;
+  border-radius: 55%;
+  margin: 0 auto;
+}
+
+.blogger-info .blogger > .blogger-avatar:hover {
+  border-radius: 50px 10px 50px 10px;
+}
+
+.blogger-info .blogger > .blogger-name {
+  font-size: 25px;
+  color: #dd12ec;
+}
+
+.blogger-info .num-wrapper {
+  border-radius: 10%;
+}
+
+.blogger-info .num-wrapper .num {
+  color: #7412ec;
 }
