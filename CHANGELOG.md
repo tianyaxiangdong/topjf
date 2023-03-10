@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.29.4](https://github.com/topjf/topjf/compare/v3.29.3...v3.29.4) (2023-03-10)
+
+
+### 🐛Bug Fixes
+
+* 修改主题样式 ([6cc05f9](https://github.com/topjf/topjf/commit/6cc05f94583c3b605373418110b9dbe73afffc3b))
+
 ## [3.29.3](https://github.com/topjf/topjf/compare/v3.29.2...v3.29.3) (2023-03-09)
 
 
