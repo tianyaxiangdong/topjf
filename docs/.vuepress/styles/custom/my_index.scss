@@ -8,7 +8,7 @@
 }
 
 //首页描述字体
-p[class*="description"] .desc-bg > span {
+p[class*="description"] {
   font-family: "华文楷体", cursive;
   color: #f11111;
 }
@@ -17,7 +17,6 @@ p[class*="description"] .desc-bg > span {
   width: auto;
   height: auto;
   border-radius: 55%;
-  margin: 0 auto;
 }
 
 .blogger-info .blogger > .blogger-avatar:hover {
@@ -27,10 +26,6 @@ p[class*="description"] .desc-bg > span {
 .blogger-info .blogger > .blogger-name {
   font-size: 25px;
   color: #dd12ec;
-}
-
-.blogger-info .num-wrapper {
-  border-radius: 10%;
 }
 
 .blogger-info .num-wrapper .num {
