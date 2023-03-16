@@ -20,6 +20,7 @@ export const javaJson =
     },
         "java-log",
         "dateformat-conversion",
+        "restcontrolleradvice",
         "java-jsr303",
         "java-exception",
         "PreventDuplicateSubmissions",
