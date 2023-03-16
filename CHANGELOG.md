@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.190.12](https://github.com/topjf/topjf/compare/v3.190.11...v3.190.12) (2023-03-16)
+
+
+### 📚Docs
+
+* 添加 RestControllerAdvice注解不生效 ([dbe63e3](https://github.com/topjf/topjf/commit/dbe63e39d2cf5caf8b864f2405f3d6944c9da5d8))
+
 ## [3.190.11](https://github.com/topjf/topjf/compare/v3.190.10...v3.190.11) (2023-03-16)
 
 
