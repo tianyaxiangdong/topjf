@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.190.7
+
+
+### ✨Features
+
+- 更新 **次版本**为 **vuepress-theme-hope主题版本**
+- 本次 **无任何代码更新**
+
 ## [3.29.7](https://github.com/topjf/topjf/compare/v3.29.6...v3.29.7) (2023-03-10)
 
 
