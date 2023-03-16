@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.190.11](https://github.com/topjf/topjf/compare/v3.190.10...v3.190.11) (2023-03-16)
+
+
+### 📚Docs
+
+* 更新Java目录文档 ([d4a09a0](https://github.com/topjf/topjf/commit/d4a09a0371d523da8cf82338b907b5e8ce2ef4c1))
+
 ## [3.190.10](https://github.com/topjf/topjf/compare/v3.190.9...v3.190.10) (2023-03-16)
 
 
