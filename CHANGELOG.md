@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.190.13](https://github.com/topjf/topjf/compare/v3.190.12...v3.190.13) (2023-03-16)
+
+
+### 📚Docs
+
+* 添加 Linux发送Email ([9839177](https://github.com/topjf/topjf/commit/983917786a71245e80b16899c6d0d78c1ffea403))
+
 ## [3.190.12](https://github.com/topjf/topjf/compare/v3.190.11...v3.190.12) (2023-03-16)
 
 
