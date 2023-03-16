@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.190.14](https://github.com/topjf/topjf/compare/v3.190.13...v3.190.14) (2023-03-16)
+
+
+### 📚Docs
+
+* 添加 图片压缩文档 ([e9e6f32](https://github.com/topjf/topjf/commit/e9e6f32f42857f8a1b4fcfc50102f1943dbacbb2))
+
 ## [3.190.13](https://github.com/topjf/topjf/compare/v3.190.12...v3.190.13) (2023-03-16)
 
 
