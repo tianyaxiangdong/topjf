@@ -13,6 +13,8 @@
 
 ---
 
+**当主题版本有跳跃式更新时，先在 github 创建本版本的 releases + tags，再提交本次版本更新**
+
 版本格式:
 
 1.0.1 `major.minor.patch.preRelease.build`
