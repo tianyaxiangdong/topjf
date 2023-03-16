@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.190.8](https://github.com/topjf/topjf/compare/v3.190.7...v3.190.8) (2023-03-16)
+
+
+### 🐛Bug Fixes
+
+* 更新次版本为主题版本190 ([1befbce](https://github.com/topjf/topjf/commit/1befbce805adecf767e94df45a0b1a03224adc51))
+
 ## 3.190.7
 
 
