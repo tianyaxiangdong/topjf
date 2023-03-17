@@ -10,6 +10,8 @@ tag:
 
 # Springboot 项目中使用 @RestControllerAdvice 注解不生效
 
+<!-- more -->
+
 **我的是基于 Springboot 多模块项目**
 
 ![](https://img-blog.csdnimg.cn/736b3cd97b9e48bcad6478bd67ceb60c.png)
