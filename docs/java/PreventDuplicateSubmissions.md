@@ -8,6 +8,8 @@ date: 2022-06-08
 
 # 实现基于 session+redis 的防止重复提交
 
+<!-- more -->
+
 [🏍 gitee源码仓库🚀🚀🚀🚀](https://gitee.com/cps007/spring-boot-model)
 
 ## 定义注解
