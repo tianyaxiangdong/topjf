@@ -7,41 +7,6 @@
 
 * 更新定时任务文档 ([b1f554a](https://github.com/topjf/topjf/commit/b1f554adefb1c764089acecf2f19af6d8b9c16d2))
 
-## [3.190.24](https://github.com/topjf/topjf/compare/v3.190.23...v3.190.24) (2023-03-17)
-
-
-### 📚Docs
-
-* 更新定时任务文档 ([f96f942](https://github.com/topjf/topjf/commit/f96f942d85955cf7edc4a02c1bc81875416fc08a))
-
-## [3.190.23](https://github.com/topjf/topjf/compare/v3.190.22...v3.190.23) (2023-03-17)
-
-
-### 📚Docs
-
-* 更新定时任务文档 ([1bff925](https://github.com/topjf/topjf/commit/1bff925066166dce5d06ab846aa359cb6e4a7b49))
-
-## [3.190.22](https://github.com/topjf/topjf/compare/v3.190.21...v3.190.22) (2023-03-17)
-
-
-### 📚Docs
-
-* 更新 定时任务文档 ([b5e115e](https://github.com/topjf/topjf/commit/b5e115e10fd432804bca7715983095b56ca5e854))
-
-## [3.190.21](https://github.com/topjf/topjf/compare/v3.190.20...v3.190.21) (2023-03-17)
-
-
-### 📚Docs
-
-* 更新 定时任务文档 ([a043402](https://github.com/topjf/topjf/commit/a04340238c4415108ead0f06c72f26b6ef714db9))
-
-## [3.190.20](https://github.com/topjf/topjf/compare/v3.190.19...v3.190.20) (2023-03-17)
-
-
-### 📚Docs
-
-* 更新定时任务文档 ([413f428](https://github.com/topjf/topjf/commit/413f428c4c7e08d1d07ad7cbddd03a97a9677844))
-
 ## [3.190.19](https://github.com/topjf/topjf/compare/v3.190.18...v3.190.19) (2023-03-17)
 
 
