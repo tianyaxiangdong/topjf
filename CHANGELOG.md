@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.190.19](https://github.com/topjf/topjf/compare/v3.190.18...v3.190.19) (2023-03-17)
+
+
+### 📚Docs
+
+* RabbitMQ订单超时自动关闭订单及释放库存 ([f9f812a](https://github.com/topjf/topjf/commit/f9f812a15c01f43caa77f42af3cb15da4434f9f5))
+
 ## [3.190.18](https://github.com/topjf/topjf/compare/v3.190.17...v3.190.18) (2023-03-17)
 
 
