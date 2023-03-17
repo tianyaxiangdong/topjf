@@ -10,6 +10,8 @@ tag:
 
 # 使用Java压缩图片大小
 
+<!-- more -->
+
 application.properties配置文件
 
 ```java
