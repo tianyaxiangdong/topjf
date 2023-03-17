@@ -10,6 +10,8 @@ tag:
 
 # Linux发送邮件
 
+<!-- more -->
+
 ## 使用 mail 命令
 
 mail 是 mailutils（在 Debian 上）和 mailx（在 RedHat 上）软件包的一部分，用于在命令行上处理邮件。
