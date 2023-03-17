@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.190.22](https://github.com/topjf/topjf/compare/v3.190.21...v3.190.22) (2023-03-17)
+
+
+### 📚Docs
+
+* 更新 定时任务文档 ([b5e115e](https://github.com/topjf/topjf/commit/b5e115e10fd432804bca7715983095b56ca5e854))
+
 ## [3.190.21](https://github.com/topjf/topjf/compare/v3.190.20...v3.190.21) (2023-03-17)
 
 
