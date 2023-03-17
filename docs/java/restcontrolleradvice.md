@@ -14,7 +14,7 @@ tag:
 
 **我的是基于 Springboot 多模块项目**
 
-![](https://img-blog.csdnimg.cn/736b3cd97b9e48bcad6478bd67ceb60c.png)
+![](./restcontrolleradvice.assets/1.png)
 
 ```java
 package cn.springboot.model.base.exception;
