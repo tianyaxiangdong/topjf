@@ -22,6 +22,7 @@ export const javaJson =
         "dateformat-conversion",
         "restcontrolleradvice",
         "img-compression",
+        "order-timeout-auto-closes",
         "java-jsr303",
         "java-exception",
         "PreventDuplicateSubmissions",
