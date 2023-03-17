@@ -8,7 +8,9 @@ tag:
 - DateFormat
 ---
 
-## 将字符串转为日期格式yyyy-MM-dd||自定义格式
+<!-- more -->
+
+# 将字符串转为日期格式yyyy-MM-dd||自定义格式
 
 ```java
 /**
