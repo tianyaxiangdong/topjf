@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths-ignore:
+      - CHANGELOG.md
       - img/**
       - docs/.vuepress/**/**.tsp
       - README.md
