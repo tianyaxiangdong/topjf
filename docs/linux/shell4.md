@@ -1,6 +1,6 @@
 ---
 icon: linux
-title: Shell脚本编程-创建实用的脚本
+title: Shell脚本编程-创建实用脚本
 category: 
 - Linux
 date: 2022-09-12
@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 创建实用的脚本
+## 创建实用脚本
 
 ### 编写简单的脚本实用工具
 
