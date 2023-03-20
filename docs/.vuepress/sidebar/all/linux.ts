@@ -60,5 +60,6 @@ export const linuxJson =
         "shell1",
         "shell2",
         "shell3",
+        "shell4",
     ]
 //   }
