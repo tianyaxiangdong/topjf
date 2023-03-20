@@ -1,6 +1,6 @@
 # Changelog
 
-## [3.195.1](https://github.com/topjf/topjf/compare/v3.195.0...v3.195.1) (2023-03-20)
+## [3.195.1](https://github.com/topjf/topjf/compare/v3.190.28...v3.195.1) (2023-03-20)
 
 
 ### 🐛Bug Fixes
