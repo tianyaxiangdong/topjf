@@ -32,6 +32,10 @@ export const linuxJson =
         "disk",
         "yum-repo",
         "update-kernel",
+        "shell1",
+        "shell2",
+        "shell3",
+        "shell4",
         "jenkins",
         {
             text: "运维监控工具",
@@ -57,9 +61,5 @@ export const linuxJson =
             //   "ansible-nginx",
             //  ]
         },
-        "shell1",
-        "shell2",
-        "shell3",
-        "shell4",
     ]
 //   }
