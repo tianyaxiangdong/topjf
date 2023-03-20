@@ -3,9 +3,9 @@
 ## [3.195.1](https://github.com/topjf/topjf/compare/v3.190.28...v3.195.1) (2023-03-20)
 
 
-### 🐛Bug Fixes
+### ✨Features
 
-* 更新 vuepress-theme-hope 到 beta.195 ([32f09b0](https://github.com/topjf/topjf/commit/32f09b0e99077ea371c1a94c69613bcd7a614bf5))，([2b7dd8e](https://github.com/topjf/topjf/commit/2b7dd8e80ca5584b8c356cf75f21c4af0808a82c))
+* 更新 vuepress-theme-hope 到 beta.195 ([2b7dd8e](https://github.com/topjf/topjf/commit/2b7dd8e80ca5584b8c356cf75f21c4af0808a82c))
 
 ## [3.190.28](https://github.com/topjf/topjf/compare/v3.190.27...v3.190.28) (2023-03-20)
 
