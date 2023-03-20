@@ -1,6 +1,6 @@
 ---
 icon: linux
-title: Shell脚本编程-基础
+title: Shell脚本编程-基础篇
 category: 
 - Linux
 date: 2022-09-12
