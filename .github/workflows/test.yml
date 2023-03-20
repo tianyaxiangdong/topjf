@@ -6,13 +6,12 @@ on:
 
 jobs:
   test-demos:
-    name: Test demos using ${{ matrix.bundler }} on node ${{ matrix.node }}
+    name: Test ${{ matrix.bundler }} on node ${{ matrix.node }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         node:
-          - "14"
           - "16"
           - "18"
           - "19" 
@@ -35,7 +34,7 @@ jobs:
           node-version: 19
           cache: pnpm
 
-      - name: Build project
+      - name: Build 项目
         env:
           NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build:vite
