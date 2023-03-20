@@ -57,6 +57,8 @@ export const linuxJson =
             //   "ansible-nginx",
             //  ]
         },
-        "shell",
+        "shell1",
+        "shell2",
+        "shell3",
     ]
 //   }
