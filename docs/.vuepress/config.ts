@@ -32,6 +32,12 @@ export default defineUserConfig({
         anchor: {
             level: [2, 3, 4],
         },
+        headers: {
+            level: [2, 3, 4],
+        },
+        toc: {
+            level: [2, 3, 4],
+        },
     },
 
     head: [
