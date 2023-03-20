@@ -1,17 +1,8 @@
 name: Test
-
 on:
   push:
-    branches:
-      - main
-    paths-ignore:
-      - img/**
-      - docs/.vuepress/**/**.tsp
-      - README.md
-      - LICENSE
-  pull_request:
-    branches:
-      - main
+    tags:
+      - test-**
 
 jobs:
   test-demos:
@@ -24,6 +15,7 @@ jobs:
           - "14"
           - "16"
           - "18"
+          - "19" 
         bundler:
           - vite
          # - webpack
@@ -40,7 +32,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 19
           cache: pnpm
 
       - name: Build project
