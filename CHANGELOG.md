@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.190.28](https://github.com/topjf/topjf/compare/v3.190.27...v3.190.28) (2023-03-20)
+
+
+### 🐛Bug Fixes
+
+* 更新Linux侧边栏 ([9330014](https://github.com/topjf/topjf/commit/9330014078e8a1f9be060cddb793b384c106f890))
+
 ## [3.190.27](https://github.com/topjf/topjf/compare/v3.190.26...v3.190.27) (2023-03-20)
 
 
