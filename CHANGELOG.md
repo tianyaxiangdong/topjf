@@ -7,6 +7,10 @@
 ### 📚Docs
 
 * 拆分shell脚本编程文档 ([c1b9478](https://github.com/topjf/topjf/commit/c1b9478752857a3c01ca4f3b238a3f7efda680ea))
+* Shell脚本编程-认识篇 ([fca8524](https://github.com/topjf/topjf/commit/fca8524f78540eddbd2108178cb00113814f0396))
+* Shell脚本编程-基础篇 ([4439dce](https://github.com/topjf/topjf/commit/4439dce1e4bcdcc340553cd76341546a3ce3d148))
+* Shell脚本编程-高级篇 ([726d2a3](https://github.com/topjf/topjf/commit/726d2a3968cdc9f786684709c6269e97b7586e3e))
+* Shell脚本编程-创建实用的脚本 ([0598cb7](https://github.com/topjf/topjf/commit/0598cb7f4009d9de677c197cd4a95824e90ae1d8))
 
 ## [3.190.26](https://github.com/topjf/topjf/compare/v3.190.25...v3.190.26) (2023-03-17)
 
