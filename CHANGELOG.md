@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [3.190.27](https://github.com/topjf/topjf/compare/v3.190.26...v3.190.27) (2023-03-20)
+
+
+### 📚Docs
+
+* 拆分shell脚本编程文档 ([c1b9478](https://github.com/topjf/topjf/commit/c1b9478752857a3c01ca4f3b238a3f7efda680ea))
+
 ## [3.190.26](https://github.com/topjf/topjf/compare/v3.190.25...v3.190.26) (2023-03-17)
 
 
