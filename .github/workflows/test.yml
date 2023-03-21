@@ -22,22 +22,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install pnpm
+      - name: 安装 pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 7
           run_install: true
 
-      - name: Setup Node.js
+      - name: 设置Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
           cache: pnpm
 
-      - name: Build 项目
+      - name: 打包项目
         env:
+          HOSTNAME: https://topjf.github.io/testpage
           NODE_OPTIONS: --max_old_space_size=8192
-        run: pnpm run build:vite
+        run: |-
+          pnpm run build:${{ matrix.bundler }}
+          > docs/.vuepress/dist/.nojekyll
+          
+      - name: 部署文档 
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          # 
+          repository-name: topjf/testpage
+          # 部署的分支名称
+          branch: page-${{ matrix.node }}
+          folder: docs/.vuepress/dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          single-commit: true    
 
       # test with specific node version
       - uses: actions/setup-node@v3
