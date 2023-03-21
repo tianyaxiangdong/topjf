@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.195.3](https://github.com/topjf/topjf/compare/v3.195.2...v3.195.3) (2023-03-21)
+
+
+### 🐛Bug Fixes
+
+* 取消 config.ts-markdown.xx 配置 ([37f0ce9](https://github.com/topjf/topjf/commit/37f0ce99a7cdec433eda89ca1a9cad1d876c72f8))
+
 ## [3.195.2](https://github.com/topjf/topjf/compare/v3.195.1...v3.195.2) (2023-03-20)
 
 
