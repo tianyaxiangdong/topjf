@@ -5,7 +5,7 @@ import {allSidebar} from "./sidebar/index";
 export default hopeTheme({
     logo: "/topjf.png",
 
-    hostname: "https://topjf.github.io/",
+    // hostname: "https://topjf.github.io/",
 
     author: {
         name: "topjf",
