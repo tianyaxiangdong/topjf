@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.197.0](https://github.com/topjf/topjf/compare/v3.196.2...v3.197.0) (2023-03-24)
+
+
+### ✨Features
+
+* 升级 vuepress-theme-hope 到 beta.197 ([77f1122](https://github.com/topjf/topjf/commit/77f11229896046039443224421f0713c858ad478))
+
 ## [3.196.2](https://github.com/topjf/topjf/compare/v3.196.1...v3.196.2) (2023-03-22)
 
 
@@ -1197,4 +1204,3 @@ vue  `3.2.39`
 1. 更新mq内容
 
 ![](./img/true-img-1.png)
-
