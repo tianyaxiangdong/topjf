@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.197.2](https://github.com/topjf/topjf/compare/v3.197.1...v3.197.2) (2023-03-24)
+
+
+### 📚Docs
+
+* 添加启动Java项目脚本 ([56a3b83](https://github.com/topjf/topjf/commit/56a3b83a84028384fbea3b7a2c1d1669d68d2721))
+
 ## [3.197.1](https://github.com/topjf/topjf/compare/v3.197.0...v3.197.1) (2023-03-24)
 
 
