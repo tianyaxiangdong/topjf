@@ -28,7 +28,7 @@ export const linuxJson =
         "command-examples",
         "exception-analysis",
         "network-setting",
-        "start-java"
+        "start-java",
         "emails",
         "disk",
         "yum-repo",
