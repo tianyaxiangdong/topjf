@@ -8,7 +8,7 @@ article: false
 timeline: false
 ---
 
-该文件包含 `vuepress-theme-hope && topjf` 及其插件的所有显着更改。
+该文件包含 `vuepress-theme-hope && topjf` 及其文档的所有显着更改。
 
 <!-- more -->
 
