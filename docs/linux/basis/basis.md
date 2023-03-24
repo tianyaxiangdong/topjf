@@ -24,7 +24,7 @@ tag:
 >
 > *用户分区*：home——保存用户信息
 >
-> *启动分区*：boot ——保存系统启动的数据，一般100到200m
+> *启动分区*：boot——保存系统启动的数据，一般100到200m
 >
 > *交换分区*：swap——理解为虚拟内存，真实内存不够的时候临时会使用swap分区，一般是内存的两倍
 >
@@ -85,9 +85,9 @@ tag:
 
 Filesystem Hierarchy Standard (FHS)标准：已安装软件通常放置于哪个目录
 
-- / (root, 根目录)：与开机系统有关；
-- /usr (unix software resource)：与软件安装/执行有关；
-- /var (variable)：与系统运作过程有关。
+- */* (root, 根目录)：与开机系统有关；
+- */usr* (unix software resource)：与软件安装/执行有关；
+- */var* (variable)：与系统运作过程有关。
 
 ![](./basis.assets/true-clip_image017.png)
 
@@ -208,13 +208,7 @@ Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每�
 
 @include(./commands/file.md{6-})
 
-@include(./commands/which.md{6-})
-
 @include(./commands/whereis.md{6-})
-
-@include(./commands/read.md{6-})
-
-@include(./commands/awk.md{6-})
 
 @include(./commands/sort.md{6-})
 
@@ -246,14 +240,6 @@ Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每�
 
 @include(./commands/vim.md{6-})
 
-@include(./commands/nano.md{6-})
-
-@include(./commands/emacs.md{6-})
-
-@include(./commands/kde.md{6-})
-
-@include(./commands/gnome.md{6-})
-
 ## 用户及权限管理
 
 @include(./commands/chown.md{6-})
@@ -263,8 +249,6 @@ Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每�
 @include(./commands/usermod.md{6-})
 
 @include(./commands/umask.md{6-})
-
-@include(./commands/chgrp.md{6-})
 
 ---
 
@@ -289,22 +273,6 @@ Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每�
 
 ## 系统管理
 
-```
-adduser  chfn  useradd  date
-exit  finger  fwhios  sleep
-suspend  groupdel    halt
-kill  last  lastb  login
-logname  logout  ps  nice
-procinfo  top  pstree  reboot
-rlogin  rsh  sliplogin  screen
-shutdown  rwho  sudo  gitps
-swatch  tload  logrotate  uname
-chsh  userconf  userdel  usermod
-vlock  who  whoami  whois
-newgrp  renice  su  skill
-w  id  groupadd  free 
-```
-
 @include(./commands/ps.md{6-})
 
 @include(./commands/top.md{6-})
@@ -315,11 +283,11 @@ w  id  groupadd  free
 
 实际应用场景中防火墙是要打开的，只能开放端口来外部访问。一般是通过开放端口来实现，关闭防火墙容易导致安全问题。
 
-**启动命令**：systemctl start firewalld；systemctl restart firewalld；systemctl status firewalld
+**启动命令**：`systemctl start firewalld`；`systemctl restart firewalld`；`systemctl status firewalld`
 
-**自动启动**：systemctl disable firewalld | systemctl enablefirewalld
+**自动启动**：`systemctl disable firewalld | systemctl enablefirewalld`
 
-**开放端口**：firewall-cmd --zone=public --add-port=3306/tcp --permanent
+**开放端口**：`firewall-cmd --zone=public --add-port=3306/tcp --permanent`
 
 > --zone #作用域
 >
@@ -328,137 +296,36 @@ w  id  groupadd  free
 > --permanent #永久生效，没有此参数重启后失效
 >
 
-**查看开启端口**：netstat -ntlp 或：firewall-cmd --list-ports
+**查看开启端口**：`netstat -ntlp` 或：`firewall-cmd --list-ports`
 
 ### deepin 防火墙
 
-**获取更新**：sudo apt-get update
+**获取更新**：`sudo apt-get update`
 
-**更新系统**：sudo apt-get dist-upgrade -y
+**更新系统**：`sudo apt-get dist-upgrade -y`
 
-**清理更新缓存**：sudo apt-get autoclean
+**清理更新缓存**：`sudo apt-get autoclean`
 
-sudo apt-get install ufw || sudo apt install gufw
+`sudo apt-get install ufw || sudo apt install gufw`
 
-sudo ufw status：active启动，inactive未启动
+sudo ufw status：*active* 启动，*inactive* 未启动
 
-sudo ufw enable
+`sudo ufw enable` 开启
 
-sudo ufw disable
+`sudo ufw disable` 关闭
 
 ### 端口
 
-查看：netstat -tunlp |grep port
+查看：`netstat -tunlp |grep port`
 
-netstat -ntlp 或：firewall-cmd --list-ports
+`netstat -ntlp` 或：`firewall-cmd --list-ports`
 
 ### 修改文件监视程序数量的系统限制
 
-sudo echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
+`sudo echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf`
 
 ## 系统设置
 
-reset
-
-clear
-
-alias
-
-dircolors
-
-aumix
-
-bind
-
-chroot
-
-clock
-
-crontab
-
-declare
-
-depmod
-
-dmesg
-
-enable
-
-eval
-
-export
-
-pwunconv
-
-grpconv
-
-rpm
-
-insmod
-
-kbdconfig
-
-lilo
-
-liloconfig
-
-lsmod
-
-minfo
-
-set
-
-modprobe
-
-ntsysv
-
-mouseconfig
-
-passwd
-
-pwconv
-
-rdate
-
-resize
-
-rmmod
-
-grpunconv
-
-modinfo
-
-time
-
-setup
-
-sndconfig
-
-setenv
-
-setconsole
-
-timeconfig
-
-ulimit
-
-unset
-
-chkconfig
-
-apmd
-
-hwclock
-
-mkkickstart
-
-fbset
-
-unalias
-
-SVGATextMode
-
-gpasswd
 
 ## 安装软件程序
 
@@ -470,12 +337,13 @@ gpasswd
 
 从源码安装
 
+
 ## 备份压缩
 
 | 命令      | 文件格式 | 描述                               |
 |---------|------|----------------------------------|
 | bzip2   | .bz2 | 采用Burrows-Wheeler块排序文本压缩算法和霍夫曼编码 |
- | gzip    | .gz  | 用来压缩文件；输出`.gz`                   |
+| gzip    | .gz  | 用来压缩文件；输出`.gz`                   |
 | gunzip  |      | 用来解压文件                           |
 | gzcat   | .gz  | 用来查看压缩过的文本文件的内容                  |
 | zip     | .zip | Windows上PKZIP工具的Unix实现           |
@@ -486,46 +354,6 @@ gpasswd
 @include(./commands/tar.md{6-})
 
 ## 磁盘管理
-
-dirs
-
-edquota
-
-eject
-
-mcd
-
-mdeltree
-
-mdu
-
-mlabel
-
-mmd
-
-mrd
-
-mzip
-
-quota
-
-rmt
-
-stat
-
-tree
-
-umount
-
-quotacheck
-
-quotaoff
-
-lndir
-
-repquota
-
-quotaon
 
 - **df**（英文全称：disk free）：列出文件系统的整体磁盘使用量
 - **du**（英文全称：disk used）：检查磁盘空间使用量
@@ -545,163 +373,12 @@ quotaon
 
 ## 磁盘维护
 
-badblocks
-
-cfdisk
-
-dd
-
-e2fsck
-
-ext2ed
-
-fsck
-
-fsck.minix
-
-fsconf
-
-fdformat
-
-hdparm
-
-mformat
-
-mkbootdisk
-
-mkdosfs
-
-mke2fs
-
-mkfs.ext2
-
-mkfs.msdos
-
-mkinitrd
-
-mkisofs
-
-mkswap
-
-mpartition
-
-swapon
-
-symlinks
-
-sync
-
-mbadblocks
-
-mkfs.minix
-
-fsck.ext2
-
-fdisk  
-
-losetup
-
-mkfs  
-
-sfdisk  
-
-swapoff
 
 ## 网络通讯
 
-apachectl
-
-arpwatch
-
-dip
-
-getty
-
-mingetty
-
-uux
-
-telnet
-
-uulog
-
-uustat
-
-ppp-off
-
-netconfig
-
-nc
-
-httpd
-
-ifconfig
-
-minicom
-
-mesg
-
-dnsconf
-
-wall
-
-netstat
-
-ping
-
-pppstats
-
-samba
-
-setserial
-
-talk
-
-traceroute
-
-tty
-
-newaliases
-
-uuname
-
-netconf
-
-write
-
-statserial
-
-efax
-
-pppsetup
-
-tcpdump
-
-ytalk
-
-cu
-
-smbd
-
-testparm
-
-smbclient
-
-shapecfg
 
 ## 设备管理
 
-setleds
-
-loadkey
-
-rdev
-
-dumpkeys
-
-MAKEDEV
-
-poweroff
 
 ## 电子邮件与新闻组
 
