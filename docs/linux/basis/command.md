@@ -9,7 +9,7 @@ title: Linux命令大全集合
 
 |                           |                               |                           |                           |
 |---------------------------|-------------------------------|---------------------------|---------------------------|
-| [cat](./commands/cat.md)           | [chattr]()         | [chgrp](./commands/chgrp.md)       | [chmod](./commands/chmod.md)       |
+| [cat](./commands/cat.md)           | [chattr]()         | [chgrp]()       | [chmod](./commands/chmod.md)       |
 | [chown](./commands/chown.md)       | [cksum]()           | [cmp]()           | [diff]()         |
 | [diffstat]() | [file](./commands/file.md)             | [find](./commands/find.md)         | [git]()           |
 | [gitview]()   | [indent]()         | [cut]()           | [ln](./commands/ln.md)             |
@@ -19,9 +19,9 @@ title: Linux命令大全集合
 | [mtools]()     | [mtoolstest]() | [mv](./commands/mv.md)             | [od]()             |
 | [paste]()       | [patch]()           | [rcp]()           | [rm](./commands/rm.md)             |
 | [slocate]()   | [split](./commands/split.md)           | [tee](./commands/tee.md)           | [tmpwatch]() |
-| [touch](./commands/touch.md)       | [umask](./commands/umask.md)           | [which](./commands/which.md)       | [cp](./commands/cp.md)             |
+| [touch](./commands/touch.md)       | [umask](./commands/umask.md)           | [which]()       | [cp](./commands/cp.md)             |
 | [whereis](./commands/whereis.md)   | [mcopy]()           | [mshowfat]() | [rhmask]()     |
-| [scp]()           | [awk](./commands/awk.md)               | [read](./commands/read.md)         | [updatedb]() |
+| [scp]()           | [awk]()               | [read]()         | [updatedb]() |
 | [tail](./commands/tail.md)         | [mkdir](./commands/mkdir.md)           | [rmdir](./commands/rmdir.md)       | [head](./commands/head.md)         |
 
 ## 文档编辑
@@ -35,7 +35,7 @@ title: Linux命令大全集合
 | [mtype]() | [pico]()   | [rgrep]() | [sed]()       |
 | [sort](./commands/sort.md)   | [spell]() | [tr]()       | [expr]()     |
 | [uniq]()   | [wc]()       | [let]()     | [vim](./commands/vim.md)       |
-| [nano](./commands/nano.md)   | [emacs](./commands/emacs.md) | [kde](./commands/kde.md)     | [gnome](./commands/gnome.md)   |
+| [nano]()   | [emacs]() | [kde]()     | [gnome]()   |
 | [echo](./commands/echo.md)   |                     |                     |                       |
 
 ## 文件传输
