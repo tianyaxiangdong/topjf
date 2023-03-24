@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.197.4](https://github.com/topjf/topjf/compare/v3.197.3...v3.197.4) (2023-03-24)
+
+
+### 🐛Bug Fixes
+
+* pnpm7.30.0 ([7f363af](https://github.com/topjf/topjf/commit/7f363afdaa72aa232dbc494167edf246be8ba322))
+
 ## [3.197.3](https://github.com/topjf/topjf/compare/v3.197.2...v3.197.3) (2023-03-24)
 
 
