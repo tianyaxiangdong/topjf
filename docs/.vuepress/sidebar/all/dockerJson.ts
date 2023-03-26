@@ -1,7 +1,7 @@
 /**
  * Docker 侧边栏json数据
  */
-export const dockerJson = "structure",
+export const dockerJson = [ "structure" ]
    // [ // {
         //     text: "Docker",
         //     icon: "/icons/docker/docker_16x16.png",
