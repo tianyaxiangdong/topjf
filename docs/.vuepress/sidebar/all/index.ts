@@ -3,8 +3,6 @@ import {sidebar} from 'vuepress-theme-hope';
 // @ts-ignore
 import {allSources} from './allSources.ts';
 // @ts-ignore
-import {books} from './books.ts';
-// @ts-ignore
 import {architectures} from './architectures.ts';
 // @ts-ignore
 import {openSources} from './open-source.ts';
