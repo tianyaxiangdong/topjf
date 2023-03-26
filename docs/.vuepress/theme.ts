@@ -39,6 +39,8 @@ export default hopeTheme({
 
     fullscreen: true,
 
+    headerDepth: 3,
+
     pageInfo: ["Author", "Category", "Tag", "Date", "Original", "Word", "PageView", "ReadingTime"],
 
     locales: {
