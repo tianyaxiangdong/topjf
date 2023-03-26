@@ -79,6 +79,8 @@ tag:
 
 > children: "structure",
 
+> sidebar -> `"/foo/": "structure",`
+
 ## md文件设置frontmatter
 
 ```text
@@ -94,12 +96,6 @@ timeline: false
 
 ## 技术选型
 
-- 设置淘宝源
-
-```shell
-npm config set registry https://registry.npm.taobao.org
-```
-
 - 安装 pnpm：
 
 [安装教程 pnpm.io/zh](https://pnpm.io/zh)
@@ -107,7 +103,7 @@ npm config set registry https://registry.npm.taobao.org
 window 通过 npm 安装
 
 ```shell
-npm install -g pnpm@7.28.0
+npm install -g pnpm@7.30.0
 ```
 
 - 技术版本列表
