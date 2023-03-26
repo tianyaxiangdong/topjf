@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.197.5](https://github.com/topjf/topjf/compare/v3.197.4...v3.197.5) (2023-03-26)
+
+
+### 🐛Bug Fixes
+
+* 更新侧边栏配置 ([4a54f95](https://github.com/topjf/topjf/commit/4a54f953e2e3a00f992476617a8fd10be05d5466))
+
 ## [3.197.4](https://github.com/topjf/topjf/compare/v3.197.3...v3.197.4) (2023-03-24)
 
 
