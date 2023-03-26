@@ -33,7 +33,7 @@ export const allSidebar = sidebar({
     '/history/': ['history'],
     '/about/': ['about-this'],
     '/architecture/': architectures,
-    '/books/': books,
+    '/books/': "structure",
     '/open-source/': openSources,
     '/all/': allSources,
     '/java/': javaJson,
