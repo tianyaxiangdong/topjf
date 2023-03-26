@@ -1,8 +1,8 @@
 /**
  * Docker 侧边栏json数据
  */
-export const dockerJson =
-    [ // {
+export const dockerJson = "structure",
+   // [ // {
         //     text: "Docker",
         //     icon: "/icons/docker/docker_16x16.png",
         //     prefix: "docker/",
@@ -16,6 +16,6 @@ export const dockerJson =
         "docker-in-action",
         "dockerfile-centos",
         "dockerfile-jdk",
-    ]
+ //   ]
 //  }
 
