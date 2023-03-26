@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.197.6](https://github.com/topjf/topjf/compare/v3.197.5...v3.197.6) (2023-03-26)
+
+
+### 🐛Bug Fixes
+
+* 启用三级目录 ([f76778b](https://github.com/topjf/topjf/commit/f76778b9cf64acdf516e2ea52d80ba32e47c6612))
+
 ## [3.197.5](https://github.com/topjf/topjf/compare/v3.197.4...v3.197.5) (2023-03-26)
 
 
