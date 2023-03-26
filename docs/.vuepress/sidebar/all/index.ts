@@ -26,6 +26,7 @@ import {linuxJson} from './linux.ts';
 
 /**
  * 应该把更精确的路径放置在前边
+ * "structure",
  */
 export const allSidebar = sidebar({
     '/history/': ['history'],
