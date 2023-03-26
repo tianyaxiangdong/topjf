@@ -27,25 +27,30 @@ name#这里随便取
 email#这里是邮箱
 
 ```bash
-git config --global user.name "jinfang"
+git config --global user.name "topjfy"
 git config --global user.email "topjfk@163.com"
 ```
 
-查看config配置消息：`git config --list`
+查看config配置消息：
+
+```shell
+git config --list
+```
 
 如果有多个name值时执行：
 
-```
-git config --global --replace-all user.name "jinfang"
+```shell
+git config --global --replace-all user.name "topjfy"
+
 git config --global --replace-all user.email "topjfk@163.com"
 ```
 
 **创建公钥-私钥**
 
-```bash
+```shell
 ssh-keygen -t rsa -b 4096 -C "topjfk@163.com"    
-# 按3次回车，创建ssh免密
 ```
+>按3次回车，创建ssh免密
 
 **添加私钥(可选)**
 
@@ -67,14 +72,14 @@ cat ~/.ssh/id_rsa.pub
 cat ~/.ssh/id_rsa
 ```
 
-把 id_rsa.pub 内容复制到：gitee --> 安全设置 --> SSH公钥 --> 添加公钥 --> 把id_rsa.pub内容粘贴进来。
+把 `id_rsa.pub` 内容复制到：gitee --> 安全设置 --> SSH公钥 --> 添加公钥 --> 把 `id_rsa.pub` 内容粘贴进来。
 
 - [gitee ssh配置页](https://gitee.com/profile/sshkeys)
 - [github ssh配置页](https://github.com/settings/keys)
 
 **校验公钥应用是否生效**
 
-```bash
+```shell
 ssh -T git@gitee.com
 
 ssh -T git@github.com
@@ -82,7 +87,7 @@ ssh -T git@github.com
 
 提示输入yes，以后提交代码就不用输入账号密码
 
-```bash
+```shell
 PS C:\Users\k> ssh -T git@gitee.com
 Hi jin! You've successfully authenticated, but GITEE.COM does not provide shell access.'
 
@@ -94,7 +99,7 @@ Hi top! You've successfully authenticated, but GitHub does not provide shell acc
 
 [解决 Push rejected: Push to xxxx/master was rejected](https://blog.csdn.net/qq_42476834/article/details/108263267)
 
-```bash
+```shell
 git pull origin develop –allow-unrelated-histories
 git push -u origin develop -f
 ```
@@ -103,7 +108,7 @@ git push -u origin develop -f
 
 创建 git 仓库:
 
-```bash
+```shell
 mkdir xxx
 cd xxx
 git init 
@@ -120,7 +125,7 @@ git push -u origin "master"
 
 已有仓库:
 
-```bash
+```shell
 git remote add origin https://gitee.com/xxx/xxx.git
 或者
 git remote set-url origin https://自己的token@gitee.com/用户（组织）名称/仓库名称.git
@@ -133,10 +138,10 @@ git push -u origin "master"
 
 未有仓库:
 
-```bash
+```shell
 ### 创建本地项目
-mkdir topsjf.github.io
-cd topsjf.github.io
+mkdir topjf.github.io
+cd topjf.github.io
 git init
 git add -A
 ### 提交本地代码
@@ -145,11 +150,11 @@ git commit -m '提交代码了丫'
 git branch -M main
 
 ### https与远程仓库关联
-git remote add origin https://github.com/topsjf/topsjf.git
-git remote set-url origin https://自己的token@github.com/topsjf/topsjf.git
+git remote add origin https://github.com/topjf/topjf.git
+git remote set-url origin https://自己的token@github.com/topjf/topjf.git
 ### 使用ssh连接
-git remote add origin git@github.com:topsjf/topsjf.git
-git remote set-url origin git@github.com:topsjf/topsjf.git
+git remote add origin git@github.com:topjf/topjf.git
+git remote set-url origin git@github.com:topjf/topjf.git
 
 ### 推送
 git push -f origin main
@@ -159,7 +164,7 @@ git push -f origin main
 已有仓库:
 
 ```shell
-git remote add origin git@github.com:topsjf/topsjf.git
+git remote add origin git@github.com:topjf/topjf.git
 git branch -M main
 git push -u origin main
 ```
