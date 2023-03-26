@@ -1,12 +1,11 @@
 ---
 icon: tool
-#是否是文章
+title: 常用工具集合
 article: false
-#是否显示在时间线
 timeline: false
 ---
 
-# 常用工具总结
+# 常用工具集合
 
 ## 开发工具平台
 
