@@ -3,6 +3,7 @@ import theme from "./theme";
 import searchPro from "./plugins/searchPro";
 
 export default defineUserConfig({
+
     base: "/",
 
     locales: {
