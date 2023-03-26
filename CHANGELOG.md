@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.197.7](https://github.com/topjf/topjf/compare/v3.197.6...v3.197.7) (2023-03-26)
+
+
+### 📚Docs
+
+* 更新git配置 ([b302ee1](https://github.com/topjf/topjf/commit/b302ee158bb930c969f4cffc6042233107e4cbcc))
+
 ## [3.197.6](https://github.com/topjf/topjf/compare/v3.197.5...v3.197.6) (2023-03-26)
 
 
