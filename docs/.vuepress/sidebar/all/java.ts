@@ -58,5 +58,8 @@ export const javaJson =
                 "java12-13",
                 "java14-15",
                 "java16",
+                "java17",
+                "java18",
+                "java19",
             ],
         },]
