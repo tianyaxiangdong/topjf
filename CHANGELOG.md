@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.197.8](https://github.com/topjf/topjf/compare/v3.197.7...v3.197.8) (2023-03-27)
+
+
+### 📚Docs
+
+* 添加Java新特性17-18-19 ([cdba32d](https://github.com/topjf/topjf/commit/cdba32d8c316d92f60a70b038c4eb62b475e3dc0))
+
 ## [3.197.7](https://github.com/topjf/topjf/compare/v3.197.6...v3.197.7) (2023-03-26)
 
 
