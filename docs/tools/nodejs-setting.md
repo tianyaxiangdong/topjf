@@ -19,14 +19,20 @@ Node.js  [安装-教程](https://blog.csdn.net/qq_42476834/article/details/11078
 
 ## NodeJS Release schedule
 
-| Release  | Status              | Codename     |Initial Release | Active LTS Start | Maintenance Start | End-of-life               |
+| 版本  | 状态   | 代号     |开始时间 | 进入LTS时间 | 进入维护时间 |终止时间|
 | :--:     | :---:               | :---:        | :---:          | :---:            | :---:             | :---:                     |
-| 14.x | **Maintenance**     | Fermium  | 2020-04-21     | 2020-10-27       | 2021-10-19        | 2023-04-30                |
-| 16.x | **Maintenance**     | Gallium  | 2021-04-20     | 2021-10-26       | 2022-10-18        | 2023-09-11                |
-| 18.x | **LTS**             | Hydrogen | 2022-04-19     | 2022-10-25       | 2023-10-18        | 2025-04-30                |
-| 19.x | **Current**         |              | 2022-10-18     | -                | 2023-04-01        | 2023-06-01                |
-| 20.x     | **Pending**         |              | 2023-04-18     | 2023-10-24       | 2024-10-22        | 2026-04-30                |
+| [14.x](https://nodejs.org/download/release/latest-v14.x/) | **Maintenance**     | Fermium  | 2020-04-21     | 2020-10-27       | 2021-10-19        | 2023-04-30                |
+| [16.x](https://nodejs.org/download/release/latest-v16.x/) | **Maintenance**     | Gallium  | 2021-04-20     | 2021-10-26       | 2022-10-18        | 2023-09-11                |
+| [18.x](https://nodejs.org/download/release/latest-v18.x/) | **LTS**             | Hydrogen | 2022-04-19     | 2022-10-25       | 2023-10-18        | 2025-04-30                |
+| [19.x](https://nodejs.org/download/release/latest-v19.x/) | **Current**         |              | 2022-10-18     | -                | 2023-04-01        | 2023-06-01                |
+| [20.x](https://nodejs.org/download/release/latest-v20.x/)     | **Pending**         |              | 2023-04-18     | 2023-10-24       | 2024-10-22        | 2026-04-30                |
 
+状态说明：
+- Current：当前正在研发。
+- LTS：长期支持稳定版本。
+- Maintenance维护：关键错误修复和安全更新。
+- Pending：等待研发。
+- End-of-Life：终止时间。
 
 ## Linux 配置
 
