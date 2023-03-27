@@ -16,15 +16,32 @@ tag:
 
 ## 使用示例
 
-# sh start.sh [start|stop|restart|status|debug] [version] || [ADD_PORT]
-# ADD_PORT为debug调试模式时用，默认监听端口为51135
+**语法**：`sh start.sh [options] [jar-version] [ADD_PORT]`
 
-启动程序：        sh start.sh start test-1.x.x
-debug启动：      sh start.sh debug test-1.x.x | sh start.sh debug test-1.x.x 51235
-重启程序：        sh start.sh restart test-1.x.x
-查看运行状态：     sh start.sh status test-1.x.x
-关闭程序：        sh start.sh stop test-1.x.x
-获取使用教程：     sh start.sh -h
+*options*：
+- start：启动服务
+- stop：停止服务
+- restart：重启服务
+- status：查看服务状态
+- debug：开启远程debug控制
+
+*jar-version*：Java项目jar包名称，无需输入`.jar`后缀
+
+*ADD_PORT*：options 为 debug 调试模式时用，默认监听端口为 *51135*，可自定义
+
+
+启动程序：`sh start.sh start test-1.x.x`
+
+debug启动：`sh start.sh debug test-1.x.x` |
+ `sh start.sh debug test-1.x.x 51235`
+
+重启程序：`sh start.sh restart test-1.x.x`
+
+查看运行状态：`sh start.sh status test-1.x.x`
+
+关闭程序：`sh start.sh stop test-1.x.x`
+
+获取使用教程：`sh start.sh -h`
 
 ```shell
 [root@demo demos]# ls
@@ -54,12 +71,12 @@ start.sh脚本
 
 # 定义变量
 JAR_NAME="$2.jar"
-# 监听端口
+# debug监听端口
 ADD_PORT="$3"
 # help获取使用方法
 help() {
   echo ""
-  echo "please use command: sh start.sh [start|stop|restart|status|debug] [version] || [ADD_PORT]"
+  echo "please use command: sh start.sh [start|stop|restart|status|debug] [jar-version] [ADD_PORT]"
   echo "For example: sh start.sh start 1.0.1"
   echo "debug For example: sh start.sh debug demo1.0 | sh start.sh debug demo1.0 6156"
   echo ""
