@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.199.2](https://github.com/topjf/topjf/compare/v3.199.1...v3.199.2) (2023-03-27)
+
+
+### 🐛Bug Fixes
+
+* 删除lock ([348cb4d](https://github.com/topjf/topjf/commit/348cb4d01bf5c579e13939b7d3186aa27d863a61))
+
 ## [3.199.1](https://github.com/topjf/topjf/compare/v3.199.0...v3.199.1) (2023-03-27)
 
 
