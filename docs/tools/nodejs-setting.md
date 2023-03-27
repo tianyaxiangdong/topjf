@@ -12,7 +12,10 @@ tag:
 
 Node.js  [安装-教程](https://blog.csdn.net/qq_42476834/article/details/110789382)
 
-[node 官网下载](http://nodejs.cn/download/)、[https://github.com/nodejs/release](https://github.com/nodejs/release)
+[node 官网下载](http://nodejs.cn/download/)、[github/nodejs/release](https://github.com/nodejs/release)、[官网各个版本下载](https://nodejs.org/download/release/)
+
+[pnpm 官网安装教程](https://pnpm.io/zh/installation)
+
 
 ## NodeJS Release schedule
 
@@ -24,37 +27,130 @@ Node.js  [安装-教程](https://blog.csdn.net/qq_42476834/article/details/11078
 | 19.x | **Current**         |              | 2022-10-18     | -                | 2023-04-01        | 2023-06-01                |
 | 20.x     | **Pending**         |              | 2023-04-18     | 2023-10-24       | 2024-10-22        | 2026-04-30                |
 
-[pnpm 官网安装教程](https://pnpm.io/zh/installation)
 
 ## Linux 配置
 
-```bash
+### 使用安装包安装NodeJS
+
+```shell
 tar -zxvf 下载的tar包路径 -C 存放目标路劲
+
 sudo ln -s /soft/nodejs/bin/node /usr/local/bin/ && sudo ln -s /soft/nodejs/bin/npm /usr/local/bin/ && ls /usr/local/bin/
 
 ## sudo rm -rf /usr/local/bin/node && sudo rm -rf /usr/local/bin/npm && sudo rm -rf /usr/local/bin/cnpm
 
 node -v && npm -v
 
-更新node： npm install -g npm 
-
 ```
 
-设置淘宝镜像源
+### 使用PPA安装NodeJS
+
+[参考地址](https://github.com/nodesource/distributions#debinstall)
+
+> 使用 NodeSource 维护的 PPA 安装最新版本的 NodeJS，该公司为不同的 Linux 发行版构建和维护各种包。PPA 是软件包的替代存储库。它提供了官方 Debian 存储库中没有的软件。
+
+- Node.js v19.x:
+
+*Using Ubuntu*
 
 ```shell
-npm config set registry https://registry.npm.taobao.org
+curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - && sudo apt update -y && sudo apt-get install -y nodejs
 ```
 
-需要换回时改为官方的镜像源
+*Using Debian, as root*
 
 ```shell
-npm config set registry https://registry.npmjs.org
+curl -fsSL https://deb.nodesource.com/setup_19.x | bash - && apt update -y && apt-get install -y nodejs
 ```
 
-查看配置：`npm config list`
+- Node.js v18.x:
 
-`npx -p npm@6 npm i --legacy-peer-deps`
+*Using Ubuntu*
+
+```shell
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt update -y && sudo apt-get install -y nodejs
+```
+
+*Using Debian, as root*
+
+```shell
+curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && apt update -y && apt-get install -y nodejs
+```
+
+- Node.js v16.x:
+
+*Using Ubuntu*
+
+```shell
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - && sudo apt update -y && sudo apt-get install -y nodejs
+```
+
+*Using Debian, as root*
+
+```shell
+curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && apt update -y && apt-get install -y nodejs
+```
+
+### 使用 NVM 安装 NodeJS
+
+[官网文档](https://github.com/nvm-sh/nvm#intro)
+
+1、安装脚本
+
+```shell
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+```
+
+或者
+
+```shell
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+```
+
+2、运行 `source ~/.profile` 命令将环境变量重新加载到当前会话中。
+
+```shell
+source ~/.profile
+```
+
+3、列出 NodeJS 的可用版本。
+
+```shell
+nvm ls-remote
+```
+
+4、下载并安装
+
+```shell
+$ nvm use 16
+Now using node v16.9.1 (npm v7.21.1)
+$ node -v
+v16.9.1
+
+$ nvm use 14
+Now using node v14.18.0 (npm v6.14.15)
+$ node -v
+v14.18.0
+
+$ nvm install 12
+Now using node v12.22.6 (npm v6.14.5)
+$ node -v
+v12.22.6
+
+```
+
+5、查看与更改默认使用版本
+
+```shell
+$ nvm ls
+v16.9.1
+v18.15.0
+default -> 16.9 (-> v16.9.1)
+
+$ nvm alias default 18.15
+default -> 18.15 (-> v18.15.0)
+
+```
 
 ### 使用 corepack 安装 pnpm
 
@@ -62,7 +158,7 @@ npm config set registry https://registry.npmjs.org
 
 ```bash
 corepack enable
-corepack prepare pnpm@7.27.1 --activate
+corepack prepare pnpm@7.30.0 --activate
 ```
 
 - 卸载：`corepack disable pnpm`
@@ -86,15 +182,14 @@ npm config -help -s
 
 参数
 
-> npm config set
->
-> npm config get
->
-> npm config delete cache && npm config delete prefix
->
-> npm config list
->
-> npm config edit
+```shell
+npm config set
+npm config get
+npm config delete cache && npm config delete prefix
+
+npm config list
+npm config edit
+```
 
 ```shell
 npm config set prefix "/rj/nodejs/node_global" 
@@ -123,11 +218,30 @@ npm install -g webpack && npm install -D webpack-cli -g
 
 > `npm install -g vue-cli` 会存放在`/rj/nodejs/node_global/{bin,lib}`目录下
 
+
+## 设置淘宝镜像源
+
+```shell
+npm config set registry https://registry.npm.taobao.org
+```
+
+需要换回时改为官方的镜像源
+
+```shell
+npm config set registry https://registry.npmjs.org
+```
+
+## 查看配置：
+
+```
+npm config list
+```
+
 ## window 配置
 
-[下载地址](https://nodejs.org/download/release/)，选择 `latest-v18.x` 版本
+[下载地址](https://nodejs.org/download/release/)，选择 `latest-v19.x` 版本
 
-双击运行 `node-v18.14.2-x64.msi`文件进行安装。
+双击运行 `node-v19.8.1-x64.msi`文件进行安装。
 
 安装后，安装其他组件的默认安装存放位置：`C:\Users\{username}\AppData\Roaming\npm\node_modules` 里面。
 
@@ -135,13 +249,8 @@ npm install -g webpack && npm install -D webpack-cli -g
 
 `npm i -g element-ui` 存放在 `AppData\Roaming\npm\node_modules` 目录下-> `element-ui`;
 
-`npm i -g pnpm@7.27.0` 存放在 `AppData\Roaming\npm\node_modules` 目录下-> `pnpm`
+`npm i -g pnpm@7.30.0` 存放在 `AppData\Roaming\npm\node_modules` 目录下-> `pnpm`
 
-### 配置npm淘宝源
-
-```bash
-npm config set registry http://registry.npm.taobao.org
-```
 
 ### 全局模块存储设置
 
@@ -151,6 +260,7 @@ npm config set registry http://registry.npm.taobao.org
 
 ```shell
 npm config set prefix "D:\rj-win\nodejs\node_global"
+
 npm config set cache "D:\rj-win\nodejs\node_cache"
 ```
 
@@ -160,24 +270,25 @@ NODE_HOME: `D:\rj-win\nodejs`
 
 系统变量.Path：`%NODE_HOME%`
 
-### 安装 pnpm
+### 全局安装测试
 
-#### 使用npm安装
+引入 elementui：`npm i -g element-ui -S`
 
-安装：`npm install -g pnpm`
 
-配置pnpm环境变量: *系统属性.环境变量.系统变量.Path*：`%NODE_HOME%\node_global\pnpm`
+### 使用npm安装Pnpm
 
-#### 使用PowerShell安装
+安装：`npm install -g pnpm@7.30.0`
 
-[https://pnpm.io/zh/installation#windows](https://pnpm.io/zh/installation#windows)
+### 使用PowerShell安装Pnpm
+
+[installation#windows](https://pnpm.io/zh/installation#windows)
 
 ```shell
 PS C:\Users\k> iwr https://get.pnpm.io/install.ps1 -useb | iex                                                          
 
 Downloading '@pnpm/win-x64' from 'npmjs.com' registry...
 
-Extracting downloaded '7.27.1' archive...
+Extracting downloaded '7.30.0' archive...
 
 Running setup...
 
@@ -194,9 +305,5 @@ Setup complete. Open a new terminal to start using pnpm.
 
 ```
 PS C:\Users\k> pnpm -v
-7.27.1
+7.30.0
 ```
-
-### 全局安装测试
-
-引入 elementui：`npm i -g element-ui -S`
