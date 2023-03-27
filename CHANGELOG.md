@@ -3,37 +3,13 @@
 ## [3.199.3](https://github.com/topjf/topjf/compare/v3.199.2...v3.199.3) (2023-03-27)
 
 
-### 🐛Bug Fixes
-
-* 199 ([b312b86](https://github.com/topjf/topjf/commit/b312b865546b3d7f7b79e63551c9acd7b25bb29d))
-
-## [3.199.2](https://github.com/topjf/topjf/compare/v3.199.1...v3.199.2) (2023-03-27)
-
-
-### 🐛Bug Fixes
-
-* 删除lock ([348cb4d](https://github.com/topjf/topjf/commit/348cb4d01bf5c579e13939b7d3186aa27d863a61))
-
-## [3.199.1](https://github.com/topjf/topjf/compare/v3.199.0...v3.199.1) (2023-03-27)
-
-
-### 🐛Bug Fixes
-
-* 暂时回退197 ([5538510](https://github.com/topjf/topjf/commit/5538510624cc1949cb66b0660eac0b454a2672e3))
-
-## [3.199.0](https://github.com/topjf/topjf/compare/v3.198.0...v3.199.0) (2023-03-27)
-
-
 ### ✨Features
 
 * 升级 vuepress-theme-hope 到 beta.199 ([d7fe39f](https://github.com/topjf/topjf/commit/d7fe39f12868da764bbfbb3fde4e612c3e54953c))
 
-## [3.198.0](https://github.com/topjf/topjf/compare/v3.197.10...v3.198.0) (2023-03-27)
+### 🐛Bug Fixes
 
-
-### ✨Features
-
-* 升级 vuepress-theme-hope 到 beta.198 ([aa6fdaf](https://github.com/topjf/topjf/commit/aa6fdaf66ba60a83cb96f456a5db7c50eede7459))
+* 删除lock ([348cb4d](https://github.com/topjf/topjf/commit/348cb4d01bf5c579e13939b7d3186aa27d863a61))
 
 ## [3.197.10](https://github.com/topjf/topjf/compare/v3.197.9...v3.197.10) (2023-03-27)
 
