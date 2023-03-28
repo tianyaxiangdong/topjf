@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.199.6](https://github.com/topjf/topjf/compare/v3.199.5...v3.199.6) (2023-03-28)
+
+
+### 📚Docs
+
+* 创建docker日志处理问题 ([8668d94](https://github.com/topjf/topjf/commit/8668d946daf84edbf9b3964ac80fef0ffe54f160))
+
 ## [3.199.5](https://github.com/topjf/topjf/compare/v3.199.4...v3.199.5) (2023-03-27)
 
 
