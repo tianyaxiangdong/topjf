@@ -8,9 +8,10 @@ tag:
 
 Java 17 在 2021 年 9 月 14 日正式发布，是一个长期支持（LTS）版本。
 
-下面这张图是 Oracle 官方给出的 Oracle JDK 支持的时间线。可以看得到，Java
+<!-- more -->
 
- 17 最多可以支持到 2029 年 9 月份。
+下面这张图是 Oracle 官方给出的 Oracle JDK 支持的时间线。可以看得到，Java
+17 最多可以支持到 2029 年 9 月份。
 
 ![](https://oss.javaguide.cn/github/javaguide/java/new-features/4c1611fad59449edbbd6e233690e9fa7.png)
 
