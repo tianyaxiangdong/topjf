@@ -8,6 +8,8 @@ tag:
 
 Java 18 在 2022 年 3 月 22 日正式发布，非长期支持版本。
 
+<!-- more -->
+
 Java 18 带来了 9 个新特性：
 
 - [JEP 400:UTF-8 by Default（默认字符集为 UTF-8）](https://openjdk.java.net/jeps/400)
