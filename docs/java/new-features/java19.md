@@ -8,6 +8,8 @@ tag:
 
 JDK 19 定于 9 月 20 日正式发布以供生产使用，非长期支持版本。不过，JDK 19 中有一些比较重要的新特性值得关注。
 
+<!-- more -->
+
 JDK 19 只有 7 个新特性：
 
 - [JEP 405: Record Patterns（记录模式）](https://openjdk.org/jeps/405)（预览）
