@@ -27,11 +27,11 @@ timeline: false
 
 ## Git
 
+- [Git 配置](./git/git-setting.md)
+- [Git 入门](./git/git-intro.md)
 - [GitHub 自动部署WEB项目](./git/deploy-gh-pages.md)
 - [github自动创建tag版本](./git/github-release.md)
 - [Github 小技巧](./git/github-tips.md)
-- [Git 配置](./git/git-setting.md)
-- [Git 入门](./git/git-intro.md)
 
 ## Linux常用工具
 
