@@ -26,7 +26,10 @@ timeline: false
 - [磁盘相关](./disk.md)
 - [yum源配置](./yum-repo.md)
 - [升级内核](./update-kernel.md)
-- [Shell 编程](./shell.md)
+- [Shell 编程1](./shell1.md)
+- [Shell 编程2](./shell2.md)
+- [Shell 编程3](./shell3.md)
+- [Shell 编程4](./shell4.md)
 - [Jenkins自动化部署](./jenkins.md)
 - [命令大全](./basis/command.md)
 

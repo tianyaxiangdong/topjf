@@ -7,17 +7,14 @@
 - [使用Java压缩md文件中使用到的图片](https://gitee.com/cps007/markdown-img)
 - [参考 Mister-Hope.github.io](https://github.com/Mister-Hope/Mister-Hope.github.io)
 
----
 
-[![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/topjf/topjf)
-
----
+<!-- #region recent-beta -->
 
 **当主题版本有跳跃式更新时，先在 github 创建本版本的 releases + tags，再提交本次版本更新**
 
 版本格式:
 
-1.0.1 `major.minor.patch.preRelease.build`
+1.0.1.0 `major.minor.patch.preRelease`
 
 ## 提交规范
 
@@ -103,7 +100,7 @@ timeline: false
 window 通过 npm 安装
 
 ```shell
-npm install -g pnpm@7.30.0
+npm install -g pnpm@8.0.0
 ```
 
 - 技术版本列表
@@ -112,7 +109,10 @@ npm install -g pnpm@7.30.0
 |---------------------|--------------------------------------------------------------------------------------|
 | node                | <a href="https://www.npmjs.com/package/node" target="_blank">19.x</a>                |
 | npm                 | <a href="https://www.npmjs.com/package/npm" target="_blank">9.x</a>                  |
-| pnpm                | <a href="https://www.npmjs.com/package/pnpm" target="_blank">7.x</a>                 |
+| pnpm                | <a href="https://www.npmjs.com/package/pnpm" target="_blank">8.x</a>                 |
 | vue                 | <a href="https://www.npmjs.com/package/vue" target="_blank">3.x</a>                 |
 | vuepress-theme-hope | <a href="https://www.npmjs.com/package/vuepress-theme-hope" target="_blank">2.0.0-bate.x</a> |
 | vuepress            | <a href="https://www.npmjs.com/package/vuepress" target="_blank">2.0.0-beta.x</a>            |
+
+<!-- #endregion recent-beta -->
+

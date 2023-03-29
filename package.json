@@ -18,8 +18,8 @@
     "@vuepress/client": "2.0.0-beta.61",
     "vue": "^3.2.47",
     "vuepress": "2.0.0-beta.61",
-    "vuepress-plugin-search-pro": "2.0.0-beta.199",
-    "vuepress-theme-hope": "2.0.0-beta.199",
+    "vuepress-plugin-search-pro": "2.0.0-beta.200",
+    "vuepress-theme-hope": "2.0.0-beta.200",
     "vuepress-vite": "2.0.0-beta.61"
   },
   "devDependencies": {
@@ -32,9 +32,9 @@
   },
   "packageManager": "pnpm@8.0.0",
   "engines": {
-    "node": ">=14",
+    "node": ">=16",
     "npm": ">=8",
-    "pnpm": ">=7"
+    "pnpm": ">=8"
   },
   "pnpm": {
     "peerDependencyRules": {

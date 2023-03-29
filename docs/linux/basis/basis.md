@@ -170,47 +170,47 @@ Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每�
 
 ## 目录文件管理
 
-@include(./commands/cd.md{6-})
+<!-- @include: ./commands/cd.md{6-} -->
 
-@include(./commands/ls.md{6-})
+<!-- @include: ./commands/ls.md{6-} -->
 
-@include(./commands/ln.md{6-})
+<!-- @include: ./commands/ln.md{6-} -->
 
-@include(./commands/mkdir.md{6-})
+<!-- @include: ./commands/mkdir.md{6-} -->
 
-@include(./commands/pwd.md{6-})
+<!-- @include: ./commands/pwd.md{6-} -->
 
-@include(./commands/cp.md{6-})
+<!-- @include: ./commands/cp.md{6-} -->
 
-@include(./commands/mv.md{6-})
+<!-- @include: ./commands/mv.md{6-} -->
 
-@include(./commands/rmdir.md{6-})
+<!-- @include: ./commands/rmdir.md{6-} -->
 
-@include(./commands/rm.md{6-})
+<!-- @include: ./commands/rm.md{6-} -->
 
-@include(./commands/touch.md{6-})
+<!-- @include: ./commands/touch.md{6-} -->
 
-@include(./commands/echo.md{6-})
+<!-- @include: ./commands/echo.md{6-} -->
 
-@include(./commands/tee.md{6-})
+<!-- @include: ./commands/tee.md{6-} -->
 
-@include(./commands/cat.md{6-})
+<!-- @include: ./commands/cat.md{6-} -->
 
-@include(./commands/more.md{6-})
+<!-- @include: ./commands/more.md{6-} -->
 
-@include(./commands/less.md{6-})
+<!-- @include: ./commands/less.md{6-} -->
 
-@include(./commands/find.md{6-})
+<!-- @include: ./commands/find.md{6-} -->
 
-@include(./commands/head.md{6-})
+<!-- @include: ./commands/head.md{6-} -->
 
-@include(./commands/tail.md{6-})
+<!-- @include: ./commands/tail.md{6-} -->
 
-@include(./commands/file.md{6-})
+<!-- @include: ./commands/file.md{6-} -->
 
-@include(./commands/whereis.md{6-})
+<!-- @include: ./commands/whereis.md{6-} -->
 
-@include(./commands/sort.md{6-})
+<!-- @include: ./commands/sort.md{6-} -->
 
 ## 符号含义
 
@@ -238,17 +238,17 @@ Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每�
 
 ## 编辑器
 
-@include(./commands/vim.md{6-})
+<!-- @include: ./commands/vim.md{6-} -->
 
 ## 用户及权限管理
 
-@include(./commands/chown.md{6-})
+<!-- @include: ./commands/chown.md{6-} -->
 
-@include(./commands/chmod.md{6-})
+<!-- @include: ./commands/chmod.md{6-} -->
 
-@include(./commands/usermod.md{6-})
+<!-- @include: ./commands/usermod.md{6-} -->
 
-@include(./commands/umask.md{6-})
+<!-- @include: ./commands/umask.md{6-} -->
 
 ---
 
@@ -273,11 +273,11 @@ Linux内核采用虚拟文件系统（Virtual File System，VFS）作为和每�
 
 ## 系统管理
 
-@include(./commands/ps.md{6-})
+<!-- @include: ./commands/ps.md{6-} -->
 
-@include(./commands/top.md{6-})
+<!-- @include: ./commands/top.md{6-} -->
 
-@include(./commands/kill.md{6-})
+<!-- @include: ./commands/kill.md{6-} -->
 
 ### 防火墙
 
@@ -351,7 +351,7 @@ sudo ufw status：*active* 启动，*inactive* 未启动
 | gzexe   |      |                                  |
 | tar     | .tar |                                  |
 
-@include(./commands/tar.md{6-})
+<!-- @include: ./commands/tar.md{6-} -->
 
 ## 磁盘管理
 
@@ -359,17 +359,17 @@ sudo ufw status：*active* 启动，*inactive* 未启动
 - **du**（英文全称：disk used）：检查磁盘空间使用量
 - **fdisk**：用于磁盘分区
 
-@include(./commands/df.md{6-})
+<!-- @include: ./commands/df.md{6-} -->
 
-@include(./commands/du.md{6-})
+<!-- @include: ./commands/du.md{6-} -->
 
-@include(./commands/fdisk.md{6-})
+<!-- @include: ./commands/fdisk.md{6-} -->
 
-@include(./commands/mkfs.md{6-})
+<!-- @include: ./commands/mkfs.md{6-} -->
 
-@include(./commands/fsck.md{6-})
+<!-- @include: ./commands/fsck.md{6-} -->
 
-@include(./commands/mount.md{6-})
+<!-- @include: ./commands/mount.md{6-} -->
 
 ## 磁盘维护
 

@@ -55,7 +55,7 @@ console.log('你好，VuePress！')
 
 ---
 
-@include(./test-i.md{6-})
+<!-- @include: ./test-i.md{6-} -->
 
 > 哪些特哪 *些特* 哪些特哪 **些特** 哪些特
 >
