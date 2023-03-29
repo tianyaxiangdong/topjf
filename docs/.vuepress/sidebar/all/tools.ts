@@ -25,7 +25,7 @@ export const toolsJson =
             //children: ["CHINER", "datagrip", "DBeaver", "screw"],
         },
         {
-            text: "Git",
+            text: "Git相关",
             icon: "git",
             prefix: "git/",
             children: "structure",

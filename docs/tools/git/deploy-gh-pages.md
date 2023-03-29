@@ -1,6 +1,6 @@
 ---
 icon: edit
-title:  Github 自动部署WEB项目
+title: Github 自动部署WEB项目
 category: 
 - 开发工具
 star: true
@@ -63,80 +63,38 @@ added 595 packages in 22s
 提示: 请使用 "npm run docs:dev" 命令启动开发服务器
 ```
 
-## 编辑 `.github/workflows/deploy-docs.yml`
+## 编辑文件 
 
-- [https://github.com/peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages)
+创建：`.github/workflows/deploy-docs.yml`
 
-- [https://github.com/JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action)
+- `main` 分支为触发 `CI/CD` 的分支。
 
-`main`分支为触发`CI/CD`，完整项目分支代码
+- `gh-pages`（可自定义）分支为 `GITHUB` 自动打包后需要存放的分支。
 
-`gh-pages（可自定义）`分支为`GITHUB`自动打包后需要存放的分支
+### 方式一
 
----
+[github/JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action)
 
-- `JamesIves/github-pages-deploy-action` 作者的
-
-- - 示例1：npm模式（[docs-v1.yml](https://github.com/topsjf/topsjf/blob/main/.github/workflows/docs-v1.yml.old)）
+源文件：（[docs.yml](https://github.com/topjf/topjf/blob/main/.github/workflows/docs.yml)）
 
 ```yaml
-name: 部署文档（v1）
+name: Build Docs
 
 on:
   push:
-    branches:
-      - main
-jobs:
-  deploy-gh-pages:
-    name: 将文档部署到 v1
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: 设置 Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: npm
-
-      - name: 安装 npm
-        run: npm install
-
-      - name: build 构建文档
-        env:
-          NODE_OPTIONS: --max_old_space_size=4096
-        run: npm run docs:build
-
-      - name: deploy 部署
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: v1
-          folder: dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
-```
-
-- - 示例2：pnpm模式（[docs.yml](https://github.com/topsjf/topsjf/blob/main/.github/workflows/docs.yml)）
-
-```yaml
-name: 部署文档
-
-on:
-  push:
-    #tags:
-    branches:
-      - main
+    tags:
+      - v**
+   # branches:
+   #   - main
     paths-ignore:
       - img/**
+      - docs/.vuepress/**/**.tsp
       - README.md
       - LICENSE
 
 jobs:
   deploy-gh-pages:
+    name: 发布文档
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -149,50 +107,44 @@ jobs:
       - name: 安装 pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 8
           run_install: true
 
       - name: 设置 Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 19
           cache: pnpm
 
       - name: 安装 Deps
         run: pnpm install --frozen-lockfile
-
+        
       - name: 构建文档
         env:
-          # BASE: /v2/
-          # HOSTNAME: https://topsjf.github.io/
+         # BASE: /
+        #  HOSTNAME: https://topjf.github.io/
           NODE_OPTIONS: --max_old_space_size=8192
         run: |-
           pnpm run build:vite
           > docs/.vuepress/dist/.nojekyll
-
-      - name: 部署文档
+      
+      - name: 部署文档 topjf.io
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # repository-name: topsjf/v2
-          # 这是文档部署到的分支名称
-          branch: page-dev
+          # 部署到 topjf.io 仓库
+          repository-name: topjf/topjf.github.io
+          # 部署的分支名称
+          branch: gh-pages
           folder: docs/.vuepress/dist
           token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
-
+          single-commit: true  
 ```
 
-安装 pnpm 步骤可以替换为：
 
-```yaml
-      - name: 安装 pnpm
-        run: corepack enable && corepack prepare pnpm@7.15.0 --activate
-```
+### 方式二
 
----
+[github/peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages)
 
-- `peaceiris/actions-gh-pages` 作者的
 
 ```yaml
 name: 部署文档
@@ -238,19 +190,14 @@ jobs:
           publish_dir: ./dist
 ```
 
----
 
 ## 保留需要的文件，没有就创建
 
 ![](./deploy-gh-pages.assets/true-deplay.png)
 
-**npm模式使用 package-lock.json**
+- npm 模式使用 package-lock.json
 
-**pnpm模式使用 pnpm-lock.yaml，也可以不用这个文件，上面的示例2中（ `pnpm/action-setup@v2` ）会自动生成该文件**
-
-[docs.npmjs.com/cli/v7/configuring-npm/npm-shrinkwrap-json](https://docs.npmjs.com/cli/v7/configuring-npm/npm-shrinkwrap-json)
-
-`npm-shrinkwrap.json` 级别大于 `package-lock.json` 大于 `yarn.lock`
+- pnpm 模式使用 pnpm-lock.yaml
 
 ## 配置Pages
 
