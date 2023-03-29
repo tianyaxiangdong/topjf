@@ -1,4 +1,4 @@
-name: Create Tags,Log,PR
+name: Create Tags
 
 on:
   push:
@@ -10,18 +10,14 @@ on:
       - README.md
       - LICENSE
       
-env:
-  PNAME: topjf
-  
 jobs:
   release-please:
-    name: 生成日志，PR，tag
+    name: 生成 tags
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
         with:
           token: ${{ secrets.RELEASE_TOKEN }}
           release-type: node
-       #   package-name: ${{env.PNAME}}
           pull-request-title-pattern: '${scope}: release${component} ${version}'
           changelog-types: '[{"type": "types", "section":"Types", "hidden": false},{"type": "revert", "section":"⏪️Reverts", "hidden": false},{"type": "feat", "section": "✨Features", "hidden": false},{"type": "fix", "section": "🐛Bug Fixes", "hidden": false},{"type": "improvement", "section": "⚙️Feature Improvements", "hidden": false},{"type": "docs", "section":"📚Docs", "hidden": false},{"type": "style", "section":"🎨Styling", "hidden": false},{"type": "refactor", "section":"♻️Code Refactoring", "hidden": false},{"type": "perf", "section":"⚡️Performance Improvements", "hidden": false},{"type": "test", "section":"🧪Tests", "hidden": false},{"type": "build", "section":"📦️Build System", "hidden": false},{"type": "ci", "section":"🎡CI", "hidden":false}]'
