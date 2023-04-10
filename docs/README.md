@@ -28,8 +28,8 @@ projects:
 
   - icon: link
     name: 面试宝典
-    desc: 常见Java，Linux效果面试题
-    link: /all/all
+    desc: 常见Java，Linux面试题
+    link: /001/
 
 
 ---
