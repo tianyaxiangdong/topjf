@@ -23,6 +23,7 @@ export const allNavbar = navbar([
             {text: "VuePress Theme Hope 浏览图标", icon: "api", link: "https://theme-hope.vuejs.press/zh/guide/interface/icon.html#浏览图标"},
             {text: "Mister-Hope.github.io", icon: "api", link: "https://github.com/Mister-Hope/Mister-Hope.github.io"},
             {text: "how2j Java学习入门网站", icon: "api", link: "https://how2j.cn/"},
+            {text: "JavaGuide（Java学习+面试指南）", icon: "api", link: "https://javaguide.cn/"},
             {text: "escapelife 运维开发博客", icon: "api", link: "https://www.escapelife.site/"},
             {text: "markdownlint 配置（MD0xx）", icon: "api", link: "https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md"},
             {text: "快速创建 SpringBoot 项目", icon: "api", link: "https://start.spring.io/"},
