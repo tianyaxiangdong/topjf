@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [3.202.2](https://github.com/topjf/topjf/compare/v3.202.1...v3.202.2) (2023-04-10)
+
+
+### 🐛Bug Fixes
+
+* 更新导航栏-友情链接 ([12cd59c](https://github.com/topjf/topjf/commit/12cd59cb909240b576e30eb24122c4bf5581d5a3))
+
 ## [3.202.1](https://github.com/topjf/topjf/compare/v3.202.0...v3.202.1) (2023-04-10)
 
 
