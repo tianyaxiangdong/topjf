@@ -1,4 +1,4 @@
-name: Auto Merge
+name: Merge
 
 on:
   #以下pr类型触发
@@ -16,22 +16,23 @@ on:
   
 jobs:
   automerge:    
-    name: 合并PR
+    name: Merge PR
     runs-on: ubuntu-latest
     steps:
       - id: automerge
-        name: 开始合并
+        name: Start Merge
         uses: "pascalgn/automerge-action@v0.15.6"
         env:
           GITHUB_TOKEN: '${{ secrets.RELEASE_TOKEN }}'
           MERGE_LABELS: ''
-          #title，and，description
-          MERGE_COMMIT_MESSAGE: "Merge PR(#{pullRequest.number}) {pullRequest.title}"
-          #重试次数
+          # title，and，description
+         # MERGE_COMMIT_MESSAGE: "Merge PR(#{pullRequest.number}) {pullRequest.title}"
+          MERGE_COMMIT_MESSAGE: "chore(#{pullRequest.number}): {pullRequest.title}"
+          # 重试次数
           MERGE_RETRIES: '0'
-          #重试间隔10s
+          # 重试间隔10s
           MERGE_RETRY_SLEEP: '10000'
-          #合并后删除分支
+          # 合并后删除分支
           MERGE_DELETE_BRANCH: 'true'
         #  MERGE_FILTER_AUTHOR: 'topjf' 
 
