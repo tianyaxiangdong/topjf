@@ -1,0 +1,17 @@
+name: Merge
+
+on:
+  workflow_call:
+    secrets:
+      JS:
+        required: true
+
+jobs:
+  automerge:    
+    name: Merge PR
+    runs-on: ubuntu-latest
+    #if: ${{ secrets.JS }} <= '3'
+    steps:
+      - id: automerge
+        name: Start Merge
+        run: echo "合并成功了。"

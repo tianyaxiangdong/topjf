@@ -1,6 +1,10 @@
 name: Build Docs
 
 on:
+  workflow_call:
+    secrets:
+      JS:
+        required: true
   push:
     tags:
       - v**

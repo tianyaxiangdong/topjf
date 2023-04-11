@@ -1,8 +1,14 @@
 name: Test
+
 on:
-  push:
-    tags:
-      - test**
+  workflow_call:
+    secrets:
+      JS:
+        required: true
+        
+ # push:
+ #   tags:
+  #    - test**
 
 jobs:
   test-demos:

@@ -1,6 +1,10 @@
 name: Create Release
 
 on:
+  workflow_call:
+    secrets:
+      JS:
+        required: true
   push:
     branches:
       - main

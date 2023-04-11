@@ -1,0 +1,72 @@
+name: Main Action
+
+on:
+  push:
+    branches:
+      - "**"
+    tags:
+      - v**
+  pull_request:
+    branches:
+      - main
+
+env:
+  js: 0
+
+jobs:
+  test:
+    name: Test
+    if: github.ref_type == 'tag' && startsWith(github.ref, 'refs/tags/test')
+    uses: ./.github/workflows/test.yml
+    secrets:
+      JS: 9
+
+  release:
+    name: Create Release
+    uses: ./.github/workflows/release.yml
+    secrets:
+      JS: 1
+
+  merge:
+    needs:
+      - release
+    name: Merge
+    uses: ./.github/workflows/merge.yml
+    secrets:
+      JS: 2
+
+  docs:
+    name: Deploy GitHub
+    if: github.event_name == 'push' && github.ref_type == 'tag' && startsWith(github.ref, 'refs/tags/v')
+    needs:
+      - release
+      - merge
+    uses: ./.github/workflows/docs.yml
+    secrets:
+      JS: 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

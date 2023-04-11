@@ -100,7 +100,10 @@ timeline: false
 window 通过 npm 安装
 
 ```shell
-npm install -g pnpm@8.0.0
+npm install -g pnpm@8.2.0
+
+pnpm add -g pnpm
+
 ```
 
 - 技术版本列表
