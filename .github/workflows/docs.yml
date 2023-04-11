@@ -5,10 +5,10 @@ on:
     tags:
       - v**
     paths:
-      - 'CHANGELOG.md'
-      - '!img/**'
-      - '!docs/.vuepress/**/**.tsp'
-      - '!LICENSE'
+      - CHANGELOG.md
+      - img/**
+      - docs/.vuepress/**/**.tsp
+      - LICENSE'
 
 jobs:
   deploy-gh-pages:
