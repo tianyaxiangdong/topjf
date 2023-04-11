@@ -1,10 +1,10 @@
 name: Merge
 
 on:
-  workflow_call:
-    secrets: 
-      RELEASE_TOKEN:
-        required: true
+ # workflow_call:
+   # secrets: 
+    #  RELEASE_TOKEN:
+     #   required: true
   #以下pr类型触发
   pull_request:
     types:
@@ -28,9 +28,8 @@ jobs:
         env:
           GITHUB_TOKEN: '${{ secrets.RELEASE_TOKEN }}'
           MERGE_LABELS: ''
-          # title，and，description
-         # MERGE_COMMIT_MESSAGE: "Merge PR(#{pullRequest.number}) {pullRequest.title}"
-          MERGE_COMMIT_MESSAGE: "chore(#{pullRequest.number}): {pullRequest.title}"
+          # number title，description
+         MERGE_COMMIT_MESSAGE: "chore(#{pullRequest.number}): {pullRequest.title}"
           # 重试次数
           MERGE_RETRIES: '0'
           # 重试间隔10s

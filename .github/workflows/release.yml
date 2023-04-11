@@ -1,13 +1,13 @@
 name: Create Release
 
 on:
-  workflow_call:
-    secrets: 
-      RELEASE_TOKEN:
-        required: true
- # push:
- #   branches:
- #     - main
+#  workflow_call:
+  #  secrets: 
+    #  RELEASE_TOKEN:
+     #   required: true
+  push:
+    branches:
+      - main
 
 jobs:
   release-please:

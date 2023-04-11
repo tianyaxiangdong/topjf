@@ -1,20 +1,15 @@
 name: Build Docs
 
 on:
-  workflow_call:
-    secrets: 
-      ACCESS_TOKEN:
-        required: true
- # push:
- #   tags:
-   #   - v**
-   # branches:
-   #   - main
- #   paths-ignore:
- #     - img/**
-   #   - docs/.vuepress/**/**.tsp
-  #    - README.md
-  #    - LICENSE
+ # workflow_call:
+  #  secrets: 
+   #   ACCESS_TOKEN:
+     #   required: true
+  push:
+    tags:
+      - v**
+    branches:
+      - main
 
 jobs:
   deploy-gh-pages:

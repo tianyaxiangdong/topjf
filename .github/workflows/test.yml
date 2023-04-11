@@ -1,10 +1,10 @@
 name: Test
 
 on:
-  workflow_call:
- # push:
- #   tags:
-  #    - test**
+ # workflow_call:
+  push:
+    tags:
+      - test**
 
 jobs:
   test-demos:
