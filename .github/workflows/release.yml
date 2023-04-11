@@ -2,18 +2,10 @@ name: Create Release
 
 on:
   workflow_call:
-    secrets:
-      JS:
-        required: true
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - img/**
-      - docs/.vuepress/**/**.tsp
-      - README.md
-      - LICENSE
-      
+ # push:
+ #   branches:
+ #     - main
+
 jobs:
   release-please:
     name: Create Release Changelog PR

@@ -2,9 +2,6 @@ name: Merge
 
 on:
   workflow_call:
-    secrets:
-      JS:
-        required: true
   #以下pr类型触发
   pull_request:
     types:
@@ -23,9 +20,7 @@ jobs:
     name: Merge PR
     runs-on: ubuntu-latest
     steps:
-      - id: automerge
-        name: Start Merge
-        if: ${{ secrets.JS }} <= 3
+      - name: Start Merge
         uses: "pascalgn/automerge-action@v0.15.6"
         env:
           GITHUB_TOKEN: '${{ secrets.RELEASE_TOKEN }}'
