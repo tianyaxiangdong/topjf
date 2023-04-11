@@ -1,7 +1,5 @@
 name: Test
-
 on:
- # workflow_call:
   push:
     tags:
       - test**
