@@ -2,6 +2,9 @@ name: Merge
 
 on:
   workflow_call:
+    secrets: 
+      RELEASE_TOKEN:
+        required: true
   #以下pr类型触发
   pull_request:
     types:

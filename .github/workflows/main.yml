@@ -25,12 +25,16 @@ jobs:
     if: github.ref_name == 'main'
     name: Create Release
     uses: ./.github/workflows/release.yml
-
+    secrets: 
+      RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+    
   merge:
     needs:
       - release
     name: Merge
     uses: ./.github/workflows/merge.yml
+    secrets: 
+      RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
 
   docs:
     name: Deploy GitHub
@@ -39,6 +43,8 @@ jobs:
       - release
       - merge
     uses: ./.github/workflows/docs.yml
+    secrets: 
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
 
 

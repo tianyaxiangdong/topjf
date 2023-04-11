@@ -2,6 +2,9 @@ name: Create Release
 
 on:
   workflow_call:
+    secrets: 
+      RELEASE_TOKEN:
+        required: true
  # push:
  #   branches:
  #     - main
