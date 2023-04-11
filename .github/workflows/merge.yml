@@ -18,7 +18,7 @@ jobs:
   automerge:    
     name: Merge PR
     runs-on: ubuntu-latest
-    steps:
+    steps: 
       - id: automerge
         name: Start Merge
         uses: "pascalgn/automerge-action@v0.15.6"
@@ -26,7 +26,7 @@ jobs:
           GITHUB_TOKEN: '${{ secrets.RELEASE_TOKEN }}'
           MERGE_LABELS: ''
           # title，and，description
-         MERGE_COMMIT_MESSAGE: "chore(#{pullRequest.number}): {pullRequest.title}"
+          MERGE_COMMIT_MESSAGE: "chore(#{pullRequest.number}): {pullRequest.title}"
           # 重试次数
           MERGE_RETRIES: '0'
           # 重试间隔10s
