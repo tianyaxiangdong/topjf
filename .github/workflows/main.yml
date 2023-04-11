@@ -23,7 +23,7 @@ jobs:
 
   release:
     name: Create Release
-    uses: ./.github/workflows/release.yml
+    uses: ./.github/workflows/release1.yml
     secrets:
       JS: 1
 
@@ -31,7 +31,7 @@ jobs:
     needs:
       - release
     name: Merge
-    uses: ./.github/workflows/merge.yml
+    uses: ./.github/workflows/merge1.yml
     secrets:
       JS: 2
 
@@ -41,7 +41,7 @@ jobs:
     needs:
       - release
       - merge
-    uses: ./.github/workflows/docs.yml
+    uses: ./.github/workflows/docs1.yml
     secrets:
       JS: 4
 
