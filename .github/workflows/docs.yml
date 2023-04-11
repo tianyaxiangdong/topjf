@@ -4,10 +4,11 @@ on:
   push:
     tags:
       - v**
-    paths-ignore:
-      - img/**
-      - docs/.vuepress/**/**.tsp
-      - LICENSE
+    paths:
+      - 'CHANGELOG.md'
+      - '!img/**'
+      - '!docs/.vuepress/**/**.tsp'
+      - '!LICENSE'
 
 jobs:
   deploy-gh-pages:
