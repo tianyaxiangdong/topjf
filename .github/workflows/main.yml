@@ -32,6 +32,7 @@ jobs:
     needs:
       - release
     name: Merge
+    if: startsWith(github.ref, 'refs/heads/release-please') && github.event_name == 'pull_request'
     uses: ./.github/workflows/merge.yml
     secrets: 
       RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
