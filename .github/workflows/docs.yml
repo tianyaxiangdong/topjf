@@ -8,6 +8,7 @@ on:
       - v**
     paths:
       - CHANGELOG.md
+      - '!.github/**'
       - '!img/**'
       - '!docs/.vuepress/**/**.tsp'
       - '!LICENSE'
@@ -15,6 +16,7 @@ on:
 jobs:
   deploy-gh-pages:
     name: 发布文档
+    if: startsWith(github.event.head_commit.message, 'chore') || !startsWith(github.event.head_commit.message, 'release')   
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
