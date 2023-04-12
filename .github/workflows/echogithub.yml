@@ -15,4 +15,7 @@ jobs:
       - name: startout2
         id: github_context_message
         # head_commit  commits
-        run: echo '${{ toJSON(github.event) }}'      
+        run: |
+          echo ${{ github.event.commits.message }}    
+          echo '${{ toJSON(github.event.head_commit.message) }}'      
+
