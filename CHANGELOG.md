@@ -25,14 +25,13 @@
 ## [3.202.4](https://github.com/topjf/topjf/compare/v3.202.3...v3.202.4) (2023-04-12)
 
 
-### 🐛Bug Fixes
-
-* **github:** 更新工作流 ([ef4d071](https://github.com/topjf/topjf/commit/ef4d07193ef07205ccf61030e1ae67187a2fafd5))
-
-
 ### 📚Docs
 
 * **java:** 添加 SpringCloud使用注解+AOP+MQ来实现日志管理模块 ([2365938](https://github.com/topjf/topjf/commit/236593844b2d7dfb1d6ec1ff5649441356d4c500))
+
+### 🐛Bug Fixes
+
+* **github:** 更新工作流 ([ef4d071](https://github.com/topjf/topjf/commit/ef4d07193ef07205ccf61030e1ae67187a2fafd5))
 
 ## [3.202.3](https://github.com/topjf/topjf/compare/v3.202.2...v3.202.3) (2023-04-11)
 
