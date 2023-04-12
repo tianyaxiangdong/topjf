@@ -9,7 +9,7 @@ tag:
 ---
 
 校验Git提交及使用github工作流来自动创建release，
-commitlint、commitizen、cz-conventional-changelog
+依赖于：commitlint、commitizen、cz-conventional-changelog
 
 <!-- more -->
 
