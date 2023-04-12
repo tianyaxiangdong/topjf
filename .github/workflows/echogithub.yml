@@ -9,13 +9,17 @@ jobs:
   dump_contexts_to_log:
     runs-on: ubuntu-latest
     steps:
-      - name: Dump GitHub context
+      - name: GitHub context
         id: github_context_step
         run: echo '${{ toJSON(github) }}'
+
       - name: startout2
-        id: github_context_message
+        id: github_context_head_commit_message
         # head_commit  commits
-        run: |
-          echo '${{ github.event.commits.message }}'
-          echo '${{ toJSON(github.event.head_commit.message) }}'      
+        run: echo '${{ toJSON(github.event.head_commit.message) }}'
+    
+      - name: startout3
+        id: github_context_commits_message
+        # head_commit  commits
+        run: echo '${{ toJSON(github.event.commits.message) }}'      
 
