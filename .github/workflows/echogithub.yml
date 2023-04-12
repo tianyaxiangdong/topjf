@@ -1,0 +1,16 @@
+name: 输出github信息
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  outgithub:
+    name: 输出github信息
+    runs-on: ubuntu-latest
+    steps:
+      - name: startout1
+        run: ${{ toJSON(github) }}
+      - name: startout2
+        run: ${{ github.event.head_commit.message }}        
