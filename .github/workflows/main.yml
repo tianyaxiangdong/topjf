@@ -1,0 +1,44 @@
+name: Main Action
+
+on:  
+  push:
+    branches:
+      - main
+    tags:
+      - v**
+    paths:
+      - CHANGELOG.md
+      - '!.github/**'
+      - '!img/**'
+      - '!docs/.vuepress/**/**.tsp'
+      - '!LICENSE'
+ # pull_request:
+   # branches:
+    #  - main
+
+jobs:
+  docs:
+    name: Deploy GitHub
+    if: github.ref_name == 'main' && startsWith(github.ref, 'refs/tags/v')
+    uses: ./.github/workflows/docs.yml
+    secrets:
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+  release:
+    name: Deploy GitHub
+    if: github.ref_name == 'main' && startsWith(github.event.head_commit.message, 'feat') || startsWith(github.event.head_commit.message, 'fix') || startsWith(github.event.head_commit.message, 'docs') || startsWith(github.event.head_commit.message, 'style') || startsWith(github.event.head_commit.message, 'refactor') || startsWith(github.event.head_commit.message, 'perf') || startsWith(github.event.head_commit.message, 'test') || startsWith(github.event.head_commit.message, 'build') || startsWith(github.event.head_commit.message, 'ci') || startsWith(github.event.head_commit.message, 'chore') || startsWith(github.event.head_commit.message, 'revert')
+    uses: ./.github/workflows/release.yml
+    secrets:
+      ACCESS_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+
+  merge:
+    name: Deploy GitHub
+    if: github.event_name == 'pull_request'             
+    needs:
+      - release
+    uses: ./.github/workflows/merge.yml
+    secrets:
+      ACCESS_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+
+
+
