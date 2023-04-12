@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [3.202.7](https://github.com/topjf/topjf/compare/v3.202.6...v3.202.7) (2023-04-12)
+
+
+### 🐛Bug Fixes
+
+* **github:** 更新工作流 ([4402814](https://github.com/topjf/topjf/commit/4402814a70e668fc8fb2288d88915023443f9d3c))
+
 ## [3.202.6](https://github.com/topjf/topjf/compare/v3.202.5...v3.202.6) (2023-04-12)
 
 
