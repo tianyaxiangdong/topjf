@@ -16,7 +16,6 @@ on:
 jobs:
   deploy-gh-pages:
     name: 发布文档
-    if: startsWith(github.event.head_commit.message, 'buildd')  
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
