@@ -8,13 +8,18 @@ tag:
 - Release
 ---
 
+校验Git提交及使用github工作流来自动创建release，
+commitlint、commitizen、cz-conventional-changelog
+
 <!-- more -->
+
+[项目](https://github.com/topjf/topjf)
 
 ## 使用流程
 
 - 修改代码完成
 - git add -A
-- 执行 commit.sh | pnpm run commit 设置提交消息
+- 执行 sh commit.sh | pnpm run commit 设置提交消息
 
 ```shell
 #!bin/bash
