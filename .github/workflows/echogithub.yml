@@ -15,11 +15,13 @@ jobs:
 
       - name: startout2
         id: github_context_head_commit_message
-        # head_commit  commits
-        run: echo '${{ toJSON(github.event.head_commit.message) }}'
+        # toJSON 输出有双引号
+        run: echo ${{ toJSON(github.event.head_commit.message) }}
     
       - name: startout3
-        # if: ${{ github.event.head_commit.message }}
+        if: startsWith(github.event.head_commit.message, 'outpp')
         id: message
-        run: echo ${{ github.event.head_commit.message }}  
+        run: |
+          echo ${{ github.event.head_commit.message }}
+          echo github.event.head_commit.message
 
