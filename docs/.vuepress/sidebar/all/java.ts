@@ -19,6 +19,7 @@ export const javaJson =
         ]
     },
         "java-log",
+        "spring-cloud-logsystem",
         "dateformat-conversion",
         "restcontrolleradvice",
         "img-compression",
