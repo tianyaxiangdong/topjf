@@ -19,7 +19,7 @@ jobs:
         run: echo ${{ toJSON(github.event.head_commit.message) }}
     
       - name: 根据提交信息来触发任务
-        if: !startsWith(github.event.head_commit.message, 'release')   
+        if: false == startsWith(github.event.head_commit.message, 'release')   
         # startsWith(github.event.head_commit.message, 'outpp')
         id: message
         run: |
