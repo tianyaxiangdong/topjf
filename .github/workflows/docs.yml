@@ -1,21 +1,14 @@
 name: Build Docs
 
 on:
-  push:
-    branches:
-      - main
-    tags:
-      - v**
-    paths:
-      - CHANGELOG.md
-      - '!.github/**'
-      - '!img/**'
-      - '!docs/.vuepress/**/**.tsp'
-      - '!LICENSE'
-
+  workflow_call:
+    secrets:
+      ACCESS_TOKEN:
+        required: true  
 jobs:
   deploy-gh-pages:
     name: 发布文档
+    if: github.repository == 'topjf/topjf'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
