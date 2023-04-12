@@ -18,9 +18,9 @@ jobs:
         # toJSON 输出有双引号
         run: echo ${{ toJSON(github.event.head_commit.message) }}
     
-      - name: startout3
+      - name: 根据提交信息来触发任务
         if: startsWith(github.event.head_commit.message, 'outpp')
-        id: 根据提交信息来触发任务
+        id: message
         run: |
           echo ${{ github.event.head_commit.message }}
           echo 执行成功结束
