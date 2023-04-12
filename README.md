@@ -12,10 +12,6 @@
 
 **当主题版本有跳跃式更新时，先在 github 创建本版本的 releases + tags，再提交本次版本更新**
 
-版本格式:
-
-1.0.1.0 `major.minor.patch.preRelease`
-
 ## 提交规范
 
 **脚本提交**：sh commit.sh
@@ -44,15 +40,15 @@
 ```
 ---
 icon: edit
-title: 性能压测
+title: 性能
 category: 
 - Java
 date: 2023-03-12
 tag:
-- 工具
+- 工
 ---
 
-摘要生成位置
+摘要描述信息
 
 <!-- more -->
 
