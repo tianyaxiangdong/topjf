@@ -13,14 +13,8 @@ jobs:
         id: github_context_step
         run: echo '${{ toJSON(github) }}'
 
-      - name: startout2
-        id: github_context_message
-        # toJSON 输出有双引号
-        run: echo ${{ toJSON(github.event.head_commit.message) }}
-    
       - name: 根据提交信息来触发任务
         if: startsWith(github.event.head_commit.message, 'release') != true  
-        # startsWith(github.event.head_commit.message, 'outpp')
         id: message
         run: |
           echo ${{ github.event.head_commit.message }}
