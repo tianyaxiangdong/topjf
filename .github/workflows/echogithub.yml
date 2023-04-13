@@ -3,21 +3,20 @@ name: 输出github信息
 on:
   push:
     branches:
-      - main
+      - main66
 
 jobs:
   dump_contexts_to_log:
     runs-on: ubuntu-latest
     if: startsWith(github.event.head_commit.message, 'release') == false
     steps:
-      - name: GitHub context
-        id: github_context_step
-        run: echo '${{ toJSON(github) }}'
+      #- name: GitHub context
+       # id: github_context_step
+       # run: echo '${{ toJSON(github) }}'
 
       - name: 根据提交信息来触发任务
         id: message
         run: |
-          echo ##########执行开始##########
           echo ${{ github.event.head_commit.message }}
-          echo ##########执行成功结束##########
+          echo 执行成功结束
 

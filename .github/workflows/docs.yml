@@ -12,7 +12,6 @@ on:
       - v**
     #paths-ignore:
     paths:
-      - CHANGELOG.md
       - '**.md'
       - '!img/**'
       - '!docs/.vuepress/**/**.tsp'
@@ -22,7 +21,7 @@ jobs:
   deploy-gh-pages:
     name: 发布文档
     runs-on: ubuntu-latest
-    if: (startsWith(github.event.head_commit.message, 'release') == false)  
+    if: (startsWith(github.event.head_commit.message, 'release') == false) && (startsWith(github.event.head_commit.message, 'chore') == false)
     steps:
       - name: Checkout
         uses: actions/checkout@v3
