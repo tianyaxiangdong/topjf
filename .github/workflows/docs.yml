@@ -6,8 +6,8 @@ on:
     #  ACCESS_TOKEN:
       #  required: true
   push:
-    #branches:
-     # - main
+    branches:
+      - main
     tags:
       - v**
     #paths-ignore:
@@ -21,7 +21,7 @@ jobs:
   deploy-gh-pages:
     name: 发布文档
     runs-on: ubuntu-latest
-    if: (startsWith(github.event.head_commit.message, 'release') == false)
+    if: (startsWith(github.event.head_commit.message, 'release') == false)  
     steps:
       - name: Checkout
         uses: actions/checkout@v3
