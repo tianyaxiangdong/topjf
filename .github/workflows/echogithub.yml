@@ -18,6 +18,6 @@ jobs:
         id: message
         run: |
           echo ##########执行开始##########
-          echo '${{ toJSON(github.event) }}'
+          echo '${{ toJSON(github.event.pull_request) }}'
           echo ##########执行成功结束##########
 
