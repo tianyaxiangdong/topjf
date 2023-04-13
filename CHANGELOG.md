@@ -15,61 +15,12 @@
 
 * **github:** 测试 ([35f804f](https://github.com/topjf/topjf/commit/35f804fcc2e144423fb3fc6596d5712c8217dcd2))
 
-## [3.202.9](https://github.com/topjf/topjf/compare/v3.202.8...v3.202.9) (2023-04-13)
-
-
-### 📚Docs
-
-* 更新文件 ([3e07161](https://github.com/topjf/topjf/commit/3e0716197e694b67658ef2cd2531b99d098ce166))
-
-
-### 🧪Tests
-
-* **github:** 更新main工作流 ([1709c18](https://github.com/topjf/topjf/commit/1709c188a60a6f76a713aff663f857fa43cdc81f))
-* **github:** 测试 ([10d9c6f](https://github.com/topjf/topjf/commit/10d9c6f509f1cb39457d8f2f1601acb59ac43472))
-* 更新测试 ([5e82d83](https://github.com/topjf/topjf/commit/5e82d838a9002355f639407e286890a96d254e25))
-* 更新测试 ([6cb833a](https://github.com/topjf/topjf/commit/6cb833a3ef48373a463e484b9694df77b1ed9f90))
-* 测试 ([a96acc5](https://github.com/topjf/topjf/commit/a96acc507e8178953677c0bdb5aa8e62d48405a7))
-* 测试 ([a18aa6d](https://github.com/topjf/topjf/commit/a18aa6df9d39e9c092d5f8edd96eaf46f8cf9115))
-
-## [3.202.8](https://github.com/topjf/topjf/compare/v3.202.7...v3.202.8) (2023-04-12)
-
-
-### 📚Docs
-
-* 更新 ([5fe03cb](https://github.com/topjf/topjf/commit/5fe03cbb4e27a357550666519fa1dd1ac618807e))
-
-## [3.202.7](https://github.com/topjf/topjf/compare/v3.202.6...v3.202.7) (2023-04-12)
-
-
-### 🐛Bug Fixes
-
-* **github:** 更新工作流 ([4402814](https://github.com/topjf/topjf/commit/4402814a70e668fc8fb2288d88915023443f9d3c))
-
-## [3.202.6](https://github.com/topjf/topjf/compare/v3.202.5...v3.202.6) (2023-04-12)
-
-
-### 📚Docs
-
-* **tools:** 添加 github文档 ([717db7c](https://github.com/topjf/topjf/commit/717db7c1e7c402e098abc37f6d6379119fc977f8))
-
-## [3.202.5](https://github.com/topjf/topjf/compare/v3.202.4...v3.202.5) (2023-04-12)
-
-
-### 🐛Bug Fixes
-
-* 更新工作流 ([cbde752](https://github.com/topjf/topjf/commit/cbde7528bc0ede164af9f4e9c3d58e6ca320f04c))
-
 ## [3.202.4](https://github.com/topjf/topjf/compare/v3.202.3...v3.202.4) (2023-04-12)
 
 
 ### 📚Docs
 
 * **java:** 添加 SpringCloud使用注解+AOP+MQ来实现日志管理模块 ([2365938](https://github.com/topjf/topjf/commit/236593844b2d7dfb1d6ec1ff5649441356d4c500))
-
-### 🐛Bug Fixes
-
-* **github:** 更新工作流 ([ef4d071](https://github.com/topjf/topjf/commit/ef4d07193ef07205ccf61030e1ae67187a2fafd5))
 
 ## [3.202.3](https://github.com/topjf/topjf/compare/v3.202.2...v3.202.3) (2023-04-11)
 
