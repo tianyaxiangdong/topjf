@@ -12,7 +12,8 @@ on:
       - v**
     #paths-ignore:
     paths:
-      - '**.md'
+      - **.md
+      - 'docs/**/**.md'
       - '!img/**'
       - '!docs/.vuepress/**/**.tsp'
       - '!LICENSE'
