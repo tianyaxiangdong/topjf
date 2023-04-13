@@ -4,11 +4,11 @@ on:
   workflow_call:
     secrets:
       ACCESS_TOKEN:
-        required: true  
+        required: true
+        
 jobs:
   deploy-gh-pages:
     name: 发布文档
-    if: github.repository == 'topjf/topjf'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
