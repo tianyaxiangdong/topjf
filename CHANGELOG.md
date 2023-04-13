@@ -6,23 +6,18 @@
 
 ### 🐛Bug Fixes
 
-* **github:** 修复触发docs ([7e19b9e](https://github.com/topjf/topjf/commit/7e19b9e79523a23123ec83552459bede549d26e0))
-
-## [3.203.2](https://github.com/topjf/topjf/compare/v3.203.1...v3.203.2) (2023-04-13)
-
-### 🐛Bug Fixes
-
-* **github:** 修复 ([3ce86cc](https://github.com/topjf/topjf/commit/3ce86cc3cfcbedc12c6a18759cb5ac0f33c99eae))
+* **github:** 修复release触发docs部署 ([7e19b9e](https://github.com/topjf/topjf/commit/7e19b9e79523a23123ec83552459bede549d26e0))
 
 ## [3.203.1](https://github.com/topjf/topjf/compare/v3.203.0...v3.203.1) (2023-04-13)
 
 
 ### 🐛Bug Fixes
 
-* **github:** 修复 ([aab5d9a](https://github.com/topjf/topjf/commit/aab5d9a45c68cec6d64f2e63639f4f44ff5c6f58))
+* **github:** 修复docs.yml格式 ([aab5d9a](https://github.com/topjf/topjf/commit/aab5d9a45c68cec6d64f2e63639f4f44ff5c6f58))
 
 ## [3.203.0](https://github.com/topjf/topjf/compare/v3.202.14...v3.203.0) (2023-04-13)
 
+**docs.yml 格式错误**
 
 ### ✨Features
 
