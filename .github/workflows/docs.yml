@@ -1,10 +1,6 @@
 name: Build Docs
 
 on:
-  #workflow_call:
-   # secrets:
-    #  ACCESS_TOKEN:
-      #  required: true
   push:
    # branches:
     #  - main
@@ -17,7 +13,11 @@ on:
       - '!img/**'
       - '!docs/.vuepress/**/**.tsp'
       - '!LICENSE'
-      
+  workflow_call:
+    secrets:
+      ACCESS_TOKEN2:
+        required: true
+        
 jobs:
   deploy-gh-pages:
     name: 发布文档
@@ -60,5 +60,5 @@ jobs:
           repository-name: topjf/topjf.github.io
           branch: gh-pages
           folder: docs/.vuepress/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }} || ${{ secrets.ACCESS_TOKEN2 }}
           single-commit: true
