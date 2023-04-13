@@ -17,7 +17,7 @@ timeline: false
 
 ::: info
 
-对于发布早于 `3.190.7` 的历史版本，详见 [Github 仓库](https://github.com/topjf/topjf/blob/main/CHANGELOG.md)。
+对于发布早于 `3.190.7` 的历史版本，详见 [Github Releases](https://github.com/topjf/topjf/releases)。
 
 :::
 
