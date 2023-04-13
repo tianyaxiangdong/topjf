@@ -3,7 +3,7 @@ name: 输出github信息
 on:
   push:
     branches:
-      - main66
+      - main
 
 jobs:
   dump_contexts_to_log:
@@ -14,9 +14,10 @@ jobs:
         run: echo '${{ toJSON(github) }}'
 
       - name: 根据提交信息来触发任务
-        if: startsWith(github.event.head_commit.message, 'release') != true  
+        if: startsWith(github.event.head_commit.message, 'release') == false  
         id: message
         run: |
-          echo ${{ github.event.head_commit.message }}
-          echo 执行成功结束
+          echo ##########执行开始##########
+          echo ${{ github.event }}
+          echo ##########执行成功结束##########
 
