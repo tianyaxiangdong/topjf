@@ -13,6 +13,7 @@ on:
     #paths-ignore:
     paths:
       - CHANGELOG.md
+      - '**.md'
       - '!img/**'
       - '!docs/.vuepress/**/**.tsp'
       - '!LICENSE'
