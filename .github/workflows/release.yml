@@ -1,19 +1,19 @@
 name: Create Release
 
 on:
- # push:
-  #  branches:
-   #   - main
-  workflow_call:
-    secrets:
-      RELEASE_TOKEN:
-        required: true  
+  push:
+    branches:
+      - main
+#  workflow_call:
+ #   secrets:
+   #   RELEASE_TOKEN:
+     #   required: true  
 
 jobs:
   release-please:
     name: Create Release Changelog PR
-    # if: startsWith(github.event.head_commit.message, 'feat') || startsWith(github.event.head_commit.message, 'fix') || startsWith(github.event.head_commit.message, 'docs') || startsWith(github.event.head_commit.message, 'style') || startsWith(github.event.head_commit.message, 'refactor') || startsWith(github.event.head_commit.message, 'perf') || startsWith(github.event.head_commit.message, 'test') || startsWith(github.event.head_commit.message, 'build') || startsWith(github.event.head_commit.message, 'ci') || startsWith(github.event.head_commit.message, 'chore') || startsWith(github.event.head_commit.message, 'revert')
     runs-on: ubuntu-latest
+    if: startsWith(github.event.head_commit.message, 'feat') || startsWith(github.event.head_commit.message, 'fix') || startsWith(github.event.head_commit.message, 'docs') || startsWith(github.event.head_commit.message, 'style') || startsWith(github.event.head_commit.message, 'refactor') || startsWith(github.event.head_commit.message, 'perf') || startsWith(github.event.head_commit.message, 'test') || startsWith(github.event.head_commit.message, 'build') || startsWith(github.event.head_commit.message, 'ci') || startsWith(github.event.head_commit.message, 'chore') || startsWith(github.event.head_commit.message, 'revert')
     steps:
       - uses: google-github-actions/release-please-action@v3
         with:

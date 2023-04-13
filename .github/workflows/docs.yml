@@ -1,15 +1,27 @@
 name: Build Docs
 
 on:
-  workflow_call:
-    secrets:
-      ACCESS_TOKEN:
-        required: true
-        
+  #workflow_call:
+   # secrets:
+    #  ACCESS_TOKEN:
+      #  required: true
+  push:
+    branches:
+      - main
+    tags:
+      - v**
+    #paths-ignore:
+    paths:
+      - CHANGELOG.md
+      - '!img/**'
+      - '!docs/.vuepress/**/**.tsp'
+      - '!LICENSE'
+      
 jobs:
   deploy-gh-pages:
     name: 发布文档
     runs-on: ubuntu-latest
+    if: (startsWith(github.event.head_commit.message, 'release') != true)
     steps:
       - name: Checkout
         uses: actions/checkout@v3
