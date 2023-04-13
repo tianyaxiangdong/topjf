@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [3.203.3](https://github.com/topjf/topjf/compare/v3.203.2...v3.203.3) (2023-04-13)
+
+
+### 🐛Bug Fixes
+
+* **github:** 修复触发docs ([7e19b9e](https://github.com/topjf/topjf/commit/7e19b9e79523a23123ec83552459bede549d26e0))
+
 ## [3.203.2](https://github.com/topjf/topjf/compare/v3.203.1...v3.203.2) (2023-04-13)
 
 ### 🐛Bug Fixes
