@@ -8,14 +8,14 @@ on:
   #以下pr类型触发
   pull_request:
     types:
-      - labeled
+    #  - labeled
     #  - unlabeled
     #  - synchronize
       - opened
     #  - edited
     #  - ready_for_review
-      - reopened
-      - unlocked
+    #  - reopened
+    #  - unlocked
   status: {}
   
 jobs:
