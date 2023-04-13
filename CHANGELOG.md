@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [3.202.13](https://github.com/topjf/topjf/compare/v3.202.12...v3.202.13) (2023-04-13)
+
+
+### 🐛Bug Fixes
+
+* **github:** 更新 ([de154ac](https://github.com/topjf/topjf/commit/de154acd4da2a9186557ab4a4504cba4b93b766a))
+
 ## [3.202.12](https://github.com/topjf/topjf/compare/v3.202.11...v3.202.12) (2023-04-13)
 
 
