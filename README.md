@@ -1,12 +1,11 @@
 ## topjf
 
-- [🚀🚀预览🚀🚀](https://topjf.github.io/)
+- [🚀预览](https://topjf.github.io/)
 - [github](https://github.com/topjf/topjf)
 - [gitee](https://gitee.com/topjf/topjf)
 - vuepress-theme-hope：[文档](https://theme-hope.vuejs.press/zh/)、[github](https://github.com/vuepress-theme-hope/vuepress-theme-hope)
 - [使用Java压缩md文件中使用到的图片](https://gitee.com/cps007/markdown-img)
 - [参考 Mister-Hope.github.io](https://github.com/Mister-Hope/Mister-Hope.github.io)
-
 
 <!-- #region recent-beta -->
 
@@ -16,7 +15,7 @@
 
 **脚本提交**：sh commit.sh
 
-**命令提交**：git add -A  && pnpm run commit || git commit -m "选项: 描述" && git push -u origin main
+**命令提交**：git add -A  && pnpm run commit 或者 git commit -m "选项: 描述" && git push -u origin main
 
 **web端提交** 简单描述格式：选项: 简要描述
 
