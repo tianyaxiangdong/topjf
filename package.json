@@ -1,6 +1,6 @@
 {
   "name": "topjf",
-  "version": "3.206.0",
+  "version": "3.203.3",
   "description": "TOPJF.笔记",
   "license": "MIT",
   "scripts": {
@@ -18,8 +18,8 @@
     "@vuepress/client": "2.0.0-beta.61",
     "vue": "^3.2.47",
     "vuepress": "2.0.0-beta.61",
-    "vuepress-plugin-search-pro": "2.0.0-beta.205",
-    "vuepress-theme-hope": "2.0.0-beta.205",
+    "vuepress-plugin-search-pro": "2.0.0-beta.203",
+    "vuepress-theme-hope": "2.0.0-beta.203",
     "vuepress-vite": "2.0.0-beta.61"
   },
   "devDependencies": {
