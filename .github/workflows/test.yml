@@ -1,9 +1,15 @@
 name: Test
-on:
-  push:
-    tags:
-      - test**
 
+# on:
+ # push:
+   # tags:
+    #  - test**
+on:
+  workflow_call:
+    secrets:
+      RELEASE_TOKEN:
+        required: true
+        
 jobs:
   test-demos:
     name: Test ${{ matrix.bundler }} on node ${{ matrix.node }}
@@ -48,5 +54,5 @@ jobs:
           # 部署的分支名称
           branch: page-${{ matrix.node }}
           folder: docs/.vuepress/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
+          token: ${{ secrets.RELEASE_TOKEN }}
           single-commit: true    

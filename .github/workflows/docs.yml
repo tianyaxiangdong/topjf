@@ -15,7 +15,7 @@ on:
       - '!LICENSE'
  # workflow_call:
    # secrets:
-     # ACCESS_TOKEN2:
+     # RELEASE_TOKEN:
        # required: true
         
 jobs:
@@ -60,5 +60,5 @@ jobs:
           repository-name: topjf/topjf.github.io
           branch: gh-pages
           folder: docs/.vuepress/dist
-          token: ${{ secrets.ACCESS_TOKEN }} 
+          token: ${{ secrets.RELEASE_TOKEN }} 
           single-commit: true

@@ -3,7 +3,7 @@ name: Release Docs
 on:
   workflow_call:
     secrets:
-      ACCESS_TOKEN:
+      RELEASE_TOKEN:
         required: true
         
 jobs:
@@ -47,5 +47,5 @@ jobs:
           repository-name: topjf/topjf.github.io
           branch: gh-pages
           folder: docs/.vuepress/dist
-          token: ${{ secrets.ACCESS_TOKEN }} 
+          token: ${{ secrets.RELEASE_TOKEN }} 
           single-commit: true
