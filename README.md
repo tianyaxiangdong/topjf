@@ -3,14 +3,17 @@
 - [🚀预览](https://topjf.github.io/)
 - [github](https://github.com/topjf/topjf)
 - [gitee](https://gitee.com/topjf/topjf)
+- [存放 build docs 仓库](https://github.com/topjf/topjf.github.io)
 - vuepress-theme-hope：[文档](https://theme-hope.vuejs.press/zh/)、[github](https://github.com/vuepress-theme-hope/vuepress-theme-hope)
 - [使用Java压缩md文件中使用到的图片](https://gitee.com/cps007/markdown-img)
 - [参考 Mister-Hope.github.io](https://github.com/Mister-Hope/Mister-Hope.github.io)
 
 <!-- #region recent-beta -->
 
-A：**当主题版本有跳跃式更新时，先在 github 创建本版本的 
-`releases` + `tags`，再提交本次版本更新**
+A：**当主题版本有跳跃式更新时，先在 github 创建本`次版本-1`的 
+`releases`，再提交本次版本更新**
+例如：当前版本为 `v3.203.9` 需要更新到 `v3.205.0`，则需要手动创建release为 `v3.204.0` 为基础，在执行 `sh commit.sh` 时选择 feat 选项。
+
 
 B：**测试新主题版本：** 先更新 `package.json` 主题版本并设置提交消息为 `mytest` 开头，会自动触发test工作流，
 然后自动部署到github.io，访问看看样式和其他功能是否正常，
