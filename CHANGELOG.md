@@ -1,42 +1,6 @@
 # Changelog
 <!-- #region recent-beta -->
 
-## [3.205.5](https://github.com/topjf/topjf/compare/v3.205.4...v3.205.5) (2023-04-21)
-
-
-### 🐛Bug Fixes
-
-* **github:** 更新工作流程 ([d65288a](https://github.com/topjf/topjf/commit/d65288aeb6db2b47348b3a09b9c05fd4bd9b19c0))
-
-## [3.205.4](https://github.com/topjf/topjf/compare/v3.205.3...v3.205.4) (2023-04-21)
-
-
-### 🐛Bug Fixes
-
-* **github:** 更新工作流程 ([7f263cd](https://github.com/topjf/topjf/commit/7f263cd07c3272466301ca9d4e0687a738ad6914))
-
-## [3.205.3](https://github.com/topjf/topjf/compare/v3.205.2...v3.205.3) (2023-04-21)
-
-
-### 🐛Bug Fixes
-
-* **github:** 更新工作流程 ([d83ebe3](https://github.com/topjf/topjf/commit/d83ebe3dd0ec09a4d671be1b2bb584454d8e08d0))
-
-## [3.205.2](https://github.com/topjf/topjf/compare/v3.205.1...v3.205.2) (2023-04-21)
-
-
-### 🐛Bug Fixes
-
-* **github:** 更新工作流 ([13d24ff](https://github.com/topjf/topjf/commit/13d24ffaae5b0ff164ae3dcfde9a8e823f746084))
-
-## [3.205.1](https://github.com/topjf/topjf/compare/v3.205.0...v3.205.1) (2023-04-21)
-
-
-### 🐛Bug Fixes
-
-* **github:** 更新工作流 ([cb75c5d](https://github.com/topjf/topjf/commit/cb75c5d1516c77206aee63f46415ca1256653c93))
-* 更新工作流 ([ffb1a4b](https://github.com/topjf/topjf/commit/ffb1a4bfea5fe3925c2117365a5b71a6552de686))
-
 ## [3.205.0](https://github.com/topjf/topjf/compare/v3.204.0...v3.205.0) (2023-04-20)
 
 
