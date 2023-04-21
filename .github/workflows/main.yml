@@ -17,7 +17,7 @@ jobs:
   release:
     name: Create Release Changelog
     # && (startsWith(github.event.head_commit.message, 'release v') == false) 
-    if: github.ref_name == 'main' && startsWith(github.event.head_commit.message, 'feat') || startsWith(github.event.head_commit.message, 'fix') || startsWith(github.event.head_commit.message, 'docs') || startsWith(github.event.head_commit.message, 'style') || startsWith(github.event.head_commit.message, 'refactor') || startsWith(github.event.head_commit.message, 'perf') || startsWith(github.event.head_commit.message, 'test') || startsWith(github.event.head_commit.message, 'build') || startsWith(github.event.head_commit.message, 'ci') || startsWith(github.event.head_commit.message, 'chore') || startsWith(github.event.head_commit.message, 'revert') 
+    if: github.ref_name == 'main' && startsWith(github.ref, 'refs/heads/main') && github.ref_type == 'branch' && startsWith(github.event.head_commit.message, 'feat') || startsWith(github.event.head_commit.message, 'fix') || startsWith(github.event.head_commit.message, 'docs') || startsWith(github.event.head_commit.message, 'style') || startsWith(github.event.head_commit.message, 'refactor') || startsWith(github.event.head_commit.message, 'perf') || startsWith(github.event.head_commit.message, 'test') || startsWith(github.event.head_commit.message, 'build') || startsWith(github.event.head_commit.message, 'ci') || startsWith(github.event.head_commit.message, 'chore') || startsWith(github.event.head_commit.message, 'revert') 
     uses: ./.github/workflows/release.yml
     secrets:
       RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
