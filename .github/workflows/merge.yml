@@ -3,19 +3,11 @@ name: Merge
 on:
  # workflow_call:
    # secrets:
-    #  RELEASE_TOKEN:
-      #  required: true  
-  #以下pr类型触发
+     # RELEASE_TOKEN:
+       # required: true
   pull_request:
     types:
-    #  - labeled
-    #  - unlabeled
-    #  - synchronize
       - opened
-    #  - edited
-    #  - ready_for_review
-    #  - reopened
-    #  - unlocked
   status: {}
   
 jobs:

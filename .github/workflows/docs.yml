@@ -1,22 +1,10 @@
 name: Build Docs
 
 on:
-  push:
-   # branches:
-    #  - main
-    tags:
-      - v**
-    #paths-ignore:
-    paths:
-      - '**.md'
-      - 'docs/**/**.md'
-      - '!img/**'
-      - '!docs/.vuepress/**/**.tsp'
-      - '!LICENSE'
- # workflow_call:
-   # secrets:
-     # RELEASE_TOKEN:
-       # required: true
+  workflow_call:
+    secrets:
+      RELEASE_TOKEN:
+        required: true
         
 jobs:
   deploy-gh-pages:
