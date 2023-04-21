@@ -6,12 +6,13 @@ on:
       - main
     tags:
       - v**
-    paths:
+  #  paths:
      # - '**.md'
      # - 'docs/**/**.md'
-      - '!img/**'
-      - '!docs/.vuepress/**/**.tsp'
-      - '!LICENSE'  
+   #   - '!img/**'
+   #   - '!docs/.vuepress/**/**.tsp'
+   #   - '!LICENSE'  
+   
 jobs:
   release:
     name: Create Release Changelog
