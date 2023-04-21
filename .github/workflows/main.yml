@@ -6,14 +6,15 @@ on:
       - main
     tags:
       - v**
-  #  paths:
-     # - '**.md'
-     # - 'docs/**/**.md'
-   #   - '!img/**'
-   #   - '!docs/.vuepress/**/**.tsp'
-   #   - '!LICENSE'  
-   
+
 jobs:
+  dump_contexts_to_log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub context
+        id: github_context_step
+        run: echo '${{ toJSON(github) }}'
+
   release:
     name: Create Release Changelog
     # && (startsWith(github.event.head_commit.message, 'release v') == false) 
