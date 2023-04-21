@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [3.205.4](https://github.com/topjf/topjf/compare/v3.205.3...v3.205.4) (2023-04-21)
+
+
+### 🐛Bug Fixes
+
+* **github:** 更新工作流程 ([7f263cd](https://github.com/topjf/topjf/commit/7f263cd07c3272466301ca9d4e0687a738ad6914))
+
 ## [3.205.3](https://github.com/topjf/topjf/compare/v3.205.2...v3.205.3) (2023-04-21)
 
 
