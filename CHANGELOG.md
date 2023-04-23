@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [3.205.3](https://github.com/topjf/topjf/compare/v3.205.2...v3.205.3) (2023-04-23)
+
+
+### 🐛Bug Fixes
+
+* **docs:** 更新配置 ([08269b2](https://github.com/topjf/topjf/commit/08269b2671f6e4b86d1233e7e80dfd367c0d1c76))
+
 ## [3.205.2](https://github.com/topjf/topjf/compare/v3.205.1...v3.205.2) (2023-04-23)
 
 **import {001Sources} from './001Sources.ts';** 命名格式错误
