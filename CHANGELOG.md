@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [3.205.2](https://github.com/topjf/topjf/compare/v3.205.1...v3.205.2) (2023-04-23)
+
+
+### 🐛Bug Fixes
+
+* **docs:** 更新配置，恢复Java项目架构演变 ([52e25cc](https://github.com/topjf/topjf/commit/52e25cc2f72e6a56868236032879a88ca757db95))
+
 ## [3.205.1](https://github.com/topjf/topjf/compare/v3.205.0...v3.205.1) (2023-04-21)
 
 
