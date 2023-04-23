@@ -16,8 +16,7 @@ import {linuxJson} from './linux.ts';
  * "structure",
  */
 export const allSidebar = sidebar({
-    '/history/': ['history'],
-    '/about/': ['about-this'],
+    '/history/': "structure",
     '/books/': "structure",
     '/open-source/': openSources,
     '/001/': "structure",
