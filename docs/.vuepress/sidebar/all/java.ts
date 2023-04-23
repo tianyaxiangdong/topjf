@@ -18,6 +18,7 @@ export const javaJson =
             "web-servlet-jsp",
         ]
     },
+        "evolution-to-cloud",
         "java-log",
         "spring-cloud-logsystem",
         "dateformat-conversion",

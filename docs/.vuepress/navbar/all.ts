@@ -35,6 +35,12 @@ export const allNavbar = navbar([
             {text: "#", icon: "api", link: ""},
         ],
     },
-    {text: "Markdown测试", icon: "overflow", link: "/test"},
-    {text: "演示", icon: "like", link: "/live"},
+    {
+        text: "其他",
+        icon: "linter",
+        children: [
+            {text: "Markdown测试", icon: "overflow", link: "/test"},
+            {text: "演示", icon: "like", link: "/live"},
+        ],
+    },
 ]);
