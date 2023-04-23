@@ -3,6 +3,7 @@
 
 ## [3.205.2](https://github.com/topjf/topjf/compare/v3.205.1...v3.205.2) (2023-04-23)
 
+**import {001Sources} from './001Sources.ts';** 命名格式错误
 
 ### 🐛Bug Fixes
 

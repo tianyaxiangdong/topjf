@@ -11,7 +11,7 @@ export const allNavbar = navbar([
         icon: "info",
         children: [
             {text: "关于本站", icon: "people", link: "/about-this"},
-            {text: "网站历史", icon: "time", link: "/history"},
+            {text: "网站历史", icon: "time", link: "/history/"},
         ],
     },
     {

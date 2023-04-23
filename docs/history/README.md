@@ -6,11 +6,11 @@ date: 2019-05-12
 timeline: false
 ---
 
-该文件包含 `vuepress-theme-hope && topjf` 及其文档的所有显着更改。
+该文件包含 `topjf` 项目及其文档的所有显着更改。
 
 <!-- more -->
 
-<!-- @include: ../CHANGELOG.md#recent-beta -->
+<!-- @include: ../../CHANGELOG.md#recent-beta -->
 
 
 ## 更多
