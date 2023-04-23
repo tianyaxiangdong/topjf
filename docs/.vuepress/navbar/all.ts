@@ -2,7 +2,7 @@
 import {navbar} from "vuepress-theme-hope";
 
 export const allNavbar = navbar([
-    "/",
+  //  "/",
     "/home",
     {text: "面试宝典", icon: "overflow", link: "/001/"},
     {text: "文章中心", icon: "blog", link: "/article"},
