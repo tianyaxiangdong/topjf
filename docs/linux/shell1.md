@@ -10,11 +10,13 @@ tag:
 - Shell
 ---
 
+Linux之shell脚本的一些基础知识认识
+
 <!-- more -->
 
-## 基础认识
+# 基础认识
 
-### 终端仿真器
+## 终端仿真器
 
 GNOME Terminal（一般系统默认）  <https://help.gnome.org/users/gnome-terminal/stable>
 
@@ -44,16 +46,16 @@ Wterm  <http://sourceforge.net/projects/wterm>
 
 xterm  <http://invisible-island.net/xterm>
 
-### shell 类型
+## shell 类型
 
 ```
 /bin/bash /bin/sh  /bin/tcsh
 /bin/dash /bin/csh
 ```
 
-### shell 的父子关系-bash
+## shell 的父子关系-bash
 
-#### 1、bash进程
+### 1、bash进程
 
 ```shell
 [root@admin ~]# ps -f
@@ -112,7 +114,7 @@ root      19698  18679  0 10:50 pts/0    00:00:00 ps -f
 
 ![](./shell.assets/true-image-20220914105525933.png)
 
-#### 退出子进程
+### 退出子进程
 
 exit
 
@@ -137,7 +139,7 @@ root      18624  12590  0 10:48 pts/0    00:00:00 bash
 root      22071  18624  0 10:56 pts/0    00:00:00 ps -f
 ```
 
-#### 2、进程列表
+### 2、进程列表
 
 ```shell
 [root@admin ~]# pwd ; ls ; cd /etc ; pwd ; cd ; pwd ; ls
@@ -197,7 +199,7 @@ anaconda-ks.cfg  df.sh  first.sh
 2
 ```
 
-#### 3、后台模式
+### 3、后台模式
 
 `sleep` 命令会在后台（ `&` ）睡眠30秒。当它被置入后台。
 
@@ -223,7 +225,7 @@ root      35093  18624  0 11:28 pts/0    00:00:00 ps -f
 
 > 需要提醒的是：后台作业的结束状态可未必会一直等待到合适的时候才现身。当作业结束状态突然出现在屏幕上的时候，你可别吃惊啊。
 
-#### 4、将进程列表置入后台
+### 4、将进程列表置入后台
 
 ```shell
 [root@admin ~]# (sleep 2 ; echo $BASH_SUBSHELL ; sleep 2)
@@ -248,7 +250,7 @@ root      35093  18624  0 11:28 pts/0    00:00:00 ps -f
 anaconda-ks.cfg  df.log.tar user1.tar
 ```
 
-#### 5、协程 coproc
+### 5、协程 coproc
 
 协程可以同时做两件事。它在后台生成一个子shell，并在这个子shell中执行命令。
 
@@ -298,11 +300,11 @@ bash: 警告:execute_coproc: coproc [43011:COPROC] still exists
 **记住**：生成子shell的成本不低，而且速度还慢。创建嵌套子shell更是火上浇油！
 在命令行中使用子shell能够获得灵活性和便利。要想获得这些优势，重要的是理解子shell的行为方式。对于命令也是如此。
 
-### 理解 shell 的内建命令
+## 理解 shell 的内建命令
 
 内建命令和非内建命令的操作方式大不相同。
 
-#### 1、外部命令
+### 1、外部命令
 
 外部命令，有时候也被称为文件系统命令，是存在于bash shell之外的程序。它们并不是shell程序的一部分。外部命令程序通常位于`/bin`、`/usr/bin`、`/sbin`或`/usr/sbin`中。
 
@@ -346,7 +348,7 @@ root      49731   1490  0 12:04 pts/0    00:00:00 ps -f
 
 ---
 
-#### 2、内部命令
+### 2、内部命令
 
 内建命令不需要使用子进程来执行。它们已经和shell编译成了一体，作为shell工具的组成部分存在。不需要借助外部程序文件来运行
 
@@ -366,9 +368,9 @@ pwd 是 /usr/bin/pwd
 
 既不需要通过衍生出子进程来执行，也不需要打开程序文件，内建命令的**执行速度要更快，效率也更高**。
 
-### linux 环境变量
+## linux 环境变量
 
-#### 1、全局环境变量
+### 1、全局环境变量
 
 要查看全局变量，可以使用 env 或 printenv 命令：
 
@@ -407,7 +409,7 @@ env: HOME: 没有那个文件或目录
 anaconda-ks.cfg  df.log.tar  df.sh  first.sh  user1.tar
 ```
 
-#### 2、局部环境变量
+### 2、局部环境变量
 
 局部环境变量只能在定义它们的进程中可见。
 
@@ -431,7 +433,7 @@ HOSTNAME=admin
 
 ---
 
-#### 3、设置用户定义变量
+### 3、设置用户定义变量
 
 可以通过等号给环境变量赋值，值可以是数值或字符串。
 
@@ -486,7 +488,7 @@ exit
 [root@admin ~]# echo $my_0
 ````
 
-#### 4、设置全局环境变量 export
+### 4、设置全局环境变量 export
 
 创建全局环境变量的方法是先创建一个局部环境变量，然后再把它导出到全局环境中（`export`）。
 
@@ -519,7 +521,7 @@ exit
 I am Global now
 ```
 
-#### 5、删除环境变量 unset
+### 5、删除环境变量 unset
 
 ```shell
 [root@admin ~]# echo $vmy_variable
@@ -553,7 +555,7 @@ I am Global now
 
 ---
 
-#### 6、默认的 shell 环境变量
+### 6、默认的 shell 环境变量
 
 默认情况下，bash shell会用一些特定的环境变量来定义系统环境。这些变量在你的Linux系统上都已经设置好了，只管放心使用。bash shell源自当初的Unix Bourne shell，因此也保留了Unix Bourne shell里定义的那些环境变量。
 
@@ -661,7 +663,7 @@ TMPDIR   目录名，保存bash shell创建的临时文件
 UID    当前用户的真实用户ID（数字形式）
 ```
 
-#### 7、设置 PATH 环境变量
+### 7、设置 PATH 环境变量
 
 ```shell
 [root@admin ~]# echo $PATH
@@ -677,7 +679,7 @@ UID    当前用户的真实用户ID（数字形式）
 
 ---
 
-#### 8、定位系统环境变量
+### 8、定位系统环境变量
 
 **登录 shell**
 
@@ -705,7 +707,7 @@ $HOME/.profile
 
 注意，这个列表中并没有$HOME/.bashrc文件。这是因为该文件通常通过其他文件运行的。
 
-#### 9、交互式 shell 进程
+### 9、交互式 shell 进程
 
 如果bash是作为交互式shell启动的，它就不会访问/etc/profile文件，只会检查用户HOME目录中的.bashrc文件
 
@@ -725,7 +727,7 @@ if [ -f /etc/bashrc ]; then
 f
 ```
 
-#### 10、非交互式shell
+### 10、非交互式shell
 
 最后一种shell是非交互式shell。系统执行shell脚本时用的就是这种shell。不同的地方在于它没有命令行提示符。但是当你在系统上运行脚本时，也许希望能够运行一些特定启动的命令。
 
@@ -757,7 +759,7 @@ echo $BASH_ENV
 
 对于那些不启动子shell的脚本，变量已经存在于当前shell中了。所以就算没有设置 BASH_ENV ，也可以使用当前shell的局部变量和全局变量
 
-#### 11、环境变量持久化
+### 11、环境变量持久化
 
 对全局环境变量来说（Linux系统中所有用户都需要使用的变量），可能更倾向于将新的或修改过的变量设置放在`/etc/profile`文件中，但这可不是什么好主意。如果你升级了所用的发行版，这个文件也会跟着更新，那你所有定制过的变量设置可就都没有了。
 
@@ -765,7 +767,7 @@ echo $BASH_ENV
 
 在大多数发行版中，存储个人用户永久性bash shell变量的地方是 HOME/.bashrc文件。这一点适用于所有类型的shell进程。但如果设置了 BASH_ENV 变量，那么记住，除非它指向的是 HOME/.bashrc，否则你应该将非交互式shell的用户变量放在别的地方。
 
-#### 12、数组变量
+### 12、数组变量
 
 要给某个环境变量设置多个值，可以把值放在括号里，值与值之间用空格分隔。
 
@@ -791,9 +793,9 @@ one two four five
 four
 ```
 
-### 用户及组权限
+## 用户及组权限
 
-#### /etc/passwd
+### /etc/passwd
 
 ```shell
 [root@admin ~]# cat /etc/passwd
@@ -813,7 +815,7 @@ user1:x:1001:1001::/home/user1:/bin/bash
 - 用户HOME目录的位置
 - 用户的默认shell
 
-#### /etc/shadow
+### /etc/shadow
 
 ```shell
 [root@admin ~]# cat /etc/shadow
@@ -833,7 +835,7 @@ daemon:*:18353:0:99999:7:::
 - 用户账户被禁用的日期（用自1970年1月1日到当天的天数表示）
 - 预留字段给将来使用
 
-#### /etc/group
+### /etc/group
 
 ```shell
 [root@admin ~]# cat /etc/group
