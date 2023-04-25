@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [3.206.1](https://github.com/topjf/topjf/compare/v3.206.0...v3.206.1) (2023-04-25)
+
+
+### 📚Docs
+
+* **linux:** 添加 监控ElasticSearch进程异常脚本 ([237629a](https://github.com/topjf/topjf/commit/237629a242204cd868f34d694ada2b2c1a5fd165))
+
 ## [3.206.0](https://github.com/topjf/topjf/compare/v3.205.3...v3.206.0) (2023-04-23)
 
 
