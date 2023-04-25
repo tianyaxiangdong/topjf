@@ -25,6 +25,7 @@ export const linuxJson =
             children: linuxBasis,
             // children: "structure",
         },
+        "monitor-elasticsearch"
         "operation-constraint",
         "command-examples",
         "exception-analysis",
