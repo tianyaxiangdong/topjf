@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [3.206.4](https://github.com/topjf/topjf/compare/v3.206.3...v3.206.4) (2023-04-25)
+
+
+### 🐛Bug Fixes
+
+* 修复shell4文档 ([f48e2b3](https://github.com/topjf/topjf/commit/f48e2b3ca49e92d24edc837449fd0c1d17fc641b))
+
 ## [3.206.3](https://github.com/topjf/topjf/compare/v3.206.2...v3.206.3) (2023-04-25)
 
 
