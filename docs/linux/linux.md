@@ -15,8 +15,6 @@ timeline: false
 
 - [SRE（运维工程师）成长路线的总结和思考](https://zhuanlan.zhihu.com/p/536895461?utm_id=0)
 
-<!-- more -->
-
 ## Linux
 
 - [Linux基础](./basis/basis.md)
@@ -34,6 +32,12 @@ timeline: false
 - [命令大全](./basis/command.md)
 
 ## 运维监控工具
+
+[参考原文](https://mp.weixin.qq.com/s/N7KEHOJ75reTXh4v-9pAAQ)
+
+运维监控工具千千万，仅开源的解决方案就有流量监控（`MRTG、Cacti、SmokePing、Graphite`等）和性能告警（`Nagios、Zabbix、Zenoss Core、Ganglia、OpenTSDB`等）可供选择。
+
+下面我们将针对目前行业内常用的五种监控工具（`Cacti、Nagios、Zabbix、Grafana、Prometheus、Nightingale、OpenFalcon`）详细介绍各自的特点。
 
 - [Zabbix 监控平台](./monitoringtools/zabbix.md)
 - [Nagios 监控平台](./monitoringtools/nagios.md)
