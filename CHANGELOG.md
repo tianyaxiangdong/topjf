@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [3.206.2](https://github.com/topjf/topjf/compare/v3.206.1...v3.206.2) (2023-04-25)
+
+
+### 🐛Bug Fixes
+
+* 修复cz-conventional-changelog配置 ([f326651](https://github.com/topjf/topjf/commit/f3266512794a1b5f716f8fb0ed16dd2605c775f7))
+
 ## [3.206.1](https://github.com/topjf/topjf/compare/v3.206.0...v3.206.1) (2023-04-25)
 
 
