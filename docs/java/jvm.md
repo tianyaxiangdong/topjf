@@ -83,7 +83,9 @@ tag:
 
 见名知义，“标记--清除算法” 就是对无效的对象进行标记，然后清除。
 
+```txt
 ![](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+```
 
 ### 2.2.2 复制算法
 
