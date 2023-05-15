@@ -83,10 +83,6 @@ tag:
 
 见名知义，“标记--清除算法” 就是对无效的对象进行标记，然后清除。
 
-```txt
-![](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
-```
-
 ### 2.2.2 复制算法
 
 标记--复制算法就是把 Java 堆分成两块，每次垃圾回收时只使用其中一块，然后把存活的对象全部移动到另一块区域。
