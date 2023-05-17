@@ -29,7 +29,7 @@ jobs:
       - name: 设置 Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 19
+          node-version: 20
           cache: pnpm
 
       - name: 安装 Deps
@@ -42,7 +42,7 @@ jobs:
           pnpm run build:vite
           > docs/.vuepress/dist/.nojekyll
 
-      - name: 部署文档 topjf.io
+      - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           repository-name: topjf/topjf.github.io
