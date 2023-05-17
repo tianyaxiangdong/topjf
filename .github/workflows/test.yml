@@ -16,7 +16,7 @@ jobs:
         node:
           - "16"
           - "18"
-          - "19" 
+          - "20" 
         bundler:
           - vite
          # - webpack
