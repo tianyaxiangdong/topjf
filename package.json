@@ -1,7 +1,7 @@
 {
   "name": "topjf",
   "version": "3.211.0",
-  "description": "TOPJF.笔记",
+  "description": "TOPJF.笔记。",
   "license": "MIT",
   "scripts": {
     "build:vite": "vuepress-vite build docs",
