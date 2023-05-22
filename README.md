@@ -119,7 +119,7 @@ pnpm add -g pnpm
 
 | 技术                  | 地址                                                                                   |
 |---------------------|--------------------------------------------------------------------------------------|
-| node                | <a href="https://www.npmjs.com/package/node" target="_blank">19.x</a>                |
+| node                | <a href="https://www.npmjs.com/package/node" target="_blank">20.x</a>                |
 | npm                 | <a href="https://www.npmjs.com/package/npm" target="_blank">9.x</a>                  |
 | pnpm                | <a href="https://www.npmjs.com/package/pnpm" target="_blank">8.x</a>                 |
 | vue                 | <a href="https://www.npmjs.com/package/vue" target="_blank">3.x</a>                 |
