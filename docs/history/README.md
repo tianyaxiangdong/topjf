@@ -7,6 +7,7 @@ timeline: false
 ---
 
 该文件包含 `topjf` 项目及其文档的所有显着更改。
+当前主题版本： <!-- @include: ../../package.json{21-23} -->
 
 <!-- more -->
 
