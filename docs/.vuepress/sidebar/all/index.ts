@@ -1,5 +1,4 @@
 import {sidebar} from 'vuepress-theme-hope';
-import {s001} from './s001.ts';
 import {openSources} from './open-source.ts';
 import {toolsJson} from './tools.ts';
 import {javaJson} from './java.ts';
@@ -19,7 +18,7 @@ export const allSidebar = sidebar({
     '/history/': "structure",
     '/books/': "structure",
     '/open-source/': openSources,
-    '/001/': "structure",
+    '/10001/': "structure",
     '/java/': javaJson,
     '/web/': webJson,
     '/middleware/': middlewareJson,

@@ -4,14 +4,14 @@ import {navbar} from "vuepress-theme-hope";
 export const allNavbar = navbar([
   //  "/",
     "/home",
-    {text: "面试宝典", icon: "overflow", link: "/001/"},
+    {text: "面试宝典", icon: "overflow", link: "/10001"},
     {text: "文章中心", icon: "blog", link: "/article"},
     {
         text: "网站相关",
         icon: "info",
         children: [
             {text: "关于本站", icon: "people", link: "/about-this"},
-            {text: "网站历史", icon: "time", link: "/history/"},
+            {text: "网站历史", icon: "time", link: "/history"},
         ],
     },
     {
