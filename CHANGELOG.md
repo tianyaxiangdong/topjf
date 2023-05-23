@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [3.212.1](https://github.com/topjf/topjf/compare/v3.212.0...v3.212.1) (2023-05-23)
+
+
+### 📚Docs
+
+* 修改文档目录名称 ([82ed84a](https://github.com/topjf/topjf/commit/82ed84a841a07f0d1a5cf85bdf621d5b49bade11))
+
 ## [3.212.0](https://github.com/topjf/topjf/compare/v3.211.0...v3.212.0) (2023-05-23)
 
 
