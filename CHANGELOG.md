@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [3.212.2](https://github.com/topjf/topjf/compare/v3.212.1...v3.212.2) (2023-06-03)
+
+
+### 📚Docs
+
+* **Linux:** 添加Linux进程的挂起与恢复 ([d2b7443](https://github.com/topjf/topjf/commit/d2b74433f46bf2c9901582e00482bfa2c2105ed8))
+
 ## [3.212.1](https://github.com/topjf/topjf/compare/v3.212.0...v3.212.1) (2023-05-23)
 
 
