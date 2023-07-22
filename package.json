@@ -15,12 +15,12 @@
     "update-package": "pnpm dlx vp-update"
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.64",
+    "@vuepress/client": "2.0.0-beta.66",
     "vue": "^3.3.4",
-    "vuepress": "2.0.0-beta.64",
-    "vuepress-plugin-search-pro": "2.0.0-beta.230",
-    "vuepress-theme-hope": "2.0.0-beta.230",
-    "vuepress-vite": "2.0.0-beta.64"
+    "vuepress": "2.0.0-beta.66",
+    "vuepress-plugin-search-pro": "2.0.0-beta.233",
+    "vuepress-theme-hope": "2.0.0-beta.233",
+    "vuepress-vite": "2.0.0-beta.66"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.5.1",
@@ -30,7 +30,7 @@
     "husky": "^8.0.3",
     "markdownlint-cli": "^0.33.0"
   },
-  "packageManager": "pnpm@8.5.1",
+  "packageManager": "pnpm@8.6.9",
   "engines": {
     "node": ">=16",
     "npm": ">=8",
