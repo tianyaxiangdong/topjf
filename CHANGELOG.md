@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [3.233.0](https://github.com/topjf/topjf/compare/v3.232.0...v3.233.0) (2023-07-22)
+
+
+### ✨Features
+
+* **theme:** 升级vuepress-theme-hope到beta.233 ([0a3d904](https://github.com/topjf/topjf/commit/0a3d904322a14c039fdee83103c72e2fda743c5a))
+
 ## [3.230.0](https://github.com/topjf/topjf/compare/v3.229.0...v3.230.0) (2023-07-04)
 
 
