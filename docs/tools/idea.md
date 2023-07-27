@@ -58,6 +58,73 @@ Alibaba Java、CamelCase、Chinese、codeGlance3、codota、GenerateAllSetter、
 
 ![](./idea.assets/true-image-2023030177.png)
 
+
+## linux 创建 desktop 桌面文件
+
+- idea.desktop
+
+×最好创建在idea-IU/bin/目录里×
+
+```
+[Desktop Entry]
+Encoding=UTF-8
+Name=idea 2021.2.2
+Comment=idea 2021.2.2
+Exec=/data/home/yus/data/rj/idea-IU/bin/idea.sh
+Icon=/data/home/yus/data/rj/idea-IU/bin/idea.png
+Terminal=false
+starttupNotify=true
+Type=Application
+Categories=Application;Development;
+```
+
+- 构建快捷菜单方式
+
+```
+#!/bin/bash
+
+echo "-----------开始构建快捷-------------"
+echo "----------------------------------"
+echo
+ln -s /data/home/yus/data/rj/idea-IU/bin/idea.desktop /usr/share/applications/idea.desktop
+echo "link idea.desktop to [/usr/share/applications]"
+echo "查看："
+ls -all /usr/share/applications/idea.desktop
+sleep 3
+echo
+echo
+# （/usr/local/share/applications）这个目录可能不存在，没关系的
+ln -s /data/home/yus/data/rj/idea-IU/bin/idea.desktop /usr/local/share/applications/idea.desktop
+echo "link idea.desktop to [/usr/local/share/applications]"
+echo
+echo "查看："
+ls -all /usr/local/share/applications/idea.desktop
+echo
+echo "-----------------------------------"1
+sleep 9
+
+```
+
+- 删除
+
+```
+#!/bin/bash
+
+echo "----------------------------------------------------------"
+echo
+rm -rf /usr/share/applications/idea.desktop
+echo "rm /usr/share/applications/idea.desktop"
+echo
+sleep 3
+echo
+rm -rf /usr/local/share/applications/idea.desktop
+echo "rm /usr/local/share/applications/idea.desktop"
+echo
+echo "----------------------------------------------------------"
+sleep 6
+```
+
+
 ## 常用快捷键
 
 ```markdown
