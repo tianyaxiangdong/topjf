@@ -163,8 +163,13 @@ default -> 18.15 (-> v18.15.0)
 - 安装
 
 ```bash
+sudo ln -s /soft/nodejs/bin/corepack /usr/local/bin/ && corepack -v
+
 corepack enable
-corepack prepare pnpm@7.30.0 --activate
+corepack prepare pnpm@latest --activate
+
+sudo ln -s /soft/nodejs/lib/node_modules/corepack/dist/pnpm.js /soft/nodejs/bin/pnpm
+sudo ln -s /soft/nodejs/bin/pnpm /usr/local/bin/ && pnpm -v
 ```
 
 - 卸载：`corepack disable pnpm`
@@ -173,12 +178,63 @@ corepack prepare pnpm@7.30.0 --activate
 
 ```bash
 npm install -g cnpm --registry=https://registry.npm.taobao.org
-sudo ln -s /rj/nodejs/bin/cnpm /usr/local/bin/ && ls /usr/local/bin/
+sudo ln -s /soft/nodejs/bin/cnpm /usr/local/bin/ && ls /usr/local/bin/
 
 cnpm -v
 ```
 
 > "user" config from /home/jf123/.npmrc
+
+### 构建node npm cnpm corepack pnpm快捷方式
+
+```bash
+#!/bin/bash
+
+echo "-----------构建node npm cnpm corepack pnpm快捷方式-------------"
+echo "--------------------------------------"
+echo
+# nodejs包默认有
+sudo ln -s /data/home/yus/data/rj/nodejs/bin/node /usr/local/bin/ && node -v
+echo "link “node” to [/usr/local/bin/]"
+echo "查看："
+ls -all /usr/local/bin/
+sleep 3
+echo
+echo
+# nodejs包默认有
+sudo ln -s /data/home/yus/data/rj/nodejs/bin/npm /usr/local/bin/ && npm -v
+echo "link ”npm“ to [/usr/local/bin/]"
+echo
+echo "查看："
+ls -all /usr/local/bin/
+echo
+echo
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+cnpm -v
+sudo ln -s /data/home/yus/data/rj/nodejs/bin/cnpm /usr/local/bin/ && cnpm -v
+echo "link “cnpm” to [/usr/local/bin/]"
+echo "查看："
+ls -all /usr/local/bin/
+sleep 3
+echo
+echo
+# nodejs包默认有
+sudo ln -s /data/home/yus/data/rj/nodejs/bin/corepack /usr/local/bin/ && corepack -v
+echo "link “corepack” to [/usr/local/bin/]"
+echo "查看："
+ls -all /usr/local/bin/
+corepack enable
+corepack prepare pnpm@latest --activate
+sudo ln -s /data/home/yus/data/rj/nodejs/lib/node_modules/corepack/dist/pnpm.js /data/home/yus/data/rj/nodejs/bin/pnpm
+sudo ln -s /data/home/yus/data/rj/nodejs/bin/pnpm /usr/local/bin/ && pnpm -v
+echo "link ”pnpm“ to [/usr/local/bin/]"
+echo "查看："
+ls -all /usr/local/bin/
+echo
+echo
+echo "---------------------------------------"
+sleep 9
+```
 
 ### 全局模块存储设置
 
