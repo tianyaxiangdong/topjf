@@ -23,6 +23,24 @@ tag:
 - [jdk各个版本下载](https://www.oracle.com/java/technologies/downloads/)
 - [jdk各个版本档案](https://www.oracle.com/java/technologies/downloads/archive/)
 - [jdk各版本下载-百度网盘](https://pan.baidu.com/s/17pkHcX7YrssnEVctveHbHQ) 提取码：1234
+- [生命周期图](https://www.oracle.com/java/technologies/java-se-support-roadmap.html#Oracle%20JDK%20and%20OpenJDK%20Builds%20from%20Oracle)
+
+|Oracle Java SE Support Roadmap*†| |  |  |  |
+| ---- | ---- | ---- | ---- | ---- |
+|Release 	| GA Date 	|Premier Support Until |	Extended Support Until 	|Sustaining Support|
+|8﻿ (LTS)** 	|March 2014 |	March 2022 |	December 2030***** |	Indefinite|
+|9 - 10﻿ (non-LTS) |	September 2017 - March 2018 |	March 2018 - September 2018 	|Not Available |	Indefinite|
+|11 (LTS) |	September 2018 	|September 2023 |	January 2032 |	Indefinite|
+|12 - 16 (non-LTS) |	March 2019 - March 2021| September 2019 - September 2021 | Not Available      |Indefinite|
+|17 (LTS) |	September 2021 	|September 2026**** 	|September 2029**** 	|Indefinite|
+|18 (non-LTS) |	March 2022 	|September 2022 	|Not Available 	|Indefinite|
+|19 (non-LTS) |	September 2022 |	March 2023 	|Not Available 	|Indefinite|
+|20 (non-LTS) |	March 2023 	|September 2023 	|Not Available 	|Indefinite|
+|21 (LTS)*** |	September 2023 |	September 2028 |	September 2031 	|Indefinite|
+|22 (non-LTS)*** |	March 2024 	|September 2024 |	Not Available |	Indefinite|
+|23 (non-LTS)*** |	September 2024 	|March 2025 	|Not Available |	Indefinite|
+|24 (non-LTS)*** |	March 2025 |	September 2025 	|Not Available |	Indefinite|
+|25 (LTS)*** |	September 2025 	|September 2033**** 	|Not Available |	Indefinite|
 
 ### 2、下载 SSH Secure File Transfer Client 连接工具 或 MobaXterm
 
