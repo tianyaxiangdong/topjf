@@ -10,22 +10,31 @@ tag:
 
 <!-- more -->
 
-Node.js  [安装-教程](https://blog.csdn.net/qq_42476834/article/details/110789382)
+[Node.js 安装教程](https://blog.csdn.net/qq_42476834/article/details/110789382)
 
-[node 官网下载](http://nodejs.cn/download/)、[github/nodejs/release](https://github.com/nodejs/release)、[官网各个版本下载](https://nodejs.org/download/release/)
+[node 官网下载](http://nodejs.cn/download/)
+
+[官网各个版本下载](https://nodejs.org/download/release/)
 
 [pnpm 官网安装教程](https://pnpm.io/zh/installation)
+
+[github/nodejs/release](https://github.com/nodejs/release)
 
 
 ## NodeJS Release schedule
 
 | 版本  | 状态   | 代号     |开始时间 | 进入LTS时间 | 进入维护时间 |终止时间|
 | :--:     | :---:               | :---:        | :---:          | :---:            | :---:             | :---:                     |
-| [14.x](https://nodejs.org/download/release/latest-v14.x/) | **Maintenance**     | Fermium  | 2020-04-21     | 2020-10-27       | 2021-10-19        | 2023-04-30                |
-| [16.x](https://nodejs.org/download/release/latest-v16.x/) | **Maintenance**     | Gallium  | 2021-04-20     | 2021-10-26       | 2022-10-18        | 2023-09-11                |
+| [14.x](https://nodejs.org/download/release/latest-v14.x/) | **End-of-Life**     | Fermium  | 2020-04-21     | 2020-10-27       | 2021-10-19        | 2023-04-30                |
+| [16.x](https://nodejs.org/download/release/latest-v16.x/) | **End-of-Life**     | Gallium  | 2021-04-20     | 2021-10-26       | 2022-10-18        | 2023-09-11                |
 | [18.x](https://nodejs.org/download/release/latest-v18.x/) | **LTS**             | Hydrogen | 2022-04-19     | 2022-10-25       | 2023-10-18        | 2025-04-30                |
-| [19.x](https://nodejs.org/download/release/latest-v19.x/) | **Maintenance**         |              | 2022-10-18     | -                | 2023-04-01        | 2023-06-01                |
-| [20.x](https://nodejs.org/download/release/latest-v20.x/)     | **Current**         |              | 2023-04-18     | 2023-10-24       | 2024-10-22        | 2026-04-30                |
+| [19.x](https://nodejs.org/download/release/latest-v19.x/) | **End-of-Life**     |          | 2022-04-19     | 2022-10-25       | 2023-10-18        | 2025-04-30                |
+| [20.x](https://nodejs.org/download/release/latest-v20.x/)     | **LTS**         |   Iron   | 2023-04-18     | 2023-10-24       | 2024-10-22        | 2026-04-30                |
+| [21.x](https://nodejs.org/download/release/latest-v21.x/)     | **Pending**         |              | 2023-10-17     |    -    | 2024-04-01        | 2024-06-01               |
+| [22.x](https://nodejs.org/download/release/latest-v22.x/)     | **Pending**         |              | 2024-04-23     | 2024-10-29       | 2025-10-21        | 2027-04-30               |
+| [23.x](https://nodejs.org/download/release/latest-v23.x/)     | **Pending**         |              | 2024-10-15     |    -    | 2025-04-01        | 2025-06-01               |
+| [24.x](https://nodejs.org/download/release/latest-v24.x/)     | **Pending**         |              | 2025-04-22     | 2025-10-28       | 2026-10-20        | 2028-04-30               |
+
 
 状态说明：
 - **Pending**：等待研发。
