@@ -310,9 +310,9 @@ npm config list
 
 ## window 配置
 
-[下载地址](https://nodejs.org/download/release/)，选择 `latest-v19.x` 版本
+[下载地址](https://nodejs.org/download/release/)，选择 `latest-v20.x` 版本
 
-双击运行 `node-v19.8.1-x64.msi`文件进行安装。
+双击运行 `node-v20.10.0-x64.msi`文件进行安装。
 
 安装后，安装其他组件的默认安装存放位置：`C:\Users\{username}\AppData\Roaming\npm\node_modules` 里面。
 
@@ -320,7 +320,7 @@ npm config list
 
 `npm i -g element-ui` 存放在 `AppData\Roaming\npm\node_modules` 目录下-> `element-ui`;
 
-`npm i -g pnpm@7.30.0` 存放在 `AppData\Roaming\npm\node_modules` 目录下-> `pnpm`
+`npm i -g pnpm@latest` 存放在 `AppData\Roaming\npm\node_modules` 目录下-> `pnpm`
 
 
 ### 全局模块存储设置
@@ -330,14 +330,14 @@ npm config list
 *最好赋予nodejs文件权限，不然系统自动创建文件时报错*
 
 ```shell
-npm config set prefix "D:\rj-win\nodejs\node_global"
+npm config set prefix "D:\nodejs\node_global"
 
-npm config set cache "D:\rj-win\nodejs\node_cache"
+npm config set cache "D:\nodejs\node_cache"
 ```
 
 ### 配置环境变量
 
-NODE_HOME: `D:\rj-win\nodejs`
+NODE_HOME: `D:\nodejs\`
 
 系统变量.Path：`%NODE_HOME%`
 
@@ -345,12 +345,21 @@ NODE_HOME: `D:\rj-win\nodejs`
 
 引入 elementui：`npm i -g element-ui -S`
 
+### 使用 corepack 安装 pnpm
 
-### 使用npm安装Pnpm
+```sh
+corepack enable
+corepack prepare pnpm@latest --activate
+```
 
-安装：`npm install -g pnpm@7.30.0`
+> 卸载：`corepack disable pnpm`
 
-### 使用PowerShell安装Pnpm
+
+### 使用 npm 安装 pnpm
+
+安装：`npm install -g pnpm@latest`
+
+### 使用 PowerShell 安装 pnpm
 
 [installation#windows](https://pnpm.io/zh/installation#windows)
 
@@ -367,7 +376,7 @@ Copying pnpm CLI from C:\Users\k\AppData\Local\Temp\tmpE1F.tmp.extracted\package
 
 Next configuration changes were made:
 PNPM_HOME=C:\Users\k\AppData\Local\pnpm
-Path=%PNPM_HOME%;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;%IntelliJ IDEA%;C:\Users\k\AppData\Roaming\npm;%PyCharm%;D:\rj-win\Microsoft VS Code\bin;
+Path=%PNPM_HOME%;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;%IntelliJ IDEA%;C:\Users\k\AppData\Roaming\npm;%PyCharm%;D:\Microsoft VS Code\bin;
 
 Setup complete. Open a new terminal to start using pnpm.
 ```
