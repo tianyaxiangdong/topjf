@@ -7,7 +7,6 @@ headerDepth: 5
 date: 2020-01-01
 sticky: true
 star: true
-headerDepth: 5
 tag:
 - Java
 ---
