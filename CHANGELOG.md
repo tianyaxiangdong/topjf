@@ -6,7 +6,8 @@
 
 ### ⚠ BREAKING CHANGES
 
-* 版本发生变更
+* **md-enhance: ** `container`选项已弃用，使用`hint`替代危险重命名为警告以对齐GFM
+* **md-enhance: ** `presentation`选项已弃用，使用`revealJs`替代
 
 ### ✨Features
 
