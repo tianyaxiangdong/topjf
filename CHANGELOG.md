@@ -1,6 +1,23 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [4.0.0](https://github.com/topjf/topjf/compare/v3.237.0...v4.0.0) (2023-11-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* 版本发生变更
+
+### ✨Features
+
+* 更新vuepress-theme-hope：2.0.0-rc.1，vuepress-vite：2.0.0-rc.0，添加其他依赖 ([68dc983](https://github.com/topjf/topjf/commit/68dc983162bf2fae74cf818ebaa0666efdbd6301))
+
+
+### 🐛Bug Fixes
+
+* 更新md文件headerDepth重复 ([558cce1](https://github.com/topjf/topjf/commit/558cce12edcc4ceb0745c20a341a2cd72cebe8d8))
+* 更新md文件以及主题配置 ([8765e21](https://github.com/topjf/topjf/commit/8765e211d044587790ec33e1daff68e4f4a07ca6))
+
 ## [3.237.0](https://github.com/topjf/topjf/compare/v3.236.0...v3.237.0) (2023-09-28)
 
 
