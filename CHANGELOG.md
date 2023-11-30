@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [4.0.1](https://github.com/topjf/topjf/compare/v4.0.0...v4.0.1) (2023-11-30)
+
+
+### 🐛Bug Fixes
+
+* **theme:** container-&gt;hint ([e0760f7](https://github.com/topjf/topjf/commit/e0760f7a624c12005d2749c8f54371b9b032cd0b))
+
 ## [4.0.0](https://github.com/topjf/topjf/compare/v3.237.0...v4.0.0) (2023-11-30)
 
 
