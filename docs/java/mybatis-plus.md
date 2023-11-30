@@ -3,6 +3,7 @@ icon: edit
 title: 整合mybatis-plus
 category: 
 - mybatis
+headerDepth: 5
 date: 2020-01-01
 tag:
 - mybatis-plus

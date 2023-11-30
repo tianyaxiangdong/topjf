@@ -3,6 +3,7 @@ icon: /icons/docker/docker_16x16.png
 title: DockerFile基于centos7并设置中文UTF-8字符集
 category: 
 - Docker
+headerDepth: 5
 date: 2020-01-20
 tag:
 - docker

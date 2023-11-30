@@ -3,6 +3,7 @@ icon: /icons/k8s/k8s_16x16.png
 title: k8s nfs-pv-pvc-ConfigMap-secret
 category: 
 - kubernetes
+headerDepth: 5
 date: 2022-08-24
 tag:
 - Linux

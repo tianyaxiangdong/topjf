@@ -3,6 +3,7 @@ icon: edit
 title: gitlab仓库管理
 category: 
 - 开发工具
+headerDepth: 5
 date: 2022-10-03
 tag:
 - gitlab

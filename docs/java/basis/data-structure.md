@@ -3,6 +3,7 @@ icon: edit
 title: 数据结构
 category: 
 - Java
+headerDepth: 5
 date: 2019-08-10
 tag:
 - data-structure

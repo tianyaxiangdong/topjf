@@ -3,6 +3,7 @@ icon: linux
 title: ansible安装nginx
 category: 
 - Linux
+headerDepth: 5
 date: 2022-07-30
 tag:
 - ansible

@@ -3,6 +3,7 @@ icon: linux
 title: centos网络网卡配置
 category: 
 - Linux
+headerDepth: 5
 date: 2021-09-10
 tag:
 - Linux

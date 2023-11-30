@@ -29,17 +29,7 @@ export default hopeTheme({
     iconAssets: "iconfont",
     // iconPrefix: "iconfont icon-",
 
-    pure: false,
-
-    themeColor: {
-        red: "#e83838",
-        green: "#28af73",
-        orange: "#fb9b5f",
-    },
-
     fullscreen: true,
-
-    headerDepth: 3,
 
     pageInfo: ["Author", "Category", "Tag", "Date", "Original", "Word", "PageView", "ReadingTime"],
 
@@ -139,9 +129,7 @@ export default hopeTheme({
                 presets: ["ts", "vue"],
             },
             //幻灯片
-            presentation: {
-                plugins: ["highlight", "math", "search", "notes", "zoom"],
-            },
+            revealJs: true,
             sub: true,
             sup: true,
             tabs: true,
@@ -159,7 +147,6 @@ export default hopeTheme({
             imgMark: true,
             imgSize: true,
             figure: true,
-
         },
 
         copyCode: {

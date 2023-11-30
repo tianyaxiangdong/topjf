@@ -3,6 +3,7 @@ icon: edit
 title: linux安装MySQL
 category: 
 - database
+headerDepth: 5
 date: 2020-05-12
 tag:
 - MySQL

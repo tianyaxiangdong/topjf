@@ -3,6 +3,7 @@ icon: /icons/docker/docker_16x16.png
 title: docker容器日志占用磁盘空间过大问题
 category: 
 - Docker
+headerDepth: 5
 date: 2023-03-28
 tag:
 - docker

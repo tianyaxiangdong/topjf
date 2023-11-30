@@ -56,6 +56,7 @@ icon: edit
 title: 性能
 category: 
 - Java
+headerDepth: 5
 date: 2023-03-12
 tag:
 - 工
@@ -101,19 +102,6 @@ timeline: false
 ```
 
 ## 技术选型
-
-- 安装 pnpm：
-
-[安装教程 pnpm.io/zh](https://pnpm.io/zh)
-
-window 通过 npm 安装
-
-```shell
-npm install -g pnpm@8.2.0
-
-pnpm add -g pnpm
-
-```
 
 - 技术版本列表
 

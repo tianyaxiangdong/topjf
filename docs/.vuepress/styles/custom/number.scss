@@ -1,9 +1,9 @@
 
 // 给这两种导航统一编号
 // 各 md 文件的导航
-.sidebar-group>ul.sidebar-links, 
+.vp-sidebar-group>ul.vp-sidebar-links, 
 // 一个 md 文件之内的导航
-ul.sidebar-sub-headers   
+ul.vp-sidebar-sub-headers   
 {
   counter-reset: section;
   list-style-type: none;
@@ -15,7 +15,7 @@ ul.sidebar-sub-headers
             padding-left: 1.75rem;
        }
  
-       > .sidebar-group {       
+       > .vp-sidebar-group {       
            margin-top: -2em;
            margin-left: 0.8em;  
        }

@@ -20,24 +20,9 @@ export default defineUserConfig({
 
     theme,
 
-    bundler: viteBundler({
-        viteOptions: {
-            build: {
-                chunkSizeWarningLimit: 12040,
-            }
-        },
-        vuePluginOptions: {},
-    }),
-
     markdown: {
-        anchor: {
-            level: [2, 3, 4],
-        },
         headers: {
-            level: [2, 3, 4],
-        },
-        toc: {
-            level: [2, 3, 4],
+            level: [2, 3, 4, 5, 6],
         },
     },
 
@@ -48,4 +33,13 @@ export default defineUserConfig({
 
     //预读取，开启pwa后建议为false
     shouldPrefetch: false,
+    
+    bundler: viteBundler({
+        viteOptions: {
+            build: {
+                chunkSizeWarningLimit: 12040,
+            }
+        },
+        vuePluginOptions: {},
+    }),
 });
