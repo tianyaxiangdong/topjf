@@ -11,8 +11,9 @@
 
 ### ✨Features
 
-* 更新vuepress-theme-hope：2.0.0-rc.1，vuepress-vite：2.0.0-rc.0，添加其他依赖 ([68dc983](https://github.com/topjf/topjf/commit/68dc983162bf2fae74cf818ebaa0666efdbd6301))
-
+*  **theme:** 升级vuepress-theme-hope：2.0.0-rc.1 ([68dc983](https://github.com/topjf/topjf/commit/68dc983162bf2fae74cf818ebaa0666efdbd6301))
+* **theme:** 升级vuepress-vite：2.0.0-rc.0 ([68dc983](https://github.com/topjf/topjf/commit/68dc983162bf2fae74cf818ebaa0666efdbd6301))
+* **theme:** 添加其他依赖
 
 ### 🐛Bug Fixes
 
