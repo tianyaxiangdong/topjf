@@ -140,7 +140,7 @@ export default hopeTheme({
             //脚注
             footnote: true,
             //自定义容器:提示、注释、信息、注意、警告和详情
-            container: true,
+            hint: true,
             // 启用图片大小
             imgLazyload: true,
             // 启用图片标记
