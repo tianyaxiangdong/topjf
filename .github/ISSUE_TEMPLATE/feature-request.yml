@@ -22,7 +22,7 @@ body:
     attributes:
       label: 描述功能
       description: 它的用途以及为什么要
-      placeholder: 清晰简洁地描述该功能是什么，以及它将增强或解决什么。 之前. 我总是很沮丧 [...]
+      placeholder: 清晰简洁地描述该功能是什么，以及它将增强或解决什么。[...]
     validations:
       required: true
 
