@@ -1,6 +1,15 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [4.2.0](https://github.com/topjf/topjf/compare/v4.1.0...v4.2.0) (2023-12-06)
+
+
+### ✨Features
+
+* **theme:** setting node packages node version&gt;16.14 ([e809aaf](https://github.com/topjf/topjf/commit/e809aaff895efa1a9b8f423efee88b055801298c))
+* **theme:** setting node packages node version&gt;18.16 ([9d0ad8b](https://github.com/topjf/topjf/commit/9d0ad8be8128763da62bab2b42568f8847bf7aa4))
+* **theme:** setting node packages node version&gt;18.16 ([ddf6a7d](https://github.com/topjf/topjf/commit/ddf6a7de867ed209235e178c1d01e284bb7ce759))
+
 ## [4.1.0](https://github.com/topjf/topjf/compare/v4.0.1...v4.1.0) (2023-12-06)
 
 
