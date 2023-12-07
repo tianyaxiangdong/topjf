@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [4.2.1](https://github.com/topjf/topjf/compare/v4.2.0...v4.2.1) (2023-12-07)
+
+
+### 🐛Bug Fixes
+
+* update commit shell ([e29e1ed](https://github.com/topjf/topjf/commit/e29e1ed24d60bf3beca92c87e8a06bbddc9dc755))
+
 ## [4.2.0](https://github.com/topjf/topjf/compare/v4.1.0...v4.2.0) (2023-12-06)
 
 
