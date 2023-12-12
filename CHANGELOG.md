@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-change -->
 
+## [4.4.15](https://github.com/topjf/topjf/compare/v4.4.14...v4.4.15) (2023-12-12)
+
+
+### 📚Docs
+
+* 修改博客文档 ([782a6ea](https://github.com/topjf/topjf/commit/782a6eaff5dba7284f9748ccb29ef4efaf44c7b4))
+
 ## [4.4.14](https://github.com/topjf/topjf/compare/v4.4.5...v4.4.14) (2023-12-12)
 
 
