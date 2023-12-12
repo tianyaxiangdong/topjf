@@ -1,6 +1,18 @@
 # Changelog
 <!-- #region recent-change -->
 
+## [4.4.14](https://github.com/topjf/topjf/compare/v4.4.13...v4.4.14) (2023-12-12)
+
+
+### 🐛Bug Fixes
+
+* changelog使用V3版本 ([6633b50](https://github.com/topjf/topjf/commit/6633b5027107427ebfaa0dbe446188b2636a3ab3))
+
+
+### 📚Docs
+
+* 更新侧边栏 ([623d5a4](https://github.com/topjf/topjf/commit/623d5a4ba63047739846db3698528319867c7ee8))
+
 ## [4.4.13](https://github.com/topjf/topjf/compare/v4.4.12...v4.4.13) (2023-12-12)
 
 
