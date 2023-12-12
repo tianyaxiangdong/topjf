@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-change -->
 
+## [4.4.2](https://github.com/topjf/topjf/compare/v4.4.1...v4.4.2) (2023-12-12)
+
+
+### 📚Docs
+
+* **log:** 修改#recent-change ([4c3e1c1](https://github.com/topjf/topjf/commit/4c3e1c1bd6ef5d30443bf92a28255de5644a7c65))
+
 ## [4.4.1](https://github.com/topjf/topjf/compare/v4.4.0...v4.4.1) (2023-12-12)
 
 
