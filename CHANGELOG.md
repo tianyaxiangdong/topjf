@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-change -->
 
+## [4.4.1](https://github.com/topjf/topjf/compare/v4.4.0...v4.4.1) (2023-12-12)
+
+
+### 📚Docs
+
+* **log:** 更新**CHANGELOG**文件 ([d384698](https://github.com/topjf/topjf/commit/d3846982e53473c1bb9b767a22590defdba01858))
+
 ## [4.4.0](https://github.com/topjf/topjf/compare/v4.3.0...v4.4.0) (2023-12-12)
 
 
@@ -620,4 +627,3 @@
 
 - 更新 **次版本**为 **vuepress-theme-hope主题版本**
 - 本次 **无任何代码更新**
-
