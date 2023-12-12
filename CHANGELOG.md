@@ -1,5 +1,5 @@
 # Changelog
-<!-- #region recent-beta -->
+<!-- #region recent-change -->
 
 ## [4.4.0](https://github.com/topjf/topjf/compare/v4.3.0...v4.4.0) (2023-12-12)
 
@@ -169,6 +169,8 @@
 ### ✨Features
 
 * **theme:** 升级vuepress-theme-hope到beta.206 ([45dab12](https://github.com/topjf/topjf/commit/45dab1297f1c7b8fc909cc390e155577e9d9bfdb))
+
+<!-- #endregion recent-change -->
 
 ## [3.205.3](https://github.com/topjf/topjf/compare/v3.205.2...v3.205.3) (2023-04-23)
 
@@ -619,4 +621,3 @@
 - 更新 **次版本**为 **vuepress-theme-hope主题版本**
 - 本次 **无任何代码更新**
 
-<!-- #endregion recent-beta -->
