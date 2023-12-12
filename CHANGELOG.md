@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-change -->
 
+## [4.4.13](https://github.com/topjf/topjf/compare/v4.4.12...v4.4.13) (2023-12-12)
+
+
+### Bug Fixes
+
+* 更新release.yml ([7c6d45a](https://github.com/topjf/topjf/commit/7c6d45a3b90d81e24ca1df761936e777e71f51ef))
+
 ## [4.4.12](https://github.com/topjf/topjf/compare/v4.4.11...v4.4.12) (2023-12-12)
 
 
