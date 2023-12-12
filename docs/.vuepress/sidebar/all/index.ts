@@ -19,7 +19,7 @@ export const allSidebar = sidebar({
     '/books/': "structure",
     '/open-source/': "structure",
     '/10001/': "structure",
-    '/java/': javaJson,
+    '/java/': "structure",
     '/web/': "structure",
     '/middleware/': "structure",
     '/database/': "structure",

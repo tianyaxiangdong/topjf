@@ -21,7 +21,7 @@ jobs:
         env:
           GITHUB_TOKEN: '${{ secrets.RELEASE_TOKEN }}'
           MERGE_LABELS: ''
-          # title，and，description
+          # title，and，description "chore(#{pullRequest.number}): {pullRequest.title}"
           MERGE_COMMIT_MESSAGE: "{pullRequest.title} (#{pullRequest.number})"
           # 重试次数
           MERGE_RETRIES: '0'
