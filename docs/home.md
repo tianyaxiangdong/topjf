@@ -35,37 +35,37 @@ features:
 - title: 数据库
   icon: mysql
   details: MySQL、Oracle
-  link: /database/database
+  link: /database
 
 - title: 前端
   icon: html
   details: 前端知识、vue框架、react框架
-  link: /web/web
+  link: /web
 
 - title: 中间件
   icon: tool
   details: ES检索服务、Nginx、Redis、MQ
-  link: /middleware/middleware
+  link: /middleware
 
 - title: Linux
   icon: linux
   details: Linux基础知识、常用Linux命令实例、升级内核、网卡配置、YUM源配置、运维监控工具、ansible管理工具、jenkins自动部署、命令大全
-  link: /linux/linux
+  link: /linux
 
 - title: kubernetes集群管理
   icon: /icons/k8s/k8s_32x32.png
   details: k8s集群管理、自动化部署 CI|CD、Helm、KubeSphere、Rancher、KubeOperator
-  link: /k8s/k8s
+  link: /k8s
 
 - title: Docker
   icon: /icons/docker/docker_32x32.png
   details: Docker基础到实战、安装应用服务、容器编排
-  link: /docker/docker
+  link: /docker
 
 - title: 开发工具
   icon: tool
   details: 常用开发管理工具idea|eclipse、数据库管理工具、Git知识
-  link: /tools/tools
+  link: /tools
 
 ---
 

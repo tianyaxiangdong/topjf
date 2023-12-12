@@ -2,22 +2,13 @@
  * Java 侧边栏json数据
  */
 export const javaJson =
-    [{
-        text: "基础",
-        icon: "java",
-        prefix: "basis/",
-        children: [
-            "arraylist",
-            "basic-grammar",
-            "data-structure",
-            "exception",
-            "io-note",
-            "mysql-setting",
-            "oop",
-            "string",
-            "web-servlet-jsp",
-        ]
-    },
+    [
+        {
+            text: "基础",
+            icon: "java",
+            prefix: "basis/",
+            children: "structure",
+        },
         "evolution-to-cloud",
         "java-log",
         "spring-cloud-logsystem",
@@ -64,4 +55,5 @@ export const javaJson =
                 "java18",
                 "java19",
             ],
-        },]
+        },
+    ]
