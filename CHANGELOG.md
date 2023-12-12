@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-change -->
 
+## [4.4.5](https://github.com/topjf/topjf/compare/v4.4.4...v4.4.5) (2023-12-12)
+
+
+### Bug Fixes
+
+* **Actions:** 更新Github Actions工作流文件依赖版本 ([a945453](https://github.com/topjf/topjf/commit/a94545313aa2bbdfb748b0fe8f0138dbfa18555b))
+
 ## [4.4.4](https://github.com/topjf/topjf/compare/v4.4.3...v4.4.4) (2023-12-12)
 
 
