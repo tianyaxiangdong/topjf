@@ -23,8 +23,8 @@
     "vuepress-vite": "2.0.0-rc.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.8.1",
-    "@commitlint/config-conventional": "^17.8.1",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
     "@vue/repl": "^3.0.0",
     "chart.js": "^4.4.1",
     "commitizen": "^4.3.0",
