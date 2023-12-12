@@ -1,6 +1,14 @@
 # Changelog
 <!-- #region recent-change -->
 
+## [4.4.8](https://github.com/topjf/topjf/compare/v4.4.7...v4.4.8) (2023-12-12)
+
+
+### Bug Fixes
+
+* **Actions:** 测试test ([d67ce06](https://github.com/topjf/topjf/commit/d67ce06151c851797193f3b108a6b21bdaba7e8e))
+* 修改commitizen.types.test说明 ([df91dcc](https://github.com/topjf/topjf/commit/df91dcc0ec98a2b8ed3de83a8a09e56e93e5f60a))
+
 ## [4.4.7](https://github.com/topjf/topjf/compare/v4.4.6...v4.4.7) (2023-12-12)
 
 
