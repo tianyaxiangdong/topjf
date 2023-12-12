@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-change -->
 
+## [4.4.4](https://github.com/topjf/topjf/compare/v4.4.3...v4.4.4) (2023-12-12)
+
+
+### 🐛Bug Fixes
+
+* 升级markdownlint-cli版本**0.38.0** ([a5355ca](https://github.com/topjf/topjf/commit/a5355ca06a03d7889f6094c3dc61ef2399c607f7))
+
 ## [4.4.3](https://github.com/topjf/topjf/compare/v4.4.2...v4.4.3) (2023-12-12)
 
 
