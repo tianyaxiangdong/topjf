@@ -15,5 +15,4 @@ jobs:
         with:
           token: ${{ secrets.RELEASE_TOKEN }}
           release-type: node
-          fork: true
-          skip-github-release: true
+          pull-request-title-pattern: 'release v${version}'
