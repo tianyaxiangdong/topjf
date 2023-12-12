@@ -15,5 +15,3 @@ jobs:
         with:
           token: ${{ secrets.RELEASE_TOKEN }}
           release-type: node
-          # 测试
-          # pull-request-title-pattern: 'release v${version}'
