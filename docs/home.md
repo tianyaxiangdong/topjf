@@ -69,5 +69,5 @@ features:
 
 ---
 
-<!-- @include: ../README.md#recent-beta -->
+<!-- @include: ../README.md#recent-home -->
 

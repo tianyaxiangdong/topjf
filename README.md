@@ -8,14 +8,14 @@
 - [使用Java压缩md文件中使用到的图片](https://gitee.com/cps007/markdown-img)
 - [参考 Mister-Hope.github.io](https://github.com/Mister-Hope/Mister-Hope.github.io)
 
-<!-- #region recent-beta -->
+<!-- #region recent-home -->
 
 A：**当主题版本有跳跃式更新时，先在 github 创建本`次版本-1`的 
 `releases`，再提交本次版本更新**
 例如：当前版本为 `v3.203.9` 需要更新到 `v3.205.0`，则需要手动创建release为 `v3.204.0` 为基础，在执行 `sh commit.sh` 时选择 feat 选项。
 
 
-B：**测试新主题版本：** 先更新 `package.json` 主题版本并设置提交消息为 `mytest` 开头（如：`mytest 测试新版本233`），会自动触发test工作流，
+B：**测试新主题版本：** 先更新 `package.json` 主题版本并设置提交消息为 `mytest`|`test` 开头（如：`mytest 测试新版本233`），会自动触发test工作流，
 然后自动部署到github.io，访问看看样式和其他功能是否正常，
 正常了切换package主题版本为原来版本并提交；
 然后再重新修改为测试正常的主题版本号，
@@ -114,5 +114,4 @@ timeline: false
 | vuepress-theme-hope | <a href="https://www.npmjs.com/package/vuepress-theme-hope" target="_blank">2.0.0-bate.x</a> |
 | vuepress            | <a href="https://www.npmjs.com/package/vuepress" target="_blank">2.0.0-beta.x</a>            |
 
-<!-- #endregion recent-beta -->
-
+<!-- #endregion recent-home -->
