@@ -1,11 +1,13 @@
 ---
 icon: linux
-title: Linux
+title: Linux目录
 #是否是文章
 article: false
 #是否显示在时间线
 timeline: false
 ---
+
+# Linux目录
 
 ## 方向盘
 

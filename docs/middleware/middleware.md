@@ -1,13 +1,13 @@
 ---
 icon: edit
-title: 中间件
+title: 中间件目录
 #是否是文章
 article: false
 #是否显示在时间线
 timeline: false
 ---
 
-## 中间件
+## 中间件目录
 
 - [ES](./elastic-search.md)
 - [Nginx](./nginx.md)

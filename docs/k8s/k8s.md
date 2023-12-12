@@ -1,13 +1,13 @@
 ---
 icon: /icons/k8s/k8s_16x16.png
-title: kubernetes知识积累
+title: kubernetes知识目录
 #是否是文章
 article: false
 #是否显示在时间线
 timeline: false
 ---
 
-# kubernetes
+# kubernetes 目录
 
 - [基础](./basis.md)
 - [设置docker k8s快捷指令](./setting-alias.md)

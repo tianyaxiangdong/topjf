@@ -1,13 +1,13 @@
 ---
 icon: edit
-title: Java 笔记
+title: Java 笔记目录
 #是否是文章
 article: false
 #是否显示在时间线
 timeline: false
 ---
 
-## Java笔记
+## Java笔记目录
 
 ## 基础
 
