@@ -88,7 +88,7 @@
           "title": "⚡️Performance Improvements"
         },
         "test": {
-          "description": "添加测试或纠正现有测试",
+          "description": "添加测试,Github不创建Tag版本",
           "title": "🧪Tests"
         },
         "build": {
