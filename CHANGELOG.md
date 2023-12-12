@@ -1,7 +1,7 @@
 # Changelog
 <!-- #region recent-change -->
 
-## [4.4.14](https://github.com/topjf/topjf/compare/v4.4.13...v4.4.14) (2023-12-12)
+## [4.4.14](https://github.com/topjf/topjf/compare/v4.4.5...v4.4.14) (2023-12-12)
 
 
 ### 🐛Bug Fixes
@@ -12,66 +12,6 @@
 ### 📚Docs
 
 * 更新侧边栏 ([623d5a4](https://github.com/topjf/topjf/commit/623d5a4ba63047739846db3698528319867c7ee8))
-
-## [4.4.13](https://github.com/topjf/topjf/compare/v4.4.12...v4.4.13) (2023-12-12)
-
-
-### Bug Fixes
-
-* 更新release.yml ([7c6d45a](https://github.com/topjf/topjf/commit/7c6d45a3b90d81e24ca1df761936e777e71f51ef))
-
-## [4.4.12](https://github.com/topjf/topjf/compare/v4.4.11...v4.4.12) (2023-12-12)
-
-
-### Bug Fixes
-
-* 更新release.yml ([06b0f0a](https://github.com/topjf/topjf/commit/06b0f0af2c0860fdcb9e383ac7e672b656c5a8f2))
-
-## [4.4.11](https://github.com/topjf/topjf/compare/v4.4.10...v4.4.11) (2023-12-12)
-
-
-### Bug Fixes
-
-* release.yml ([4479464](https://github.com/topjf/topjf/commit/447946421441fb250226c3234357a9a1eec227ec))
-
-## [4.4.10](https://github.com/topjf/topjf/compare/v4.4.9...v4.4.10) (2023-12-12)
-
-
-### Bug Fixes
-
-* **Actions:** 测试Changelog ([ed3672e](https://github.com/topjf/topjf/commit/ed3672e36f2e29405f60f78fc37fe5466a3e567e))
-* **Actions:** 测试Changelog ([325be39](https://github.com/topjf/topjf/commit/325be3953ed9a0e97067e183cc9432c773084e91))
-
-## [4.4.9](https://github.com/topjf/topjf/compare/v4.4.8...v4.4.9) (2023-12-12)
-
-
-### Bug Fixes
-
-* **Actions:** 测试Changelog ([8b3844c](https://github.com/topjf/topjf/commit/8b3844c3609a0836ffb07d0dc011b5f25bed4352))
-* **Actions:** 测试Changelog ([5b8d1ae](https://github.com/topjf/topjf/commit/5b8d1aee2e27ca3532b58b6c40063f12d599ac5e))
-
-## [4.4.8](https://github.com/topjf/topjf/compare/v4.4.7...v4.4.8) (2023-12-12)
-
-
-### Bug Fixes
-
-* **Actions:** 测试test ([d67ce06](https://github.com/topjf/topjf/commit/d67ce06151c851797193f3b108a6b21bdaba7e8e))
-* 修改commitizen.types.test说明 ([df91dcc](https://github.com/topjf/topjf/commit/df91dcc0ec98a2b8ed3de83a8a09e56e93e5f60a))
-
-## [4.4.7](https://github.com/topjf/topjf/compare/v4.4.6...v4.4.7) (2023-12-12)
-
-
-### Bug Fixes
-
-* **Actions:** 测试Changelog ([1047d4f](https://github.com/topjf/topjf/commit/1047d4f95e0230f6d5879881ea780ed7817e8b80))
-
-## [4.4.6](https://github.com/topjf/topjf/compare/v4.4.5...v4.4.6) (2023-12-12)
-
-
-### Bug Fixes
-
-* **Actions:** 测试Merge & Changelog ([c96877f](https://github.com/topjf/topjf/commit/c96877fe1e27d8897149771990db508b9af3a92c))
-* **Actions:** 测试Merge & Changelog ([95822d0](https://github.com/topjf/topjf/commit/95822d059e77cb54b8f8bf92c7a8175d30d7bb5e))
 
 ## [4.4.5](https://github.com/topjf/topjf/compare/v4.4.4...v4.4.5) (2023-12-12)
 
