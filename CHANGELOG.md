@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-change -->
 
+## [4.4.3](https://github.com/topjf/topjf/compare/v4.4.2...v4.4.3) (2023-12-12)
+
+
+### 🐛Bug Fixes
+
+* 升级commitlint版本**18.4.3** ([1ad5e7d](https://github.com/topjf/topjf/commit/1ad5e7d84825de20e751a400a8f6408c31bd467f))
+
 ## [4.4.2](https://github.com/topjf/topjf/compare/v4.4.1...v4.4.2) (2023-12-12)
 
 
