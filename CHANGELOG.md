@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-change -->
 
+## [4.4.16](https://github.com/topjf/topjf/compare/v4.4.15...v4.4.16) (2023-12-13)
+
+
+### 🐛Bug Fixes
+
+* **Theme:** 删除侧边栏配置旧文件 ([fc21d26](https://github.com/topjf/topjf/commit/fc21d269724e1c9f618da62324fd2dae99815424))
+
 ## [4.4.15](https://github.com/topjf/topjf/compare/v4.4.14...v4.4.15) (2023-12-12)
 
 
